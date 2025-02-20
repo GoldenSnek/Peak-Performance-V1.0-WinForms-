@@ -1,8 +1,8 @@
 namespace Peak_Performance_V1._0
 {
-    public partial class Form1 : Form
+    public partial class HomeMenu : Form
     {
-        public Form1()
+        public HomeMenu()
         {
             InitializeComponent();
         }
