@@ -9,18 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb; //added for database connection
 using System.Security.Cryptography;
+using System.Diagnostics.Eventing.Reader; //added for password hashing
 
 namespace Peak_Performance_V1._0
 {
     public partial class Login : Form
     {
-        private OleDbConnection connection;
+        private OleDbConnection connection = Methods.GetConnection();
 
         public Login()
         {
             InitializeComponent();
-            string dbPath = @"|DataDirectory|\PeakPerformanceDB.accdb"; //path to the database
-            connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};Persist Security Info=False;");
             txtPassword.PasswordChar = '*'; //hide password by default
         }
 
@@ -52,22 +51,25 @@ namespace Peak_Performance_V1._0
                     {
                         string role = result.ToString();
                         MessageBox.Show($"Login Successful! Role: {role}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        /*
-                        if (role == "Provider")
+                       
+                        if (role == "Vehicle Provider")
                         {
-                            ProviderDashboard providerForm = new ProviderDashboard();
-                            providerForm.Show();
+                            ProviderMain provider = new ProviderMain();
+                            provider.Show();
+                            this.Hide();
                         }
                         else if (role == "Client")
                         {
-                            ClientDashboard providerForm = new ClientDashboard();
-                            ClientForm.Show();
+                            ClientMain client = new ClientMain();
+                            client.Show();
+                            this.Hide();
                         }
+                        /*
                         else
                         {
-                            AdminDashboard providerForm = new AdminDashboard();
-                            AdminForm.Show();
+                            ProviderMain provider = new ProviderMain();
+                            provider.Show();
+                            this.Hide();
                         }
                         */
                     }

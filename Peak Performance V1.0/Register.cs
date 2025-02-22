@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb; //added for database connection
-using System.Security.Cryptography;
+using System.Security.Cryptography; //added for password hashing
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Collections;
 
@@ -16,13 +16,11 @@ namespace Peak_Performance_V1._0
 {
     public partial class Register : Form
     {
-        private OleDbConnection connection;
+        private OleDbConnection connection = Methods.GetConnection();
 
         public Register()
         {
             InitializeComponent();
-            string dbPath = @"|DataDirectory|\PeakPerformanceDB.accdb"; //path to the database
-            connection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};Persist Security Info=False;");
             txtPassword.PasswordChar = '*'; //hide password by default
             txtConPass.PasswordChar = '*'; //hide password by default
         }

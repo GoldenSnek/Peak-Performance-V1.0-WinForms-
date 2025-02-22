@@ -28,19 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
+            lblAbout = new Label();
             SuspendLayout();
+            // 
+            // lblAbout
+            // 
+            lblAbout.AutoSize = true;
+            lblAbout.Location = new Point(114, 166);
+            lblAbout.Name = "lblAbout";
+            lblAbout.Size = new Size(342, 247);
+            lblAbout.TabIndex = 2;
+            lblAbout.Text = resources.GetString("lblAbout.Text");
+            lblAbout.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // About
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(584, 561);
+            Controls.Add(lblAbout);
             Name = "About";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form4";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblAbout;
     }
 }
