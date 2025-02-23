@@ -11,7 +11,7 @@ namespace Peak_Performance_V1._0
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(new ViewAllVehicles());
         }
 
         //VERSION 1
@@ -24,6 +24,9 @@ namespace Peak_Performance_V1._0
         //3. errpr handling for add vehicle
         //4. vehicle specific type ust dynamically change based on the vehicle general type
         //5. cmd.Parameters.AddWithValue("@imagePath", imagePath); //cons: naay chance i delete and specific file path
+        //6. Add picture to the vehicle card
+
+        //IMPORTANT: database relationships, like owner sa vehicle sa kani nga specific car/cars
 
 
     }

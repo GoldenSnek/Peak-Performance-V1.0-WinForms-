@@ -338,6 +338,7 @@
             Controls.Add(cbxMake);
             Controls.Add(lblMake);
             Name = "ProviderAddVehicle";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ProviderAddVehicle";
             ((System.ComponentModel.ISupportInitialize)picPreview).EndInit();
             ResumeLayout(false);

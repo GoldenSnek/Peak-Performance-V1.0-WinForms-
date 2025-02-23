@@ -19,8 +19,8 @@ namespace Peak_Performance_V1._0
 
         public ProviderAddVehicle()
         {
-            InitializeComponent();
             connection = Methods.GetConnection();
+            InitializeComponent();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -70,12 +70,12 @@ namespace Peak_Performance_V1._0
                 MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (!int.TryParse(tempYear, out year) || year < 1990 || year > 2025) //step 3: validate year
+            else if (!int.TryParse(tempYear, out year) || year < 1900 || year > 2025) //step 3: validate year
             {
                 MessageBox.Show("Invalid year.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (!int.TryParse(tempSeats, out seats) || seats < 1 || year > 50) //step 4: validate seats
+            else if (!int.TryParse(tempSeats, out seats) || seats < 1 || seats > 50) //step 4: validate seats
             {
                 MessageBox.Show("Invalid number of seats.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -96,7 +96,9 @@ namespace Peak_Performance_V1._0
                 return;
             }
 
-            string addVehicleQuery = "INSERT INTO Vehicles (GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, [Image]) " +
+            byte[] imageBytes = File.ReadAllBytes(imagePath); //convert image to byte array
+
+            string addVehicleQuery = "INSERT INTO Vehicles (GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage) " +
                                      "VALUES (@generalType, @specificType, @make, @model, @year, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath)";
 
             using (OleDbCommand cmd = new OleDbCommand(addVehicleQuery, connection))
@@ -113,7 +115,7 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@mileage", mileage);
                 cmd.Parameters.AddWithValue("@priceDaily", priceDaily);
                 cmd.Parameters.AddWithValue("@priceHourly", priceHourly);
-                cmd.Parameters.AddWithValue("@imagePath", imagePath); //cons: naay chance i delete and specific file path
+                cmd.Parameters.AddWithValue("@imagePath", imageBytes); //cons: naay chance i delete and specific file path
 
                 try
                 {

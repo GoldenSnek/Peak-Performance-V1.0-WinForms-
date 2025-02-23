@@ -35,5 +35,17 @@ namespace Peak_Performance_V1._0
         {
             Application.Exit();
         }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewAllVehiclesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewAllVehicles view = new ViewAllVehicles();
+            view.Show();
+            this.Hide();
+        }
     }
 }

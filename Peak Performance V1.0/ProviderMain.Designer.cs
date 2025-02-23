@@ -73,6 +73,7 @@
             viewAllVehiclesToolStripMenuItem.Name = "viewAllVehiclesToolStripMenuItem";
             viewAllVehiclesToolStripMenuItem.Size = new Size(167, 23);
             viewAllVehiclesToolStripMenuItem.Text = "View All Vehicles";
+            viewAllVehiclesToolStripMenuItem.Click += viewAllVehiclesToolStripMenuItem_Click;
             // 
             // viewRentalDetailsToolStripMenuItem
             // 
@@ -140,6 +141,7 @@
             ClientSize = new Size(984, 761);
             Controls.Add(ProviderMenu);
             Name = "ProviderMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Provider";
             ProviderMenu.ResumeLayout(false);
             ProviderMenu.PerformLayout();
