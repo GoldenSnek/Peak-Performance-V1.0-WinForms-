@@ -25,7 +25,7 @@ namespace Peak_Performance_V1._0
 
         private void LoadVehicles()
         {
-            flowLayoutPanel1.Controls.Clear();
+            flpDisplay.Controls.Clear();
 
             string displayQuery = "SELECT GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
 
@@ -36,16 +36,16 @@ namespace Peak_Performance_V1._0
 
                 while (reader.Read())
                 {
-                    string generalType = reader["GeneralType"].ToString();
-                    string specificType = reader["SpecificType"].ToString();
-                    string make = reader["Make"].ToString();
+                    string? generalType = reader["GeneralType"].ToString();
+                    string? specificType = reader["SpecificType"].ToString();
+                    string? make = reader["Make"].ToString();
 
-                    string model = reader["Model"].ToString();
+                    string? model = reader["Model"].ToString();
                     int vehicleYear = Convert.ToInt32(reader["VehicleYear"]);
 
-                    string licensePlate = reader["LicensePlate"].ToString();
-                    string color = reader["Color"].ToString();
-                    string fuelType = reader["FuelType"].ToString();
+                    string? licensePlate = reader["LicensePlate"].ToString();
+                    string? color = reader["Color"].ToString();
+                    string? fuelType = reader["FuelType"].ToString();
 
                     int seats = Convert.ToInt32(reader["Seats"]);
                     double mileage = Convert.ToDouble(reader["Mileage"]);
@@ -53,8 +53,8 @@ namespace Peak_Performance_V1._0
                     double priceHourly = Convert.ToDouble(reader["PriceHourly"]);
 
 
-                    //onvert image from database to PictureBox
-                    Image vehicleImage = null;
+                    //convert image from database to PictureBox
+                    Image? vehicleImage = null;
                     if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
                     {
                         byte[] imageData = (byte[])reader["VehicleImage"];
@@ -71,8 +71,8 @@ namespace Peak_Performance_V1._0
 
                     //create a VehicleCard and add it to the FlowLayoutPanel
                     VehicleCard card = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
-                           color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage);
-                    flowLayoutPanel1.Controls.Add(card);
+                           color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Rent");
+                    flpDisplay.Controls.Add(card);
                 }
 
                 connection.Close();

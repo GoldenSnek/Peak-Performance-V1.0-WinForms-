@@ -14,6 +14,8 @@ namespace Peak_Performance_V1._0
         private static readonly string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};Persist Security Info=False;";
 
         public static int currentUserID; //store logged-in UserID
+        public static string? currentUsername; //store logged-in Username
+        public static string? currentRole; //store logged-in Role
 
         //SUPPORTING METHOD for Database Connection
         public static OleDbConnection GetConnection()

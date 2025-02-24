@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flpDisplay = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flpDisplay
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(291, 65);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(655, 653);
-            flowLayoutPanel1.TabIndex = 0;
+            flpDisplay.AutoScroll = true;
+            flpDisplay.Location = new Point(254, 49);
+            flpDisplay.Name = "flpDisplay";
+            flpDisplay.Size = new Size(650, 650);
+            flpDisplay.TabIndex = 0;
             // 
             // ViewAllVehicles
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(984, 761);
-            Controls.Add(flowLayoutPanel1);
+            ClientSize = new Size(1184, 761);
+            Controls.Add(flpDisplay);
             Name = "ViewAllVehicles";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ViewAllVehicles";
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flpDisplay;
     }
 }

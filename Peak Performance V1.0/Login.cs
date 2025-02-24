@@ -48,37 +48,33 @@ namespace Peak_Performance_V1._0
                     connection.Open();
                     OleDbDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.Read()) // If user exists
+                    if (reader.Read()) //if user exists
                     {
-                        int userID = reader.GetInt32(0); // Get UserID
-                        string role = reader.GetString(1); // Get Role
+                        int userID = reader.GetInt32(0); //get UserID
+                        string role = reader.GetString(1); //get Role
 
-                        // Store UserID in a global/static variable
+                        //store UserID in a global/static variable
                         SystemManager.currentUserID = userID;
+                        SystemManager.currentUsername = username;
+                        SystemManager.currentRole = role;
 
-                        MessageBox.Show($"Login Successful! Role: {role}, UserID: {userID}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Open respective main form based on role
-                        if (role == "Vehicle Provider")
+                        //open respective main form based on role
+                        if (role == "Admin")
                         {
-                            ProviderMain provider = new ProviderMain();
+                            /*
+                            MainMenu provider = new MainMenu();
                             provider.Show();
                             this.Hide();
+                            */
                         }
-                        else if (role == "Client")
+                        else
                         {
-                            ClientMain client = new ClientMain();
-                            client.Show();
+                            MainMenu mainMenu = new MainMenu();
+                            mainMenu.Show();
                             this.Hide();
                         }
-                        /*
-                        else if (role == "Admin")
-                        {
-                            AdminMain admin = new AdminMain();
-                            admin.Show();
-                            this.Hide();
-                        }
-                        */
                     }
                     else
                     {

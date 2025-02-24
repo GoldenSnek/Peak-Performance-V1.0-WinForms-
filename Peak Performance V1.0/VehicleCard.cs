@@ -13,7 +13,7 @@ namespace Peak_Performance_V1._0
     public partial class VehicleCard : UserControl
     {
         public VehicleCard(string generalType, string specificType, string make, string model, int vehicleYear, string licensePlate,
-                           string color, string fuelType, int seats, double mileage, double priceDaily, double priceHourly, Image vehicleImage)
+                           string color, string fuelType, int seats, double mileage, double priceDaily, double priceHourly, Image vehicleImage, string prompt)
         {
             InitializeComponent();
 
@@ -28,6 +28,14 @@ namespace Peak_Performance_V1._0
             lblDailyPrice.Text = $"Daily Price: {priceDaily}";
             lblHourlyPrice.Text = $"Hourly Price: {priceHourly}";
             picVehicle.Image = vehicleImage;
+
+            if (prompt != "")
+            {
+                btnProceed.Visible = true;
+                btnProceed.Text = prompt;
+            }
+            else
+                btnProceed.Visible = false;
 
         }
     }

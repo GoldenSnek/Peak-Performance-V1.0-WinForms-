@@ -38,7 +38,7 @@
             lblMileage = new Label();
             lblDailyPrice = new Label();
             lblHourlyPrice = new Label();
-            btnRent = new Button();
+            btnProceed = new Button();
             picVehicle = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picVehicle).BeginInit();
             SuspendLayout();
@@ -133,14 +133,14 @@
             lblHourlyPrice.TabIndex = 10;
             lblHourlyPrice.Text = "Hourly Price";
             // 
-            // btnRent
+            // btnProceed
             // 
-            btnRent.Location = new Point(83, 406);
-            btnRent.Name = "btnRent";
-            btnRent.Size = new Size(130, 23);
-            btnRent.TabIndex = 11;
-            btnRent.Text = "Rent this vehicle";
-            btnRent.UseVisualStyleBackColor = true;
+            btnProceed.Location = new Point(83, 406);
+            btnProceed.Name = "btnProceed";
+            btnProceed.Size = new Size(130, 23);
+            btnProceed.TabIndex = 11;
+            btnProceed.Text = "-";
+            btnProceed.UseVisualStyleBackColor = true;
             // 
             // picVehicle
             // 
@@ -157,7 +157,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             Controls.Add(picVehicle);
-            Controls.Add(btnRent);
+            Controls.Add(btnProceed);
             Controls.Add(lblHourlyPrice);
             Controls.Add(lblDailyPrice);
             Controls.Add(lblMileage);
@@ -187,7 +187,7 @@
         private Label lblMileage;
         private Label lblDailyPrice;
         private Label lblHourlyPrice;
-        private Button btnRent;
+        private Button btnProceed;
         private PictureBox picVehicle;
     }
 }
