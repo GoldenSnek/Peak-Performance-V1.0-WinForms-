@@ -25,6 +25,7 @@ namespace Peak_Performance_V1._0
         //4. vehicle specific type ust dynamically change based on the vehicle general type
         //(done) 5. cmd.Parameters.AddWithValue("@imagePath", imagePath); //cons: naay chance i delete and specific file path
         //(done) 6. Add picture to the vehicle card
+        //7.
 
         //IMPORTANT: database relationships, like owner sa vehicle sa kani nga specific car/cars
 
