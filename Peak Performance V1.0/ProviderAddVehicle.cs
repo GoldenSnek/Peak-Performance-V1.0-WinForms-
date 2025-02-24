@@ -19,7 +19,7 @@ namespace Peak_Performance_V1._0
 
         public ProviderAddVehicle()
         {
-            connection = Methods.GetConnection();
+            connection = SystemManager.GetConnection();
             InitializeComponent();
         }
 
@@ -98,11 +98,12 @@ namespace Peak_Performance_V1._0
 
             byte[] imageBytes = File.ReadAllBytes(imagePath); //convert image to byte array
 
-            string addVehicleQuery = "INSERT INTO Vehicles (GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage) " +
-                                     "VALUES (@generalType, @specificType, @make, @model, @year, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath)";
+            string addVehicleQuery = "INSERT INTO Vehicles (UserID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage) " +
+                                     "VALUES (@userID, @generalType, @specificType, @make, @model, @year, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath)";
 
             using (OleDbCommand cmd = new OleDbCommand(addVehicleQuery, connection))
             {
+                cmd.Parameters.AddWithValue("@userID", SystemManager.currentUserID);
                 cmd.Parameters.AddWithValue("@generalType", generalType);
                 cmd.Parameters.AddWithValue("@specificType", specificType);
                 cmd.Parameters.AddWithValue("@make", make);

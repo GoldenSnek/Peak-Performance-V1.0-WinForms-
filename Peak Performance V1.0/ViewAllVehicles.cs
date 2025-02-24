@@ -18,7 +18,7 @@ namespace Peak_Performance_V1._0
 
         public ViewAllVehicles()
         {
-            connection = Methods.GetConnection();
+            connection = SystemManager.GetConnection();
             InitializeComponent();
             LoadVehicles();
         }

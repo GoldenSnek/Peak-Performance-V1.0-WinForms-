@@ -23,7 +23,7 @@ namespace Peak_Performance_V1._0
             lblLicense.Text = $"License Plate No: {licensePlate}";
             lblColor.Text = $"Color: {color}";
             lblFuelType.Text = $"Fuel Type: {fuelType}";
-            lblSeats.Text = "$Seats: {seats}";
+            lblSeats.Text = $"Seats: {seats}";
             lblMileage.Text = $"Mileage: {mileage} km";
             lblDailyPrice.Text = $"Daily Price: {priceDaily}";
             lblHourlyPrice.Text = $"Hourly Price: {priceHourly}";

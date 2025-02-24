@@ -15,10 +15,11 @@ namespace Peak_Performance_V1._0
 {
     public partial class Login : Form
     {
-        private OleDbConnection connection = Methods.GetConnection();
+        private OleDbConnection connection;
 
         public Login()
         {
+            connection = SystemManager.GetConnection();
             InitializeComponent();
             txtPassword.PasswordChar = '*'; //hide password by default
         }
@@ -34,8 +35,8 @@ namespace Peak_Performance_V1._0
                 return;
             }
 
-            string hashPassword = Methods.HashPassword(password);
-            string validateQuery = "SELECT Role FROM Users WHERE Username = @username AND Password = @password";
+            string hashPassword = SystemManager.HashPassword(password);
+            string validateQuery = "SELECT UserID, Role FROM Users WHERE Username = @username AND Password = @password";
 
             using (OleDbCommand cmd = new OleDbCommand(validateQuery, connection))
             {
@@ -45,13 +46,19 @@ namespace Peak_Performance_V1._0
                 try
                 {
                     connection.Open();
-                    var result = cmd.ExecuteScalar();
+                    OleDbDataReader reader = cmd.ExecuteReader();
 
-                    if (result != null)
+                    if (reader.Read()) // If user exists
                     {
-                        string role = result.ToString();
-                        MessageBox.Show($"Login Successful! Role: {role}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                       
+                        int userID = reader.GetInt32(0); // Get UserID
+                        string role = reader.GetString(1); // Get Role
+
+                        // Store UserID in a global/static variable
+                        SystemManager.currentUserID = userID;
+
+                        MessageBox.Show($"Login Successful! Role: {role}, UserID: {userID}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Open respective main form based on role
                         if (role == "Vehicle Provider")
                         {
                             ProviderMain provider = new ProviderMain();
@@ -65,10 +72,10 @@ namespace Peak_Performance_V1._0
                             this.Hide();
                         }
                         /*
-                        else
+                        else if (role == "Admin")
                         {
-                            ProviderMain provider = new ProviderMain();
-                            provider.Show();
+                            AdminMain admin = new AdminMain();
+                            admin.Show();
                             this.Hide();
                         }
                         */
@@ -77,6 +84,8 @@ namespace Peak_Performance_V1._0
                     {
                         MessageBox.Show("Invalid Credentials!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+                    reader.Close(); // Close the reader
                 }
                 catch (Exception ex)
                 {

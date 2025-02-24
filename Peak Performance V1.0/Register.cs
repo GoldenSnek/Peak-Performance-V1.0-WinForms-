@@ -16,7 +16,7 @@ namespace Peak_Performance_V1._0
 {
     public partial class Register : Form
     {
-        private OleDbConnection connection = Methods.GetConnection();
+        private OleDbConnection connection = SystemManager.GetConnection();
 
         public Register()
         {
@@ -64,7 +64,7 @@ namespace Peak_Performance_V1._0
                 return;
             }
 
-            string hashPassword = Methods.HashPassword(password); //hash the password
+            string hashPassword = SystemManager.HashPassword(password); //hash the password
             string addUserQuery = "INSERT INTO Users (Username, [Password], Role) VALUES (@username, @password, @role)";
 
             using (OleDbCommand cmd = new OleDbCommand(addUserQuery, connection)) //add the user to the database

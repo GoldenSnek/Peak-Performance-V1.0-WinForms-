@@ -8,11 +8,12 @@ using System.Data.OleDb;
 
 namespace Peak_Performance_V1._0
 {
-    internal class Methods
+    internal class SystemManager
     {
-
         private static readonly string dbPath = @"|DataDirectory|\PeakPerformanceDB.accdb";
         private static readonly string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};Persist Security Info=False;";
+
+        public static int currentUserID; //store logged-in UserID
 
         //SUPPORTING METHOD for Database Connection
         public static OleDbConnection GetConnection()
@@ -32,7 +33,5 @@ namespace Peak_Performance_V1._0
                 return builder.ToString();
             }
         }
-
-
     }
 }
