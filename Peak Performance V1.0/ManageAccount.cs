@@ -16,5 +16,34 @@ namespace Peak_Performance_V1._0
         {
             InitializeComponent();
         }
+
+        private void btnClear_Click(object sender, EventArgs e) //EVENT, clear all textboxes
+        {
+            txtFullname.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtBirthday.Text = string.Empty;
+            txtLicenseID.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtNumber.Text = string.Empty;
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e) //EVENT, choose a new profile picture
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    picProfilePicture.Image = Image.FromFile(openFileDialog.FileName);
+                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use //pwede ra i .visible=false
+                }
+            }
+        }
+
+        private void btnClearPicture_Click(object sender, EventArgs e) //EVENT, clear profile picture
+        {
+            picProfilePicture.Image = null;
+            lblImagePath.Text = "Path";
+        }
     }
 }

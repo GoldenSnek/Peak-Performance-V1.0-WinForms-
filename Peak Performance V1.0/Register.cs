@@ -25,7 +25,7 @@ namespace Peak_Performance_V1._0
             txtConPass.PasswordChar = '*'; //hide password by default
         }
 
-        private void btnRegister_Click(object sender, EventArgs e) //MAIN EVENT for Register
+        private void btnRegister_Click(object sender, EventArgs e) //MAIN EVENT, Register
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
@@ -90,7 +90,7 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT to show/hide password
+        private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT, show/hide password
         {
             if (chkShowPass.Checked)
                 txtPassword.PasswordChar = '\0';
@@ -98,7 +98,7 @@ namespace Peak_Performance_V1._0
                 txtPassword.PasswordChar = '*';
         }
 
-        private void lblGoToL_Click(object sender, EventArgs e) //EVENT to go back to Login
+        private void lblGoToL_Click(object sender, EventArgs e) //EVENT, go back to Login
         {
             Login login = new Login();
             login.Show();

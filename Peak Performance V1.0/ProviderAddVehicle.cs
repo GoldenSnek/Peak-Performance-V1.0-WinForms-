@@ -24,7 +24,7 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
-        private void LoadVehicles()
+        private void LoadVehicles() //INITIAL EVENT, loads the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -38,7 +38,8 @@ namespace Peak_Performance_V1._0
                 while (reader.Read())
                 {
                     //pang butngan og ? pero walay warnings
-                    if (SystemManager.currentUserID == Convert.ToInt32(reader["UserID"])) { //only display if user owns the vehicle
+                    if (SystemManager.currentUserID == Convert.ToInt32(reader["UserID"]))
+                    { //only display if user owns the vehicle
                         string? generalType = reader["GeneralType"].ToString();
                         string? specificType = reader["SpecificType"].ToString();
                         string? make = reader["Make"].ToString();
@@ -83,20 +84,7 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    picPreview.Image = Image.FromFile(openFileDialog.FileName);
-                    lblImagePath.Text = openFileDialog.FileName; // Store image path for later use
-                }
-            }
-        }
-
-        private void btnAddVehicle_Click(object sender, EventArgs e)
+        private void btnAddVehicle_Click(object sender, EventArgs e) //MAIN EVENT, add a vehicle
         {
 
             string generalType = cbxGeneralType.Text;
@@ -176,7 +164,7 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@mileage", mileage);
                 cmd.Parameters.AddWithValue("@priceDaily", priceDaily);
                 cmd.Parameters.AddWithValue("@priceHourly", priceHourly);
-                cmd.Parameters.AddWithValue("@imagePath", imageBytes); //cons: naay chance i delete and specific file path
+                cmd.Parameters.AddWithValue("@imagePath", imageBytes);
 
                 try
                 {
@@ -192,6 +180,37 @@ namespace Peak_Performance_V1._0
                     return;
                 }
             }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT, browse and select an image
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    picPreview.Image = Image.FromFile(openFileDialog.FileName);
+                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT, clear all textboxes
+        {
+            cbxGeneralType.Text = string.Empty;
+            cbxSpecificType.Text = string.Empty;
+            cbxMake.Text = string.Empty;
+            txtModel.Text = string.Empty;
+            cbxYear.Text = string.Empty;
+            txtLicense.Text = string.Empty;
+            cbxColor.Text = string.Empty;
+            cbxFuel.Text = string.Empty;
+            cbxSeats.Text = string.Empty;
+            txtMileage.Text = string.Empty;
+            txtPriceDaily.Text = string.Empty;
+            txtPriceHourly.Text = string.Empty;
+            picPreview.Image = null;
+            lblImagePath.Text = "Path";
         }
     }
 }

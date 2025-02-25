@@ -322,6 +322,7 @@
             btnClear.TabIndex = 30;
             btnClear.Text = "Clear All";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // ProviderAddVehicle
             // 

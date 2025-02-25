@@ -3,12 +3,12 @@
     partial class Home
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,162 +23,225 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            HomeMenu = new MenuStrip();
+            components = new System.ComponentModel.Container();
+            ProviderMenu = new MenuStrip();
             homeToolStripMenuItem = new ToolStripMenuItem();
-            loginToolStripMenuItem = new ToolStripMenuItem();
-            registerToolStripMenuItem = new ToolStripMenuItem();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
-            lblMainTitle = new Label();
-            lblMotto = new Label();
-            lblProceed = new Label();
-            lblGoToL = new Label();
-            label1 = new Label();
-            lblGoToR = new Label();
-            HomeMenu.SuspendLayout();
+            viewAllVehiclesToolStripMenuItem = new ToolStripMenuItem();
+            viewRentalDetailsToolStripMenuItem = new ToolStripMenuItem();
+            addRentableVehicleToolStripMenuItem = new ToolStripMenuItem();
+            updateVehiclesToolStripMenuItem = new ToolStripMenuItem();
+            manageAccountDetailsToolStripMenuItem = new ToolStripMenuItem();
+            lOGOUTToolStripMenuItem = new ToolStripMenuItem();
+            eXITToolStripMenuItem = new ToolStripMenuItem();
+            lblTime = new Label();
+            lblDate = new Label();
+            lblDay = new Label();
+            tmrClock = new System.Windows.Forms.Timer(components);
+            lblGreetings = new Label();
+            lblAnalytics = new Label();
+            lblNotifications = new Label();
+            picDay = new PictureBox();
+            picNight = new PictureBox();
+            ProviderMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picDay).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
             SuspendLayout();
             // 
-            // HomeMenu
+            // ProviderMenu
             // 
-            HomeMenu.Dock = DockStyle.Left;
-            HomeMenu.Items.AddRange(new ToolStripItem[] { homeToolStripMenuItem, loginToolStripMenuItem, registerToolStripMenuItem, aboutToolStripMenuItem, exitToolStripMenuItem });
-            HomeMenu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            HomeMenu.Location = new Point(0, 0);
-            HomeMenu.Name = "HomeMenu";
-            HomeMenu.Size = new Size(76, 561);
-            HomeMenu.TabIndex = 0;
-            HomeMenu.Text = "menuStrip1";
+            ProviderMenu.Dock = DockStyle.Left;
+            ProviderMenu.Items.AddRange(new ToolStripItem[] { homeToolStripMenuItem, viewAllVehiclesToolStripMenuItem, viewRentalDetailsToolStripMenuItem, addRentableVehicleToolStripMenuItem, updateVehiclesToolStripMenuItem, manageAccountDetailsToolStripMenuItem, lOGOUTToolStripMenuItem, eXITToolStripMenuItem });
+            ProviderMenu.Location = new Point(0, 0);
+            ProviderMenu.Name = "ProviderMenu";
+            ProviderMenu.Size = new Size(155, 761);
+            ProviderMenu.TabIndex = 1;
+            ProviderMenu.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            homeToolStripMenuItem.Size = new Size(63, 23);
+            homeToolStripMenuItem.Size = new Size(142, 23);
             homeToolStripMenuItem.Text = "Home";
             // 
-            // loginToolStripMenuItem
+            // viewAllVehiclesToolStripMenuItem
             // 
-            loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(63, 23);
-            loginToolStripMenuItem.Text = "Login";
-            loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
+            viewAllVehiclesToolStripMenuItem.Name = "viewAllVehiclesToolStripMenuItem";
+            viewAllVehiclesToolStripMenuItem.Size = new Size(142, 23);
+            viewAllVehiclesToolStripMenuItem.Text = "View All Vehicles";
+            viewAllVehiclesToolStripMenuItem.Click += viewAllVehiclesToolStripMenuItem_Click;
             // 
-            // registerToolStripMenuItem
+            // viewRentalDetailsToolStripMenuItem
             // 
-            registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            registerToolStripMenuItem.Size = new Size(63, 23);
-            registerToolStripMenuItem.Text = "Register";
-            registerToolStripMenuItem.Click += registerToolStripMenuItem_Click;
+            viewRentalDetailsToolStripMenuItem.Name = "viewRentalDetailsToolStripMenuItem";
+            viewRentalDetailsToolStripMenuItem.Size = new Size(142, 23);
+            viewRentalDetailsToolStripMenuItem.Text = "View Rental Details";
+            viewRentalDetailsToolStripMenuItem.Click += viewRentalDetailsToolStripMenuItem_Click;
             // 
-            // aboutToolStripMenuItem
+            // addRentableVehicleToolStripMenuItem
             // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(63, 23);
-            aboutToolStripMenuItem.Text = "About";
-            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
+            addRentableVehicleToolStripMenuItem.Name = "addRentableVehicleToolStripMenuItem";
+            addRentableVehicleToolStripMenuItem.Size = new Size(142, 23);
+            addRentableVehicleToolStripMenuItem.Text = "Add Rentable Vehicle";
+            addRentableVehicleToolStripMenuItem.Click += addRentableVehicleToolStripMenuItem_Click;
             // 
-            // exitToolStripMenuItem
+            // updateVehiclesToolStripMenuItem
             // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(63, 23);
-            exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            updateVehiclesToolStripMenuItem.Name = "updateVehiclesToolStripMenuItem";
+            updateVehiclesToolStripMenuItem.Size = new Size(142, 23);
+            updateVehiclesToolStripMenuItem.Text = "Update Vehicles";
+            updateVehiclesToolStripMenuItem.Click += updateVehiclesToolStripMenuItem_Click;
             // 
-            // lblMainTitle
+            // manageAccountDetailsToolStripMenuItem
             // 
-            lblMainTitle.AutoSize = true;
-            lblMainTitle.Location = new Point(203, 98);
-            lblMainTitle.Name = "lblMainTitle";
-            lblMainTitle.Size = new Size(218, 19);
-            lblMainTitle.TabIndex = 1;
-            lblMainTitle.Text = "Peak Performance | Vehicle Rentals";
+            manageAccountDetailsToolStripMenuItem.Name = "manageAccountDetailsToolStripMenuItem";
+            manageAccountDetailsToolStripMenuItem.Size = new Size(142, 23);
+            manageAccountDetailsToolStripMenuItem.Text = "Manage Account";
+            manageAccountDetailsToolStripMenuItem.Click += manageAccountDetailsToolStripMenuItem_Click;
             // 
-            // lblMotto
+            // lOGOUTToolStripMenuItem
             // 
-            lblMotto.AutoSize = true;
-            lblMotto.Location = new Point(230, 130);
-            lblMotto.Name = "lblMotto";
-            lblMotto.Size = new Size(157, 19);
-            lblMotto.TabIndex = 2;
-            lblMotto.Text = "--- Rent Ride Repeat ---";
+            lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
+            lOGOUTToolStripMenuItem.Size = new Size(142, 23);
+            lOGOUTToolStripMenuItem.Text = "LOGOUT";
+            lOGOUTToolStripMenuItem.Click += lOGOUTToolStripMenuItem_Click;
             // 
-            // lblProceed
+            // eXITToolStripMenuItem
             // 
-            lblProceed.AutoSize = true;
-            lblProceed.Location = new Point(147, 444);
-            lblProceed.Name = "lblProceed";
-            lblProceed.Size = new Size(165, 19);
-            lblProceed.TabIndex = 16;
-            lblProceed.Text = "Already have an account?";
+            eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
+            eXITToolStripMenuItem.Size = new Size(142, 23);
+            eXITToolStripMenuItem.Text = "EXIT";
+            eXITToolStripMenuItem.Click += eXITToolStripMenuItem_Click;
             // 
-            // lblGoToL
+            // lblTime
             // 
-            lblGoToL.AutoSize = true;
-            lblGoToL.Location = new Point(173, 473);
-            lblGoToL.Name = "lblGoToL";
-            lblGoToL.Size = new Size(113, 19);
-            lblGoToL.TabIndex = 15;
-            lblGoToL.Text = "Proceed to Login";
-            lblGoToL.Click += lblGoToL_Click;
+            lblTime.AutoSize = true;
+            lblTime.Location = new Point(628, 381);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(63, 19);
+            lblTime.TabIndex = 2;
+            lblTime.Text = "00:00:00";
             // 
-            // label1
+            // lblDate
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(353, 444);
-            label1.Name = "label1";
-            label1.Size = new Size(176, 19);
-            label1.TabIndex = 18;
-            label1.Text = "Don't have an account yet?";
+            lblDate.AutoSize = true;
+            lblDate.Location = new Point(619, 423);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(79, 19);
+            lblDate.TabIndex = 3;
+            lblDate.Text = "Placeholder";
             // 
-            // lblGoToR
+            // lblDay
             // 
-            lblGoToR.AutoSize = true;
-            lblGoToR.Location = new Point(381, 473);
-            lblGoToR.Name = "lblGoToR";
-            lblGoToR.Size = new Size(122, 19);
-            lblGoToR.TabIndex = 17;
-            lblGoToR.Text = "Create an Account";
-            lblGoToR.Click += lblGoToR_Click;
+            lblDay.AutoSize = true;
+            lblDay.Location = new Point(619, 467);
+            lblDay.Name = "lblDay";
+            lblDay.Size = new Size(79, 19);
+            lblDay.TabIndex = 4;
+            lblDay.Text = "Placeholder";
+            // 
+            // tmrClock
+            // 
+            tmrClock.Enabled = true;
+            tmrClock.Interval = 1000;
+            tmrClock.Tick += tmrClock_Tick;
+            // 
+            // lblGreetings
+            // 
+            lblGreetings.AutoSize = true;
+            lblGreetings.Location = new Point(519, 318);
+            lblGreetings.Name = "lblGreetings";
+            lblGreetings.Size = new Size(290, 19);
+            lblGreetings.TabIndex = 5;
+            lblGreetings.Text = "Hello {user}! what would you like to do today?";
+            // 
+            // lblAnalytics
+            // 
+            lblAnalytics.AutoSize = true;
+            lblAnalytics.Location = new Point(393, 574);
+            lblAnalytics.Name = "lblAnalytics";
+            lblAnalytics.Size = new Size(63, 19);
+            lblAnalytics.TabIndex = 6;
+            lblAnalytics.Text = "Analytics";
+            // 
+            // lblNotifications
+            // 
+            lblNotifications.AutoSize = true;
+            lblNotifications.Location = new Point(896, 574);
+            lblNotifications.Name = "lblNotifications";
+            lblNotifications.Size = new Size(85, 19);
+            lblNotifications.TabIndex = 7;
+            lblNotifications.Text = "Notifications";
+            // 
+            // picDay
+            // 
+            picDay.Image = Properties.Resources.Home___Car_Day;
+            picDay.Location = new Point(480, 120);
+            picDay.Name = "picDay";
+            picDay.Size = new Size(150, 150);
+            picDay.SizeMode = PictureBoxSizeMode.StretchImage;
+            picDay.TabIndex = 8;
+            picDay.TabStop = false;
+            // 
+            // picNight
+            // 
+            picNight.Image = Properties.Resources.Home___Car_Night;
+            picNight.Location = new Point(693, 120);
+            picNight.Name = "picNight";
+            picNight.Size = new Size(150, 150);
+            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
+            picNight.TabIndex = 9;
+            picNight.TabStop = false;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(584, 561);
-            Controls.Add(label1);
-            Controls.Add(lblGoToR);
-            Controls.Add(lblProceed);
-            Controls.Add(lblGoToL);
-            Controls.Add(lblMotto);
-            Controls.Add(lblMainTitle);
-            Controls.Add(HomeMenu);
-            MainMenuStrip = HomeMenu;
+            ClientSize = new Size(1184, 761);
+            Controls.Add(picNight);
+            Controls.Add(picDay);
+            Controls.Add(lblNotifications);
+            Controls.Add(lblAnalytics);
+            Controls.Add(lblGreetings);
+            Controls.Add(lblDay);
+            Controls.Add(lblDate);
+            Controls.Add(lblTime);
+            Controls.Add(ProviderMenu);
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            HomeMenu.ResumeLayout(false);
-            HomeMenu.PerformLayout();
+            Text = "Provider";
+            Load += MainMenu_Load;
+            ProviderMenu.ResumeLayout(false);
+            ProviderMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picDay).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip HomeMenu;
+        private MenuStrip ProviderMenu;
         private ToolStripMenuItem homeToolStripMenuItem;
-        private ToolStripMenuItem loginToolStripMenuItem;
-        private ToolStripMenuItem registerToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private Label lblMainTitle;
-        private Label lblMotto;
-        private Label lblProceed;
-        private Label lblGoToL;
-        private Label label1;
-        private Label lblGoToR;
+        private ToolStripMenuItem viewAllVehiclesToolStripMenuItem;
+        private ToolStripMenuItem viewRentalDetailsToolStripMenuItem;
+        private ToolStripMenuItem addRentableVehicleToolStripMenuItem;
+        private ToolStripMenuItem updateVehiclesToolStripMenuItem;
+        private ToolStripMenuItem manageAccountDetailsToolStripMenuItem;
+        private ToolStripMenuItem eXITToolStripMenuItem;
+        private ToolStripMenuItem lOGOUTToolStripMenuItem;
+        private Label lblTime;
+        private Label lblDate;
+        private Label lblDay;
+        private System.Windows.Forms.Timer tmrClock;
+        private Label lblGreetings;
+        private Label lblAnalytics;
+        private Label lblNotifications;
+        private PictureBox picDay;
+        private PictureBox picNight;
     }
 }

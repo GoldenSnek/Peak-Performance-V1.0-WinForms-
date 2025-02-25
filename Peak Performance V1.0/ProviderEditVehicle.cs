@@ -80,5 +80,22 @@ namespace Peak_Performance_V1._0
             }
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cbxGeneralType.Text = string.Empty;
+            cbxSpecificType.Text = string.Empty;
+            cbxMake.Text = string.Empty;
+            txtModel.Text = string.Empty;
+            cbxYear.Text = string.Empty;
+            txtLicense.Text = string.Empty;
+            cbxColor.Text = string.Empty;
+            cbxFuel.Text = string.Empty;
+            cbxSeats.Text = string.Empty;
+            txtMileage.Text = string.Empty;
+            txtPriceDaily.Text = string.Empty;
+            txtPriceHourly.Text = string.Empty;
+            picPreview.Image = null;
+            lblImagePath.Text = "Path";
+        }
     }
 }

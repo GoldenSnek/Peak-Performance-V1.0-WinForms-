@@ -23,7 +23,7 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
-        private void LoadVehicles()
+        private void LoadVehicles() //INITIAL EVENT to load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -70,15 +70,22 @@ namespace Peak_Performance_V1._0
 
 
                     //create a VehicleCard and add it to the FlowLayoutPanel
-                    VehicleCard card = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
-                           color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Rent");
-                    flpDisplay.Controls.Add(card);
+                    if (SystemManager.currentRole == "Vehicle Provider")
+                    {
+                        VehicleCard card = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
+                                                           color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
+                        flpDisplay.Controls.Add(card);
+                    }
+                    else if (SystemManager.currentRole == "Client")
+                    {
+                        VehicleCard card = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
+                                   color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Rent");
+                        flpDisplay.Controls.Add(card);
+                    }
                 }
 
                 connection.Close();
             }
         }
-
-
     }
 }

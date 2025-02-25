@@ -11,7 +11,7 @@ namespace Peak_Performance_V1._0
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Home());
+            Application.Run(new MainLR());
         }
 
         //VERSION 1
@@ -28,7 +28,5 @@ namespace Peak_Performance_V1._0
         //7.
 
         //IMPORTANT: database relationships, like owner sa vehicle sa kani nga specific car/cars
-
-
     }
 }
