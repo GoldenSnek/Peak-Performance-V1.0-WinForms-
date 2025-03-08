@@ -7,9 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics.Eventing.Reader;
 using System.Data.OleDb; //added for database connection
-using System.Security.Cryptography;
-using System.Diagnostics.Eventing.Reader; //added for password hashing
+using System.Security.Cryptography; //added for password hashing
+
+//NuGet UI packages
+using ReaLTaiizor;          // Core namespace
+using ReaLTaiizor.Manager;
+using ReaLTaiizor.Controls; // For custom controls like buttons, labels, etc.
+using ReaLTaiizor.Forms;    // For using Taiizor-styled forms
+using ReaLTaiizor.Enum;     // For enumerations (e.g., themes, styles)
+
+
+
+//keywords for RealTaiizor
+//ReaLTaiizor.Colors.
+//ReaLTaiizor.Util.
+
+
+
+
+
+
+
+
+
 
 namespace Peak_Performance_V1._0
 {
@@ -21,7 +43,21 @@ namespace Peak_Performance_V1._0
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
-            txtPassword.PasswordChar = '*'; //hide password by default
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            //set realtaiizor materialskin theme
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(ReaLTaiizor.Colors.MaterialPrimary.Orange700, ReaLTaiizor.Colors.MaterialPrimary.Orange800, ReaLTaiizor.Colors.MaterialPrimary.Orange900, ReaLTaiizor.Colors.MaterialAccent.Orange700, ReaLTaiizor.Util.MaterialTextShade.WHITE);
+
+            txtUsername.Font = new Font("Comic Sans MS", 14, FontStyle.Bold);
+            txtUsername.ForeColor = Color.Red;
+            txtUsername.Refresh();
+
+
+            txtPassword.PasswordChar = '•'; //hide password by default
         }
 
         private void btnLogin_Click(object sender, EventArgs e) //MAIN EVENT, Login
@@ -97,15 +133,28 @@ namespace Peak_Performance_V1._0
         private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT, show/hide password
         {
             if (chkShowPass.Checked)
-                txtPassword.PasswordChar = '\0';
+                txtPassword.PasswordChar = '•';
             else
-                txtPassword.PasswordChar = '*';
+                txtPassword.PasswordChar = '\0';
         }
 
         private void lblGoToR_Click(object sender, EventArgs e) //EVENT, go back to Login
         {
             Register register = new Register();
             register.Show();
+            this.Hide();
+        }
+
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); ;
+        }
+
+        private void picBack_Click(object sender, EventArgs e)
+        {
+            MainLR mainLR = new MainLR();
+            mainLR.Show();
             this.Hide();
         }
     }

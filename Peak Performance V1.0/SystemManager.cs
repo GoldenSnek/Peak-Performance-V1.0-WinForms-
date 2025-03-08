@@ -17,14 +17,12 @@ namespace Peak_Performance_V1._0
         public static string? currentUsername; //store logged-in Username
         public static string? currentRole; //store logged-in Role
 
-        //SUPPORTING METHOD for Database Connection
-        public static OleDbConnection GetConnection()
+        public static OleDbConnection GetConnection() //SUPPORTING METHOD for Database Connection
         {
             return new OleDbConnection(connectionString);
         }
 
-        //SUPPORTING METHOD for Login and Register
-        public static string HashPassword(string password) //SUPPORTING METHOD for Login
+        public static string HashPassword(string password) //SUPPORTING METHOD for Login and Register
         {
             using (SHA256 sha256 = SHA256.Create())
             {

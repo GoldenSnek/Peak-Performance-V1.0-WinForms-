@@ -28,54 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblUsername = new Label();
-            lblPassword = new Label();
-            txtUsername = new TextBox();
-            txtPassword = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             lblGoToR = new Label();
             lblProceed = new Label();
-            btnLogin = new Button();
-            chkShowPass = new CheckBox();
+            btnLogin = new ReaLTaiizor.Controls.MaterialButton();
+            txtUsername = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtPassword = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            chkShowPass = new ReaLTaiizor.Controls.CyberCheckBox();
+            lblLOGIN = new Label();
+            label1 = new Label();
+            lblUsernameError = new Label();
+            lblPasswordError = new Label();
+            picClose = new PictureBox();
+            picBack = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             SuspendLayout();
-            // 
-            // lblUsername
-            // 
-            lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(189, 97);
-            lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(71, 19);
-            lblUsername.TabIndex = 0;
-            lblUsername.Text = "Username";
-            // 
-            // lblPassword
-            // 
-            lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(193, 217);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(67, 19);
-            lblPassword.TabIndex = 1;
-            lblPassword.Text = "Password";
-            // 
-            // txtUsername
-            // 
-            txtUsername.Location = new Point(189, 119);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(100, 26);
-            txtUsername.TabIndex = 2;
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(193, 253);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(100, 26);
-            txtPassword.TabIndex = 3;
             // 
             // lblGoToR
             // 
             lblGoToR.AutoSize = true;
-            lblGoToR.Location = new Point(189, 508);
+            lblGoToR.BackColor = Color.Transparent;
+            lblGoToR.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblGoToR.ForeColor = Color.Blue;
+            lblGoToR.Location = new Point(218, 544);
             lblGoToR.Name = "lblGoToR";
-            lblGoToR.Size = new Size(122, 19);
+            lblGoToR.Size = new Size(159, 18);
             lblGoToR.TabIndex = 4;
             lblGoToR.Text = "Create an Account";
             lblGoToR.Click += lblGoToR_Click;
@@ -83,62 +61,259 @@
             // lblProceed
             // 
             lblProceed.AutoSize = true;
-            lblProceed.Location = new Point(161, 479);
+            lblProceed.BackColor = Color.Transparent;
+            lblProceed.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProceed.Location = new Point(186, 519);
             lblProceed.Name = "lblProceed";
-            lblProceed.Size = new Size(176, 19);
+            lblProceed.Size = new Size(225, 18);
             lblProceed.TabIndex = 15;
             lblProceed.Text = "Don't have an account yet?";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(253, 362);
+            btnLogin.AutoSize = false;
+            btnLogin.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnLogin.BackColor = Color.White;
+            btnLogin.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnLogin.Depth = 0;
+            btnLogin.HighEmphasis = true;
+            btnLogin.Icon = null;
+            btnLogin.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnLogin.Location = new Point(173, 417);
+            btnLogin.Margin = new Padding(4, 6, 4, 6);
+            btnLogin.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 36);
-            btnLogin.TabIndex = 16;
+            btnLogin.NoAccentTextColor = Color.Empty;
+            btnLogin.Size = new Size(250, 36);
+            btnLogin.TabIndex = 18;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnLogin.UseAccentColor = false;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
+            // 
+            // txtUsername
+            // 
+            txtUsername.AnimateReadOnly = false;
+            txtUsername.AutoCompleteMode = AutoCompleteMode.None;
+            txtUsername.AutoCompleteSource = AutoCompleteSource.None;
+            txtUsername.BackgroundImageLayout = ImageLayout.None;
+            txtUsername.CharacterCasing = CharacterCasing.Normal;
+            txtUsername.Depth = 0;
+            txtUsername.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtUsername.HideSelection = true;
+            txtUsername.Hint = "Username";
+            txtUsername.LeadingIcon = Properties.Resources.Username;
+            txtUsername.Location = new Point(175, 184);
+            txtUsername.MaxLength = 32767;
+            txtUsername.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtUsername.Name = "txtUsername";
+            txtUsername.PasswordChar = '\0';
+            txtUsername.PrefixSuffixText = null;
+            txtUsername.ReadOnly = false;
+            txtUsername.RightToLeft = RightToLeft.No;
+            txtUsername.SelectedText = "";
+            txtUsername.SelectionLength = 0;
+            txtUsername.SelectionStart = 0;
+            txtUsername.ShortcutsEnabled = true;
+            txtUsername.Size = new Size(250, 48);
+            txtUsername.TabIndex = 19;
+            txtUsername.TabStop = false;
+            txtUsername.TextAlign = HorizontalAlignment.Left;
+            txtUsername.TrailingIcon = null;
+            txtUsername.UseSystemPasswordChar = false;
+            // 
+            // txtPassword
+            // 
+            txtPassword.AnimateReadOnly = false;
+            txtPassword.AutoCompleteMode = AutoCompleteMode.None;
+            txtPassword.AutoCompleteSource = AutoCompleteSource.None;
+            txtPassword.BackgroundImageLayout = ImageLayout.None;
+            txtPassword.CharacterCasing = CharacterCasing.Normal;
+            txtPassword.Depth = 0;
+            txtPassword.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPassword.HideSelection = true;
+            txtPassword.Hint = "Password";
+            txtPassword.LeadingIcon = Properties.Resources.Password;
+            txtPassword.Location = new Point(175, 273);
+            txtPassword.MaxLength = 32767;
+            txtPassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '\0';
+            txtPassword.PrefixSuffixText = null;
+            txtPassword.ReadOnly = false;
+            txtPassword.RightToLeft = RightToLeft.No;
+            txtPassword.SelectedText = "";
+            txtPassword.SelectionLength = 0;
+            txtPassword.SelectionStart = 0;
+            txtPassword.ShortcutsEnabled = true;
+            txtPassword.Size = new Size(250, 48);
+            txtPassword.TabIndex = 20;
+            txtPassword.TabStop = false;
+            txtPassword.TextAlign = HorizontalAlignment.Left;
+            txtPassword.TrailingIcon = null;
+            txtPassword.UseSystemPasswordChar = false;
             // 
             // chkShowPass
             // 
-            chkShowPass.AutoSize = true;
-            chkShowPass.Location = new Point(253, 301);
+            chkShowPass.BackColor = Color.Transparent;
+            chkShowPass.Background = true;
+            chkShowPass.Background_WidthPen = 2F;
+            chkShowPass.BackgroundPen = true;
+            chkShowPass.Checked = false;
+            chkShowPass.ColorBackground = Color.FromArgb(64, 64, 64);
+            chkShowPass.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            chkShowPass.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            chkShowPass.ColorBackground_Pen = Color.White;
+            chkShowPass.ColorChecked = Color.FromArgb(255, 128, 0);
+            chkShowPass.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            chkShowPass.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            chkShowPass.CyberCheckBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            chkShowPass.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            chkShowPass.Effect_1_Transparency = 25;
+            chkShowPass.Effect_2 = true;
+            chkShowPass.Effect_2_ColorBackground = Color.White;
+            chkShowPass.Effect_2_Transparency = 15;
+            chkShowPass.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkShowPass.ForeColor = Color.FromArgb(245, 245, 245);
+            chkShowPass.LinearGradient_Background = false;
+            chkShowPass.LinearGradientPen = false;
+            chkShowPass.Location = new Point(271, 351);
             chkShowPass.Name = "chkShowPass";
-            chkShowPass.Size = new Size(123, 23);
-            chkShowPass.TabIndex = 17;
-            chkShowPass.Text = "Show Password";
-            chkShowPass.UseVisualStyleBackColor = true;
-            chkShowPass.CheckedChanged += chkShowPass_CheckedChanged;
+            chkShowPass.RGB = false;
+            chkShowPass.Rounding = true;
+            chkShowPass.RoundingInt = 100;
+            chkShowPass.Size = new Size(154, 45);
+            chkShowPass.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            chkShowPass.TabIndex = 23;
+            chkShowPass.Tag = "Cyber";
+            chkShowPass.TextButton = "Show Password";
+            chkShowPass.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            chkShowPass.Timer_Effect_1 = 1;
+            chkShowPass.Timer_RGB = 300;
+            chkShowPass.Click += chkShowPass_CheckedChanged;
+            // 
+            // lblLOGIN
+            // 
+            lblLOGIN.AutoSize = true;
+            lblLOGIN.BackColor = Color.Transparent;
+            lblLOGIN.Font = new Font("Arial Rounded MT Bold", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLOGIN.ForeColor = Color.FromArgb(255, 128, 0);
+            lblLOGIN.Location = new Point(230, 46);
+            lblLOGIN.Name = "lblLOGIN";
+            lblLOGIN.Size = new Size(139, 43);
+            lblLOGIN.TabIndex = 24;
+            lblLOGIN.Text = "LOGIN";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(206, 99);
+            label1.Name = "label1";
+            label1.Size = new Size(182, 18);
+            label1.TabIndex = 25;
+            label1.Text = "Login to your account";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblUsernameError
+            // 
+            lblUsernameError.AutoSize = true;
+            lblUsernameError.BackColor = Color.Transparent;
+            lblUsernameError.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsernameError.ForeColor = Color.White;
+            lblUsernameError.Location = new Point(175, 235);
+            lblUsernameError.Name = "lblUsernameError";
+            lblUsernameError.Size = new Size(11, 16);
+            lblUsernameError.TabIndex = 26;
+            lblUsernameError.Text = "-";
+            lblUsernameError.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblPasswordError
+            // 
+            lblPasswordError.AutoSize = true;
+            lblPasswordError.BackColor = Color.Transparent;
+            lblPasswordError.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPasswordError.ForeColor = Color.White;
+            lblPasswordError.Location = new Point(175, 324);
+            lblPasswordError.Name = "lblPasswordError";
+            lblPasswordError.Size = new Size(11, 16);
+            lblPasswordError.TabIndex = 27;
+            lblPasswordError.Text = "-";
+            lblPasswordError.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // picClose
+            // 
+            picClose.BackColor = Color.Transparent;
+            picClose.BackgroundImage = Properties.Resources.Close;
+            picClose.BackgroundImageLayout = ImageLayout.Stretch;
+            picClose.Location = new Point(558, 12);
+            picClose.Name = "picClose";
+            picClose.Size = new Size(30, 30);
+            picClose.TabIndex = 28;
+            picClose.TabStop = false;
+            picClose.Click += picClose_Click;
+            // 
+            // picBack
+            // 
+            picBack.BackColor = Color.Transparent;
+            picBack.BackgroundImage = Properties.Resources.Back;
+            picBack.BackgroundImageLayout = ImageLayout.Stretch;
+            picBack.Location = new Point(12, 12);
+            picBack.Name = "picBack";
+            picBack.Size = new Size(30, 30);
+            picBack.TabIndex = 29;
+            picBack.TabStop = false;
+            picBack.Click += picBack_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(584, 561);
+            BackColor = SystemColors.Control;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(600, 600);
+            Controls.Add(picBack);
+            Controls.Add(picClose);
+            Controls.Add(lblPasswordError);
+            Controls.Add(lblUsernameError);
+            Controls.Add(label1);
+            Controls.Add(lblLOGIN);
             Controls.Add(chkShowPass);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
             Controls.Add(btnLogin);
             Controls.Add(lblProceed);
             Controls.Add(lblGoToR);
-            Controls.Add(txtPassword);
-            Controls.Add(txtUsername);
-            Controls.Add(lblPassword);
-            Controls.Add(lblUsername);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(1920, 1040);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
+            TransparencyKey = Color.Fuchsia;
+            Load += Login_Load;
+            ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label lblUsername;
-        private Label lblPassword;
-        private TextBox txtUsername;
-        private TextBox txtPassword;
         private Label lblGoToR;
         private Label lblProceed;
-        private Button btnLogin;
-        private CheckBox chkShowPass;
+        private ReaLTaiizor.Controls.MaterialButton btnLogin;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtUsername;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPassword;
+        private ReaLTaiizor.Controls.CyberCheckBox chkShowPass;
+        private Label lblLOGIN;
+        private Label label1;
+        private Label lblUsernameError;
+        private Label lblPasswordError;
+        private PictureBox picClose;
+        private PictureBox picBack;
     }
 }
