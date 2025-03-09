@@ -47,15 +47,6 @@ namespace Peak_Performance_V1._0
 
         private void Login_Load(object sender, EventArgs e)
         {
-            //set realtaiizor materialskin theme
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(ReaLTaiizor.Colors.MaterialPrimary.Orange700, ReaLTaiizor.Colors.MaterialPrimary.Orange800, ReaLTaiizor.Colors.MaterialPrimary.Orange900, ReaLTaiizor.Colors.MaterialAccent.Orange700, ReaLTaiizor.Util.MaterialTextShade.WHITE);
-
-            txtUsername.Font = new Font("Comic Sans MS", 14, FontStyle.Bold);
-            txtUsername.ForeColor = Color.Red;
-            txtUsername.Refresh();
-
 
             txtPassword.PasswordChar = '•'; //hide password by default
         }

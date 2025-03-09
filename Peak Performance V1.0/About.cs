@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReaLTaiizor.Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,18 @@ namespace Peak_Performance_V1._0
         {
             InitializeComponent();
         }
+
+        private void picBack_Click(object sender, EventArgs e)
+        {
+            MainLR mainLR = new MainLR();
+            mainLR.Show();
+            this.Hide();
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

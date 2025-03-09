@@ -28,157 +28,335 @@
         /// </summary>
         private void InitializeComponent()
         {
-            HomeMenu = new MenuStrip();
-            homeToolStripMenuItem = new ToolStripMenuItem();
-            loginToolStripMenuItem = new ToolStripMenuItem();
-            registerToolStripMenuItem = new ToolStripMenuItem();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainLR));
             lblMainTitle = new Label();
-            lblMotto = new Label();
-            lblProceed = new Label();
-            lblGoToL = new Label();
-            label1 = new Label();
             lblGoToR = new Label();
-            HomeMenu.SuspendLayout();
+            lblGoToL = new Label();
+            picClose = new PictureBox();
+            btnAbout = new ReaLTaiizor.Controls.CyberButton();
+            Gauge = new ReaLTaiizor.Controls.ParrotGauge();
+            pictureBox1 = new PictureBox();
+            picCar = new PictureBox();
+            tmrMove = new System.Windows.Forms.Timer(components);
+            picVan = new PictureBox();
+            picMotor = new PictureBox();
+            picF1 = new PictureBox();
+            tmrGauge = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picVan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picMotor).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picF1).BeginInit();
             SuspendLayout();
-            // 
-            // HomeMenu
-            // 
-            HomeMenu.Dock = DockStyle.Left;
-            HomeMenu.Items.AddRange(new ToolStripItem[] { homeToolStripMenuItem, loginToolStripMenuItem, registerToolStripMenuItem, aboutToolStripMenuItem, exitToolStripMenuItem });
-            HomeMenu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            HomeMenu.Location = new Point(0, 0);
-            HomeMenu.Name = "HomeMenu";
-            HomeMenu.Size = new Size(76, 561);
-            HomeMenu.TabIndex = 0;
-            HomeMenu.Text = "menuStrip1";
-            // 
-            // homeToolStripMenuItem
-            // 
-            homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            homeToolStripMenuItem.Size = new Size(63, 23);
-            homeToolStripMenuItem.Text = "Home";
-            // 
-            // loginToolStripMenuItem
-            // 
-            loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(63, 23);
-            loginToolStripMenuItem.Text = "Login";
-            loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
-            // 
-            // registerToolStripMenuItem
-            // 
-            registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            registerToolStripMenuItem.Size = new Size(63, 23);
-            registerToolStripMenuItem.Text = "Register";
-            registerToolStripMenuItem.Click += registerToolStripMenuItem_Click;
-            // 
-            // aboutToolStripMenuItem
-            // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(63, 23);
-            aboutToolStripMenuItem.Text = "About";
-            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
-            // 
-            // exitToolStripMenuItem
-            // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(63, 23);
-            exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // lblMainTitle
             // 
             lblMainTitle.AutoSize = true;
-            lblMainTitle.Location = new Point(203, 98);
+            lblMainTitle.BackColor = Color.Transparent;
+            lblMainTitle.Font = new Font("Copperplate Gothic Bold", 36F);
+            lblMainTitle.Location = new Point(31, 126);
             lblMainTitle.Name = "lblMainTitle";
-            lblMainTitle.Size = new Size(218, 19);
+            lblMainTitle.Size = new Size(538, 106);
             lblMainTitle.TabIndex = 1;
-            lblMainTitle.Text = "Peak Performance | Vehicle Rentals";
-            // 
-            // lblMotto
-            // 
-            lblMotto.AutoSize = true;
-            lblMotto.Location = new Point(230, 130);
-            lblMotto.Name = "lblMotto";
-            lblMotto.Size = new Size(157, 19);
-            lblMotto.TabIndex = 2;
-            lblMotto.Text = "--- Rent Ride Repeat ---";
-            // 
-            // lblProceed
-            // 
-            lblProceed.AutoSize = true;
-            lblProceed.Location = new Point(147, 444);
-            lblProceed.Name = "lblProceed";
-            lblProceed.Size = new Size(165, 19);
-            lblProceed.TabIndex = 16;
-            lblProceed.Text = "Already have an account?";
-            // 
-            // lblGoToL
-            // 
-            lblGoToL.AutoSize = true;
-            lblGoToL.Location = new Point(173, 473);
-            lblGoToL.Name = "lblGoToL";
-            lblGoToL.Size = new Size(113, 19);
-            lblGoToL.TabIndex = 15;
-            lblGoToL.Text = "Proceed to Login";
-            lblGoToL.Click += lblGoToL_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(353, 444);
-            label1.Name = "label1";
-            label1.Size = new Size(176, 19);
-            label1.TabIndex = 18;
-            label1.Text = "Don't have an account yet?";
+            lblMainTitle.Text = "Peak Performance\r\nVehicle Rentals";
+            lblMainTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblGoToR
             // 
             lblGoToR.AutoSize = true;
-            lblGoToR.Location = new Point(381, 473);
+            lblGoToR.BackColor = Color.Transparent;
+            lblGoToR.Cursor = Cursors.Hand;
+            lblGoToR.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGoToR.ForeColor = Color.White;
+            lblGoToR.Location = new Point(111, 492);
             lblGoToR.Name = "lblGoToR";
-            lblGoToR.Size = new Size(122, 19);
-            lblGoToR.TabIndex = 17;
-            lblGoToR.Text = "Create an Account";
+            lblGoToR.Size = new Size(96, 28);
+            lblGoToR.TabIndex = 5;
+            lblGoToR.Text = "REGISTER";
+            lblGoToR.TextAlign = ContentAlignment.MiddleCenter;
             lblGoToR.Click += lblGoToR_Click;
             // 
-            // Home
+            // lblGoToL
+            // 
+            lblGoToL.AutoSize = true;
+            lblGoToL.BackColor = Color.Transparent;
+            lblGoToL.Cursor = Cursors.Hand;
+            lblGoToL.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGoToL.ForeColor = Color.White;
+            lblGoToL.Location = new Point(401, 492);
+            lblGoToL.Name = "lblGoToL";
+            lblGoToL.Size = new Size(65, 28);
+            lblGoToL.TabIndex = 31;
+            lblGoToL.Text = "LOGIN";
+            lblGoToL.TextAlign = ContentAlignment.MiddleCenter;
+            lblGoToL.Click += lblGoToL_Click;
+            // 
+            // picClose
+            // 
+            picClose.BackColor = Color.Transparent;
+            picClose.BackgroundImage = Properties.Resources.Close2;
+            picClose.BackgroundImageLayout = ImageLayout.Stretch;
+            picClose.Cursor = Cursors.Hand;
+            picClose.Location = new Point(568, 12);
+            picClose.Name = "picClose";
+            picClose.Size = new Size(20, 20);
+            picClose.TabIndex = 32;
+            picClose.TabStop = false;
+            picClose.Click += picClose_Click;
+            // 
+            // btnAbout
+            // 
+            btnAbout.Alpha = 20;
+            btnAbout.BackColor = Color.Transparent;
+            btnAbout.Background = true;
+            btnAbout.Background_WidthPen = 1F;
+            btnAbout.BackgroundPen = true;
+            btnAbout.ColorBackground = Color.Transparent;
+            btnAbout.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnAbout.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnAbout.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnAbout.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnAbout.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnAbout.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnAbout.Cursor = Cursors.Hand;
+            btnAbout.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnAbout.Effect_1 = true;
+            btnAbout.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnAbout.Effect_1_Transparency = 25;
+            btnAbout.Effect_2 = true;
+            btnAbout.Effect_2_ColorBackground = Color.White;
+            btnAbout.Effect_2_Transparency = 20;
+            btnAbout.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAbout.ForeColor = Color.White;
+            btnAbout.Lighting = false;
+            btnAbout.LinearGradient_Background = false;
+            btnAbout.LinearGradientPen = false;
+            btnAbout.Location = new Point(186, 250);
+            btnAbout.Name = "btnAbout";
+            btnAbout.PenWidth = 15;
+            btnAbout.RGB = true;
+            btnAbout.Rounding = true;
+            btnAbout.RoundingInt = 70;
+            btnAbout.Size = new Size(218, 33);
+            btnAbout.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnAbout.TabIndex = 33;
+            btnAbout.Tag = "Cyber";
+            btnAbout.TextButton = "--- Rent Ride Repeat ---";
+            btnAbout.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnAbout.Timer_Effect_1 = 5;
+            btnAbout.Timer_RGB = 100;
+            btnAbout.Click += btnAbout_Click;
+            // 
+            // Gauge
+            // 
+            Gauge.BackColor = Color.Transparent;
+            Gauge.BarColor = (List<Color>)resources.GetObject("Gauge.BarColor");
+            Gauge.ConsumptionColor = Color.Black;
+            Gauge.DialColor = Color.Black;
+            Gauge.DialThickness = 5;
+            Gauge.FilledColor = Color.White;
+            Gauge.GaugeStyle = ReaLTaiizor.Controls.ParrotGauge.Style.Standard;
+            Gauge.Location = new Point(132, 63);
+            Gauge.Name = "Gauge";
+            Gauge.Percentage = 10;
+            Gauge.Size = new Size(133, 60);
+            Gauge.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            Gauge.TabIndex = 34;
+            Gauge.Text = "parrotGauge1";
+            Gauge.Thickness = 8;
+            Gauge.UnfilledColor = Color.Gray;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.SteeringWheel2;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(317, 139);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(34, 31);
+            pictureBox1.TabIndex = 35;
+            pictureBox1.TabStop = false;
+            // 
+            // picCar
+            // 
+            picCar.BackColor = Color.Transparent;
+            picCar.BackgroundImage = Properties.Resources.Car___MainLR3;
+            picCar.BackgroundImageLayout = ImageLayout.Stretch;
+            picCar.Location = new Point(189, 351);
+            picCar.Name = "picCar";
+            picCar.Size = new Size(130, 130);
+            picCar.TabIndex = 36;
+            picCar.TabStop = false;
+            // 
+            // tmrMove
+            // 
+            tmrMove.Enabled = true;
+            tmrMove.Interval = 10;
+            tmrMove.Tick += tmrMove_Tick;
+            // 
+            // picVan
+            // 
+            picVan.BackColor = Color.Transparent;
+            picVan.BackgroundImage = Properties.Resources.Van;
+            picVan.BackgroundImageLayout = ImageLayout.Stretch;
+            picVan.Location = new Point(31, 324);
+            picVan.Name = "picVan";
+            picVan.Size = new Size(150, 150);
+            picVan.TabIndex = 37;
+            picVan.TabStop = false;
+            // 
+            // picMotor
+            // 
+            picMotor.BackColor = Color.Transparent;
+            picMotor.BackgroundImage = Properties.Resources.Motor;
+            picMotor.BackgroundImageLayout = ImageLayout.Stretch;
+            picMotor.Location = new Point(328, 358);
+            picMotor.Name = "picMotor";
+            picMotor.Size = new Size(100, 100);
+            picMotor.TabIndex = 38;
+            picMotor.TabStop = false;
+            // 
+            // picF1
+            // 
+            picF1.BackColor = Color.Transparent;
+            picF1.BackgroundImage = Properties.Resources.F1;
+            picF1.BackgroundImageLayout = ImageLayout.Stretch;
+            picF1.Location = new Point(443, 357);
+            picF1.Name = "picF1";
+            picF1.Size = new Size(125, 125);
+            picF1.TabIndex = 39;
+            picF1.TabStop = false;
+            // 
+            // tmrGauge
+            // 
+            tmrGauge.Enabled = true;
+            tmrGauge.Interval = 1000;
+            tmrGauge.Tick += tmrGauge_Tick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Silver;
+            label1.Location = new Point(271, 112);
+            label1.Name = "label1";
+            label1.Size = new Size(28, 14);
+            label1.TabIndex = 40;
+            label1.Text = "400";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Silver;
+            label2.Location = new Point(121, 112);
+            label2.Name = "label2";
+            label2.Size = new Size(14, 14);
+            label2.TabIndex = 41;
+            label2.Text = "0";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Silver;
+            label3.Location = new Point(129, 71);
+            label3.Name = "label3";
+            label3.Size = new Size(28, 14);
+            label3.TabIndex = 42;
+            label3.Text = "100";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Silver;
+            label4.Location = new Point(186, 50);
+            label4.Name = "label4";
+            label4.Size = new Size(28, 14);
+            label4.TabIndex = 43;
+            label4.Text = "200";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Silver;
+            label5.Location = new Point(247, 71);
+            label5.Name = "label5";
+            label5.Size = new Size(28, 14);
+            label5.TabIndex = 44;
+            label5.Text = "300";
+            // 
+            // MainLR
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(584, 561);
+            BackgroundImage = Properties.Resources.LoginRegister2;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(600, 600);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(lblGoToR);
-            Controls.Add(lblProceed);
+            Controls.Add(picF1);
+            Controls.Add(picMotor);
+            Controls.Add(picVan);
+            Controls.Add(pictureBox1);
+            Controls.Add(btnAbout);
+            Controls.Add(picClose);
             Controls.Add(lblGoToL);
-            Controls.Add(lblMotto);
+            Controls.Add(lblGoToR);
             Controls.Add(lblMainTitle);
-            Controls.Add(HomeMenu);
-            MainMenuStrip = HomeMenu;
-            Name = "Home";
+            Controls.Add(Gauge);
+            Controls.Add(picCar);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "MainLR";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            HomeMenu.ResumeLayout(false);
-            HomeMenu.PerformLayout();
+            Load += MainLR_Load;
+            ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picVan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picMotor).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picF1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private MenuStrip HomeMenu;
-        private ToolStripMenuItem homeToolStripMenuItem;
-        private ToolStripMenuItem loginToolStripMenuItem;
-        private ToolStripMenuItem registerToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
         private Label lblMainTitle;
-        private Label lblMotto;
-        private Label lblProceed;
-        private Label lblGoToL;
-        private Label label1;
         private Label lblGoToR;
+        private Label lblGoToL;
+        private PictureBox picClose;
+        private ReaLTaiizor.Controls.CyberButton btnAbout;
+        private ReaLTaiizor.Controls.ParrotGauge Gauge;
+        private PictureBox pictureBox1;
+        private PictureBox picCar;
+        private System.Windows.Forms.Timer tmrMove;
+        private PictureBox picVan;
+        private PictureBox picMotor;
+        private PictureBox picF1;
+        private System.Windows.Forms.Timer tmrGauge;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }

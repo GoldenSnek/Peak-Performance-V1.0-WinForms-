@@ -21,14 +21,14 @@ namespace Peak_Performance_V1._0
         public Register()
         {
             InitializeComponent();
-            txtPassword.PasswordChar = '*'; //hide password by default
-            txtConPass.PasswordChar = '*'; //hide password by default
+            txtPassword.PasswordChar = '•'; //hide password by default
+            txtConPass.PasswordChar = '•'; //hide password by default
         }
 
         private void btnRegister_Click(object sender, EventArgs e) //MAIN EVENT, Register
         {
             string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            string password = txtUsername.Text;
             string role = rbtnClient.Checked ? "Client" : "Vehicle Provider";
             string confirmPassword = txtConPass.Text;
 
@@ -93,9 +93,9 @@ namespace Peak_Performance_V1._0
         private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT, show/hide password
         {
             if (chkShowPass.Checked)
-                txtPassword.PasswordChar = '\0';
+                txtPassword.PasswordChar = '•';
             else
-                txtPassword.PasswordChar = '*';
+                txtPassword.PasswordChar = '\0';
         }
 
         private void lblGoToL_Click(object sender, EventArgs e) //EVENT, go back to Login
@@ -103,6 +103,30 @@ namespace Peak_Performance_V1._0
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void picBack_Click(object sender, EventArgs e)
+        {
+            MainLR mainLR = new MainLR();
+            mainLR.Show();
+            this.Hide();
+        }
+
+        private void rbtnClient_Click(object sender, EventArgs e)
+        {
+            if (rbtnProvider.Checked)
+                rbtnProvider.Checked = false;
+        }
+
+        private void rbtnProvider_Click(object sender, EventArgs e)
+        {
+            if (rbtnClient.Checked)
+                rbtnClient.Checked = false;
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             lblGoToR = new Label();
             lblProceed = new Label();
             btnLogin = new ReaLTaiizor.Controls.MaterialButton();
@@ -49,13 +48,15 @@
             // 
             lblGoToR.AutoSize = true;
             lblGoToR.BackColor = Color.Transparent;
-            lblGoToR.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblGoToR.ForeColor = Color.Blue;
-            lblGoToR.Location = new Point(218, 544);
+            lblGoToR.Cursor = Cursors.Hand;
+            lblGoToR.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGoToR.ForeColor = Color.FromArgb(255, 128, 0);
+            lblGoToR.Location = new Point(212, 537);
             lblGoToR.Name = "lblGoToR";
-            lblGoToR.Size = new Size(159, 18);
+            lblGoToR.Size = new Size(162, 28);
             lblGoToR.TabIndex = 4;
             lblGoToR.Text = "Create an Account";
+            lblGoToR.TextAlign = ContentAlignment.MiddleCenter;
             lblGoToR.Click += lblGoToR_Click;
             // 
             // lblProceed
@@ -63,17 +64,20 @@
             lblProceed.AutoSize = true;
             lblProceed.BackColor = Color.Transparent;
             lblProceed.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProceed.ForeColor = Color.White;
             lblProceed.Location = new Point(186, 519);
             lblProceed.Name = "lblProceed";
             lblProceed.Size = new Size(225, 18);
             lblProceed.TabIndex = 15;
             lblProceed.Text = "Don't have an account yet?";
+            lblProceed.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLogin
             // 
             btnLogin.AutoSize = false;
             btnLogin.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnLogin.BackColor = Color.White;
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnLogin.Depth = 0;
             btnLogin.HighEmphasis = true;
@@ -168,6 +172,7 @@
             chkShowPass.ColorChecked = Color.FromArgb(255, 128, 0);
             chkShowPass.ColorPen_1 = Color.FromArgb(37, 52, 68);
             chkShowPass.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            chkShowPass.Cursor = Cursors.Hand;
             chkShowPass.CyberCheckBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             chkShowPass.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
             chkShowPass.Effect_1_Transparency = 25;
@@ -178,11 +183,11 @@
             chkShowPass.ForeColor = Color.FromArgb(245, 245, 245);
             chkShowPass.LinearGradient_Background = false;
             chkShowPass.LinearGradientPen = false;
-            chkShowPass.Location = new Point(271, 351);
+            chkShowPass.Location = new Point(271, 324);
             chkShowPass.Name = "chkShowPass";
             chkShowPass.RGB = false;
             chkShowPass.Rounding = true;
-            chkShowPass.RoundingInt = 100;
+            chkShowPass.RoundingInt = 50;
             chkShowPass.Size = new Size(154, 45);
             chkShowPass.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             chkShowPass.TabIndex = 23;
@@ -197,11 +202,11 @@
             // 
             lblLOGIN.AutoSize = true;
             lblLOGIN.BackColor = Color.Transparent;
-            lblLOGIN.Font = new Font("Arial Rounded MT Bold", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLOGIN.ForeColor = Color.FromArgb(255, 128, 0);
-            lblLOGIN.Location = new Point(230, 46);
+            lblLOGIN.Font = new Font("Copperplate Gothic Bold", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLOGIN.ForeColor = Color.Black;
+            lblLOGIN.Location = new Point(198, 43);
             lblLOGIN.Name = "lblLOGIN";
-            lblLOGIN.Size = new Size(139, 43);
+            lblLOGIN.Size = new Size(197, 53);
             lblLOGIN.TabIndex = 24;
             lblLOGIN.Text = "LOGIN";
             // 
@@ -247,11 +252,12 @@
             // picClose
             // 
             picClose.BackColor = Color.Transparent;
-            picClose.BackgroundImage = Properties.Resources.Close;
+            picClose.BackgroundImage = Properties.Resources.Close2;
             picClose.BackgroundImageLayout = ImageLayout.Stretch;
-            picClose.Location = new Point(558, 12);
+            picClose.Cursor = Cursors.Hand;
+            picClose.Location = new Point(565, 15);
             picClose.Name = "picClose";
-            picClose.Size = new Size(30, 30);
+            picClose.Size = new Size(20, 20);
             picClose.TabIndex = 28;
             picClose.TabStop = false;
             picClose.Click += picClose_Click;
@@ -259,8 +265,9 @@
             // picBack
             // 
             picBack.BackColor = Color.Transparent;
-            picBack.BackgroundImage = Properties.Resources.Back;
+            picBack.BackgroundImage = Properties.Resources.Back2;
             picBack.BackgroundImageLayout = ImageLayout.Stretch;
+            picBack.Cursor = Cursors.Hand;
             picBack.Location = new Point(12, 12);
             picBack.Name = "picBack";
             picBack.Size = new Size(30, 30);
@@ -273,7 +280,7 @@
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = SystemColors.Control;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.LoginRegister2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
             Controls.Add(picBack);
