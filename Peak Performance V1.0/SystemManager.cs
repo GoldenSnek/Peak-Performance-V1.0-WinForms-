@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Data.OleDb;
 
+//NuGet UI packages
+using ReaLTaiizor;          // Core namespace
+using ReaLTaiizor.Manager;
+using ReaLTaiizor.Controls; // For custom controls like buttons, labels, etc.
+using ReaLTaiizor.Forms;    // For using Taiizor-styled forms
+using ReaLTaiizor.Enum;     // For enumerations (e.g., themes, styles)
+
 namespace Peak_Performance_V1._0
 {
     internal class SystemManager
@@ -13,9 +20,9 @@ namespace Peak_Performance_V1._0
         private static readonly string dbPath = @"|DataDirectory|\PeakPerformanceDB.accdb";
         private static readonly string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};Persist Security Info=False;";
 
-        public static int currentUserID; //store logged-in UserID
-        public static string? currentUsername; //store logged-in Username
-        public static string? currentRole; //store logged-in Role
+        public static int currentUserID = 0; //store logged-in UserID
+        public static string? currentUsername = null; //store logged-in Username
+        public static string? currentRole = null; //store logged-in Role
 
         public static OleDbConnection GetConnection() //SUPPORTING METHOD for Database Connection
         {
@@ -32,6 +39,14 @@ namespace Peak_Performance_V1._0
                     builder.Append(b.ToString("x2"));
                 return builder.ToString();
             }
+        }
+
+        public static void LoadMaterialTheme()
+        {
+            //set realtaiizor materialskin theme
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(ReaLTaiizor.Colors.MaterialPrimary.Orange700, ReaLTaiizor.Colors.MaterialPrimary.Orange800, ReaLTaiizor.Colors.MaterialPrimary.Orange900, ReaLTaiizor.Colors.MaterialAccent.Orange700, ReaLTaiizor.Util.MaterialTextShade.WHITE);
         }
     }
 }

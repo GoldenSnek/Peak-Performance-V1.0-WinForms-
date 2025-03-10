@@ -39,7 +39,7 @@
             // lblVehicleDetails
             // 
             lblVehicleDetails.AutoSize = true;
-            lblVehicleDetails.Location = new Point(339, 358);
+            lblVehicleDetails.Location = new Point(70, 329);
             lblVehicleDetails.Name = "lblVehicleDetails";
             lblVehicleDetails.Size = new Size(96, 19);
             lblVehicleDetails.TabIndex = 3;
@@ -47,7 +47,7 @@
             // 
             // btnReceipt
             // 
-            btnReceipt.Location = new Point(1018, 695);
+            btnReceipt.Location = new Point(601, 660);
             btnReceipt.Name = "btnReceipt";
             btnReceipt.Size = new Size(75, 23);
             btnReceipt.TabIndex = 4;
@@ -56,7 +56,7 @@
             // 
             // picCurrentlyRenting
             // 
-            picCurrentlyRenting.Location = new Point(595, 122);
+            picCurrentlyRenting.Location = new Point(326, 93);
             picCurrentlyRenting.Name = "picCurrentlyRenting";
             picCurrentlyRenting.Size = new Size(150, 150);
             picCurrentlyRenting.TabIndex = 5;
@@ -65,7 +65,7 @@
             // lblOwnerDetails
             // 
             lblOwnerDetails.AutoSize = true;
-            lblOwnerDetails.Location = new Point(604, 358);
+            lblOwnerDetails.Location = new Point(335, 329);
             lblOwnerDetails.Name = "lblOwnerDetails";
             lblOwnerDetails.Size = new Size(141, 19);
             lblOwnerDetails.TabIndex = 6;
@@ -74,7 +74,7 @@
             // lblRentalDetails
             // 
             lblRentalDetails.AutoSize = true;
-            lblRentalDetails.Location = new Point(870, 358);
+            lblRentalDetails.Location = new Point(601, 329);
             lblRentalDetails.Name = "lblRentalDetails";
             lblRentalDetails.Size = new Size(138, 19);
             lblRentalDetails.TabIndex = 7;
@@ -84,12 +84,13 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1184, 761);
+            ClientSize = new Size(984, 754);
             Controls.Add(lblRentalDetails);
             Controls.Add(lblOwnerDetails);
             Controls.Add(picCurrentlyRenting);
             Controls.Add(btnReceipt);
             Controls.Add(lblVehicleDetails);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ClientViewRental";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ClientViewRental";

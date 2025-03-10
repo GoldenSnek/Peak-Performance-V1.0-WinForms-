@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Peak_Performance_V1._0
 {
@@ -44,13 +46,13 @@ namespace Peak_Performance_V1._0
 
             if (SystemManager.currentRole == "Vehicle Provider")
             {
-                addRentableVehicleToolStripMenuItem.Visible = true;
-                updateVehiclesToolStripMenuItem.Visible = true;
+                //addRentableVehicleToolStripMenuItem.Visible = true;
+                //updateVehiclesToolStripMenuItem.Visible = true;
             }
             else if (SystemManager.currentRole == "Client")
             {
-                addRentableVehicleToolStripMenuItem.Visible = false;
-                updateVehiclesToolStripMenuItem.Visible = false;
+                //addRentableVehicleToolStripMenuItem.Visible = false;
+                //updateVehiclesToolStripMenuItem.Visible = false;
             }
             else
             {
@@ -58,8 +60,26 @@ namespace Peak_Performance_V1._0
             }
         }
 
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(childForm);
+            pnlForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void tmrClock_Tick(object sender, EventArgs e) //SUPPORTING EVENT to refresh the time and images every second
         {
+            int scrollPos = pnlSideMenu.VerticalScroll.Value; // Save scroll position
+            pnlSideMenu.SuspendLayout(); // Temporarily stop UI updates
+
             //update the label with the current date and time
             DateTime now = DateTime.Now;
             lblTime.Text = now.ToString("HH:mm:ss");
@@ -81,52 +101,82 @@ namespace Peak_Performance_V1._0
                     picNight.Visible = true;
                 }
             }
+
+            pnlSideMenu.ResumeLayout(); // Resume layout updates
+            pnlSideMenu.PerformLayout();
+            // Restore scroll position
+            pnlSideMenu.AutoScrollPosition = new Point(0, scrollPos);
         }
 
-        private void viewAllVehiclesToolStripMenuItem_Click(object sender, EventArgs e) //MENUSTRIP EVENT 1 both
+        private void btnHome_Click(object sender, EventArgs e)
         {
-            ViewAllVehicles view = new ViewAllVehicles();
-            view.Show();
-            this.Hide();
+            if (activeForm != null)
+                activeForm.Close();
         }
 
-        private void viewRentalDetailsToolStripMenuItem_Click(object sender, EventArgs e) //MENUSTRIP EVENT 2 both
+        private void btnAllVehicles_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ViewAllVehicles());
+        }
+
+        private void btnRentalDetails_Click(object sender, EventArgs e)
+        {
+            //openChildForm(new ClientViewRental());
+            //openChildForm(new ProviderViewRental());
+        }
+
+        private void btnAddVehicles_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProviderAddVehicle());
+        }
+
+        private void btnUpdateVehicles_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProviderEditVehicle());
+        }
+
+        private void btnManageAccount_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ManageAccount());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
         {
 
+            if (btnLogout.BackColor == Color.Red)
+            {
+                MainLR mainLR = new MainLR();
+                mainLR.Show();
+                this.Hide();
+            }
+            else
+                btnLogout.BackColor = Color.Red;
         }
 
-        private void addRentableVehicleToolStripMenuItem_Click(object sender, EventArgs e) //MENUSTRIP EVENT 3 provider specific
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            ProviderAddVehicle addVehicle = new ProviderAddVehicle();
-            addVehicle.Show();
-            this.Hide();
+            
+
+            if (btnExit.BackColor == Color.Red)
+                Application.Exit();
+            else
+                btnExit.BackColor = Color.Red;
         }
 
-        private void updateVehiclesToolStripMenuItem_Click(object sender, EventArgs e) //MENUSTRIP EVENT 4 provider specific
+        private void picMin_Click(object sender, EventArgs e)
+        { 
+            if (this.WindowState != FormWindowState.Minimized)
+                this.WindowState = FormWindowState.Minimized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void picMax_Click(object sender, EventArgs e)
         {
-            ProviderEditVehicle edit = new ProviderEditVehicle();
-            edit.Show();
-            this.Hide();
+            if (this.WindowState != FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
         }
-
-        private void manageAccountDetailsToolStripMenuItem_Click(object sender, EventArgs e) //MENUSTRIP EVENT 5 both
-        {
-            ManageAccount manage = new ManageAccount();
-            manage.Show();
-            this.Hide();
-        }
-
-        private void lOGOUTToolStripMenuItem_Click(object sender, EventArgs e) //MENUSTRIP EVENT 6 both
-        {
-            MainLR home = new MainLR();
-            home.Show();
-            this.Hide();
-        }
-
-        private void eXITToolStripMenuItem_Click(object sender, EventArgs e) //MENUSTRIP EVENT 7 both
-        {
-            Application.Exit();
-        }
-
     }
 }

@@ -36,7 +36,7 @@
             // flpWaitingApproval
             // 
             flpWaitingApproval.AutoScroll = true;
-            flpWaitingApproval.Location = new Point(216, 55);
+            flpWaitingApproval.Location = new Point(66, 58);
             flpWaitingApproval.Name = "flpWaitingApproval";
             flpWaitingApproval.Size = new Size(352, 650);
             flpWaitingApproval.TabIndex = 1;
@@ -44,7 +44,7 @@
             // flpCurrentlyRented
             // 
             flpCurrentlyRented.AutoScroll = true;
-            flpCurrentlyRented.Location = new Point(594, 55);
+            flpCurrentlyRented.Location = new Point(444, 58);
             flpCurrentlyRented.Name = "flpCurrentlyRented";
             flpCurrentlyRented.Size = new Size(352, 650);
             flpCurrentlyRented.TabIndex = 2;
@@ -52,7 +52,7 @@
             // lblStatistics
             // 
             lblStatistics.AutoSize = true;
-            lblStatistics.Location = new Point(1023, 87);
+            lblStatistics.Location = new Point(873, 90);
             lblStatistics.Name = "lblStatistics";
             lblStatistics.Size = new Size(62, 19);
             lblStatistics.TabIndex = 3;
@@ -62,10 +62,11 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1184, 761);
+            ClientSize = new Size(984, 754);
             Controls.Add(lblStatistics);
             Controls.Add(flpCurrentlyRented);
             Controls.Add(flpWaitingApproval);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ProviderViewRental";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProviderViewRental";

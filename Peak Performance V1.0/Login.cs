@@ -26,13 +26,6 @@ using ReaLTaiizor.Enum;     // For enumerations (e.g., themes, styles)
 
 
 
-
-
-
-
-
-
-
 namespace Peak_Performance_V1._0
 {
     public partial class Login : Form
@@ -139,7 +132,7 @@ namespace Peak_Performance_V1._0
 
         private void picClose_Click(object sender, EventArgs e)
         {
-            Application.Exit(); ;
+            Application.Exit();
         }
 
         private void picBack_Click(object sender, EventArgs e)

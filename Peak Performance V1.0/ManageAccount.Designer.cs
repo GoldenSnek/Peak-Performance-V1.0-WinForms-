@@ -57,7 +57,7 @@
             // 
             // picProfilePicture
             // 
-            picProfilePicture.Location = new Point(519, 85);
+            picProfilePicture.Location = new Point(347, 96);
             picProfilePicture.Name = "picProfilePicture";
             picProfilePicture.Size = new Size(150, 150);
             picProfilePicture.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -66,7 +66,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(789, 637);
+            btnSave.Location = new Point(617, 648);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(126, 23);
             btnSave.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(950, 637);
+            btnDelete.Location = new Point(778, 648);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(140, 23);
             btnDelete.TabIndex = 2;
@@ -84,7 +84,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(621, 637);
+            btnClear.Location = new Point(449, 648);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(126, 23);
             btnClear.TabIndex = 3;
@@ -95,7 +95,7 @@
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(561, 268);
+            lblUsername.Location = new Point(389, 279);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(71, 19);
             lblUsername.TabIndex = 4;
@@ -104,7 +104,7 @@
             // lblRole
             // 
             lblRole.AutoSize = true;
-            lblRole.Location = new Point(712, 268);
+            lblRole.Location = new Point(540, 279);
             lblRole.Name = "lblRole";
             lblRole.Size = new Size(35, 19);
             lblRole.TabIndex = 5;
@@ -113,7 +113,7 @@
             // lblUserID
             // 
             lblUserID.AutoSize = true;
-            lblUserID.Location = new Point(438, 268);
+            lblUserID.Location = new Point(266, 279);
             lblUserID.Name = "lblUserID";
             lblUserID.Size = new Size(55, 19);
             lblUserID.TabIndex = 6;
@@ -122,7 +122,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(313, 551);
+            lblEmail.Location = new Point(141, 562);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(94, 19);
             lblEmail.TabIndex = 7;
@@ -131,7 +131,7 @@
             // lblNumber
             // 
             lblNumber.AutoSize = true;
-            lblNumber.Location = new Point(313, 589);
+            lblNumber.Location = new Point(141, 600);
             lblNumber.Name = "lblNumber";
             lblNumber.Size = new Size(111, 19);
             lblNumber.TabIndex = 8;
@@ -140,7 +140,7 @@
             // lblFullname
             // 
             lblFullname.AutoSize = true;
-            lblFullname.Location = new Point(311, 351);
+            lblFullname.Location = new Point(139, 362);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(70, 19);
             lblFullname.TabIndex = 9;
@@ -149,7 +149,7 @@
             // lblAddress
             // 
             lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(311, 400);
+            lblAddress.Location = new Point(139, 411);
             lblAddress.Name = "lblAddress";
             lblAddress.Size = new Size(58, 19);
             lblAddress.TabIndex = 10;
@@ -158,7 +158,7 @@
             // lblBirthday
             // 
             lblBirthday.AutoSize = true;
-            lblBirthday.Location = new Point(309, 448);
+            lblBirthday.Location = new Point(137, 459);
             lblBirthday.Name = "lblBirthday";
             lblBirthday.Size = new Size(60, 19);
             lblBirthday.TabIndex = 11;
@@ -167,7 +167,7 @@
             // lblLicenseID
             // 
             lblLicenseID.AutoSize = true;
-            lblLicenseID.Location = new Point(313, 502);
+            lblLicenseID.Location = new Point(141, 513);
             lblLicenseID.Name = "lblLicenseID";
             lblLicenseID.Size = new Size(118, 19);
             lblLicenseID.TabIndex = 12;
@@ -176,7 +176,7 @@
             // lblTotalRentals
             // 
             lblTotalRentals.AutoSize = true;
-            lblTotalRentals.Location = new Point(699, 381);
+            lblTotalRentals.Location = new Point(527, 392);
             lblTotalRentals.Name = "lblTotalRentals";
             lblTotalRentals.Size = new Size(82, 19);
             lblTotalRentals.TabIndex = 14;
@@ -185,7 +185,7 @@
             // lblRating
             // 
             lblRating.AutoSize = true;
-            lblRating.Location = new Point(699, 341);
+            lblRating.Location = new Point(527, 352);
             lblRating.Name = "lblRating";
             lblRating.Size = new Size(48, 19);
             lblRating.TabIndex = 13;
@@ -193,49 +193,49 @@
             // 
             // txtFullname
             // 
-            txtFullname.Location = new Point(460, 351);
+            txtFullname.Location = new Point(288, 362);
             txtFullname.Name = "txtFullname";
             txtFullname.Size = new Size(100, 26);
             txtFullname.TabIndex = 15;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(460, 400);
+            txtAddress.Location = new Point(288, 411);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(100, 26);
             txtAddress.TabIndex = 16;
             // 
             // txtBirthday
             // 
-            txtBirthday.Location = new Point(460, 448);
+            txtBirthday.Location = new Point(288, 459);
             txtBirthday.Name = "txtBirthday";
             txtBirthday.Size = new Size(100, 26);
             txtBirthday.TabIndex = 17;
             // 
             // txtLicenseID
             // 
-            txtLicenseID.Location = new Point(460, 502);
+            txtLicenseID.Location = new Point(288, 513);
             txtLicenseID.Name = "txtLicenseID";
             txtLicenseID.Size = new Size(100, 26);
             txtLicenseID.TabIndex = 18;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(460, 551);
+            txtEmail.Location = new Point(288, 562);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(100, 26);
             txtEmail.TabIndex = 19;
             // 
             // txtNumber
             // 
-            txtNumber.Location = new Point(460, 589);
+            txtNumber.Location = new Point(288, 600);
             txtNumber.Name = "txtNumber";
             txtNumber.Size = new Size(100, 26);
             txtNumber.TabIndex = 20;
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(712, 85);
+            btnBrowse.Location = new Point(540, 96);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(126, 23);
             btnBrowse.TabIndex = 21;
@@ -246,7 +246,7 @@
             // lblImagePath
             // 
             lblImagePath.AutoSize = true;
-            lblImagePath.Location = new Point(712, 179);
+            lblImagePath.Location = new Point(540, 190);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(37, 19);
             lblImagePath.TabIndex = 29;
@@ -254,7 +254,7 @@
             // 
             // btnClearPicture
             // 
-            btnClearPicture.Location = new Point(712, 126);
+            btnClearPicture.Location = new Point(540, 137);
             btnClearPicture.Name = "btnClearPicture";
             btnClearPicture.Size = new Size(126, 23);
             btnClearPicture.TabIndex = 30;
@@ -266,7 +266,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1184, 761);
+            ClientSize = new Size(984, 754);
             Controls.Add(btnClearPicture);
             Controls.Add(lblImagePath);
             Controls.Add(btnBrowse);
@@ -291,6 +291,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
             Controls.Add(picProfilePicture);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ManageAccount";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage Account";

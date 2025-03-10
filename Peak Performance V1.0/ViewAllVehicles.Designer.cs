@@ -32,30 +32,32 @@
             lblSearch = new Label();
             txtSearch = new TextBox();
             grpFilter = new GroupBox();
-            btnClear = new Button();
             btnApply = new Button();
+            btnClear = new Button();
             grpSort = new GroupBox();
+            rbtnDescending = new RadioButton();
+            rbtnAscending = new RadioButton();
+            label1 = new Label();
             button1 = new Button();
             button2 = new Button();
-            rbtnAscending = new RadioButton();
-            rbtnDescending = new RadioButton();
-            label1 = new Label();
             grpFilter.SuspendLayout();
             grpSort.SuspendLayout();
             SuspendLayout();
             // 
             // flpDisplay
             // 
+            flpDisplay.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpDisplay.AutoScroll = true;
-            flpDisplay.Location = new Point(254, 49);
+            flpDisplay.Location = new Point(44, 58);
             flpDisplay.Name = "flpDisplay";
             flpDisplay.Size = new Size(650, 650);
             flpDisplay.TabIndex = 0;
             // 
             // lblSearch
             // 
+            lblSearch.Anchor = AnchorStyles.Right;
             lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(948, 33);
+            lblSearch.Location = new Point(738, 42);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(49, 19);
             lblSearch.TabIndex = 1;
@@ -63,30 +65,23 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(948, 55);
+            txtSearch.Anchor = AnchorStyles.Right;
+            txtSearch.Location = new Point(738, 64);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(100, 26);
             txtSearch.TabIndex = 2;
             // 
             // grpFilter
             // 
+            grpFilter.Anchor = AnchorStyles.Right;
             grpFilter.Controls.Add(btnApply);
             grpFilter.Controls.Add(btnClear);
-            grpFilter.Location = new Point(948, 109);
+            grpFilter.Location = new Point(738, 118);
             grpFilter.Name = "grpFilter";
             grpFilter.Size = new Size(200, 420);
             grpFilter.TabIndex = 3;
             grpFilter.TabStop = false;
             grpFilter.Text = "Filter";
-            // 
-            // btnClear
-            // 
-            btnClear.Location = new Point(6, 379);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(75, 23);
-            btnClear.TabIndex = 0;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
             // 
             // btnApply
             // 
@@ -97,19 +92,61 @@
             btnApply.Text = "Apply";
             btnApply.UseVisualStyleBackColor = true;
             // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(6, 379);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 23);
+            btnClear.TabIndex = 0;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            // 
             // grpSort
             // 
+            grpSort.Anchor = AnchorStyles.Right;
             grpSort.Controls.Add(rbtnDescending);
             grpSort.Controls.Add(rbtnAscending);
             grpSort.Controls.Add(label1);
             grpSort.Controls.Add(button1);
             grpSort.Controls.Add(button2);
-            grpSort.Location = new Point(948, 535);
+            grpSort.Location = new Point(738, 544);
             grpSort.Name = "grpSort";
             grpSort.Size = new Size(200, 156);
             grpSort.TabIndex = 4;
             grpSort.TabStop = false;
             grpSort.Text = "Sort";
+            // 
+            // rbtnDescending
+            // 
+            rbtnDescending.AutoSize = true;
+            rbtnDescending.Location = new Point(59, 110);
+            rbtnDescending.Name = "rbtnDescending";
+            rbtnDescending.Size = new Size(98, 23);
+            rbtnDescending.TabIndex = 4;
+            rbtnDescending.TabStop = true;
+            rbtnDescending.Text = "Descending";
+            rbtnDescending.UseVisualStyleBackColor = true;
+            // 
+            // rbtnAscending
+            // 
+            rbtnAscending.AutoSize = true;
+            rbtnAscending.Location = new Point(59, 53);
+            rbtnAscending.Name = "rbtnAscending";
+            rbtnAscending.Size = new Size(90, 23);
+            rbtnAscending.TabIndex = 3;
+            rbtnAscending.TabStop = true;
+            rbtnAscending.Text = "Ascending";
+            rbtnAscending.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Enabled = false;
+            label1.Location = new Point(21, 88);
+            label1.Name = "label1";
+            label1.Size = new Size(211, 19);
+            label1.TabIndex = 2;
+            label1.Text = "i reference tong topdrivesrecords";
             // 
             // button1
             // 
@@ -129,47 +166,17 @@
             button2.Text = "Clear";
             button2.UseVisualStyleBackColor = true;
             // 
-            // rbtnAscending
-            // 
-            rbtnAscending.AutoSize = true;
-            rbtnAscending.Location = new Point(59, 53);
-            rbtnAscending.Name = "rbtnAscending";
-            rbtnAscending.Size = new Size(90, 23);
-            rbtnAscending.TabIndex = 3;
-            rbtnAscending.TabStop = true;
-            rbtnAscending.Text = "Ascending";
-            rbtnAscending.UseVisualStyleBackColor = true;
-            // 
-            // rbtnDescending
-            // 
-            rbtnDescending.AutoSize = true;
-            rbtnDescending.Location = new Point(59, 110);
-            rbtnDescending.Name = "rbtnDescending";
-            rbtnDescending.Size = new Size(98, 23);
-            rbtnDescending.TabIndex = 4;
-            rbtnDescending.TabStop = true;
-            rbtnDescending.Text = "Descending";
-            rbtnDescending.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(21, 88);
-            label1.Name = "label1";
-            label1.Size = new Size(211, 19);
-            label1.TabIndex = 2;
-            label1.Text = "i reference tong topdrivesrecords";
-            // 
             // ViewAllVehicles
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1184, 761);
+            ClientSize = new Size(984, 754);
             Controls.Add(grpSort);
             Controls.Add(grpFilter);
             Controls.Add(txtSearch);
             Controls.Add(lblSearch);
             Controls.Add(flpDisplay);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ViewAllVehicles";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ViewAllVehicles";

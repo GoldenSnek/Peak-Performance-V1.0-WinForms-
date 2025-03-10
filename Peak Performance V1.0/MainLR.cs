@@ -1,10 +1,3 @@
-//NuGet UI packages
-using ReaLTaiizor;          // Core namespace
-using ReaLTaiizor.Manager;
-using ReaLTaiizor.Controls; // For custom controls like buttons, labels, etc.
-using ReaLTaiizor.Forms;    // For using Taiizor-styled forms
-using ReaLTaiizor.Enum;     // For enumerations (e.g., themes, styles)
-
 namespace Peak_Performance_V1._0
 {
     public partial class MainLR : Form
@@ -30,11 +23,7 @@ namespace Peak_Performance_V1._0
 
         private void MainLR_Load(object sender, EventArgs e)
         {
-            //set realtaiizor materialskin theme
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(ReaLTaiizor.Colors.MaterialPrimary.Orange700, ReaLTaiizor.Colors.MaterialPrimary.Orange800, ReaLTaiizor.Colors.MaterialPrimary.Orange900, ReaLTaiizor.Colors.MaterialAccent.Orange700, ReaLTaiizor.Util.MaterialTextShade.WHITE);
-
+            SystemManager.LoadMaterialTheme();
             //hide vehicles
             picVan.Location = new Point(x, 300);
             picCar.Location = new Point(x, 315);
