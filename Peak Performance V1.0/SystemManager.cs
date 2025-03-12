@@ -22,7 +22,7 @@ namespace Peak_Performance_V1._0
 
         public static int currentUserID = 0; //store logged-in UserID
         public static string? currentUsername = null; //store logged-in Username
-        public static string? currentRole = null; //store logged-in Role
+        public static string? currentRole = "Vehicle Provider"; //store logged-in Role
 
         public static OleDbConnection GetConnection() //SUPPORTING METHOD for Database Connection
         {
@@ -48,5 +48,10 @@ namespace Peak_Performance_V1._0
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(ReaLTaiizor.Colors.MaterialPrimary.Orange700, ReaLTaiizor.Colors.MaterialPrimary.Orange800, ReaLTaiizor.Colors.MaterialPrimary.Orange900, ReaLTaiizor.Colors.MaterialAccent.Orange700, ReaLTaiizor.Util.MaterialTextShade.WHITE);
         }
+        public static Image ResizeImage(Image img)
+        {
+            return new Bitmap(img, new Size(32, 32));
+        }
+
     }
 }

@@ -326,7 +326,8 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(984, 754);
+            BackColor = Color.FromArgb(35, 40, 50);
+            ClientSize = new Size(964, 754);
             Controls.Add(btnClear);
             Controls.Add(flpDisplay);
             Controls.Add(lblImagePath);

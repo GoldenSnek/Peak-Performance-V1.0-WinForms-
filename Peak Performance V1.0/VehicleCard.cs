@@ -17,9 +17,10 @@ namespace Peak_Performance_V1._0
         {
             InitializeComponent();
 
-            lblType.Text = $"Type: {generalType} ({specificType})";
-            lblMake.Text = $"Make: {make}";
-            lblModel.Text = $"Model: {model} {vehicleYear}";
+            lblType.Text = $"{generalType} ({specificType})";
+            lblMake.Text = $"{make}";
+            lblModel.Text = $"{model}" +
+                            $" {vehicleYear}";
             lblLicense.Text = $"License Plate No: {licensePlate}";
             lblColor.Text = $"Color: {color}";
             lblFuelType.Text = $"Fuel Type: {fuelType}";

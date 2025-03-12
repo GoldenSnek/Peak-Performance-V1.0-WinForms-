@@ -48,16 +48,16 @@
             // 
             flpDisplay.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpDisplay.AutoScroll = true;
-            flpDisplay.Location = new Point(44, 58);
+            flpDisplay.Location = new Point(1, 1);
             flpDisplay.Name = "flpDisplay";
-            flpDisplay.Size = new Size(650, 650);
+            flpDisplay.Size = new Size(700, 752);
             flpDisplay.TabIndex = 0;
             // 
             // lblSearch
             // 
             lblSearch.Anchor = AnchorStyles.Right;
             lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(738, 42);
+            lblSearch.Location = new Point(718, 9);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(49, 19);
             lblSearch.TabIndex = 1;
@@ -66,9 +66,9 @@
             // txtSearch
             // 
             txtSearch.Anchor = AnchorStyles.Right;
-            txtSearch.Location = new Point(738, 64);
+            txtSearch.Location = new Point(718, 31);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(100, 26);
+            txtSearch.Size = new Size(232, 26);
             txtSearch.TabIndex = 2;
             // 
             // grpFilter
@@ -76,16 +76,16 @@
             grpFilter.Anchor = AnchorStyles.Right;
             grpFilter.Controls.Add(btnApply);
             grpFilter.Controls.Add(btnClear);
-            grpFilter.Location = new Point(738, 118);
+            grpFilter.Location = new Point(718, 63);
             grpFilter.Name = "grpFilter";
-            grpFilter.Size = new Size(200, 420);
+            grpFilter.Size = new Size(232, 475);
             grpFilter.TabIndex = 3;
             grpFilter.TabStop = false;
             grpFilter.Text = "Filter";
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(110, 379);
+            btnApply.Location = new Point(151, 423);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 1;
@@ -94,7 +94,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(6, 379);
+            btnClear.Location = new Point(32, 423);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 23);
             btnClear.TabIndex = 0;
@@ -109,9 +109,9 @@
             grpSort.Controls.Add(label1);
             grpSort.Controls.Add(button1);
             grpSort.Controls.Add(button2);
-            grpSort.Location = new Point(738, 544);
+            grpSort.Location = new Point(718, 544);
             grpSort.Name = "grpSort";
-            grpSort.Size = new Size(200, 156);
+            grpSort.Size = new Size(234, 198);
             grpSort.TabIndex = 4;
             grpSort.TabStop = false;
             grpSort.Text = "Sort";
@@ -170,7 +170,8 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(984, 754);
+            BackColor = Color.FromArgb(35, 40, 50);
+            ClientSize = new Size(964, 754);
             Controls.Add(grpSort);
             Controls.Add(grpFilter);
             Controls.Add(txtSearch);

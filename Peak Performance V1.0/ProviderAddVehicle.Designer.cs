@@ -65,7 +65,7 @@
             // 
             lblMake.Anchor = AnchorStyles.None;
             lblMake.AutoSize = true;
-            lblMake.Location = new Point(63, 137);
+            lblMake.Location = new Point(53, 137);
             lblMake.Name = "lblMake";
             lblMake.Size = new Size(43, 19);
             lblMake.TabIndex = 0;
@@ -76,7 +76,7 @@
             cbxMake.Anchor = AnchorStyles.None;
             cbxMake.FormattingEnabled = true;
             cbxMake.Items.AddRange(new object[] { "Abarth", "Acura", "Aixam", "Alfa Romeo", "Aprilia", "Aston Martin", "Audi", "Bajaj", "Bentley", "Benelli", "BMW", "Bugatti", "Buick", "BYD", "Cadillac", "Can-Am", "Caterham", "CFMoto", "Chevrolet", "Chrysler", "Citroën", "Dacia", "Daewoo", "Daihatsu", "Dodge", "Ducati", "Ferrari", "Fiat", "Ford", "Genesis", "GMC", "Harley-Davidson", "Hero", "Holden", "Honda", "Hummer", "Husqvarna", "Hyundai", "Indian Motorcycle", "Infiniti", "Isuzu", "Jaguar", "Jeep", "Kawasaki", "Kia", "Koenigsegg", "KTM", "Lamborghini", "Lancia", "Land Rover", "Lexus", "Lincoln", "Lotus", "Mahindra", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-Benz", "Mercury", "MG", "Mini", "Mitsubishi", "Moto Guzzi", "Nissan", "Opel", "Pagani", "Peugeot", "Piaggio", "Plymouth", "Polaris", "Polestar", "Pontiac", "Porsche", "Proton", "RAM", "Renault", "Rivian", "Rolls-Royce", "Royal Enfield", "Saab", "Scania", "Seat", "Skoda", "Smart", "Subaru", "Suzuki", "Tata", "Tesla", "Toyota", "Triumph", "TVS", "Vauxhall", "Volkswagen", "Volvo", "Yamaha", "Zontes" });
-            cbxMake.Location = new Point(63, 159);
+            cbxMake.Location = new Point(53, 159);
             cbxMake.Name = "cbxMake";
             cbxMake.Size = new Size(150, 27);
             cbxMake.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             lblModel.Anchor = AnchorStyles.None;
             lblModel.AutoSize = true;
-            lblModel.Location = new Point(63, 219);
+            lblModel.Location = new Point(53, 219);
             lblModel.Name = "lblModel";
             lblModel.Size = new Size(48, 19);
             lblModel.TabIndex = 3;
@@ -94,7 +94,7 @@
             // txtModel
             // 
             txtModel.Anchor = AnchorStyles.None;
-            txtModel.Location = new Point(63, 250);
+            txtModel.Location = new Point(53, 250);
             txtModel.Name = "txtModel";
             txtModel.Size = new Size(150, 26);
             txtModel.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             lblYear.Anchor = AnchorStyles.None;
             lblYear.AutoSize = true;
-            lblYear.Location = new Point(63, 302);
+            lblYear.Location = new Point(53, 302);
             lblYear.Name = "lblYear";
             lblYear.Size = new Size(35, 19);
             lblYear.TabIndex = 5;
@@ -114,7 +114,7 @@
             cbxYear.Anchor = AnchorStyles.None;
             cbxYear.FormattingEnabled = true;
             cbxYear.Items.AddRange(new object[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" });
-            cbxYear.Location = new Point(63, 334);
+            cbxYear.Location = new Point(53, 334);
             cbxYear.Name = "cbxYear";
             cbxYear.Size = new Size(150, 27);
             cbxYear.TabIndex = 6;
@@ -123,7 +123,7 @@
             // 
             lblLicense.Anchor = AnchorStyles.None;
             lblLicense.AutoSize = true;
-            lblLicense.Location = new Point(63, 384);
+            lblLicense.Location = new Point(53, 384);
             lblLicense.Name = "lblLicense";
             lblLicense.Size = new Size(112, 19);
             lblLicense.TabIndex = 7;
@@ -132,7 +132,7 @@
             // txtLicense
             // 
             txtLicense.Anchor = AnchorStyles.None;
-            txtLicense.Location = new Point(63, 416);
+            txtLicense.Location = new Point(53, 416);
             txtLicense.Name = "txtLicense";
             txtLicense.Size = new Size(150, 26);
             txtLicense.TabIndex = 8;
@@ -141,7 +141,7 @@
             // 
             lblColor.Anchor = AnchorStyles.None;
             lblColor.AutoSize = true;
-            lblColor.Location = new Point(63, 470);
+            lblColor.Location = new Point(53, 470);
             lblColor.Name = "lblColor";
             lblColor.Size = new Size(42, 19);
             lblColor.TabIndex = 9;
@@ -152,7 +152,7 @@
             cbxColor.Anchor = AnchorStyles.None;
             cbxColor.FormattingEnabled = true;
             cbxColor.Items.AddRange(new object[] { "Beige", "Black", "Blue", "Bronze", "Brown", "Burgundy", "Charcoal", "Coral", "Cyan", "Gold", "Gray", "Green", "Indigo", "Ivory", "Lavender", "Lime", "Magenta", "Maroon", "Mint", "Navy", "Olive", "Orange", "Peach", "Pink", "Purple", "Red", "Silver", "Teal", "Turquoise", "Violet", "White", "Yellow" });
-            cbxColor.Location = new Point(63, 501);
+            cbxColor.Location = new Point(53, 501);
             cbxColor.Name = "cbxColor";
             cbxColor.Size = new Size(150, 27);
             cbxColor.TabIndex = 10;
@@ -162,7 +162,7 @@
             cbxFuel.Anchor = AnchorStyles.None;
             cbxFuel.FormattingEnabled = true;
             cbxFuel.Items.AddRange(new object[] { "Bio-Diesel", "Compressed Natural Gas (CNG)", "Diesel", "Electric", "Ethanol (E85)", "Flex Fuel", "Gasoline (Petrol)", "Hydrogen", "Hybrid (Electric + Gasoline)", "Liquefied Natural Gas (LNG)", "Liquefied Petroleum Gas (LPG)", "Plug-in Hybrid", "Propane" });
-            cbxFuel.Location = new Point(64, 590);
+            cbxFuel.Location = new Point(54, 590);
             cbxFuel.Name = "cbxFuel";
             cbxFuel.Size = new Size(150, 27);
             cbxFuel.TabIndex = 12;
@@ -171,7 +171,7 @@
             // 
             lblFuel.Anchor = AnchorStyles.None;
             lblFuel.AutoSize = true;
-            lblFuel.Location = new Point(64, 559);
+            lblFuel.Location = new Point(54, 559);
             lblFuel.Name = "lblFuel";
             lblFuel.Size = new Size(66, 19);
             lblFuel.TabIndex = 11;
@@ -182,7 +182,7 @@
             cbxSeats.Anchor = AnchorStyles.None;
             cbxSeats.FormattingEnabled = true;
             cbxSeats.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10+" });
-            cbxSeats.Location = new Point(349, 63);
+            cbxSeats.Location = new Point(339, 63);
             cbxSeats.Name = "cbxSeats";
             cbxSeats.Size = new Size(150, 27);
             cbxSeats.TabIndex = 14;
@@ -191,7 +191,7 @@
             // 
             lblSeats.Anchor = AnchorStyles.None;
             lblSeats.AutoSize = true;
-            lblSeats.Location = new Point(349, 41);
+            lblSeats.Location = new Point(339, 41);
             lblSeats.Name = "lblSeats";
             lblSeats.Size = new Size(41, 19);
             lblSeats.TabIndex = 13;
@@ -200,7 +200,7 @@
             // txtMileage
             // 
             txtMileage.Anchor = AnchorStyles.None;
-            txtMileage.Location = new Point(349, 154);
+            txtMileage.Location = new Point(339, 154);
             txtMileage.Name = "txtMileage";
             txtMileage.Size = new Size(150, 26);
             txtMileage.TabIndex = 16;
@@ -209,7 +209,7 @@
             // 
             lblMileage.Anchor = AnchorStyles.None;
             lblMileage.AutoSize = true;
-            lblMileage.Location = new Point(349, 123);
+            lblMileage.Location = new Point(339, 123);
             lblMileage.Name = "lblMileage";
             lblMileage.Size = new Size(57, 19);
             lblMileage.TabIndex = 15;
@@ -218,7 +218,7 @@
             // txtPriceDaily
             // 
             txtPriceDaily.Anchor = AnchorStyles.None;
-            txtPriceDaily.Location = new Point(349, 237);
+            txtPriceDaily.Location = new Point(339, 237);
             txtPriceDaily.Name = "txtPriceDaily";
             txtPriceDaily.Size = new Size(150, 26);
             txtPriceDaily.TabIndex = 18;
@@ -227,7 +227,7 @@
             // 
             lblPriceD.Anchor = AnchorStyles.None;
             lblPriceD.AutoSize = true;
-            lblPriceD.Location = new Point(349, 206);
+            lblPriceD.Location = new Point(339, 206);
             lblPriceD.Name = "lblPriceD";
             lblPriceD.Size = new Size(80, 19);
             lblPriceD.TabIndex = 17;
@@ -236,7 +236,7 @@
             // txtPriceHourly
             // 
             txtPriceHourly.Anchor = AnchorStyles.None;
-            txtPriceHourly.Location = new Point(349, 319);
+            txtPriceHourly.Location = new Point(339, 319);
             txtPriceHourly.Name = "txtPriceHourly";
             txtPriceHourly.Size = new Size(150, 26);
             txtPriceHourly.TabIndex = 20;
@@ -245,7 +245,7 @@
             // 
             lblPriceH.Anchor = AnchorStyles.None;
             lblPriceH.AutoSize = true;
-            lblPriceH.Location = new Point(349, 288);
+            lblPriceH.Location = new Point(339, 288);
             lblPriceH.Name = "lblPriceH";
             lblPriceH.Size = new Size(91, 19);
             lblPriceH.TabIndex = 19;
@@ -255,7 +255,7 @@
             // 
             picPreview.Anchor = AnchorStyles.None;
             picPreview.BackgroundImageLayout = ImageLayout.None;
-            picPreview.Location = new Point(349, 417);
+            picPreview.Location = new Point(339, 417);
             picPreview.Name = "picPreview";
             picPreview.Size = new Size(150, 126);
             picPreview.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -266,7 +266,7 @@
             // 
             lblImage.Anchor = AnchorStyles.None;
             lblImage.AutoSize = true;
-            lblImage.Location = new Point(349, 395);
+            lblImage.Location = new Point(339, 395);
             lblImage.Name = "lblImage";
             lblImage.Size = new Size(76, 19);
             lblImage.TabIndex = 22;
@@ -275,7 +275,7 @@
             // btnAddVehicle
             // 
             btnAddVehicle.Anchor = AnchorStyles.None;
-            btnAddVehicle.Location = new Point(310, 699);
+            btnAddVehicle.Location = new Point(300, 699);
             btnAddVehicle.Name = "btnAddVehicle";
             btnAddVehicle.Size = new Size(145, 23);
             btnAddVehicle.TabIndex = 23;
@@ -288,7 +288,7 @@
             cbxGeneralType.Anchor = AnchorStyles.None;
             cbxGeneralType.FormattingEnabled = true;
             cbxGeneralType.Items.AddRange(new object[] { "Motorcycle", "Car" });
-            cbxGeneralType.Location = new Point(63, 41);
+            cbxGeneralType.Location = new Point(53, 41);
             cbxGeneralType.Name = "cbxGeneralType";
             cbxGeneralType.Size = new Size(150, 27);
             cbxGeneralType.TabIndex = 25;
@@ -297,7 +297,7 @@
             // 
             lblType.Anchor = AnchorStyles.None;
             lblType.AutoSize = true;
-            lblType.Location = new Point(63, 19);
+            lblType.Location = new Point(53, 19);
             lblType.Name = "lblType";
             lblType.Size = new Size(83, 19);
             lblType.TabIndex = 24;
@@ -308,7 +308,7 @@
             cbxSpecificType.Anchor = AnchorStyles.None;
             cbxSpecificType.FormattingEnabled = true;
             cbxSpecificType.Items.AddRange(new object[] { "Sedan", "Suv", "Coupe", "Convertible", "Hatchback", "Minivan", "Pickup Truck", "Limousine", "Sports Car", "Luxury Car", "Underbone", "Scooter", "Naked", "Motocross", "Cafe Racer", "Chopper", "Tourer", "Sports Bike" });
-            cbxSpecificType.Location = new Point(63, 74);
+            cbxSpecificType.Location = new Point(53, 74);
             cbxSpecificType.Name = "cbxSpecificType";
             cbxSpecificType.Size = new Size(150, 27);
             cbxSpecificType.TabIndex = 26;
@@ -316,7 +316,7 @@
             // btnBrowse
             // 
             btnBrowse.Anchor = AnchorStyles.None;
-            btnBrowse.Location = new Point(349, 555);
+            btnBrowse.Location = new Point(339, 555);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(106, 23);
             btnBrowse.TabIndex = 27;
@@ -328,7 +328,7 @@
             // 
             lblImagePath.Anchor = AnchorStyles.None;
             lblImagePath.AutoSize = true;
-            lblImagePath.Location = new Point(349, 598);
+            lblImagePath.Location = new Point(339, 598);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(37, 19);
             lblImagePath.TabIndex = 28;
@@ -338,7 +338,7 @@
             // 
             flpDisplay.Anchor = AnchorStyles.None;
             flpDisplay.AutoScroll = true;
-            flpDisplay.Location = new Point(579, 41);
+            flpDisplay.Location = new Point(569, 41);
             flpDisplay.Name = "flpDisplay";
             flpDisplay.Size = new Size(347, 650);
             flpDisplay.TabIndex = 29;
@@ -346,7 +346,7 @@
             // btnClear
             // 
             btnClear.Anchor = AnchorStyles.None;
-            btnClear.Location = new Point(105, 699);
+            btnClear.Location = new Point(95, 699);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(145, 23);
             btnClear.TabIndex = 30;
@@ -358,7 +358,8 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(984, 754);
+            BackColor = Color.FromArgb(35, 40, 50);
+            ClientSize = new Size(964, 754);
             Controls.Add(btnClear);
             Controls.Add(flpDisplay);
             Controls.Add(lblImagePath);
