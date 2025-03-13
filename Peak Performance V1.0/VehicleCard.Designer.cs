@@ -46,6 +46,7 @@
             btnProceed = new ReaLTaiizor.Controls.MaterialButton();
             lblOwner = new Label();
             lblHourlyPrice = new Label();
+            btnFullDetails = new ReaLTaiizor.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)picVehicle).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             lblType.Font = new Font("Copperplate Gothic Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblType.ForeColor = Color.Silver;
-            lblType.Location = new Point(171, 113);
+            lblType.Location = new Point(171, 118);
             lblType.Name = "lblType";
             lblType.Size = new Size(155, 50);
             lblType.TabIndex = 0;
@@ -65,7 +66,7 @@
             // 
             lblMake.Font = new Font("Copperplate Gothic Bold", 12F);
             lblMake.ForeColor = Color.Lavender;
-            lblMake.Location = new Point(171, 12);
+            lblMake.Location = new Point(171, 17);
             lblMake.Name = "lblMake";
             lblMake.Size = new Size(155, 40);
             lblMake.TabIndex = 1;
@@ -76,7 +77,7 @@
             // 
             lblModel.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblModel.ForeColor = Color.White;
-            lblModel.Location = new Point(171, 58);
+            lblModel.Location = new Point(171, 63);
             lblModel.Name = "lblModel";
             lblModel.Size = new Size(155, 50);
             lblModel.TabIndex = 2;
@@ -87,7 +88,7 @@
             // 
             lblLicense.Font = new Font("Arial Rounded MT Bold", 12F);
             lblLicense.ForeColor = Color.Silver;
-            lblLicense.Location = new Point(12, 207);
+            lblLicense.Location = new Point(24, 211);
             lblLicense.Name = "lblLicense";
             lblLicense.Size = new Size(300, 40);
             lblLicense.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             lblColor.Font = new Font("Arial Rounded MT Bold", 12F);
             lblColor.ForeColor = Color.Silver;
-            lblColor.Location = new Point(12, 240);
+            lblColor.Location = new Point(24, 244);
             lblColor.Name = "lblColor";
             lblColor.Size = new Size(300, 40);
             lblColor.TabIndex = 5;
@@ -107,7 +108,7 @@
             // 
             lblFuelType.Font = new Font("Arial Rounded MT Bold", 12F);
             lblFuelType.ForeColor = Color.Silver;
-            lblFuelType.Location = new Point(12, 274);
+            lblFuelType.Location = new Point(24, 278);
             lblFuelType.Name = "lblFuelType";
             lblFuelType.Size = new Size(300, 40);
             lblFuelType.TabIndex = 6;
@@ -117,7 +118,7 @@
             // 
             lblSeats.Font = new Font("Arial Rounded MT Bold", 12F);
             lblSeats.ForeColor = Color.Silver;
-            lblSeats.Location = new Point(12, 308);
+            lblSeats.Location = new Point(24, 312);
             lblSeats.Name = "lblSeats";
             lblSeats.Size = new Size(300, 40);
             lblSeats.TabIndex = 7;
@@ -127,7 +128,7 @@
             // 
             lblMileage.Font = new Font("Arial Rounded MT Bold", 12F);
             lblMileage.ForeColor = Color.Silver;
-            lblMileage.Location = new Point(12, 342);
+            lblMileage.Location = new Point(24, 346);
             lblMileage.Name = "lblMileage";
             lblMileage.Size = new Size(300, 40);
             lblMileage.TabIndex = 8;
@@ -137,7 +138,7 @@
             // 
             lblDailyPrice.Font = new Font("Arial Rounded MT Bold", 12F);
             lblDailyPrice.ForeColor = Color.Silver;
-            lblDailyPrice.Location = new Point(12, 376);
+            lblDailyPrice.Location = new Point(24, 380);
             lblDailyPrice.Name = "lblDailyPrice";
             lblDailyPrice.Size = new Size(300, 40);
             lblDailyPrice.TabIndex = 9;
@@ -199,7 +200,7 @@
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel1.Controls.Add(picVehicle);
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel1.Location = new Point(9, 9);
+            parrotGradientPanel1.Location = new Point(24, 14);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
@@ -220,12 +221,12 @@
             btnProceed.HighEmphasis = true;
             btnProceed.Icon = null;
             btnProceed.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnProceed.Location = new Point(85, 444);
+            btnProceed.Location = new Point(180, 447);
             btnProceed.Margin = new Padding(4, 6, 4, 6);
             btnProceed.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnProceed.Name = "btnProceed";
             btnProceed.NoAccentTextColor = Color.Empty;
-            btnProceed.Size = new Size(158, 36);
+            btnProceed.Size = new Size(120, 36);
             btnProceed.TabIndex = 17;
             btnProceed.Text = "-";
             btnProceed.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -237,7 +238,7 @@
             lblOwner.BackColor = Color.Transparent;
             lblOwner.Font = new Font("Arial Rounded MT Bold", 12F);
             lblOwner.ForeColor = Color.Silver;
-            lblOwner.Location = new Point(12, 174);
+            lblOwner.Location = new Point(24, 178);
             lblOwner.Name = "lblOwner";
             lblOwner.Size = new Size(300, 40);
             lblOwner.TabIndex = 18;
@@ -247,17 +248,39 @@
             // 
             lblHourlyPrice.Font = new Font("Arial Rounded MT Bold", 12F);
             lblHourlyPrice.ForeColor = Color.Silver;
-            lblHourlyPrice.Location = new Point(12, 410);
+            lblHourlyPrice.Location = new Point(24, 414);
             lblHourlyPrice.Name = "lblHourlyPrice";
             lblHourlyPrice.Size = new Size(300, 40);
             lblHourlyPrice.TabIndex = 10;
             lblHourlyPrice.Text = "Hourly Price";
+            // 
+            // btnFullDetails
+            // 
+            btnFullDetails.AutoSize = false;
+            btnFullDetails.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnFullDetails.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnFullDetails.Depth = 0;
+            btnFullDetails.HighEmphasis = true;
+            btnFullDetails.Icon = null;
+            btnFullDetails.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnFullDetails.Location = new Point(24, 447);
+            btnFullDetails.Margin = new Padding(4, 6, 4, 6);
+            btnFullDetails.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnFullDetails.Name = "btnFullDetails";
+            btnFullDetails.NoAccentTextColor = Color.Empty;
+            btnFullDetails.Size = new Size(120, 36);
+            btnFullDetails.TabIndex = 19;
+            btnFullDetails.Text = "Full Details";
+            btnFullDetails.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnFullDetails.UseAccentColor = false;
+            btnFullDetails.UseVisualStyleBackColor = true;
             // 
             // VehicleCard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(45, 60, 75);
+            Controls.Add(btnFullDetails);
             Controls.Add(btnProceed);
             Controls.Add(parrotGradientPanel1);
             Controls.Add(pnlLeft);
@@ -302,5 +325,6 @@
         private ReaLTaiizor.Controls.MaterialButton btnProceed;
         private Label lblOwner;
         private Label lblHourlyPrice;
+        private ReaLTaiizor.Controls.MaterialButton btnFullDetails;
     }
 }

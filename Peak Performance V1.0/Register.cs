@@ -28,7 +28,7 @@ namespace Peak_Performance_V1._0
         private void btnRegister_Click(object sender, EventArgs e) //MAIN EVENT, Register
         {
             string username = txtUsername.Text;
-            string password = txtUsername.Text;
+            string password = txtPassword.Text;
             string role = rbtnClient.Checked ? "Client" : "Vehicle Provider";
             string confirmPassword = txtConPass.Text;
 
@@ -43,24 +43,46 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) //step 1: check if username and password are empty
+            if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password)) //step 1: check if username and password is empty
             {
-                MessageBox.Show("Username and Password are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblUsernameError.Text = "Username is empty";
+                lblPasswordError.Text = "Password is empty";
+                lblConPassError.Text = null;
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(username)) //step 1: check if username is empty
+            {
+                lblUsernameError.Text = "Username is empty";
+                lblPasswordError.Text = null;
+                lblConPassError.Text = null;
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(password)) //step 2: check if password is empty
+            {
+                lblUsernameError.Text = null;
+                lblPasswordError.Text = "Password is empty";
+                lblConPassError.Text = null;
                 return;
             }
             else if (userCount > 0) //step 2: check if username already exists
             {
-                MessageBox.Show("Username already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (!rbtnClient.Checked && !rbtnProvider.Checked) //step 3: check if role is chosen
-            {
-                MessageBox.Show("Please choose a role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblUsernameError.Text = "Username Already Exists";
+                lblPasswordError.Text = null;
+                lblConPassError.Text = null;
                 return;
             }
             else if (password != confirmPassword) //step 4: extra check if password matches
             {
-                MessageBox.Show("Password does not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblUsernameError.Text = null;
+                lblPasswordError.Text = null;
+                lblConPassError.Text = "Password does not match";
+                return;
+            }
+            else if (!rbtnClient.Checked && !rbtnProvider.Checked) //step 3: check if role is chosen
+            {
+                lblUsernameError.Text = null;
+                lblPasswordError.Text = null;
+                lblConPassError.Text = "Please choose a role";
                 return;
             }
 

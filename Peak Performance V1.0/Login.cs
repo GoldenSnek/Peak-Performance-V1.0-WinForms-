@@ -49,9 +49,22 @@ namespace Peak_Performance_V1._0
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) //check if username and password are empty
+            if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password)) //step 1: check if username and password is empty
             {
-                MessageBox.Show("Username and Password are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblUsernameError.Text = "Username is empty";
+                lblPasswordError.Text = "Password is empty";
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(username)) //step 1: check if username is empty
+            {
+                lblUsernameError.Text = "Username is empty";
+                lblPasswordError.Text = null;
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(password)) //step 2: check if password is empty
+            {
+                lblUsernameError.Text = null;
+                lblPasswordError.Text = "Password is empty";
                 return;
             }
 
@@ -98,7 +111,8 @@ namespace Peak_Performance_V1._0
                     }
                     else
                     {
-                        MessageBox.Show("Invalid Credentials!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lblUsernameError.Text = null;
+                        lblPasswordError.Text = "Invalid Credentials!";
                     }
 
                     reader.Close(); // Close the reader

@@ -59,11 +59,13 @@ namespace Peak_Performance_V1._0
 
             if (SystemManager.currentRole == "Vehicle Provider")
             {
+                btnVehicles.Visible = true;
                 btnAddVehicles.Visible = true;
                 btnUpdateVehicles.Visible = true;
             }
             else if (SystemManager.currentRole == "Client")
             {
+                btnVehicles.Visible = false;
                 btnAddVehicles.Visible = false;
                 btnUpdateVehicles.Visible = false;
             }
@@ -90,8 +92,8 @@ namespace Peak_Performance_V1._0
 
         private void tmrClock_Tick(object sender, EventArgs e) //SUPPORTING EVENT to refresh the time and images every second
         {
-            int scrollPos = pnlSideMenu.VerticalScroll.Value; // Save scroll position
-            pnlSideMenu.SuspendLayout(); // Temporarily stop UI updates
+            //int scrollPos = pnlSideMenu.VerticalScroll.Value; // Save scroll position
+            //pnlSideMenu.SuspendLayout(); // Temporarily stop UI updates
 
             //update the label with the current date and time
             DateTime now = DateTime.Now;
@@ -115,10 +117,10 @@ namespace Peak_Performance_V1._0
                 }
             }
 
-            pnlSideMenu.ResumeLayout(); // Resume layout updates
-            pnlSideMenu.PerformLayout();
+            //pnlSideMenu.ResumeLayout(); // Resume layout updates
+            //pnlSideMenu.PerformLayout();
             // Restore scroll position
-            pnlSideMenu.AutoScrollPosition = new Point(0, scrollPos);
+            //pnlSideMenu.AutoScrollPosition = new Point(0, scrollPos);
         }
 
         private void ResetButtonColors()
@@ -244,6 +246,48 @@ namespace Peak_Performance_V1._0
         {
             pnlSideMenu.Visible = false;
             picShow.Visible = true;
+        }
+
+        private void btnRentals_Click(object sender, EventArgs e)
+        {
+            if (btnAllVehicles.Visible == true)
+            {
+                btnAllVehicles.Visible = false;
+                btnRentalDetails.Visible = false;
+            }
+            else
+            {
+                btnAllVehicles.Visible = true;
+                btnRentalDetails.Visible = true;
+            }
+        }
+
+        private void btnVehicles_Click(object sender, EventArgs e)
+        {
+            if (btnAddVehicles.Visible == true)
+            {
+                btnAddVehicles.Visible = false;
+                btnUpdateVehicles.Visible = false;
+            }
+            else
+            {
+                btnAddVehicles.Visible = true;
+                btnUpdateVehicles.Visible = true;
+            }
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            if (btnManageAccount.Visible == true)
+            {
+                btnManageAccount.Visible = false;
+                btnLogout.Visible = false;
+            }
+            else
+            {
+                btnManageAccount.Visible = true;
+                btnLogout.Visible = true;
+            }
         }
     }
 }

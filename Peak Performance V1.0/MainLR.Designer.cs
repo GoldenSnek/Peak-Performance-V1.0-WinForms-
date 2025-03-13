@@ -74,7 +74,7 @@
             lblGoToR.BackColor = Color.Transparent;
             lblGoToR.Cursor = Cursors.Hand;
             lblGoToR.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGoToR.ForeColor = Color.White;
+            lblGoToR.ForeColor = Color.FromArgb(255, 128, 0);
             lblGoToR.Location = new Point(111, 492);
             lblGoToR.Name = "lblGoToR";
             lblGoToR.Size = new Size(96, 28);
@@ -89,7 +89,7 @@
             lblGoToL.BackColor = Color.Transparent;
             lblGoToL.Cursor = Cursors.Hand;
             lblGoToL.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGoToL.ForeColor = Color.White;
+            lblGoToL.ForeColor = Color.FromArgb(255, 128, 0);
             lblGoToL.Location = new Point(401, 492);
             lblGoToL.Name = "lblGoToL";
             lblGoToL.Size = new Size(65, 28);

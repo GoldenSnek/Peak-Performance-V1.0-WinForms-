@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             flpDisplay = new FlowLayoutPanel();
-            lblSearch = new Label();
-            txtSearch = new TextBox();
             grpFilter = new GroupBox();
             btnApply = new Button();
             btnClear = new Button();
@@ -40,8 +38,11 @@
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
+            txtSearch = new TextBox();
+            pnlExtra = new Panel();
             grpFilter.SuspendLayout();
             grpSort.SuspendLayout();
+            pnlExtra.SuspendLayout();
             SuspendLayout();
             // 
             // flpDisplay
@@ -53,39 +54,22 @@
             flpDisplay.Size = new Size(700, 752);
             flpDisplay.TabIndex = 0;
             // 
-            // lblSearch
-            // 
-            lblSearch.Anchor = AnchorStyles.Right;
-            lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(718, 9);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(49, 19);
-            lblSearch.TabIndex = 1;
-            lblSearch.Text = "Search";
-            // 
-            // txtSearch
-            // 
-            txtSearch.Anchor = AnchorStyles.Right;
-            txtSearch.Location = new Point(718, 31);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(232, 26);
-            txtSearch.TabIndex = 2;
-            // 
             // grpFilter
             // 
-            grpFilter.Anchor = AnchorStyles.Right;
+            grpFilter.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            grpFilter.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             grpFilter.Controls.Add(btnApply);
             grpFilter.Controls.Add(btnClear);
-            grpFilter.Location = new Point(718, 63);
+            grpFilter.Location = new Point(13, 57);
             grpFilter.Name = "grpFilter";
-            grpFilter.Size = new Size(232, 475);
+            grpFilter.Size = new Size(215, 450);
             grpFilter.TabIndex = 3;
             grpFilter.TabStop = false;
             grpFilter.Text = "Filter";
             // 
             // btnApply
             // 
-            btnApply.Location = new Point(151, 423);
+            btnApply.Location = new Point(134, 410);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(75, 23);
             btnApply.TabIndex = 1;
@@ -94,7 +78,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(32, 423);
+            btnClear.Location = new Point(16, 410);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 23);
             btnClear.TabIndex = 0;
@@ -103,15 +87,16 @@
             // 
             // grpSort
             // 
-            grpSort.Anchor = AnchorStyles.Right;
+            grpSort.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            grpSort.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             grpSort.Controls.Add(rbtnDescending);
             grpSort.Controls.Add(rbtnAscending);
             grpSort.Controls.Add(label1);
             grpSort.Controls.Add(button1);
             grpSort.Controls.Add(button2);
-            grpSort.Location = new Point(718, 544);
+            grpSort.Location = new Point(13, 513);
             grpSort.Name = "grpSort";
-            grpSort.Size = new Size(234, 198);
+            grpSort.Size = new Size(215, 450);
             grpSort.TabIndex = 4;
             grpSort.TabStop = false;
             grpSort.Text = "Sort";
@@ -142,7 +127,7 @@
             // 
             label1.AutoSize = true;
             label1.Enabled = false;
-            label1.Location = new Point(21, 88);
+            label1.Location = new Point(6, 88);
             label1.Name = "label1";
             label1.Size = new Size(211, 19);
             label1.TabIndex = 2;
@@ -166,17 +151,35 @@
             button2.Text = "Clear";
             button2.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtSearch.Location = new Point(13, 12);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(215, 26);
+            txtSearch.TabIndex = 2;
+            // 
+            // pnlExtra
+            // 
+            pnlExtra.AutoScroll = true;
+            pnlExtra.BackColor = Color.FromArgb(35, 40, 60);
+            pnlExtra.Controls.Add(txtSearch);
+            pnlExtra.Controls.Add(grpFilter);
+            pnlExtra.Controls.Add(grpSort);
+            pnlExtra.Dock = DockStyle.Right;
+            pnlExtra.Location = new Point(707, 0);
+            pnlExtra.Name = "pnlExtra";
+            pnlExtra.Size = new Size(257, 754);
+            pnlExtra.TabIndex = 1;
+            // 
             // ViewAllVehicles
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
             ClientSize = new Size(964, 754);
-            Controls.Add(grpSort);
-            Controls.Add(grpFilter);
-            Controls.Add(txtSearch);
-            Controls.Add(lblSearch);
             Controls.Add(flpDisplay);
+            Controls.Add(pnlExtra);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ViewAllVehicles";
             StartPosition = FormStartPosition.CenterScreen;
@@ -184,15 +187,14 @@
             grpFilter.ResumeLayout(false);
             grpSort.ResumeLayout(false);
             grpSort.PerformLayout();
+            pnlExtra.ResumeLayout(false);
+            pnlExtra.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private FlowLayoutPanel flpDisplay;
-        private Label lblSearch;
-        private TextBox txtSearch;
         private GroupBox grpFilter;
         private Button btnApply;
         private Button btnClear;
@@ -202,5 +204,7 @@
         private RadioButton rbtnDescending;
         private RadioButton rbtnAscending;
         private Label label1;
+        private TextBox txtSearch;
+        private Panel pnlExtra;
     }
 }

@@ -108,7 +108,7 @@
             txtUsername.HideSelection = true;
             txtUsername.Hint = "Username";
             txtUsername.LeadingIcon = Properties.Resources.Username;
-            txtUsername.Location = new Point(175, 184);
+            txtUsername.Location = new Point(150, 184);
             txtUsername.MaxLength = 32767;
             txtUsername.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtUsername.Name = "txtUsername";
@@ -120,7 +120,7 @@
             txtUsername.SelectionLength = 0;
             txtUsername.SelectionStart = 0;
             txtUsername.ShortcutsEnabled = true;
-            txtUsername.Size = new Size(250, 48);
+            txtUsername.Size = new Size(300, 48);
             txtUsername.TabIndex = 19;
             txtUsername.TabStop = false;
             txtUsername.TextAlign = HorizontalAlignment.Left;
@@ -139,7 +139,7 @@
             txtPassword.HideSelection = true;
             txtPassword.Hint = "Password";
             txtPassword.LeadingIcon = Properties.Resources.Password;
-            txtPassword.Location = new Point(175, 273);
+            txtPassword.Location = new Point(150, 273);
             txtPassword.MaxLength = 32767;
             txtPassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtPassword.Name = "txtPassword";
@@ -151,7 +151,7 @@
             txtPassword.SelectionLength = 0;
             txtPassword.SelectionStart = 0;
             txtPassword.ShortcutsEnabled = true;
-            txtPassword.Size = new Size(250, 48);
+            txtPassword.Size = new Size(300, 48);
             txtPassword.TabIndex = 20;
             txtPassword.TabStop = false;
             txtPassword.TextAlign = HorizontalAlignment.Left;
@@ -183,7 +183,7 @@
             chkShowPass.ForeColor = Color.FromArgb(245, 245, 245);
             chkShowPass.LinearGradient_Background = false;
             chkShowPass.LinearGradientPen = false;
-            chkShowPass.Location = new Point(271, 324);
+            chkShowPass.Location = new Point(296, 327);
             chkShowPass.Name = "chkShowPass";
             chkShowPass.RGB = false;
             chkShowPass.Rounding = true;
@@ -228,12 +228,11 @@
             lblUsernameError.AutoSize = true;
             lblUsernameError.BackColor = Color.Transparent;
             lblUsernameError.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsernameError.ForeColor = Color.White;
-            lblUsernameError.Location = new Point(175, 235);
+            lblUsernameError.ForeColor = Color.Red;
+            lblUsernameError.Location = new Point(150, 235);
             lblUsernameError.Name = "lblUsernameError";
-            lblUsernameError.Size = new Size(11, 16);
+            lblUsernameError.Size = new Size(0, 16);
             lblUsernameError.TabIndex = 26;
-            lblUsernameError.Text = "-";
             lblUsernameError.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblPasswordError
@@ -241,12 +240,11 @@
             lblPasswordError.AutoSize = true;
             lblPasswordError.BackColor = Color.Transparent;
             lblPasswordError.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPasswordError.ForeColor = Color.White;
-            lblPasswordError.Location = new Point(175, 324);
+            lblPasswordError.ForeColor = Color.Red;
+            lblPasswordError.Location = new Point(150, 324);
             lblPasswordError.Name = "lblPasswordError";
-            lblPasswordError.Size = new Size(11, 16);
+            lblPasswordError.Size = new Size(0, 16);
             lblPasswordError.TabIndex = 27;
-            lblPasswordError.Text = "-";
             lblPasswordError.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // picClose

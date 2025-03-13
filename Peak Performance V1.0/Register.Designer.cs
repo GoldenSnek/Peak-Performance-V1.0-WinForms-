@@ -44,6 +44,7 @@
             txtConPass = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             rbtnClient = new ReaLTaiizor.Controls.CyberRadioButton();
             rbtnProvider = new ReaLTaiizor.Controls.CyberRadioButton();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             SuspendLayout();
@@ -79,12 +80,11 @@
             lblPasswordError.AutoSize = true;
             lblPasswordError.BackColor = Color.Transparent;
             lblPasswordError.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPasswordError.ForeColor = Color.White;
-            lblPasswordError.Location = new Point(175, 281);
+            lblPasswordError.ForeColor = Color.Red;
+            lblPasswordError.Location = new Point(152, 281);
             lblPasswordError.Name = "lblPasswordError";
-            lblPasswordError.Size = new Size(11, 16);
+            lblPasswordError.Size = new Size(0, 16);
             lblPasswordError.TabIndex = 39;
-            lblPasswordError.Text = "-";
             lblPasswordError.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblUsernameError
@@ -92,12 +92,11 @@
             lblUsernameError.AutoSize = true;
             lblUsernameError.BackColor = Color.Transparent;
             lblUsernameError.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsernameError.ForeColor = Color.White;
-            lblUsernameError.Location = new Point(175, 192);
+            lblUsernameError.ForeColor = Color.Red;
+            lblUsernameError.Location = new Point(152, 192);
             lblUsernameError.Name = "lblUsernameError";
-            lblUsernameError.Size = new Size(11, 16);
+            lblUsernameError.Size = new Size(0, 16);
             lblUsernameError.TabIndex = 38;
-            lblUsernameError.Text = "-";
             lblUsernameError.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -150,7 +149,7 @@
             chkShowPass.ForeColor = Color.FromArgb(245, 245, 245);
             chkShowPass.LinearGradient_Background = false;
             chkShowPass.LinearGradientPen = false;
-            chkShowPass.Location = new Point(271, 278);
+            chkShowPass.Location = new Point(298, 281);
             chkShowPass.Name = "chkShowPass";
             chkShowPass.RGB = false;
             chkShowPass.Rounding = true;
@@ -177,7 +176,7 @@
             txtPassword.HideSelection = true;
             txtPassword.Hint = "Password";
             txtPassword.LeadingIcon = Properties.Resources.Password;
-            txtPassword.Location = new Point(175, 230);
+            txtPassword.Location = new Point(152, 230);
             txtPassword.MaxLength = 32767;
             txtPassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtPassword.Name = "txtPassword";
@@ -189,7 +188,7 @@
             txtPassword.SelectionLength = 0;
             txtPassword.SelectionStart = 0;
             txtPassword.ShortcutsEnabled = true;
-            txtPassword.Size = new Size(250, 48);
+            txtPassword.Size = new Size(300, 48);
             txtPassword.TabIndex = 34;
             txtPassword.TabStop = false;
             txtPassword.TextAlign = HorizontalAlignment.Left;
@@ -208,7 +207,7 @@
             txtUsername.HideSelection = true;
             txtUsername.Hint = "Username";
             txtUsername.LeadingIcon = Properties.Resources.Username;
-            txtUsername.Location = new Point(175, 141);
+            txtUsername.Location = new Point(152, 141);
             txtUsername.MaxLength = 32767;
             txtUsername.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtUsername.Name = "txtUsername";
@@ -220,7 +219,7 @@
             txtUsername.SelectionLength = 0;
             txtUsername.SelectionStart = 0;
             txtUsername.ShortcutsEnabled = true;
-            txtUsername.Size = new Size(250, 48);
+            txtUsername.Size = new Size(300, 48);
             txtUsername.TabIndex = 33;
             txtUsername.TabStop = false;
             txtUsername.TextAlign = HorizontalAlignment.Left;
@@ -284,12 +283,11 @@
             lblConPassError.AutoSize = true;
             lblConPassError.BackColor = Color.Transparent;
             lblConPassError.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblConPassError.ForeColor = Color.White;
-            lblConPassError.Location = new Point(175, 373);
+            lblConPassError.ForeColor = Color.Red;
+            lblConPassError.Location = new Point(152, 373);
             lblConPassError.Name = "lblConPassError";
-            lblConPassError.Size = new Size(11, 16);
+            lblConPassError.Size = new Size(0, 16);
             lblConPassError.TabIndex = 43;
-            lblConPassError.Text = "-";
             lblConPassError.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtConPass
@@ -304,7 +302,7 @@
             txtConPass.HideSelection = true;
             txtConPass.Hint = "Confirm Password";
             txtConPass.LeadingIcon = Properties.Resources.ConPass;
-            txtConPass.Location = new Point(175, 322);
+            txtConPass.Location = new Point(152, 322);
             txtConPass.MaxLength = 32767;
             txtConPass.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtConPass.Name = "txtConPass";
@@ -316,7 +314,7 @@
             txtConPass.SelectionLength = 0;
             txtConPass.SelectionStart = 0;
             txtConPass.ShortcutsEnabled = true;
-            txtConPass.Size = new Size(250, 48);
+            txtConPass.Size = new Size(300, 48);
             txtConPass.TabIndex = 42;
             txtConPass.TabStop = false;
             txtConPass.TextAlign = HorizontalAlignment.Left;
@@ -350,7 +348,7 @@
             rbtnClient.LinearGradient_Background = false;
             rbtnClient.LinearGradient_Value = false;
             rbtnClient.LinearGradientPen = false;
-            rbtnClient.Location = new Point(160, 392);
+            rbtnClient.Location = new Point(207, 392);
             rbtnClient.Name = "rbtnClient";
             rbtnClient.RGB = false;
             rbtnClient.Rounding = true;
@@ -393,7 +391,7 @@
             rbtnProvider.LinearGradient_Background = false;
             rbtnProvider.LinearGradient_Value = false;
             rbtnProvider.LinearGradientPen = false;
-            rbtnProvider.Location = new Point(272, 392);
+            rbtnProvider.Location = new Point(298, 392);
             rbtnProvider.Name = "rbtnProvider";
             rbtnProvider.RGB = false;
             rbtnProvider.Rounding = true;
@@ -409,6 +407,19 @@
             rbtnProvider.Timer_RGB = 300;
             rbtnProvider.Click += rbtnProvider_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(157, 405);
+            label2.Name = "label2";
+            label2.Size = new Size(49, 18);
+            label2.TabIndex = 46;
+            label2.Text = "Role:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -416,6 +427,7 @@
             BackgroundImage = Properties.Resources.LoginRegister2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
+            Controls.Add(label2);
             Controls.Add(rbtnProvider);
             Controls.Add(rbtnClient);
             Controls.Add(lblConPassError);
@@ -460,5 +472,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtConPass;
         private ReaLTaiizor.Controls.CyberRadioButton rbtnClient;
         private ReaLTaiizor.Controls.CyberRadioButton rbtnProvider;
+        private Label label2;
     }
 }
