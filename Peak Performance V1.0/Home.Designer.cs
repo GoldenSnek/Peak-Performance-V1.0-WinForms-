@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tmrClock = new System.Windows.Forms.Timer(components);
             pnlSideMenu = new Panel();
             btnExit = new Button();
@@ -54,9 +55,13 @@
             lblGreetings = new Label();
             lblNotifications = new Label();
             lblAnalytics = new Label();
-            picNight = new PictureBox();
             picDay = new PictureBox();
             pnlForm = new Panel();
+            foreverNotification1 = new ReaLTaiizor.Controls.ForeverNotification();
+            parrotPieGraph1 = new ReaLTaiizor.Controls.ParrotPieGraph();
+            picNight = new PictureBox();
+            objectAnimator1 = new ReaLTaiizor.Animate.Parrot.ObjectAnimator();
+            objectAnimator2 = new ReaLTaiizor.Animate.Parrot.ObjectAnimator();
             pnlSideMenu.SuspendLayout();
             pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picHide).BeginInit();
@@ -64,9 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)picShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMax).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picDay).BeginInit();
             pnlForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
             SuspendLayout();
             // 
             // tmrClock
@@ -403,52 +408,64 @@
             // 
             lblDate.Anchor = AnchorStyles.None;
             lblDate.AutoSize = true;
+            lblDate.BackColor = Color.Transparent;
+            lblDate.Font = new Font("Segoe Print", 20.25F, FontStyle.Bold);
             lblDate.ForeColor = Color.White;
-            lblDate.Location = new Point(450, 407);
+            lblDate.Location = new Point(394, 330);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(79, 19);
+            lblDate.Size = new Size(177, 47);
             lblDate.TabIndex = 3;
             lblDate.Text = "Placeholder";
+            lblDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblDay
             // 
             lblDay.Anchor = AnchorStyles.None;
             lblDay.AutoSize = true;
+            lblDay.BackColor = Color.Transparent;
+            lblDay.Font = new Font("Segoe Print", 20.25F, FontStyle.Bold);
             lblDay.ForeColor = Color.White;
-            lblDay.Location = new Point(450, 445);
+            lblDay.Location = new Point(394, 387);
             lblDay.Name = "lblDay";
-            lblDay.Size = new Size(79, 19);
+            lblDay.Size = new Size(177, 47);
             lblDay.TabIndex = 4;
             lblDay.Text = "Placeholder";
+            lblDay.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblTime
             // 
             lblTime.Anchor = AnchorStyles.None;
             lblTime.AutoSize = true;
-            lblTime.ForeColor = Color.White;
-            lblTime.Location = new Point(450, 351);
+            lblTime.BackColor = Color.Transparent;
+            lblTime.Font = new Font("Segoe Print", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTime.ForeColor = Color.FromArgb(255, 128, 0);
+            lblTime.Location = new Point(231, 197);
             lblTime.Name = "lblTime";
-            lblTime.Size = new Size(63, 19);
+            lblTime.Size = new Size(548, 170);
             lblTime.TabIndex = 2;
             lblTime.Text = "00:00:00";
+            lblTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblGreetings
             // 
             lblGreetings.Anchor = AnchorStyles.None;
             lblGreetings.AutoSize = true;
+            lblGreetings.BackColor = Color.Transparent;
+            lblGreetings.Font = new Font("Segoe Print", 20.25F, FontStyle.Bold);
             lblGreetings.ForeColor = Color.White;
-            lblGreetings.Location = new Point(332, 295);
+            lblGreetings.Location = new Point(166, 177);
             lblGreetings.Name = "lblGreetings";
-            lblGreetings.Size = new Size(290, 19);
+            lblGreetings.Size = new Size(658, 47);
             lblGreetings.TabIndex = 5;
             lblGreetings.Text = "Hello {user}! what would you like to do today?";
+            lblGreetings.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblNotifications
             // 
-            lblNotifications.Anchor = AnchorStyles.None;
+            lblNotifications.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblNotifications.AutoSize = true;
             lblNotifications.ForeColor = Color.White;
-            lblNotifications.Location = new Point(655, 558);
+            lblNotifications.Location = new Point(727, 553);
             lblNotifications.Name = "lblNotifications";
             lblNotifications.Size = new Size(85, 19);
             lblNotifications.TabIndex = 7;
@@ -456,31 +473,20 @@
             // 
             // lblAnalytics
             // 
-            lblAnalytics.Anchor = AnchorStyles.None;
+            lblAnalytics.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblAnalytics.AutoSize = true;
             lblAnalytics.ForeColor = Color.White;
-            lblAnalytics.Location = new Point(228, 558);
+            lblAnalytics.Location = new Point(117, 553);
             lblAnalytics.Name = "lblAnalytics";
             lblAnalytics.Size = new Size(63, 19);
             lblAnalytics.TabIndex = 6;
             lblAnalytics.Text = "Analytics";
             // 
-            // picNight
-            // 
-            picNight.Anchor = AnchorStyles.None;
-            picNight.Image = Properties.Resources.Home___Car_Night;
-            picNight.Location = new Point(472, 104);
-            picNight.Name = "picNight";
-            picNight.Size = new Size(150, 150);
-            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
-            picNight.TabIndex = 9;
-            picNight.TabStop = false;
-            // 
             // picDay
             // 
             picDay.Anchor = AnchorStyles.None;
             picDay.Image = Properties.Resources.Home___Car_Day;
-            picDay.Location = new Point(300, 104);
+            picDay.Location = new Point(406, 20);
             picDay.Name = "picDay";
             picDay.Size = new Size(150, 150);
             picDay.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -492,19 +498,59 @@
             pnlForm.AutoScroll = true;
             pnlForm.BackColor = Color.FromArgb(35, 40, 50);
             pnlForm.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlForm.Controls.Add(foreverNotification1);
+            pnlForm.Controls.Add(parrotPieGraph1);
             pnlForm.Controls.Add(picDay);
             pnlForm.Controls.Add(picNight);
             pnlForm.Controls.Add(lblAnalytics);
             pnlForm.Controls.Add(lblNotifications);
             pnlForm.Controls.Add(lblGreetings);
-            pnlForm.Controls.Add(lblTime);
             pnlForm.Controls.Add(lblDay);
             pnlForm.Controls.Add(lblDate);
+            pnlForm.Controls.Add(lblTime);
             pnlForm.Dock = DockStyle.Fill;
             pnlForm.Location = new Point(220, 30);
             pnlForm.Name = "pnlForm";
             pnlForm.Size = new Size(964, 754);
             pnlForm.TabIndex = 12;
+            // 
+            // foreverNotification1
+            // 
+            foreverNotification1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            foreverNotification1.BackColor = Color.FromArgb(60, 70, 73);
+            foreverNotification1.Close = true;
+            foreverNotification1.Font = new Font("Segoe UI", 10F);
+            foreverNotification1.Kind = ReaLTaiizor.Controls.ForeverNotification._Kind.Success;
+            foreverNotification1.Location = new Point(664, 667);
+            foreverNotification1.Name = "foreverNotification1";
+            foreverNotification1.Size = new Size(215, 42);
+            foreverNotification1.TabIndex = 13;
+            foreverNotification1.Text = "foreverNotification1";
+            foreverNotification1.Visible = false;
+            // 
+            // parrotPieGraph1
+            // 
+            parrotPieGraph1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            parrotPieGraph1.BackColor = Color.FromArgb(40, 40, 40);
+            parrotPieGraph1.Colors = (List<Color>)resources.GetObject("parrotPieGraph1.Colors");
+            parrotPieGraph1.Location = new Point(102, 609);
+            parrotPieGraph1.Name = "parrotPieGraph1";
+            parrotPieGraph1.Numbers = (List<int>)resources.GetObject("parrotPieGraph1.Numbers");
+            parrotPieGraph1.Size = new Size(100, 100);
+            parrotPieGraph1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotPieGraph1.TabIndex = 12;
+            parrotPieGraph1.Text = "parrotPieGraph1";
+            // 
+            // picNight
+            // 
+            picNight.Anchor = AnchorStyles.None;
+            picNight.Image = Properties.Resources.Home___Car_Night;
+            picNight.Location = new Point(406, 20);
+            picNight.Name = "picNight";
+            picNight.Size = new Size(150, 150);
+            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
+            picNight.TabIndex = 9;
+            picNight.TabStop = false;
             // 
             // Home
             // 
@@ -527,10 +573,10 @@
             ((System.ComponentModel.ISupportInitialize)picShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMax).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
             ((System.ComponentModel.ISupportInitialize)picDay).EndInit();
             pnlForm.ResumeLayout(false);
             pnlForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
             ResumeLayout(false);
         }
 
@@ -555,7 +601,6 @@
         private Label lblGreetings;
         private Label lblNotifications;
         private Label lblAnalytics;
-        private PictureBox picNight;
         private PictureBox picDay;
         private Panel pnlForm;
         private PictureBox picHide;
@@ -563,5 +608,10 @@
         private Button btnRentals;
         private Button btnAccount;
         private Button btnVehicles;
+        private ReaLTaiizor.Animate.Parrot.ObjectAnimator objectAnimator1;
+        private PictureBox picNight;
+        private ReaLTaiizor.Animate.Parrot.ObjectAnimator objectAnimator2;
+        private ReaLTaiizor.Controls.ForeverNotification foreverNotification1;
+        private ReaLTaiizor.Controls.ParrotPieGraph parrotPieGraph1;
     }
 }

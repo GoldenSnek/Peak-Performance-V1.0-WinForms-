@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Peak_Performance_V1._0
 {
     public partial class ViewAllVehicles : Form
@@ -86,6 +87,16 @@ namespace Peak_Performance_V1._0
 
                 connection.Close();
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

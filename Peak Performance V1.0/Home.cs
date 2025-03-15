@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
+using ReaLTaiizor.Animate;
+using ReaLTaiizor.Animate.Parrot;
+
 
 namespace Peak_Performance_V1._0
 {
@@ -34,8 +37,12 @@ namespace Peak_Performance_V1._0
 
             DateTime now = DateTime.Now;
             lblTime.Text = now.ToString("HH:mm:ss");
-            lblDate.Text = now.ToString("MMMM dd,yyyy");
+            lblDate.Text = now.ToString("MMMM dd, yyyy");
             lblDay.Text = now.ToString("dddd");
+
+            lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
+            lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
+            lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
 
             string hours = now.ToString("HH");
             if (int.TryParse(hours, out int hour))
@@ -55,7 +62,8 @@ namespace Peak_Performance_V1._0
             btnHome.BackColor = Color.FromArgb(255, 128, 0);
             btnHome.FlatAppearance.BorderSize = 2;
             btnHome.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            lblGreetings.Text = $"Hello {SystemManager.currentUsername}! What would you like to do today? <{SystemManager.currentRole}>";
+            lblGreetings.Text = $"Hello {SystemManager.currentUsername}! What would you like to do today?";
+            lblGreetings.Left = (pnlForm.Width - lblGreetings.Width) / 2;
 
             if (SystemManager.currentRole == "Vehicle Provider")
             {
@@ -76,6 +84,7 @@ namespace Peak_Performance_V1._0
         }
 
         private Form activeForm = null;
+
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -100,6 +109,10 @@ namespace Peak_Performance_V1._0
             lblTime.Text = now.ToString("HH:mm:ss");
             lblDate.Text = now.ToString("MMMM dd,yyyy");
             lblDay.Text = now.ToString("dddd");
+
+            lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
+            lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
+            lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
 
             //setup day/night images
             string hours = now.ToString("HH");
@@ -177,7 +190,7 @@ namespace Peak_Performance_V1._0
             btnUpdateVehicles.BackColor = Color.FromArgb(255, 128, 0);
             btnUpdateVehicles.FlatAppearance.BorderSize = 2;
             btnUpdateVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new ProviderEditVehicle());
+            openChildForm(new ProviderUpdateVehicle());
         }
 
         private void btnManageAccount_Click(object sender, EventArgs e)
@@ -250,44 +263,24 @@ namespace Peak_Performance_V1._0
 
         private void btnRentals_Click(object sender, EventArgs e)
         {
-            if (btnAllVehicles.Visible == true)
-            {
-                btnAllVehicles.Visible = false;
-                btnRentalDetails.Visible = false;
-            }
-            else
-            {
-                btnAllVehicles.Visible = true;
-                btnRentalDetails.Visible = true;
-            }
+            bool isVisible = !btnAllVehicles.Visible;
+            btnAllVehicles.Visible = isVisible;
+            btnRentalDetails.Visible = isVisible;
         }
 
         private void btnVehicles_Click(object sender, EventArgs e)
         {
-            if (btnAddVehicles.Visible == true)
-            {
-                btnAddVehicles.Visible = false;
-                btnUpdateVehicles.Visible = false;
-            }
-            else
-            {
-                btnAddVehicles.Visible = true;
-                btnUpdateVehicles.Visible = true;
-            }
+            bool isVisible = !btnAddVehicles.Visible; // Toggle visibility
+            btnAddVehicles.Visible = isVisible;
+            btnUpdateVehicles.Visible = isVisible;
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            if (btnManageAccount.Visible == true)
-            {
-                btnManageAccount.Visible = false;
-                btnLogout.Visible = false;
-            }
-            else
-            {
-                btnManageAccount.Visible = true;
-                btnLogout.Visible = true;
-            }
+            bool isVisible = !btnManageAccount.Visible; // Toggle visibility
+            btnManageAccount.Visible = isVisible;
+            btnLogout.Visible = isVisible;
+
         }
     }
 }

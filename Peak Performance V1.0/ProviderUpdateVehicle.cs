@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ProviderEditVehicle : Form
+    public partial class ProviderUpdateVehicle : Form
     {
         private OleDbConnection connection;
 
-        public ProviderEditVehicle()
+        public ProviderUpdateVehicle()
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
@@ -84,7 +84,7 @@ namespace Peak_Performance_V1._0
         {
             cbxGeneralType.Text = string.Empty;
             cbxSpecificType.Text = string.Empty;
-            cbxMake.Text = string.Empty;
+            txtMake.Text = string.Empty;
             txtModel.Text = string.Empty;
             cbxYear.Text = string.Empty;
             txtLicense.Text = string.Empty;

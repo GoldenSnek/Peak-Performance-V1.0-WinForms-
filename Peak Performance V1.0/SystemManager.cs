@@ -50,7 +50,17 @@ namespace Peak_Performance_V1._0
         }
         public static Image ResizeImage(Image img)
         {
-            return new Bitmap(img, new Size(32, 32));
+            // Get the current screen resolution
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            // Calculate a scaling factor (adjust as needed)
+            float scaleFactor = Math.Min(screenWidth / 1920f, screenHeight / 1080f); // Use reference resolution
+
+            // Set a base size (e.g., 32x32 for 1080p)
+            int newSize = (int)(32 * scaleFactor);
+
+            return new Bitmap(img, new Size(newSize, newSize));
         }
 
     }

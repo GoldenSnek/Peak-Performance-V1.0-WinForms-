@@ -89,7 +89,7 @@ namespace Peak_Performance_V1._0
 
             string generalType = cbxGeneralType.Text;
             string specificType = cbxSpecificType.Text;
-            string make = cbxMake.Text;
+            string make = txtMake.Text;
             string model = txtModel.Text;
             string tempYear = cbxYear.Text;
             string licensePlate = txtLicense.Text;
@@ -199,7 +199,7 @@ namespace Peak_Performance_V1._0
         {
             cbxGeneralType.Text = string.Empty;
             cbxSpecificType.Text = string.Empty;
-            cbxMake.Text = string.Empty;
+            txtMake.Text = string.Empty;
             txtModel.Text = string.Empty;
             cbxYear.Text = string.Empty;
             txtLicense.Text = string.Empty;
