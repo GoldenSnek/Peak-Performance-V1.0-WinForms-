@@ -210,7 +210,13 @@ namespace Peak_Performance_V1._0
             txtPriceDaily.Text = string.Empty;
             txtPriceHourly.Text = string.Empty;
             picPreview.Image = null;
-            lblImagePath.Text = "Path";
+            lblImagePath.Text = null;
+        }
+
+        private void btnClearPicture_Click(object sender, EventArgs e)
+        {
+            picPreview.Image = null;
+            lblImagePath.Text = null;
         }
     }
 }

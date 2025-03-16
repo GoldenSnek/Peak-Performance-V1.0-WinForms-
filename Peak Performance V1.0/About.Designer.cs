@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             lblAbout = new Label();
             picBack = new PictureBox();
@@ -36,6 +37,7 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -131,6 +133,11 @@
             pictureBox3.TabIndex = 47;
             pictureBox3.TabStop = false;
             // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
+            // 
             // About
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -148,8 +155,10 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "About";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form4";
+            Load += About_Load;
             ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -168,5 +177,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private System.Windows.Forms.Timer tmrFadeIn;
     }
 }

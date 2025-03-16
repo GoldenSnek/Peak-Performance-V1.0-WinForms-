@@ -30,5 +30,19 @@ namespace Peak_Performance_V1._0
             Application.Exit();
         }
 
+        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        {
+            Opacity += 0.02;
+            if (Opacity >= 1) // Fully visible
+            {
+                tmrFadeIn.Stop(); // Stop the timer
+            }
+        }
+
+        private void About_Load(object sender, EventArgs e)
+        {
+            tmrFadeIn.Start();
+        }
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblGoToR = new Label();
             lblProceed = new Label();
             btnLogin = new ReaLTaiizor.Controls.MaterialButton();
@@ -40,6 +41,7 @@
             lblPasswordError = new Label();
             picClose = new PictureBox();
             picBack = new PictureBox();
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             SuspendLayout();
@@ -273,6 +275,11 @@
             picBack.TabStop = false;
             picBack.Click += picBack_Click;
             // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -297,6 +304,7 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1920, 1040);
             Name = "Login";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             TransparencyKey = Color.Fuchsia;
@@ -320,5 +328,6 @@
         private Label lblPasswordError;
         private PictureBox picClose;
         private PictureBox picBack;
+        private System.Windows.Forms.Timer tmrFadeIn;
     }
 }

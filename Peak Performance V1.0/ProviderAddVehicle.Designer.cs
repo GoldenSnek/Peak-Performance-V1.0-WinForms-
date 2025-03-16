@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             picPreview = new PictureBox();
-            lblImage = new Label();
             lblImagePath = new Label();
             flpDisplay = new FlowLayoutPanel();
             txtModel = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel1 = new Panel();
+            btnClearPicture = new ReaLTaiizor.Controls.MaterialButton();
+            btnAddVehicle = new ReaLTaiizor.Controls.MaterialButton();
             panel6 = new Panel();
             txtMake = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            btnUpdate = new ReaLTaiizor.Controls.MaterialButton();
             btnClear = new ReaLTaiizor.Controls.MaterialButton();
             panel10 = new Panel();
             cbxSeats = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -88,27 +88,15 @@
             picPreview.TabIndex = 21;
             picPreview.TabStop = false;
             // 
-            // lblImage
-            // 
-            lblImage.Anchor = AnchorStyles.None;
-            lblImage.AutoSize = true;
-            lblImage.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblImage.ForeColor = Color.White;
-            lblImage.Location = new Point(81, 9);
-            lblImage.Name = "lblImage";
-            lblImage.Size = new Size(93, 18);
-            lblImage.TabIndex = 22;
-            lblImage.Text = "Add Image";
-            // 
             // lblImagePath
             // 
             lblImagePath.Anchor = AnchorStyles.None;
             lblImagePath.AutoSize = true;
             lblImagePath.Location = new Point(106, 208);
             lblImagePath.Name = "lblImagePath";
-            lblImagePath.Size = new Size(37, 19);
+            lblImagePath.Size = new Size(0, 19);
             lblImagePath.TabIndex = 28;
-            lblImagePath.Text = "path";
+            lblImagePath.Visible = false;
             // 
             // flpDisplay
             // 
@@ -153,13 +141,13 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Left;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.Controls.Add(btnClearPicture);
+            panel1.Controls.Add(btnAddVehicle);
             panel1.Controls.Add(lblImagePath);
-            panel1.Controls.Add(lblImage);
             panel1.Controls.Add(picPreview);
             panel1.Controls.Add(panel6);
-            panel1.Controls.Add(btnUpdate);
             panel1.Controls.Add(btnClear);
             panel1.Controls.Add(panel10);
             panel1.Controls.Add(panel12);
@@ -178,6 +166,52 @@
             panel1.Size = new Size(598, 754);
             panel1.TabIndex = 32;
             // 
+            // btnClearPicture
+            // 
+            btnClearPicture.Anchor = AnchorStyles.None;
+            btnClearPicture.AutoSize = false;
+            btnClearPicture.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnClearPicture.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnClearPicture.Depth = 0;
+            btnClearPicture.HighEmphasis = true;
+            btnClearPicture.Icon = null;
+            btnClearPicture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnClearPicture.Location = new Point(211, 146);
+            btnClearPicture.Margin = new Padding(4, 6, 4, 6);
+            btnClearPicture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnClearPicture.Name = "btnClearPicture";
+            btnClearPicture.NoAccentTextColor = Color.Empty;
+            btnClearPicture.Size = new Size(119, 36);
+            btnClearPicture.TabIndex = 49;
+            btnClearPicture.Text = "Clear Picture";
+            btnClearPicture.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnClearPicture.UseAccentColor = false;
+            btnClearPicture.UseVisualStyleBackColor = true;
+            btnClearPicture.Click += btnClearPicture_Click;
+            // 
+            // btnAddVehicle
+            // 
+            btnAddVehicle.Anchor = AnchorStyles.None;
+            btnAddVehicle.AutoSize = false;
+            btnAddVehicle.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAddVehicle.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnAddVehicle.Depth = 0;
+            btnAddVehicle.HighEmphasis = true;
+            btnAddVehicle.Icon = null;
+            btnAddVehicle.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnAddVehicle.Location = new Point(400, 146);
+            btnAddVehicle.Margin = new Padding(4, 6, 4, 6);
+            btnAddVehicle.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnAddVehicle.Name = "btnAddVehicle";
+            btnAddVehicle.NoAccentTextColor = Color.Empty;
+            btnAddVehicle.Size = new Size(119, 36);
+            btnAddVehicle.TabIndex = 46;
+            btnAddVehicle.Text = "Add Vehicle";
+            btnAddVehicle.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnAddVehicle.UseAccentColor = false;
+            btnAddVehicle.UseVisualStyleBackColor = true;
+            btnAddVehicle.Click += btnAddVehicle_Click;
+            // 
             // panel6
             // 
             panel6.Anchor = AnchorStyles.None;
@@ -185,7 +219,7 @@
             panel6.Controls.Add(txtMake);
             panel6.Location = new Point(36, 423);
             panel6.Name = "panel6";
-            panel6.Size = new Size(200, 63);
+            panel6.Size = new Size(200, 48);
             panel6.TabIndex = 44;
             // 
             // txtMake
@@ -220,29 +254,6 @@
             txtMake.TrailingIcon = null;
             txtMake.UseSystemPasswordChar = false;
             // 
-            // btnUpdate
-            // 
-            btnUpdate.Anchor = AnchorStyles.None;
-            btnUpdate.AutoSize = false;
-            btnUpdate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnUpdate.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnUpdate.Depth = 0;
-            btnUpdate.HighEmphasis = true;
-            btnUpdate.Icon = null;
-            btnUpdate.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnUpdate.Location = new Point(400, 136);
-            btnUpdate.Margin = new Padding(4, 6, 4, 6);
-            btnUpdate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.NoAccentTextColor = Color.Empty;
-            btnUpdate.Size = new Size(119, 36);
-            btnUpdate.TabIndex = 43;
-            btnUpdate.Text = "Update Details";
-            btnUpdate.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnUpdate.UseAccentColor = false;
-            btnUpdate.UseVisualStyleBackColor = true;
-            btnUpdate.Click += btnAddVehicle_Click;
-            // 
             // btnClear
             // 
             btnClear.Anchor = AnchorStyles.None;
@@ -273,7 +284,7 @@
             panel10.Controls.Add(cbxSeats);
             panel10.Location = new Point(360, 423);
             panel10.Name = "panel10";
-            panel10.Size = new Size(200, 63);
+            panel10.Size = new Size(200, 49);
             panel10.TabIndex = 41;
             // 
             // cbxSeats
@@ -308,7 +319,7 @@
             panel12.Controls.Add(txtPriceHourly);
             panel12.Location = new Point(360, 669);
             panel12.Name = "panel12";
-            panel12.Size = new Size(200, 63);
+            panel12.Size = new Size(200, 48);
             panel12.TabIndex = 36;
             // 
             // txtPriceHourly
@@ -350,7 +361,7 @@
             panel11.Controls.Add(txtMileage);
             panel11.Location = new Point(360, 505);
             panel11.Name = "panel11";
-            panel11.Size = new Size(200, 63);
+            panel11.Size = new Size(200, 48);
             panel11.TabIndex = 34;
             // 
             // txtMileage
@@ -392,7 +403,7 @@
             panel13.Controls.Add(txtPriceDaily);
             panel13.Location = new Point(360, 587);
             panel13.Name = "panel13";
-            panel13.Size = new Size(200, 63);
+            panel13.Size = new Size(200, 48);
             panel13.TabIndex = 35;
             // 
             // txtPriceDaily
@@ -434,7 +445,7 @@
             panel7.Controls.Add(cbxFuel);
             panel7.Location = new Point(360, 341);
             panel7.Name = "panel7";
-            panel7.Size = new Size(200, 63);
+            panel7.Size = new Size(200, 49);
             panel7.TabIndex = 40;
             // 
             // cbxFuel
@@ -469,7 +480,7 @@
             panel8.Controls.Add(cbxColor);
             panel8.Location = new Point(360, 259);
             panel8.Name = "panel8";
-            panel8.Size = new Size(200, 63);
+            panel8.Size = new Size(200, 49);
             panel8.TabIndex = 39;
             // 
             // cbxColor
@@ -504,7 +515,7 @@
             panel5.Controls.Add(cbxSpecificType);
             panel5.Location = new Point(36, 341);
             panel5.Name = "panel5";
-            panel5.Size = new Size(200, 63);
+            panel5.Size = new Size(200, 49);
             panel5.TabIndex = 36;
             // 
             // cbxSpecificType
@@ -539,7 +550,7 @@
             panel9.Controls.Add(cbxYear);
             panel9.Location = new Point(36, 587);
             panel9.Name = "panel9";
-            panel9.Size = new Size(200, 63);
+            panel9.Size = new Size(200, 49);
             panel9.TabIndex = 38;
             // 
             // cbxYear
@@ -574,7 +585,7 @@
             panel4.Controls.Add(txtLicense);
             panel4.Location = new Point(36, 669);
             panel4.Name = "panel4";
-            panel4.Size = new Size(200, 63);
+            panel4.Size = new Size(200, 48);
             panel4.TabIndex = 34;
             // 
             // txtLicense
@@ -616,7 +627,7 @@
             panel3.Controls.Add(cbxGeneralType);
             panel3.Location = new Point(36, 259);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 63);
+            panel3.Size = new Size(200, 49);
             panel3.TabIndex = 33;
             // 
             // cbxGeneralType
@@ -651,7 +662,7 @@
             panel2.Controls.Add(txtModel);
             panel2.Location = new Point(36, 505);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 63);
+            panel2.Size = new Size(200, 48);
             panel2.TabIndex = 32;
             // 
             // btnBrowse
@@ -664,7 +675,7 @@
             btnBrowse.HighEmphasis = true;
             btnBrowse.Icon = null;
             btnBrowse.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnBrowse.Location = new Point(215, 99);
+            btnBrowse.Location = new Point(211, 65);
             btnBrowse.Margin = new Padding(4, 6, 4, 6);
             btnBrowse.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnBrowse.Name = "btnBrowse";
@@ -709,7 +720,6 @@
 
         #endregion
         private PictureBox picPreview;
-        private Label lblImage;
         private Label lblImagePath;
         private FlowLayoutPanel flpDisplay;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtModel;
@@ -736,9 +746,10 @@
         private ReaLTaiizor.Controls.MaterialComboBox cbxSeats;
         private Panel panel11;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtMileage;
-        private ReaLTaiizor.Controls.MaterialButton btnUpdate;
         private ReaLTaiizor.Controls.MaterialButton btnClear;
         private Panel panel6;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtMake;
+        private ReaLTaiizor.Controls.MaterialButton btnAddVehicle;
+        private ReaLTaiizor.Controls.MaterialButton btnClearPicture;
     }
 }

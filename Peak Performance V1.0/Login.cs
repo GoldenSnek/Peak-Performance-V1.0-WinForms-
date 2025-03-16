@@ -40,7 +40,7 @@ namespace Peak_Performance_V1._0
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            tmrFadeIn.Start();
             txtPassword.PasswordChar = '•'; //hide password by default
         }
 
@@ -93,21 +93,9 @@ namespace Peak_Performance_V1._0
 
                         MessageBox.Show($"Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        //open respective main form based on role
-                        if (role == "Admin")
-                        {
-                            /*
-                            MainMenu provider = new MainMenu();
-                            provider.Show();
-                            this.Hide();
-                            */
-                        }
-                        else
-                        {
-                            Home mainMenu = new Home();
-                            mainMenu.Show();
-                            this.Hide();
-                        }
+                        Home mainMenu = new Home();
+                        mainMenu.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -154,6 +142,15 @@ namespace Peak_Performance_V1._0
             MainLR mainLR = new MainLR();
             mainLR.Show();
             this.Hide();
+        }
+
+        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        {
+            Opacity += 0.02;
+            if (Opacity >= 1) // Fully visible
+            {
+                tmrFadeIn.Stop(); // Stop the timer
+            }
         }
     }
 }

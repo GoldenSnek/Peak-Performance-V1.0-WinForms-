@@ -42,6 +42,8 @@
             btnRentalDetails = new Button();
             btnAllVehicles = new Button();
             btnRentals = new Button();
+            btnAdminAllUsers = new Button();
+            btnAdminAllVehicles = new Button();
             btnHome = new Button();
             pnlTitle = new Panel();
             picHide = new PictureBox();
@@ -60,8 +62,7 @@
             foreverNotification1 = new ReaLTaiizor.Controls.ForeverNotification();
             parrotPieGraph1 = new ReaLTaiizor.Controls.ParrotPieGraph();
             picNight = new PictureBox();
-            objectAnimator1 = new ReaLTaiizor.Animate.Parrot.ObjectAnimator();
-            objectAnimator2 = new ReaLTaiizor.Animate.Parrot.ObjectAnimator();
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
             pnlSideMenu.SuspendLayout();
             pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picHide).BeginInit();
@@ -94,6 +95,8 @@
             pnlSideMenu.Controls.Add(btnRentalDetails);
             pnlSideMenu.Controls.Add(btnAllVehicles);
             pnlSideMenu.Controls.Add(btnRentals);
+            pnlSideMenu.Controls.Add(btnAdminAllUsers);
+            pnlSideMenu.Controls.Add(btnAdminAllVehicles);
             pnlSideMenu.Controls.Add(btnHome);
             pnlSideMenu.Controls.Add(pnlTitle);
             pnlSideMenu.Dock = DockStyle.Left;
@@ -111,11 +114,11 @@
             btnExit.Font = new Font("Arial Rounded MT Bold", 12F);
             btnExit.ForeColor = Color.White;
             btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExit.Location = new Point(0, 680);
+            btnExit.Location = new Point(0, 730);
             btnExit.Name = "btnExit";
             btnExit.Padding = new Padding(10, 0, 0, 0);
             btnExit.RightToLeft = RightToLeft.No;
-            btnExit.Size = new Size(220, 70);
+            btnExit.Size = new Size(203, 60);
             btnExit.TabIndex = 8;
             btnExit.Text = "  EXIT";
             btnExit.TextAlign = ContentAlignment.MiddleLeft;
@@ -131,11 +134,11 @@
             btnLogout.Font = new Font("Arial Rounded MT Bold", 12F);
             btnLogout.ForeColor = Color.White;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(0, 610);
+            btnLogout.Location = new Point(0, 670);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(10, 0, 0, 0);
             btnLogout.RightToLeft = RightToLeft.No;
-            btnLogout.Size = new Size(220, 70);
+            btnLogout.Size = new Size(203, 60);
             btnLogout.TabIndex = 9;
             btnLogout.Text = "  Logout";
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
@@ -151,11 +154,11 @@
             btnManageAccount.Font = new Font("Arial Rounded MT Bold", 12F);
             btnManageAccount.ForeColor = Color.White;
             btnManageAccount.ImageAlign = ContentAlignment.MiddleLeft;
-            btnManageAccount.Location = new Point(0, 540);
+            btnManageAccount.Location = new Point(0, 610);
             btnManageAccount.Name = "btnManageAccount";
             btnManageAccount.Padding = new Padding(10, 0, 0, 0);
             btnManageAccount.RightToLeft = RightToLeft.No;
-            btnManageAccount.Size = new Size(220, 70);
+            btnManageAccount.Size = new Size(203, 60);
             btnManageAccount.TabIndex = 7;
             btnManageAccount.Text = "  Manage Account";
             btnManageAccount.TextAlign = ContentAlignment.MiddleLeft;
@@ -172,11 +175,11 @@
             btnAccount.Font = new Font("Arial Rounded MT Bold", 12F);
             btnAccount.ForeColor = Color.FromArgb(255, 128, 0);
             btnAccount.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAccount.Location = new Point(0, 510);
+            btnAccount.Location = new Point(0, 580);
             btnAccount.Name = "btnAccount";
             btnAccount.Padding = new Padding(10, 0, 0, 0);
             btnAccount.RightToLeft = RightToLeft.No;
-            btnAccount.Size = new Size(220, 30);
+            btnAccount.Size = new Size(203, 30);
             btnAccount.TabIndex = 14;
             btnAccount.Text = "  ACCOUNT";
             btnAccount.TextAlign = ContentAlignment.MiddleLeft;
@@ -192,11 +195,11 @@
             btnUpdateVehicles.Font = new Font("Arial Rounded MT Bold", 12F);
             btnUpdateVehicles.ForeColor = Color.White;
             btnUpdateVehicles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUpdateVehicles.Location = new Point(0, 440);
+            btnUpdateVehicles.Location = new Point(0, 520);
             btnUpdateVehicles.Name = "btnUpdateVehicles";
             btnUpdateVehicles.Padding = new Padding(10, 0, 0, 0);
             btnUpdateVehicles.RightToLeft = RightToLeft.No;
-            btnUpdateVehicles.Size = new Size(220, 70);
+            btnUpdateVehicles.Size = new Size(203, 60);
             btnUpdateVehicles.TabIndex = 6;
             btnUpdateVehicles.Text = "  Update Vehicles";
             btnUpdateVehicles.TextAlign = ContentAlignment.MiddleLeft;
@@ -212,11 +215,11 @@
             btnAddVehicles.Font = new Font("Arial Rounded MT Bold", 12F);
             btnAddVehicles.ForeColor = Color.White;
             btnAddVehicles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddVehicles.Location = new Point(0, 370);
+            btnAddVehicles.Location = new Point(0, 460);
             btnAddVehicles.Name = "btnAddVehicles";
             btnAddVehicles.Padding = new Padding(10, 0, 0, 0);
             btnAddVehicles.RightToLeft = RightToLeft.No;
-            btnAddVehicles.Size = new Size(220, 70);
+            btnAddVehicles.Size = new Size(203, 60);
             btnAddVehicles.TabIndex = 5;
             btnAddVehicles.Text = "  Add Vehicles";
             btnAddVehicles.TextAlign = ContentAlignment.MiddleLeft;
@@ -233,11 +236,11 @@
             btnVehicles.Font = new Font("Arial Rounded MT Bold", 12F);
             btnVehicles.ForeColor = Color.FromArgb(255, 128, 0);
             btnVehicles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVehicles.Location = new Point(0, 340);
+            btnVehicles.Location = new Point(0, 430);
             btnVehicles.Name = "btnVehicles";
             btnVehicles.Padding = new Padding(10, 0, 0, 0);
             btnVehicles.RightToLeft = RightToLeft.No;
-            btnVehicles.Size = new Size(220, 30);
+            btnVehicles.Size = new Size(203, 30);
             btnVehicles.TabIndex = 13;
             btnVehicles.Text = "  VEHICLES";
             btnVehicles.TextAlign = ContentAlignment.MiddleLeft;
@@ -253,11 +256,11 @@
             btnRentalDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             btnRentalDetails.ForeColor = Color.White;
             btnRentalDetails.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRentalDetails.Location = new Point(0, 270);
+            btnRentalDetails.Location = new Point(0, 370);
             btnRentalDetails.Name = "btnRentalDetails";
             btnRentalDetails.Padding = new Padding(10, 0, 0, 0);
             btnRentalDetails.RightToLeft = RightToLeft.No;
-            btnRentalDetails.Size = new Size(220, 70);
+            btnRentalDetails.Size = new Size(203, 60);
             btnRentalDetails.TabIndex = 4;
             btnRentalDetails.Text = "  Rental Details";
             btnRentalDetails.TextAlign = ContentAlignment.MiddleLeft;
@@ -273,11 +276,11 @@
             btnAllVehicles.Font = new Font("Arial Rounded MT Bold", 12F);
             btnAllVehicles.ForeColor = Color.White;
             btnAllVehicles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAllVehicles.Location = new Point(0, 200);
+            btnAllVehicles.Location = new Point(0, 310);
             btnAllVehicles.Name = "btnAllVehicles";
             btnAllVehicles.Padding = new Padding(10, 0, 0, 0);
             btnAllVehicles.RightToLeft = RightToLeft.No;
-            btnAllVehicles.Size = new Size(220, 70);
+            btnAllVehicles.Size = new Size(203, 60);
             btnAllVehicles.TabIndex = 3;
             btnAllVehicles.Text = "  All Vehicles";
             btnAllVehicles.TextAlign = ContentAlignment.MiddleLeft;
@@ -294,17 +297,57 @@
             btnRentals.Font = new Font("Arial Rounded MT Bold", 12F);
             btnRentals.ForeColor = Color.FromArgb(255, 128, 0);
             btnRentals.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRentals.Location = new Point(0, 170);
+            btnRentals.Location = new Point(0, 280);
             btnRentals.Name = "btnRentals";
             btnRentals.Padding = new Padding(10, 0, 0, 0);
             btnRentals.RightToLeft = RightToLeft.No;
-            btnRentals.Size = new Size(220, 30);
+            btnRentals.Size = new Size(203, 30);
             btnRentals.TabIndex = 10;
             btnRentals.Text = "  RENTALS";
             btnRentals.TextAlign = ContentAlignment.MiddleLeft;
             btnRentals.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRentals.UseVisualStyleBackColor = false;
             btnRentals.Click += btnRentals_Click;
+            // 
+            // btnAdminAllUsers
+            // 
+            btnAdminAllUsers.Dock = DockStyle.Top;
+            btnAdminAllUsers.FlatAppearance.BorderSize = 0;
+            btnAdminAllUsers.FlatStyle = FlatStyle.Flat;
+            btnAdminAllUsers.Font = new Font("Arial Rounded MT Bold", 12F);
+            btnAdminAllUsers.ForeColor = Color.White;
+            btnAdminAllUsers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdminAllUsers.Location = new Point(0, 220);
+            btnAdminAllUsers.Name = "btnAdminAllUsers";
+            btnAdminAllUsers.Padding = new Padding(10, 0, 0, 0);
+            btnAdminAllUsers.RightToLeft = RightToLeft.No;
+            btnAdminAllUsers.Size = new Size(203, 60);
+            btnAdminAllUsers.TabIndex = 16;
+            btnAdminAllUsers.Text = "  Users";
+            btnAdminAllUsers.TextAlign = ContentAlignment.MiddleLeft;
+            btnAdminAllUsers.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdminAllUsers.UseVisualStyleBackColor = true;
+            btnAdminAllUsers.Click += btnAdminAllUsers_Click;
+            // 
+            // btnAdminAllVehicles
+            // 
+            btnAdminAllVehicles.Dock = DockStyle.Top;
+            btnAdminAllVehicles.FlatAppearance.BorderSize = 0;
+            btnAdminAllVehicles.FlatStyle = FlatStyle.Flat;
+            btnAdminAllVehicles.Font = new Font("Arial Rounded MT Bold", 12F);
+            btnAdminAllVehicles.ForeColor = Color.White;
+            btnAdminAllVehicles.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdminAllVehicles.Location = new Point(0, 160);
+            btnAdminAllVehicles.Name = "btnAdminAllVehicles";
+            btnAdminAllVehicles.Padding = new Padding(10, 0, 0, 0);
+            btnAdminAllVehicles.RightToLeft = RightToLeft.No;
+            btnAdminAllVehicles.Size = new Size(203, 60);
+            btnAdminAllVehicles.TabIndex = 15;
+            btnAdminAllVehicles.Text = "  Vehicles";
+            btnAdminAllVehicles.TextAlign = ContentAlignment.MiddleLeft;
+            btnAdminAllVehicles.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdminAllVehicles.UseVisualStyleBackColor = true;
+            btnAdminAllVehicles.Click += btnAdminAllVehicles_Click;
             // 
             // btnHome
             // 
@@ -318,7 +361,7 @@
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(10, 0, 0, 0);
             btnHome.RightToLeft = RightToLeft.No;
-            btnHome.Size = new Size(220, 70);
+            btnHome.Size = new Size(203, 60);
             btnHome.TabIndex = 2;
             btnHome.Text = "  Home";
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
@@ -333,7 +376,7 @@
             pnlTitle.Dock = DockStyle.Top;
             pnlTitle.Location = new Point(0, 0);
             pnlTitle.Name = "pnlTitle";
-            pnlTitle.Size = new Size(220, 100);
+            pnlTitle.Size = new Size(203, 100);
             pnlTitle.TabIndex = 12;
             // 
             // picHide
@@ -411,7 +454,7 @@
             lblDate.BackColor = Color.Transparent;
             lblDate.Font = new Font("Segoe Print", 20.25F, FontStyle.Bold);
             lblDate.ForeColor = Color.White;
-            lblDate.Location = new Point(394, 330);
+            lblDate.Location = new Point(394, 340);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(177, 47);
             lblDate.TabIndex = 3;
@@ -470,6 +513,7 @@
             lblNotifications.Size = new Size(85, 19);
             lblNotifications.TabIndex = 7;
             lblNotifications.Text = "Notifications";
+            lblNotifications.Visible = false;
             // 
             // lblAnalytics
             // 
@@ -486,7 +530,7 @@
             // 
             picDay.Anchor = AnchorStyles.None;
             picDay.Image = Properties.Resources.Home___Car_Day;
-            picDay.Location = new Point(406, 20);
+            picDay.Location = new Point(406, 466);
             picDay.Name = "picDay";
             picDay.Size = new Size(150, 150);
             picDay.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -545,12 +589,17 @@
             // 
             picNight.Anchor = AnchorStyles.None;
             picNight.Image = Properties.Resources.Home___Car_Night;
-            picNight.Location = new Point(406, 20);
+            picNight.Location = new Point(406, 466);
             picNight.Name = "picNight";
             picNight.Size = new Size(150, 150);
             picNight.SizeMode = PictureBoxSizeMode.StretchImage;
             picNight.TabIndex = 9;
             picNight.TabStop = false;
+            // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
             // Home
             // 
@@ -564,6 +613,7 @@
             Controls.Add(pnlSideMenu);
             MinimumSize = new Size(236, 0);
             Name = "Home";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Load += MainMenu_Load;
             pnlSideMenu.ResumeLayout(false);
@@ -608,10 +658,11 @@
         private Button btnRentals;
         private Button btnAccount;
         private Button btnVehicles;
-        private ReaLTaiizor.Animate.Parrot.ObjectAnimator objectAnimator1;
         private PictureBox picNight;
-        private ReaLTaiizor.Animate.Parrot.ObjectAnimator objectAnimator2;
         private ReaLTaiizor.Controls.ForeverNotification foreverNotification1;
         private ReaLTaiizor.Controls.ParrotPieGraph parrotPieGraph1;
+        private Button btnAdminAllUsers;
+        private Button btnAdminAllVehicles;
+        private System.Windows.Forms.Timer tmrFadeIn;
     }
 }

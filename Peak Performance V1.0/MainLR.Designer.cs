@@ -48,6 +48,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
@@ -197,7 +198,6 @@
             // 
             // tmrMove
             // 
-            tmrMove.Enabled = true;
             tmrMove.Interval = 10;
             tmrMove.Tick += tmrMove_Tick;
             // 
@@ -300,6 +300,11 @@
             label5.TabIndex = 44;
             label5.Text = "300";
             // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
+            // 
             // MainLR
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -326,6 +331,7 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainLR";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += MainLR_Load;
@@ -358,5 +364,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private System.Windows.Forms.Timer tmrFadeIn;
     }
 }

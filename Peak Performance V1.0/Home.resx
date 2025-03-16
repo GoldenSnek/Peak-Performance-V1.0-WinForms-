@@ -146,10 +146,7 @@
         EQAAAAMAAAAEAAAABgAAAAAAAAAAAAAAAAAAAAs=
 </value>
   </data>
-  <metadata name="objectAnimator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>143, 31</value>
-  </metadata>
-  <metadata name="objectAnimator2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>301, 31</value>
+  <metadata name="tmrFadeIn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>279, 33</value>
   </metadata>
 </root>

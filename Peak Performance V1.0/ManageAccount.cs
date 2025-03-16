@@ -24,7 +24,9 @@ namespace Peak_Performance_V1._0
             txtBirthday.Text = string.Empty;
             txtLicenseID.Text = string.Empty;
             txtEmail.Text = string.Empty;
-            txtNumber.Text = string.Empty;
+            panel5.Text = string.Empty;
+            picProfilePicture.Image = null;
+            lblImagePath.Text = null;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e) //EVENT, choose a new profile picture
@@ -43,7 +45,7 @@ namespace Peak_Performance_V1._0
         private void btnClearPicture_Click(object sender, EventArgs e) //EVENT, clear profile picture
         {
             picProfilePicture.Image = null;
-            lblImagePath.Text = "Path";
+            lblImagePath.Text = null;
         }
     }
 }

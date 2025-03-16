@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             picBack = new PictureBox();
             picClose = new PictureBox();
             lblPasswordError = new Label();
@@ -45,6 +46,7 @@
             rbtnClient = new ReaLTaiizor.Controls.CyberRadioButton();
             rbtnProvider = new ReaLTaiizor.Controls.CyberRadioButton();
             label2 = new Label();
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             SuspendLayout();
@@ -420,6 +422,11 @@
             label2.Text = "Role:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -447,8 +454,10 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Register";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
+            Load += Register_Load;
             ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ResumeLayout(false);
@@ -473,5 +482,6 @@
         private ReaLTaiizor.Controls.CyberRadioButton rbtnClient;
         private ReaLTaiizor.Controls.CyberRadioButton rbtnProvider;
         private Label label2;
+        private System.Windows.Forms.Timer tmrFadeIn;
     }
 }

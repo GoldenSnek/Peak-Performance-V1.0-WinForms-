@@ -55,9 +55,9 @@
             // 
             lblType.Font = new Font("Copperplate Gothic Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblType.ForeColor = Color.Silver;
-            lblType.Location = new Point(171, 118);
+            lblType.Location = new Point(186, 118);
             lblType.Name = "lblType";
-            lblType.Size = new Size(155, 50);
+            lblType.Size = new Size(140, 50);
             lblType.TabIndex = 0;
             lblType.Text = "Type";
             lblType.TextAlign = ContentAlignment.MiddleCenter;
@@ -66,9 +66,9 @@
             // 
             lblMake.Font = new Font("Copperplate Gothic Bold", 12F);
             lblMake.ForeColor = Color.Lavender;
-            lblMake.Location = new Point(171, 17);
+            lblMake.Location = new Point(186, 17);
             lblMake.Name = "lblMake";
-            lblMake.Size = new Size(155, 40);
+            lblMake.Size = new Size(140, 40);
             lblMake.TabIndex = 1;
             lblMake.Text = "Make";
             lblMake.TextAlign = ContentAlignment.MiddleCenter;
@@ -77,9 +77,9 @@
             // 
             lblModel.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblModel.ForeColor = Color.White;
-            lblModel.Location = new Point(171, 63);
+            lblModel.Location = new Point(186, 63);
             lblModel.Name = "lblModel";
-            lblModel.Size = new Size(155, 50);
+            lblModel.Size = new Size(140, 50);
             lblModel.TabIndex = 2;
             lblModel.Text = "Model";
             lblModel.TextAlign = ContentAlignment.MiddleCenter;

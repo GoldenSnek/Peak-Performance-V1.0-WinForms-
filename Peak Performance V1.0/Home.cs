@@ -25,6 +25,7 @@ namespace Peak_Performance_V1._0
 
         private void MainMenu_Load(object sender, EventArgs e) //INITIAL EVENT to load the time and images
         {
+            tmrFadeIn.Start();
 
             btnHome.Image = SystemManager.ResizeImage(Properties.Resources.Home);
             btnAllVehicles.Image = SystemManager.ResizeImage(Properties.Resources.ViewAll);
@@ -54,11 +55,11 @@ namespace Peak_Performance_V1._0
                 }
                 else
                 {
+            }
+
                     picDay.Visible = false;
                     picNight.Visible = true;
                 }
-            }
-
             btnHome.BackColor = Color.FromArgb(255, 128, 0);
             btnHome.FlatAppearance.BorderSize = 2;
             btnHome.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
@@ -67,19 +68,51 @@ namespace Peak_Performance_V1._0
 
             if (SystemManager.currentRole == "Vehicle Provider")
             {
+                btnAdminAllVehicles.Visible = false;
+                btnAdminAllUsers.Visible = false;
+
+                btnRentals.Visible = true;
+                btnAllVehicles.Visible = true;
+                btnRentalDetails.Visible = true;
+
                 btnVehicles.Visible = true;
                 btnAddVehicles.Visible = true;
                 btnUpdateVehicles.Visible = true;
+
+                btnAccount.Visible = true;
+                btnManageAccount.Visible = true;
             }
             else if (SystemManager.currentRole == "Client")
             {
+                btnAdminAllVehicles.Visible = false;
+                btnAdminAllUsers.Visible = false;
+
+                btnRentals.Visible = true;
+                btnAllVehicles.Visible = true;
+                btnRentalDetails.Visible = true;
+
                 btnVehicles.Visible = false;
                 btnAddVehicles.Visible = false;
                 btnUpdateVehicles.Visible = false;
+
+                btnAccount.Visible = true;
+                btnManageAccount.Visible = true;
             }
-            else
+            else //admin
             {
-                //admin
+                btnAdminAllVehicles.Visible = true;
+                btnAdminAllUsers.Visible = true;
+
+                btnRentals.Visible = false;
+                btnAllVehicles.Visible = false;
+                btnRentalDetails.Visible = false;
+
+                btnVehicles.Visible = false;
+                btnAddVehicles.Visible = false;
+                btnUpdateVehicles.Visible = false;
+
+                btnAccount.Visible = false;
+                btnManageAccount.Visible = false;
             }
         }
 
@@ -171,8 +204,10 @@ namespace Peak_Performance_V1._0
             btnRentalDetails.BackColor = Color.FromArgb(255, 128, 0);
             btnRentalDetails.FlatAppearance.BorderSize = 2;
             btnRentalDetails.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            //openChildForm(new ClientViewRental());
-            //openChildForm(new ProviderViewRental());
+            if (SystemManager.currentRole == "Client")
+                openChildForm(new ClientViewRental());
+            else if (SystemManager.currentRole == "Vehicle Provider")
+                openChildForm(new ProviderViewRental());
         }
 
         private void btnAddVehicles_Click(object sender, EventArgs e)
@@ -280,7 +315,33 @@ namespace Peak_Performance_V1._0
             bool isVisible = !btnManageAccount.Visible; // Toggle visibility
             btnManageAccount.Visible = isVisible;
             btnLogout.Visible = isVisible;
+        }
 
+        private void btnAdminAllVehicles_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btnUpdateVehicles.BackColor = Color.FromArgb(255, 128, 0);
+            btnUpdateVehicles.FlatAppearance.BorderSize = 2;
+            btnUpdateVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
+            openChildForm(new AdminAllVehicles());
+        }
+
+        private void btnAdminAllUsers_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btnUpdateVehicles.BackColor = Color.FromArgb(255, 128, 0);
+            btnUpdateVehicles.FlatAppearance.BorderSize = 2;
+            btnUpdateVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
+            openChildForm(new AdminAllUsers());
+        }
+
+        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        {
+            Opacity += 0.02;
+            if (Opacity >= 1) // Fully visible
+            {
+                tmrFadeIn.Stop(); // Stop the timer
+            }
         }
     }
 }

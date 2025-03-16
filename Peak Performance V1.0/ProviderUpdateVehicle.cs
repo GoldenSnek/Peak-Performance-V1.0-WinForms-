@@ -95,7 +95,26 @@ namespace Peak_Performance_V1._0
             txtPriceDaily.Text = string.Empty;
             txtPriceHourly.Text = string.Empty;
             picPreview.Image = null;
-            lblImagePath.Text = "Path";
+            lblImagePath.Text = null;
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    picPreview.Image = Image.FromFile(openFileDialog.FileName);
+                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use
+                }
+            }
+        }
+
+        private void btnClearPicture_Click(object sender, EventArgs e)
+        {
+            picPreview.Image = null;
+            lblImagePath.Text = null;
         }
     }
 }
