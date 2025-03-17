@@ -513,6 +513,7 @@
             // 
             // parrotGradientPanel1
             // 
+            parrotGradientPanel1.Anchor = AnchorStyles.None;
             parrotGradientPanel1.BottomLeft = Color.FromArgb(255, 192, 128);
             parrotGradientPanel1.BottomRight = Color.FromArgb(192, 64, 0);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;

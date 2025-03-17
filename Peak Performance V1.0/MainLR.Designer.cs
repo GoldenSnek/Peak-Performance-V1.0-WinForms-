@@ -63,7 +63,7 @@
             lblGoToR.Cursor = Cursors.Hand;
             lblGoToR.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGoToR.ForeColor = Color.FromArgb(255, 128, 0);
-            lblGoToR.Location = new Point(111, 492);
+            lblGoToR.Location = new Point(118, 469);
             lblGoToR.Name = "lblGoToR";
             lblGoToR.Size = new Size(96, 28);
             lblGoToR.TabIndex = 5;
@@ -78,7 +78,7 @@
             lblGoToL.Cursor = Cursors.Hand;
             lblGoToL.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGoToL.ForeColor = Color.FromArgb(255, 128, 0);
-            lblGoToL.Location = new Point(401, 492);
+            lblGoToL.Location = new Point(408, 469);
             lblGoToL.Name = "lblGoToL";
             lblGoToL.Size = new Size(65, 28);
             lblGoToL.TabIndex = 31;
@@ -126,7 +126,7 @@
             btnAbout.Lighting = false;
             btnAbout.LinearGradient_Background = false;
             btnAbout.LinearGradientPen = false;
-            btnAbout.Location = new Point(178, 285);
+            btnAbout.Location = new Point(186, 285);
             btnAbout.Name = "btnAbout";
             btnAbout.PenWidth = 15;
             btnAbout.RGB = true;
@@ -151,7 +151,7 @@
             Gauge.DialThickness = 5;
             Gauge.FilledColor = Color.White;
             Gauge.GaugeStyle = ReaLTaiizor.Controls.ParrotGauge.Style.Standard;
-            Gauge.Location = new Point(124, 98);
+            Gauge.Location = new Point(132, 98);
             Gauge.Name = "Gauge";
             Gauge.Percentage = 10;
             Gauge.Size = new Size(133, 60);
@@ -166,7 +166,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.SteeringWheel2;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(309, 174);
+            pictureBox1.Location = new Point(317, 174);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(34, 31);
             pictureBox1.TabIndex = 35;
@@ -189,7 +189,7 @@
             picVan.BackColor = Color.Transparent;
             picVan.BackgroundImage = Properties.Resources.Van;
             picVan.BackgroundImageLayout = ImageLayout.Stretch;
-            picVan.Location = new Point(274, 336);
+            picVan.Location = new Point(260, 336);
             picVan.Name = "picVan";
             picVan.Size = new Size(150, 150);
             picVan.TabIndex = 37;
@@ -232,7 +232,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Silver;
-            label1.Location = new Point(263, 147);
+            label1.Location = new Point(271, 147);
             label1.Name = "label1";
             label1.Size = new Size(28, 14);
             label1.TabIndex = 40;
@@ -244,7 +244,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Silver;
-            label2.Location = new Point(113, 147);
+            label2.Location = new Point(121, 147);
             label2.Name = "label2";
             label2.Size = new Size(14, 14);
             label2.TabIndex = 41;
@@ -256,7 +256,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Silver;
-            label3.Location = new Point(121, 106);
+            label3.Location = new Point(129, 106);
             label3.Name = "label3";
             label3.Size = new Size(28, 14);
             label3.TabIndex = 42;
@@ -268,7 +268,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Silver;
-            label4.Location = new Point(178, 85);
+            label4.Location = new Point(186, 85);
             label4.Name = "label4";
             label4.Size = new Size(28, 14);
             label4.TabIndex = 43;
@@ -280,7 +280,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Silver;
-            label5.Location = new Point(239, 106);
+            label5.Location = new Point(247, 106);
             label5.Name = "label5";
             label5.Size = new Size(28, 14);
             label5.TabIndex = 44;
@@ -296,7 +296,7 @@
             lblMainTitle.AutoSize = true;
             lblMainTitle.BackColor = Color.Transparent;
             lblMainTitle.Font = new Font("Copperplate Gothic Bold", 36F);
-            lblMainTitle.Location = new Point(23, 161);
+            lblMainTitle.Location = new Point(31, 161);
             lblMainTitle.Name = "lblMainTitle";
             lblMainTitle.Size = new Size(538, 106);
             lblMainTitle.TabIndex = 1;
