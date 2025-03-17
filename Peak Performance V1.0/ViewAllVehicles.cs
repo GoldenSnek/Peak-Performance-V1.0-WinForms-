@@ -14,9 +14,7 @@ namespace Peak_Performance_V1._0
 {
     public partial class ViewAllVehicles : Form
     {
-
         private OleDbConnection connection;
-
         public ViewAllVehicles()
         {
             connection = SystemManager.GetConnection();
@@ -24,7 +22,8 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
-        private void LoadVehicles() //INITIAL EVENT to load the vehicle cards
+        //EVENTS
+        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -88,13 +87,11 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e) //EVENT: Clear
         {
 
         }
-
-        private void btnApply_Click(object sender, EventArgs e)
+        private void btnApply_Click(object sender, EventArgs e) //EVENT: Apply
         {
 
         }

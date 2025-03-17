@@ -52,6 +52,7 @@
             btnClear = new ReaLTaiizor.Controls.MaterialButton();
             btnSave = new ReaLTaiizor.Controls.MaterialButton();
             btnDelete = new ReaLTaiizor.Controls.MaterialButton();
+            parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).BeginInit();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
@@ -59,13 +60,14 @@
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
+            parrotGradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // picProfilePicture
             // 
             picProfilePicture.Anchor = AnchorStyles.None;
             picProfilePicture.BackColor = Color.FromArgb(35, 40, 50);
-            picProfilePicture.Location = new Point(401, 28);
+            picProfilePicture.Location = new Point(3, 3);
             picProfilePicture.Name = "picProfilePicture";
             picProfilePicture.Size = new Size(150, 150);
             picProfilePicture.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -78,7 +80,7 @@
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUsername.ForeColor = Color.White;
-            lblUsername.Location = new Point(92, 357);
+            lblUsername.Location = new Point(92, 332);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(90, 18);
             lblUsername.TabIndex = 4;
@@ -90,7 +92,7 @@
             lblRole.AutoSize = true;
             lblRole.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRole.ForeColor = Color.White;
-            lblRole.Location = new Point(92, 402);
+            lblRole.Location = new Point(92, 377);
             lblRole.Name = "lblRole";
             lblRole.Size = new Size(44, 18);
             lblRole.TabIndex = 5;
@@ -102,7 +104,7 @@
             lblUserID.AutoSize = true;
             lblUserID.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUserID.ForeColor = Color.White;
-            lblUserID.Location = new Point(92, 315);
+            lblUserID.Location = new Point(92, 290);
             lblUserID.Name = "lblUserID";
             lblUserID.Size = new Size(67, 18);
             lblUserID.TabIndex = 6;
@@ -114,7 +116,7 @@
             lblTotalRentals.AutoSize = true;
             lblTotalRentals.Font = new Font("Arial Rounded MT Bold", 12F);
             lblTotalRentals.ForeColor = Color.White;
-            lblTotalRentals.Location = new Point(92, 493);
+            lblTotalRentals.Location = new Point(92, 468);
             lblTotalRentals.Name = "lblTotalRentals";
             lblTotalRentals.Size = new Size(109, 18);
             lblTotalRentals.TabIndex = 14;
@@ -126,7 +128,7 @@
             lblRating.AutoSize = true;
             lblRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRating.ForeColor = Color.White;
-            lblRating.Location = new Point(92, 448);
+            lblRating.Location = new Point(92, 423);
             lblRating.Name = "lblRating";
             lblRating.Size = new Size(60, 18);
             lblRating.TabIndex = 13;
@@ -138,7 +140,7 @@
             lblImagePath.AutoSize = true;
             lblImagePath.Font = new Font("Arial Rounded MT Bold", 12F);
             lblImagePath.ForeColor = Color.White;
-            lblImagePath.Location = new Point(540, 190);
+            lblImagePath.Location = new Point(540, 165);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(0, 18);
             lblImagePath.TabIndex = 29;
@@ -154,7 +156,7 @@
             btnBrowse.HighEmphasis = true;
             btnBrowse.Icon = null;
             btnBrowse.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnBrowse.Location = new Point(231, 83);
+            btnBrowse.Location = new Point(231, 58);
             btnBrowse.Margin = new Padding(4, 6, 4, 6);
             btnBrowse.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnBrowse.Name = "btnBrowse";
@@ -177,7 +179,7 @@
             btnClearPicture.HighEmphasis = true;
             btnClearPicture.Icon = null;
             btnClearPicture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClearPicture.Location = new Point(599, 83);
+            btnClearPicture.Location = new Point(599, 58);
             btnClearPicture.Margin = new Padding(4, 6, 4, 6);
             btnClearPicture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClearPicture.Name = "btnClearPicture";
@@ -195,7 +197,7 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(255, 224, 192);
             panel1.Controls.Add(txtFullname);
-            panel1.Location = new Point(401, 257);
+            panel1.Location = new Point(401, 232);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 48);
             panel1.TabIndex = 45;
@@ -237,7 +239,7 @@
             panel6.Anchor = AnchorStyles.None;
             panel6.BackColor = Color.FromArgb(255, 224, 192);
             panel6.Controls.Add(txtAddress);
-            panel6.Location = new Point(401, 368);
+            panel6.Location = new Point(401, 343);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 48);
             panel6.TabIndex = 46;
@@ -279,7 +281,7 @@
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(255, 224, 192);
             panel2.Controls.Add(txtBirthday);
-            panel2.Location = new Point(401, 472);
+            panel2.Location = new Point(401, 447);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 48);
             panel2.TabIndex = 47;
@@ -321,7 +323,7 @@
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(255, 224, 192);
             panel3.Controls.Add(txtLicenseID);
-            panel3.Location = new Point(724, 257);
+            panel3.Location = new Point(724, 232);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 48);
             panel3.TabIndex = 48;
@@ -363,7 +365,7 @@
             panel4.Anchor = AnchorStyles.None;
             panel4.BackColor = Color.FromArgb(255, 224, 192);
             panel4.Controls.Add(txtEmail);
-            panel4.Location = new Point(724, 368);
+            panel4.Location = new Point(724, 343);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 48);
             panel4.TabIndex = 49;
@@ -405,7 +407,7 @@
             panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.FromArgb(255, 224, 192);
             panel5.Controls.Add(txtNumber);
-            panel5.Location = new Point(724, 472);
+            panel5.Location = new Point(724, 447);
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 48);
             panel5.TabIndex = 50;
@@ -452,7 +454,7 @@
             btnClear.HighEmphasis = true;
             btnClear.Icon = null;
             btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(414, 635);
+            btnClear.Location = new Point(414, 610);
             btnClear.Margin = new Padding(4, 6, 4, 6);
             btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClear.Name = "btnClear";
@@ -475,7 +477,7 @@
             btnSave.HighEmphasis = true;
             btnSave.Icon = null;
             btnSave.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnSave.Location = new Point(614, 635);
+            btnSave.Location = new Point(614, 610);
             btnSave.Margin = new Padding(4, 6, 4, 6);
             btnSave.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnSave.Name = "btnSave";
@@ -497,7 +499,7 @@
             btnDelete.HighEmphasis = true;
             btnDelete.Icon = null;
             btnDelete.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnDelete.Location = new Point(795, 635);
+            btnDelete.Location = new Point(795, 610);
             btnDelete.Margin = new Padding(4, 6, 4, 6);
             btnDelete.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnDelete.Name = "btnDelete";
@@ -509,12 +511,32 @@
             btnDelete.UseAccentColor = false;
             btnDelete.UseVisualStyleBackColor = true;
             // 
+            // parrotGradientPanel1
+            // 
+            parrotGradientPanel1.BottomLeft = Color.FromArgb(255, 192, 128);
+            parrotGradientPanel1.BottomRight = Color.FromArgb(192, 64, 0);
+            parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel1.Controls.Add(picProfilePicture);
+            parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotGradientPanel1.Location = new Point(401, 31);
+            parrotGradientPanel1.Name = "parrotGradientPanel1";
+            parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotGradientPanel1.PrimerColor = Color.White;
+            parrotGradientPanel1.Size = new Size(156, 156);
+            parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            parrotGradientPanel1.TabIndex = 54;
+            parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotGradientPanel1.TopLeft = Color.FromArgb(192, 64, 0);
+            parrotGradientPanel1.TopRight = Color.FromArgb(255, 192, 128);
+            // 
             // ManageAccount
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
-            ClientSize = new Size(964, 754);
+            ClientSize = new Size(964, 704);
+            Controls.Add(parrotGradientPanel1);
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
             Controls.Add(btnClear);
@@ -532,7 +554,6 @@
             Controls.Add(lblUserID);
             Controls.Add(lblRole);
             Controls.Add(lblUsername);
-            Controls.Add(picProfilePicture);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManageAccount";
             StartPosition = FormStartPosition.CenterScreen;
@@ -544,6 +565,7 @@
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            parrotGradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -574,5 +596,6 @@
         private ReaLTaiizor.Controls.MaterialButton btnClear;
         private ReaLTaiizor.Controls.MaterialButton btnSave;
         private ReaLTaiizor.Controls.MaterialButton btnDelete;
+        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
     }
 }

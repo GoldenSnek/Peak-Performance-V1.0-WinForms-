@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
-using System.Data.OleDb;
+using System.Security.Cryptography; //password hashing
+using System.Data.OleDb; //database connections
 
 //NuGet UI packages
-using ReaLTaiizor;          // Core namespace
+using ReaLTaiizor;
 using ReaLTaiizor.Manager;
-using ReaLTaiizor.Controls; // For custom controls like buttons, labels, etc.
-using ReaLTaiizor.Forms;    // For using Taiizor-styled forms
-using ReaLTaiizor.Enum;     // For enumerations (e.g., themes, styles)
 
 namespace Peak_Performance_V1._0
 {
@@ -22,14 +19,21 @@ namespace Peak_Performance_V1._0
 
         public static int currentUserID = 0; //store logged-in UserID
         public static string? currentUsername = null; //store logged-in Username
-        public static string? currentRole = "Vehicle Provider"; //store logged-in Role
+        public static string? currentRole = "Admin"; //store logged-in Role
 
-        public static OleDbConnection GetConnection() //SUPPORTING METHOD for Database Connection
+        public static OleDbConnection GetConnection() //METHOD: Database Connection
         {
             return new OleDbConnection(connectionString);
         }
 
-        public static string HashPassword(string password) //SUPPORTING METHOD for Login and Register
+        public static void LoadMaterialTheme() //METHOD: Setup ReaLTaiizor MaterialSkin UI
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(ReaLTaiizor.Colors.MaterialPrimary.Orange700, ReaLTaiizor.Colors.MaterialPrimary.Orange800, ReaLTaiizor.Colors.MaterialPrimary.Orange900, ReaLTaiizor.Colors.MaterialAccent.Orange700, ReaLTaiizor.Util.MaterialTextShade.WHITE);
+        }
+
+        public static string HashPassword(string password) //SUPPORTING METHOD: Hash password for Login and Register 
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -41,27 +45,15 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        public static void LoadMaterialTheme()
+        public static Image ResizeImage(Image img) //SUPPORTING METHOD: Dynamically resize icons
         {
-            //set realtaiizor materialskin theme
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(ReaLTaiizor.Colors.MaterialPrimary.Orange700, ReaLTaiizor.Colors.MaterialPrimary.Orange800, ReaLTaiizor.Colors.MaterialPrimary.Orange900, ReaLTaiizor.Colors.MaterialAccent.Orange700, ReaLTaiizor.Util.MaterialTextShade.WHITE);
-        }
-        public static Image ResizeImage(Image img)
-        {
-            // Get the current screen resolution
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
 
-            // Calculate a scaling factor (adjust as needed)
-            float scaleFactor = Math.Min(screenWidth / 1920f, screenHeight / 1080f); // Use reference resolution
-
-            // Set a base size (e.g., 32x32 for 1080p)
+            float scaleFactor = Math.Min(screenWidth / 1920f, screenHeight / 1080f);
             int newSize = (int)(32 * scaleFactor);
 
             return new Bitmap(img, new Size(newSize, newSize));
         }
-
     }
 }

@@ -17,19 +17,8 @@ namespace Peak_Performance_V1._0
             InitializeComponent();
         }
 
-        private void btnClear_Click(object sender, EventArgs e) //EVENT, clear all textboxes
-        {
-            txtFullname.Text = string.Empty;
-            txtAddress.Text = string.Empty;
-            txtBirthday.Text = string.Empty;
-            txtLicenseID.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            panel5.Text = string.Empty;
-            picProfilePicture.Image = null;
-            lblImagePath.Text = null;
-        }
-
-        private void btnBrowse_Click(object sender, EventArgs e) //EVENT, choose a new profile picture
+        //SUPPORTING EVENT
+        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -41,8 +30,18 @@ namespace Peak_Performance_V1._0
                 }
             }
         }
-
-        private void btnClearPicture_Click(object sender, EventArgs e) //EVENT, clear profile picture
+        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear all textboxes
+        {
+            txtFullname.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtBirthday.Text = string.Empty;
+            txtLicenseID.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            panel5.Text = string.Empty;
+            picProfilePicture.Image = null;
+            lblImagePath.Text = null;
+        }
+        private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
         {
             picProfilePicture.Image = null;
             lblImagePath.Text = null;

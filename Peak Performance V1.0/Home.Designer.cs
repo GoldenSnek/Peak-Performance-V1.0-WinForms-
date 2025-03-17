@@ -47,6 +47,7 @@
             btnHome = new Button();
             pnlTitle = new Panel();
             picHide = new PictureBox();
+            pictureBox1 = new PictureBox();
             pnlTop = new Panel();
             picShow = new PictureBox();
             picMin = new PictureBox();
@@ -66,6 +67,7 @@
             pnlSideMenu.SuspendLayout();
             pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picHide).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
@@ -103,11 +105,12 @@
             pnlSideMenu.Location = new Point(0, 0);
             pnlSideMenu.Name = "pnlSideMenu";
             pnlSideMenu.RightToLeft = RightToLeft.Yes;
-            pnlSideMenu.Size = new Size(220, 784);
+            pnlSideMenu.Size = new Size(220, 734);
             pnlSideMenu.TabIndex = 10;
             // 
             // btnExit
             // 
+            btnExit.Cursor = Cursors.Hand;
             btnExit.Dock = DockStyle.Top;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
@@ -128,6 +131,7 @@
             // 
             // btnLogout
             // 
+            btnLogout.Cursor = Cursors.Hand;
             btnLogout.Dock = DockStyle.Top;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
@@ -148,6 +152,7 @@
             // 
             // btnManageAccount
             // 
+            btnManageAccount.Cursor = Cursors.Hand;
             btnManageAccount.Dock = DockStyle.Top;
             btnManageAccount.FlatAppearance.BorderSize = 0;
             btnManageAccount.FlatStyle = FlatStyle.Flat;
@@ -169,6 +174,7 @@
             // btnAccount
             // 
             btnAccount.BackColor = Color.FromArgb(35, 40, 60);
+            btnAccount.Cursor = Cursors.Hand;
             btnAccount.Dock = DockStyle.Top;
             btnAccount.FlatAppearance.BorderSize = 0;
             btnAccount.FlatStyle = FlatStyle.Flat;
@@ -189,6 +195,7 @@
             // 
             // btnUpdateVehicles
             // 
+            btnUpdateVehicles.Cursor = Cursors.Hand;
             btnUpdateVehicles.Dock = DockStyle.Top;
             btnUpdateVehicles.FlatAppearance.BorderSize = 0;
             btnUpdateVehicles.FlatStyle = FlatStyle.Flat;
@@ -209,6 +216,7 @@
             // 
             // btnAddVehicles
             // 
+            btnAddVehicles.Cursor = Cursors.Hand;
             btnAddVehicles.Dock = DockStyle.Top;
             btnAddVehicles.FlatAppearance.BorderSize = 0;
             btnAddVehicles.FlatStyle = FlatStyle.Flat;
@@ -230,6 +238,7 @@
             // btnVehicles
             // 
             btnVehicles.BackColor = Color.FromArgb(35, 40, 60);
+            btnVehicles.Cursor = Cursors.Hand;
             btnVehicles.Dock = DockStyle.Top;
             btnVehicles.FlatAppearance.BorderSize = 0;
             btnVehicles.FlatStyle = FlatStyle.Flat;
@@ -250,6 +259,7 @@
             // 
             // btnRentalDetails
             // 
+            btnRentalDetails.Cursor = Cursors.Hand;
             btnRentalDetails.Dock = DockStyle.Top;
             btnRentalDetails.FlatAppearance.BorderSize = 0;
             btnRentalDetails.FlatStyle = FlatStyle.Flat;
@@ -270,6 +280,7 @@
             // 
             // btnAllVehicles
             // 
+            btnAllVehicles.Cursor = Cursors.Hand;
             btnAllVehicles.Dock = DockStyle.Top;
             btnAllVehicles.FlatAppearance.BorderSize = 0;
             btnAllVehicles.FlatStyle = FlatStyle.Flat;
@@ -291,6 +302,7 @@
             // btnRentals
             // 
             btnRentals.BackColor = Color.FromArgb(35, 40, 60);
+            btnRentals.Cursor = Cursors.Hand;
             btnRentals.Dock = DockStyle.Top;
             btnRentals.FlatAppearance.BorderSize = 0;
             btnRentals.FlatStyle = FlatStyle.Flat;
@@ -311,6 +323,7 @@
             // 
             // btnAdminAllUsers
             // 
+            btnAdminAllUsers.Cursor = Cursors.Hand;
             btnAdminAllUsers.Dock = DockStyle.Top;
             btnAdminAllUsers.FlatAppearance.BorderSize = 0;
             btnAdminAllUsers.FlatStyle = FlatStyle.Flat;
@@ -331,6 +344,7 @@
             // 
             // btnAdminAllVehicles
             // 
+            btnAdminAllVehicles.Cursor = Cursors.Hand;
             btnAdminAllVehicles.Dock = DockStyle.Top;
             btnAdminAllVehicles.FlatAppearance.BorderSize = 0;
             btnAdminAllVehicles.FlatStyle = FlatStyle.Flat;
@@ -351,6 +365,7 @@
             // 
             // btnHome
             // 
+            btnHome.Cursor = Cursors.Hand;
             btnHome.Dock = DockStyle.Top;
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatStyle = FlatStyle.Flat;
@@ -373,6 +388,7 @@
             // 
             pnlTitle.BackColor = Color.FromArgb(35, 40, 60);
             pnlTitle.Controls.Add(picHide);
+            pnlTitle.Controls.Add(pictureBox1);
             pnlTitle.Dock = DockStyle.Top;
             pnlTitle.Location = new Point(0, 0);
             pnlTitle.Name = "pnlTitle";
@@ -392,17 +408,30 @@
             picHide.TabStop = false;
             picHide.Click += picHide_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.MainLogo;
+            pictureBox1.Location = new Point(-24, -73);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(250, 250);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
             // pnlTop
             // 
             pnlTop.BackColor = Color.FromArgb(255, 128, 0);
             pnlTop.Controls.Add(picShow);
             pnlTop.Controls.Add(picMin);
             pnlTop.Controls.Add(picMax);
+            pnlTop.Cursor = Cursors.Hand;
             pnlTop.Dock = DockStyle.Top;
             pnlTop.Location = new Point(220, 0);
             pnlTop.Name = "pnlTop";
             pnlTop.Size = new Size(964, 30);
             pnlTop.TabIndex = 11;
+            pnlTop.MouseDown += pnlTop_MouseDown;
             // 
             // picShow
             // 
@@ -454,7 +483,7 @@
             lblDate.BackColor = Color.Transparent;
             lblDate.Font = new Font("Segoe Print", 20.25F, FontStyle.Bold);
             lblDate.ForeColor = Color.White;
-            lblDate.Location = new Point(394, 340);
+            lblDate.Location = new Point(387, 246);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(177, 47);
             lblDate.TabIndex = 3;
@@ -468,7 +497,7 @@
             lblDay.BackColor = Color.Transparent;
             lblDay.Font = new Font("Segoe Print", 20.25F, FontStyle.Bold);
             lblDay.ForeColor = Color.White;
-            lblDay.Location = new Point(394, 387);
+            lblDay.Location = new Point(387, 293);
             lblDay.Name = "lblDay";
             lblDay.Size = new Size(177, 47);
             lblDay.TabIndex = 4;
@@ -482,7 +511,7 @@
             lblTime.BackColor = Color.Transparent;
             lblTime.Font = new Font("Segoe Print", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTime.ForeColor = Color.FromArgb(255, 128, 0);
-            lblTime.Location = new Point(231, 197);
+            lblTime.Location = new Point(224, 103);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(548, 170);
             lblTime.TabIndex = 2;
@@ -496,7 +525,7 @@
             lblGreetings.BackColor = Color.Transparent;
             lblGreetings.Font = new Font("Segoe Print", 20.25F, FontStyle.Bold);
             lblGreetings.ForeColor = Color.White;
-            lblGreetings.Location = new Point(166, 177);
+            lblGreetings.Location = new Point(159, 83);
             lblGreetings.Name = "lblGreetings";
             lblGreetings.Size = new Size(658, 47);
             lblGreetings.TabIndex = 5;
@@ -508,7 +537,7 @@
             lblNotifications.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblNotifications.AutoSize = true;
             lblNotifications.ForeColor = Color.White;
-            lblNotifications.Location = new Point(727, 553);
+            lblNotifications.Location = new Point(720, 434);
             lblNotifications.Name = "lblNotifications";
             lblNotifications.Size = new Size(85, 19);
             lblNotifications.TabIndex = 7;
@@ -520,17 +549,18 @@
             lblAnalytics.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblAnalytics.AutoSize = true;
             lblAnalytics.ForeColor = Color.White;
-            lblAnalytics.Location = new Point(117, 553);
+            lblAnalytics.Location = new Point(110, 434);
             lblAnalytics.Name = "lblAnalytics";
             lblAnalytics.Size = new Size(63, 19);
             lblAnalytics.TabIndex = 6;
             lblAnalytics.Text = "Analytics";
+            lblAnalytics.Visible = false;
             // 
             // picDay
             // 
             picDay.Anchor = AnchorStyles.None;
             picDay.Image = Properties.Resources.Home___Car_Day;
-            picDay.Location = new Point(406, 466);
+            picDay.Location = new Point(399, 372);
             picDay.Name = "picDay";
             picDay.Size = new Size(150, 150);
             picDay.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -555,7 +585,7 @@
             pnlForm.Dock = DockStyle.Fill;
             pnlForm.Location = new Point(220, 30);
             pnlForm.Name = "pnlForm";
-            pnlForm.Size = new Size(964, 754);
+            pnlForm.Size = new Size(964, 704);
             pnlForm.TabIndex = 12;
             // 
             // foreverNotification1
@@ -565,7 +595,7 @@
             foreverNotification1.Close = true;
             foreverNotification1.Font = new Font("Segoe UI", 10F);
             foreverNotification1.Kind = ReaLTaiizor.Controls.ForeverNotification._Kind.Success;
-            foreverNotification1.Location = new Point(664, 667);
+            foreverNotification1.Location = new Point(657, 548);
             foreverNotification1.Name = "foreverNotification1";
             foreverNotification1.Size = new Size(215, 42);
             foreverNotification1.TabIndex = 13;
@@ -577,19 +607,20 @@
             parrotPieGraph1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             parrotPieGraph1.BackColor = Color.FromArgb(40, 40, 40);
             parrotPieGraph1.Colors = (List<Color>)resources.GetObject("parrotPieGraph1.Colors");
-            parrotPieGraph1.Location = new Point(102, 609);
+            parrotPieGraph1.Location = new Point(95, 490);
             parrotPieGraph1.Name = "parrotPieGraph1";
             parrotPieGraph1.Numbers = (List<int>)resources.GetObject("parrotPieGraph1.Numbers");
             parrotPieGraph1.Size = new Size(100, 100);
             parrotPieGraph1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotPieGraph1.TabIndex = 12;
             parrotPieGraph1.Text = "parrotPieGraph1";
+            parrotPieGraph1.Visible = false;
             // 
             // picNight
             // 
             picNight.Anchor = AnchorStyles.None;
             picNight.Image = Properties.Resources.Home___Car_Night;
-            picNight.Location = new Point(406, 466);
+            picNight.Location = new Point(399, 372);
             picNight.Name = "picNight";
             picNight.Size = new Size(150, 150);
             picNight.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -606,7 +637,7 @@
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoScroll = true;
-            ClientSize = new Size(1184, 784);
+            ClientSize = new Size(1184, 734);
             ControlBox = false;
             Controls.Add(pnlForm);
             Controls.Add(pnlTop);
@@ -619,6 +650,7 @@
             pnlSideMenu.ResumeLayout(false);
             pnlTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picHide).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMin).EndInit();
@@ -664,5 +696,6 @@
         private Button btnAdminAllUsers;
         private Button btnAdminAllVehicles;
         private System.Windows.Forms.Timer tmrFadeIn;
+        private PictureBox pictureBox1;
     }
 }

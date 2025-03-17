@@ -24,7 +24,8 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
-        private void LoadVehicles() //INITIAL EVENT, loads the vehicle cards
+        //EVENTS
+        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -72,7 +73,6 @@ namespace Peak_Performance_V1._0
                             //set a default placeholder image
                         }
 
-
                         //create a VehicleCard and add it to the FlowLayoutPanel
                         VehicleCard card = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
@@ -83,10 +83,8 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-
-        private void btnAddVehicle_Click(object sender, EventArgs e) //MAIN EVENT, add a vehicle
+        private void btnAddVehicle_Click(object sender, EventArgs e) //MAIN EVENT: Add a vehicle
         {
-
             string generalType = cbxGeneralType.Text;
             string specificType = cbxSpecificType.Text;
             string make = txtMake.Text;
@@ -182,7 +180,8 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT, browse and select an image
+        //SUPPORTING EVENTS
+        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -194,8 +193,7 @@ namespace Peak_Performance_V1._0
                 }
             }
         }
-
-        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT, clear all textboxes
+        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear all textboxes
         {
             cbxGeneralType.Text = string.Empty;
             cbxSpecificType.Text = string.Empty;
@@ -212,8 +210,7 @@ namespace Peak_Performance_V1._0
             picPreview.Image = null;
             lblImagePath.Text = null;
         }
-
-        private void btnClearPicture_Click(object sender, EventArgs e)
+        private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
         {
             picPreview.Image = null;
             lblImagePath.Text = null;

@@ -14,14 +14,15 @@ namespace Peak_Performance_V1._0
     public partial class ProviderUpdateVehicle : Form
     {
         private OleDbConnection connection;
-
         public ProviderUpdateVehicle()
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
             LoadVehicles();
         }
-        private void LoadVehicles()
+
+        //EVENTS
+        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -68,7 +69,6 @@ namespace Peak_Performance_V1._0
                             //set a default placeholder image
                         }
 
-
                         //create a VehicleCard and add it to the FlowLayoutPanel
                         VehicleCard card = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Edit");
@@ -80,7 +80,20 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        //SUPPORTING EVENTS
+        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    picPreview.Image = Image.FromFile(openFileDialog.FileName);
+                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use
+                }
+            }
+        }
+        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear all textboxes
         {
             cbxGeneralType.Text = string.Empty;
             cbxSpecificType.Text = string.Empty;
@@ -97,21 +110,7 @@ namespace Peak_Performance_V1._0
             picPreview.Image = null;
             lblImagePath.Text = null;
         }
-
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    picPreview.Image = Image.FromFile(openFileDialog.FileName);
-                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use
-                }
-            }
-        }
-
-        private void btnClearPicture_Click(object sender, EventArgs e)
+        private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
         {
             picPreview.Image = null;
             lblImagePath.Text = null;

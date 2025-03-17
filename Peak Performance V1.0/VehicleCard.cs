@@ -37,7 +37,6 @@ namespace Peak_Performance_V1._0
             }
             else
                 btnProceed.Visible = false;
-
         }
     }
 }

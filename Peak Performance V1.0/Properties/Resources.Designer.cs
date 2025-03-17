@@ -303,6 +303,16 @@ namespace Peak_Performance_V1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MainLogo {
+            get {
+                object obj = ResourceManager.GetObject("MainLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ManageAccount {
             get {
                 object obj = ResourceManager.GetObject("ManageAccount", resourceCulture);

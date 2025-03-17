@@ -17,32 +17,29 @@ namespace Peak_Performance_V1._0
         {
             InitializeComponent();
         }
+        private void About_Load(object sender, EventArgs e)
+        {
+            tmrFadeIn.Start();
+        }
 
+        //EVENTS: Form navigation
         private void picBack_Click(object sender, EventArgs e)
         {
             MainLR mainLR = new MainLR();
             mainLR.Show();
             this.Hide();
         }
-
         private void picClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        //SUPPORTING EVENT
+        private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade in animation
         {
             Opacity += 0.02;
-            if (Opacity >= 1) // Fully visible
-            {
-                tmrFadeIn.Stop(); // Stop the timer
-            }
+            if (Opacity >= 1) 
+                tmrFadeIn.Stop();
         }
-
-        private void About_Load(object sender, EventArgs e)
-        {
-            tmrFadeIn.Start();
-        }
-
     }
 }

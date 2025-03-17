@@ -37,14 +37,14 @@ namespace Peak_Performance_V1._0
             connection = SystemManager.GetConnection();
             InitializeComponent();
         }
-
         private void Login_Load(object sender, EventArgs e)
         {
             tmrFadeIn.Start();
             txtPassword.PasswordChar = '•'; //hide password by default
         }
 
-        private void btnLogin_Click(object sender, EventArgs e) //MAIN EVENT, Login
+        //MAIN EVENT
+        private void btnLogin_Click(object sender, EventArgs e) //MAIN EVENT: Login
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
@@ -55,13 +55,13 @@ namespace Peak_Performance_V1._0
                 lblPasswordError.Text = "Password is empty";
                 return;
             }
-            else if (string.IsNullOrWhiteSpace(username)) //step 1: check if username is empty
+            else if (string.IsNullOrWhiteSpace(username)) //step 2: check if username is empty
             {
                 lblUsernameError.Text = "Username is empty";
                 lblPasswordError.Text = null;
                 return;
             }
-            else if (string.IsNullOrWhiteSpace(password)) //step 2: check if password is empty
+            else if (string.IsNullOrWhiteSpace(password)) //step 3: check if password is empty
             {
                 lblUsernameError.Text = null;
                 lblPasswordError.Text = "Password is empty";
@@ -103,7 +103,7 @@ namespace Peak_Performance_V1._0
                         lblPasswordError.Text = "Invalid Credentials!";
                     }
 
-                    reader.Close(); // Close the reader
+                    reader.Close();
                 }
                 catch (Exception ex)
                 {
@@ -116,41 +116,37 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT, show/hide password
-        {
-            if (chkShowPass.Checked)
-                txtPassword.PasswordChar = '•';
-            else
-                txtPassword.PasswordChar = '\0';
-        }
-
-        private void lblGoToR_Click(object sender, EventArgs e) //EVENT, go back to Login
+        //EVENTS: Form navigation
+        private void lblGoToR_Click(object sender, EventArgs e)
         {
             Register register = new Register();
             register.Show();
             this.Hide();
         }
-
-
-        private void picClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void picBack_Click(object sender, EventArgs e)
         {
             MainLR mainLR = new MainLR();
             mainLR.Show();
             this.Hide();
         }
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        //SUPPORTING EVENTS
+        private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT: Show/hide password
+        {
+            if (chkShowPass.Checked)
+                txtPassword.PasswordChar = '•';
+            else
+                txtPassword.PasswordChar = '\0';
+        }
+        private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade in animation
         {
             Opacity += 0.02;
-            if (Opacity >= 1) // Fully visible
-            {
-                tmrFadeIn.Stop(); // Stop the timer
-            }
+            if (Opacity >= 1)
+                tmrFadeIn.Stop();
         }
     }
 }

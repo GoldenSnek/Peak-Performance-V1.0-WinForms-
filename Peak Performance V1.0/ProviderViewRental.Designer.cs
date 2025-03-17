@@ -35,6 +35,7 @@
             lblApproval = new Label();
             lblCurrent = new Label();
             panel2 = new Panel();
+            label1 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -45,16 +46,16 @@
             flpWaitingApproval.AutoScroll = true;
             flpWaitingApproval.Location = new Point(0, 50);
             flpWaitingApproval.Name = "flpWaitingApproval";
-            flpWaitingApproval.Size = new Size(360, 704);
+            flpWaitingApproval.Size = new Size(360, 654);
             flpWaitingApproval.TabIndex = 1;
             // 
             // flpCurrentlyRented
             // 
-            flpCurrentlyRented.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            flpCurrentlyRented.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpCurrentlyRented.AutoScroll = true;
             flpCurrentlyRented.Location = new Point(360, 50);
             flpCurrentlyRented.Name = "flpCurrentlyRented";
-            flpCurrentlyRented.Size = new Size(360, 704);
+            flpCurrentlyRented.Size = new Size(360, 654);
             flpCurrentlyRented.TabIndex = 2;
             // 
             // lblStatistics
@@ -62,7 +63,7 @@
             lblStatistics.AutoSize = true;
             lblStatistics.Font = new Font("Arial Rounded MT Bold", 12F);
             lblStatistics.ForeColor = Color.White;
-            lblStatistics.Location = new Point(77, 33);
+            lblStatistics.Location = new Point(74, 296);
             lblStatistics.Name = "lblStatistics";
             lblStatistics.Size = new Size(83, 18);
             lblStatistics.TabIndex = 3;
@@ -70,10 +71,10 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(45, 60, 75);
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(35, 40, 60);
             panel1.Controls.Add(lblApproval);
             panel1.Controls.Add(lblCurrent);
-            panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(964, 50);
@@ -92,6 +93,7 @@
             // 
             // lblCurrent
             // 
+            lblCurrent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblCurrent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCurrent.ForeColor = Color.White;
             lblCurrent.Location = new Point(381, 9);
@@ -103,20 +105,32 @@
             // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(35, 40, 60);
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(lblStatistics);
             panel2.Location = new Point(720, 50);
             panel2.Name = "panel2";
-            panel2.Size = new Size(244, 704);
+            panel2.Size = new Size(244, 654);
             panel2.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Rounded MT Bold", 12F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(83, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 18);
+            label1.TabIndex = 4;
+            label1.Text = "Details";
             // 
             // ProviderViewRental
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
-            ClientSize = new Size(964, 754);
+            ClientSize = new Size(964, 704);
             Controls.Add(panel2);
             Controls.Add(flpWaitingApproval);
             Controls.Add(flpCurrentlyRented);
@@ -140,5 +154,6 @@
         private Label lblCurrent;
         private Panel panel2;
         private Label lblApproval;
+        private Label label1;
     }
 }

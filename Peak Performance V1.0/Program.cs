@@ -12,13 +12,14 @@ namespace Peak_Performance_V1._0
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            SystemManager.LoadMaterialTheme();
-            Application.Run(new MainLR());
+            SystemManager.LoadMaterialTheme(); //initialize material theme
+            Application.Run(new Home());
         }
 
         //VERSION 1
         //Repository Created: 2/9/2025
         //Date Started: 2/20/2025
+        //Increment 1: 3/18/2025
 
         //To Do List:
         //(done) 1. Add picture sa creation of vehicle

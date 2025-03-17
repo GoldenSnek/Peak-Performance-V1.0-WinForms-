@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvData = new DataGridView();
             btnRemove = new ReaLTaiizor.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)dgvData).BeginInit();
@@ -35,16 +37,45 @@
             // 
             // dgvData
             // 
+            dgvData.AllowUserToAddRows = false;
+            dgvData.AllowUserToResizeColumns = false;
+            dgvData.AllowUserToResizeRows = false;
+            dgvData.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvData.BackgroundColor = Color.FromArgb(35, 40, 60);
+            dgvData.BorderStyle = BorderStyle.None;
+            dgvData.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dgvData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvData.Dock = DockStyle.Top;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(35, 40, 50);
+            dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 192, 128);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvData.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvData.GridColor = Color.FromArgb(255, 128, 0);
             dgvData.Location = new Point(0, 0);
+            dgvData.MultiSelect = false;
             dgvData.Name = "dgvData";
+            dgvData.ReadOnly = true;
+            dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvData.Size = new Size(964, 600);
             dgvData.TabIndex = 2;
             // 
             // btnRemove
             // 
-            btnRemove.Anchor = AnchorStyles.None;
+            btnRemove.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnRemove.AutoSize = false;
             btnRemove.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnRemove.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -52,7 +83,7 @@
             btnRemove.HighEmphasis = true;
             btnRemove.Icon = null;
             btnRemove.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnRemove.Location = new Point(334, 660);
+            btnRemove.Location = new Point(334, 635);
             btnRemove.Margin = new Padding(4, 6, 4, 6);
             btnRemove.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnRemove.Name = "btnRemove";
@@ -69,7 +100,7 @@
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
-            ClientSize = new Size(964, 754);
+            ClientSize = new Size(964, 704);
             Controls.Add(btnRemove);
             Controls.Add(dgvData);
             FormBorderStyle = FormBorderStyle.None;

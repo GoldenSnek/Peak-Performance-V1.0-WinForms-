@@ -33,6 +33,7 @@
             flpDisplay = new FlowLayoutPanel();
             txtModel = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel1 = new Panel();
+            parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             btnClearPicture = new ReaLTaiizor.Controls.MaterialButton();
             btnAddVehicle = new ReaLTaiizor.Controls.MaterialButton();
             panel6 = new Panel();
@@ -62,6 +63,7 @@
             btnBrowse = new ReaLTaiizor.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
             panel1.SuspendLayout();
+            parrotGradientPanel1.SuspendLayout();
             panel6.SuspendLayout();
             panel10.SuspendLayout();
             panel12.SuspendLayout();
@@ -81,7 +83,7 @@
             picPreview.Anchor = AnchorStyles.None;
             picPreview.BackColor = Color.FromArgb(35, 40, 50);
             picPreview.BackgroundImageLayout = ImageLayout.None;
-            picPreview.Location = new Point(54, 44);
+            picPreview.Location = new Point(3, 3);
             picPreview.Name = "picPreview";
             picPreview.Size = new Size(150, 150);
             picPreview.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -92,7 +94,7 @@
             // 
             lblImagePath.Anchor = AnchorStyles.None;
             lblImagePath.AutoSize = true;
-            lblImagePath.Location = new Point(106, 208);
+            lblImagePath.Location = new Point(105, 174);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(0, 19);
             lblImagePath.TabIndex = 28;
@@ -104,7 +106,7 @@
             flpDisplay.AutoScroll = true;
             flpDisplay.Location = new Point(604, 0);
             flpDisplay.Name = "flpDisplay";
-            flpDisplay.Size = new Size(360, 754);
+            flpDisplay.Size = new Size(360, 704);
             flpDisplay.TabIndex = 29;
             // 
             // txtModel
@@ -143,10 +145,10 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.Controls.Add(parrotGradientPanel1);
             panel1.Controls.Add(btnClearPicture);
             panel1.Controls.Add(btnAddVehicle);
             panel1.Controls.Add(lblImagePath);
-            panel1.Controls.Add(picPreview);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(btnClear);
             panel1.Controls.Add(panel10);
@@ -163,8 +165,27 @@
             panel1.Controls.Add(btnBrowse);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(598, 754);
+            panel1.Size = new Size(598, 704);
             panel1.TabIndex = 32;
+            // 
+            // parrotGradientPanel1
+            // 
+            parrotGradientPanel1.BottomLeft = Color.FromArgb(255, 192, 128);
+            parrotGradientPanel1.BottomRight = Color.FromArgb(192, 64, 0);
+            parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel1.Controls.Add(picPreview);
+            parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotGradientPanel1.Location = new Point(35, 31);
+            parrotGradientPanel1.Name = "parrotGradientPanel1";
+            parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotGradientPanel1.PrimerColor = Color.White;
+            parrotGradientPanel1.Size = new Size(156, 156);
+            parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            parrotGradientPanel1.TabIndex = 55;
+            parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotGradientPanel1.TopLeft = Color.FromArgb(192, 64, 0);
+            parrotGradientPanel1.TopRight = Color.FromArgb(255, 192, 128);
             // 
             // btnClearPicture
             // 
@@ -176,7 +197,7 @@
             btnClearPicture.HighEmphasis = true;
             btnClearPicture.Icon = null;
             btnClearPicture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClearPicture.Location = new Point(211, 146);
+            btnClearPicture.Location = new Point(210, 112);
             btnClearPicture.Margin = new Padding(4, 6, 4, 6);
             btnClearPicture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClearPicture.Name = "btnClearPicture";
@@ -199,7 +220,7 @@
             btnAddVehicle.HighEmphasis = true;
             btnAddVehicle.Icon = null;
             btnAddVehicle.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnAddVehicle.Location = new Point(400, 146);
+            btnAddVehicle.Location = new Point(399, 112);
             btnAddVehicle.Margin = new Padding(4, 6, 4, 6);
             btnAddVehicle.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnAddVehicle.Name = "btnAddVehicle";
@@ -217,7 +238,7 @@
             panel6.Anchor = AnchorStyles.None;
             panel6.BackColor = Color.FromArgb(255, 224, 192);
             panel6.Controls.Add(txtMake);
-            panel6.Location = new Point(36, 423);
+            panel6.Location = new Point(35, 389);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 48);
             panel6.TabIndex = 44;
@@ -264,7 +285,7 @@
             btnClear.HighEmphasis = true;
             btnClear.Icon = null;
             btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(400, 65);
+            btnClear.Location = new Point(399, 31);
             btnClear.Margin = new Padding(4, 6, 4, 6);
             btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClear.Name = "btnClear";
@@ -282,7 +303,7 @@
             panel10.Anchor = AnchorStyles.None;
             panel10.BackColor = Color.FromArgb(255, 224, 192);
             panel10.Controls.Add(cbxSeats);
-            panel10.Location = new Point(360, 423);
+            panel10.Location = new Point(359, 389);
             panel10.Name = "panel10";
             panel10.Size = new Size(200, 49);
             panel10.TabIndex = 41;
@@ -317,7 +338,7 @@
             panel12.Anchor = AnchorStyles.None;
             panel12.BackColor = Color.FromArgb(255, 224, 192);
             panel12.Controls.Add(txtPriceHourly);
-            panel12.Location = new Point(360, 669);
+            panel12.Location = new Point(359, 635);
             panel12.Name = "panel12";
             panel12.Size = new Size(200, 48);
             panel12.TabIndex = 36;
@@ -359,7 +380,7 @@
             panel11.Anchor = AnchorStyles.None;
             panel11.BackColor = Color.FromArgb(255, 224, 192);
             panel11.Controls.Add(txtMileage);
-            panel11.Location = new Point(360, 505);
+            panel11.Location = new Point(359, 471);
             panel11.Name = "panel11";
             panel11.Size = new Size(200, 48);
             panel11.TabIndex = 34;
@@ -401,7 +422,7 @@
             panel13.Anchor = AnchorStyles.None;
             panel13.BackColor = Color.FromArgb(255, 224, 192);
             panel13.Controls.Add(txtPriceDaily);
-            panel13.Location = new Point(360, 587);
+            panel13.Location = new Point(359, 553);
             panel13.Name = "panel13";
             panel13.Size = new Size(200, 48);
             panel13.TabIndex = 35;
@@ -443,7 +464,7 @@
             panel7.Anchor = AnchorStyles.None;
             panel7.BackColor = Color.FromArgb(255, 224, 192);
             panel7.Controls.Add(cbxFuel);
-            panel7.Location = new Point(360, 341);
+            panel7.Location = new Point(359, 307);
             panel7.Name = "panel7";
             panel7.Size = new Size(200, 49);
             panel7.TabIndex = 40;
@@ -478,7 +499,7 @@
             panel8.Anchor = AnchorStyles.None;
             panel8.BackColor = Color.FromArgb(255, 224, 192);
             panel8.Controls.Add(cbxColor);
-            panel8.Location = new Point(360, 259);
+            panel8.Location = new Point(359, 225);
             panel8.Name = "panel8";
             panel8.Size = new Size(200, 49);
             panel8.TabIndex = 39;
@@ -513,7 +534,7 @@
             panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.FromArgb(255, 224, 192);
             panel5.Controls.Add(cbxSpecificType);
-            panel5.Location = new Point(36, 341);
+            panel5.Location = new Point(35, 307);
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 49);
             panel5.TabIndex = 36;
@@ -548,7 +569,7 @@
             panel9.Anchor = AnchorStyles.None;
             panel9.BackColor = Color.FromArgb(255, 224, 192);
             panel9.Controls.Add(cbxYear);
-            panel9.Location = new Point(36, 587);
+            panel9.Location = new Point(35, 553);
             panel9.Name = "panel9";
             panel9.Size = new Size(200, 49);
             panel9.TabIndex = 38;
@@ -583,7 +604,7 @@
             panel4.Anchor = AnchorStyles.None;
             panel4.BackColor = Color.FromArgb(255, 224, 192);
             panel4.Controls.Add(txtLicense);
-            panel4.Location = new Point(36, 669);
+            panel4.Location = new Point(35, 635);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 48);
             panel4.TabIndex = 34;
@@ -625,7 +646,7 @@
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(255, 224, 192);
             panel3.Controls.Add(cbxGeneralType);
-            panel3.Location = new Point(36, 259);
+            panel3.Location = new Point(35, 225);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 49);
             panel3.TabIndex = 33;
@@ -660,7 +681,7 @@
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(255, 224, 192);
             panel2.Controls.Add(txtModel);
-            panel2.Location = new Point(36, 505);
+            panel2.Location = new Point(35, 471);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 48);
             panel2.TabIndex = 32;
@@ -675,7 +696,7 @@
             btnBrowse.HighEmphasis = true;
             btnBrowse.Icon = null;
             btnBrowse.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnBrowse.Location = new Point(211, 65);
+            btnBrowse.Location = new Point(210, 31);
             btnBrowse.Margin = new Padding(4, 6, 4, 6);
             btnBrowse.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnBrowse.Name = "btnBrowse";
@@ -693,7 +714,7 @@
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
-            ClientSize = new Size(964, 754);
+            ClientSize = new Size(964, 704);
             Controls.Add(panel1);
             Controls.Add(flpDisplay);
             FormBorderStyle = FormBorderStyle.None;
@@ -703,6 +724,7 @@
             ((System.ComponentModel.ISupportInitialize)picPreview).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            parrotGradientPanel1.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel12.ResumeLayout(false);
@@ -751,5 +773,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtMake;
         private ReaLTaiizor.Controls.MaterialButton btnAddVehicle;
         private ReaLTaiizor.Controls.MaterialButton btnClearPicture;
+        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
     }
 }

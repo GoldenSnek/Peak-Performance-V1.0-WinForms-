@@ -127,8 +127,8 @@
   <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Car - MainLR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car - MainLR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Home - Car Night" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home - Car Night.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +142,8 @@
   <data name="SteeringWheel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SteeringWheel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="F1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\F1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Motor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Motor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExitHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExitHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +151,14 @@
   <data name="Close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ConPass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConPass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SteeringWheel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SteeringWheel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HideShowMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HideShowMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Back2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,9 +193,6 @@
   <data name="ManageAccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManageAccount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Car - MainLR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Car - MainLR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Close2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,19 +211,19 @@
   <data name="Github1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Github1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Motor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Motor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Discord1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Discord1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ConPass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConPass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="F1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Home - Car Day" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home - Car Day.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HideShowMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HideShowMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MainLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MainLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

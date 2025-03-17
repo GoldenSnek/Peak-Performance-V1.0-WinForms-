@@ -28,23 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvData = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnRemove = new ReaLTaiizor.Controls.MaterialButton();
+            dgvData = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvData).BeginInit();
             SuspendLayout();
             // 
-            // dgvData
-            // 
-            dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvData.Dock = DockStyle.Top;
-            dgvData.Location = new Point(0, 0);
-            dgvData.Name = "dgvData";
-            dgvData.Size = new Size(964, 600);
-            dgvData.TabIndex = 1;
-            // 
             // btnRemove
             // 
-            btnRemove.Anchor = AnchorStyles.None;
+            btnRemove.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnRemove.AutoSize = false;
             btnRemove.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnRemove.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -52,7 +45,7 @@
             btnRemove.HighEmphasis = true;
             btnRemove.Icon = null;
             btnRemove.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnRemove.Location = new Point(357, 659);
+            btnRemove.Location = new Point(342, 634);
             btnRemove.Margin = new Padding(4, 6, 4, 6);
             btnRemove.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnRemove.Name = "btnRemove";
@@ -64,14 +57,52 @@
             btnRemove.UseAccentColor = false;
             btnRemove.UseVisualStyleBackColor = true;
             // 
+            // dgvData
+            // 
+            dgvData.AllowUserToAddRows = false;
+            dgvData.AllowUserToResizeColumns = false;
+            dgvData.AllowUserToResizeRows = false;
+            dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvData.BackgroundColor = Color.FromArgb(35, 40, 60);
+            dgvData.BorderStyle = BorderStyle.None;
+            dgvData.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dgvData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(35, 40, 50);
+            dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 192, 128);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvData.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvData.Dock = DockStyle.Top;
+            dgvData.GridColor = Color.FromArgb(255, 128, 0);
+            dgvData.Location = new Point(0, 0);
+            dgvData.MultiSelect = false;
+            dgvData.Name = "dgvData";
+            dgvData.ReadOnly = true;
+            dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvData.Size = new Size(964, 600);
+            dgvData.TabIndex = 49;
+            // 
             // AdminAllVehicles
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
-            ClientSize = new Size(964, 754);
-            Controls.Add(btnRemove);
+            ClientSize = new Size(964, 704);
             Controls.Add(dgvData);
+            Controls.Add(btnRemove);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminAllVehicles";
             StartPosition = FormStartPosition.CenterScreen;
@@ -81,8 +112,7 @@
         }
 
         #endregion
-
-        private DataGridView dgvData;
         private ReaLTaiizor.Controls.MaterialButton btnRemove;
+        private DataGridView dgvData;
     }
 }

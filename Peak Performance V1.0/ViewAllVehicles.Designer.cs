@@ -48,7 +48,7 @@
             flpDisplay.AutoScroll = true;
             flpDisplay.Location = new Point(1, 1);
             flpDisplay.Name = "flpDisplay";
-            flpDisplay.Size = new Size(700, 752);
+            flpDisplay.Size = new Size(700, 702);
             flpDisplay.TabIndex = 0;
             // 
             // pnlExtra
@@ -61,7 +61,7 @@
             pnlExtra.Controls.Add(grpFilter);
             pnlExtra.Location = new Point(707, 0);
             pnlExtra.Name = "pnlExtra";
-            pnlExtra.Size = new Size(257, 754);
+            pnlExtra.Size = new Size(257, 704);
             pnlExtra.TabIndex = 1;
             // 
             // txtSearch
@@ -205,7 +205,7 @@
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
-            ClientSize = new Size(964, 754);
+            ClientSize = new Size(964, 704);
             Controls.Add(flpDisplay);
             Controls.Add(pnlExtra);
             FormBorderStyle = FormBorderStyle.None;

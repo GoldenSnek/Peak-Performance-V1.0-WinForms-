@@ -35,7 +35,9 @@
             lblCurrent = new Label();
             label1 = new Label();
             btnReceipt = new ReaLTaiizor.Controls.MaterialButton();
+            parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             ((System.ComponentModel.ISupportInitialize)picCurrentlyRenting).BeginInit();
+            parrotGradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblVehicleDetails
@@ -43,7 +45,7 @@
             lblVehicleDetails.AutoSize = true;
             lblVehicleDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblVehicleDetails.ForeColor = SystemColors.Control;
-            lblVehicleDetails.Location = new Point(84, 325);
+            lblVehicleDetails.Location = new Point(88, 401);
             lblVehicleDetails.Name = "lblVehicleDetails";
             lblVehicleDetails.Size = new Size(126, 18);
             lblVehicleDetails.TabIndex = 3;
@@ -51,7 +53,7 @@
             // 
             // picCurrentlyRenting
             // 
-            picCurrentlyRenting.Location = new Point(386, 125);
+            picCurrentlyRenting.Location = new Point(3, 3);
             picCurrentlyRenting.Name = "picCurrentlyRenting";
             picCurrentlyRenting.Size = new Size(150, 150);
             picCurrentlyRenting.TabIndex = 5;
@@ -62,7 +64,7 @@
             lblOwnerDetails.AutoSize = true;
             lblOwnerDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblOwnerDetails.ForeColor = SystemColors.Control;
-            lblOwnerDetails.Location = new Point(370, 325);
+            lblOwnerDetails.Location = new Point(374, 401);
             lblOwnerDetails.Name = "lblOwnerDetails";
             lblOwnerDetails.Size = new Size(183, 18);
             lblOwnerDetails.TabIndex = 6;
@@ -73,7 +75,7 @@
             lblRentalDetails.AutoSize = true;
             lblRentalDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRentalDetails.ForeColor = SystemColors.Control;
-            lblRentalDetails.Location = new Point(696, 325);
+            lblRentalDetails.Location = new Point(700, 401);
             lblRentalDetails.Name = "lblRentalDetails";
             lblRentalDetails.Size = new Size(182, 18);
             lblRentalDetails.TabIndex = 7;
@@ -83,7 +85,7 @@
             // 
             lblCurrent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCurrent.ForeColor = Color.White;
-            lblCurrent.Location = new Point(302, 9);
+            lblCurrent.Location = new Point(306, 85);
             lblCurrent.Name = "lblCurrent";
             lblCurrent.Size = new Size(314, 30);
             lblCurrent.TabIndex = 8;
@@ -94,7 +96,7 @@
             // 
             label1.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(302, 54);
+            label1.Location = new Point(306, 130);
             label1.Name = "label1";
             label1.Size = new Size(314, 30);
             label1.TabIndex = 9;
@@ -111,7 +113,7 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(400, 683);
+            btnReceipt.Location = new Point(400, 587);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
@@ -123,24 +125,44 @@
             btnReceipt.UseAccentColor = false;
             btnReceipt.UseVisualStyleBackColor = true;
             // 
+            // parrotGradientPanel1
+            // 
+            parrotGradientPanel1.BottomLeft = Color.FromArgb(255, 192, 128);
+            parrotGradientPanel1.BottomRight = Color.FromArgb(192, 64, 0);
+            parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel1.Controls.Add(picCurrentlyRenting);
+            parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotGradientPanel1.Location = new Point(383, 190);
+            parrotGradientPanel1.Name = "parrotGradientPanel1";
+            parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotGradientPanel1.PrimerColor = Color.White;
+            parrotGradientPanel1.Size = new Size(156, 156);
+            parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            parrotGradientPanel1.TabIndex = 56;
+            parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotGradientPanel1.TopLeft = Color.FromArgb(192, 64, 0);
+            parrotGradientPanel1.TopRight = Color.FromArgb(255, 192, 128);
+            // 
             // ClientViewRental
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
-            ClientSize = new Size(964, 754);
+            ClientSize = new Size(964, 704);
+            Controls.Add(parrotGradientPanel1);
             Controls.Add(btnReceipt);
             Controls.Add(label1);
             Controls.Add(lblCurrent);
             Controls.Add(lblRentalDetails);
             Controls.Add(lblOwnerDetails);
-            Controls.Add(picCurrentlyRenting);
             Controls.Add(lblVehicleDetails);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ClientViewRental";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ClientViewRental";
             ((System.ComponentModel.ISupportInitialize)picCurrentlyRenting).EndInit();
+            parrotGradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -155,5 +177,6 @@
         private Label lblCurrent;
         private Label label1;
         private ReaLTaiizor.Controls.MaterialButton btnReceipt;
+        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
     }
 }

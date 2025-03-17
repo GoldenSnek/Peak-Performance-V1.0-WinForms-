@@ -22,10 +22,15 @@ namespace Peak_Performance_V1._0
         {
             InitializeComponent();
             txtPassword.PasswordChar = '•'; //hide password by default
-            txtConPass.PasswordChar = '•'; //hide password by default
+            txtConPass.PasswordChar = '•'; //hide confirm password by default
+        }
+        private void Register_Load(object sender, EventArgs e)
+        {
+            tmrFadeIn.Start();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e) //MAIN EVENT, Register
+        //MAIN EVENT
+        private void btnRegister_Click(object sender, EventArgs e) //MAIN EVENT: Register
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
@@ -50,35 +55,35 @@ namespace Peak_Performance_V1._0
                 lblConPassError.Text = null;
                 return;
             }
-            else if (string.IsNullOrWhiteSpace(username)) //step 1: check if username is empty
+            else if (string.IsNullOrWhiteSpace(username)) //step 2: check if username is empty
             {
                 lblUsernameError.Text = "Username is empty";
                 lblPasswordError.Text = null;
                 lblConPassError.Text = null;
                 return;
             }
-            else if (string.IsNullOrWhiteSpace(password)) //step 2: check if password is empty
+            else if (string.IsNullOrWhiteSpace(password)) //step 3: check if password is empty
             {
                 lblUsernameError.Text = null;
                 lblPasswordError.Text = "Password is empty";
                 lblConPassError.Text = null;
                 return;
             }
-            else if (userCount > 0) //step 2: check if username already exists
+            else if (userCount > 0) //step 4: check if username already exists
             {
                 lblUsernameError.Text = "Username Already Exists";
                 lblPasswordError.Text = null;
                 lblConPassError.Text = null;
                 return;
             }
-            else if (password != confirmPassword) //step 4: extra check if password matches
+            else if (password != confirmPassword) //step 5: extra check if password matches
             {
                 lblUsernameError.Text = null;
                 lblPasswordError.Text = null;
                 lblConPassError.Text = "Password does not match";
                 return;
             }
-            else if (!rbtnClient.Checked && !rbtnProvider.Checked) //step 3: check if role is chosen
+            else if (!rbtnClient.Checked && !rbtnProvider.Checked) //step 6: check if role is chosen
             {
                 lblUsernameError.Text = null;
                 lblPasswordError.Text = null;
@@ -112,57 +117,47 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT, show/hide password
-        {
-            if (chkShowPass.Checked)
-                txtPassword.PasswordChar = '•';
-            else
-                txtPassword.PasswordChar = '\0';
-        }
-
-        private void lblGoToL_Click(object sender, EventArgs e) //EVENT, go back to Login
+        //EVENTS: Form navigation
+        private void lblGoToL_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             login.Show();
             this.Hide();
         }
-
-        private void picClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void picBack_Click(object sender, EventArgs e)
         {
             MainLR mainLR = new MainLR();
             mainLR.Show();
             this.Hide();
         }
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-        private void rbtnClient_Click(object sender, EventArgs e)
+        //SUPPORTING EVENTS
+        private void rbtnClient_Click(object sender, EventArgs e) //SUPPORTING EVENT: Choose Client
         {
             if (rbtnProvider.Checked)
                 rbtnProvider.Checked = false;
         }
-
-        private void rbtnProvider_Click(object sender, EventArgs e)
+        private void rbtnProvider_Click(object sender, EventArgs e) //SUPPORTING EVENT: Choose Vehicle Provider
         {
             if (rbtnClient.Checked)
                 rbtnClient.Checked = false;
         }
-
-        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT: Show/hide password
+        {
+            if (chkShowPass.Checked)
+                txtPassword.PasswordChar = '•';
+            else
+                txtPassword.PasswordChar = '\0';
+        }
+        private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade in animation
         {
             Opacity += 0.02;
-            if (Opacity >= 1) // Fully visible
-            {
-                tmrFadeIn.Stop(); // Stop the timer
-            }
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-            tmrFadeIn.Start();
+            if (Opacity >= 1)
+                tmrFadeIn.Stop();
         }
     }
 }
