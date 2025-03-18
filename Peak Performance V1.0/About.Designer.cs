@@ -38,11 +38,13 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
+            picNight = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
             SuspendLayout();
             // 
             // lblAbout
@@ -138,6 +140,18 @@
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
+            // picNight
+            // 
+            picNight.Anchor = AnchorStyles.None;
+            picNight.BackColor = Color.Transparent;
+            picNight.Image = Properties.Resources.SportsCar;
+            picNight.Location = new Point(492, 115);
+            picNight.Name = "picNight";
+            picNight.Size = new Size(179, 195);
+            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
+            picNight.TabIndex = 48;
+            picNight.TabStop = false;
+            // 
             // About
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -152,6 +166,7 @@
             Controls.Add(picClose);
             Controls.Add(lblREGISTER);
             Controls.Add(lblAbout);
+            Controls.Add(picNight);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "About";
@@ -164,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,5 +194,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private System.Windows.Forms.Timer tmrFadeIn;
+        private PictureBox picNight;
     }
 }

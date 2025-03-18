@@ -13,12 +13,14 @@ using static System.Windows.Forms.DataFormats;
 using ReaLTaiizor.Animate;
 using ReaLTaiizor.Animate.Parrot;
 using System.Runtime.InteropServices;
+using System.Diagnostics.Metrics;
 
 
 namespace Peak_Performance_V1._0
 {
     public partial class Home : Form
     {
+
         public Home()
         {
             InitializeComponent();
@@ -44,9 +46,9 @@ namespace Peak_Performance_V1._0
             lblTime.Text = now.ToString("HH:mm:ss");
             lblDate.Text = now.ToString("MMMM dd, yyyy");
             lblDay.Text = now.ToString("dddd");
-            lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
-            lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
-            lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
+            //lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
+            //lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
+            //lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
             string hours = now.ToString("HH");
             if (int.TryParse(hours, out int hour))
             {
@@ -140,7 +142,7 @@ namespace Peak_Performance_V1._0
         //SUPPORTING METHOD
         private void ResetButtonColors() //SUPPORTING METHOD: Change colors
         {
-            foreach (System.Windows.Forms.Button btn in new System.Windows.Forms.Button[] { btnHome, btnAllVehicles, btnRentalDetails, btnAddVehicles, btnUpdateVehicles, btnManageAccount, btnLogout, btnExit })
+            foreach (System.Windows.Forms.Button btn in new System.Windows.Forms.Button[] { btnHome, btnAllVehicles, btnRentalDetails, btnAddVehicles, btnUpdateVehicles, btnManageAccount, btnLogout, btnExit, btnAdminAllVehicles, btnAdminAllUsers})
             {
                 btn.BackColor = Color.FromArgb(45, 60, 75);
                 btn.FlatAppearance.BorderSize = 0;
@@ -148,7 +150,7 @@ namespace Peak_Performance_V1._0
         }
 
         //EVENT: Form navigation
-        private void btnHome_Click(object sender, EventArgs e) 
+        private void btnHome_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
             btnHome.BackColor = Color.FromArgb(255, 128, 0);
@@ -204,17 +206,17 @@ namespace Peak_Performance_V1._0
         private void btnAdminAllVehicles_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
-            btnUpdateVehicles.BackColor = Color.FromArgb(255, 128, 0);
-            btnUpdateVehicles.FlatAppearance.BorderSize = 2;
-            btnUpdateVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
+            btnAdminAllVehicles.BackColor = Color.FromArgb(255, 128, 0);
+            btnAdminAllVehicles.FlatAppearance.BorderSize = 2;
+            btnAdminAllVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
             openChildForm(new AdminAllVehicles());
         }
         private void btnAdminAllUsers_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
-            btnUpdateVehicles.BackColor = Color.FromArgb(255, 128, 0);
-            btnUpdateVehicles.FlatAppearance.BorderSize = 2;
-            btnUpdateVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
+            btnAdminAllUsers.BackColor = Color.FromArgb(255, 128, 0);
+            btnAdminAllUsers.FlatAppearance.BorderSize = 2;
+            btnAdminAllUsers.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
             openChildForm(new AdminAllUsers());
         }
         private void btnLogout_Click(object sender, EventArgs e)
@@ -259,9 +261,9 @@ namespace Peak_Performance_V1._0
             lblDate.Text = now.ToString("MMMM dd,yyyy");
             lblDay.Text = now.ToString("dddd");
 
-            lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
-            lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
-            lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
+            //lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
+            //lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
+            //lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
 
             //setup day/night images
             string hours = now.ToString("HH");
@@ -300,13 +302,13 @@ namespace Peak_Performance_V1._0
         }
         private void picShow_Click(object sender, EventArgs e) //SUPPORTING EVENT: Show Sidemenu
         {
-            pnlSideMenu.Visible = true;
-            picShow.Visible = false;
+            //pnlSideMenu.Visible = true;
+            //picShow.Visible = false;
         }
         private void picHide_Click(object sender, EventArgs e) //SUPPORTING EVENT: Hide Sidemenu
         {
-            pnlSideMenu.Visible = false;
-            picShow.Visible = true;
+            //pnlSideMenu.Visible = false;
+            //picShow.Visible = true;
         }
         private void btnRentals_Click(object sender, EventArgs e) //SUPPORTING EVENT: Sidemenu
         {

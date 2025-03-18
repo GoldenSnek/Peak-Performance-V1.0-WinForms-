@@ -223,6 +223,16 @@ namespace Peak_Performance_V1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FType {
+            get {
+                object obj = ResourceManager.GetObject("FType", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Github {
             get {
                 object obj = ResourceManager.GetObject("Github", resourceCulture);
@@ -356,6 +366,16 @@ namespace Peak_Performance_V1._0.Properties {
         internal static System.Drawing.Bitmap Password {
             get {
                 object obj = ResourceManager.GetObject("Password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SportsCar {
+            get {
+                object obj = ResourceManager.GetObject("SportsCar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
