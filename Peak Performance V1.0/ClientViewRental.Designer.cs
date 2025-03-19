@@ -42,6 +42,7 @@
             // 
             // lblVehicleDetails
             // 
+            lblVehicleDetails.Anchor = AnchorStyles.None;
             lblVehicleDetails.AutoSize = true;
             lblVehicleDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblVehicleDetails.ForeColor = SystemColors.Control;
@@ -61,6 +62,7 @@
             // 
             // lblOwnerDetails
             // 
+            lblOwnerDetails.Anchor = AnchorStyles.None;
             lblOwnerDetails.AutoSize = true;
             lblOwnerDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblOwnerDetails.ForeColor = SystemColors.Control;
@@ -72,6 +74,7 @@
             // 
             // lblRentalDetails
             // 
+            lblRentalDetails.Anchor = AnchorStyles.None;
             lblRentalDetails.AutoSize = true;
             lblRentalDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRentalDetails.ForeColor = SystemColors.Control;
@@ -83,6 +86,7 @@
             // 
             // lblCurrent
             // 
+            lblCurrent.Anchor = AnchorStyles.None;
             lblCurrent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCurrent.ForeColor = Color.White;
             lblCurrent.Location = new Point(306, 85);
@@ -94,6 +98,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(306, 130);
@@ -127,6 +132,7 @@
             // 
             // parrotGradientPanel1
             // 
+            parrotGradientPanel1.Anchor = AnchorStyles.None;
             parrotGradientPanel1.BottomLeft = Color.FromArgb(255, 192, 128);
             parrotGradientPanel1.BottomRight = Color.FromArgb(192, 64, 0);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;

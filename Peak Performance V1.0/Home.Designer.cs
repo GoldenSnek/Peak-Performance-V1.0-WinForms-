@@ -53,13 +53,11 @@
             panel22 = new Panel();
             parrotPieGraph1 = new ReaLTaiizor.Controls.ParrotPieGraph();
             panel13 = new Panel();
-            foreverNotification2 = new ReaLTaiizor.Controls.ForeverNotification();
-            label2 = new Label();
             panel14 = new Panel();
             panel15 = new Panel();
             panel16 = new Panel();
             panel17 = new Panel();
-            foreverNotification1 = new ReaLTaiizor.Controls.ForeverNotification();
+            pictureBox2 = new PictureBox();
             panel8 = new Panel();
             parrotCircleProgressBar1 = new ReaLTaiizor.Controls.ParrotCircleProgressBar();
             parrotBarGraph1 = new ReaLTaiizor.Controls.ParrotBarGraph();
@@ -68,18 +66,19 @@
             panel11 = new Panel();
             panel12 = new Panel();
             panel3 = new Panel();
-            label1 = new Label();
+            label2 = new Label();
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
             picNight = new PictureBox();
+            foreverNotification1 = new ReaLTaiizor.Controls.ForeverNotification();
             panel7 = new Panel();
-            parrotClock1 = new ReaLTaiizor.Controls.ParrotClock();
             panel1 = new Panel();
             pnlLeft = new Panel();
             pnlDown = new Panel();
             pnlRight = new Panel();
             panel2 = new Panel();
+            parrotClock1 = new ReaLTaiizor.Controls.ParrotClock();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
             pnlSideMenu = new ReaLTaiizor.Controls.ParrotSlidingPanel();
             btnExit = new Button();
@@ -105,6 +104,7 @@
             pnlForm.SuspendLayout();
             panel18.SuspendLayout();
             panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel8.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
@@ -198,7 +198,7 @@
             lblDate.BackColor = Color.Transparent;
             lblDate.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             lblDate.ForeColor = Color.Black;
-            lblDate.Location = new Point(149, 3);
+            lblDate.Location = new Point(124, 3);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(87, 23);
             lblDate.TabIndex = 3;
@@ -212,7 +212,7 @@
             lblDay.BackColor = Color.Transparent;
             lblDay.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             lblDay.ForeColor = Color.Black;
-            lblDay.Location = new Point(276, 3);
+            lblDay.Location = new Point(243, 2);
             lblDay.Name = "lblDay";
             lblDay.Size = new Size(87, 23);
             lblDay.TabIndex = 4;
@@ -221,16 +221,15 @@
             // 
             // lblGreetings
             // 
-            lblGreetings.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            lblGreetings.AutoSize = true;
-            lblGreetings.BackColor = Color.Transparent;
+            lblGreetings.BackColor = Color.FromArgb(255, 128, 0);
+            lblGreetings.Dock = DockStyle.Top;
             lblGreetings.Font = new Font("Copperplate Gothic Bold", 14.25F);
-            lblGreetings.ForeColor = Color.White;
-            lblGreetings.Location = new Point(196, 40);
+            lblGreetings.ForeColor = Color.Black;
+            lblGreetings.Location = new Point(3, 3);
             lblGreetings.Name = "lblGreetings";
-            lblGreetings.Size = new Size(511, 21);
+            lblGreetings.Size = new Size(244, 20);
             lblGreetings.TabIndex = 5;
-            lblGreetings.Text = "Hello {user}! what would you like to do today?";
+            lblGreetings.Text = "Hello {user}!";
             lblGreetings.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblAnalytics
@@ -430,43 +429,16 @@
             // 
             panel13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel13.BackColor = Color.FromArgb(35, 40, 60);
-            panel13.Controls.Add(foreverNotification2);
-            panel13.Controls.Add(label2);
+            panel13.Controls.Add(lblGreetings);
             panel13.Controls.Add(panel14);
             panel13.Controls.Add(panel15);
             panel13.Controls.Add(panel16);
             panel13.Controls.Add(panel17);
-            panel13.Controls.Add(foreverNotification1);
+            panel13.Controls.Add(pictureBox2);
             panel13.Location = new Point(305, 158);
             panel13.Name = "panel13";
             panel13.Size = new Size(250, 250);
             panel13.TabIndex = 21;
-            // 
-            // foreverNotification2
-            // 
-            foreverNotification2.Anchor = AnchorStyles.None;
-            foreverNotification2.BackColor = Color.FromArgb(60, 70, 73);
-            foreverNotification2.Close = true;
-            foreverNotification2.Font = new Font("Segoe UI", 10F);
-            foreverNotification2.Kind = ReaLTaiizor.Controls.ForeverNotification._Kind.Success;
-            foreverNotification2.Location = new Point(30, 140);
-            foreverNotification2.Name = "foreverNotification2";
-            foreverNotification2.Size = new Size(185, 42);
-            foreverNotification2.TabIndex = 22;
-            foreverNotification2.Text = "foreverNotification2";
-            foreverNotification2.Visible = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(9, 6);
-            label2.Name = "label2";
-            label2.Size = new Size(131, 18);
-            label2.TabIndex = 21;
-            label2.Text = "Notifications";
             // 
             // panel14
             // 
@@ -508,19 +480,16 @@
             panel17.Size = new Size(250, 3);
             panel17.TabIndex = 15;
             // 
-            // foreverNotification1
+            // pictureBox2
             // 
-            foreverNotification1.Anchor = AnchorStyles.None;
-            foreverNotification1.BackColor = Color.FromArgb(60, 70, 73);
-            foreverNotification1.Close = true;
-            foreverNotification1.Font = new Font("Segoe UI", 10F);
-            foreverNotification1.Kind = ReaLTaiizor.Controls.ForeverNotification._Kind.Success;
-            foreverNotification1.Location = new Point(30, 80);
-            foreverNotification1.Name = "foreverNotification1";
-            foreverNotification1.Size = new Size(185, 42);
-            foreverNotification1.TabIndex = 13;
-            foreverNotification1.Text = "foreverNotification1";
-            foreverNotification1.Visible = false;
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Image = Properties.Resources.Sunset;
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(250, 250);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
             // 
             // panel8
             // 
@@ -627,30 +596,30 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel3.BackColor = Color.FromArgb(35, 40, 60);
-            panel3.Controls.Add(label1);
+            panel3.Controls.Add(label2);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(panel6);
             panel3.Controls.Add(picNight);
+            panel3.Controls.Add(foreverNotification1);
             panel3.Controls.Add(picDay);
             panel3.Controls.Add(panel7);
-            panel3.Controls.Add(parrotClock1);
             panel3.Location = new Point(30, 158);
             panel3.Name = "panel3";
             panel3.Size = new Size(250, 250);
             panel3.TabIndex = 19;
             // 
-            // label1
+            // label2
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(9, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 18);
-            label1.TabIndex = 20;
-            label1.Text = "Time";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(62, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(131, 18);
+            label2.TabIndex = 21;
+            label2.Text = "Notifications";
             // 
             // panel4
             // 
@@ -693,6 +662,20 @@
             picNight.TabIndex = 9;
             picNight.TabStop = false;
             // 
+            // foreverNotification1
+            // 
+            foreverNotification1.Anchor = AnchorStyles.None;
+            foreverNotification1.BackColor = Color.FromArgb(60, 70, 73);
+            foreverNotification1.Close = true;
+            foreverNotification1.Font = new Font("Segoe UI", 10F);
+            foreverNotification1.Kind = ReaLTaiizor.Controls.ForeverNotification._Kind.Success;
+            foreverNotification1.Location = new Point(28, 92);
+            foreverNotification1.Name = "foreverNotification1";
+            foreverNotification1.Size = new Size(209, 42);
+            foreverNotification1.TabIndex = 13;
+            foreverNotification1.Text = "foreverNotification1";
+            foreverNotification1.Visible = false;
+            // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(255, 128, 0);
@@ -703,37 +686,6 @@
             panel7.Size = new Size(250, 3);
             panel7.TabIndex = 15;
             // 
-            // parrotClock1
-            // 
-            parrotClock1.Anchor = AnchorStyles.None;
-            parrotClock1.CircleThickness = 3;
-            parrotClock1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotClock1.DisplayFormat = ReaLTaiizor.Controls.ParrotClock.HourFormat.TwelveHour;
-            parrotClock1.FilledHourColor = Color.FromArgb(255, 128, 0);
-            parrotClock1.FilledMinuteColor = Color.Empty;
-            parrotClock1.FilledSecondColor = Color.Blue;
-            parrotClock1.Font = new Font("Impact", 15F);
-            parrotClock1.HexagonColor = Color.Black;
-            parrotClock1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotClock1.Location = new Point(31, 3);
-            parrotClock1.Name = "parrotClock1";
-            parrotClock1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotClock1.ShowAmPm = true;
-            parrotClock1.ShowHexagon = false;
-            parrotClock1.ShowMinutesCircle = true;
-            parrotClock1.ShowSecondsCircle = true;
-            parrotClock1.Size = new Size(190, 200);
-            parrotClock1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotClock1.TabIndex = 19;
-            parrotClock1.Text = "parrotClock1";
-            parrotClock1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotClock1.TimeAMFormat = "hh:mm:ss";
-            parrotClock1.TimeColor = Color.Gray;
-            parrotClock1.TimePMFormat = "HH:mm:ss";
-            parrotClock1.UnfilledHourColor = Color.Empty;
-            parrotClock1.UnfilledMinuteColor = Color.Empty;
-            parrotClock1.UnfilledSecondColor = Color.Empty;
-            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -742,7 +694,7 @@
             panel1.Controls.Add(pnlDown);
             panel1.Controls.Add(pnlRight);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(lblGreetings);
+            panel1.Controls.Add(parrotClock1);
             panel1.Location = new Point(30, 30);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 100);
@@ -787,6 +739,37 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(900, 3);
             panel2.TabIndex = 15;
+            // 
+            // parrotClock1
+            // 
+            parrotClock1.Anchor = AnchorStyles.None;
+            parrotClock1.CircleThickness = 3;
+            parrotClock1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotClock1.DisplayFormat = ReaLTaiizor.Controls.ParrotClock.HourFormat.TwelveHour;
+            parrotClock1.FilledHourColor = Color.FromArgb(255, 128, 0);
+            parrotClock1.FilledMinuteColor = Color.Empty;
+            parrotClock1.FilledSecondColor = Color.Blue;
+            parrotClock1.Font = new Font("Impact", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            parrotClock1.HexagonColor = Color.Black;
+            parrotClock1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotClock1.Location = new Point(778, 0);
+            parrotClock1.Name = "parrotClock1";
+            parrotClock1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotClock1.ShowAmPm = true;
+            parrotClock1.ShowHexagon = false;
+            parrotClock1.ShowMinutesCircle = true;
+            parrotClock1.ShowSecondsCircle = true;
+            parrotClock1.Size = new Size(95, 100);
+            parrotClock1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotClock1.TabIndex = 19;
+            parrotClock1.Text = "parrotClock1";
+            parrotClock1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotClock1.TimeAMFormat = "hh:mm:ss";
+            parrotClock1.TimeColor = Color.Gray;
+            parrotClock1.TimePMFormat = "HH:mm:ss";
+            parrotClock1.UnfilledHourColor = Color.Empty;
+            parrotClock1.UnfilledMinuteColor = Color.Empty;
+            parrotClock1.UnfilledSecondColor = Color.Empty;
             // 
             // tmrFadeIn
             // 
@@ -1180,14 +1163,13 @@
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
             panel13.ResumeLayout(false);
-            panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             pnlSideMenu.ResumeLayout(false);
             pnlTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -1259,8 +1241,7 @@
         private ReaLTaiizor.Controls.ParrotCircleProgressBar parrotCircleProgressBar1;
         private ReaLTaiizor.Controls.ParrotFlatProgressBar parrotFlatProgressBar1;
         private Label label2;
-        private Label label1;
         private Label label3;
-        private ReaLTaiizor.Controls.ForeverNotification foreverNotification2;
+        private PictureBox pictureBox2;
     }
 }

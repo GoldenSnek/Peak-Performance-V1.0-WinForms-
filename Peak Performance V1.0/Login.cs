@@ -91,10 +91,8 @@ namespace Peak_Performance_V1._0
                         SystemManager.currentUsername = username;
                         SystemManager.currentRole = role;
 
-                        MessageBox.Show($"Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        Home mainMenu = new Home();
-                        mainMenu.Show();
+                        SplashLoading splashLoading = new SplashLoading();
+                        splashLoading.Show();
                         this.Hide();
                     }
                     else

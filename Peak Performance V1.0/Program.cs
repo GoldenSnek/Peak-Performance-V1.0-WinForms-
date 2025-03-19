@@ -13,7 +13,7 @@ namespace Peak_Performance_V1._0
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             SystemManager.LoadMaterialTheme(); //initialize material theme
-            Application.Run(new MainLR());
+            Application.Run(new SplashLoading());
         }
 
         //VERSION 1

@@ -33,7 +33,6 @@
             lblGoToR = new Label();
             lblGoToL = new Label();
             picClose = new PictureBox();
-            btnAbout = new ReaLTaiizor.Controls.CyberButton();
             Gauge = new ReaLTaiizor.Controls.ParrotGauge();
             pictureBox1 = new PictureBox();
             tmrGauge = new System.Windows.Forms.Timer(components);
@@ -43,8 +42,9 @@
             label4 = new Label();
             label5 = new Label();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
-            lblMainTitle = new Label();
             picNight = new PictureBox();
+            btnAbout = new ReaLTaiizor.Controls.CyberButton();
+            lblMainTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
@@ -92,49 +92,6 @@
             picClose.TabIndex = 32;
             picClose.TabStop = false;
             picClose.Click += picClose_Click;
-            // 
-            // btnAbout
-            // 
-            btnAbout.Alpha = 20;
-            btnAbout.BackColor = Color.Transparent;
-            btnAbout.Background = true;
-            btnAbout.Background_WidthPen = 1F;
-            btnAbout.BackgroundPen = true;
-            btnAbout.ColorBackground = Color.Transparent;
-            btnAbout.ColorBackground_1 = Color.FromArgb(37, 52, 68);
-            btnAbout.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnAbout.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            btnAbout.ColorLighting = Color.FromArgb(29, 200, 238);
-            btnAbout.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnAbout.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnAbout.Cursor = Cursors.Hand;
-            btnAbout.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnAbout.Effect_1 = true;
-            btnAbout.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnAbout.Effect_1_Transparency = 25;
-            btnAbout.Effect_2 = true;
-            btnAbout.Effect_2_ColorBackground = Color.White;
-            btnAbout.Effect_2_Transparency = 20;
-            btnAbout.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAbout.ForeColor = Color.White;
-            btnAbout.Lighting = false;
-            btnAbout.LinearGradient_Background = false;
-            btnAbout.LinearGradientPen = false;
-            btnAbout.Location = new Point(183, 228);
-            btnAbout.Name = "btnAbout";
-            btnAbout.PenWidth = 15;
-            btnAbout.RGB = true;
-            btnAbout.Rounding = true;
-            btnAbout.RoundingInt = 70;
-            btnAbout.Size = new Size(218, 33);
-            btnAbout.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnAbout.TabIndex = 33;
-            btnAbout.Tag = "Cyber";
-            btnAbout.TextButton = "--- Rent Ride Repeat ---";
-            btnAbout.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnAbout.Timer_Effect_1 = 5;
-            btnAbout.Timer_RGB = 100;
-            btnAbout.Click += btnAbout_Click;
             // 
             // Gauge
             // 
@@ -237,6 +194,61 @@
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
+            // picNight
+            // 
+            picNight.Anchor = AnchorStyles.None;
+            picNight.BackColor = Color.Transparent;
+            picNight.Image = Properties.Resources.OrangeMustang;
+            picNight.Location = new Point(47, 213);
+            picNight.Name = "picNight";
+            picNight.Size = new Size(500, 375);
+            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
+            picNight.TabIndex = 45;
+            picNight.TabStop = false;
+            // 
+            // btnAbout
+            // 
+            btnAbout.Alpha = 20;
+            btnAbout.BackColor = Color.Transparent;
+            btnAbout.Background = true;
+            btnAbout.Background_WidthPen = 1F;
+            btnAbout.BackgroundPen = true;
+            btnAbout.ColorBackground = Color.Transparent;
+            btnAbout.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnAbout.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnAbout.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnAbout.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnAbout.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnAbout.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnAbout.Cursor = Cursors.Hand;
+            btnAbout.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnAbout.Effect_1 = true;
+            btnAbout.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnAbout.Effect_1_Transparency = 25;
+            btnAbout.Effect_2 = true;
+            btnAbout.Effect_2_ColorBackground = Color.White;
+            btnAbout.Effect_2_Transparency = 20;
+            btnAbout.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAbout.ForeColor = Color.White;
+            btnAbout.Lighting = false;
+            btnAbout.LinearGradient_Background = false;
+            btnAbout.LinearGradientPen = false;
+            btnAbout.Location = new Point(183, 228);
+            btnAbout.Name = "btnAbout";
+            btnAbout.PenWidth = 15;
+            btnAbout.RGB = true;
+            btnAbout.Rounding = true;
+            btnAbout.RoundingInt = 70;
+            btnAbout.Size = new Size(218, 33);
+            btnAbout.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnAbout.TabIndex = 33;
+            btnAbout.Tag = "Cyber";
+            btnAbout.TextButton = "--- Rent Ride Repeat ---";
+            btnAbout.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnAbout.Timer_Effect_1 = 5;
+            btnAbout.Timer_RGB = 100;
+            btnAbout.Click += btnAbout_Click;
+            // 
             // lblMainTitle
             // 
             lblMainTitle.AutoSize = true;
@@ -248,18 +260,6 @@
             lblMainTitle.TabIndex = 1;
             lblMainTitle.Text = "Peak Performance\r\nVehicle Rentals";
             lblMainTitle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // picNight
-            // 
-            picNight.Anchor = AnchorStyles.None;
-            picNight.BackColor = Color.Transparent;
-            picNight.Image = Properties.Resources.FType;
-            picNight.Location = new Point(129, 295);
-            picNight.Name = "picNight";
-            picNight.Size = new Size(350, 200);
-            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
-            picNight.TabIndex = 45;
-            picNight.TabStop = false;
             // 
             // MainLR
             // 
@@ -299,7 +299,6 @@
         private Label lblGoToR;
         private Label lblGoToL;
         private PictureBox picClose;
-        private ReaLTaiizor.Controls.CyberButton btnAbout;
         private ReaLTaiizor.Controls.ParrotGauge Gauge;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer tmrGauge;
@@ -309,7 +308,8 @@
         private Label label4;
         private Label label5;
         private System.Windows.Forms.Timer tmrFadeIn;
-        private Label lblMainTitle;
         private PictureBox picNight;
+        private ReaLTaiizor.Controls.CyberButton btnAbout;
+        private Label lblMainTitle;
     }
 }

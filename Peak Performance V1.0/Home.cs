@@ -69,7 +69,7 @@ namespace Peak_Performance_V1._0
             btnHome.BackColor = Color.FromArgb(255, 128, 0);
             btnHome.FlatAppearance.BorderSize = 2;
             btnHome.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            lblGreetings.Text = $"Hello {SystemManager.currentUsername}! What would you like to do today?";
+            lblGreetings.Text = $"Hello {SystemManager.currentUsername}!";
             lblGreetings.Left = (pnlForm.Width - lblGreetings.Width) / 2;
 
             //set side menu buttons visibility
@@ -142,7 +142,7 @@ namespace Peak_Performance_V1._0
         //SUPPORTING METHOD
         private void ResetButtonColors() //SUPPORTING METHOD: Change colors
         {
-            foreach (System.Windows.Forms.Button btn in new System.Windows.Forms.Button[] { btnHome, btnAllVehicles, btnRentalDetails, btnAddVehicles, btnUpdateVehicles, btnManageAccount, btnLogout, btnExit, btnAdminAllVehicles, btnAdminAllUsers})
+            foreach (System.Windows.Forms.Button btn in new System.Windows.Forms.Button[] { btnHome, btnAllVehicles, btnRentalDetails, btnAddVehicles, btnUpdateVehicles, btnManageAccount, btnLogout, btnExit, btnAdminAllVehicles, btnAdminAllUsers })
             {
                 btn.BackColor = Color.FromArgb(45, 60, 75);
                 btn.FlatAppearance.BorderSize = 0;
@@ -281,6 +281,12 @@ namespace Peak_Performance_V1._0
                 }
             }
 
+            if (lblGreetings.Width <= 600)
+                lblGreetings.Text = $"Hello {SystemManager.currentUsername}!";
+            else
+                lblGreetings.Text = $"Hello {SystemManager.currentUsername}! What would you like to do today?";
+
+
             //pnlSideMenu.ResumeLayout(); // Resume layout updates
             //pnlSideMenu.PerformLayout();
             // Restore scroll position
@@ -299,16 +305,6 @@ namespace Peak_Performance_V1._0
                 this.WindowState = FormWindowState.Maximized;
             else
                 this.WindowState = FormWindowState.Normal;
-        }
-        private void picShow_Click(object sender, EventArgs e) //SUPPORTING EVENT: Show Sidemenu
-        {
-            //pnlSideMenu.Visible = true;
-            //picShow.Visible = false;
-        }
-        private void picHide_Click(object sender, EventArgs e) //SUPPORTING EVENT: Hide Sidemenu
-        {
-            //pnlSideMenu.Visible = false;
-            //picShow.Visible = true;
         }
         private void btnRentals_Click(object sender, EventArgs e) //SUPPORTING EVENT: Sidemenu
         {

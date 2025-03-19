@@ -8,6 +8,7 @@ namespace Peak_Performance_V1._0
         }
         private void MainLR_Load(object sender, EventArgs e)
         {
+            SystemManager.splash++;
             tmrFadeIn.Start();
         }
 

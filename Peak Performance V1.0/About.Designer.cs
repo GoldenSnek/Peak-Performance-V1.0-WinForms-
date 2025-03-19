@@ -38,13 +38,15 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
-            picNight = new PictureBox();
+            picDrawCar = new PictureBox();
+            picCar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picDrawCar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
             SuspendLayout();
             // 
             // lblAbout
@@ -93,7 +95,7 @@
             lblREGISTER.BackColor = Color.Transparent;
             lblREGISTER.Font = new Font("Copperplate Gothic Bold", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblREGISTER.ForeColor = Color.Black;
-            lblREGISTER.Location = new Point(192, 63);
+            lblREGISTER.Location = new Point(198, 43);
             lblREGISTER.Name = "lblREGISTER";
             lblREGISTER.Size = new Size(213, 53);
             lblREGISTER.TabIndex = 42;
@@ -140,17 +142,29 @@
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
-            // picNight
+            // picDrawCar
             // 
-            picNight.Anchor = AnchorStyles.None;
-            picNight.BackColor = Color.Transparent;
-            picNight.Image = Properties.Resources.SportsCar;
-            picNight.Location = new Point(492, 115);
-            picNight.Name = "picNight";
-            picNight.Size = new Size(179, 195);
-            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
-            picNight.TabIndex = 48;
-            picNight.TabStop = false;
+            picDrawCar.Anchor = AnchorStyles.None;
+            picDrawCar.BackColor = Color.Transparent;
+            picDrawCar.Image = Properties.Resources.SportsCar;
+            picDrawCar.Location = new Point(492, 115);
+            picDrawCar.Name = "picDrawCar";
+            picDrawCar.Size = new Size(179, 195);
+            picDrawCar.SizeMode = PictureBoxSizeMode.StretchImage;
+            picDrawCar.TabIndex = 48;
+            picDrawCar.TabStop = false;
+            // 
+            // picCar
+            // 
+            picCar.Anchor = AnchorStyles.None;
+            picCar.BackColor = Color.Transparent;
+            picCar.Image = Properties.Resources.OrangeMustang;
+            picCar.Location = new Point(250, -10);
+            picCar.Name = "picCar";
+            picCar.Size = new Size(100, 75);
+            picCar.SizeMode = PictureBoxSizeMode.StretchImage;
+            picCar.TabIndex = 49;
+            picCar.TabStop = false;
             // 
             // About
             // 
@@ -159,14 +173,15 @@
             BackgroundImage = Properties.Resources.LoginRegister2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
+            Controls.Add(lblREGISTER);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(picBack);
             Controls.Add(picClose);
-            Controls.Add(lblREGISTER);
             Controls.Add(lblAbout);
-            Controls.Add(picNight);
+            Controls.Add(picDrawCar);
+            Controls.Add(picCar);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "About";
@@ -179,7 +194,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picDrawCar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -194,6 +210,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private System.Windows.Forms.Timer tmrFadeIn;
-        private PictureBox picNight;
+        private PictureBox picDrawCar;
+        private PictureBox picCar;
     }
 }
