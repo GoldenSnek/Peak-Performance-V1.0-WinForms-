@@ -303,6 +303,36 @@ namespace Peak_Performance_V1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HomeNotif {
+            get {
+                object obj = ResourceManager.GetObject("HomeNotif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HomeTopUser {
+            get {
+                object obj = ResourceManager.GetObject("HomeTopUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HomeTopVehicle {
+            get {
+                object obj = ResourceManager.GetObject("HomeTopVehicle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LoginRegister {
             get {
                 object obj = ResourceManager.GetObject("LoginRegister", resourceCulture);
@@ -373,6 +403,16 @@ namespace Peak_Performance_V1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NightRide {
+            get {
+                object obj = ResourceManager.GetObject("NightRide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OrangeMustang {
             get {
                 object obj = ResourceManager.GetObject("OrangeMustang", resourceCulture);
@@ -386,6 +426,16 @@ namespace Peak_Performance_V1._0.Properties {
         internal static System.Drawing.Bitmap Password {
             get {
                 object obj = ResourceManager.GetObject("Password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SlowDrive {
+            get {
+                object obj = ResourceManager.GetObject("SlowDrive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

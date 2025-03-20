@@ -71,6 +71,8 @@ namespace Peak_Performance_V1._0
             btnHome.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
             lblGreetings.Text = $"Hello {SystemManager.currentUsername}!";
             lblGreetings.Left = (pnlForm.Width - lblGreetings.Width) / 2;
+            lblUsername.Text = $"{SystemManager.currentUsername}";
+            lblRole.Text = $"{SystemManager.currentRole}";
 
             //set side menu buttons visibility
             if (SystemManager.currentRole == "Vehicle Provider")
@@ -221,7 +223,6 @@ namespace Peak_Performance_V1._0
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
             if (btnLogout.BackColor == Color.Red)
             {
                 MainLR mainLR = new MainLR();
@@ -233,7 +234,7 @@ namespace Peak_Performance_V1._0
                 ResetButtonColors();
                 btnLogout.BackColor = Color.Red;
                 btnLogout.FlatAppearance.BorderSize = 2;
-                btnLogout.FlatAppearance.BorderColor = Color.Maroon;
+                btnLogout.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -245,7 +246,7 @@ namespace Peak_Performance_V1._0
                 ResetButtonColors();
                 btnExit.BackColor = Color.Red;
                 btnExit.FlatAppearance.BorderSize = 2;
-                btnExit.FlatAppearance.BorderColor = Color.Maroon;
+                btnExit.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
             }
         }
 

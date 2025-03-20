@@ -159,7 +159,7 @@
             picCar.Anchor = AnchorStyles.None;
             picCar.BackColor = Color.Transparent;
             picCar.Image = Properties.Resources.OrangeMustang;
-            picCar.Location = new Point(250, -10);
+            picCar.Location = new Point(248, 99);
             picCar.Name = "picCar";
             picCar.Size = new Size(100, 75);
             picCar.SizeMode = PictureBoxSizeMode.StretchImage;

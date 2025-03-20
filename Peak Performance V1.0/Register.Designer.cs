@@ -47,10 +47,8 @@
             rbtnProvider = new ReaLTaiizor.Controls.CyberRadioButton();
             label2 = new Label();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
-            picCar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
             SuspendLayout();
             // 
             // picBack
@@ -429,18 +427,6 @@
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
-            // picCar
-            // 
-            picCar.Anchor = AnchorStyles.None;
-            picCar.BackColor = Color.Transparent;
-            picCar.Image = Properties.Resources.OrangeMustang;
-            picCar.Location = new Point(250, -10);
-            picCar.Name = "picCar";
-            picCar.Size = new Size(100, 75);
-            picCar.SizeMode = PictureBoxSizeMode.StretchImage;
-            picCar.TabIndex = 47;
-            picCar.TabStop = false;
-            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -465,7 +451,6 @@
             Controls.Add(btnRegister);
             Controls.Add(lblProceed);
             Controls.Add(lblGoToL);
-            Controls.Add(picCar);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Register";
@@ -475,7 +460,6 @@
             Load += Register_Load;
             ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -499,6 +483,5 @@
         private ReaLTaiizor.Controls.CyberRadioButton rbtnProvider;
         private Label label2;
         private System.Windows.Forms.Timer tmrFadeIn;
-        private PictureBox picCar;
     }
 }

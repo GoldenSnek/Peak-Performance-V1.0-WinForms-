@@ -62,6 +62,7 @@
             dgvData.AllowUserToAddRows = false;
             dgvData.AllowUserToResizeColumns = false;
             dgvData.AllowUserToResizeRows = false;
+            dgvData.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvData.BackgroundColor = Color.FromArgb(35, 40, 60);
@@ -85,7 +86,6 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvData.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvData.Dock = DockStyle.Top;
             dgvData.GridColor = Color.FromArgb(255, 128, 0);
             dgvData.Location = new Point(0, 0);
             dgvData.MultiSelect = false;

@@ -34,7 +34,7 @@
             picSplash1 = new PictureBox();
             lblLoading = new Label();
             ProgressBar = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
-            cyberProgressBar1 = new ReaLTaiizor.Controls.CyberProgressBar();
+            cyberProgressBar = new ReaLTaiizor.Controls.CyberProgressBar();
             picSplash2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picSplash1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSplash2).BeginInit();
@@ -48,7 +48,7 @@
             // picSplash1
             // 
             picSplash1.BackgroundImageLayout = ImageLayout.Stretch;
-            picSplash1.Image = Properties.Resources.Sunset;
+            picSplash1.Image = Properties.Resources.NightRide;
             picSplash1.Location = new Point(40, 93);
             picSplash1.Name = "picSplash1";
             picSplash1.Size = new Size(521, 302);
@@ -91,48 +91,48 @@
             ProgressBar.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             ProgressBar.Value = 0;
             // 
-            // cyberProgressBar1
+            // cyberProgressBar
             // 
-            cyberProgressBar1.Alpha = 50;
-            cyberProgressBar1.BackColor = Color.Transparent;
-            cyberProgressBar1.Background = true;
-            cyberProgressBar1.Background_WidthPen = 3F;
-            cyberProgressBar1.BackgroundPen = true;
-            cyberProgressBar1.ColorBackground = Color.Black;
-            cyberProgressBar1.ColorBackground_1 = Color.Black;
-            cyberProgressBar1.ColorBackground_2 = Color.Black;
-            cyberProgressBar1.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            cyberProgressBar1.ColorBackground_Value_1 = Color.FromArgb(28, 200, 238);
-            cyberProgressBar1.ColorBackground_Value_2 = Color.Black;
-            cyberProgressBar1.ColorLighting = Color.FromArgb(29, 200, 238);
-            cyberProgressBar1.ColorPen_1 = Color.Black;
-            cyberProgressBar1.ColorPen_2 = Color.Black;
-            cyberProgressBar1.ColorProgressBar = Color.FromArgb(29, 200, 238);
-            cyberProgressBar1.ColorValue_Transparency = 200;
-            cyberProgressBar1.CyberProgressBarStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberProgressBar1.Font = new Font("Arial", 11F);
-            cyberProgressBar1.ForeColor = Color.FromArgb(245, 245, 245);
-            cyberProgressBar1.Lighting = false;
-            cyberProgressBar1.LinearGradient_Background = false;
-            cyberProgressBar1.LinearGradient_Value = false;
-            cyberProgressBar1.LinearGradientPen = false;
-            cyberProgressBar1.Location = new Point(12, 64);
-            cyberProgressBar1.Maximum = 100;
-            cyberProgressBar1.Minimum = 0;
-            cyberProgressBar1.Name = "cyberProgressBar1";
-            cyberProgressBar1.PenWidth = 10;
-            cyberProgressBar1.ProgressText = true;
-            cyberProgressBar1.RGB = true;
-            cyberProgressBar1.Rounding = true;
-            cyberProgressBar1.RoundingInt = 0;
-            cyberProgressBar1.Size = new Size(576, 359);
-            cyberProgressBar1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberProgressBar1.StartDrawingValue = 0;
-            cyberProgressBar1.TabIndex = 52;
-            cyberProgressBar1.Tag = "Cyber";
-            cyberProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberProgressBar1.Timer_RGB = 10;
-            cyberProgressBar1.Value = 0;
+            cyberProgressBar.Alpha = 50;
+            cyberProgressBar.BackColor = Color.Transparent;
+            cyberProgressBar.Background = true;
+            cyberProgressBar.Background_WidthPen = 3F;
+            cyberProgressBar.BackgroundPen = true;
+            cyberProgressBar.ColorBackground = Color.Black;
+            cyberProgressBar.ColorBackground_1 = Color.Black;
+            cyberProgressBar.ColorBackground_2 = Color.Black;
+            cyberProgressBar.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            cyberProgressBar.ColorBackground_Value_1 = Color.FromArgb(28, 200, 238);
+            cyberProgressBar.ColorBackground_Value_2 = Color.Black;
+            cyberProgressBar.ColorLighting = Color.FromArgb(29, 200, 238);
+            cyberProgressBar.ColorPen_1 = Color.Black;
+            cyberProgressBar.ColorPen_2 = Color.Black;
+            cyberProgressBar.ColorProgressBar = Color.FromArgb(29, 200, 238);
+            cyberProgressBar.ColorValue_Transparency = 200;
+            cyberProgressBar.CyberProgressBarStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberProgressBar.Font = new Font("Arial", 11F);
+            cyberProgressBar.ForeColor = Color.FromArgb(245, 245, 245);
+            cyberProgressBar.Lighting = false;
+            cyberProgressBar.LinearGradient_Background = false;
+            cyberProgressBar.LinearGradient_Value = false;
+            cyberProgressBar.LinearGradientPen = false;
+            cyberProgressBar.Location = new Point(29, 82);
+            cyberProgressBar.Maximum = 100;
+            cyberProgressBar.Minimum = 0;
+            cyberProgressBar.Name = "cyberProgressBar";
+            cyberProgressBar.PenWidth = 10;
+            cyberProgressBar.ProgressText = true;
+            cyberProgressBar.RGB = true;
+            cyberProgressBar.Rounding = true;
+            cyberProgressBar.RoundingInt = 0;
+            cyberProgressBar.Size = new Size(541, 322);
+            cyberProgressBar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberProgressBar.StartDrawingValue = 0;
+            cyberProgressBar.TabIndex = 52;
+            cyberProgressBar.Tag = "Cyber";
+            cyberProgressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberProgressBar.Timer_RGB = 10;
+            cyberProgressBar.Value = 0;
             // 
             // picSplash2
             // 
@@ -151,11 +151,11 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.Black;
             ClientSize = new Size(600, 600);
-            Controls.Add(picSplash2);
             Controls.Add(ProgressBar);
             Controls.Add(lblLoading);
+            Controls.Add(picSplash2);
             Controls.Add(picSplash1);
-            Controls.Add(cyberProgressBar1);
+            Controls.Add(cyberProgressBar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SplashLoading";
             StartPosition = FormStartPosition.CenterScreen;
@@ -172,7 +172,7 @@
         private PictureBox picSplash1;
         private Label lblLoading;
         private ReaLTaiizor.Controls.ParrotFlatProgressBar ProgressBar;
-        private ReaLTaiizor.Controls.CyberProgressBar cyberProgressBar1;
+        private ReaLTaiizor.Controls.CyberProgressBar cyberProgressBar;
         private PictureBox picSplash2;
     }
 }

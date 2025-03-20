@@ -42,10 +42,8 @@
             picClose = new PictureBox();
             picBack = new PictureBox();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
-            picCar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
             SuspendLayout();
             // 
             // lblGoToR
@@ -282,18 +280,6 @@
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
-            // picCar
-            // 
-            picCar.Anchor = AnchorStyles.None;
-            picCar.BackColor = Color.Transparent;
-            picCar.Image = Properties.Resources.OrangeMustang;
-            picCar.Location = new Point(250, -10);
-            picCar.Name = "picCar";
-            picCar.Size = new Size(100, 75);
-            picCar.SizeMode = PictureBoxSizeMode.StretchImage;
-            picCar.TabIndex = 46;
-            picCar.TabStop = false;
-            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -314,7 +300,6 @@
             Controls.Add(btnLogin);
             Controls.Add(lblProceed);
             Controls.Add(lblGoToR);
-            Controls.Add(picCar);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1920, 1040);
@@ -326,7 +311,6 @@
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -345,6 +329,5 @@
         private PictureBox picClose;
         private PictureBox picBack;
         private System.Windows.Forms.Timer tmrFadeIn;
-        private PictureBox picCar;
     }
 }
