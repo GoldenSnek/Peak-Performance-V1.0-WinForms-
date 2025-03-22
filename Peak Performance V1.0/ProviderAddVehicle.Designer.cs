@@ -61,6 +61,8 @@
             cbxGeneralType = new ReaLTaiizor.Controls.MaterialComboBox();
             panel2 = new Panel();
             btnBrowse = new ReaLTaiizor.Controls.MaterialButton();
+            panel14 = new Panel();
+            lblOwned = new Label();
             ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
             panel1.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
@@ -76,12 +78,13 @@
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
+            panel14.SuspendLayout();
             SuspendLayout();
             // 
             // picPreview
             // 
             picPreview.Anchor = AnchorStyles.None;
-            picPreview.BackColor = Color.FromArgb(35, 40, 50);
+            picPreview.BackColor = Color.Lavender;
             picPreview.BackgroundImageLayout = ImageLayout.None;
             picPreview.Location = new Point(3, 3);
             picPreview.Name = "picPreview";
@@ -94,7 +97,7 @@
             // 
             lblImagePath.Anchor = AnchorStyles.None;
             lblImagePath.AutoSize = true;
-            lblImagePath.Location = new Point(105, 174);
+            lblImagePath.Location = new Point(105, 132);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(0, 19);
             lblImagePath.TabIndex = 28;
@@ -104,9 +107,9 @@
             // 
             flpDisplay.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpDisplay.AutoScroll = true;
-            flpDisplay.Location = new Point(604, 0);
+            flpDisplay.Location = new Point(604, 50);
             flpDisplay.Name = "flpDisplay";
-            flpDisplay.Size = new Size(360, 704);
+            flpDisplay.Size = new Size(360, 654);
             flpDisplay.TabIndex = 29;
             // 
             // txtModel
@@ -143,7 +146,6 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(35, 40, 60);
             panel1.Controls.Add(parrotGradientPanel1);
             panel1.Controls.Add(btnClearPicture);
@@ -163,20 +165,21 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnBrowse);
-            panel1.Location = new Point(0, 0);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 50);
             panel1.Name = "panel1";
-            panel1.Size = new Size(598, 704);
+            panel1.Size = new Size(598, 654);
             panel1.TabIndex = 32;
             // 
             // parrotGradientPanel1
             // 
-            parrotGradientPanel1.Anchor = AnchorStyles.None;
+            parrotGradientPanel1.Anchor = AnchorStyles.Top;
             parrotGradientPanel1.BottomLeft = Color.FromArgb(255, 192, 128);
             parrotGradientPanel1.BottomRight = Color.FromArgb(192, 64, 0);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel1.Controls.Add(picPreview);
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel1.Location = new Point(35, 31);
+            parrotGradientPanel1.Location = new Point(31, 9);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
@@ -190,7 +193,7 @@
             // 
             // btnClearPicture
             // 
-            btnClearPicture.Anchor = AnchorStyles.None;
+            btnClearPicture.Anchor = AnchorStyles.Top;
             btnClearPicture.AutoSize = false;
             btnClearPicture.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnClearPicture.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -198,7 +201,7 @@
             btnClearPicture.HighEmphasis = true;
             btnClearPicture.Icon = null;
             btnClearPicture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClearPicture.Location = new Point(210, 112);
+            btnClearPicture.Location = new Point(226, 108);
             btnClearPicture.Margin = new Padding(4, 6, 4, 6);
             btnClearPicture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClearPicture.Name = "btnClearPicture";
@@ -213,7 +216,7 @@
             // 
             // btnAddVehicle
             // 
-            btnAddVehicle.Anchor = AnchorStyles.None;
+            btnAddVehicle.Anchor = AnchorStyles.Top;
             btnAddVehicle.AutoSize = false;
             btnAddVehicle.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnAddVehicle.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -221,7 +224,7 @@
             btnAddVehicle.HighEmphasis = true;
             btnAddVehicle.Icon = null;
             btnAddVehicle.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnAddVehicle.Location = new Point(399, 112);
+            btnAddVehicle.Location = new Point(415, 108);
             btnAddVehicle.Margin = new Padding(4, 6, 4, 6);
             btnAddVehicle.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnAddVehicle.Name = "btnAddVehicle";
@@ -239,7 +242,7 @@
             panel6.Anchor = AnchorStyles.None;
             panel6.BackColor = Color.FromArgb(255, 224, 192);
             panel6.Controls.Add(txtMake);
-            panel6.Location = new Point(35, 389);
+            panel6.Location = new Point(35, 347);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 48);
             panel6.TabIndex = 44;
@@ -278,7 +281,7 @@
             // 
             // btnClear
             // 
-            btnClear.Anchor = AnchorStyles.None;
+            btnClear.Anchor = AnchorStyles.Top;
             btnClear.AutoSize = false;
             btnClear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnClear.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -286,7 +289,7 @@
             btnClear.HighEmphasis = true;
             btnClear.Icon = null;
             btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(399, 31);
+            btnClear.Location = new Point(415, 27);
             btnClear.Margin = new Padding(4, 6, 4, 6);
             btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClear.Name = "btnClear";
@@ -304,7 +307,7 @@
             panel10.Anchor = AnchorStyles.None;
             panel10.BackColor = Color.FromArgb(255, 224, 192);
             panel10.Controls.Add(cbxSeats);
-            panel10.Location = new Point(359, 389);
+            panel10.Location = new Point(359, 347);
             panel10.Name = "panel10";
             panel10.Size = new Size(200, 49);
             panel10.TabIndex = 41;
@@ -339,7 +342,7 @@
             panel12.Anchor = AnchorStyles.None;
             panel12.BackColor = Color.FromArgb(255, 224, 192);
             panel12.Controls.Add(txtPriceHourly);
-            panel12.Location = new Point(359, 635);
+            panel12.Location = new Point(359, 593);
             panel12.Name = "panel12";
             panel12.Size = new Size(200, 48);
             panel12.TabIndex = 36;
@@ -381,7 +384,7 @@
             panel11.Anchor = AnchorStyles.None;
             panel11.BackColor = Color.FromArgb(255, 224, 192);
             panel11.Controls.Add(txtMileage);
-            panel11.Location = new Point(359, 471);
+            panel11.Location = new Point(359, 429);
             panel11.Name = "panel11";
             panel11.Size = new Size(200, 48);
             panel11.TabIndex = 34;
@@ -423,7 +426,7 @@
             panel13.Anchor = AnchorStyles.None;
             panel13.BackColor = Color.FromArgb(255, 224, 192);
             panel13.Controls.Add(txtPriceDaily);
-            panel13.Location = new Point(359, 553);
+            panel13.Location = new Point(359, 511);
             panel13.Name = "panel13";
             panel13.Size = new Size(200, 48);
             panel13.TabIndex = 35;
@@ -465,7 +468,7 @@
             panel7.Anchor = AnchorStyles.None;
             panel7.BackColor = Color.FromArgb(255, 224, 192);
             panel7.Controls.Add(cbxFuel);
-            panel7.Location = new Point(359, 307);
+            panel7.Location = new Point(359, 265);
             panel7.Name = "panel7";
             panel7.Size = new Size(200, 49);
             panel7.TabIndex = 40;
@@ -500,7 +503,7 @@
             panel8.Anchor = AnchorStyles.None;
             panel8.BackColor = Color.FromArgb(255, 224, 192);
             panel8.Controls.Add(cbxColor);
-            panel8.Location = new Point(359, 225);
+            panel8.Location = new Point(359, 183);
             panel8.Name = "panel8";
             panel8.Size = new Size(200, 49);
             panel8.TabIndex = 39;
@@ -535,7 +538,7 @@
             panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.FromArgb(255, 224, 192);
             panel5.Controls.Add(cbxSpecificType);
-            panel5.Location = new Point(35, 307);
+            panel5.Location = new Point(35, 265);
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 49);
             panel5.TabIndex = 36;
@@ -570,7 +573,7 @@
             panel9.Anchor = AnchorStyles.None;
             panel9.BackColor = Color.FromArgb(255, 224, 192);
             panel9.Controls.Add(cbxYear);
-            panel9.Location = new Point(35, 553);
+            panel9.Location = new Point(35, 511);
             panel9.Name = "panel9";
             panel9.Size = new Size(200, 49);
             panel9.TabIndex = 38;
@@ -605,7 +608,7 @@
             panel4.Anchor = AnchorStyles.None;
             panel4.BackColor = Color.FromArgb(255, 224, 192);
             panel4.Controls.Add(txtLicense);
-            panel4.Location = new Point(35, 635);
+            panel4.Location = new Point(35, 593);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 48);
             panel4.TabIndex = 34;
@@ -647,7 +650,7 @@
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(255, 224, 192);
             panel3.Controls.Add(cbxGeneralType);
-            panel3.Location = new Point(35, 225);
+            panel3.Location = new Point(35, 183);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 49);
             panel3.TabIndex = 33;
@@ -682,14 +685,14 @@
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(255, 224, 192);
             panel2.Controls.Add(txtModel);
-            panel2.Location = new Point(35, 471);
+            panel2.Location = new Point(35, 429);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 48);
             panel2.TabIndex = 32;
             // 
             // btnBrowse
             // 
-            btnBrowse.Anchor = AnchorStyles.None;
+            btnBrowse.Anchor = AnchorStyles.Top;
             btnBrowse.AutoSize = false;
             btnBrowse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnBrowse.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -697,7 +700,7 @@
             btnBrowse.HighEmphasis = true;
             btnBrowse.Icon = null;
             btnBrowse.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnBrowse.Location = new Point(210, 31);
+            btnBrowse.Location = new Point(226, 27);
             btnBrowse.Margin = new Padding(4, 6, 4, 6);
             btnBrowse.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnBrowse.Name = "btnBrowse";
@@ -710,6 +713,28 @@
             btnBrowse.UseVisualStyleBackColor = true;
             btnBrowse.Click += btnBrowse_Click;
             // 
+            // panel14
+            // 
+            panel14.BackColor = Color.FromArgb(35, 40, 60);
+            panel14.Controls.Add(lblOwned);
+            panel14.Dock = DockStyle.Top;
+            panel14.Location = new Point(0, 0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(964, 50);
+            panel14.TabIndex = 33;
+            // 
+            // lblOwned
+            // 
+            lblOwned.Anchor = AnchorStyles.Top;
+            lblOwned.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOwned.ForeColor = Color.White;
+            lblOwned.Location = new Point(604, 9);
+            lblOwned.Name = "lblOwned";
+            lblOwned.Size = new Size(361, 30);
+            lblOwned.TabIndex = 5;
+            lblOwned.Text = "Owned Vehicles";
+            lblOwned.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ProviderAddVehicle
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -718,6 +743,7 @@
             ClientSize = new Size(964, 704);
             Controls.Add(panel1);
             Controls.Add(flpDisplay);
+            Controls.Add(panel14);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ProviderAddVehicle";
             StartPosition = FormStartPosition.CenterScreen;
@@ -738,6 +764,7 @@
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel14.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -775,5 +802,8 @@
         private ReaLTaiizor.Controls.MaterialButton btnAddVehicle;
         private ReaLTaiizor.Controls.MaterialButton btnClearPicture;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
+        private Panel panel14;
+        private Label lblApproval;
+        private Label lblOwned;
     }
 }

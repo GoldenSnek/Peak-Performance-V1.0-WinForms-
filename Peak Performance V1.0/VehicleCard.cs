@@ -28,13 +28,13 @@ namespace Peak_Performance_V1._0
             lblMake.Text = $"{make}";
             lblModel.Text = $"{model}" +
                             $" {vehicleYear}";
-            lblLicense.Text = $"License Plate No: {licensePlate}";
-            lblColor.Text = $"Color: {color}";
+            //lblLicense.Text = $"License Plate No: {licensePlate}";
+            //lblColor.Text = $"Color: {color}";
             lblFuelType.Text = $"Fuel Type: {fuelType}";
             lblSeats.Text = $"Seats: {seats}";
-            lblMileage.Text = $"Mileage: {mileage} km";
-            lblDailyPrice.Text = $"Daily Price: {priceDaily}";
-            lblHourlyPrice.Text = $"Hourly Price: {priceHourly}";
+            //lblMileage.Text = $"Mileage: {mileage} km";
+            lblDailyPrice.Text = $"Php {priceDaily}/day";
+            lblHourlyPrice.Text = $"Php {priceHourly}/hr";
             if (vehicleImage != null)
                 picVehicle.Image = vehicleImage;
             else

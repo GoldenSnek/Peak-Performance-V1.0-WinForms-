@@ -31,12 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tmrClock = new System.Windows.Forms.Timer(components);
-            picHide = new PictureBox();
-            picMin = new PictureBox();
-            lblTime = new Label();
-            picMax = new PictureBox();
-            lblDate = new Label();
-            lblDay = new Label();
             lblGreetings = new Label();
             lblAnalytics = new Label();
             pnlForm = new Panel();
@@ -56,16 +50,12 @@
             panel16 = new Panel();
             panel17 = new Panel();
             panel3 = new Panel();
-            pictureBox7 = new PictureBox();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label1 = new Label();
-            panel4 = new Panel();
-            parrotBarGraph1 = new ReaLTaiizor.Controls.ParrotBarGraph();
             panel5 = new Panel();
-            panel6 = new Panel();
+            flpDisplayUsers = new FlowLayoutPanel();
+            label1 = new Label();
             panel7 = new Panel();
+            panel4 = new Panel();
+            panel6 = new Panel();
             panel1 = new Panel();
             label16 = new Label();
             label15 = new Label();
@@ -80,25 +70,15 @@
             label14 = new Label();
             parrotGauge1 = new ReaLTaiizor.Controls.ParrotGauge();
             panel8 = new Panel();
-            label12 = new Label();
-            label13 = new Label();
-            pictureBox5 = new PictureBox();
-            label10 = new Label();
-            label11 = new Label();
-            pictureBox4 = new PictureBox();
-            label9 = new Label();
-            label8 = new Label();
-            pictureBox3 = new PictureBox();
-            parrotFlatProgressBar1 = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
+            flpDisplayVehicles = new FlowLayoutPanel();
             picNight = new PictureBox();
             panel9 = new Panel();
             panel10 = new Panel();
             panel11 = new Panel();
             panel12 = new Panel();
-            pictureBox6 = new PictureBox();
-            pnlTop = new ReaLTaiizor.Controls.ParrotGradientPanel();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
             pnlSideMenu = new ReaLTaiizor.Controls.ParrotSlidingPanel();
+            picHide = new PictureBox();
             btnExit = new Button();
             btnLogout = new Button();
             btnManageAccount = new Button();
@@ -116,9 +96,12 @@
             lblRole = new Label();
             lblUsername = new Label();
             picPFP = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)picHide).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picMax).BeginInit();
+            pnlTop = new Panel();
+            lblDay = new Label();
+            picMin = new PictureBox();
+            lblTime = new Label();
+            lblDate = new Label();
+            picMax = new PictureBox();
             pnlForm.SuspendLayout();
             panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -126,19 +109,17 @@
             panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            pnlTop.SuspendLayout();
             pnlSideMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picHide).BeginInit();
             pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPFP).BeginInit();
+            pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picMax).BeginInit();
             SuspendLayout();
             // 
             // tmrClock
@@ -146,88 +127,6 @@
             tmrClock.Enabled = true;
             tmrClock.Interval = 1000;
             tmrClock.Tick += tmrClock_Tick;
-            // 
-            // picHide
-            // 
-            picHide.BackColor = Color.Transparent;
-            picHide.BackgroundImage = Properties.Resources.HideShowMenu;
-            picHide.BackgroundImageLayout = ImageLayout.Stretch;
-            picHide.Cursor = Cursors.Hand;
-            picHide.Location = new Point(3, 2);
-            picHide.Name = "picHide";
-            picHide.Size = new Size(25, 25);
-            picHide.TabIndex = 35;
-            picHide.TabStop = false;
-            // 
-            // picMin
-            // 
-            picMin.Anchor = AnchorStyles.Right;
-            picMin.BackColor = Color.Transparent;
-            picMin.BackgroundImage = Properties.Resources.Minimize;
-            picMin.BackgroundImageLayout = ImageLayout.Stretch;
-            picMin.Cursor = Cursors.Hand;
-            picMin.Location = new Point(884, 2);
-            picMin.Name = "picMin";
-            picMin.Size = new Size(25, 25);
-            picMin.TabIndex = 30;
-            picMin.TabStop = false;
-            picMin.Click += picMin_Click;
-            // 
-            // lblTime
-            // 
-            lblTime.Anchor = AnchorStyles.Left;
-            lblTime.AutoSize = true;
-            lblTime.BackColor = Color.Transparent;
-            lblTime.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTime.ForeColor = Color.Black;
-            lblTime.Location = new Point(33, 3);
-            lblTime.Name = "lblTime";
-            lblTime.Size = new Size(72, 23);
-            lblTime.TabIndex = 2;
-            lblTime.Text = "00:00:00";
-            lblTime.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // picMax
-            // 
-            picMax.Anchor = AnchorStyles.Right;
-            picMax.BackColor = Color.Transparent;
-            picMax.BackgroundImage = Properties.Resources.Maximize;
-            picMax.BackgroundImageLayout = ImageLayout.Stretch;
-            picMax.Cursor = Cursors.Hand;
-            picMax.Location = new Point(924, 2);
-            picMax.Name = "picMax";
-            picMax.Size = new Size(25, 25);
-            picMax.TabIndex = 29;
-            picMax.TabStop = false;
-            picMax.Click += picMax_Click;
-            // 
-            // lblDate
-            // 
-            lblDate.Anchor = AnchorStyles.Left;
-            lblDate.AutoSize = true;
-            lblDate.BackColor = Color.Transparent;
-            lblDate.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            lblDate.ForeColor = Color.Black;
-            lblDate.Location = new Point(121, 3);
-            lblDate.Name = "lblDate";
-            lblDate.Size = new Size(87, 23);
-            lblDate.TabIndex = 3;
-            lblDate.Text = "Placeholder";
-            lblDate.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblDay
-            // 
-            lblDay.Anchor = AnchorStyles.Left;
-            lblDay.AutoSize = true;
-            lblDay.BackColor = Color.Transparent;
-            lblDay.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            lblDay.ForeColor = Color.Black;
-            lblDay.Location = new Point(240, 3);
-            lblDay.Name = "lblDay";
-            lblDay.Size = new Size(87, 23);
-            lblDay.TabIndex = 4;
-            lblDay.Text = "Placeholder";
-            lblDay.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblGreetings
             // 
@@ -244,13 +143,13 @@
             // 
             // lblAnalytics
             // 
-            lblAnalytics.AutoSize = true;
-            lblAnalytics.BackColor = Color.Transparent;
+            lblAnalytics.BackColor = Color.Black;
+            lblAnalytics.Dock = DockStyle.Top;
             lblAnalytics.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAnalytics.ForeColor = Color.White;
-            lblAnalytics.Location = new Point(11, 12);
+            lblAnalytics.Location = new Point(3, 3);
             lblAnalytics.Name = "lblAnalytics";
-            lblAnalytics.Size = new Size(181, 18);
+            lblAnalytics.Size = new Size(519, 20);
             lblAnalytics.TabIndex = 6;
             lblAnalytics.Text = "Top Rated Vehicles";
             // 
@@ -282,9 +181,9 @@
             panel18.Controls.Add(panel20);
             panel18.Controls.Add(panel21);
             panel18.Controls.Add(panel22);
-            panel18.Location = new Point(580, 167);
+            panel18.Location = new Point(580, 159);
             panel18.Name = "panel18";
-            panel18.Size = new Size(350, 519);
+            panel18.Size = new Size(350, 530);
             panel18.TabIndex = 21;
             // 
             // label4
@@ -293,7 +192,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(29, 98);
+            label4.Location = new Point(29, 114);
             label4.Name = "label4";
             label4.Size = new Size(243, 196);
             label4.TabIndex = 25;
@@ -303,7 +202,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Bottom;
             pictureBox1.Image = Properties.Resources.FType;
-            pictureBox1.Location = new Point(29, 318);
+            pictureBox1.Location = new Point(29, 329);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(300, 175);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -317,7 +216,7 @@
             panel19.ForeColor = Color.Coral;
             panel19.Location = new Point(0, 3);
             panel19.Name = "panel19";
-            panel19.Size = new Size(3, 513);
+            panel19.Size = new Size(3, 524);
             panel19.TabIndex = 17;
             // 
             // label3
@@ -337,7 +236,7 @@
             // 
             picDay.Anchor = AnchorStyles.None;
             picDay.Image = Properties.Resources.Home___Car_Day;
-            picDay.Location = new Point(103, 48);
+            picDay.Location = new Point(43, 61);
             picDay.Name = "picDay";
             picDay.Size = new Size(50, 50);
             picDay.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -349,7 +248,7 @@
             panel20.BackColor = Color.FromArgb(255, 128, 0);
             panel20.Dock = DockStyle.Bottom;
             panel20.ForeColor = Color.Coral;
-            panel20.Location = new Point(0, 516);
+            panel20.Location = new Point(0, 527);
             panel20.Name = "panel20";
             panel20.Size = new Size(347, 3);
             panel20.TabIndex = 18;
@@ -361,7 +260,7 @@
             panel21.ForeColor = Color.Coral;
             panel21.Location = new Point(347, 3);
             panel21.Name = "panel21";
-            panel21.Size = new Size(3, 516);
+            panel21.Size = new Size(3, 527);
             panel21.TabIndex = 16;
             // 
             // panel22
@@ -377,14 +276,14 @@
             // panel13
             // 
             panel13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel13.BackColor = Color.FromArgb(35, 40, 60);
+            panel13.BackColor = Color.Black;
             panel13.Controls.Add(pictureBox2);
             panel13.Controls.Add(lblGreetings);
             panel13.Controls.Add(panel14);
             panel13.Controls.Add(panel15);
             panel13.Controls.Add(panel16);
             panel13.Controls.Add(panel17);
-            panel13.Location = new Point(305, 167);
+            panel13.Location = new Point(305, 159);
             panel13.Name = "panel13";
             panel13.Size = new Size(250, 250);
             panel13.TabIndex = 21;
@@ -392,7 +291,7 @@
             // pictureBox2
             // 
             pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = Properties.Resources.Sunset;
+            pictureBox2.Image = Properties.Resources.SlowDrive;
             pictureBox2.Location = new Point(3, 23);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(244, 224);
@@ -444,142 +343,78 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel3.BackColor = Color.FromArgb(35, 40, 60);
-            panel3.Controls.Add(pictureBox7);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(parrotBarGraph1);
             panel3.Controls.Add(panel5);
-            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(flpDisplayUsers);
+            panel3.Controls.Add(label1);
             panel3.Controls.Add(panel7);
-            panel3.Location = new Point(30, 167);
+            panel3.Controls.Add(panel4);
+            panel3.Controls.Add(panel6);
+            panel3.Location = new Point(30, 159);
             panel3.Name = "panel3";
             panel3.Size = new Size(250, 250);
             panel3.TabIndex = 19;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = Properties.Resources.HomeTopUser;
-            pictureBox7.Location = new Point(201, 3);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(40, 40);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 35;
-            pictureBox7.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(13, 197);
-            label7.Name = "label7";
-            label7.Size = new Size(207, 27);
-            label7.TabIndex = 28;
-            label7.Text = "User 3";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(15, 133);
-            label6.Name = "label6";
-            label6.Size = new Size(207, 27);
-            label6.TabIndex = 27;
-            label6.Text = "User 2";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(15, 67);
-            label5.Name = "label5";
-            label5.Size = new Size(207, 27);
-            label5.TabIndex = 26;
-            label5.Text = "User 1";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(11, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(189, 18);
-            label1.TabIndex = 21;
-            label1.Text = "Top rated providers";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(255, 128, 0);
-            panel4.Dock = DockStyle.Left;
-            panel4.ForeColor = Color.Coral;
-            panel4.Location = new Point(0, 3);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(3, 244);
-            panel4.TabIndex = 17;
-            // 
-            // parrotBarGraph1
-            // 
-            parrotBarGraph1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            parrotBarGraph1.FilledColor = Color.FromArgb(30, 33, 38);
-            parrotBarGraph1.GraphOrientation = ReaLTaiizor.Controls.ParrotBarGraph.Orientation.Horizontal;
-            parrotBarGraph1.GraphStyle = ReaLTaiizor.Controls.ParrotBarGraph.Style.Bootstrap;
-            parrotBarGraph1.Items = (List<int>)resources.GetObject("parrotBarGraph1.Items");
-            parrotBarGraph1.Location = new Point(9, 48);
-            parrotBarGraph1.Name = "parrotBarGraph1";
-            parrotBarGraph1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotBarGraph1.ShowGrid = true;
-            parrotBarGraph1.Size = new Size(232, 195);
-            parrotBarGraph1.Sorting = ReaLTaiizor.Controls.ParrotBarGraph.SortStyle.Descending;
-            parrotBarGraph1.SplitterColor = Color.FromArgb(59, 62, 71);
-            parrotBarGraph1.TabIndex = 19;
-            parrotBarGraph1.Text = "parrotBarGraph1";
-            parrotBarGraph1.TextAlignment = ReaLTaiizor.Controls.ParrotBarGraph.Aligning.Far;
-            parrotBarGraph1.TextColor = Color.FromArgb(120, 120, 120);
-            parrotBarGraph1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotBarGraph1.UnfilledColor = Color.FromArgb(37, 40, 49);
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(255, 128, 0);
             panel5.Dock = DockStyle.Bottom;
             panel5.ForeColor = Color.Coral;
-            panel5.Location = new Point(0, 247);
+            panel5.Location = new Point(3, 247);
             panel5.Name = "panel5";
-            panel5.Size = new Size(247, 3);
+            panel5.Size = new Size(244, 3);
             panel5.TabIndex = 18;
             // 
-            // panel6
+            // flpDisplayUsers
             // 
-            panel6.BackColor = Color.FromArgb(255, 128, 0);
-            panel6.Dock = DockStyle.Right;
-            panel6.ForeColor = Color.Coral;
-            panel6.Location = new Point(247, 3);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(3, 247);
-            panel6.TabIndex = 16;
+            flpDisplayUsers.AutoScroll = true;
+            flpDisplayUsers.BackColor = Color.FromArgb(45, 60, 75);
+            flpDisplayUsers.Dock = DockStyle.Fill;
+            flpDisplayUsers.Location = new Point(3, 23);
+            flpDisplayUsers.Name = "flpDisplayUsers";
+            flpDisplayUsers.Size = new Size(244, 227);
+            flpDisplayUsers.TabIndex = 22;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Black;
+            label1.Dock = DockStyle.Top;
+            label1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(3, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(244, 20);
+            label1.TabIndex = 21;
+            label1.Text = "Top rated providers";
             // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(255, 128, 0);
             panel7.Dock = DockStyle.Top;
             panel7.ForeColor = Color.Coral;
-            panel7.Location = new Point(0, 0);
+            panel7.Location = new Point(3, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(250, 3);
+            panel7.Size = new Size(244, 3);
             panel7.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(255, 128, 0);
+            panel4.Dock = DockStyle.Left;
+            panel4.ForeColor = Color.Coral;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(3, 250);
+            panel4.TabIndex = 17;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(255, 128, 0);
+            panel6.Dock = DockStyle.Right;
+            panel6.ForeColor = Color.Coral;
+            panel6.Location = new Point(247, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(3, 250);
+            panel6.TabIndex = 16;
             // 
             // panel1
             // 
@@ -597,7 +432,7 @@
             panel1.Controls.Add(parrotClock1);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(parrotGauge1);
-            panel1.Location = new Point(30, 39);
+            panel1.Location = new Point(30, 26);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 100);
             panel1.TabIndex = 14;
@@ -641,14 +476,12 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Left;
-            label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(9, 11);
             label2.Name = "label2";
-            label2.Size = new Size(131, 18);
+            label2.Size = new Size(131, 20);
             label2.TabIndex = 21;
             label2.Text = "Notifications";
             // 
@@ -774,163 +607,28 @@
             // 
             panel8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel8.BackColor = Color.FromArgb(35, 40, 60);
-            panel8.Controls.Add(label12);
-            panel8.Controls.Add(label13);
-            panel8.Controls.Add(pictureBox5);
-            panel8.Controls.Add(label10);
-            panel8.Controls.Add(label11);
-            panel8.Controls.Add(pictureBox4);
-            panel8.Controls.Add(label9);
-            panel8.Controls.Add(label8);
-            panel8.Controls.Add(pictureBox3);
-            panel8.Controls.Add(parrotFlatProgressBar1);
+            panel8.Controls.Add(flpDisplayVehicles);
             panel8.Controls.Add(lblAnalytics);
             panel8.Controls.Add(picNight);
             panel8.Controls.Add(panel9);
             panel8.Controls.Add(panel10);
             panel8.Controls.Add(panel11);
             panel8.Controls.Add(panel12);
-            panel8.Controls.Add(pictureBox6);
             panel8.Location = new Point(30, 439);
             panel8.Name = "panel8";
             panel8.Size = new Size(525, 250);
             panel8.TabIndex = 20;
             // 
-            // label12
+            // flpDisplayVehicles
             // 
-            label12.Anchor = AnchorStyles.Right;
-            label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(396, 183);
-            label12.Name = "label12";
-            label12.Size = new Size(99, 27);
-            label12.TabIndex = 34;
-            label12.Text = "Owner 1";
-            label12.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.Right;
-            label13.BackColor = Color.Transparent;
-            label13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(395, 50);
-            label13.Name = "label13";
-            label13.Size = new Size(99, 27);
-            label13.TabIndex = 33;
-            label13.Text = "Vehicle 1";
-            label13.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Anchor = AnchorStyles.Right;
-            pictureBox5.Image = Properties.Resources.Car___MainLR;
-            pictureBox5.Location = new Point(395, 80);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(100, 100);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 32;
-            pictureBox5.TabStop = false;
-            // 
-            // label10
-            // 
-            label10.Anchor = AnchorStyles.None;
-            label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(211, 183);
-            label10.Name = "label10";
-            label10.Size = new Size(99, 27);
-            label10.TabIndex = 31;
-            label10.Text = "Owner 1";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.None;
-            label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(210, 50);
-            label11.Name = "label11";
-            label11.Size = new Size(99, 27);
-            label11.TabIndex = 30;
-            label11.Text = "Vehicle 1";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.None;
-            pictureBox4.Image = Properties.Resources.Car___MainLR;
-            pictureBox4.Location = new Point(210, 80);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(100, 100);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 29;
-            pictureBox4.TabStop = false;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Left;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(30, 184);
-            label9.Name = "label9";
-            label9.Size = new Size(99, 27);
-            label9.TabIndex = 28;
-            label9.Text = "Owner 1";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.Left;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(29, 51);
-            label8.Name = "label8";
-            label8.Size = new Size(99, 27);
-            label8.TabIndex = 27;
-            label8.Text = "Vehicle 1";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.Left;
-            pictureBox3.Image = Properties.Resources.Car___MainLR;
-            pictureBox3.Location = new Point(29, 81);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 100);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 20;
-            pictureBox3.TabStop = false;
-            // 
-            // parrotFlatProgressBar1
-            // 
-            parrotFlatProgressBar1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            parrotFlatProgressBar1.BarStyle = ReaLTaiizor.Controls.ParrotFlatProgressBar.Style.Material;
-            parrotFlatProgressBar1.BorderColor = Color.Black;
-            parrotFlatProgressBar1.Colors = (List<Color>)resources.GetObject("parrotFlatProgressBar1.Colors");
-            parrotFlatProgressBar1.CompleteBackColor = Color.FromArgb(0, 120, 250);
-            parrotFlatProgressBar1.CompleteColor = Color.FromArgb(1, 119, 215);
-            parrotFlatProgressBar1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotFlatProgressBar1.IncompletedBackColor = Color.FromArgb(180, 180, 180);
-            parrotFlatProgressBar1.InocmpletedColor = Color.White;
-            parrotFlatProgressBar1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotFlatProgressBar1.Location = new Point(15, 230);
-            parrotFlatProgressBar1.MaxValue = 100;
-            parrotFlatProgressBar1.Name = "parrotFlatProgressBar1";
-            parrotFlatProgressBar1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotFlatProgressBar1.Positions = (List<float>)resources.GetObject("parrotFlatProgressBar1.Positions");
-            parrotFlatProgressBar1.ShowBorder = true;
-            parrotFlatProgressBar1.Size = new Size(496, 10);
-            parrotFlatProgressBar1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            parrotFlatProgressBar1.TabIndex = 19;
-            parrotFlatProgressBar1.Text = "parrotFlatProgressBar1";
-            parrotFlatProgressBar1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotFlatProgressBar1.Value = 100;
+            flpDisplayVehicles.AutoScroll = true;
+            flpDisplayVehicles.BackColor = Color.FromArgb(45, 60, 75);
+            flpDisplayVehicles.Dock = DockStyle.Fill;
+            flpDisplayVehicles.FlowDirection = FlowDirection.TopDown;
+            flpDisplayVehicles.Location = new Point(3, 23);
+            flpDisplayVehicles.Name = "flpDisplayVehicles";
+            flpDisplayVehicles.Size = new Size(519, 224);
+            flpDisplayVehicles.TabIndex = 27;
             // 
             // picNight
             // 
@@ -983,42 +681,6 @@
             panel12.Size = new Size(525, 3);
             panel12.TabIndex = 15;
             // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = Properties.Resources.HomeTopVehicle;
-            pictureBox6.Location = new Point(191, -3);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(50, 50);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 26;
-            pictureBox6.TabStop = false;
-            // 
-            // pnlTop
-            // 
-            pnlTop.BottomLeft = Color.FromArgb(255, 128, 0);
-            pnlTop.BottomRight = Color.FromArgb(255, 128, 0);
-            pnlTop.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
-            pnlTop.Controls.Add(lblDay);
-            pnlTop.Controls.Add(picHide);
-            pnlTop.Controls.Add(picMin);
-            pnlTop.Controls.Add(lblTime);
-            pnlTop.Controls.Add(lblDate);
-            pnlTop.Controls.Add(picMax);
-            pnlTop.Dock = DockStyle.Top;
-            pnlTop.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.Low;
-            pnlTop.Location = new Point(220, 0);
-            pnlTop.Name = "pnlTop";
-            pnlTop.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighSpeed;
-            pnlTop.PrimerColor = Color.White;
-            pnlTop.Size = new Size(964, 30);
-            pnlTop.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
-            pnlTop.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            pnlTop.TabIndex = 24;
-            pnlTop.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            pnlTop.TopLeft = Color.FromArgb(255, 128, 0);
-            pnlTop.TopRight = Color.FromArgb(255, 128, 0);
-            pnlTop.MouseDown += pnlTop_MouseDown;
-            // 
             // tmrFadeIn
             // 
             tmrFadeIn.Interval = 10;
@@ -1063,6 +725,18 @@
             pnlSideMenu.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             pnlSideMenu.TopLeft = Color.FromArgb(45, 60, 75);
             pnlSideMenu.TopRight = Color.FromArgb(45, 60, 75);
+            // 
+            // picHide
+            // 
+            picHide.BackColor = Color.Transparent;
+            picHide.BackgroundImage = Properties.Resources.HideShowMenu;
+            picHide.BackgroundImageLayout = ImageLayout.Stretch;
+            picHide.Cursor = Cursors.Hand;
+            picHide.Location = new Point(9, 3);
+            picHide.Name = "picHide";
+            picHide.Size = new Size(25, 25);
+            picHide.TabIndex = 41;
+            picHide.TabStop = false;
             // 
             // btnExit
             // 
@@ -1118,7 +792,7 @@
             btnManageAccount.RightToLeft = RightToLeft.No;
             btnManageAccount.Size = new Size(203, 60);
             btnManageAccount.TabIndex = 45;
-            btnManageAccount.Text = "  Manage Account";
+            btnManageAccount.Text = "  Profile";
             btnManageAccount.TextAlign = ContentAlignment.MiddleLeft;
             btnManageAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnManageAccount.UseVisualStyleBackColor = false;
@@ -1377,6 +1051,93 @@
             picPFP.TabIndex = 23;
             picPFP.TabStop = false;
             // 
+            // pnlTop
+            // 
+            pnlTop.BackColor = Color.FromArgb(255, 128, 0);
+            pnlTop.Controls.Add(lblDay);
+            pnlTop.Controls.Add(picHide);
+            pnlTop.Controls.Add(picMin);
+            pnlTop.Controls.Add(lblTime);
+            pnlTop.Controls.Add(lblDate);
+            pnlTop.Controls.Add(picMax);
+            pnlTop.Cursor = Cursors.Hand;
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new Point(220, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new Size(964, 30);
+            pnlTop.TabIndex = 22;
+            pnlTop.MouseDown += pnlTop_MouseDown;
+            // 
+            // lblDay
+            // 
+            lblDay.Anchor = AnchorStyles.Left;
+            lblDay.AutoSize = true;
+            lblDay.BackColor = Color.Transparent;
+            lblDay.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            lblDay.ForeColor = Color.Black;
+            lblDay.Location = new Point(246, 4);
+            lblDay.Name = "lblDay";
+            lblDay.Size = new Size(87, 23);
+            lblDay.TabIndex = 38;
+            lblDay.Text = "Placeholder";
+            lblDay.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // picMin
+            // 
+            picMin.Anchor = AnchorStyles.Right;
+            picMin.BackColor = Color.Transparent;
+            picMin.BackgroundImage = Properties.Resources.Minimize;
+            picMin.BackgroundImageLayout = ImageLayout.Stretch;
+            picMin.Cursor = Cursors.Hand;
+            picMin.Location = new Point(890, 3);
+            picMin.Name = "picMin";
+            picMin.Size = new Size(25, 25);
+            picMin.TabIndex = 40;
+            picMin.TabStop = false;
+            picMin.Click += picMin_Click;
+            // 
+            // lblTime
+            // 
+            lblTime.Anchor = AnchorStyles.Left;
+            lblTime.AutoSize = true;
+            lblTime.BackColor = Color.Transparent;
+            lblTime.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTime.ForeColor = Color.Black;
+            lblTime.Location = new Point(39, 4);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(72, 23);
+            lblTime.TabIndex = 36;
+            lblTime.Text = "00:00:00";
+            lblTime.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblDate
+            // 
+            lblDate.Anchor = AnchorStyles.Left;
+            lblDate.AutoSize = true;
+            lblDate.BackColor = Color.Transparent;
+            lblDate.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            lblDate.ForeColor = Color.Black;
+            lblDate.Location = new Point(118, 4);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(87, 23);
+            lblDate.TabIndex = 37;
+            lblDate.Text = "Placeholder";
+            lblDate.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // picMax
+            // 
+            picMax.Anchor = AnchorStyles.Right;
+            picMax.BackColor = Color.Transparent;
+            picMax.BackgroundImage = Properties.Resources.Maximize;
+            picMax.BackgroundImageLayout = ImageLayout.Stretch;
+            picMax.Cursor = Cursors.Hand;
+            picMax.Location = new Point(930, 3);
+            picMax.Name = "picMax";
+            picMax.Size = new Size(25, 25);
+            picMax.TabIndex = 39;
+            picMax.TabStop = false;
+            picMax.Click += picMax_Click;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -1395,9 +1156,6 @@
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             Load += MainMenu_Load;
-            ((System.ComponentModel.ISupportInitialize)picHide).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picMin).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picMax).EndInit();
             pnlForm.ResumeLayout(false);
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
@@ -1406,35 +1164,26 @@
             panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            pnlTop.ResumeLayout(false);
-            pnlTop.PerformLayout();
             pnlSideMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picHide).EndInit();
             pnlTitle.ResumeLayout(false);
             pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picPFP).EndInit();
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picMin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picMax).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Timer tmrClock;
         private Panel pnlTitle;
-        private PictureBox picMax;
-        private PictureBox picMin;
-        private Label lblDate;
-        private Label lblDay;
-        private Label lblTime;
         private Label lblGreetings;
         private Label lblAnalytics;
         private Panel pnlForm;
@@ -1445,7 +1194,6 @@
         private ReaLTaiizor.Controls.ForeverNotification foreverNotification1;
         private System.Windows.Forms.Timer tmrFadeIn;
         private ReaLTaiizor.Controls.ParrotSlidingPanel pnlSideMenu;
-        private PictureBox picHide;
         private Panel panel1;
         private Panel pnlRight;
         private Panel panel2;
@@ -1473,10 +1221,8 @@
         private Panel panel17;
         private ReaLTaiizor.Controls.ParrotClock parrotClock1;
         private ReaLTaiizor.Controls.ParrotGauge parrotGauge1;
-        private ReaLTaiizor.Controls.ParrotBarGraph parrotBarGraph1;
         private Label label2;
         private PictureBox pictureBox2;
-        private ReaLTaiizor.Controls.ParrotGradientPanel pnlTop;
         private PictureBox picPFP;
         private Label lblRole;
         private Label lblUsername;
@@ -1484,22 +1230,7 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label4;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label12;
-        private Label label13;
-        private PictureBox pictureBox5;
-        private Label label10;
-        private Label label11;
-        private PictureBox pictureBox4;
-        private Label label9;
-        private Label label8;
-        private PictureBox pictureBox3;
-        private ReaLTaiizor.Controls.ParrotFlatProgressBar parrotFlatProgressBar1;
-        private PictureBox pictureBox7;
         private PictureBox pictureBox8;
-        private PictureBox pictureBox6;
         private PictureBox picDay;
         private Label label14;
         private Label label16;
@@ -1514,5 +1245,14 @@
         private Button btnAdminAllVehicles;
         private Button btnLogout;
         private Button btnExit;
+        private Panel pnlTop;
+        private Label lblDay;
+        private PictureBox picHide;
+        private PictureBox picMin;
+        private Label lblTime;
+        private Label lblDate;
+        private PictureBox picMax;
+        private FlowLayoutPanel flpDisplayUsers;
+        private FlowLayoutPanel flpDisplayVehicles;
     }
 }

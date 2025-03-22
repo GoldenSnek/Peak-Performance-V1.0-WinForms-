@@ -62,6 +62,8 @@
             panel2 = new Panel();
             txtModel = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             btnBrowse = new ReaLTaiizor.Controls.MaterialButton();
+            panel14 = new Panel();
+            lblOwned = new Label();
             panel1.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
@@ -77,20 +79,20 @@
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
+            panel14.SuspendLayout();
             SuspendLayout();
             // 
             // flpDisplay
             // 
             flpDisplay.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpDisplay.AutoScroll = true;
-            flpDisplay.Location = new Point(604, 0);
+            flpDisplay.Location = new Point(604, 50);
             flpDisplay.Name = "flpDisplay";
-            flpDisplay.Size = new Size(360, 704);
+            flpDisplay.Size = new Size(360, 654);
             flpDisplay.TabIndex = 58;
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(35, 40, 60);
             panel1.Controls.Add(parrotGradientPanel1);
             panel1.Controls.Add(btnClearPicture);
@@ -111,20 +113,21 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnBrowse);
-            panel1.Location = new Point(0, 0);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 50);
             panel1.Name = "panel1";
-            panel1.Size = new Size(598, 704);
+            panel1.Size = new Size(598, 654);
             panel1.TabIndex = 59;
             // 
             // parrotGradientPanel1
             // 
-            parrotGradientPanel1.Anchor = AnchorStyles.None;
+            parrotGradientPanel1.Anchor = AnchorStyles.Top;
             parrotGradientPanel1.BottomLeft = Color.FromArgb(255, 192, 128);
             parrotGradientPanel1.BottomRight = Color.FromArgb(192, 64, 0);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel1.Controls.Add(picPreview);
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel1.Location = new Point(35, 31);
+            parrotGradientPanel1.Location = new Point(35, 9);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
@@ -139,7 +142,7 @@
             // picPreview
             // 
             picPreview.Anchor = AnchorStyles.None;
-            picPreview.BackColor = Color.FromArgb(35, 40, 50);
+            picPreview.BackColor = Color.Lavender;
             picPreview.BackgroundImageLayout = ImageLayout.None;
             picPreview.Location = new Point(3, 3);
             picPreview.Name = "picPreview";
@@ -150,7 +153,7 @@
             // 
             // btnClearPicture
             // 
-            btnClearPicture.Anchor = AnchorStyles.None;
+            btnClearPicture.Anchor = AnchorStyles.Top;
             btnClearPicture.AutoSize = false;
             btnClearPicture.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnClearPicture.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -158,7 +161,7 @@
             btnClearPicture.HighEmphasis = true;
             btnClearPicture.Icon = null;
             btnClearPicture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClearPicture.Location = new Point(210, 94);
+            btnClearPicture.Location = new Point(210, 72);
             btnClearPicture.Margin = new Padding(4, 6, 4, 6);
             btnClearPicture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClearPicture.Name = "btnClearPicture";
@@ -173,7 +176,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Anchor = AnchorStyles.None;
+            btnDelete.Anchor = AnchorStyles.Top;
             btnDelete.AutoSize = false;
             btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnDelete.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -181,7 +184,7 @@
             btnDelete.HighEmphasis = true;
             btnDelete.Icon = null;
             btnDelete.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnDelete.Location = new Point(399, 157);
+            btnDelete.Location = new Point(399, 135);
             btnDelete.Margin = new Padding(4, 6, 4, 6);
             btnDelete.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnDelete.Name = "btnDelete";
@@ -195,7 +198,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Anchor = AnchorStyles.None;
+            btnUpdate.Anchor = AnchorStyles.Top;
             btnUpdate.AutoSize = false;
             btnUpdate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnUpdate.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -203,7 +206,7 @@
             btnUpdate.HighEmphasis = true;
             btnUpdate.Icon = null;
             btnUpdate.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnUpdate.Location = new Point(399, 94);
+            btnUpdate.Location = new Point(399, 72);
             btnUpdate.Margin = new Padding(4, 6, 4, 6);
             btnUpdate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnUpdate.Name = "btnUpdate";
@@ -217,9 +220,9 @@
             // 
             // lblImagePath
             // 
-            lblImagePath.Anchor = AnchorStyles.None;
+            lblImagePath.Anchor = AnchorStyles.Top;
             lblImagePath.AutoSize = true;
-            lblImagePath.Location = new Point(105, 174);
+            lblImagePath.Location = new Point(105, 150);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(0, 19);
             lblImagePath.TabIndex = 28;
@@ -230,7 +233,7 @@
             panel6.Anchor = AnchorStyles.None;
             panel6.BackColor = Color.FromArgb(255, 224, 192);
             panel6.Controls.Add(txtMake);
-            panel6.Location = new Point(35, 389);
+            panel6.Location = new Point(35, 350);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 48);
             panel6.TabIndex = 44;
@@ -243,7 +246,6 @@
             txtMake.BackgroundImageLayout = ImageLayout.None;
             txtMake.CharacterCasing = CharacterCasing.Normal;
             txtMake.Depth = 0;
-            txtMake.Dock = DockStyle.Fill;
             txtMake.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtMake.HideSelection = true;
             txtMake.Hint = "Make";
@@ -269,7 +271,7 @@
             // 
             // btnClear
             // 
-            btnClear.Anchor = AnchorStyles.None;
+            btnClear.Anchor = AnchorStyles.Top;
             btnClear.AutoSize = false;
             btnClear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnClear.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -277,7 +279,7 @@
             btnClear.HighEmphasis = true;
             btnClear.Icon = null;
             btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(399, 31);
+            btnClear.Location = new Point(399, 10);
             btnClear.Margin = new Padding(4, 6, 4, 6);
             btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClear.Name = "btnClear";
@@ -295,7 +297,7 @@
             panel10.Anchor = AnchorStyles.None;
             panel10.BackColor = Color.FromArgb(255, 224, 192);
             panel10.Controls.Add(cbxSeats);
-            panel10.Location = new Point(359, 389);
+            panel10.Location = new Point(359, 350);
             panel10.Name = "panel10";
             panel10.Size = new Size(200, 49);
             panel10.TabIndex = 41;
@@ -305,7 +307,6 @@
             cbxSeats.AutoResize = false;
             cbxSeats.BackColor = Color.FromArgb(255, 255, 255);
             cbxSeats.Depth = 0;
-            cbxSeats.Dock = DockStyle.Fill;
             cbxSeats.DrawMode = DrawMode.OwnerDrawVariable;
             cbxSeats.DropDownHeight = 174;
             cbxSeats.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -330,7 +331,7 @@
             panel12.Anchor = AnchorStyles.None;
             panel12.BackColor = Color.FromArgb(255, 224, 192);
             panel12.Controls.Add(txtPriceHourly);
-            panel12.Location = new Point(359, 635);
+            panel12.Location = new Point(359, 596);
             panel12.Name = "panel12";
             panel12.Size = new Size(200, 48);
             panel12.TabIndex = 36;
@@ -343,7 +344,6 @@
             txtPriceHourly.BackgroundImageLayout = ImageLayout.None;
             txtPriceHourly.CharacterCasing = CharacterCasing.Normal;
             txtPriceHourly.Depth = 0;
-            txtPriceHourly.Dock = DockStyle.Fill;
             txtPriceHourly.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPriceHourly.HideSelection = true;
             txtPriceHourly.Hint = "Price (Hourly)";
@@ -372,7 +372,7 @@
             panel11.Anchor = AnchorStyles.None;
             panel11.BackColor = Color.FromArgb(255, 224, 192);
             panel11.Controls.Add(txtMileage);
-            panel11.Location = new Point(359, 471);
+            panel11.Location = new Point(359, 432);
             panel11.Name = "panel11";
             panel11.Size = new Size(200, 48);
             panel11.TabIndex = 34;
@@ -385,7 +385,6 @@
             txtMileage.BackgroundImageLayout = ImageLayout.None;
             txtMileage.CharacterCasing = CharacterCasing.Normal;
             txtMileage.Depth = 0;
-            txtMileage.Dock = DockStyle.Fill;
             txtMileage.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtMileage.HideSelection = true;
             txtMileage.Hint = "Mileage";
@@ -414,7 +413,7 @@
             panel13.Anchor = AnchorStyles.None;
             panel13.BackColor = Color.FromArgb(255, 224, 192);
             panel13.Controls.Add(txtPriceDaily);
-            panel13.Location = new Point(359, 553);
+            panel13.Location = new Point(359, 514);
             panel13.Name = "panel13";
             panel13.Size = new Size(200, 48);
             panel13.TabIndex = 35;
@@ -427,7 +426,6 @@
             txtPriceDaily.BackgroundImageLayout = ImageLayout.None;
             txtPriceDaily.CharacterCasing = CharacterCasing.Normal;
             txtPriceDaily.Depth = 0;
-            txtPriceDaily.Dock = DockStyle.Fill;
             txtPriceDaily.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPriceDaily.HideSelection = true;
             txtPriceDaily.Hint = "Price (Daily)";
@@ -456,7 +454,7 @@
             panel7.Anchor = AnchorStyles.None;
             panel7.BackColor = Color.FromArgb(255, 224, 192);
             panel7.Controls.Add(cbxFuel);
-            panel7.Location = new Point(359, 307);
+            panel7.Location = new Point(359, 268);
             panel7.Name = "panel7";
             panel7.Size = new Size(200, 49);
             panel7.TabIndex = 40;
@@ -466,7 +464,6 @@
             cbxFuel.AutoResize = false;
             cbxFuel.BackColor = Color.FromArgb(255, 255, 255);
             cbxFuel.Depth = 0;
-            cbxFuel.Dock = DockStyle.Fill;
             cbxFuel.DrawMode = DrawMode.OwnerDrawVariable;
             cbxFuel.DropDownHeight = 174;
             cbxFuel.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -491,7 +488,7 @@
             panel8.Anchor = AnchorStyles.None;
             panel8.BackColor = Color.FromArgb(255, 224, 192);
             panel8.Controls.Add(cbxColor);
-            panel8.Location = new Point(359, 225);
+            panel8.Location = new Point(359, 186);
             panel8.Name = "panel8";
             panel8.Size = new Size(200, 49);
             panel8.TabIndex = 39;
@@ -501,7 +498,6 @@
             cbxColor.AutoResize = false;
             cbxColor.BackColor = Color.FromArgb(255, 255, 255);
             cbxColor.Depth = 0;
-            cbxColor.Dock = DockStyle.Fill;
             cbxColor.DrawMode = DrawMode.OwnerDrawVariable;
             cbxColor.DropDownHeight = 174;
             cbxColor.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -526,7 +522,7 @@
             panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.FromArgb(255, 224, 192);
             panel5.Controls.Add(cbxSpecificType);
-            panel5.Location = new Point(35, 307);
+            panel5.Location = new Point(35, 268);
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 49);
             panel5.TabIndex = 36;
@@ -536,7 +532,6 @@
             cbxSpecificType.AutoResize = false;
             cbxSpecificType.BackColor = Color.FromArgb(255, 255, 255);
             cbxSpecificType.Depth = 0;
-            cbxSpecificType.Dock = DockStyle.Fill;
             cbxSpecificType.DrawMode = DrawMode.OwnerDrawVariable;
             cbxSpecificType.DropDownHeight = 174;
             cbxSpecificType.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -561,7 +556,7 @@
             panel9.Anchor = AnchorStyles.None;
             panel9.BackColor = Color.FromArgb(255, 224, 192);
             panel9.Controls.Add(cbxYear);
-            panel9.Location = new Point(35, 553);
+            panel9.Location = new Point(35, 514);
             panel9.Name = "panel9";
             panel9.Size = new Size(200, 49);
             panel9.TabIndex = 38;
@@ -571,7 +566,6 @@
             cbxYear.AutoResize = false;
             cbxYear.BackColor = Color.FromArgb(255, 255, 255);
             cbxYear.Depth = 0;
-            cbxYear.Dock = DockStyle.Fill;
             cbxYear.DrawMode = DrawMode.OwnerDrawVariable;
             cbxYear.DropDownHeight = 174;
             cbxYear.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -596,7 +590,7 @@
             panel4.Anchor = AnchorStyles.None;
             panel4.BackColor = Color.FromArgb(255, 224, 192);
             panel4.Controls.Add(txtLicense);
-            panel4.Location = new Point(35, 635);
+            panel4.Location = new Point(35, 596);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 48);
             panel4.TabIndex = 34;
@@ -609,7 +603,6 @@
             txtLicense.BackgroundImageLayout = ImageLayout.None;
             txtLicense.CharacterCasing = CharacterCasing.Normal;
             txtLicense.Depth = 0;
-            txtLicense.Dock = DockStyle.Fill;
             txtLicense.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtLicense.HideSelection = true;
             txtLicense.Hint = "License Plate Number";
@@ -638,7 +631,7 @@
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(255, 224, 192);
             panel3.Controls.Add(cbxGeneralType);
-            panel3.Location = new Point(35, 225);
+            panel3.Location = new Point(35, 186);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 49);
             panel3.TabIndex = 33;
@@ -648,7 +641,6 @@
             cbxGeneralType.AutoResize = false;
             cbxGeneralType.BackColor = Color.FromArgb(255, 255, 255);
             cbxGeneralType.Depth = 0;
-            cbxGeneralType.Dock = DockStyle.Fill;
             cbxGeneralType.DrawMode = DrawMode.OwnerDrawVariable;
             cbxGeneralType.DropDownHeight = 174;
             cbxGeneralType.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -673,7 +665,7 @@
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(255, 224, 192);
             panel2.Controls.Add(txtModel);
-            panel2.Location = new Point(35, 471);
+            panel2.Location = new Point(35, 432);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 48);
             panel2.TabIndex = 32;
@@ -686,7 +678,6 @@
             txtModel.BackgroundImageLayout = ImageLayout.None;
             txtModel.CharacterCasing = CharacterCasing.Normal;
             txtModel.Depth = 0;
-            txtModel.Dock = DockStyle.Fill;
             txtModel.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtModel.HideSelection = true;
             txtModel.Hint = "Model";
@@ -712,7 +703,7 @@
             // 
             // btnBrowse
             // 
-            btnBrowse.Anchor = AnchorStyles.None;
+            btnBrowse.Anchor = AnchorStyles.Top;
             btnBrowse.AutoSize = false;
             btnBrowse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnBrowse.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -720,7 +711,7 @@
             btnBrowse.HighEmphasis = true;
             btnBrowse.Icon = null;
             btnBrowse.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnBrowse.Location = new Point(210, 31);
+            btnBrowse.Location = new Point(210, 10);
             btnBrowse.Margin = new Padding(4, 6, 4, 6);
             btnBrowse.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnBrowse.Name = "btnBrowse";
@@ -733,6 +724,28 @@
             btnBrowse.UseVisualStyleBackColor = true;
             btnBrowse.Click += btnBrowse_Click;
             // 
+            // panel14
+            // 
+            panel14.BackColor = Color.FromArgb(35, 40, 60);
+            panel14.Controls.Add(lblOwned);
+            panel14.Dock = DockStyle.Top;
+            panel14.Location = new Point(0, 0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(964, 50);
+            panel14.TabIndex = 60;
+            // 
+            // lblOwned
+            // 
+            lblOwned.Anchor = AnchorStyles.Top;
+            lblOwned.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOwned.ForeColor = Color.White;
+            lblOwned.Location = new Point(604, 9);
+            lblOwned.Name = "lblOwned";
+            lblOwned.Size = new Size(361, 30);
+            lblOwned.TabIndex = 5;
+            lblOwned.Text = "Owned Vehicles";
+            lblOwned.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ProviderUpdateVehicle
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -741,6 +754,7 @@
             ClientSize = new Size(964, 704);
             Controls.Add(panel1);
             Controls.Add(flpDisplay);
+            Controls.Add(panel14);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ProviderUpdateVehicle";
             StartPosition = FormStartPosition.CenterScreen;
@@ -761,6 +775,7 @@
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel14.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -770,35 +785,37 @@
         private Panel panel1;
         private Label lblImagePath;
         private PictureBox picPreview;
-        private Panel panel6;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtMake;
         private ReaLTaiizor.Controls.MaterialButton btnClear;
-        private Panel panel10;
         private ReaLTaiizor.Controls.MaterialComboBox cbxSeats;
-        private Panel panel12;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPriceHourly;
-        private Panel panel11;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtMileage;
-        private Panel panel13;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPriceDaily;
-        private Panel panel7;
         private ReaLTaiizor.Controls.MaterialComboBox cbxFuel;
-        private Panel panel8;
-        private ReaLTaiizor.Controls.MaterialComboBox cbxColor;
-        private Panel panel5;
         private ReaLTaiizor.Controls.MaterialComboBox cbxSpecificType;
-        private Panel panel9;
         private ReaLTaiizor.Controls.MaterialComboBox cbxYear;
-        private Panel panel4;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtLicense;
-        private Panel panel3;
         private ReaLTaiizor.Controls.MaterialComboBox cbxGeneralType;
-        private Panel panel2;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtModel;
         private ReaLTaiizor.Controls.MaterialButton btnBrowse;
         private ReaLTaiizor.Controls.MaterialButton btnDelete;
         private ReaLTaiizor.Controls.MaterialButton btnUpdate;
         private ReaLTaiizor.Controls.MaterialButton btnClearPicture;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
+        private Panel panel6;
+        private Panel panel10;
+        private Panel panel12;
+        private Panel panel11;
+        private Panel panel13;
+        private Panel panel7;
+        private Panel panel8;
+        private ReaLTaiizor.Controls.MaterialComboBox cbxColor;
+        private Panel panel5;
+        private Panel panel9;
+        private Panel panel4;
+        private Panel panel3;
+        private Panel panel2;
+        private Panel panel14;
+        private Label lblOwned;
     }
 }

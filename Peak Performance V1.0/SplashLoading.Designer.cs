@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashLoading));
             tmrProgress = new System.Windows.Forms.Timer(components);
             picSplash1 = new PictureBox();
             lblLoading = new Label();
-            ProgressBar = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
             cyberProgressBar = new ReaLTaiizor.Controls.CyberProgressBar();
             picSplash2 = new PictureBox();
+            ProgressBar = new ReaLTaiizor.Controls.AloneProgressBar();
             ((System.ComponentModel.ISupportInitialize)picSplash1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSplash2).BeginInit();
             SuspendLayout();
@@ -61,35 +60,11 @@
             lblLoading.AutoSize = true;
             lblLoading.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblLoading.ForeColor = Color.White;
-            lblLoading.Location = new Point(12, 490);
+            lblLoading.Location = new Point(38, 460);
             lblLoading.Name = "lblLoading";
             lblLoading.Size = new Size(87, 18);
             lblLoading.TabIndex = 49;
             lblLoading.Text = "Loading...";
-            // 
-            // ProgressBar
-            // 
-            ProgressBar.BarStyle = ReaLTaiizor.Controls.ParrotFlatProgressBar.Style.Material;
-            ProgressBar.BorderColor = Color.Black;
-            ProgressBar.Colors = (List<Color>)resources.GetObject("ProgressBar.Colors");
-            ProgressBar.CompleteBackColor = Color.FromArgb(0, 120, 250);
-            ProgressBar.CompleteColor = Color.FromArgb(1, 119, 215);
-            ProgressBar.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            ProgressBar.IncompletedBackColor = Color.FromArgb(180, 180, 180);
-            ProgressBar.InocmpletedColor = Color.Black;
-            ProgressBar.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            ProgressBar.Location = new Point(12, 520);
-            ProgressBar.MaxValue = 100;
-            ProgressBar.Name = "ProgressBar";
-            ProgressBar.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            ProgressBar.Positions = (List<float>)resources.GetObject("ProgressBar.Positions");
-            ProgressBar.ShowBorder = true;
-            ProgressBar.Size = new Size(576, 35);
-            ProgressBar.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            ProgressBar.TabIndex = 51;
-            ProgressBar.Text = "parrotFlatProgressBar1";
-            ProgressBar.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            ProgressBar.Value = 0;
             // 
             // cyberProgressBar
             // 
@@ -133,6 +108,7 @@
             cyberProgressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cyberProgressBar.Timer_RGB = 10;
             cyberProgressBar.Value = 0;
+            cyberProgressBar.Visible = false;
             // 
             // picSplash2
             // 
@@ -144,6 +120,22 @@
             picSplash2.SizeMode = PictureBoxSizeMode.StretchImage;
             picSplash2.TabIndex = 53;
             picSplash2.TabStop = false;
+            // 
+            // ProgressBar
+            // 
+            ProgressBar.BackColor = Color.Transparent;
+            ProgressBar.BackgroundColor = Color.FromArgb(255, 128, 0);
+            ProgressBar.BaseColor = Color.Black;
+            ProgressBar.BorderColor = Color.FromArgb(192, 64, 0);
+            ProgressBar.Location = new Point(38, 424);
+            ProgressBar.Maximum = 100;
+            ProgressBar.Minimum = 0;
+            ProgressBar.Name = "ProgressBar";
+            ProgressBar.Size = new Size(523, 33);
+            ProgressBar.Stripes = Color.Black;
+            ProgressBar.TabIndex = 54;
+            ProgressBar.Text = "aloneProgressBar1";
+            ProgressBar.Value = 0;
             // 
             // SplashLoading
             // 
@@ -171,8 +163,8 @@
         private System.Windows.Forms.Timer tmrProgress;
         private PictureBox picSplash1;
         private Label lblLoading;
-        private ReaLTaiizor.Controls.ParrotFlatProgressBar ProgressBar;
         private ReaLTaiizor.Controls.CyberProgressBar cyberProgressBar;
         private PictureBox picSplash2;
+        private ReaLTaiizor.Controls.AloneProgressBar ProgressBar;
     }
 }

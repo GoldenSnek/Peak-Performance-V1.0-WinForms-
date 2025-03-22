@@ -32,14 +32,18 @@
             pnlExtra = new Panel();
             txtSearch = new ReaLTaiizor.Controls.ForeverTextBox();
             grpSort = new ReaLTaiizor.Controls.ParrotGroupBox();
+            label2 = new Label();
             materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             materialButton2 = new ReaLTaiizor.Controls.MaterialButton();
             grpFilter = new ReaLTaiizor.Controls.ParrotGroupBox();
+            label4 = new Label();
             btnApply = new ReaLTaiizor.Controls.MaterialButton();
             btnClear = new ReaLTaiizor.Controls.MaterialButton();
+            pictureBox1 = new PictureBox();
             pnlExtra.SuspendLayout();
             grpSort.SuspendLayout();
             grpFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // flpDisplay
@@ -56,9 +60,10 @@
             pnlExtra.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             pnlExtra.AutoScroll = true;
             pnlExtra.BackColor = Color.FromArgb(35, 40, 60);
-            pnlExtra.Controls.Add(txtSearch);
             pnlExtra.Controls.Add(grpSort);
             pnlExtra.Controls.Add(grpFilter);
+            pnlExtra.Controls.Add(pictureBox1);
+            pnlExtra.Controls.Add(txtSearch);
             pnlExtra.Location = new Point(707, 0);
             pnlExtra.Name = "pnlExtra";
             pnlExtra.Size = new Size(257, 704);
@@ -67,7 +72,7 @@
             // txtSearch
             // 
             txtSearch.BackColor = Color.Transparent;
-            txtSearch.BaseColor = Color.FromArgb(255, 224, 192);
+            txtSearch.BaseColor = Color.Lavender;
             txtSearch.BorderColor = Color.FromArgb(255, 128, 0);
             txtSearch.FocusOnHover = false;
             txtSearch.Font = new Font("Arial Rounded MT Bold", 12F);
@@ -86,6 +91,7 @@
             // 
             grpSort.BorderColor = Color.FromArgb(255, 128, 0);
             grpSort.BorderWidth = 1;
+            grpSort.Controls.Add(label2);
             grpSort.Controls.Add(materialButton1);
             grpSort.Controls.Add(materialButton2);
             grpSort.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -97,6 +103,17 @@
             grpSort.TabStop = false;
             grpSort.Text = "Sort";
             grpSort.TextColor = Color.White;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(6, 64);
+            label2.Name = "label2";
+            label2.Size = new Size(201, 196);
+            label2.TabIndex = 28;
+            label2.Text = "Brand:\r\n\r\nYear:\r\n\r\nPrice:\r\n\r\nProvider Name:";
             // 
             // materialButton1
             // 
@@ -144,6 +161,7 @@
             // 
             grpFilter.BorderColor = Color.FromArgb(255, 128, 0);
             grpFilter.BorderWidth = 1;
+            grpFilter.Controls.Add(label4);
             grpFilter.Controls.Add(btnApply);
             grpFilter.Controls.Add(btnClear);
             grpFilter.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -155,6 +173,17 @@
             grpFilter.TabStop = false;
             grpFilter.Text = "Filters";
             grpFilter.TextColor = Color.White;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(7, 68);
+            label4.Name = "label4";
+            label4.Size = new Size(201, 196);
+            label4.TabIndex = 27;
+            label4.Text = "Brand:\r\n\r\nYear:\r\n\r\nPrice:\r\n\r\nProvider Name:";
             // 
             // btnApply
             // 
@@ -200,6 +229,17 @@
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Lavender;
+            pictureBox1.Image = Properties.Resources.Search;
+            pictureBox1.Location = new Point(199, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // ViewAllVehicles
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -217,6 +257,7 @@
             grpSort.PerformLayout();
             grpFilter.ResumeLayout(false);
             grpFilter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -236,5 +277,8 @@
         private ReaLTaiizor.Controls.MaterialButton materialButton1;
         private ReaLTaiizor.Controls.MaterialButton materialButton2;
         private ReaLTaiizor.Controls.ForeverTextBox txtSearch;
+        private Label label2;
+        private Label label4;
+        private PictureBox pictureBox1;
     }
 }

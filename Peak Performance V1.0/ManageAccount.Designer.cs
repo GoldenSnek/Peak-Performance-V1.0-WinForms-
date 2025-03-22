@@ -66,7 +66,8 @@
             // picProfilePicture
             // 
             picProfilePicture.Anchor = AnchorStyles.None;
-            picProfilePicture.BackColor = Color.FromArgb(35, 40, 50);
+            picProfilePicture.BackColor = Color.Lavender;
+            picProfilePicture.Image = Properties.Resources.Avatar;
             picProfilePicture.Location = new Point(3, 3);
             picProfilePicture.Name = "picProfilePicture";
             picProfilePicture.Size = new Size(150, 150);
@@ -80,7 +81,7 @@
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUsername.ForeColor = Color.White;
-            lblUsername.Location = new Point(92, 332);
+            lblUsername.Location = new Point(82, 364);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(90, 18);
             lblUsername.TabIndex = 4;
@@ -92,7 +93,7 @@
             lblRole.AutoSize = true;
             lblRole.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRole.ForeColor = Color.White;
-            lblRole.Location = new Point(92, 377);
+            lblRole.Location = new Point(82, 409);
             lblRole.Name = "lblRole";
             lblRole.Size = new Size(44, 18);
             lblRole.TabIndex = 5;
@@ -104,7 +105,7 @@
             lblUserID.AutoSize = true;
             lblUserID.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUserID.ForeColor = Color.White;
-            lblUserID.Location = new Point(92, 290);
+            lblUserID.Location = new Point(82, 322);
             lblUserID.Name = "lblUserID";
             lblUserID.Size = new Size(67, 18);
             lblUserID.TabIndex = 6;
@@ -116,7 +117,7 @@
             lblTotalRentals.AutoSize = true;
             lblTotalRentals.Font = new Font("Arial Rounded MT Bold", 12F);
             lblTotalRentals.ForeColor = Color.White;
-            lblTotalRentals.Location = new Point(92, 468);
+            lblTotalRentals.Location = new Point(82, 500);
             lblTotalRentals.Name = "lblTotalRentals";
             lblTotalRentals.Size = new Size(109, 18);
             lblTotalRentals.TabIndex = 14;
@@ -128,7 +129,7 @@
             lblRating.AutoSize = true;
             lblRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRating.ForeColor = Color.White;
-            lblRating.Location = new Point(92, 423);
+            lblRating.Location = new Point(82, 455);
             lblRating.Name = "lblRating";
             lblRating.Size = new Size(60, 18);
             lblRating.TabIndex = 13;
@@ -197,7 +198,7 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(255, 224, 192);
             panel1.Controls.Add(txtFullname);
-            panel1.Location = new Point(401, 232);
+            panel1.Location = new Point(391, 264);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 48);
             panel1.TabIndex = 45;
@@ -239,7 +240,7 @@
             panel6.Anchor = AnchorStyles.None;
             panel6.BackColor = Color.FromArgb(255, 224, 192);
             panel6.Controls.Add(txtAddress);
-            panel6.Location = new Point(401, 343);
+            panel6.Location = new Point(391, 375);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 48);
             panel6.TabIndex = 46;
@@ -281,7 +282,7 @@
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(255, 224, 192);
             panel2.Controls.Add(txtBirthday);
-            panel2.Location = new Point(401, 447);
+            panel2.Location = new Point(391, 479);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 48);
             panel2.TabIndex = 47;
@@ -323,7 +324,7 @@
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(255, 224, 192);
             panel3.Controls.Add(txtLicenseID);
-            panel3.Location = new Point(724, 232);
+            panel3.Location = new Point(714, 264);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 48);
             panel3.TabIndex = 48;
@@ -365,7 +366,7 @@
             panel4.Anchor = AnchorStyles.None;
             panel4.BackColor = Color.FromArgb(255, 224, 192);
             panel4.Controls.Add(txtEmail);
-            panel4.Location = new Point(724, 343);
+            panel4.Location = new Point(714, 375);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 48);
             panel4.TabIndex = 49;
@@ -407,7 +408,7 @@
             panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.FromArgb(255, 224, 192);
             panel5.Controls.Add(txtNumber);
-            panel5.Location = new Point(724, 447);
+            panel5.Location = new Point(714, 479);
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 48);
             panel5.TabIndex = 50;
@@ -454,7 +455,7 @@
             btnClear.HighEmphasis = true;
             btnClear.Icon = null;
             btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(414, 610);
+            btnClear.Location = new Point(139, 610);
             btnClear.Margin = new Padding(4, 6, 4, 6);
             btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnClear.Name = "btnClear";
@@ -477,7 +478,7 @@
             btnSave.HighEmphasis = true;
             btnSave.Icon = null;
             btnSave.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnSave.Location = new Point(614, 610);
+            btnSave.Location = new Point(421, 610);
             btnSave.Margin = new Padding(4, 6, 4, 6);
             btnSave.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnSave.Name = "btnSave";
@@ -499,7 +500,7 @@
             btnDelete.HighEmphasis = true;
             btnDelete.Icon = null;
             btnDelete.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnDelete.Location = new Point(795, 610);
+            btnDelete.Location = new Point(695, 610);
             btnDelete.Margin = new Padding(4, 6, 4, 6);
             btnDelete.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnDelete.Name = "btnDelete";

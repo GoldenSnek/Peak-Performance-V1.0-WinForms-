@@ -56,7 +56,7 @@
             lblAbout.FlatStyle = FlatStyle.Flat;
             lblAbout.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAbout.ForeColor = Color.White;
-            lblAbout.Location = new Point(82, 177);
+            lblAbout.Location = new Point(85, 204);
             lblAbout.Name = "lblAbout";
             lblAbout.Size = new Size(440, 238);
             lblAbout.TabIndex = 2;
@@ -66,7 +66,7 @@
             // picBack
             // 
             picBack.BackColor = Color.Transparent;
-            picBack.BackgroundImage = Properties.Resources.Back2;
+            picBack.BackgroundImage = Properties.Resources.Back3;
             picBack.BackgroundImageLayout = ImageLayout.Stretch;
             picBack.Cursor = Cursors.Hand;
             picBack.Location = new Point(12, 12);
@@ -94,7 +94,7 @@
             lblREGISTER.AutoSize = true;
             lblREGISTER.BackColor = Color.Transparent;
             lblREGISTER.Font = new Font("Copperplate Gothic Bold", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblREGISTER.ForeColor = Color.Black;
+            lblREGISTER.ForeColor = Color.FromArgb(255, 128, 0);
             lblREGISTER.Location = new Point(198, 43);
             lblREGISTER.Name = "lblREGISTER";
             lblREGISTER.Size = new Size(213, 53);
@@ -159,9 +159,9 @@
             picCar.Anchor = AnchorStyles.None;
             picCar.BackColor = Color.Transparent;
             picCar.Image = Properties.Resources.OrangeMustang;
-            picCar.Location = new Point(248, 99);
+            picCar.Location = new Point(178, 59);
             picCar.Name = "picCar";
-            picCar.Size = new Size(100, 75);
+            picCar.Size = new Size(250, 175);
             picCar.SizeMode = PictureBoxSizeMode.StretchImage;
             picCar.TabIndex = 49;
             picCar.TabStop = false;
@@ -170,7 +170,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackgroundImage = Properties.Resources.LoginRegister2;
+            BackgroundImage = Properties.Resources.LRNew2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
             Controls.Add(lblREGISTER);

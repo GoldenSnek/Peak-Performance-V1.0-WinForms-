@@ -205,7 +205,7 @@
             lblLOGIN.AutoSize = true;
             lblLOGIN.BackColor = Color.Transparent;
             lblLOGIN.Font = new Font("Copperplate Gothic Bold", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLOGIN.ForeColor = Color.Black;
+            lblLOGIN.ForeColor = Color.FromArgb(255, 128, 0);
             lblLOGIN.Location = new Point(198, 43);
             lblLOGIN.Name = "lblLOGIN";
             lblLOGIN.Size = new Size(197, 53);
@@ -265,7 +265,7 @@
             // picBack
             // 
             picBack.BackColor = Color.Transparent;
-            picBack.BackgroundImage = Properties.Resources.Back2;
+            picBack.BackgroundImage = Properties.Resources.Back3;
             picBack.BackgroundImageLayout = ImageLayout.Stretch;
             picBack.Cursor = Cursors.Hand;
             picBack.Location = new Point(12, 12);
@@ -284,8 +284,8 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = SystemColors.Control;
-            BackgroundImage = Properties.Resources.LoginRegister2;
+            BackColor = Color.Lavender;
+            BackgroundImage = Properties.Resources.LRNew2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
             Controls.Add(picBack);

@@ -54,7 +54,7 @@
             // picBack
             // 
             picBack.BackColor = Color.Transparent;
-            picBack.BackgroundImage = Properties.Resources.Back2;
+            picBack.BackgroundImage = Properties.Resources.Back3;
             picBack.BackgroundImageLayout = ImageLayout.Stretch;
             picBack.Cursor = Cursors.Hand;
             picBack.Location = new Point(12, 12);
@@ -119,7 +119,7 @@
             lblREGISTER.AutoSize = true;
             lblREGISTER.BackColor = Color.Transparent;
             lblREGISTER.Font = new Font("Copperplate Gothic Bold", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblREGISTER.ForeColor = Color.Black;
+            lblREGISTER.ForeColor = Color.FromArgb(255, 128, 0);
             lblREGISTER.Location = new Point(154, 44);
             lblREGISTER.Name = "lblREGISTER";
             lblREGISTER.Size = new Size(297, 53);
@@ -431,7 +431,8 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackgroundImage = Properties.Resources.LoginRegister2;
+            BackColor = Color.Lavender;
+            BackgroundImage = Properties.Resources.LRNew2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
             Controls.Add(label2);

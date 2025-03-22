@@ -14,16 +14,21 @@ using ReaLTaiizor.Animate;
 using ReaLTaiizor.Animate.Parrot;
 using System.Runtime.InteropServices;
 using System.Diagnostics.Metrics;
+using System.Data.OleDb;
 
 
 namespace Peak_Performance_V1._0
 {
+    
     public partial class Home : Form
     {
-
+        private OleDbConnection connection;
         public Home()
         {
+            connection = SystemManager.GetConnection();
             InitializeComponent();
+            LoadUsers();
+            LoadVehicles();
         }
         private void MainMenu_Load(object sender, EventArgs e)
         {
@@ -122,6 +127,85 @@ namespace Peak_Performance_V1._0
 
                 btnAccount.Visible = false;
                 btnManageAccount.Visible = false;
+            }
+        }
+        private void LoadUsers() //INITIAL EVENT: Load the vehicle cards
+        {
+            flpDisplayUsers.Controls.Clear();
+
+            string displayQuery = "SELECT Username, ProfilePicture FROM Users";
+
+            using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
+            {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string? username = reader["Username"].ToString();
+
+
+                    //convert image from database to PictureBox
+                    Image? userImage = null;
+                    if (!Convert.IsDBNull(reader["ProfilePicture"])) //check if image is not NULL
+                    {
+                        byte[] imageData = (byte[])reader["ProfilePicture"];
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            userImage = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        //set a default placeholder image
+                    }
+
+
+                    //create a TopProviderCard and add it to the FlowLayoutPanel
+                    TopProviderCard card = new TopProviderCard(username, userImage);
+                    flpDisplayUsers.Controls.Add(card);
+                }
+                connection.Close();
+            }
+        }
+        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
+        {
+            flpDisplayVehicles.Controls.Clear();
+
+            string displayQuery = "SELECT GeneralType, SpecificType, Make, Model, VehicleYear, VehicleImage FROM Vehicles";
+
+            using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
+            {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string? generalType = reader["GeneralType"].ToString();
+                    string? specificType = reader["SpecificType"].ToString();
+                    string? make = reader["Make"].ToString();
+
+                    string? model = reader["Model"].ToString();
+                    int vehicleYear = Convert.ToInt32(reader["VehicleYear"]);
+
+                    //convert image from database to PictureBox
+                    Image? vehicleImage = null;
+                    if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
+                    {
+                        byte[] imageData = (byte[])reader["VehicleImage"];
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            vehicleImage = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        //set a default placeholder image
+                    }
+
+                    TopVehicleCard card = new TopVehicleCard(generalType, specificType, make, model, vehicleYear, vehicleImage);
+                    flpDisplayVehicles.Controls.Add(card);
+                }
             }
         }
 

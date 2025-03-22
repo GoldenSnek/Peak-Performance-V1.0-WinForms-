@@ -42,12 +42,10 @@
             label4 = new Label();
             label5 = new Label();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
-            picNight = new PictureBox();
             btnAbout = new ReaLTaiizor.Controls.CyberButton();
             lblMainTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
             SuspendLayout();
             // 
             // lblGoToR
@@ -86,7 +84,7 @@
             picClose.BackgroundImage = Properties.Resources.Close2;
             picClose.BackgroundImageLayout = ImageLayout.Stretch;
             picClose.Cursor = Cursors.Hand;
-            picClose.Location = new Point(568, 12);
+            picClose.Location = new Point(565, 15);
             picClose.Name = "picClose";
             picClose.Size = new Size(20, 20);
             picClose.TabIndex = 32;
@@ -102,7 +100,7 @@
             Gauge.DialThickness = 5;
             Gauge.FilledColor = Color.White;
             Gauge.GaugeStyle = ReaLTaiizor.Controls.ParrotGauge.Style.Standard;
-            Gauge.Location = new Point(129, 41);
+            Gauge.Location = new Point(135, 114);
             Gauge.Name = "Gauge";
             Gauge.Percentage = 10;
             Gauge.Size = new Size(133, 60);
@@ -117,7 +115,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.SteeringWheel2;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(314, 117);
+            pictureBox1.Location = new Point(320, 190);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(34, 31);
             pictureBox1.TabIndex = 35;
@@ -135,7 +133,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Silver;
-            label1.Location = new Point(268, 90);
+            label1.Location = new Point(274, 163);
             label1.Name = "label1";
             label1.Size = new Size(28, 14);
             label1.TabIndex = 40;
@@ -147,7 +145,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Silver;
-            label2.Location = new Point(118, 90);
+            label2.Location = new Point(124, 163);
             label2.Name = "label2";
             label2.Size = new Size(14, 14);
             label2.TabIndex = 41;
@@ -159,7 +157,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Silver;
-            label3.Location = new Point(126, 49);
+            label3.Location = new Point(132, 122);
             label3.Name = "label3";
             label3.Size = new Size(28, 14);
             label3.TabIndex = 42;
@@ -171,7 +169,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Silver;
-            label4.Location = new Point(183, 28);
+            label4.Location = new Point(186, 90);
             label4.Name = "label4";
             label4.Size = new Size(28, 14);
             label4.TabIndex = 43;
@@ -183,7 +181,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Silver;
-            label5.Location = new Point(244, 49);
+            label5.Location = new Point(250, 122);
             label5.Name = "label5";
             label5.Size = new Size(28, 14);
             label5.TabIndex = 44;
@@ -193,18 +191,6 @@
             // 
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
-            // 
-            // picNight
-            // 
-            picNight.Anchor = AnchorStyles.None;
-            picNight.BackColor = Color.Transparent;
-            picNight.Image = Properties.Resources.OrangeMustang;
-            picNight.Location = new Point(47, 213);
-            picNight.Name = "picNight";
-            picNight.Size = new Size(500, 375);
-            picNight.SizeMode = PictureBoxSizeMode.StretchImage;
-            picNight.TabIndex = 45;
-            picNight.TabStop = false;
             // 
             // btnAbout
             // 
@@ -229,11 +215,11 @@
             btnAbout.Effect_2_ColorBackground = Color.White;
             btnAbout.Effect_2_Transparency = 20;
             btnAbout.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAbout.ForeColor = Color.White;
+            btnAbout.ForeColor = Color.Silver;
             btnAbout.Lighting = false;
             btnAbout.LinearGradient_Background = false;
             btnAbout.LinearGradientPen = false;
-            btnAbout.Location = new Point(183, 228);
+            btnAbout.Location = new Point(189, 301);
             btnAbout.Name = "btnAbout";
             btnAbout.PenWidth = 15;
             btnAbout.RGB = true;
@@ -254,7 +240,8 @@
             lblMainTitle.AutoSize = true;
             lblMainTitle.BackColor = Color.Transparent;
             lblMainTitle.Font = new Font("Copperplate Gothic Bold", 36F);
-            lblMainTitle.Location = new Point(28, 104);
+            lblMainTitle.ForeColor = Color.Silver;
+            lblMainTitle.Location = new Point(34, 177);
             lblMainTitle.Name = "lblMainTitle";
             lblMainTitle.Size = new Size(538, 106);
             lblMainTitle.TabIndex = 1;
@@ -265,7 +252,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackgroundImage = Properties.Resources.LoginRegister2;
+            BackgroundImage = Properties.Resources.LRNew2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
             Controls.Add(label5);
@@ -280,7 +267,6 @@
             Controls.Add(lblGoToR);
             Controls.Add(lblMainTitle);
             Controls.Add(Gauge);
-            Controls.Add(picNight);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainLR";
@@ -290,7 +276,6 @@
             Load += MainLR_Load;
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -308,7 +293,6 @@
         private Label label4;
         private Label label5;
         private System.Windows.Forms.Timer tmrFadeIn;
-        private PictureBox picNight;
         private ReaLTaiizor.Controls.CyberButton btnAbout;
         private Label lblMainTitle;
     }

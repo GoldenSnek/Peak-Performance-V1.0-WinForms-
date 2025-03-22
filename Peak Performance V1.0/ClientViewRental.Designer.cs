@@ -89,7 +89,7 @@
             lblCurrent.Anchor = AnchorStyles.None;
             lblCurrent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCurrent.ForeColor = Color.White;
-            lblCurrent.Location = new Point(306, 85);
+            lblCurrent.Location = new Point(307, 85);
             lblCurrent.Name = "lblCurrent";
             lblCurrent.Size = new Size(314, 30);
             lblCurrent.TabIndex = 8;
