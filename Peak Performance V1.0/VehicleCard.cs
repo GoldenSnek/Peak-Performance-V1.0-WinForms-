@@ -16,10 +16,61 @@ namespace Peak_Performance_V1._0
         //private int _cornerRadius = 50; // Adjust the radius for more/less rounding
         //private int _borderThickness = 5; // Adjust border thickness
         //private Color _borderColor = Color.Orange; // Change border color as needed
-        public VehicleCard(string generalType, string specificType, string make, string model, int vehicleYear, string licensePlate,
+
+        private int VehicleID = 0;
+        private string? GeneralType = null;
+        private string? SpecificType = null;
+        private string? Make = null;
+        private string? Model = null;
+        private int? VehicleYear = 0;
+        private string? LicensePlate = null;
+        private string? VehicleColor = null;
+        private string? FuelType = null;
+        private int? Seats = 0;
+        private double? Mileage = 0;
+        private double? PriceDaily = 0;
+        private double? PriceHourly = 0;
+        private Image? VehicleImage = null;
+        private string? Prompt = null;
+
+        public event Action<int, string, string, string, string, int?, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
+
+
+
+
+
+
+
+        private void btnProceed_Click(object sender, EventArgs e)
+        {
+            if (Prompt == "Edit")
+            {
+                EditClicked?.Invoke(VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, VehicleColor, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage);
+            }
+        }
+
+        public VehicleCard(int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string licensePlate,
                            string color, string fuelType, int seats, double mileage, double priceDaily, double priceHourly, Image vehicleImage, string prompt)
         {
             InitializeComponent();
+
+            VehicleID = vehicleID;
+            GeneralType = generalType;
+            SpecificType = specificType;
+            Make = make;
+            Model = model;
+            VehicleYear = vehicleYear;
+            LicensePlate = licensePlate;
+            VehicleColor = color;
+            FuelType = fuelType;
+            Seats = seats;
+            Mileage = mileage;
+            PriceDaily = priceDaily;
+            PriceHourly = priceHourly;
+
+            VehicleImage = vehicleImage;
+
+            Prompt = prompt;
 
             //this.DoubleBuffered = true; // Prevent flickering
             //this.Paint += new PaintEventHandler(RoundedUserControl_Paint); // Apply immediately

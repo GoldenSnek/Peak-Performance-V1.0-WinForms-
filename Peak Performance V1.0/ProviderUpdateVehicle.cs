@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace Peak_Performance_V1._0
 {
@@ -26,7 +27,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT UserID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -37,6 +38,7 @@ namespace Peak_Performance_V1._0
                 {
                     if (SystemManager.currentUserID == Convert.ToInt32(reader["UserID"]))
                     { //only display if user owns the vehicle
+                        int vehicleID = Convert.ToInt32(reader["VehicleID"]);
                         string? generalType = reader["GeneralType"].ToString();
                         string? specificType = reader["SpecificType"].ToString();
                         string? make = reader["Make"].ToString();
@@ -70,8 +72,9 @@ namespace Peak_Performance_V1._0
                         }
 
                         //create a VehicleCard and add it to the FlowLayoutPanel
-                        VehicleCard card = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
+                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Edit");
+                        card.EditClicked += Card_EditClicked;
                         flpDisplay.Controls.Add(card);
                     }
                 }
@@ -81,6 +84,23 @@ namespace Peak_Performance_V1._0
         }
 
         //SUPPORTING EVENTS
+        private void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string licensePlate,
+                           string color, string fuelType, int? seats, double? mileage, double? priceDaily, double? priceHourly, Image vehicleImage)
+        {
+            cbxGeneralType.Text = generalType;
+            cbxSpecificType.Text = specificType;
+            txtMake.Text = make;
+            txtModel.Text = model;
+            cbxYear.Text = vehicleYear.ToString();
+            txtLicense.Text = licensePlate;
+            cbxColor.Text = color;
+            cbxFuel.Text = fuelType;
+            cbxSeats.Text = seats.ToString();
+            txtMileage.Text = mileage.ToString();
+            txtPriceDaily.Text = priceDaily.ToString();
+            txtPriceHourly.Text = priceHourly.ToString();
+            picPreview.Image = vehicleImage;
+        }
         private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -107,13 +127,16 @@ namespace Peak_Performance_V1._0
             txtMileage.Text = string.Empty;
             txtPriceDaily.Text = string.Empty;
             txtPriceHourly.Text = string.Empty;
-            picPreview.Image = null;
-            lblImagePath.Text = null;
         }
         private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
         {
             picPreview.Image = null;
             lblImagePath.Text = null;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //DO TOMORROW
         }
     }
 }

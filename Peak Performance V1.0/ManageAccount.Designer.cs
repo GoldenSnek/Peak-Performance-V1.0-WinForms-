@@ -81,7 +81,7 @@
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUsername.ForeColor = Color.White;
-            lblUsername.Location = new Point(82, 364);
+            lblUsername.Location = new Point(85, 336);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(90, 18);
             lblUsername.TabIndex = 4;
@@ -93,7 +93,7 @@
             lblRole.AutoSize = true;
             lblRole.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRole.ForeColor = Color.White;
-            lblRole.Location = new Point(82, 409);
+            lblRole.Location = new Point(85, 381);
             lblRole.Name = "lblRole";
             lblRole.Size = new Size(44, 18);
             lblRole.TabIndex = 5;
@@ -105,7 +105,7 @@
             lblUserID.AutoSize = true;
             lblUserID.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUserID.ForeColor = Color.White;
-            lblUserID.Location = new Point(82, 322);
+            lblUserID.Location = new Point(85, 294);
             lblUserID.Name = "lblUserID";
             lblUserID.Size = new Size(67, 18);
             lblUserID.TabIndex = 6;
@@ -117,11 +117,11 @@
             lblTotalRentals.AutoSize = true;
             lblTotalRentals.Font = new Font("Arial Rounded MT Bold", 12F);
             lblTotalRentals.ForeColor = Color.White;
-            lblTotalRentals.Location = new Point(82, 500);
+            lblTotalRentals.Location = new Point(85, 472);
             lblTotalRentals.Name = "lblTotalRentals";
-            lblTotalRentals.Size = new Size(109, 18);
+            lblTotalRentals.Size = new Size(113, 18);
             lblTotalRentals.TabIndex = 14;
-            lblTotalRentals.Text = "TotalRentals";
+            lblTotalRentals.Text = "Total Rentals";
             // 
             // lblRating
             // 
@@ -129,7 +129,7 @@
             lblRating.AutoSize = true;
             lblRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRating.ForeColor = Color.White;
-            lblRating.Location = new Point(82, 455);
+            lblRating.Location = new Point(85, 427);
             lblRating.Name = "lblRating";
             lblRating.Size = new Size(60, 18);
             lblRating.TabIndex = 13;
@@ -489,6 +489,7 @@
             btnSave.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnSave.UseAccentColor = false;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
@@ -511,6 +512,7 @@
             btnDelete.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnDelete.UseAccentColor = false;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // parrotGradientPanel1
             // 
@@ -560,6 +562,7 @@
             Name = "ManageAccount";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage Account";
+            Load += ManageAccount_Load;
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).EndInit();
             panel1.ResumeLayout(false);
             panel6.ResumeLayout(false);

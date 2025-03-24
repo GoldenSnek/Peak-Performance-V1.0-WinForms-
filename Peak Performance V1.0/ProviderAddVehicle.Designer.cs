@@ -33,6 +33,7 @@
             flpDisplay = new FlowLayoutPanel();
             txtModel = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel1 = new Panel();
+            poisonComboBox1 = new ReaLTaiizor.Controls.PoisonComboBox();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             btnClearPicture = new ReaLTaiizor.Controls.MaterialButton();
             btnAddVehicle = new ReaLTaiizor.Controls.MaterialButton();
@@ -147,6 +148,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.Controls.Add(poisonComboBox1);
             panel1.Controls.Add(parrotGradientPanel1);
             panel1.Controls.Add(btnClearPicture);
             panel1.Controls.Add(btnAddVehicle);
@@ -170,6 +172,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(598, 654);
             panel1.TabIndex = 32;
+            // 
+            // poisonComboBox1
+            // 
+            poisonComboBox1.BackColor = Color.Lavender;
+            poisonComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
+            poisonComboBox1.FontSize = ReaLTaiizor.Extension.Poison.PoisonComboBoxSize.Tall;
+            poisonComboBox1.ForeColor = Color.Black;
+            poisonComboBox1.FormattingEnabled = true;
+            poisonComboBox1.ItemHeight = 29;
+            poisonComboBox1.Items.AddRange(new object[] { "hello", "world" });
+            poisonComboBox1.Location = new Point(241, 337);
+            poisonComboBox1.Name = "poisonComboBox1";
+            poisonComboBox1.PromptText = "test";
+            poisonComboBox1.Size = new Size(200, 35);
+            poisonComboBox1.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Pink;
+            poisonComboBox1.TabIndex = 56;
+            poisonComboBox1.Text = "test";
+            poisonComboBox1.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonComboBox1.UseCustomBackColor = true;
+            poisonComboBox1.UseCustomForeColor = true;
+            poisonComboBox1.UseSelectable = true;
+            poisonComboBox1.UseStyleColors = true;
             // 
             // parrotGradientPanel1
             // 
@@ -805,5 +829,6 @@
         private Panel panel14;
         private Label lblApproval;
         private Label lblOwned;
+        private ReaLTaiizor.Controls.PoisonComboBox poisonComboBox1;
     }
 }

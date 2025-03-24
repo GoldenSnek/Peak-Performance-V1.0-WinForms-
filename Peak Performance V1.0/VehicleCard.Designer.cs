@@ -199,6 +199,7 @@
             btnProceed.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnProceed.UseAccentColor = false;
             btnProceed.UseVisualStyleBackColor = true;
+            btnProceed.Click += btnProceed_Click;
             // 
             // lblHourlyPrice
             // 

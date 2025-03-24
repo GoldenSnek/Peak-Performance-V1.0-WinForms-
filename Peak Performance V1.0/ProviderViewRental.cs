@@ -27,7 +27,7 @@ namespace Peak_Performance_V1._0
             flpWaitingApproval.Controls.Clear();
             flpCurrentlyRented.Controls.Clear();
 
-            string displayQuery = "SELECT GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -36,6 +36,7 @@ namespace Peak_Performance_V1._0
 
                 while (reader.Read())
                 {
+                    int vehicleID = Convert.ToInt32(reader["VehicleID"]);
                     string? generalType = reader["GeneralType"].ToString();
                     string? specificType = reader["SpecificType"].ToString();
                     string? make = reader["Make"].ToString();
@@ -58,7 +59,7 @@ namespace Peak_Performance_V1._0
                     if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
                     {
                         byte[] imageData = (byte[])reader["VehicleImage"];
-                        using (MemoryStream ms = new MemoryStream(imageData))
+                        using (MemoryStream? ms = new MemoryStream(imageData))
                         {
                             vehicleImage = Image.FromStream(ms);
                         }
@@ -68,10 +69,10 @@ namespace Peak_Performance_V1._0
                         //set a default placeholder image
                     }
 
-                    VehicleCard card1 = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
+                    VehicleCard card1 = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, licensePlate,
                                                         color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Approve");
                     flpWaitingApproval.Controls.Add(card1);
-                    VehicleCard card2 = new VehicleCard(generalType, specificType, make, model, vehicleYear, licensePlate,
+                    VehicleCard card2 = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, licensePlate,
                                                         color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Approve");
                     flpCurrentlyRented.Controls.Add(card2);
 

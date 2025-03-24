@@ -217,6 +217,7 @@
             btnUpdate.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnUpdate.UseAccentColor = false;
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // lblImagePath
             // 
