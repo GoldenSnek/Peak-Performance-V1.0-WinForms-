@@ -33,7 +33,10 @@
             flpDisplay = new FlowLayoutPanel();
             txtModel = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel1 = new Panel();
-            poisonComboBox1 = new ReaLTaiizor.Controls.PoisonComboBox();
+            panel15 = new Panel();
+            cbxDrivetrain = new ReaLTaiizor.Controls.MaterialComboBox();
+            panel16 = new Panel();
+            cbxTransmission = new ReaLTaiizor.Controls.MaterialComboBox();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             btnClearPicture = new ReaLTaiizor.Controls.MaterialButton();
             btnAddVehicle = new ReaLTaiizor.Controls.MaterialButton();
@@ -66,6 +69,8 @@
             lblOwned = new Label();
             ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
             panel1.SuspendLayout();
+            panel15.SuspendLayout();
+            panel16.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
             panel6.SuspendLayout();
             panel10.SuspendLayout();
@@ -138,17 +143,19 @@
             txtModel.SelectionLength = 0;
             txtModel.SelectionStart = 0;
             txtModel.ShortcutsEnabled = true;
-            txtModel.Size = new Size(200, 48);
+            txtModel.Size = new Size(200, 36);
             txtModel.TabIndex = 31;
             txtModel.TabStop = false;
             txtModel.TextAlign = HorizontalAlignment.Left;
             txtModel.TrailingIcon = null;
             txtModel.UseSystemPasswordChar = false;
+            txtModel.UseTallSize = false;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(35, 40, 60);
-            panel1.Controls.Add(poisonComboBox1);
+            panel1.Controls.Add(panel15);
+            panel1.Controls.Add(panel16);
             panel1.Controls.Add(parrotGradientPanel1);
             panel1.Controls.Add(btnClearPicture);
             panel1.Controls.Add(btnAddVehicle);
@@ -173,27 +180,75 @@
             panel1.Size = new Size(598, 654);
             panel1.TabIndex = 32;
             // 
-            // poisonComboBox1
+            // panel15
             // 
-            poisonComboBox1.BackColor = Color.Lavender;
-            poisonComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            poisonComboBox1.FontSize = ReaLTaiizor.Extension.Poison.PoisonComboBoxSize.Tall;
-            poisonComboBox1.ForeColor = Color.Black;
-            poisonComboBox1.FormattingEnabled = true;
-            poisonComboBox1.ItemHeight = 29;
-            poisonComboBox1.Items.AddRange(new object[] { "hello", "world" });
-            poisonComboBox1.Location = new Point(241, 337);
-            poisonComboBox1.Name = "poisonComboBox1";
-            poisonComboBox1.PromptText = "test";
-            poisonComboBox1.Size = new Size(200, 35);
-            poisonComboBox1.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Pink;
-            poisonComboBox1.TabIndex = 56;
-            poisonComboBox1.Text = "test";
-            poisonComboBox1.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            poisonComboBox1.UseCustomBackColor = true;
-            poisonComboBox1.UseCustomForeColor = true;
-            poisonComboBox1.UseSelectable = true;
-            poisonComboBox1.UseStyleColors = true;
+            panel15.Anchor = AnchorStyles.None;
+            panel15.BackColor = Color.Lavender;
+            panel15.Controls.Add(cbxDrivetrain);
+            panel15.Location = new Point(359, 398);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(200, 49);
+            panel15.TabIndex = 57;
+            // 
+            // cbxDrivetrain
+            // 
+            cbxDrivetrain.AutoResize = false;
+            cbxDrivetrain.BackColor = Color.FromArgb(255, 255, 255);
+            cbxDrivetrain.Depth = 0;
+            cbxDrivetrain.Dock = DockStyle.Fill;
+            cbxDrivetrain.DrawMode = DrawMode.OwnerDrawVariable;
+            cbxDrivetrain.DropDownHeight = 174;
+            cbxDrivetrain.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxDrivetrain.DropDownWidth = 121;
+            cbxDrivetrain.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cbxDrivetrain.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cbxDrivetrain.FormattingEnabled = true;
+            cbxDrivetrain.Hint = "Drivetrain";
+            cbxDrivetrain.IntegralHeight = false;
+            cbxDrivetrain.ItemHeight = 43;
+            cbxDrivetrain.Items.AddRange(new object[] { "Front-wheel drive", "Rear-wheel drive", "4-wheel drive", "All-wheel drive" });
+            cbxDrivetrain.Location = new Point(0, 0);
+            cbxDrivetrain.MaxDropDownItems = 4;
+            cbxDrivetrain.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cbxDrivetrain.Name = "cbxDrivetrain";
+            cbxDrivetrain.Size = new Size(200, 49);
+            cbxDrivetrain.StartIndex = 0;
+            cbxDrivetrain.TabIndex = 35;
+            // 
+            // panel16
+            // 
+            panel16.Anchor = AnchorStyles.None;
+            panel16.BackColor = Color.Lavender;
+            panel16.Controls.Add(cbxTransmission);
+            panel16.Location = new Point(35, 398);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(200, 49);
+            panel16.TabIndex = 56;
+            // 
+            // cbxTransmission
+            // 
+            cbxTransmission.AutoResize = false;
+            cbxTransmission.BackColor = Color.FromArgb(255, 255, 255);
+            cbxTransmission.Depth = 0;
+            cbxTransmission.Dock = DockStyle.Fill;
+            cbxTransmission.DrawMode = DrawMode.OwnerDrawVariable;
+            cbxTransmission.DropDownHeight = 174;
+            cbxTransmission.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxTransmission.DropDownWidth = 121;
+            cbxTransmission.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cbxTransmission.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cbxTransmission.FormattingEnabled = true;
+            cbxTransmission.Hint = "Transmission";
+            cbxTransmission.IntegralHeight = false;
+            cbxTransmission.ItemHeight = 43;
+            cbxTransmission.Items.AddRange(new object[] { "Manual", "Automatic" });
+            cbxTransmission.Location = new Point(0, 0);
+            cbxTransmission.MaxDropDownItems = 4;
+            cbxTransmission.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cbxTransmission.Name = "cbxTransmission";
+            cbxTransmission.Size = new Size(200, 49);
+            cbxTransmission.StartIndex = 0;
+            cbxTransmission.TabIndex = 35;
             // 
             // parrotGradientPanel1
             // 
@@ -264,11 +319,11 @@
             // panel6
             // 
             panel6.Anchor = AnchorStyles.None;
-            panel6.BackColor = Color.FromArgb(255, 224, 192);
+            panel6.BackColor = Color.Lavender;
             panel6.Controls.Add(txtMake);
-            panel6.Location = new Point(35, 347);
+            panel6.Location = new Point(35, 471);
             panel6.Name = "panel6";
-            panel6.Size = new Size(200, 48);
+            panel6.Size = new Size(200, 36);
             panel6.TabIndex = 44;
             // 
             // txtMake
@@ -296,12 +351,13 @@
             txtMake.SelectionLength = 0;
             txtMake.SelectionStart = 0;
             txtMake.ShortcutsEnabled = true;
-            txtMake.Size = new Size(200, 48);
+            txtMake.Size = new Size(200, 36);
             txtMake.TabIndex = 31;
             txtMake.TabStop = false;
             txtMake.TextAlign = HorizontalAlignment.Left;
             txtMake.TrailingIcon = null;
             txtMake.UseSystemPasswordChar = false;
+            txtMake.UseTallSize = false;
             // 
             // btnClear
             // 
@@ -329,9 +385,9 @@
             // panel10
             // 
             panel10.Anchor = AnchorStyles.None;
-            panel10.BackColor = Color.FromArgb(255, 224, 192);
+            panel10.BackColor = Color.Lavender;
             panel10.Controls.Add(cbxSeats);
-            panel10.Location = new Point(359, 347);
+            panel10.Location = new Point(359, 327);
             panel10.Name = "panel10";
             panel10.Size = new Size(200, 49);
             panel10.TabIndex = 41;
@@ -364,11 +420,11 @@
             // panel12
             // 
             panel12.Anchor = AnchorStyles.None;
-            panel12.BackColor = Color.FromArgb(255, 224, 192);
+            panel12.BackColor = Color.Lavender;
             panel12.Controls.Add(txtPriceHourly);
             panel12.Location = new Point(359, 593);
             panel12.Name = "panel12";
-            panel12.Size = new Size(200, 48);
+            panel12.Size = new Size(200, 36);
             panel12.TabIndex = 36;
             // 
             // txtPriceHourly
@@ -396,21 +452,22 @@
             txtPriceHourly.SelectionLength = 0;
             txtPriceHourly.SelectionStart = 0;
             txtPriceHourly.ShortcutsEnabled = true;
-            txtPriceHourly.Size = new Size(200, 48);
+            txtPriceHourly.Size = new Size(200, 36);
             txtPriceHourly.TabIndex = 31;
             txtPriceHourly.TabStop = false;
             txtPriceHourly.TextAlign = HorizontalAlignment.Left;
             txtPriceHourly.TrailingIcon = null;
             txtPriceHourly.UseSystemPasswordChar = false;
+            txtPriceHourly.UseTallSize = false;
             // 
             // panel11
             // 
             panel11.Anchor = AnchorStyles.None;
-            panel11.BackColor = Color.FromArgb(255, 224, 192);
+            panel11.BackColor = Color.Lavender;
             panel11.Controls.Add(txtMileage);
-            panel11.Location = new Point(359, 429);
+            panel11.Location = new Point(359, 471);
             panel11.Name = "panel11";
-            panel11.Size = new Size(200, 48);
+            panel11.Size = new Size(200, 36);
             panel11.TabIndex = 34;
             // 
             // txtMileage
@@ -438,21 +495,22 @@
             txtMileage.SelectionLength = 0;
             txtMileage.SelectionStart = 0;
             txtMileage.ShortcutsEnabled = true;
-            txtMileage.Size = new Size(200, 48);
+            txtMileage.Size = new Size(200, 36);
             txtMileage.TabIndex = 31;
             txtMileage.TabStop = false;
             txtMileage.TextAlign = HorizontalAlignment.Left;
             txtMileage.TrailingIcon = null;
             txtMileage.UseSystemPasswordChar = false;
+            txtMileage.UseTallSize = false;
             // 
             // panel13
             // 
             panel13.Anchor = AnchorStyles.None;
-            panel13.BackColor = Color.FromArgb(255, 224, 192);
+            panel13.BackColor = Color.Lavender;
             panel13.Controls.Add(txtPriceDaily);
-            panel13.Location = new Point(359, 511);
+            panel13.Location = new Point(359, 532);
             panel13.Name = "panel13";
-            panel13.Size = new Size(200, 48);
+            panel13.Size = new Size(200, 35);
             panel13.TabIndex = 35;
             // 
             // txtPriceDaily
@@ -480,19 +538,20 @@
             txtPriceDaily.SelectionLength = 0;
             txtPriceDaily.SelectionStart = 0;
             txtPriceDaily.ShortcutsEnabled = true;
-            txtPriceDaily.Size = new Size(200, 48);
+            txtPriceDaily.Size = new Size(200, 36);
             txtPriceDaily.TabIndex = 31;
             txtPriceDaily.TabStop = false;
             txtPriceDaily.TextAlign = HorizontalAlignment.Left;
             txtPriceDaily.TrailingIcon = null;
             txtPriceDaily.UseSystemPasswordChar = false;
+            txtPriceDaily.UseTallSize = false;
             // 
             // panel7
             // 
             panel7.Anchor = AnchorStyles.None;
-            panel7.BackColor = Color.FromArgb(255, 224, 192);
+            panel7.BackColor = Color.Lavender;
             panel7.Controls.Add(cbxFuel);
-            panel7.Location = new Point(359, 265);
+            panel7.Location = new Point(359, 255);
             panel7.Name = "panel7";
             panel7.Size = new Size(200, 49);
             panel7.TabIndex = 40;
@@ -525,7 +584,7 @@
             // panel8
             // 
             panel8.Anchor = AnchorStyles.None;
-            panel8.BackColor = Color.FromArgb(255, 224, 192);
+            panel8.BackColor = Color.Lavender;
             panel8.Controls.Add(cbxColor);
             panel8.Location = new Point(359, 183);
             panel8.Name = "panel8";
@@ -560,9 +619,9 @@
             // panel5
             // 
             panel5.Anchor = AnchorStyles.None;
-            panel5.BackColor = Color.FromArgb(255, 224, 192);
+            panel5.BackColor = Color.Lavender;
             panel5.Controls.Add(cbxSpecificType);
-            panel5.Location = new Point(35, 265);
+            panel5.Location = new Point(35, 255);
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 49);
             panel5.TabIndex = 36;
@@ -595,9 +654,9 @@
             // panel9
             // 
             panel9.Anchor = AnchorStyles.None;
-            panel9.BackColor = Color.FromArgb(255, 224, 192);
+            panel9.BackColor = Color.Lavender;
             panel9.Controls.Add(cbxYear);
-            panel9.Location = new Point(35, 511);
+            panel9.Location = new Point(35, 327);
             panel9.Name = "panel9";
             panel9.Size = new Size(200, 49);
             panel9.TabIndex = 38;
@@ -630,11 +689,11 @@
             // panel4
             // 
             panel4.Anchor = AnchorStyles.None;
-            panel4.BackColor = Color.FromArgb(255, 224, 192);
+            panel4.BackColor = Color.Lavender;
             panel4.Controls.Add(txtLicense);
             panel4.Location = new Point(35, 593);
             panel4.Name = "panel4";
-            panel4.Size = new Size(200, 48);
+            panel4.Size = new Size(200, 36);
             panel4.TabIndex = 34;
             // 
             // txtLicense
@@ -662,17 +721,18 @@
             txtLicense.SelectionLength = 0;
             txtLicense.SelectionStart = 0;
             txtLicense.ShortcutsEnabled = true;
-            txtLicense.Size = new Size(200, 48);
+            txtLicense.Size = new Size(200, 36);
             txtLicense.TabIndex = 31;
             txtLicense.TabStop = false;
             txtLicense.TextAlign = HorizontalAlignment.Left;
             txtLicense.TrailingIcon = null;
             txtLicense.UseSystemPasswordChar = false;
+            txtLicense.UseTallSize = false;
             // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.None;
-            panel3.BackColor = Color.FromArgb(255, 224, 192);
+            panel3.BackColor = Color.Lavender;
             panel3.Controls.Add(cbxGeneralType);
             panel3.Location = new Point(35, 183);
             panel3.Name = "panel3";
@@ -707,11 +767,11 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.FromArgb(255, 224, 192);
+            panel2.BackColor = Color.Lavender;
             panel2.Controls.Add(txtModel);
-            panel2.Location = new Point(35, 429);
+            panel2.Location = new Point(35, 531);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 48);
+            panel2.Size = new Size(200, 36);
             panel2.TabIndex = 32;
             // 
             // btnBrowse
@@ -775,6 +835,8 @@
             ((System.ComponentModel.ISupportInitialize)picPreview).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel15.ResumeLayout(false);
+            panel16.ResumeLayout(false);
             parrotGradientPanel1.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel10.ResumeLayout(false);
@@ -829,6 +891,9 @@
         private Panel panel14;
         private Label lblApproval;
         private Label lblOwned;
-        private ReaLTaiizor.Controls.PoisonComboBox poisonComboBox1;
+        private Panel panel15;
+        private ReaLTaiizor.Controls.MaterialComboBox cbxDrivetrain;
+        private Panel panel16;
+        private ReaLTaiizor.Controls.MaterialComboBox cbxTransmission;
     }
 }

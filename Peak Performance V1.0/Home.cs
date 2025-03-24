@@ -287,7 +287,7 @@ namespace Peak_Performance_V1._0
             btnManageAccount.BackColor = Color.FromArgb(255, 128, 0);
             btnManageAccount.FlatAppearance.BorderSize = 2;
             btnManageAccount.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new ManageAccount());
+            openChildForm(new ManageAccount(this));
         }
         private void btnAdminAllVehicles_Click(object sender, EventArgs e)
         {

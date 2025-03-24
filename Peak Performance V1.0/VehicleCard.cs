@@ -23,6 +23,8 @@ namespace Peak_Performance_V1._0
         private string? Make = null;
         private string? Model = null;
         private int? VehicleYear = 0;
+        private string? Transmission = null;
+        private string? Drivetrain = null;
         private string? LicensePlate = null;
         private string? VehicleColor = null;
         private string? FuelType = null;
@@ -33,10 +35,7 @@ namespace Peak_Performance_V1._0
         private Image? VehicleImage = null;
         private string? Prompt = null;
 
-        public event Action<int, string, string, string, string, int?, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
-
-
-
+        public event Action<int, string, string, string, string, int?, string, string, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
 
 
 
@@ -45,11 +44,11 @@ namespace Peak_Performance_V1._0
         {
             if (Prompt == "Edit")
             {
-                EditClicked?.Invoke(VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, VehicleColor, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage);
+                EditClicked?.Invoke(VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, VehicleColor, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage);
             }
         }
 
-        public VehicleCard(int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string licensePlate,
+        public VehicleCard(int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string transmission, string drivetrain, string licensePlate,
                            string color, string fuelType, int seats, double mileage, double priceDaily, double priceHourly, Image vehicleImage, string prompt)
         {
             InitializeComponent();
@@ -60,6 +59,8 @@ namespace Peak_Performance_V1._0
             Make = make;
             Model = model;
             VehicleYear = vehicleYear;
+            Transmission = transmission;
+            Drivetrain = drivetrain;
             LicensePlate = licensePlate;
             VehicleColor = color;
             FuelType = fuelType;

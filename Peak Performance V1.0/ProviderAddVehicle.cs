@@ -29,7 +29,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -48,6 +48,8 @@ namespace Peak_Performance_V1._0
 
                         string? model = reader["Model"].ToString();
                         int vehicleYear = Convert.ToInt32(reader["VehicleYear"]);
+                        string? transmission = reader["Transmission"].ToString();
+                        string? drivetrain = reader["Drivetrain"].ToString();
 
                         string? licensePlate = reader["LicensePlate"].ToString();
                         string? color = reader["Color"].ToString();
@@ -75,7 +77,7 @@ namespace Peak_Performance_V1._0
                         }
 
                         //create a VehicleCard and add it to the FlowLayoutPanel
-                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, licensePlate,
+                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
                         flpDisplay.Controls.Add(card);
                     }
@@ -92,6 +94,8 @@ namespace Peak_Performance_V1._0
             string model = txtModel.Text;
             string tempYear = cbxYear.Text;
             string licensePlate = txtLicense.Text;
+            string transmission = cbxTransmission.Text;
+            string drivetrain = cbxDrivetrain.Text;
             string color = cbxColor.Text;
             string fuelType = cbxFuel.Text;
             string tempSeats = cbxSeats.Text;
@@ -99,6 +103,7 @@ namespace Peak_Performance_V1._0
             string tempPriceDaily = txtPriceDaily.Text;
             string tempPriceHourly = txtPriceHourly.Text;
             string imagePath = lblImagePath.Text; //path of the selected image
+            string availability = "Available";
             int year;
             int seats;
             double mileage;
@@ -106,8 +111,8 @@ namespace Peak_Performance_V1._0
             double priceHourly;
 
             if (string.IsNullOrWhiteSpace(generalType) || string.IsNullOrWhiteSpace(specificType) || string.IsNullOrWhiteSpace(make) || string.IsNullOrWhiteSpace(model) ||
-                string.IsNullOrWhiteSpace(tempYear) || string.IsNullOrWhiteSpace(licensePlate) || string.IsNullOrWhiteSpace(color) || string.IsNullOrWhiteSpace(fuelType) ||
-                string.IsNullOrWhiteSpace(tempSeats) || string.IsNullOrWhiteSpace(tempMileage) || string.IsNullOrWhiteSpace(tempPriceDaily) || string.IsNullOrWhiteSpace(tempPriceDaily)) //step 1: check if fields are empty
+                string.IsNullOrWhiteSpace(tempYear) || string.IsNullOrWhiteSpace(transmission) || string.IsNullOrWhiteSpace(drivetrain) || string.IsNullOrWhiteSpace(licensePlate) ||string.IsNullOrWhiteSpace(color) ||
+                string.IsNullOrWhiteSpace(fuelType) || string.IsNullOrWhiteSpace(tempSeats) || string.IsNullOrWhiteSpace(tempMileage) || string.IsNullOrWhiteSpace(tempPriceDaily) || string.IsNullOrWhiteSpace(tempPriceDaily)) //step 1: check if fields are empty
             {
                 MessageBox.Show("Please fill in all the details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -145,8 +150,8 @@ namespace Peak_Performance_V1._0
 
             byte[] imageBytes = File.ReadAllBytes(imagePath); //convert image to byte array
 
-            string addVehicleQuery = "INSERT INTO Vehicles (UserID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage) " +
-                                     "VALUES (@userID, @generalType, @specificType, @make, @model, @year, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath)";
+            string addVehicleQuery = "INSERT INTO Vehicles (UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, Availability) " +
+                                     "VALUES (@userID, @generalType, @specificType, @make, @model, @year, @transmission, @drivetrain, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath, @availability)";
 
             using (OleDbCommand cmd = new OleDbCommand(addVehicleQuery, connection))
             {
@@ -156,6 +161,8 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@make", make);
                 cmd.Parameters.AddWithValue("@model", model);
                 cmd.Parameters.AddWithValue("@year", year);
+                cmd.Parameters.AddWithValue("@transmission", transmission);
+                cmd.Parameters.AddWithValue("@drivetrain", drivetrain);
                 cmd.Parameters.AddWithValue("@licensePlate", licensePlate);
                 cmd.Parameters.AddWithValue("@color", color);
                 cmd.Parameters.AddWithValue("@fuelType", fuelType);
@@ -164,6 +171,7 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@priceDaily", priceDaily);
                 cmd.Parameters.AddWithValue("@priceHourly", priceHourly);
                 cmd.Parameters.AddWithValue("@imagePath", imageBytes);
+                cmd.Parameters.AddWithValue("@availability", availability);
 
                 try
                 {
@@ -205,6 +213,8 @@ namespace Peak_Performance_V1._0
             cbxColor.Text = string.Empty;
             cbxFuel.Text = string.Empty;
             cbxSeats.Text = string.Empty;
+            cbxTransmission.Text = string.Empty;
+            cbxDrivetrain.Text = string.Empty;
             txtMileage.Text = string.Empty;
             txtPriceDaily.Text = string.Empty;
             txtPriceHourly.Text = string.Empty;

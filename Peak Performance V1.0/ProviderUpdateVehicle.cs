@@ -17,6 +17,7 @@ namespace Peak_Performance_V1._0
         private OleDbConnection connection;
         public ProviderUpdateVehicle()
         {
+            SystemManager.currentEditVehicleID = 0;
             connection = SystemManager.GetConnection();
             InitializeComponent();
             LoadVehicles();
@@ -27,7 +28,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -45,6 +46,8 @@ namespace Peak_Performance_V1._0
 
                         string? model = reader["Model"].ToString();
                         int vehicleYear = Convert.ToInt32(reader["VehicleYear"]);
+                        string? transmission = reader["Transmission"].ToString();
+                        string? drivetrain = reader["Drivetrain"].ToString();
 
                         string? licensePlate = reader["LicensePlate"].ToString();
                         string? color = reader["Color"].ToString();
@@ -72,7 +75,7 @@ namespace Peak_Performance_V1._0
                         }
 
                         //create a VehicleCard and add it to the FlowLayoutPanel
-                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, licensePlate,
+                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Edit");
                         card.EditClicked += Card_EditClicked;
                         flpDisplay.Controls.Add(card);
@@ -84,14 +87,17 @@ namespace Peak_Performance_V1._0
         }
 
         //SUPPORTING EVENTS
-        private void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string licensePlate,
+        private void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string transmission, string drivetrain, string licensePlate,
                            string color, string fuelType, int? seats, double? mileage, double? priceDaily, double? priceHourly, Image vehicleImage)
         {
+            SystemManager.currentEditVehicleID = vehicleID;
             cbxGeneralType.Text = generalType;
             cbxSpecificType.Text = specificType;
             txtMake.Text = make;
             txtModel.Text = model;
             cbxYear.Text = vehicleYear.ToString();
+            cbxTransmission.Text = transmission;
+            cbxDrivetrain.Text = drivetrain;
             txtLicense.Text = licensePlate;
             cbxColor.Text = color;
             cbxFuel.Text = fuelType;
@@ -136,7 +142,132 @@ namespace Peak_Performance_V1._0
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //DO TOMORROW
+            string generalType = cbxGeneralType.Text;
+            string specificType = cbxSpecificType.Text;
+            string make = txtMake.Text;
+            string model = txtModel.Text;
+            string tempYear = cbxYear.Text;
+            string licensePlate = txtLicense.Text;
+            string transmission = cbxTransmission.Text;
+            string drivetrain = cbxDrivetrain.Text;
+            string color = cbxColor.Text;
+            string fuelType = cbxFuel.Text;
+            string tempSeats = cbxSeats.Text;
+            string tempMileage = txtMileage.Text;
+            string tempPriceDaily = txtPriceDaily.Text;
+            string tempPriceHourly = txtPriceHourly.Text;
+            string imagePath = lblImagePath.Text; //path of the selected image
+            int year;
+            int seats;
+            double mileage;
+            double priceDaily;
+            double priceHourly;
+
+            if (SystemManager.currentEditVehicleID == 0)
+            {
+                MessageBox.Show("Please choose a vehicle to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(generalType) || string.IsNullOrWhiteSpace(specificType) || string.IsNullOrWhiteSpace(make) || string.IsNullOrWhiteSpace(model) ||
+                string.IsNullOrWhiteSpace(tempYear) || string.IsNullOrWhiteSpace(transmission) || string.IsNullOrWhiteSpace(drivetrain) || string.IsNullOrWhiteSpace(licensePlate) || string.IsNullOrWhiteSpace(color) ||
+                string.IsNullOrWhiteSpace(fuelType) || string.IsNullOrWhiteSpace(tempSeats) || string.IsNullOrWhiteSpace(tempMileage) || string.IsNullOrWhiteSpace(tempPriceDaily) || string.IsNullOrWhiteSpace(tempPriceDaily)) //step 1: check if fields are empty
+            {
+                MessageBox.Show("Please fill in all the details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(imagePath)) //step 2: check if image is uploaded
+            {
+                MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!int.TryParse(tempYear, out year) || year < 1900 || year > 2025) //step 3: validate year
+            {
+                MessageBox.Show("Invalid year.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!int.TryParse(tempSeats, out seats) || seats < 1 || seats > 50) //step 4: validate seats
+            {
+                MessageBox.Show("Invalid number of seats.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!double.TryParse(tempMileage, out mileage) || mileage < 0 || mileage > 9999999999) //step 5: validate mileage
+            {
+                MessageBox.Show("Invalid mileage.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!double.TryParse(tempPriceDaily, out priceDaily) || priceDaily < 100 || priceDaily > 100000) //step 6: validate daily price
+            {
+                MessageBox.Show("Daily price must be between 100 Php and 100,000 Php.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (!double.TryParse(tempPriceHourly, out priceHourly) || priceHourly < 10 || priceHourly > 10000) //step 7: validate hourly price
+            {
+                MessageBox.Show("Hourly price must be between 10 Php and 10,000 Php.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            byte[] imageBytes = File.ReadAllBytes(imagePath); //convert image to byte array
+            MessageBox.Show(SystemManager.currentEditVehicleID.ToString());
+            string updateQuery = $"UPDATE Vehicles SET GeneralType = @generalType, SpecificType = @specificType, Make = @make, Model = @model, VehicleYear = @year, Transmission = @transmission, Drivetrain = @drivetrain, LicensePlate = @licensePlate, [Color] = @color, FuelType = @fuelType, Seats = @seats, Mileage = @mileage, PriceDaily = @priceDaily, PriceHourly = @priceHourly, VehicleImage = @imagePath WHERE VehicleID = {SystemManager.currentEditVehicleID}";
+            using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@generalType", generalType);
+                cmd.Parameters.AddWithValue("@specificType", specificType);
+                cmd.Parameters.AddWithValue("@make", make);
+                cmd.Parameters.AddWithValue("@model", model);
+                cmd.Parameters.AddWithValue("@year", year);
+                cmd.Parameters.AddWithValue("@transmission", transmission);
+                cmd.Parameters.AddWithValue("@drivetrain", drivetrain);
+                cmd.Parameters.AddWithValue("@licensePlate", licensePlate);
+                cmd.Parameters.AddWithValue("@color", color);
+                cmd.Parameters.AddWithValue("@fuelType", fuelType);
+                cmd.Parameters.AddWithValue("@seats", seats);
+                cmd.Parameters.AddWithValue("@mileage", mileage);
+                cmd.Parameters.AddWithValue("@priceDaily", priceDaily);
+                cmd.Parameters.AddWithValue("@priceHourly", priceHourly);
+                cmd.Parameters.AddWithValue("@imagePath", imageBytes);
+
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Details updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadVehicles();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating: " + ex.Message);
+                    return;
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (SystemManager.currentEditVehicleID == 0)
+            {
+                MessageBox.Show("Please choose a vehicle to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string deleteQuery = $"DELETE FROM Vehicles WHERE VehicleID = {SystemManager.currentEditVehicleID}";
+            using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
+            {
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("BYEBYE", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadVehicles();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting" + ex.Message);
+                    return;
+                }
+            }
         }
     }
 }

@@ -15,10 +15,13 @@ namespace Peak_Performance_V1._0
     public partial class ManageAccount : Form
     {
         private OleDbConnection connection;
-        public ManageAccount()
+        private Home homeForm; // Reference to Home form
+
+        public ManageAccount(Home home)
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
+            this.homeForm = home; // Store reference to home form
         }
 
         //SUPPORTING EVENT
@@ -166,7 +169,7 @@ namespace Peak_Performance_V1._0
 
             //ALSO DELETE ALL VEHICLES IN THE FUTURE (kapoy pa)
 
-            string deleteQuery = $"DELETE FROM Users WHERE userID = {SystemManager.currentUserID}";
+            string deleteQuery = $"DELETE FROM Users WHERE UserID = {SystemManager.currentUserID}";
             using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
             {
                 try
@@ -176,9 +179,17 @@ namespace Peak_Performance_V1._0
                     connection.Close();
                     MessageBox.Show("BYEBYE", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    // Close the Home form
+                    if (homeForm != null)
+                    {
+                        homeForm.Close();
+                    }
+
+                    // Open login form
                     MainLR mainLR = new MainLR();
                     mainLR.Show();
-                    this.Hide();
+
+                    this.Close(); // Close ManageAccount form
                 }
                 catch (Exception ex)
                 {
