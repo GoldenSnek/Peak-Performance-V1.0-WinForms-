@@ -32,9 +32,9 @@
             tmrProgress = new System.Windows.Forms.Timer(components);
             picSplash1 = new PictureBox();
             lblLoading = new Label();
-            cyberProgressBar = new ReaLTaiizor.Controls.CyberProgressBar();
             picSplash2 = new PictureBox();
             ProgressBar = new ReaLTaiizor.Controls.AloneProgressBar();
+            cyberProgressBar = new ReaLTaiizor.Controls.CyberProgressBar();
             ((System.ComponentModel.ISupportInitialize)picSplash1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSplash2).BeginInit();
             SuspendLayout();
@@ -65,6 +65,33 @@
             lblLoading.Size = new Size(87, 18);
             lblLoading.TabIndex = 49;
             lblLoading.Text = "Loading...";
+            // 
+            // picSplash2
+            // 
+            picSplash2.BackgroundImageLayout = ImageLayout.Stretch;
+            picSplash2.Image = Properties.Resources.Dawn;
+            picSplash2.Location = new Point(40, 93);
+            picSplash2.Name = "picSplash2";
+            picSplash2.Size = new Size(521, 302);
+            picSplash2.SizeMode = PictureBoxSizeMode.StretchImage;
+            picSplash2.TabIndex = 53;
+            picSplash2.TabStop = false;
+            // 
+            // ProgressBar
+            // 
+            ProgressBar.BackColor = Color.Transparent;
+            ProgressBar.BackgroundColor = Color.FromArgb(255, 128, 0);
+            ProgressBar.BaseColor = Color.Black;
+            ProgressBar.BorderColor = Color.FromArgb(192, 64, 0);
+            ProgressBar.Location = new Point(38, 424);
+            ProgressBar.Maximum = 100;
+            ProgressBar.Minimum = 0;
+            ProgressBar.Name = "ProgressBar";
+            ProgressBar.Size = new Size(523, 33);
+            ProgressBar.Stripes = Color.Black;
+            ProgressBar.TabIndex = 54;
+            ProgressBar.Text = "aloneProgressBar1";
+            ProgressBar.Value = 0;
             // 
             // cyberProgressBar
             // 
@@ -110,33 +137,6 @@
             cyberProgressBar.Value = 0;
             cyberProgressBar.Visible = false;
             // 
-            // picSplash2
-            // 
-            picSplash2.BackgroundImageLayout = ImageLayout.Stretch;
-            picSplash2.Image = Properties.Resources.Dawn;
-            picSplash2.Location = new Point(40, 93);
-            picSplash2.Name = "picSplash2";
-            picSplash2.Size = new Size(521, 302);
-            picSplash2.SizeMode = PictureBoxSizeMode.StretchImage;
-            picSplash2.TabIndex = 53;
-            picSplash2.TabStop = false;
-            // 
-            // ProgressBar
-            // 
-            ProgressBar.BackColor = Color.Transparent;
-            ProgressBar.BackgroundColor = Color.FromArgb(255, 128, 0);
-            ProgressBar.BaseColor = Color.Black;
-            ProgressBar.BorderColor = Color.FromArgb(192, 64, 0);
-            ProgressBar.Location = new Point(38, 424);
-            ProgressBar.Maximum = 100;
-            ProgressBar.Minimum = 0;
-            ProgressBar.Name = "ProgressBar";
-            ProgressBar.Size = new Size(523, 33);
-            ProgressBar.Stripes = Color.Black;
-            ProgressBar.TabIndex = 54;
-            ProgressBar.Text = "aloneProgressBar1";
-            ProgressBar.Value = 0;
-            // 
             // SplashLoading
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -163,8 +163,8 @@
         private System.Windows.Forms.Timer tmrProgress;
         private PictureBox picSplash1;
         private Label lblLoading;
-        private ReaLTaiizor.Controls.CyberProgressBar cyberProgressBar;
         private PictureBox picSplash2;
         private ReaLTaiizor.Controls.AloneProgressBar ProgressBar;
+        private ReaLTaiizor.Controls.CyberProgressBar cyberProgressBar;
     }
 }

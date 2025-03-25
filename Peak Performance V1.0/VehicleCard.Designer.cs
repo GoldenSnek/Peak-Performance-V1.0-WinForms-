@@ -233,6 +233,7 @@
             btnFullDetails.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnFullDetails.UseAccentColor = false;
             btnFullDetails.UseVisualStyleBackColor = true;
+            btnFullDetails.Click += btnFullDetails_Click;
             // 
             // pictureBox1
             // 
