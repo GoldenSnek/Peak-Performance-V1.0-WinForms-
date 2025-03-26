@@ -67,7 +67,6 @@
             // 
             picProfilePicture.Anchor = AnchorStyles.None;
             picProfilePicture.BackColor = Color.Lavender;
-            picProfilePicture.Image = Properties.Resources.Avatar;
             picProfilePicture.Location = new Point(3, 3);
             picProfilePicture.Name = "picProfilePicture";
             picProfilePicture.Size = new Size(150, 150);
@@ -141,7 +140,7 @@
             lblImagePath.AutoSize = true;
             lblImagePath.Font = new Font("Arial Rounded MT Bold", 12F);
             lblImagePath.ForeColor = Color.White;
-            lblImagePath.Location = new Point(540, 165);
+            lblImagePath.Location = new Point(200, 200);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(0, 18);
             lblImagePath.TabIndex = 29;
@@ -196,7 +195,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.FromArgb(255, 224, 192);
+            panel1.BackColor = Color.Lavender;
             panel1.Controls.Add(txtFullname);
             panel1.Location = new Point(391, 264);
             panel1.Name = "panel1";
@@ -238,7 +237,7 @@
             // panel6
             // 
             panel6.Anchor = AnchorStyles.None;
-            panel6.BackColor = Color.FromArgb(255, 224, 192);
+            panel6.BackColor = Color.Lavender;
             panel6.Controls.Add(txtAddress);
             panel6.Location = new Point(391, 375);
             panel6.Name = "panel6";
@@ -280,7 +279,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.FromArgb(255, 224, 192);
+            panel2.BackColor = Color.Lavender;
             panel2.Controls.Add(txtBirthday);
             panel2.Location = new Point(391, 479);
             panel2.Name = "panel2";
@@ -322,7 +321,7 @@
             // panel3
             // 
             panel3.Anchor = AnchorStyles.None;
-            panel3.BackColor = Color.FromArgb(255, 224, 192);
+            panel3.BackColor = Color.Lavender;
             panel3.Controls.Add(txtLicenseID);
             panel3.Location = new Point(714, 264);
             panel3.Name = "panel3";
@@ -364,7 +363,7 @@
             // panel4
             // 
             panel4.Anchor = AnchorStyles.None;
-            panel4.BackColor = Color.FromArgb(255, 224, 192);
+            panel4.BackColor = Color.Lavender;
             panel4.Controls.Add(txtEmail);
             panel4.Location = new Point(714, 375);
             panel4.Name = "panel4";
@@ -406,7 +405,7 @@
             // panel5
             // 
             panel5.Anchor = AnchorStyles.None;
-            panel5.BackColor = Color.FromArgb(255, 224, 192);
+            panel5.BackColor = Color.Lavender;
             panel5.Controls.Add(txtNumber);
             panel5.Location = new Point(714, 479);
             panel5.Name = "panel5";

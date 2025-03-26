@@ -69,15 +69,12 @@ namespace Peak_Performance_V1._0
                                 vehicleImage = Image.FromStream(ms);
                             }
                         }
-                        else
-                        {
-                            //set a default placeholder image
-                        }
 
                         //create a VehicleCard and add it to the FlowLayoutPanel
                         VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Edit");
                         card.EditClicked += Card_EditClicked;
+                        card.FullDetailsClicked += Card_FullDetailsClicked;
                         flpDisplay.Controls.Add(card);
                     }
                 }
@@ -107,6 +104,16 @@ namespace Peak_Performance_V1._0
             txtPriceHourly.Text = priceHourly.ToString();
             picPreview.Image = vehicleImage;
         }
+
+        private void Card_FullDetailsClicked(int vehicleID) {
+            SystemManager.currentFullDetailsVehicleID = vehicleID;
+            using (FullVehicleDetails detailsForm = new FullVehicleDetails())
+            {
+                detailsForm.StartPosition = FormStartPosition.CenterParent;
+                detailsForm.ShowDialog();
+            }
+        }
+
         private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -162,6 +169,7 @@ namespace Peak_Performance_V1._0
             double mileage;
             double priceDaily;
             double priceHourly;
+            byte[] imageBytes = null;
 
             if (SystemManager.currentEditVehicleID == 0)
             {
@@ -173,11 +181,6 @@ namespace Peak_Performance_V1._0
                 string.IsNullOrWhiteSpace(fuelType) || string.IsNullOrWhiteSpace(tempSeats) || string.IsNullOrWhiteSpace(tempMileage) || string.IsNullOrWhiteSpace(tempPriceDaily) || string.IsNullOrWhiteSpace(tempPriceDaily)) //step 1: check if fields are empty
             {
                 MessageBox.Show("Please fill in all the details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (string.IsNullOrWhiteSpace(imagePath)) //step 2: check if image is uploaded
-            {
-                MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (!int.TryParse(tempYear, out year) || year < 1900 || year > 2025) //step 3: validate year
@@ -206,8 +209,39 @@ namespace Peak_Performance_V1._0
                 return;
             }
 
-            byte[] imageBytes = File.ReadAllBytes(imagePath); //convert image to byte array
-            MessageBox.Show(SystemManager.currentEditVehicleID.ToString());
+            if (!string.IsNullOrWhiteSpace(imagePath)) // If a new image is selected
+            {
+                imageBytes = File.ReadAllBytes(imagePath);
+            }
+            else if (picPreview.Image == null) // If an image exists in the PictureBox
+            {
+                MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand cmdGetImage = new OleDbCommand("SELECT VehicleImage FROM Vehicles WHERE VehicleID = @vehicleID", connection))
+                    {
+                        cmdGetImage.Parameters.AddWithValue("@vehicleID", SystemManager.currentEditVehicleID);
+                        object existingImage = cmdGetImage.ExecuteScalar();
+                        if (existingImage != DBNull.Value)
+                            imageBytes = (byte[])existingImage;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                finally
+                {
+                    connection.Close(); // Ensure connection is closed
+                }
+            }
+            
             string updateQuery = $"UPDATE Vehicles SET GeneralType = @generalType, SpecificType = @specificType, Make = @make, Model = @model, VehicleYear = @year, Transmission = @transmission, Drivetrain = @drivetrain, LicensePlate = @licensePlate, [Color] = @color, FuelType = @fuelType, Seats = @seats, Mileage = @mileage, PriceDaily = @priceDaily, PriceHourly = @priceHourly, VehicleImage = @imagePath WHERE VehicleID = {SystemManager.currentEditVehicleID}";
             using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
             {
@@ -240,6 +274,10 @@ namespace Peak_Performance_V1._0
                     MessageBox.Show("Error updating: " + ex.Message);
                     return;
                 }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -266,6 +304,10 @@ namespace Peak_Performance_V1._0
                 {
                     MessageBox.Show("Error deleting" + ex.Message);
                     return;
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }

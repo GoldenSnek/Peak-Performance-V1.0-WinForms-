@@ -36,6 +36,7 @@ namespace Peak_Performance_V1._0
         private string? Prompt = null;
 
         public event Action<int, string, string, string, string, int?, string, string, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
+        public event Action<int> FullDetailsClicked;
 
 
 
@@ -46,6 +47,11 @@ namespace Peak_Performance_V1._0
             {
                 EditClicked?.Invoke(VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, VehicleColor, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage);
             }
+        }
+
+        private void btnFullDetails_Click(object sender, EventArgs e)
+        {
+            FullDetailsClicked?.Invoke(VehicleID);
         }
 
         public VehicleCard(int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string transmission, string drivetrain, string licensePlate,
@@ -100,12 +106,6 @@ namespace Peak_Performance_V1._0
             }
             else
                 btnProceed.Visible = false;
-        }
-
-        private void btnFullDetails_Click(object sender, EventArgs e)
-        {
-            SystemManager.currentFullDetailsVehicleID = VehicleID;
-            FullVehicleDetails.GetInstance(VehicleID).Show();
         }
 
     /*

@@ -133,7 +133,8 @@ namespace Peak_Performance_V1._0
 
         private void picBack_Click(object sender, EventArgs e)
         {
-            CloseInstance();
+            this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
+            this.Close();
         }
 
         private void tmrFadeIn_Tick(object sender, EventArgs e)
@@ -143,6 +144,7 @@ namespace Peak_Performance_V1._0
                 tmrFadeIn.Stop();
         }
 
+        /*
         //singleton
         private static FullVehicleDetails instance;
         public static FullVehicleDetails GetInstance(int vehicleID)
@@ -163,6 +165,7 @@ namespace Peak_Performance_V1._0
                 instance = null;  // Reset singleton reference
             }
         }
+        */
 
 
         [DllImport("user32.dll")]

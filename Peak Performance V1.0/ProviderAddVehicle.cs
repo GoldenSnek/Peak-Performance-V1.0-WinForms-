@@ -79,6 +79,7 @@ namespace Peak_Performance_V1._0
                         //create a VehicleCard and add it to the FlowLayoutPanel
                         VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
+                        card.FullDetailsClicked += Card_FullDetailsClicked;
                         flpDisplay.Controls.Add(card);
                     }
                 }
@@ -190,6 +191,15 @@ namespace Peak_Performance_V1._0
         }
 
         //SUPPORTING EVENTS
+        private void Card_FullDetailsClicked(int vehicleID)
+        {
+            SystemManager.currentFullDetailsVehicleID = vehicleID;
+            using (FullVehicleDetails detailsForm = new FullVehicleDetails())
+            {
+                detailsForm.StartPosition = FormStartPosition.CenterParent;
+                detailsForm.ShowDialog();
+            }
+        }
         private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())

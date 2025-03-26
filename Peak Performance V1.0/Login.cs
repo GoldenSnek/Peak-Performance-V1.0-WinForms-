@@ -135,6 +135,7 @@ namespace Peak_Performance_V1._0
         //SUPPORTING EVENTS
         private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT: Show/hide password
         {
+
             if (chkShowPass.Checked)
                 txtPassword.PasswordChar = '•';
             else

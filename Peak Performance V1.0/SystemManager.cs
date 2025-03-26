@@ -22,6 +22,7 @@ namespace Peak_Performance_V1._0
         public static string? currentRole = "Vehicle Provider"; //store logged-in Role
         public static int currentEditVehicleID = 0; //store VehicleID for editing
         public static int currentFullDetailsVehicleID = 0; //store VehicleID for full details
+        //public static int current
         public static int splash = 1; //change splashscreen
 
         public static OleDbConnection GetConnection() //METHOD: Database Connection

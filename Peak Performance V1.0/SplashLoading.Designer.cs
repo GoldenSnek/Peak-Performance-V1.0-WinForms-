@@ -91,7 +91,7 @@
             ProgressBar.Stripes = Color.Black;
             ProgressBar.TabIndex = 54;
             ProgressBar.Text = "aloneProgressBar1";
-            ProgressBar.Value = 0;
+            ProgressBar.Value = 90;
             // 
             // cyberProgressBar
             // 

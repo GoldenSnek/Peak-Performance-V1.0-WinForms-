@@ -57,7 +57,7 @@ namespace Peak_Performance_V1._0
             if (SystemManager.currentRole == "Client")
                 lblTotalRentals.Visible = false;
 
-            string displayQuery = "SELECT UserID, Username, Role, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, Rating, TotalRentals, ProfilePicture FROM Users";
+            string displayQuery = "SELECT UserID, Username, Role, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, TotalRentals, ProfilePicture FROM Users";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -79,7 +79,7 @@ namespace Peak_Performance_V1._0
 
                         int driversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
                         int contactNumber = Convert.ToInt32(reader["ContactNumber"]);
-                        double rating = Convert.ToDouble(reader["Rating"]);
+                        double rating = Convert.ToDouble(reader["UserRating"]);
                         int totalRentals = Convert.ToInt32(reader["TotalRentals"]);
 
 
@@ -93,16 +93,10 @@ namespace Peak_Performance_V1._0
                                 profilePicture = Image.FromStream(ms);
                             }
                         }
-                        else
-                        {
-                            picProfilePicture.Image = Properties.Resources.Avatar;
-                        }
 
                         //non-editable
                         if (profilePicture != null)
                             picProfilePicture.Image = profilePicture;
-                        else
-                            picProfilePicture.Image = Properties.Resources.Avatar;
 
                         lblUserID.Text = $"User ID: {userID}";
                         lblUsername.Text = $"Username: {username}";
@@ -126,18 +120,47 @@ namespace Peak_Performance_V1._0
         private void btnSave_Click(object sender, EventArgs e)
         {
             string imagePath = lblImagePath.Text;
+            byte[] imageBytes = null;
             if (string.IsNullOrWhiteSpace(txtFullname.Text) || string.IsNullOrWhiteSpace(txtAddress.Text) || string.IsNullOrWhiteSpace(txtBirthday.Text)
                 || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtLicenseID.Text) || string.IsNullOrWhiteSpace(txtNumber.Text)) //step 1: check if fields are empty
             {
                 MessageBox.Show("Please fill in all the details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (string.IsNullOrWhiteSpace(imagePath)) //step 2: check if profile pic is empty
+
+            if (!string.IsNullOrWhiteSpace(imagePath)) // If a new image is selected
+            {
+                imageBytes = File.ReadAllBytes(imagePath);
+            }
+            else if (picProfilePicture.Image == null) // If an image exists in the PictureBox
             {
                 MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            byte[] imageBytes = File.ReadAllBytes(imagePath);
+            else
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand cmdGetImage = new OleDbCommand("SELECT ProfilePicture FROM Users WHERE UserID = @userID", connection))
+                    {
+                        cmdGetImage.Parameters.AddWithValue("@userID", SystemManager.currentUserID);
+                        object existingImage = cmdGetImage.ExecuteScalar();
+                        if (existingImage != DBNull.Value)
+                            imageBytes = (byte[])existingImage;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                finally
+                {
+                    connection.Close(); // Ensure connection is closed
+                }
+            }
+
             string updateQuery = $"UPDATE Users SET Fullname = @fullName, Address = @address, Birthday = @birthday, Email = @email, DriversLicenseID = @licenseID, ContactNumber = @contactNumber, ProfilePicture = @imagePath Where UserID = {SystemManager.currentUserID}";
             using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
             {
@@ -160,6 +183,10 @@ namespace Peak_Performance_V1._0
                 {
                     MessageBox.Show("Error updating: " + ex.Message);
                     return;
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }
@@ -195,6 +222,10 @@ namespace Peak_Performance_V1._0
                 {
                     MessageBox.Show("Error deleting" + ex.Message);
                     return;
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }

@@ -66,10 +66,6 @@ namespace Peak_Performance_V1._0
                             vehicleImage = Image.FromStream(ms);
                         }
                     }
-                    else
-                    {
-                        //set a default placeholder image
-                    }
 
 
                     //create a VehicleCard and add it to the FlowLayoutPanel
@@ -77,17 +73,28 @@ namespace Peak_Performance_V1._0
                     {
                         VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain,licensePlate,
                                                            color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
+                        card.FullDetailsClicked += Card_FullDetailsClicked;
                         flpDisplay.Controls.Add(card);
                     }
                     else if (SystemManager.currentRole == "Client")
                     {
                         VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                    color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Rent");
+                        card.FullDetailsClicked += Card_FullDetailsClicked;
                         flpDisplay.Controls.Add(card);
                     }
                 }
 
                 connection.Close();
+            }
+        }
+        private void Card_FullDetailsClicked(int vehicleID)
+        {
+            SystemManager.currentFullDetailsVehicleID = vehicleID;
+            using (FullVehicleDetails detailsForm = new FullVehicleDetails())
+            {
+                detailsForm.StartPosition = FormStartPosition.CenterParent;
+                detailsForm.ShowDialog();
             }
         }
         private void btnClear_Click(object sender, EventArgs e) //EVENT: Clear
