@@ -194,10 +194,23 @@ namespace Peak_Performance_V1._0
         private void Card_FullDetailsClicked(int vehicleID)
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
+            Form formBackground = new Form();
             using (FullVehicleDetails detailsForm = new FullVehicleDetails())
             {
+                formBackground.StartPosition = FormStartPosition.Manual;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.Opacity = .70d;
+                formBackground.BackColor = Color.Black;
+                formBackground.WindowState = FormWindowState.Maximized;
+                formBackground.TopMost = true;
+                formBackground.Location = this.Location;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
+
                 detailsForm.StartPosition = FormStartPosition.CenterParent;
                 detailsForm.ShowDialog();
+
+                formBackground.Dispose();
             }
         }
         private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image

@@ -550,6 +550,7 @@
             Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            TopMost = true;
             ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
             parrotGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).EndInit();

@@ -37,6 +37,7 @@ namespace Peak_Performance_V1._0
 
         public event Action<int, string, string, string, string, int?, string, string, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
         public event Action<int> FullDetailsClicked;
+        public event Action<int> RentClicked;
 
 
 
@@ -46,6 +47,10 @@ namespace Peak_Performance_V1._0
             if (Prompt == "Edit")
             {
                 EditClicked?.Invoke(VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, VehicleColor, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage);
+            }
+            else if (Prompt == "Rent")
+            {
+                RentClicked?.Invoke(VehicleID);
             }
         }
 

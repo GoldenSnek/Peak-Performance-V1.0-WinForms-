@@ -1,30 +1,29 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class FullVehicleDetails : Form
+    public partial class RentVehicle : Form
     {
         private OleDbConnection connection;
-
-        public FullVehicleDetails()
+        double PriceDaily;
+        double PriceHourly;
+        public RentVehicle()
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
             LoadVehicleDetails();
             tmrFadeIn.Start();
         }
-
         void LoadVehicleDetails()
         {
             string displayQuery = $"SELECT GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture FROM UserVehicleQuery WHERE VehicleID = {SystemManager.currentFullDetailsVehicleID}";
@@ -55,16 +54,20 @@ namespace Peak_Performance_V1._0
                     double priceDaily = Convert.ToDouble(reader["PriceDaily"]);
                     double priceHourly = Convert.ToDouble(reader["PriceHourly"]);
 
-                    lblType.Text = $"Type:{generalType} ({specificType})";
-                    lblMake.Text = $"{make}";
-                    lblModel.Text = $"{model} ({vehicleYear})";
-                    lblTransmission.Text = $"Transmission: {transmission}";
-                    lblDrivetrain.Text = $"Drivetrain: {drivetrain}";
-                    lblLicensePlate.Text = $"License Plate No: {licensePlate}";
-                    lblColor.Text = $"Color: {color}";
-                    lblFuelType.Text = $"Fuel Type: {fuelType}";
-                    lblSeats.Text = $"Seats: {seats}";
-                    lblMileage.Text = $"Mileage: {mileage} km";
+                    //store globally
+                    PriceDaily = priceDaily;
+                    PriceHourly = priceHourly;
+
+                    //lblType.Text = $"Type:{generalType} ({specificType})";
+                    //lblMake.Text = $"{make}";
+                    //lblModel.Text = $"{model} ({vehicleYear})";
+                    //lblTransmission.Text = $"Transmission: {transmission}";
+                    //lblDrivetrain.Text = $"Drivetrain: {drivetrain}";
+                    //lblLicensePlate.Text = $"License Plate No: {licensePlate}";
+                    //lblColor.Text = $"Color: {color}";
+                    //lblFuelType.Text = $"Fuel Type: {fuelType}";
+                    //lblSeats.Text = $"Seats: {seats}";
+                    //lblMileage.Text = $"Mileage: {mileage} km";
                     lblDailyPrice.Text = $"Php {priceDaily}/day";
                     lblHourlyPrice.Text = $"Php {priceHourly}/hr";
 
@@ -111,15 +114,15 @@ namespace Peak_Performance_V1._0
                         }
                     }
 
-                    lblUsername.Text = $"Username: {username}";
-                    lblUserRating.Text = $"Rating: {userRating.ToString()}";
+                    //lblUsername.Text = $"Username: {username}";
+                    //lblUserRating.Text = $"Rating: {userRating.ToString()}";
 
-                    lblFullname.Text = $"Fullname: {fullName}";
-                    lblAddress.Text = $"Address: {address}";
-                    lblBirthday.Text = $"Birthday: {birthday}";
-                    lblLicenseID.Text = $"Drivers License ID: {driversLicenseID.ToString()}";
-                    lblEmail.Text = $"Email: {email}";
-                    lblNumber.Text = $"Contact Number: {contactNumber}";
+                    //lblFullname.Text = $"Fullname: {fullName}";
+                    //lblAddress.Text = $"Address: {address}";
+                    //lblBirthday.Text = $"Birthday: {birthday}";
+                    //lblLicenseID.Text = $"Drivers License ID: {driversLicenseID.ToString()}";
+                    //lblEmail.Text = $"Email: {email}";
+                    //lblNumber.Text = $"Contact Number: {contactNumber}";
 
                     if (profilePicture != null)
                         picProfilePicture.Image = profilePicture;
@@ -131,11 +134,6 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void picBack_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
-            this.Close();
-        }
 
         private void tmrFadeIn_Tick(object sender, EventArgs e)
         {
@@ -144,28 +142,11 @@ namespace Peak_Performance_V1._0
                 tmrFadeIn.Stop();
         }
 
-        /*
-        //singleton
-        private static FullVehicleDetails instance;
-        public static FullVehicleDetails GetInstance(int vehicleID)
+        private void picBack_Click(object sender, EventArgs e)
         {
-            if (instance == null || instance.IsDisposed)
-            {
-                instance = new FullVehicleDetails();
-            }
-            return instance;
+            this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
+            this.Close();
         }
-
-        public static void CloseInstance()
-        {
-            if (instance != null)
-            {
-                instance.Close();
-                instance.Dispose();
-                instance = null;  // Reset singleton reference
-            }
-        }
-        */
 
         [DllImport("user32.dll")]
         private static extern void ReleaseCapture();
@@ -181,6 +162,41 @@ namespace Peak_Performance_V1._0
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+        private void btnEstimate_Click(object sender, EventArgs e)
+        {
+            double estimate = 0;
+            double multiplier = 0;
+
+            if (cbxRent.Text == "Days")
+                multiplier = PriceDaily;
+            else if (cbxRent.Text == "Hours")
+                multiplier = PriceHourly;
+
+            estimate += multiplier * double.Parse(cbxDuration.Text);
+
+            if (cbxChildSeat.Text == "Infant")
+                estimate += 30;
+            if (cbxChildSeat.Text == "Toddler")
+                estimate += 50;
+            if (cbxSound.Text == "Premium")
+                estimate += 300;
+            if (cbxPowerbank.Text == "3,000 maH")
+                estimate += 100;
+            if (cbxPowerbank.Text == "5,000 maH")
+                estimate += 120;
+            if (cbxPowerbank.Text == "10,000 maH")
+                estimate += 150;
+            if (cbxWifi.Text == "Pocket WiFi")
+                estimate += 100;
+
+            lblEstimatedPrice.Text = $"Estimated price: Php {estimate.ToString()}";
+        }
+
+        private void btnFinalize_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -188,7 +188,7 @@
             btnProceed.HighEmphasis = true;
             btnProceed.Icon = null;
             btnProceed.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnProceed.Location = new Point(24, 374);
+            btnProceed.Location = new Point(24, 353);
             btnProceed.Margin = new Padding(4, 6, 4, 6);
             btnProceed.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnProceed.Name = "btnProceed";
@@ -222,7 +222,7 @@
             btnFullDetails.HighEmphasis = true;
             btnFullDetails.Icon = null;
             btnFullDetails.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnFullDetails.Location = new Point(24, 332);
+            btnFullDetails.Location = new Point(117, 408);
             btnFullDetails.Margin = new Padding(4, 6, 4, 6);
             btnFullDetails.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnFullDetails.Name = "btnFullDetails";

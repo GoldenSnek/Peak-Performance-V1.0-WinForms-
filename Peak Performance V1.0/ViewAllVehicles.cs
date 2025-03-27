@@ -81,6 +81,7 @@ namespace Peak_Performance_V1._0
                         VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                    color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Rent");
                         card.FullDetailsClicked += Card_FullDetailsClicked;
+                        card.RentClicked += Card_RentClicked;
                         flpDisplay.Controls.Add(card);
                     }
                 }
@@ -91,10 +92,45 @@ namespace Peak_Performance_V1._0
         private void Card_FullDetailsClicked(int vehicleID)
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
+            Form formBackground = new Form();
             using (FullVehicleDetails detailsForm = new FullVehicleDetails())
             {
+                formBackground.StartPosition = FormStartPosition.Manual;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.Opacity = .70d;
+                formBackground.BackColor = Color.Black;
+                formBackground.WindowState = FormWindowState.Maximized;
+                formBackground.TopMost = true;
+                formBackground.Location = this.Location;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
+
                 detailsForm.StartPosition = FormStartPosition.CenterParent;
                 detailsForm.ShowDialog();
+
+                formBackground.Dispose();
+            }
+        }
+        private void Card_RentClicked(int vehicleID)
+        {
+            SystemManager.currentFullDetailsVehicleID = vehicleID;
+            Form formBackground = new Form();
+            using (RentVehicle rentForm = new RentVehicle())
+            {
+                formBackground.StartPosition = FormStartPosition.Manual;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.Opacity = .70d;
+                formBackground.BackColor = Color.Black;
+                formBackground.WindowState = FormWindowState.Maximized;
+                formBackground.TopMost = true;
+                formBackground.Location = this.Location;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
+
+                rentForm.StartPosition = FormStartPosition.CenterParent;
+                rentForm.ShowDialog();
+
+                formBackground.Dispose();
             }
         }
         private void btnClear_Click(object sender, EventArgs e) //EVENT: Clear
