@@ -17,30 +17,27 @@ namespace Peak_Performance_V1._0
         //private int _borderThickness = 5; // Adjust border thickness
         //private Color _borderColor = Color.Orange; // Change border color as needed
 
-        private int VehicleID = 0;
-        private string? GeneralType = null;
-        private string? SpecificType = null;
-        private string? Make = null;
-        private string? Model = null;
-        private int? VehicleYear = 0;
-        private string? Transmission = null;
-        private string? Drivetrain = null;
-        private string? LicensePlate = null;
-        private string? VehicleColor = null;
-        private string? FuelType = null;
-        private int? Seats = 0;
-        private double? Mileage = 0;
-        private double? PriceDaily = 0;
-        private double? PriceHourly = 0;
-        private Image? VehicleImage = null;
-        private string? Prompt = null;
+        public int VehicleID = 0;
+        public string? GeneralType = null;
+        public string? SpecificType = null;
+        public string? Make = null;
+        public string? Model = null;
+        public int? VehicleYear = 0;
+        public string? Transmission = null;
+        public string? Drivetrain = null;
+        public string? LicensePlate = null;
+        public string? VehicleColor = null;
+        public string? FuelType = null;
+        public int? Seats = 0;
+        public double? Mileage = 0;
+        public double? PriceDaily = 0;
+        public double? PriceHourly = 0;
+        public Image? VehicleImage = null;
+        public string? Prompt = null;
 
         public event Action<int, string, string, string, string, int?, string, string, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
         public event Action<int> FullDetailsClicked;
         public event Action<int> RentClicked;
-
-
-
 
         private void btnProceed_Click(object sender, EventArgs e)
         {

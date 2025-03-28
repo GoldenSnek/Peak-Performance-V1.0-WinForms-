@@ -71,7 +71,7 @@ namespace Peak_Performance_V1._0
                     //create a VehicleCard and add it to the FlowLayoutPanel
                     if (SystemManager.currentRole == "Vehicle Provider")
                     {
-                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain,licensePlate,
+                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                                            color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
                         card.FullDetailsClicked += Card_FullDetailsClicked;
                         flpDisplay.Controls.Add(card);
@@ -140,6 +140,58 @@ namespace Peak_Performance_V1._0
         private void btnApply_Click(object sender, EventArgs e) //EVENT: Apply
         {
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.Trim().ToLower();
+
+            //slower version
+            foreach (Control control in flpDisplay.Controls)
+            {
+                if (control is VehicleCard vehicleCard)
+                {
+                    // Search across multiple fields
+                    bool isVisible = vehicleCard.GeneralType.ToLower().Contains(searchText) ||
+                                     vehicleCard.SpecificType.ToLower().Contains(searchText) ||
+                                     vehicleCard.Make.ToLower().Contains(searchText) ||
+                                     vehicleCard.Model.ToLower().Contains(searchText) ||
+                                     vehicleCard.VehicleYear.ToString().ToLower().Contains(searchText) ||
+                                     vehicleCard.Transmission.ToLower().Contains(searchText) ||
+                                     vehicleCard.Drivetrain.ToLower().Contains(searchText) ||
+                                     vehicleCard.LicensePlate.ToLower().Contains(searchText) ||
+                                     vehicleCard.VehicleColor.ToLower().Contains(searchText) ||
+                                     vehicleCard.Seats.ToString().ToLower().Contains(searchText) ||
+                                     vehicleCard.Mileage.ToString().ToLower().Contains(searchText) ||
+                                     vehicleCard.PriceDaily.ToString().ToLower().Contains(searchText) ||
+                                     vehicleCard.PriceHourly.ToString().ToLower().Contains(searchText) ||
+                                     vehicleCard.Transmission.ToLower().Contains(searchText);
+
+                    //animate smooth hiding/showing (optional)
+                    if (isVisible && !vehicleCard.Visible)
+                        vehicleCard.Show();
+                    else if (!isVisible && vehicleCard.Visible)
+                        vehicleCard.Hide();
+                }
+            }
+
+
+            ////faster version
+            //foreach (Control control in flpDisplay.Controls)
+            //{
+            //    if (control is VehicleCard vehicleCard)
+            //    {
+            //        //check if VehicleCard contains the search text
+            //        bool isVisible = vehicleCard.Make.ToLower().Contains(searchText) ||
+            //                         vehicleCard.Model.ToLower().Contains(searchText);
+
+            //        //animate smooth hiding/showing (optional)
+            //        if (isVisible && !vehicleCard.Visible)
+            //            vehicleCard.Show();
+            //        else if (!isVisible && vehicleCard.Visible)
+            //            vehicleCard.Hide();
+            //    }
+            //}
         }
     }
 }
