@@ -57,7 +57,7 @@ namespace Peak_Performance_V1._0
             if (SystemManager.currentRole == "Client")
                 lblTotalRentals.Visible = false;
 
-            string displayQuery = "SELECT UserID, Username, Role, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, TotalRentals, ProfilePicture FROM Users";
+            string displayQuery = "SELECT UserID, Username, Role, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, UserTotalRentals, ProfilePicture FROM Users";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -80,7 +80,7 @@ namespace Peak_Performance_V1._0
                         int driversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
                         int contactNumber = Convert.ToInt32(reader["ContactNumber"]);
                         double rating = Convert.ToDouble(reader["UserRating"]);
-                        int totalRentals = Convert.ToInt32(reader["TotalRentals"]);
+                        int totalRentals = Convert.ToInt32(reader["UserTotalRentals"]);
 
 
                         //convert image from database to PictureBox

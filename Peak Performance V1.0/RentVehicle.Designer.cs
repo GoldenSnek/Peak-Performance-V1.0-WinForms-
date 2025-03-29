@@ -43,7 +43,7 @@
             lblTime = new Label();
             lblDate = new Label();
             picMax = new PictureBox();
-            txtAdditional = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtNotes = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cbxRent = new ReaLTaiizor.Controls.MaterialComboBox();
             cbxDuration = new ReaLTaiizor.Controls.MaterialComboBox();
             cbxPaymentType = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -249,37 +249,37 @@
             picMax.TabIndex = 39;
             picMax.TabStop = false;
             // 
-            // txtAdditional
+            // txtNotes
             // 
-            txtAdditional.AnimateReadOnly = false;
-            txtAdditional.AutoCompleteMode = AutoCompleteMode.None;
-            txtAdditional.AutoCompleteSource = AutoCompleteSource.None;
-            txtAdditional.BackgroundImageLayout = ImageLayout.None;
-            txtAdditional.CharacterCasing = CharacterCasing.Normal;
-            txtAdditional.Depth = 0;
-            txtAdditional.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtAdditional.HideSelection = true;
-            txtAdditional.Hint = "Additional Notes:";
-            txtAdditional.LeadingIcon = null;
-            txtAdditional.Location = new Point(23, 510);
-            txtAdditional.MaxLength = 32767;
-            txtAdditional.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtAdditional.Name = "txtAdditional";
-            txtAdditional.PasswordChar = '\0';
-            txtAdditional.PrefixSuffixText = null;
-            txtAdditional.ReadOnly = false;
-            txtAdditional.RightToLeft = RightToLeft.No;
-            txtAdditional.SelectedText = "";
-            txtAdditional.SelectionLength = 0;
-            txtAdditional.SelectionStart = 0;
-            txtAdditional.ShortcutsEnabled = true;
-            txtAdditional.Size = new Size(350, 36);
-            txtAdditional.TabIndex = 60;
-            txtAdditional.TabStop = false;
-            txtAdditional.TextAlign = HorizontalAlignment.Left;
-            txtAdditional.TrailingIcon = null;
-            txtAdditional.UseSystemPasswordChar = false;
-            txtAdditional.UseTallSize = false;
+            txtNotes.AnimateReadOnly = false;
+            txtNotes.AutoCompleteMode = AutoCompleteMode.None;
+            txtNotes.AutoCompleteSource = AutoCompleteSource.None;
+            txtNotes.BackgroundImageLayout = ImageLayout.None;
+            txtNotes.CharacterCasing = CharacterCasing.Normal;
+            txtNotes.Depth = 0;
+            txtNotes.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNotes.HideSelection = true;
+            txtNotes.Hint = "Additional Notes:";
+            txtNotes.LeadingIcon = null;
+            txtNotes.Location = new Point(23, 510);
+            txtNotes.MaxLength = 32767;
+            txtNotes.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtNotes.Name = "txtNotes";
+            txtNotes.PasswordChar = '\0';
+            txtNotes.PrefixSuffixText = null;
+            txtNotes.ReadOnly = false;
+            txtNotes.RightToLeft = RightToLeft.No;
+            txtNotes.SelectedText = "";
+            txtNotes.SelectionLength = 0;
+            txtNotes.SelectionStart = 0;
+            txtNotes.ShortcutsEnabled = true;
+            txtNotes.Size = new Size(350, 36);
+            txtNotes.TabIndex = 60;
+            txtNotes.TabStop = false;
+            txtNotes.TextAlign = HorizontalAlignment.Left;
+            txtNotes.TrailingIcon = null;
+            txtNotes.UseSystemPasswordChar = false;
+            txtNotes.UseTallSize = false;
             // 
             // cbxRent
             // 
@@ -536,7 +536,7 @@
             Controls.Add(cbxPaymentType);
             Controls.Add(cbxDuration);
             Controls.Add(cbxRent);
-            Controls.Add(txtAdditional);
+            Controls.Add(txtNotes);
             Controls.Add(pnlTop);
             Controls.Add(lblDailyPrice);
             Controls.Add(lblHourlyPrice);
@@ -579,7 +579,7 @@
         private Label lblTime;
         private Label lblDate;
         private PictureBox picMax;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtAdditional;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNotes;
         private ReaLTaiizor.Controls.MaterialComboBox cbxRent;
         private ReaLTaiizor.Controls.MaterialComboBox cbxDuration;
         private ReaLTaiizor.Controls.MaterialComboBox cbxPaymentType;

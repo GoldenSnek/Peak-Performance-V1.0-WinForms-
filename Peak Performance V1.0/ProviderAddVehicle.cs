@@ -29,7 +29,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -39,7 +39,7 @@ namespace Peak_Performance_V1._0
                 while (reader.Read())
                 {
                     //pang butngan og ? pero walay warnings
-                    if (SystemManager.currentUserID == Convert.ToInt32(reader["UserID"]))
+                    if (SystemManager.currentUserID == Convert.ToInt32(reader["OwnerID"]))
                     { //only display if user owns the vehicle
                         int vehicleID = Convert.ToInt32(reader["VehicleID"]);
                         string? generalType = reader["GeneralType"].ToString();
@@ -195,7 +195,7 @@ namespace Peak_Performance_V1._0
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
-            using (FullVehicleDetails detailsForm = new FullVehicleDetails())
+            using (FullVehicleDetails detailsForm = new FullVehicleDetails("Owner"))
             {
                 formBackground.StartPosition = FormStartPosition.Manual;
                 formBackground.FormBorderStyle = FormBorderStyle.None;

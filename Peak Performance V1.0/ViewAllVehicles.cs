@@ -30,7 +30,7 @@ namespace Peak_Performance_V1._0
             flpDisplay.Controls.Clear();
 
             // Default query (loads all vehicles)
-            string baseQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string baseQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, RentedBy FROM Vehicles";
 
             // If there's a filter, modify the query
             string displayQuery = null;
@@ -80,21 +80,26 @@ namespace Peak_Performance_V1._0
                         }
                     }
 
-                    // Create VehicleCard and add it to FlowLayoutPanel
-                    if (SystemManager.currentRole == "Vehicle Provider")
+                    int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+
+                    if (rentedBy == 0)
                     {
-                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
-                                                           color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
-                        card.FullDetailsClicked += Card_FullDetailsClicked;
-                        flpDisplay.Controls.Add(card);
-                    }
-                    else if (SystemManager.currentRole == "Client")
-                    {
-                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
-                                   color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Rent");
-                        card.FullDetailsClicked += Card_FullDetailsClicked;
-                        card.RentClicked += Card_RentClicked;
-                        flpDisplay.Controls.Add(card);
+                        // Create VehicleCard and add it to FlowLayoutPanel
+                        if (SystemManager.currentRole == "Vehicle Provider")
+                        {
+                            VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                                                               color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
+                            card.FullDetailsClicked += Card_FullDetailsClicked;
+                            flpDisplay.Controls.Add(card);
+                        }
+                        else if (SystemManager.currentRole == "Client")
+                        {
+                            VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                                       color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Rent");
+                            card.FullDetailsClicked += Card_FullDetailsClicked;
+                            card.RentClicked += Card_RentClicked;
+                            flpDisplay.Controls.Add(card);
+                        }
                     }
                 }
 
@@ -105,7 +110,7 @@ namespace Peak_Performance_V1._0
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
-            using (FullVehicleDetails detailsForm = new FullVehicleDetails())
+            using (FullVehicleDetails detailsForm = new FullVehicleDetails("Owner"))
             {
                 formBackground.StartPosition = FormStartPosition.Manual;
                 formBackground.FormBorderStyle = FormBorderStyle.None;
@@ -144,6 +149,7 @@ namespace Peak_Performance_V1._0
 
                 formBackground.Dispose();
             }
+            LoadVehicles();
         }
         private void btnClear_Click(object sender, EventArgs e) //EVENT: Clear
         {
@@ -307,7 +313,7 @@ namespace Peak_Performance_V1._0
                 sortBy = "PriceHourly";
 
             // ✅ Construct Query
-            string query = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string query = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
             if (filters.Count > 0)
             {
                 query += " WHERE " + string.Join(" AND ", filters);

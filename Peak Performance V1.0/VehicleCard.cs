@@ -37,7 +37,10 @@ namespace Peak_Performance_V1._0
 
         public event Action<int, string, string, string, string, int?, string, string, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
         public event Action<int> FullDetailsClicked;
+        public event Action<int> FullDetailsClickedRent;
         public event Action<int> RentClicked;
+        public event Action<int> ApproveClicked;
+        public event Action<int> FinishRentalClicked;
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
@@ -49,11 +52,25 @@ namespace Peak_Performance_V1._0
             {
                 RentClicked?.Invoke(VehicleID);
             }
+            else if (Prompt == "Approve")
+            {
+                ApproveClicked?.Invoke(VehicleID);
+            }
+            else if (Prompt == "Finish Rental")
+            {
+                FinishRentalClicked?.Invoke(VehicleID);
+            }
+
         }
 
         private void btnFullDetails_Click(object sender, EventArgs e)
         {
-            FullDetailsClicked?.Invoke(VehicleID);
+            if (Prompt == "Approve" || Prompt == "Finish Rental")
+            {
+                FullDetailsClickedRent?.Invoke(VehicleID);
+            }
+            else
+                FullDetailsClicked?.Invoke(VehicleID);
         }
 
         public VehicleCard(int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string transmission, string drivetrain, string licensePlate,

@@ -15,8 +15,10 @@ namespace Peak_Performance_V1._0
     public partial class RentVehicle : Form
     {
         private OleDbConnection connection;
-        double PriceDaily;
-        double PriceHourly;
+        double PriceDaily = 0;
+        double PriceHourly = 0;
+        public int OwnerUserID = 0;
+        double Price = 0;
         public RentVehicle()
         {
             connection = SystemManager.GetConnection();
@@ -26,7 +28,7 @@ namespace Peak_Performance_V1._0
         }
         void LoadVehicleDetails()
         {
-            string displayQuery = $"SELECT GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture FROM UserVehicleQuery WHERE VehicleID = {SystemManager.currentFullDetailsVehicleID}";
+            string displayQuery = $"SELECT UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture FROM UserVehicleQuery WHERE VehicleID = {SystemManager.currentFullDetailsVehicleID}";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -36,6 +38,7 @@ namespace Peak_Performance_V1._0
                 while (reader.Read())
                 {
                     //VEHICLE
+                    OwnerUserID = Convert.ToInt32(reader["UserID"]);
                     string? generalType = reader["GeneralType"].ToString();
                     string? specificType = reader["SpecificType"].ToString();
                     string? make = reader["Make"].ToString();
@@ -192,11 +195,91 @@ namespace Peak_Performance_V1._0
                 estimate += 100;
 
             lblEstimatedPrice.Text = $"Estimated price: Php {estimate.ToString()}";
+
+            Price = estimate;
         }
 
         private void btnFinalize_Click(object sender, EventArgs e)
         {
+            string rentalQuery = "INSERT INTO RentalDetails (VehicleID, ClientID, OwnerID, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price, Status) " +
+                   "VALUES (@VehicleID, @ClientID, @OwnerID, @RentType, @Duration, @PaymentType, @ChildSeat, @SoundSystem, @Powerbank, @WiFi, @Notes, @Price, @Status)";
 
+            double estimate = 0;
+            double multiplier = 0;
+
+            if (cbxRent.Text == "Days")
+                multiplier = PriceDaily;
+            else if (cbxRent.Text == "Hours")
+                multiplier = PriceHourly;
+
+            estimate += multiplier * double.Parse(cbxDuration.Text);
+
+            if (cbxChildSeat.Text == "Infant")
+                estimate += 30;
+            if (cbxChildSeat.Text == "Toddler")
+                estimate += 50;
+            if (cbxSound.Text == "Premium")
+                estimate += 300;
+            if (cbxPowerbank.Text == "3,000 maH")
+                estimate += 100;
+            if (cbxPowerbank.Text == "5,000 maH")
+                estimate += 120;
+            if (cbxPowerbank.Text == "10,000 maH")
+                estimate += 150;
+            if (cbxWifi.Text == "Pocket WiFi")
+                estimate += 100;
+
+            Price = estimate;
+
+            using (OleDbCommand cmd = new OleDbCommand(rentalQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@VehicleID", SystemManager.currentFullDetailsVehicleID);
+                cmd.Parameters.AddWithValue("@ClientID", SystemManager.currentUserID);
+                cmd.Parameters.AddWithValue("@OwnerID", OwnerUserID);
+                cmd.Parameters.AddWithValue("@RentType", cbxRent.Text.ToString());
+                cmd.Parameters.AddWithValue("@Duration", int.Parse(cbxDuration.Text));
+                cmd.Parameters.AddWithValue("@PaymentType", cbxPaymentType.Text);
+                cmd.Parameters.AddWithValue("@ChildSeat", cbxChildSeat.Text);
+                cmd.Parameters.AddWithValue("@SoundSystem", cbxSound.Text);
+                cmd.Parameters.AddWithValue("@Powerbank", cbxPowerbank.Text);
+                cmd.Parameters.AddWithValue("@WiFi", cbxWifi.Text);
+                cmd.Parameters.AddWithValue("@Notes", txtNotes.Text);
+                cmd.Parameters.AddWithValue("@Price", Price);
+                cmd.Parameters.AddWithValue("@Status", "Unpaid");
+
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Rental finalized successfully! Please proceed to payment.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex}");
+                }
+            }
+
+            string rentedByQuery = "UPDATE Vehicles SET RentedBy = @rentedBy WHERE VehicleID = @vehicleID";
+            using (OleDbCommand cmd = new OleDbCommand(rentedByQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@rentedBy", SystemManager.currentUserID);
+                cmd.Parameters.AddWithValue("@vehicleID", SystemManager.currentFullDetailsVehicleID);
+
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex}");
+                }
+            }
+
+            this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
+            this.Close();
         }
     }
 }

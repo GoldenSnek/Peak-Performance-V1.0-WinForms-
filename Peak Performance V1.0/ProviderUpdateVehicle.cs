@@ -28,7 +28,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, RentedBy FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -37,7 +37,7 @@ namespace Peak_Performance_V1._0
 
                 while (reader.Read())
                 {
-                    if (SystemManager.currentUserID == Convert.ToInt32(reader["UserID"]))
+                    if (SystemManager.currentUserID == Convert.ToInt32(reader["OwnerID"]))
                     { //only display if user owns the vehicle
                         int vehicleID = Convert.ToInt32(reader["VehicleID"]);
                         string? generalType = reader["GeneralType"].ToString();
@@ -70,12 +70,17 @@ namespace Peak_Performance_V1._0
                             }
                         }
 
-                        //create a VehicleCard and add it to the FlowLayoutPanel
-                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                        int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+
+                        if (rentedBy == 0)
+                        {
+                            //create a VehicleCard and add it to the FlowLayoutPanel
+                            VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Edit");
-                        card.EditClicked += Card_EditClicked;
-                        card.FullDetailsClicked += Card_FullDetailsClicked;
-                        flpDisplay.Controls.Add(card);
+                            card.EditClicked += Card_EditClicked;
+                            card.FullDetailsClicked += Card_FullDetailsClicked;
+                            flpDisplay.Controls.Add(card);
+                        }
                     }
                 }
 
@@ -108,7 +113,7 @@ namespace Peak_Performance_V1._0
         private void Card_FullDetailsClicked(int vehicleID) {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
-            using (FullVehicleDetails detailsForm = new FullVehicleDetails())
+            using (FullVehicleDetails detailsForm = new FullVehicleDetails("Owner"))
             {
                 formBackground.StartPosition = FormStartPosition.Manual;
                 formBackground.FormBorderStyle = FormBorderStyle.None;

@@ -64,6 +64,11 @@
             lblTime = new Label();
             lblDate = new Label();
             picMax = new PictureBox();
+            lblDuration = new Label();
+            lblPayment = new Label();
+            lblExtras = new Label();
+            lblNotes = new Label();
+            lblTotalPrice = new Label();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).BeginInit();
@@ -395,7 +400,7 @@
             lblDailyPrice.BackColor = Color.Transparent;
             lblDailyPrice.Font = new Font("Arial", 12F);
             lblDailyPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblDailyPrice.Location = new Point(747, 498);
+            lblDailyPrice.Location = new Point(270, 550);
             lblDailyPrice.Name = "lblDailyPrice";
             lblDailyPrice.Size = new Size(145, 40);
             lblDailyPrice.TabIndex = 56;
@@ -407,7 +412,7 @@
             lblHourlyPrice.BackColor = Color.Transparent;
             lblHourlyPrice.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHourlyPrice.ForeColor = Color.FromArgb(255, 128, 0);
-            lblHourlyPrice.Location = new Point(559, 498);
+            lblHourlyPrice.Location = new Point(48, 551);
             lblHourlyPrice.Name = "lblHourlyPrice";
             lblHourlyPrice.Size = new Size(145, 40);
             lblHourlyPrice.TabIndex = 57;
@@ -510,6 +515,66 @@
             picMax.TabIndex = 39;
             picMax.TabStop = false;
             // 
+            // lblDuration
+            // 
+            lblDuration.Anchor = AnchorStyles.None;
+            lblDuration.BackColor = Color.Transparent;
+            lblDuration.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblDuration.ForeColor = Color.White;
+            lblDuration.Location = new Point(521, 468);
+            lblDuration.Name = "lblDuration";
+            lblDuration.Size = new Size(200, 40);
+            lblDuration.TabIndex = 60;
+            lblDuration.Text = "Rent Duration";
+            // 
+            // lblPayment
+            // 
+            lblPayment.Anchor = AnchorStyles.None;
+            lblPayment.BackColor = Color.Transparent;
+            lblPayment.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblPayment.ForeColor = Color.White;
+            lblPayment.Location = new Point(744, 468);
+            lblPayment.Name = "lblPayment";
+            lblPayment.Size = new Size(200, 40);
+            lblPayment.TabIndex = 61;
+            lblPayment.Text = "Payment Type";
+            // 
+            // lblExtras
+            // 
+            lblExtras.Anchor = AnchorStyles.None;
+            lblExtras.BackColor = Color.Transparent;
+            lblExtras.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblExtras.ForeColor = Color.White;
+            lblExtras.Location = new Point(521, 519);
+            lblExtras.Name = "lblExtras";
+            lblExtras.Size = new Size(200, 40);
+            lblExtras.TabIndex = 62;
+            lblExtras.Text = "Extras";
+            // 
+            // lblNotes
+            // 
+            lblNotes.Anchor = AnchorStyles.None;
+            lblNotes.BackColor = Color.Transparent;
+            lblNotes.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblNotes.ForeColor = Color.White;
+            lblNotes.Location = new Point(744, 519);
+            lblNotes.Name = "lblNotes";
+            lblNotes.Size = new Size(200, 71);
+            lblNotes.TabIndex = 63;
+            lblNotes.Text = "Notes";
+            // 
+            // lblTotalPrice
+            // 
+            lblTotalPrice.BackColor = Color.Transparent;
+            lblTotalPrice.Font = new Font("Arial", 12F);
+            lblTotalPrice.ForeColor = Color.FromArgb(192, 64, 0);
+            lblTotalPrice.Location = new Point(521, 550);
+            lblTotalPrice.Name = "lblTotalPrice";
+            lblTotalPrice.Size = new Size(145, 40);
+            lblTotalPrice.TabIndex = 64;
+            lblTotalPrice.Text = "TotalPrice";
+            lblTotalPrice.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // FullVehicleDetails
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -517,6 +582,11 @@
             BackgroundImage = Properties.Resources.FullDetailsBG;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1000, 600);
+            Controls.Add(lblTotalPrice);
+            Controls.Add(lblNotes);
+            Controls.Add(lblExtras);
+            Controls.Add(lblPayment);
+            Controls.Add(lblDuration);
             Controls.Add(pnlTop);
             Controls.Add(lblVehicleRating);
             Controls.Add(lblDailyPrice);
@@ -587,7 +657,7 @@
         private Label lblType;
         private Label lblVehicle;
         private Label lblVehicleRating;
-        private Label label2;
+        private Label lblNotes;
         private Label lblMileage;
         private Label lblSeats;
         private ReaLTaiizor.Controls.ParrotGradientPanel panel;
@@ -601,5 +671,9 @@
         private Label lblTime;
         private Label lblDate;
         private PictureBox picMax;
+        private Label lblDuration;
+        private Label lblPayment;
+        private Label lblExtras;
+        private Label lblTotalPrice;
     }
 }
