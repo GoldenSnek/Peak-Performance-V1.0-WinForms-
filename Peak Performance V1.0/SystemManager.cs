@@ -17,9 +17,9 @@ namespace Peak_Performance_V1._0
         private static readonly string dbPath = @"|DataDirectory|\PeakPerformanceDB.accdb";
         private static readonly string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={dbPath};Persist Security Info=False;";
 
-        public static int currentUserID = 0; //store logged-in UserID
-        public static string? currentUsername = null; //store logged-in Username
-        public static string? currentRole = "Vehicle Provider"; //store logged-in Role
+        public static int currentUserID = 2; //store logged-in UserID
+        public static string? currentUsername = "JM"; //store logged-in Username
+        public static string? currentRole = "Client"; //store logged-in Role
         public static int currentEditVehicleID = 0; //store VehicleID for editing
         public static int currentFullDetailsVehicleID = 0; //store VehicleID for full details
         //public static int current

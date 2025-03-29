@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ReaLTaiizor.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb; //for database connection
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,11 +25,23 @@ namespace Peak_Performance_V1._0
         }
 
         //EVENTS
-        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
+        private void LoadVehicles(string? filterQuery = null) //INITIAL EVENT: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            // Default query (loads all vehicles)
+            string baseQuery = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+
+            // If there's a filter, modify the query
+            string displayQuery = null;
+
+            if (string.IsNullOrEmpty(filterQuery))
+                displayQuery = baseQuery;
+            else
+                displayQuery = filterQuery;
+
+            //MessageBox.Show(baseQuery);
+            //MessageBox.Show(displayQuery);
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -55,10 +69,9 @@ namespace Peak_Performance_V1._0
                     double priceDaily = Convert.ToDouble(reader["PriceDaily"]);
                     double priceHourly = Convert.ToDouble(reader["PriceHourly"]);
 
-
-                    //convert image from database to PictureBox
+                    // Convert image from database to PictureBox
                     Image? vehicleImage = null;
-                    if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
+                    if (!Convert.IsDBNull(reader["VehicleImage"]))
                     {
                         byte[] imageData = (byte[])reader["VehicleImage"];
                         using (MemoryStream? ms = new MemoryStream(imageData))
@@ -67,8 +80,7 @@ namespace Peak_Performance_V1._0
                         }
                     }
 
-
-                    //create a VehicleCard and add it to the FlowLayoutPanel
+                    // Create VehicleCard and add it to FlowLayoutPanel
                     if (SystemManager.currentRole == "Vehicle Provider")
                     {
                         VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
@@ -135,11 +147,57 @@ namespace Peak_Performance_V1._0
         }
         private void btnClear_Click(object sender, EventArgs e) //EVENT: Clear
         {
+            cbxSort.Text = "Default";
 
-        }
-        private void btnApply_Click(object sender, EventArgs e) //EVENT: Apply
-        {
+            // Reset all buttons to default state
+            btnCar.ForeColor = Color.Lavender;
+            btnCar.Tag = null;
 
+            btnMotorcycle.ForeColor = Color.Lavender;
+            btnMotorcycle.Tag = null;
+
+            btnY1.ForeColor = Color.Lavender;
+            btnY1.Tag = null;
+
+            btnY2.ForeColor = Color.Lavender;
+            btnY2.Tag = null;
+
+            btnY3.ForeColor = Color.Lavender;
+            btnY3.Tag = null;
+
+            btnY4.ForeColor = Color.Lavender;
+            btnY4.Tag = null;
+
+            btnManual.ForeColor = Color.Lavender;
+            btnManual.Tag = null;
+
+            btnAutomatic.ForeColor = Color.Lavender;
+            btnAutomatic.Tag = null;
+
+            btnFWD.ForeColor = Color.Lavender;
+            btnFWD.Tag = null;
+
+            btnRWD.ForeColor = Color.Lavender;
+            btnRWD.Tag = null;
+
+            btn4WD.ForeColor = Color.Lavender;
+            btn4WD.Tag = null;
+
+            btnAWD.ForeColor = Color.Lavender;
+            btnAWD.Tag = null;
+
+            btnS1.ForeColor = Color.Lavender;
+            btnS1.Tag = null;
+
+            btnS2.ForeColor = Color.Lavender;
+            btnS2.Tag = null;
+
+            btnS3.ForeColor = Color.Lavender;
+            btnS3.Tag = null;
+
+            btnS4.ForeColor = Color.Lavender;
+            btnS4.Tag = null;
+            LoadVehicles();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -192,6 +250,172 @@ namespace Peak_Performance_V1._0
             //            vehicleCard.Hide();
             //    }
             //}
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            List<string> filters = new List<string>();
+
+            // ✅ GeneralType (Cars, Motorcycles)
+            List<string> generalTypeFilters = new List<string>();
+            if (btnCar.Tag?.ToString() == "selected") generalTypeFilters.Add("GeneralType = 'Car'");
+            if (btnMotorcycle.Tag?.ToString() == "selected") generalTypeFilters.Add("GeneralType = 'Motorcycle'");
+            if (generalTypeFilters.Count > 0) filters.Add($"({string.Join(" OR ", generalTypeFilters)})");
+
+            // ✅ Vehicle Year Intervals
+            if (btnY1.Tag?.ToString() == "selected") filters.Add("VehicleYear BETWEEN 1900 AND 1949");
+            if (btnY2.Tag?.ToString() == "selected") filters.Add("VehicleYear BETWEEN 1950 AND 1999");
+            if (btnY3.Tag?.ToString() == "selected") filters.Add("VehicleYear BETWEEN 2000 AND 2019");
+            if (btnY4.Tag?.ToString() == "selected") filters.Add("VehicleYear BETWEEN 2020 AND 2025");
+
+            // ✅ Transmission (Manual, Automatic)
+            List<string> transmissionFilters = new List<string>();
+            if (btnManual.Tag?.ToString() == "selected") transmissionFilters.Add("Transmission = 'Manual'");
+            if (btnAutomatic.Tag?.ToString() == "selected") transmissionFilters.Add("Transmission = 'Automatic'");
+            if (transmissionFilters.Count > 0) filters.Add($"({string.Join(" OR ", transmissionFilters)})");
+
+            // ✅ Drivetrain (FWD, RWD, 4WD, AWD)
+            List<string> drivetrainFilters = new List<string>();
+            if (btnFWD.Tag?.ToString() == "selected") drivetrainFilters.Add("Drivetrain = 'Front-wheel drive'");
+            if (btnRWD.Tag?.ToString() == "selected") drivetrainFilters.Add("Drivetrain = 'Rear-wheel drive'");
+            if (btn4WD.Tag?.ToString() == "selected") drivetrainFilters.Add("Drivetrain = '4-wheel drive'");
+            if (btnAWD.Tag?.ToString() == "selected") drivetrainFilters.Add("Drivetrain = 'All-wheel drive'");
+            if (drivetrainFilters.Count > 0) filters.Add($"({string.Join(" OR ", drivetrainFilters)})");
+
+            // ✅ Seats Intervals
+            if (btnS1.Tag?.ToString() == "selected") filters.Add("Seats BETWEEN 1 AND 2");
+            if (btnS2.Tag?.ToString() == "selected") filters.Add("Seats BETWEEN 3 AND 5");
+            if (btnS3.Tag?.ToString() == "selected") filters.Add("Seats BETWEEN 6 AND 9");
+            if (btnS4.Tag?.ToString() == "selected") filters.Add("Seats BETWEEN 10 AND 50");
+
+            // ✅ Sorting
+            string sortOrder = toggleSort.Checked ? "DESC" : "ASC";
+            string sortBy = null;
+            if (cbxSort.Text == "Make")
+                sortBy = "Make";
+            else if (cbxSort.Text == "Model")
+                sortBy = "Model";
+            else if (cbxSort.Text == "Vehicle Year")
+                sortBy = "VehicleYear";
+            else if (cbxSort.Text == "Seats")
+                sortBy = "Seats";
+            else if (cbxSort.Text == "Mileage")
+                sortBy = "Mileage";
+            else if (cbxSort.Text == "Daily Price")
+                sortBy = "PriceDaily";
+            else if (cbxSort.Text == "Hourly Price")
+                sortBy = "PriceHourly";
+
+            // ✅ Construct Query
+            string query = "SELECT VehicleID, UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            if (filters.Count > 0)
+            {
+                query += " WHERE " + string.Join(" AND ", filters);
+            }
+            if (sortBy != null && sortBy != "Default")
+                query += $" ORDER BY {sortBy} {sortOrder}";
+
+            // ✅ Load the filtered vehicles
+            LoadVehicles(query);
+        }
+
+        private void AddFilterIfSelected(ReaLTaiizor.Controls.CyberButton btn, string condition, List<string> filters)
+        {
+            if (btn.Tag != null && btn.Tag.ToString() == "selected")
+            {
+                filters.Add(condition);
+            }
+        }
+
+        private void GlowButton_Click(object sender, EventArgs e)
+        {
+            CyberButton button = (CyberButton)sender;
+            if (button.TextButton == "1900-1949")
+            {
+                btnY2.ForeColor = Color.Lavender;
+                btnY2.Tag = null;
+                btnY3.ForeColor = Color.Lavender;
+                btnY3.Tag = null;
+                btnY4.ForeColor = Color.Lavender;
+                btnY4.Tag = null;
+            }
+            else if (button.TextButton == "1950-1999")
+            {
+                btnY1.ForeColor = Color.Lavender;
+                btnY1.Tag = null;
+                btnY3.ForeColor = Color.Lavender;
+                btnY3.Tag = null;
+                btnY4.ForeColor = Color.Lavender;
+                btnY4.Tag = null;
+            }
+            else if (button.TextButton == "2000-2019")
+            {
+                btnY2.ForeColor = Color.Lavender;
+                btnY2.Tag = null;
+                btnY1.ForeColor = Color.Lavender;
+                btnY1.Tag = null;
+                btnY4.ForeColor = Color.Lavender;
+                btnY4.Tag = null;
+            }
+            else if (button.TextButton == "1900-1949")
+            {
+                btnY2.ForeColor = Color.Lavender;
+                btnY2.Tag = null;
+                btnY3.ForeColor = Color.Lavender;
+                btnY3.Tag = null;
+                btnY1.ForeColor = Color.Lavender;
+                btnY1.Tag = null;
+            }
+
+            if (button.TextButton == "1-2")
+            {
+                btnS2.ForeColor = Color.Lavender;
+                btnS2.Tag = null;
+                btnS3.ForeColor = Color.Lavender;
+                btnS3.Tag = null;
+                btnS4.ForeColor = Color.Lavender;
+                btnS4.Tag = null;
+            }
+            else if (button.TextButton == "3-5")
+            {
+                btnS1.ForeColor = Color.Lavender;
+                btnS1.Tag = null;
+                btnS3.ForeColor = Color.Lavender;
+                btnS3.Tag = null;
+                btnS4.ForeColor = Color.Lavender;
+                btnS4.Tag = null;
+            }
+            else if (button.TextButton == "6-9")
+            {
+                btnS2.ForeColor = Color.Lavender;
+                btnS2.Tag = null;
+                btnS1.ForeColor = Color.Lavender;
+                btnS1.Tag = null;
+                btnS4.ForeColor = Color.Lavender;
+                btnS4.Tag = null;
+            }
+            else if (button.TextButton == "10-50")
+            {
+                btnS2.ForeColor = Color.Lavender;
+                btnS2.Tag = null;
+                btnS3.ForeColor = Color.Lavender;
+                btnS3.Tag = null;
+                btnS1.ForeColor = Color.Lavender;
+                btnS1.Tag = null;
+            }
+
+            if (button.Tag != null && button.Tag.ToString() == "selected")
+            {
+                // If already selected, remove glow and unselect
+                button.Tag = "unselected";
+                button.ForeColor = Color.Lavender;  // Default border color
+            }
+            else
+            {
+                // If not selected, apply glow effect
+                button.Tag = "selected";
+                button.ForeColor = Color.FromArgb(255, 128, 0);  // Glow effect
+            }
         }
     }
 }
