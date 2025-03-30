@@ -127,6 +127,7 @@ namespace Peak_Performance_V1._0
                         lblLicenseID.Text = $"Drivers License ID: {driversLicenseID.ToString()}";
                         lblEmail.Text = $"Email: {email}";
                         lblNumber.Text = $"Contact Number: {contactNumber}";
+                        lblOC.Text = "Owner";
 
                         if (profilePicture != null)
                             picProfilePicture.Image = profilePicture;
@@ -195,6 +196,7 @@ namespace Peak_Performance_V1._0
                         lblMileage.Text = $"Mileage: {mileage} km";
                         lblDailyPrice.Text = $"Php {priceDaily}/day";
                         lblHourlyPrice.Text = $"Php {priceHourly}/hr";
+                        lblOC.Text = "Client";
 
                         lblDuration.Text = $"Duration: {duration} {rentType}";
                         lblPayment.Text = $"Payment Type: {paymentType}";

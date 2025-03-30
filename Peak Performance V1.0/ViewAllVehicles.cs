@@ -131,6 +131,29 @@ namespace Peak_Performance_V1._0
         private void Card_RentClicked(int vehicleID)
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
+
+            string rentQuery = "SELECT RentedBy FROM Vehicles";
+
+            using (OleDbCommand cmd = new OleDbCommand(rentQuery, connection))
+            {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+
+                    if (rentedBy == SystemManager.currentUserID)
+                    {
+                        connection.Close();
+                        MessageBox.Show("cannot rent more than 1 vehicle.");
+                        return;
+                    }
+                }
+                connection.Close();
+            }
+
             Form formBackground = new Form();
             using (RentVehicle rentForm = new RentVehicle())
             {
@@ -238,24 +261,6 @@ namespace Peak_Performance_V1._0
                         vehicleCard.Hide();
                 }
             }
-
-
-            ////faster version
-            //foreach (Control control in flpDisplay.Controls)
-            //{
-            //    if (control is VehicleCard vehicleCard)
-            //    {
-            //        //check if VehicleCard contains the search text
-            //        bool isVisible = vehicleCard.Make.ToLower().Contains(searchText) ||
-            //                         vehicleCard.Model.ToLower().Contains(searchText);
-
-            //        //animate smooth hiding/showing (optional)
-            //        if (isVisible && !vehicleCard.Visible)
-            //            vehicleCard.Show();
-            //        else if (!isVisible && vehicleCard.Visible)
-            //            vehicleCard.Hide();
-            //    }
-            //}
         }
 
         private void btnApply_Click(object sender, EventArgs e)
@@ -313,7 +318,7 @@ namespace Peak_Performance_V1._0
                 sortBy = "PriceHourly";
 
             // ✅ Construct Query
-            string query = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string query = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, RentedBy FROM Vehicles";
             if (filters.Count > 0)
             {
                 query += " WHERE " + string.Join(" AND ", filters);
@@ -363,7 +368,7 @@ namespace Peak_Performance_V1._0
                 btnY4.ForeColor = Color.Lavender;
                 btnY4.Tag = null;
             }
-            else if (button.TextButton == "1900-1949")
+            else if (button.TextButton == "2020-2025")
             {
                 btnY2.ForeColor = Color.Lavender;
                 btnY2.Tag = null;

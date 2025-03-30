@@ -121,7 +121,9 @@ namespace Peak_Performance_V1._0
         private void Card_ApproveClicked(int vehicleID)
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
-            string updateQuery = "UPDATE RentalDetails SET Status = @status, RentDate = @rentDate WHERE VehicleID = @vehicleID";
+            string updateQuery = "UPDATE ClientVehicleQuery SET Status = @status, TotalRentals = TotalRentals + 1, UserTotalRentals = UserTotalRentals + 1, RentDate = @rentDate WHERE VehicleID = @vehicleID";
+            string selectQuery = "SELECT TotalRentals, UserTotalRentals FROM ClientVehicleQuery WHERE VehicleID = @vehicleID";
+
             using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
             {
                 cmd.Parameters.AddWithValue("@status", "Ongoing");
@@ -132,8 +134,8 @@ namespace Peak_Performance_V1._0
                 {
                     connection.Open();
                     cmd.ExecuteNonQuery();
-                    connection.Close();
                     MessageBox.Show("Rental request accepted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    connection.Close();
                     LoadVehicles();
                 }
                 catch (Exception ex)
@@ -193,9 +195,10 @@ namespace Peak_Performance_V1._0
                 finally
                 {
                     connection.Close();
+                    LoadVehicles();
+                    MessageBox.Show("test");
                 }
             }
-            LoadVehicles(); //wtf di mo refresh
         }
     }
 }

@@ -151,12 +151,12 @@ namespace Peak_Performance_V1._0
 
             byte[] imageBytes = File.ReadAllBytes(imagePath); //convert image to byte array
 
-            string addVehicleQuery = "INSERT INTO Vehicles (UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, Availability) " +
-                                     "VALUES (@userID, @generalType, @specificType, @make, @model, @year, @transmission, @drivetrain, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath, @availability)";
+            string addVehicleQuery = "INSERT INTO Vehicles (OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, Availability) " +
+                                     "VALUES (@ownerID, @generalType, @specificType, @make, @model, @year, @transmission, @drivetrain, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath, @availability)";
 
             using (OleDbCommand cmd = new OleDbCommand(addVehicleQuery, connection))
             {
-                cmd.Parameters.AddWithValue("@userID", SystemManager.currentUserID);
+                cmd.Parameters.AddWithValue("@ownerID", SystemManager.currentUserID);
                 cmd.Parameters.AddWithValue("@generalType", generalType);
                 cmd.Parameters.AddWithValue("@specificType", specificType);
                 cmd.Parameters.AddWithValue("@make", make);

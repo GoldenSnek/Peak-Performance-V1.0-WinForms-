@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
             picBack = new PictureBox();
-            lblOwner = new Label();
+            lblOC = new Label();
             lblUserRating = new Label();
             lblUsername = new Label();
             lblFullname = new Label();
@@ -97,17 +97,17 @@
             picBack.TabStop = false;
             picBack.Click += picBack_Click;
             // 
-            // lblOwner
+            // lblOC
             // 
-            lblOwner.BackColor = Color.Transparent;
-            lblOwner.Font = new Font("Copperplate Gothic Bold", 20.25F);
-            lblOwner.ForeColor = Color.Lavender;
-            lblOwner.Location = new Point(594, 117);
-            lblOwner.Name = "lblOwner";
-            lblOwner.Size = new Size(150, 40);
-            lblOwner.TabIndex = 31;
-            lblOwner.Text = "Owner";
-            lblOwner.TextAlign = ContentAlignment.MiddleCenter;
+            lblOC.BackColor = Color.Transparent;
+            lblOC.Font = new Font("Copperplate Gothic Bold", 20.25F);
+            lblOC.ForeColor = Color.Lavender;
+            lblOC.Location = new Point(594, 117);
+            lblOC.Name = "lblOC";
+            lblOC.Size = new Size(150, 40);
+            lblOC.TabIndex = 31;
+            lblOC.Text = "Owner";
+            lblOC.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblUserRating
             // 
@@ -582,15 +582,12 @@
             BackgroundImage = Properties.Resources.FullDetailsBG;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1000, 600);
-            Controls.Add(lblTotalPrice);
             Controls.Add(lblNotes);
             Controls.Add(lblExtras);
             Controls.Add(lblPayment);
             Controls.Add(lblDuration);
             Controls.Add(pnlTop);
             Controls.Add(lblVehicleRating);
-            Controls.Add(lblDailyPrice);
-            Controls.Add(lblHourlyPrice);
             Controls.Add(panel);
             Controls.Add(lblMileage);
             Controls.Add(lblSeats);
@@ -612,8 +609,11 @@
             Controls.Add(lblFullname);
             Controls.Add(lblUserRating);
             Controls.Add(lblUsername);
-            Controls.Add(lblOwner);
+            Controls.Add(lblOC);
             Controls.Add(picBack);
+            Controls.Add(lblTotalPrice);
+            Controls.Add(lblDailyPrice);
+            Controls.Add(lblHourlyPrice);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FullVehicleDetails";
@@ -636,7 +636,7 @@
         #endregion
         private System.Windows.Forms.Timer tmrFadeIn;
         private PictureBox picBack;
-        private Label lblOwner;
+        private Label lblOC;
         private Label lblUserRating;
         private Label lblUsername;
         private Label lblFullname;
