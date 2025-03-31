@@ -61,10 +61,33 @@
             lblUsername = new Label();
             lblOC = new Label();
             lblTotalPrice = new Label();
+            picUR1 = new PictureBox();
+            picUR2 = new PictureBox();
+            picUR3 = new PictureBox();
+            picUR4 = new PictureBox();
+            picUR5 = new PictureBox();
+            picVR5 = new PictureBox();
+            picVR4 = new PictureBox();
+            picVR3 = new PictureBox();
+            picVR2 = new PictureBox();
+            picVR1 = new PictureBox();
+            label1 = new Label();
+            label2 = new Label();
+            btnRate = new ReaLTaiizor.Controls.MaterialButton();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).BeginInit();
             parrotGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUR1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUR2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUR3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUR4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUR5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picVR5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picVR4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picVR3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picVR2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picVR1).BeginInit();
             SuspendLayout();
             // 
             // lblRentalDetails
@@ -73,7 +96,7 @@
             lblRentalDetails.AutoSize = true;
             lblRentalDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRentalDetails.ForeColor = SystemColors.Control;
-            lblRentalDetails.Location = new Point(306, 435);
+            lblRentalDetails.Location = new Point(306, 193);
             lblRentalDetails.Name = "lblRentalDetails";
             lblRentalDetails.Size = new Size(182, 18);
             lblRentalDetails.TabIndex = 7;
@@ -101,7 +124,7 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(811, 653);
+            btnReceipt.Location = new Point(306, 521);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
@@ -119,7 +142,7 @@
             lblNotes.BackColor = Color.Transparent;
             lblNotes.Font = new Font("Arial Rounded MT Bold", 12F);
             lblNotes.ForeColor = Color.White;
-            lblNotes.Location = new Point(306, 631);
+            lblNotes.Location = new Point(306, 389);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(200, 71);
             lblNotes.TabIndex = 93;
@@ -131,7 +154,7 @@
             lblExtras.BackColor = Color.Transparent;
             lblExtras.Font = new Font("Arial Rounded MT Bold", 12F);
             lblExtras.ForeColor = Color.White;
-            lblExtras.Location = new Point(306, 536);
+            lblExtras.Location = new Point(306, 294);
             lblExtras.Name = "lblExtras";
             lblExtras.Size = new Size(200, 40);
             lblExtras.TabIndex = 92;
@@ -143,7 +166,7 @@
             lblPayment.BackColor = Color.Transparent;
             lblPayment.Font = new Font("Arial Rounded MT Bold", 12F);
             lblPayment.ForeColor = Color.White;
-            lblPayment.Location = new Point(306, 586);
+            lblPayment.Location = new Point(306, 344);
             lblPayment.Name = "lblPayment";
             lblPayment.Size = new Size(200, 40);
             lblPayment.TabIndex = 91;
@@ -155,7 +178,7 @@
             lblDuration.BackColor = Color.Transparent;
             lblDuration.Font = new Font("Arial Rounded MT Bold", 12F);
             lblDuration.ForeColor = Color.White;
-            lblDuration.Location = new Point(306, 485);
+            lblDuration.Location = new Point(306, 243);
             lblDuration.Name = "lblDuration";
             lblDuration.Size = new Size(200, 40);
             lblDuration.TabIndex = 90;
@@ -476,12 +499,171 @@
             lblTotalPrice.BackColor = Color.Transparent;
             lblTotalPrice.Font = new Font("Arial", 12F);
             lblTotalPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblTotalPrice.Location = new Point(643, 651);
+            lblTotalPrice.Location = new Point(306, 459);
             lblTotalPrice.Name = "lblTotalPrice";
             lblTotalPrice.Size = new Size(145, 40);
             lblTotalPrice.TabIndex = 94;
             lblTotalPrice.Text = "TotalPrice";
             lblTotalPrice.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // picUR1
+            // 
+            picUR1.BackColor = Color.Transparent;
+            picUR1.Image = Properties.Resources.RateNo;
+            picUR1.Location = new Point(800, 626);
+            picUR1.Name = "picUR1";
+            picUR1.Size = new Size(25, 25);
+            picUR1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picUR1.TabIndex = 95;
+            picUR1.TabStop = false;
+            // 
+            // picUR2
+            // 
+            picUR2.BackColor = Color.Transparent;
+            picUR2.Image = Properties.Resources.RateNo;
+            picUR2.Location = new Point(831, 626);
+            picUR2.Name = "picUR2";
+            picUR2.Size = new Size(25, 25);
+            picUR2.SizeMode = PictureBoxSizeMode.StretchImage;
+            picUR2.TabIndex = 96;
+            picUR2.TabStop = false;
+            // 
+            // picUR3
+            // 
+            picUR3.BackColor = Color.Transparent;
+            picUR3.Image = Properties.Resources.RateNo;
+            picUR3.Location = new Point(862, 626);
+            picUR3.Name = "picUR3";
+            picUR3.Size = new Size(25, 25);
+            picUR3.SizeMode = PictureBoxSizeMode.StretchImage;
+            picUR3.TabIndex = 97;
+            picUR3.TabStop = false;
+            // 
+            // picUR4
+            // 
+            picUR4.BackColor = Color.Transparent;
+            picUR4.Image = Properties.Resources.RateNo;
+            picUR4.Location = new Point(893, 626);
+            picUR4.Name = "picUR4";
+            picUR4.Size = new Size(25, 25);
+            picUR4.SizeMode = PictureBoxSizeMode.StretchImage;
+            picUR4.TabIndex = 98;
+            picUR4.TabStop = false;
+            // 
+            // picUR5
+            // 
+            picUR5.BackColor = Color.Transparent;
+            picUR5.Image = Properties.Resources.RateNo;
+            picUR5.Location = new Point(924, 626);
+            picUR5.Name = "picUR5";
+            picUR5.Size = new Size(25, 25);
+            picUR5.SizeMode = PictureBoxSizeMode.StretchImage;
+            picUR5.TabIndex = 99;
+            picUR5.TabStop = false;
+            // 
+            // picVR5
+            // 
+            picVR5.BackColor = Color.Transparent;
+            picVR5.Image = Properties.Resources.RateNo;
+            picVR5.Location = new Point(924, 662);
+            picVR5.Name = "picVR5";
+            picVR5.Size = new Size(25, 25);
+            picVR5.SizeMode = PictureBoxSizeMode.StretchImage;
+            picVR5.TabIndex = 104;
+            picVR5.TabStop = false;
+            // 
+            // picVR4
+            // 
+            picVR4.BackColor = Color.Transparent;
+            picVR4.Image = Properties.Resources.RateNo;
+            picVR4.Location = new Point(893, 662);
+            picVR4.Name = "picVR4";
+            picVR4.Size = new Size(25, 25);
+            picVR4.SizeMode = PictureBoxSizeMode.StretchImage;
+            picVR4.TabIndex = 103;
+            picVR4.TabStop = false;
+            // 
+            // picVR3
+            // 
+            picVR3.BackColor = Color.Transparent;
+            picVR3.Image = Properties.Resources.RateNo;
+            picVR3.Location = new Point(862, 662);
+            picVR3.Name = "picVR3";
+            picVR3.Size = new Size(25, 25);
+            picVR3.SizeMode = PictureBoxSizeMode.StretchImage;
+            picVR3.TabIndex = 102;
+            picVR3.TabStop = false;
+            // 
+            // picVR2
+            // 
+            picVR2.BackColor = Color.Transparent;
+            picVR2.Image = Properties.Resources.RateNo;
+            picVR2.Location = new Point(831, 662);
+            picVR2.Name = "picVR2";
+            picVR2.Size = new Size(25, 25);
+            picVR2.SizeMode = PictureBoxSizeMode.StretchImage;
+            picVR2.TabIndex = 101;
+            picVR2.TabStop = false;
+            // 
+            // picVR1
+            // 
+            picVR1.BackColor = Color.Transparent;
+            picVR1.Image = Properties.Resources.RateNo;
+            picVR1.Location = new Point(800, 662);
+            picVR1.Name = "picVR1";
+            picVR1.Size = new Size(25, 25);
+            picVR1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picVR1.TabIndex = 100;
+            picVR1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial Rounded MT Bold", 12F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(668, 621);
+            label1.Name = "label1";
+            label1.Size = new Size(126, 33);
+            label1.TabIndex = 105;
+            label1.Text = "Owner Rating:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial Rounded MT Bold", 12F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(660, 658);
+            label2.Name = "label2";
+            label2.Size = new Size(134, 33);
+            label2.TabIndex = 106;
+            label2.Text = "Vehicle Rating:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnRate
+            // 
+            btnRate.Anchor = AnchorStyles.None;
+            btnRate.AutoSize = false;
+            btnRate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnRate.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnRate.Depth = 0;
+            btnRate.HighEmphasis = true;
+            btnRate.Icon = null;
+            btnRate.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnRate.Location = new Point(818, 578);
+            btnRate.Margin = new Padding(4, 6, 4, 6);
+            btnRate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnRate.Name = "btnRate";
+            btnRate.NoAccentTextColor = Color.Empty;
+            btnRate.Size = new Size(119, 36);
+            btnRate.TabIndex = 107;
+            btnRate.Text = "Submit rating";
+            btnRate.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnRate.UseAccentColor = false;
+            btnRate.UseVisualStyleBackColor = true;
+            btnRate.Click += btnRate_Click;
             // 
             // ClientViewRental
             // 
@@ -489,6 +671,19 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
             ClientSize = new Size(964, 704);
+            Controls.Add(btnRate);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(picVR5);
+            Controls.Add(picVR4);
+            Controls.Add(picVR3);
+            Controls.Add(picVR2);
+            Controls.Add(picVR1);
+            Controls.Add(picUR5);
+            Controls.Add(picUR4);
+            Controls.Add(picUR3);
+            Controls.Add(picUR2);
+            Controls.Add(picUR1);
             Controls.Add(lblNotes);
             Controls.Add(lblExtras);
             Controls.Add(lblPayment);
@@ -528,6 +723,16 @@
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).EndInit();
             parrotGradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUR1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUR2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUR3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUR4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUR5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picVR5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picVR4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picVR3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picVR2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picVR1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -568,5 +773,18 @@
         private Label lblUsername;
         private Label lblOC;
         private Label lblTotalPrice;
+        private PictureBox picUR1;
+        private PictureBox picUR2;
+        private PictureBox picUR3;
+        private PictureBox picUR4;
+        private PictureBox picUR5;
+        private PictureBox picVR5;
+        private PictureBox picVR4;
+        private PictureBox picVR3;
+        private PictureBox picVR2;
+        private PictureBox picVR1;
+        private Label label1;
+        private Label label2;
+        private ReaLTaiizor.Controls.MaterialButton btnRate;
     }
 }

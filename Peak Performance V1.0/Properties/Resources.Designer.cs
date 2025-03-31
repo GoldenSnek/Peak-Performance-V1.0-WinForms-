@@ -473,6 +473,26 @@ namespace Peak_Performance_V1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RateNo {
+            get {
+                object obj = ResourceManager.GetObject("RateNo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RateYes {
+            get {
+                object obj = ResourceManager.GetObject("RateYes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RentVehicle {
             get {
                 object obj = ResourceManager.GetObject("RentVehicle", resourceCulture);
