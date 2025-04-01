@@ -201,8 +201,8 @@ namespace Peak_Performance_V1._0
 
         private void btnFinalize_Click(object sender, EventArgs e)
         {
-            string rentalQuery = "INSERT INTO RentalDetails (VehicleID, ClientID, OwnerID, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price, Status) " +
-                   "VALUES (@VehicleID, @ClientID, @OwnerID, @RentType, @Duration, @PaymentType, @ChildSeat, @SoundSystem, @Powerbank, @WiFi, @Notes, @Price, @Status)";
+            string rentalQuery = "INSERT INTO RentalDetails (VehicleID, ClientID, OwnerID, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price, Status, RateStatus) " +
+                   "VALUES (@VehicleID, @ClientID, @OwnerID, @RentType, @Duration, @PaymentType, @ChildSeat, @SoundSystem, @Powerbank, @WiFi, @Notes, @Price, @RateStatus)";
 
             double estimate = 0;
             double multiplier = 0;
@@ -246,6 +246,7 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@Notes", txtNotes.Text);
                 cmd.Parameters.AddWithValue("@Price", Price);
                 cmd.Parameters.AddWithValue("@Status", "Unpaid");
+                cmd.Parameters.AddWithValue("@RateStatus", "No");
 
                 try
                 {

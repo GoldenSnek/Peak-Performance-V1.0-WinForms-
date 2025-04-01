@@ -230,7 +230,8 @@ namespace Peak_Performance_V1._0
 
         private void btnRate_Click(object sender, EventArgs e)
         {
-            string getQuery = "SELECT UserRating, UserRaters, UserTotalRatings, VehicleRating, VehicleRaters, VehicleTotalRatings FROM RatingQuery WHERE OwnerID = @ownerID AND VehicleID = @vehicleID";
+            string getQuery = "SELECT UserRating, UserRaters, UserTotalRatings, VehicleRating, VehicleRaters, VehicleTotalRatings, RateStatus " +
+                              "FROM RatingQuery WHERE OwnerID = @ownerID AND VehicleID = @vehicleID";
 
             using (OleDbCommand cmd = new OleDbCommand(getQuery, connection))
             {
@@ -245,6 +246,7 @@ namespace Peak_Performance_V1._0
                 double userRating = 0;
                 int vehicleRaters = 0, vehicleTotalRatings = 0;
                 double vehicleRating = 0;
+                string rateStatus = "";
 
                 // Read current values from the database
                 if (reader.Read())
@@ -255,8 +257,17 @@ namespace Peak_Performance_V1._0
                     vehicleRating = Convert.ToDouble(reader[3]);       // Convert VehicleRating to double
                     vehicleRaters = Convert.ToInt32(reader[4]);        // Convert VehicleRaters to int
                     vehicleTotalRatings = Convert.ToInt32(reader[5]);  // Convert VehicleTotalRatings to int
+                    rateStatus = reader[6].ToString();                 // Get RateStatus (Yes/No)
                 }
                 reader.Close();
+
+                // Check if rating is already done
+                if (rateStatus == "Yes")
+                {
+                    MessageBox.Show("You have already rated this vehicle.", "Rating Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    connection.Close();
+                    return;  // Stop execution
+                }
 
                 // Get the selected ratings from stars (assuming you have integer values)
                 int userGivenRating = UserRating; // 1-5 from stars
@@ -273,7 +284,7 @@ namespace Peak_Performance_V1._0
 
                 // Update Query
                 string updateQuery = "UPDATE RatingQuery SET UserRating = @userRating, UserRaters = @userRaters, UserTotalRatings = @userTotalRatings, " +
-                                     "VehicleRating = @vehicleRating, VehicleRaters = @vehicleRaters, VehicleTotalRatings = @vehicleTotalRatings " +
+                                     "VehicleRating = @vehicleRating, VehicleRaters = @vehicleRaters, VehicleTotalRatings = @vehicleTotalRatings, RateStatus = 'Yes' " +
                                      "WHERE OwnerID = @ownerID AND VehicleID = @vehicleID";
 
                 using (OleDbCommand updateCmd = new OleDbCommand(updateQuery, connection))
@@ -295,16 +306,7 @@ namespace Peak_Performance_V1._0
                     connection.Close();
                     MessageBox.Show("Rating submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnRate.Enabled = false;
-                    picUR1.Enabled = false;
-                    picUR2.Enabled = false;
-                    picUR3.Enabled = false;
-                    picUR4.Enabled = false;
-                    picUR5.Enabled = false;
-                    picVR1.Enabled = false;
-                    picVR2.Enabled = false;
-                    picVR3.Enabled = false;
-                    picVR4.Enabled = false;
-                    picVR5.Enabled = false;
+                    DisableStarSelection();
                 }
                 catch (Exception ex)
                 {
@@ -317,6 +319,68 @@ namespace Peak_Performance_V1._0
                         connection.Close();
                     }
                 }
+            }
+        }
+
+        // Method to disable rating stars after submission
+        private void DisableStarSelection()
+        {
+            picUR1.Enabled = false;
+            picUR2.Enabled = false;
+            picUR3.Enabled = false;
+            picUR4.Enabled = false;
+            picUR5.Enabled = false;
+            picVR1.Enabled = false;
+            picVR2.Enabled = false;
+            picVR3.Enabled = false;
+            picVR4.Enabled = false;
+            picVR5.Enabled = false;
+        }
+
+        // Method to disable rating stars after submission
+        private void HideStarSelection()
+        {
+            btnRate.Visible = false;
+            picUR1.Visible = false;
+            picUR2.Visible = false;
+            picUR3.Visible = false;
+            picUR4.Visible = false;
+            picUR5.Visible = false;
+            picVR1.Visible = false;
+            picVR2.Visible = false;
+            picVR3.Visible = false;
+            picVR4.Visible = false;
+            picVR5.Visible = false;
+        }
+
+        private bool currentRent = false;
+        private void ClientViewRental_Load(object sender, EventArgs e)
+        {
+            string rentQuery = "SELECT RentedBy FROM Vehicles";
+
+            using (OleDbCommand cmd = new OleDbCommand(rentQuery, connection))
+            {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+
+                    if (rentedBy == SystemManager.currentUserID)
+                    {
+                        connection.Close();
+                        currentRent = true;
+                        break;
+                    }
+                }
+                connection.Close();
+            }
+            if (currentRent == false)
+            {
+                //i visible false tanan labels
+                HideStarSelection();
             }
         }
     }

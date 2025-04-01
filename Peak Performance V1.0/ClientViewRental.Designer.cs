@@ -719,6 +719,7 @@
             Name = "ClientViewRental";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ClientViewRental";
+            Load += ClientViewRental_Load;
             panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).EndInit();
             parrotGradientPanel2.ResumeLayout(false);
