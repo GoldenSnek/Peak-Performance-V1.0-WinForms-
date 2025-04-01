@@ -17,7 +17,7 @@ namespace Peak_Performance_V1._0
             InitializeComponent();
             tmrProgress.Start();
         }
-        private void tmrProgress_Tick(object sender, EventArgs e)
+        private void tmrProgress_Tick(object sender, EventArgs e) //MAIN EVENT: loading
         {
             if (SystemManager.splash == 1)
             {

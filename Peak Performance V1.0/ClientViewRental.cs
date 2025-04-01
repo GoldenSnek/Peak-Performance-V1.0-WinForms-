@@ -19,6 +19,7 @@ namespace Peak_Performance_V1._0
         private PictureBox[] vehicleStars;
         private int UserRating = 0;
         private int VehicleRating = 0;
+        private bool currentRent = false;
         private Image starFilled = Properties.Resources.RateYes;
         private Image starEmpty = Properties.Resources.RateNo;
 
@@ -31,7 +32,38 @@ namespace Peak_Performance_V1._0
             LoadDetails();
             AssignEventHandlers();
         }
-        private void LoadDetails()
+
+        //EVENTS
+        private void ClientViewRental_Load(object sender, EventArgs e) //INITIAL EVENT
+        {
+            string rentQuery = "SELECT RentedBy FROM Vehicles";
+
+            using (OleDbCommand cmd = new OleDbCommand(rentQuery, connection))
+            {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+
+                    if (rentedBy == SystemManager.currentUserID)
+                    {
+                        connection.Close();
+                        currentRent = true;
+                        break;
+                    }
+                }
+                connection.Close();
+            }
+            if (currentRent == false)
+            {
+                //i visible false tanan labels
+                HideStarSelection();
+            }
+        }
+        private void LoadDetails() //MAIN EVENT: Load Details
         {
             string displayQuery = $"SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price FROM OwnerVehicleRentalQuery WHERE ClientID = {SystemManager.currentUserID}";
 
@@ -111,8 +143,7 @@ namespace Peak_Performance_V1._0
                     }
 
                     double vehicleRating = Convert.ToDouble(reader["VehicleRating"]);
-
-
+                    lblVehicleRating.Text = $"Rating: {vehicleRating.ToString()}";
 
                     if (vehicleImage != null)
                         picVehicleImage.Image = vehicleImage;
@@ -161,74 +192,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void AssignEventHandlers()
-        {
-            // Assigning existing PictureBoxes to arrays
-            userStars = new PictureBox[] { picUR1, picUR2, picUR3, picUR4, picUR5 };
-            vehicleStars = new PictureBox[] { picVR1, picVR2, picVR3, picVR4, picVR5 };
-
-            // Attach event handlers for user rating stars
-            for (int i = 0; i < userStars.Length; i++)
-            {
-                userStars[i].Tag = i + 1; // Set tag for rating value
-                userStars[i].MouseEnter += UserStar_MouseEnter;
-                userStars[i].MouseLeave += UserStar_MouseLeave;
-                userStars[i].Click += UserStar_Click;
-            }
-
-            // Attach event handlers for vehicle rating stars
-            for (int i = 0; i < vehicleStars.Length; i++)
-            {
-                vehicleStars[i].Tag = i + 1;
-                vehicleStars[i].MouseEnter += VehicleStar_MouseEnter;
-                vehicleStars[i].MouseLeave += VehicleStar_MouseLeave;
-                vehicleStars[i].Click += VehicleStar_Click;
-            }
-        }
-
-        private void UserStar_MouseEnter(object sender, EventArgs e)
-        {
-            int hoverIndex = (int)((PictureBox)sender).Tag;
-            HighlightStars(userStars, hoverIndex);
-        }
-
-        private void UserStar_MouseLeave(object sender, EventArgs e)
-        {
-            HighlightStars(userStars, UserRating);
-        }
-
-        private void UserStar_Click(object sender, EventArgs e)
-        {
-            UserRating = (int)((PictureBox)sender).Tag;
-            HighlightStars(userStars, UserRating);
-        }
-
-        private void VehicleStar_MouseEnter(object sender, EventArgs e)
-        {
-            int hoverIndex = (int)((PictureBox)sender).Tag;
-            HighlightStars(vehicleStars, hoverIndex);
-        }
-
-        private void VehicleStar_MouseLeave(object sender, EventArgs e)
-        {
-            HighlightStars(vehicleStars, VehicleRating);
-        }
-
-        private void VehicleStar_Click(object sender, EventArgs e)
-        {
-            VehicleRating = (int)((PictureBox)sender).Tag;
-            HighlightStars(vehicleStars, VehicleRating);
-        }
-
-        private void HighlightStars(PictureBox[] stars, int count)
-        {
-            for (int i = 0; i < stars.Length; i++)
-            {
-                stars[i].Image = (i < count) ? starFilled : starEmpty;
-            }
-        }
-
-        private void btnRate_Click(object sender, EventArgs e)
+        private void btnRate_Click(object sender, EventArgs e) //MAIN EVENT: Save the ratings
         {
             string getQuery = "SELECT UserRating, UserRaters, UserTotalRatings, VehicleRating, VehicleRaters, VehicleTotalRatings, RateStatus " +
                               "FROM RatingQuery WHERE OwnerID = @ownerID AND VehicleID = @vehicleID";
@@ -241,39 +205,35 @@ namespace Peak_Performance_V1._0
                 connection.Open();
                 OleDbDataReader reader = cmd.ExecuteReader();
 
-                // Variables to store database values
+                //variables to store database values
                 int userRaters = 0, userTotalRatings = 0;
                 double userRating = 0;
                 int vehicleRaters = 0, vehicleTotalRatings = 0;
                 double vehicleRating = 0;
                 string rateStatus = "";
 
-                // Read current values from the database
+                //read current values from the database
                 if (reader.Read())
                 {
-                    userRating = Convert.ToDouble(reader[0]);          // Convert UserRating to double
-                    userRaters = Convert.ToInt32(reader[1]);           // Convert UserRaters to int
-                    userTotalRatings = Convert.ToInt32(reader[2]);     // Convert UserTotalRatings to int
-                    vehicleRating = Convert.ToDouble(reader[3]);       // Convert VehicleRating to double
-                    vehicleRaters = Convert.ToInt32(reader[4]);        // Convert VehicleRaters to int
-                    vehicleTotalRatings = Convert.ToInt32(reader[5]);  // Convert VehicleTotalRatings to int
-                    rateStatus = reader[6].ToString();                 // Get RateStatus (Yes/No)
+                    userRating = Convert.ToDouble(reader[0]);
+                    userRaters = Convert.ToInt32(reader[1]);
+                    userTotalRatings = Convert.ToInt32(reader[2]);
+                    vehicleRating = Convert.ToDouble(reader[3]);
+                    vehicleRaters = Convert.ToInt32(reader[4]);
+                    vehicleTotalRatings = Convert.ToInt32(reader[5]);
+                    rateStatus = reader[6].ToString();
                 }
                 reader.Close();
 
-                // Check if rating is already done
                 if (rateStatus == "Yes")
                 {
                     MessageBox.Show("You have already rated this vehicle.", "Rating Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     connection.Close();
-                    return;  // Stop execution
+                    return;
                 }
+                int userGivenRating = UserRating;
+                int vehicleGivenRating = VehicleRating;
 
-                // Get the selected ratings from stars (assuming you have integer values)
-                int userGivenRating = UserRating; // 1-5 from stars
-                int vehicleGivenRating = VehicleRating; // 1-5 from stars
-
-                // Update values
                 userRaters += 1;
                 userTotalRatings += userGivenRating;
                 userRating = (double)userTotalRatings / userRaters;
@@ -282,7 +242,6 @@ namespace Peak_Performance_V1._0
                 vehicleTotalRatings += vehicleGivenRating;
                 vehicleRating = (double)vehicleTotalRatings / vehicleRaters;
 
-                // Update Query
                 string updateQuery = "UPDATE RatingQuery SET UserRating = @userRating, UserRaters = @userRaters, UserTotalRatings = @userTotalRatings, " +
                                      "VehicleRating = @vehicleRating, VehicleRaters = @vehicleRaters, VehicleTotalRatings = @vehicleTotalRatings, RateStatus = 'Yes' " +
                                      "WHERE OwnerID = @ownerID AND VehicleID = @vehicleID";
@@ -315,15 +274,79 @@ namespace Peak_Performance_V1._0
                 finally
                 {
                     if (connection.State == ConnectionState.Open)
-                    {
                         connection.Close();
-                    }
                 }
             }
         }
 
-        // Method to disable rating stars after submission
-        private void DisableStarSelection()
+        //SUPPORTING EVENTS
+        private void AssignEventHandlers() //SUPPORTING EVENT: Attach events to the stars (for rating)
+        {
+            //assigning existing PictureBoxes to arrays
+            userStars = new PictureBox[] { picUR1, picUR2, picUR3, picUR4, picUR5 };
+            vehicleStars = new PictureBox[] { picVR1, picVR2, picVR3, picVR4, picVR5 };
+
+            //attach event handlers for user rating stars
+            for (int i = 0; i < userStars.Length; i++)
+            {
+                userStars[i].Tag = i + 1; // Set tag for rating value
+                userStars[i].MouseEnter += UserStar_MouseEnter;
+                userStars[i].MouseLeave += UserStar_MouseLeave;
+                userStars[i].Click += UserStar_Click;
+            }
+
+            //attach event handlers for vehicle rating stars
+            for (int i = 0; i < vehicleStars.Length; i++)
+            {
+                vehicleStars[i].Tag = i + 1;
+                vehicleStars[i].MouseEnter += VehicleStar_MouseEnter;
+                vehicleStars[i].MouseLeave += VehicleStar_MouseLeave;
+                vehicleStars[i].Click += VehicleStar_Click;
+            }
+        }
+
+        private void UserStar_MouseEnter(object sender, EventArgs e) //SUPPORTING EVENT: User star
+        {
+            int hoverIndex = (int)((PictureBox)sender).Tag;
+            HighlightStars(userStars, hoverIndex);
+        }
+
+        private void UserStar_MouseLeave(object sender, EventArgs e) //SUPPORTING EVENT: User star
+        {
+            HighlightStars(userStars, UserRating);
+        }
+
+        private void UserStar_Click(object sender, EventArgs e) //SUPPORTING EVENT: User star
+        {
+            UserRating = (int)((PictureBox)sender).Tag;
+            HighlightStars(userStars, UserRating);
+        }
+
+        private void VehicleStar_MouseEnter(object sender, EventArgs e) //SUPPORTING EVENT: Vehicle star
+        {
+            int hoverIndex = (int)((PictureBox)sender).Tag;
+            HighlightStars(vehicleStars, hoverIndex);
+        }
+
+        private void VehicleStar_MouseLeave(object sender, EventArgs e) //SUPPORTING EVENT: Vehicle star
+        {
+            HighlightStars(vehicleStars, VehicleRating);
+        }
+
+        private void VehicleStar_Click(object sender, EventArgs e) //SUPPORTING EVENT: Vehicle star
+        {
+            VehicleRating = (int)((PictureBox)sender).Tag;
+            HighlightStars(vehicleStars, VehicleRating);
+        }
+
+        private void HighlightStars(PictureBox[] stars, int count) //SUPPORTING EVENT: Color the stars
+        {
+            for (int i = 0; i < stars.Length; i++)
+            {
+                stars[i].Image = (i < count) ? starFilled : starEmpty;
+            }
+        }
+        private void DisableStarSelection() //SUPPORTING EVENT: Disable Stars (if manag rate)
         {
             picUR1.Enabled = false;
             picUR2.Enabled = false;
@@ -337,8 +360,7 @@ namespace Peak_Performance_V1._0
             picVR5.Enabled = false;
         }
 
-        // Method to disable rating stars after submission
-        private void HideStarSelection()
+        private void HideStarSelection() //SUPPORTING EVENT: Hide stars (if manag rate)
         {
             btnRate.Visible = false;
             picUR1.Visible = false;
@@ -351,37 +373,6 @@ namespace Peak_Performance_V1._0
             picVR3.Visible = false;
             picVR4.Visible = false;
             picVR5.Visible = false;
-        }
-
-        private bool currentRent = false;
-        private void ClientViewRental_Load(object sender, EventArgs e)
-        {
-            string rentQuery = "SELECT RentedBy FROM Vehicles";
-
-            using (OleDbCommand cmd = new OleDbCommand(rentQuery, connection))
-            {
-                connection.Open();
-                OleDbDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-
-                    int rentedBy = Convert.ToInt32(reader["RentedBy"]);
-
-                    if (rentedBy == SystemManager.currentUserID)
-                    {
-                        connection.Close();
-                        currentRent = true;
-                        break;
-                    }
-                }
-                connection.Close();
-            }
-            if (currentRent == false)
-            {
-                //i visible false tanan labels
-                HideStarSelection();
-            }
         }
     }
 }

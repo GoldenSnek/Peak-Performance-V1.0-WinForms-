@@ -20,7 +20,7 @@ using System.Data.OleDb;
 namespace Peak_Performance_V1._0
 {
     
-    public partial class Home : Form
+    public partial class Home : Form, IHome
     {
         private OleDbConnection connection;
         public Home()
@@ -79,6 +79,41 @@ namespace Peak_Performance_V1._0
             lblUsername.Text = $"{SystemManager.currentUsername}";
             lblRole.Text = $"{SystemManager.currentRole}";
 
+            //set profile pic
+            string pfpQuery = "SELECT ProfilePicture FROM Users WHERE UserID = @userID";
+
+            using (OleDbCommand cmd = new OleDbCommand(pfpQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@userID", SystemManager.currentUserID);
+
+                try
+                {
+                    connection.Open();
+                    OleDbDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read() && !Convert.IsDBNull(reader["ProfilePicture"]))
+                    {
+                        byte[] imageData = (byte[])reader["ProfilePicture"];
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            picPFP.Image = Image.FromStream(ms);
+                        }
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
             //set side menu buttons visibility
             if (SystemManager.currentRole == "Vehicle Provider")
             {
@@ -133,7 +168,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplayUsers.Controls.Clear();
 
-            string displayQuery = "SELECT Username, ProfilePicture FROM Users";
+            string displayQuery = "SELECT Username, ProfilePicture, UserRating FROM Users ORDER BY UserRating DESC";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -143,7 +178,6 @@ namespace Peak_Performance_V1._0
                 while (reader.Read())
                 {
                     string? username = reader["Username"].ToString();
-
 
                     //convert image from database to PictureBox
                     Image? userImage = null;
@@ -155,14 +189,10 @@ namespace Peak_Performance_V1._0
                             userImage = Image.FromStream(ms);
                         }
                     }
-                    else
-                    {
-                        //set a default placeholder image
-                    }
 
-
+                    double userRating = Convert.ToDouble(reader["UserRating"]);
                     //create a TopProviderCard and add it to the FlowLayoutPanel
-                    TopProviderCard card = new TopProviderCard(username, userImage);
+                    TopProviderCard card = new TopProviderCard(username, userImage, userRating);
                     flpDisplayUsers.Controls.Add(card);
                 }
                 connection.Close();
@@ -172,7 +202,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplayVehicles.Controls.Clear();
 
-            string displayQuery = "SELECT GeneralType, SpecificType, Make, Model, VehicleYear, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT GeneralType, SpecificType, Make, Model, VehicleYear, VehicleImage, VehicleRating FROM Vehicles ORDER BY VehicleRating DESC";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -198,14 +228,13 @@ namespace Peak_Performance_V1._0
                             vehicleImage = Image.FromStream(ms);
                         }
                     }
-                    else
-                    {
-                        //set a default placeholder image
-                    }
 
-                    TopVehicleCard card = new TopVehicleCard(generalType, specificType, make, model, vehicleYear, vehicleImage);
+                    double vehicleRating = Convert.ToDouble(reader["VehicleRating"]);
+
+                    TopVehicleCard card = new TopVehicleCard(generalType, specificType, make, model, vehicleYear, vehicleImage, vehicleRating);
                     flpDisplayVehicles.Controls.Add(card);
                 }
+                connection.Close();
             }
         }
 

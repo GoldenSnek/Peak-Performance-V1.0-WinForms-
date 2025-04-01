@@ -74,7 +74,7 @@ namespace Peak_Performance_V1._0
         }
 
         public VehicleCard(int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string transmission, string drivetrain, string licensePlate,
-                           string color, string fuelType, int seats, double mileage, double priceDaily, double priceHourly, Image vehicleImage, string prompt)
+                           string color, string fuelType, int seats, double mileage, double priceDaily, double priceHourly, Image vehicleImage, double rating, string prompt)
         {
             InitializeComponent();
 
@@ -105,17 +105,20 @@ namespace Peak_Performance_V1._0
             lblMake.Text = $"{make}";
             lblModel.Text = $"{model}" +
                             $" {vehicleYear}";
+            lblTransmission.Text = $"Transmission: {transmission}";
             //lblLicense.Text = $"License Plate No: {licensePlate}";
             //lblColor.Text = $"Color: {color}";
             lblFuelType.Text = $"Fuel Type: {fuelType}";
             lblSeats.Text = $"Seats: {seats}";
-            //lblMileage.Text = $"Mileage: {mileage} km";
+            lblMileage.Text = $"Mileage: {mileage} km";
             lblDailyPrice.Text = $"Php {priceDaily}/day";
             lblHourlyPrice.Text = $"Php {priceHourly}/hr";
             if (vehicleImage != null)
                 picVehicle.Image = vehicleImage;
             else
                 picVehicle.Image = Properties.Resources.Car___MainLR;
+
+            lblRating.Text = rating.ToString();
 
 
             if (prompt != "")

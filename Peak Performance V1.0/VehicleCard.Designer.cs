@@ -45,8 +45,9 @@
             btnFullDetails = new ReaLTaiizor.Controls.MaterialButton();
             pictureBox1 = new PictureBox();
             lblRating = new Label();
-            lblOwner = new Label();
             lblDailyPrice = new Label();
+            lblTransmission = new Label();
+            lblMileage = new Label();
             ((System.ComponentModel.ISupportInitialize)picVehicle).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -93,7 +94,7 @@
             lblFuelType.BackColor = Color.Transparent;
             lblFuelType.Font = new Font("Arial Rounded MT Bold", 12F);
             lblFuelType.ForeColor = Color.Silver;
-            lblFuelType.Location = new Point(24, 254);
+            lblFuelType.Location = new Point(24, 230);
             lblFuelType.Name = "lblFuelType";
             lblFuelType.Size = new Size(300, 40);
             lblFuelType.TabIndex = 6;
@@ -104,9 +105,9 @@
             lblSeats.BackColor = Color.Transparent;
             lblSeats.Font = new Font("Arial Rounded MT Bold", 12F);
             lblSeats.ForeColor = Color.Silver;
-            lblSeats.Location = new Point(24, 292);
+            lblSeats.Location = new Point(24, 310);
             lblSeats.Name = "lblSeats";
-            lblSeats.Size = new Size(300, 46);
+            lblSeats.Size = new Size(150, 40);
             lblSeats.TabIndex = 7;
             lblSeats.Text = "Seats";
             // 
@@ -188,7 +189,7 @@
             btnProceed.HighEmphasis = true;
             btnProceed.Icon = null;
             btnProceed.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnProceed.Location = new Point(24, 353);
+            btnProceed.Location = new Point(24, 408);
             btnProceed.Margin = new Padding(4, 6, 4, 6);
             btnProceed.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnProceed.Name = "btnProceed";
@@ -222,7 +223,7 @@
             btnFullDetails.HighEmphasis = true;
             btnFullDetails.Icon = null;
             btnFullDetails.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnFullDetails.Location = new Point(117, 408);
+            btnFullDetails.Location = new Point(204, 408);
             btnFullDetails.Margin = new Padding(4, 6, 4, 6);
             btnFullDetails.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnFullDetails.Name = "btnFullDetails";
@@ -258,17 +259,6 @@
             lblRating.Text = "Rating";
             lblRating.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblOwner
-            // 
-            lblOwner.BackColor = Color.Transparent;
-            lblOwner.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblOwner.ForeColor = Color.Silver;
-            lblOwner.Location = new Point(24, 214);
-            lblOwner.Name = "lblOwner";
-            lblOwner.Size = new Size(300, 40);
-            lblOwner.TabIndex = 18;
-            lblOwner.Text = "Vehicle Owner";
-            // 
             // lblDailyPrice
             // 
             lblDailyPrice.BackColor = Color.Transparent;
@@ -281,6 +271,28 @@
             lblDailyPrice.Text = "Daily Price";
             lblDailyPrice.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // lblTransmission
+            // 
+            lblTransmission.BackColor = Color.Transparent;
+            lblTransmission.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblTransmission.ForeColor = Color.Silver;
+            lblTransmission.Location = new Point(24, 270);
+            lblTransmission.Name = "lblTransmission";
+            lblTransmission.Size = new Size(300, 40);
+            lblTransmission.TabIndex = 22;
+            lblTransmission.Text = "Transmission";
+            // 
+            // lblMileage
+            // 
+            lblMileage.BackColor = Color.Transparent;
+            lblMileage.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblMileage.ForeColor = Color.Silver;
+            lblMileage.Location = new Point(23, 350);
+            lblMileage.Name = "lblMileage";
+            lblMileage.Size = new Size(150, 40);
+            lblMileage.TabIndex = 23;
+            lblMileage.Text = "Mileage";
+            // 
             // VehicleCard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -288,9 +300,11 @@
             BackColor = Color.FromArgb(45, 60, 75);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(lblMileage);
+            Controls.Add(lblSeats);
+            Controls.Add(lblTransmission);
             Controls.Add(lblRating);
             Controls.Add(pictureBox1);
-            Controls.Add(lblOwner);
             Controls.Add(parrotGradientPanel1);
             Controls.Add(pnlLeft);
             Controls.Add(pnlRight);
@@ -303,7 +317,6 @@
             Controls.Add(lblType);
             Controls.Add(lblFuelType);
             Controls.Add(lblDailyPrice);
-            Controls.Add(lblSeats);
             Controls.Add(lblHourlyPrice);
             DoubleBuffered = true;
             Name = "VehicleCard";
@@ -332,7 +345,8 @@
         private ReaLTaiizor.Controls.MaterialButton btnFullDetails;
         private PictureBox pictureBox1;
         private Label lblRating;
-        private Label lblOwner;
         private Label lblDailyPrice;
+        private Label lblTransmission;
+        private Label lblMileage;
     }
 }

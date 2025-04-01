@@ -53,6 +53,7 @@
             btnSave = new ReaLTaiizor.Controls.MaterialButton();
             btnDelete = new ReaLTaiizor.Controls.MaterialButton();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).BeginInit();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
@@ -61,6 +62,7 @@
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // picProfilePicture
@@ -533,11 +535,23 @@
             parrotGradientPanel1.TopLeft = Color.FromArgb(192, 64, 0);
             parrotGradientPanel1.TopRight = Color.FromArgb(255, 192, 128);
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.Search;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(964, 704);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 55;
+            pictureBox1.TabStop = false;
+            // 
             // ManageAccount
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(964, 704);
             Controls.Add(parrotGradientPanel1);
             Controls.Add(btnDelete);
@@ -557,6 +571,7 @@
             Controls.Add(lblUserID);
             Controls.Add(lblRole);
             Controls.Add(lblUsername);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManageAccount";
             StartPosition = FormStartPosition.CenterScreen;
@@ -570,6 +585,7 @@
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             parrotGradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -601,5 +617,6 @@
         private ReaLTaiizor.Controls.MaterialButton btnSave;
         private ReaLTaiizor.Controls.MaterialButton btnDelete;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
+        private PictureBox pictureBox1;
     }
 }

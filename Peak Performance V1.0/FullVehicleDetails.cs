@@ -25,7 +25,7 @@ namespace Peak_Performance_V1._0
             tmrFadeIn.Start();
         }
 
-        void LoadVehicleDetails(string type)
+        void LoadVehicleDetails(string type) //MAIN EVENT
         {
             if (type == "Owner")
             {
@@ -87,8 +87,7 @@ namespace Peak_Performance_V1._0
                         }
 
                         double vehicleRating = Convert.ToDouble(reader["VehicleRating"]);
-
-
+                        lblVehicleRating.Text = $"Rating: {vehicleRating.ToString()}";
 
                         if (vehicleImage != null)
                             picVehicleImage.Image = vehicleImage;
@@ -224,8 +223,7 @@ namespace Peak_Performance_V1._0
                         }
 
                         double vehicleRating = Convert.ToDouble(reader["VehicleRating"]);
-
-
+                        lblVehicleRating.Text = $"Rating: {vehicleRating.ToString()}";
 
                         if (vehicleImage != null)
                             picVehicleImage.Image = vehicleImage;
@@ -276,13 +274,13 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void picBack_Click(object sender, EventArgs e)
+        private void picBack_Click(object sender, EventArgs e) //NAVIGATION EVENT: Exit
         {
             this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
             this.Close();
         }
 
-        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade-in animation
         {
             Opacity += 0.1;
             if (Opacity >= 1)
@@ -291,6 +289,7 @@ namespace Peak_Performance_V1._0
 
         /*
         //singleton
+        //nvm useless mas chuy if dialog
         private static FullVehicleDetails instance;
         public static FullVehicleDetails GetInstance(int vehicleID)
         {

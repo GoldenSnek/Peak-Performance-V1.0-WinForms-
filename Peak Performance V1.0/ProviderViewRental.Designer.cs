@@ -36,9 +36,7 @@
             lblApproval = new Label();
             lblCurrent = new Label();
             panel2 = new Panel();
-            label4 = new Label();
             parrotBarGraph1 = new ReaLTaiizor.Controls.ParrotBarGraph();
-            label1 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -67,7 +65,7 @@
             lblStatistics.AutoSize = true;
             lblStatistics.Font = new Font("Copperplate Gothic Bold", 14.25F);
             lblStatistics.ForeColor = Color.FromArgb(255, 128, 0);
-            lblStatistics.Location = new Point(65, 398);
+            lblStatistics.Location = new Point(61, 28);
             lblStatistics.Name = "lblStatistics";
             lblStatistics.Size = new Size(119, 21);
             lblStatistics.TabIndex = 3;
@@ -111,25 +109,12 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(35, 40, 60);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(parrotBarGraph1);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(lblStatistics);
             panel2.Location = new Point(720, 50);
             panel2.Name = "panel2";
             panel2.Size = new Size(244, 654);
             panel2.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top;
-            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(6, 116);
-            label4.Name = "label4";
-            label4.Size = new Size(232, 196);
-            label4.TabIndex = 26;
-            label4.Text = "Client Name:\r\n\r\nHours/Days Rented:\r\n\r\nTotal Price:\r\n\r\nAdditional Note/s:";
             // 
             // parrotBarGraph1
             // 
@@ -138,7 +123,7 @@
             parrotBarGraph1.GraphOrientation = ReaLTaiizor.Controls.ParrotBarGraph.Orientation.Vertical;
             parrotBarGraph1.GraphStyle = ReaLTaiizor.Controls.ParrotBarGraph.Style.Material;
             parrotBarGraph1.Items = (List<int>)resources.GetObject("parrotBarGraph1.Items");
-            parrotBarGraph1.Location = new Point(9, 443);
+            parrotBarGraph1.Location = new Point(10, 226);
             parrotBarGraph1.Name = "parrotBarGraph1";
             parrotBarGraph1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotBarGraph1.ShowGrid = false;
@@ -151,18 +136,6 @@
             parrotBarGraph1.TextColor = Color.FromArgb(120, 120, 120);
             parrotBarGraph1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotBarGraph1.UnfilledColor = Color.FromArgb(37, 40, 49);
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Font = new Font("Copperplate Gothic Bold", 14.25F);
-            label1.ForeColor = Color.FromArgb(255, 128, 0);
-            label1.Location = new Point(83, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(91, 21);
-            label1.TabIndex = 4;
-            label1.Text = "Details";
             // 
             // ProviderViewRental
             // 
@@ -193,8 +166,6 @@
         private Label lblCurrent;
         private Panel panel2;
         private Label lblApproval;
-        private Label label1;
         private ReaLTaiizor.Controls.ParrotBarGraph parrotBarGraph1;
-        private Label label4;
     }
 }

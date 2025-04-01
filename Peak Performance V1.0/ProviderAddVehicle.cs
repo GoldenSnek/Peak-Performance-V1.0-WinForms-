@@ -29,7 +29,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -60,7 +60,6 @@ namespace Peak_Performance_V1._0
                         double priceDaily = Convert.ToDouble(reader["PriceDaily"]);
                         double priceHourly = Convert.ToDouble(reader["PriceHourly"]);
 
-
                         //convert image from database to PictureBox
                         Image? vehicleImage = null;
                         if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
@@ -71,14 +70,11 @@ namespace Peak_Performance_V1._0
                                 vehicleImage = Image.FromStream(ms);
                             }
                         }
-                        else
-                        {
-                            //set a default placeholder image
-                        }
+                        double rating = Convert.ToDouble(reader["VehicleRating"]);
 
                         //create a VehicleCard and add it to the FlowLayoutPanel
                         VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
-                               color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "");
+                               color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "");
                         card.FullDetailsClicked += Card_FullDetailsClicked;
                         flpDisplay.Controls.Add(card);
                     }
@@ -191,7 +187,7 @@ namespace Peak_Performance_V1._0
         }
 
         //SUPPORTING EVENTS
-        private void Card_FullDetailsClicked(int vehicleID)
+        private void Card_FullDetailsClicked(int vehicleID) //SUPPORTING EVENT: Full Details
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();

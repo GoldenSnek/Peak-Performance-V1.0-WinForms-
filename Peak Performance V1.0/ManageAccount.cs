@@ -24,38 +24,19 @@ namespace Peak_Performance_V1._0
             this.homeForm = home; // Store reference to home form
         }
 
-        //SUPPORTING EVENT
-        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
+        //MAIN EVENTS
+        private void ManageAccount_Load(object sender, EventArgs e) //INITIAL EVENT
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            if (SystemManager.currentRole == "Vehicle Provider")
             {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    picProfilePicture.Image = Image.FromFile(openFileDialog.FileName);
-                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use //pwede ra i .visible=false
-                }
-            }
-        }
-        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear all textboxes
-        {
-            txtFullname.Text = string.Empty;
-            txtAddress.Text = string.Empty;
-            txtBirthday.Text = string.Empty;
-            txtLicenseID.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtNumber.Text = string.Empty;
-        }
-        private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
-        {
-            picProfilePicture.Image = null;
-            lblImagePath.Text = null;
-        }
-
-        private void ManageAccount_Load(object sender, EventArgs e)
-        {
-            if (SystemManager.currentRole == "Client")
                 lblTotalRentals.Visible = false;
+                lblRating.Visible = true;
+            }
+            else if (SystemManager.currentRole == "Client")
+            {
+                lblTotalRentals.Visible = true;
+                lblRating.Visible = false;
+            }
 
             string displayQuery = "SELECT UserID, Username, Role, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, UserTotalRentals, ProfilePicture FROM Users";
 
@@ -116,8 +97,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) //MAIN EVENT: Update details
         {
             string imagePath = lblImagePath.Text;
             byte[] imageBytes = null;
@@ -128,11 +108,9 @@ namespace Peak_Performance_V1._0
                 return;
             }
 
-            if (!string.IsNullOrWhiteSpace(imagePath)) // If a new image is selected
-            {
+            if (!string.IsNullOrWhiteSpace(imagePath)) //if a new image is selected
                 imageBytes = File.ReadAllBytes(imagePath);
-            }
-            else if (picProfilePicture.Image == null) // If an image exists in the PictureBox
+            else if (picProfilePicture.Image == null) //if an image exists in the PictureBox
             {
                 MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -190,10 +168,8 @@ namespace Peak_Performance_V1._0
                 }
             }
         }
-
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete Account and all vehicles owned (di pa functional all vehicles owned)
         {
-
             //ALSO DELETE ALL VEHICLES IN THE FUTURE (kapoy pa)
 
             string deleteQuery = $"DELETE FROM Users WHERE UserID = {SystemManager.currentUserID}";
@@ -206,17 +182,15 @@ namespace Peak_Performance_V1._0
                     connection.Close();
                     MessageBox.Show("BYEBYE", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Close the Home form
+                    //close the Home form
                     if (homeForm != null)
-                    {
                         homeForm.Close();
-                    }
 
-                    // Open login form
+                    //ppen login form
                     MainLR mainLR = new MainLR();
                     mainLR.Show();
 
-                    this.Close(); // Close ManageAccount form
+                    this.Close(); //close ManageAccount form
                 }
                 catch (Exception ex)
                 {
@@ -228,6 +202,33 @@ namespace Peak_Performance_V1._0
                     connection.Close();
                 }
             }
+        }
+        //SUPPORTING EVENT
+        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    picProfilePicture.Image = Image.FromFile(openFileDialog.FileName);
+                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use //pwede ra i .visible=false
+                }
+            }
+        }
+        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear all textboxes
+        {
+            txtFullname.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtBirthday.Text = string.Empty;
+            txtLicenseID.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtNumber.Text = string.Empty;
+        }
+        private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
+        {
+            picProfilePicture.Image = null;
+            lblImagePath.Text = null;
         }
     }
 }

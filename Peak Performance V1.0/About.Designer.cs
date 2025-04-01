@@ -34,17 +34,17 @@
             picBack = new PictureBox();
             picClose = new PictureBox();
             lblREGISTER = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            picFB = new PictureBox();
+            picDiscord = new PictureBox();
+            picGithub = new PictureBox();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
             picDrawCar = new PictureBox();
             picCar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picFB).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picDiscord).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picGithub).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picDrawCar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
             SuspendLayout();
@@ -101,41 +101,44 @@
             lblREGISTER.TabIndex = 42;
             lblREGISTER.Text = "ABOUT";
             // 
-            // pictureBox1
+            // picFB
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources.Facebook;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Location = new Point(167, 489);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
-            pictureBox1.TabIndex = 45;
-            pictureBox1.TabStop = false;
+            picFB.BackColor = Color.Transparent;
+            picFB.BackgroundImage = Properties.Resources.Facebook;
+            picFB.BackgroundImageLayout = ImageLayout.Stretch;
+            picFB.Cursor = Cursors.Hand;
+            picFB.Location = new Point(167, 489);
+            picFB.Name = "picFB";
+            picFB.Size = new Size(50, 50);
+            picFB.TabIndex = 45;
+            picFB.TabStop = false;
+            picFB.Click += picFB_Click;
             // 
-            // pictureBox2
+            // picDiscord
             // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.Discord;
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Location = new Point(361, 489);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
-            pictureBox2.TabIndex = 46;
-            pictureBox2.TabStop = false;
+            picDiscord.BackColor = Color.Transparent;
+            picDiscord.BackgroundImage = Properties.Resources.Discord;
+            picDiscord.BackgroundImageLayout = ImageLayout.Stretch;
+            picDiscord.Cursor = Cursors.Hand;
+            picDiscord.Location = new Point(361, 489);
+            picDiscord.Name = "picDiscord";
+            picDiscord.Size = new Size(50, 50);
+            picDiscord.TabIndex = 46;
+            picDiscord.TabStop = false;
+            picDiscord.Click += picDiscord_Click;
             // 
-            // pictureBox3
+            // picGithub
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = Properties.Resources.Github1;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Cursor = Cursors.Hand;
-            pictureBox3.Location = new Point(266, 489);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(50, 50);
-            pictureBox3.TabIndex = 47;
-            pictureBox3.TabStop = false;
+            picGithub.BackColor = Color.Transparent;
+            picGithub.BackgroundImage = Properties.Resources.Github1;
+            picGithub.BackgroundImageLayout = ImageLayout.Stretch;
+            picGithub.Cursor = Cursors.Hand;
+            picGithub.Location = new Point(266, 489);
+            picGithub.Name = "picGithub";
+            picGithub.Size = new Size(50, 50);
+            picGithub.TabIndex = 47;
+            picGithub.TabStop = false;
+            picGithub.Click += picGithub_Click;
             // 
             // tmrFadeIn
             // 
@@ -174,9 +177,9 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
             Controls.Add(lblREGISTER);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(picGithub);
+            Controls.Add(picDiscord);
+            Controls.Add(picFB);
             Controls.Add(picBack);
             Controls.Add(picClose);
             Controls.Add(lblAbout);
@@ -191,9 +194,9 @@
             Load += About_Load;
             ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picFB).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picDiscord).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picGithub).EndInit();
             ((System.ComponentModel.ISupportInitialize)picDrawCar).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
             ResumeLayout(false);
@@ -206,9 +209,9 @@
         private PictureBox picBack;
         private PictureBox picClose;
         private Label lblREGISTER;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private PictureBox picFB;
+        private PictureBox picDiscord;
+        private PictureBox picGithub;
         private System.Windows.Forms.Timer tmrFadeIn;
         private PictureBox picDrawCar;
         private PictureBox picCar;

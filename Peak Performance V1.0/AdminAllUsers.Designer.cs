@@ -94,6 +94,7 @@
             btnRemove.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnRemove.UseAccentColor = false;
             btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
             // 
             // AdminAllUsers
             // 

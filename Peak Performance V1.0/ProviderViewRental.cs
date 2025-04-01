@@ -26,7 +26,7 @@ namespace Peak_Performance_V1._0
         private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
         {
             flpWaitingApproval.Controls.Clear();
-            string displayQuery = "SELECT Status, VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage FROM VehicleRentalQuery";
+            string displayQuery = "SELECT Status, VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating FROM VehicleRentalQuery";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -67,15 +67,13 @@ namespace Peak_Performance_V1._0
                             vehicleImage = Image.FromStream(ms);
                         }
                     }
-                    else
-                    {
-                        //set a default placeholder image
-                    }
+
+                    double rating = Convert.ToDouble(reader["VehicleRating"]);
 
                     if (ownerID == SystemManager.currentUserID && status == "Unpaid")
                     {
                         VehicleCard card1 = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
-                                                            color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Approve");
+                                                            color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Approve");
 
                         card1.FullDetailsClickedRent += Card_FullDetailsClickedRent;
                         card1.ApproveClicked += Card_ApproveClicked;
@@ -85,7 +83,7 @@ namespace Peak_Performance_V1._0
                     else if (ownerID == SystemManager.currentUserID && status == "Ongoing")
                     {
                         VehicleCard card2 = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
-                                                            color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Finish Rental");
+                                                            color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Finish Rental");
 
                         card2.FullDetailsClickedRent += Card_FullDetailsClickedRent;
                         card2.FinishRentalClicked += Card_FinishRentalClicked;
@@ -196,7 +194,7 @@ namespace Peak_Performance_V1._0
                 {
                     connection.Close();
                     LoadVehicles();
-                    MessageBox.Show("test");
+                    //MessageBox.Show("test");
                 }
             }
         }

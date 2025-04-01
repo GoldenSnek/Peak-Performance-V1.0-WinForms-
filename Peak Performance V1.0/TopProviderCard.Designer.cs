@@ -136,13 +136,12 @@
             // 
             // lblRating
             // 
-            lblRating.AutoSize = true;
             lblRating.BackColor = Color.Transparent;
-            lblRating.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRating.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRating.ForeColor = Color.Lavender;
-            lblRating.Location = new Point(44, 110);
+            lblRating.Location = new Point(44, 105);
             lblRating.Name = "lblRating";
-            lblRating.Size = new Size(49, 15);
+            lblRating.Size = new Size(62, 25);
             lblRating.TabIndex = 21;
             lblRating.Text = "Rating";
             lblRating.TextAlign = ContentAlignment.MiddleLeft;
@@ -169,7 +168,6 @@
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

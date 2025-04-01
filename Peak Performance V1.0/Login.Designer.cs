@@ -110,6 +110,7 @@
             txtUsername.HideSelection = true;
             txtUsername.Hint = "Username";
             txtUsername.LeadingIcon = Properties.Resources.Username;
+            txtUsername.LeaveOnEnterKey = true;
             txtUsername.Location = new Point(150, 184);
             txtUsername.MaxLength = 32767;
             txtUsername.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -141,6 +142,7 @@
             txtPassword.HideSelection = true;
             txtPassword.Hint = "Password";
             txtPassword.LeadingIcon = Properties.Resources.Password;
+            txtPassword.LeaveOnEnterKey = true;
             txtPassword.Location = new Point(150, 273);
             txtPassword.MaxLength = 32767;
             txtPassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;

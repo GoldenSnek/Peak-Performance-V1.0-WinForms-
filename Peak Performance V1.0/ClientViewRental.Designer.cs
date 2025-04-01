@@ -44,11 +44,7 @@
             lblLicensePlate = new Label();
             lblDrivetrain = new Label();
             lblTransmission = new Label();
-            lblModel = new Label();
-            lblMake = new Label();
             lblFuelType = new Label();
-            lblType = new Label();
-            lblVehicle = new Label();
             parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             picProfilePicture = new PictureBox();
             lblNumber = new Label();
@@ -74,6 +70,9 @@
             label1 = new Label();
             label2 = new Label();
             btnRate = new ReaLTaiizor.Controls.MaterialButton();
+            lblModel = new Label();
+            lblMake = new Label();
+            lblType = new Label();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).BeginInit();
             parrotGradientPanel2.SuspendLayout();
@@ -96,7 +95,7 @@
             lblRentalDetails.AutoSize = true;
             lblRentalDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRentalDetails.ForeColor = SystemColors.Control;
-            lblRentalDetails.Location = new Point(306, 193);
+            lblRentalDetails.Location = new Point(324, 190);
             lblRentalDetails.Name = "lblRentalDetails";
             lblRentalDetails.Size = new Size(182, 18);
             lblRentalDetails.TabIndex = 7;
@@ -124,7 +123,7 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(306, 521);
+            btnReceipt.Location = new Point(288, 647);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
@@ -142,7 +141,7 @@
             lblNotes.BackColor = Color.Transparent;
             lblNotes.Font = new Font("Arial Rounded MT Bold", 12F);
             lblNotes.ForeColor = Color.White;
-            lblNotes.Location = new Point(306, 389);
+            lblNotes.Location = new Point(324, 391);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(200, 71);
             lblNotes.TabIndex = 93;
@@ -154,7 +153,7 @@
             lblExtras.BackColor = Color.Transparent;
             lblExtras.Font = new Font("Arial Rounded MT Bold", 12F);
             lblExtras.ForeColor = Color.White;
-            lblExtras.Location = new Point(306, 294);
+            lblExtras.Location = new Point(324, 291);
             lblExtras.Name = "lblExtras";
             lblExtras.Size = new Size(200, 40);
             lblExtras.TabIndex = 92;
@@ -166,7 +165,7 @@
             lblPayment.BackColor = Color.Transparent;
             lblPayment.Font = new Font("Arial Rounded MT Bold", 12F);
             lblPayment.ForeColor = Color.White;
-            lblPayment.Location = new Point(306, 344);
+            lblPayment.Location = new Point(324, 343);
             lblPayment.Name = "lblPayment";
             lblPayment.Size = new Size(200, 40);
             lblPayment.TabIndex = 91;
@@ -178,7 +177,7 @@
             lblDuration.BackColor = Color.Transparent;
             lblDuration.Font = new Font("Arial Rounded MT Bold", 12F);
             lblDuration.ForeColor = Color.White;
-            lblDuration.Location = new Point(306, 243);
+            lblDuration.Location = new Point(324, 240);
             lblDuration.Name = "lblDuration";
             lblDuration.Size = new Size(200, 40);
             lblDuration.TabIndex = 90;
@@ -190,7 +189,7 @@
             lblVehicleRating.BackColor = Color.Transparent;
             lblVehicleRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblVehicleRating.ForeColor = Color.White;
-            lblVehicleRating.Location = new Point(12, 678);
+            lblVehicleRating.Location = new Point(12, 540);
             lblVehicleRating.Name = "lblVehicleRating";
             lblVehicleRating.Size = new Size(200, 40);
             lblVehicleRating.TabIndex = 89;
@@ -198,6 +197,7 @@
             // 
             // panel
             // 
+            panel.Anchor = AnchorStyles.None;
             panel.BottomLeft = Color.FromArgb(255, 192, 128);
             panel.BottomRight = Color.FromArgb(192, 64, 0);
             panel.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -231,7 +231,7 @@
             lblMileage.BackColor = Color.Transparent;
             lblMileage.Font = new Font("Arial Rounded MT Bold", 12F);
             lblMileage.ForeColor = Color.White;
-            lblMileage.Location = new Point(12, 624);
+            lblMileage.Location = new Point(12, 490);
             lblMileage.Name = "lblMileage";
             lblMileage.Size = new Size(200, 40);
             lblMileage.TabIndex = 85;
@@ -243,7 +243,7 @@
             lblSeats.BackColor = Color.Transparent;
             lblSeats.Font = new Font("Arial Rounded MT Bold", 12F);
             lblSeats.ForeColor = Color.White;
-            lblSeats.Location = new Point(12, 574);
+            lblSeats.Location = new Point(12, 440);
             lblSeats.Name = "lblSeats";
             lblSeats.Size = new Size(200, 40);
             lblSeats.TabIndex = 84;
@@ -255,7 +255,7 @@
             lblColor.BackColor = Color.Transparent;
             lblColor.Font = new Font("Arial Rounded MT Bold", 12F);
             lblColor.ForeColor = Color.White;
-            lblColor.Location = new Point(12, 470);
+            lblColor.Location = new Point(12, 343);
             lblColor.Name = "lblColor";
             lblColor.Size = new Size(200, 40);
             lblColor.TabIndex = 83;
@@ -267,7 +267,7 @@
             lblLicensePlate.BackColor = Color.Transparent;
             lblLicensePlate.Font = new Font("Arial Rounded MT Bold", 12F);
             lblLicensePlate.ForeColor = Color.White;
-            lblLicensePlate.Location = new Point(12, 430);
+            lblLicensePlate.Location = new Point(12, 293);
             lblLicensePlate.Name = "lblLicensePlate";
             lblLicensePlate.Size = new Size(200, 40);
             lblLicensePlate.TabIndex = 82;
@@ -279,7 +279,7 @@
             lblDrivetrain.BackColor = Color.Transparent;
             lblDrivetrain.Font = new Font("Arial Rounded MT Bold", 12F);
             lblDrivetrain.ForeColor = Color.White;
-            lblDrivetrain.Location = new Point(12, 379);
+            lblDrivetrain.Location = new Point(12, 241);
             lblDrivetrain.Name = "lblDrivetrain";
             lblDrivetrain.Size = new Size(200, 40);
             lblDrivetrain.TabIndex = 81;
@@ -291,35 +291,11 @@
             lblTransmission.BackColor = Color.Transparent;
             lblTransmission.Font = new Font("Arial Rounded MT Bold", 12F);
             lblTransmission.ForeColor = Color.White;
-            lblTransmission.Location = new Point(12, 325);
+            lblTransmission.Location = new Point(12, 190);
             lblTransmission.Name = "lblTransmission";
             lblTransmission.Size = new Size(200, 40);
             lblTransmission.TabIndex = 80;
             lblTransmission.Text = "Transmission";
-            // 
-            // lblModel
-            // 
-            lblModel.Anchor = AnchorStyles.None;
-            lblModel.BackColor = Color.Transparent;
-            lblModel.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblModel.ForeColor = Color.White;
-            lblModel.Location = new Point(12, 275);
-            lblModel.Name = "lblModel";
-            lblModel.Size = new Size(200, 40);
-            lblModel.TabIndex = 79;
-            lblModel.Text = "Model";
-            // 
-            // lblMake
-            // 
-            lblMake.Anchor = AnchorStyles.None;
-            lblMake.BackColor = Color.Transparent;
-            lblMake.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblMake.ForeColor = Color.White;
-            lblMake.Location = new Point(12, 222);
-            lblMake.Name = "lblMake";
-            lblMake.Size = new Size(200, 40);
-            lblMake.TabIndex = 78;
-            lblMake.Text = "Make";
             // 
             // lblFuelType
             // 
@@ -327,38 +303,15 @@
             lblFuelType.BackColor = Color.Transparent;
             lblFuelType.Font = new Font("Arial Rounded MT Bold", 12F);
             lblFuelType.ForeColor = Color.White;
-            lblFuelType.Location = new Point(12, 521);
+            lblFuelType.Location = new Point(12, 391);
             lblFuelType.Name = "lblFuelType";
             lblFuelType.Size = new Size(200, 40);
             lblFuelType.TabIndex = 77;
             lblFuelType.Text = "Fuel Type";
             // 
-            // lblType
-            // 
-            lblType.Anchor = AnchorStyles.None;
-            lblType.BackColor = Color.Transparent;
-            lblType.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblType.ForeColor = Color.White;
-            lblType.Location = new Point(12, 171);
-            lblType.Name = "lblType";
-            lblType.Size = new Size(200, 40);
-            lblType.TabIndex = 76;
-            lblType.Text = "Type";
-            // 
-            // lblVehicle
-            // 
-            lblVehicle.BackColor = Color.Transparent;
-            lblVehicle.Font = new Font("Copperplate Gothic Bold", 20.25F);
-            lblVehicle.ForeColor = Color.Lavender;
-            lblVehicle.Location = new Point(174, 57);
-            lblVehicle.Name = "lblVehicle";
-            lblVehicle.Size = new Size(150, 40);
-            lblVehicle.TabIndex = 75;
-            lblVehicle.Text = "Vehicle";
-            lblVehicle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // parrotGradientPanel2
             // 
+            parrotGradientPanel2.Anchor = AnchorStyles.None;
             parrotGradientPanel2.BottomLeft = Color.FromArgb(255, 192, 128);
             parrotGradientPanel2.BottomRight = Color.FromArgb(192, 64, 0);
             parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -392,7 +345,7 @@
             lblNumber.BackColor = Color.Transparent;
             lblNumber.Font = new Font("Arial Rounded MT Bold", 12F);
             lblNumber.ForeColor = Color.White;
-            lblNumber.Location = new Point(646, 488);
+            lblNumber.Location = new Point(643, 490);
             lblNumber.Name = "lblNumber";
             lblNumber.Size = new Size(200, 40);
             lblNumber.TabIndex = 73;
@@ -404,7 +357,7 @@
             lblLicenseID.BackColor = Color.Transparent;
             lblLicenseID.Font = new Font("Arial Rounded MT Bold", 12F);
             lblLicenseID.ForeColor = Color.White;
-            lblLicenseID.Location = new Point(646, 435);
+            lblLicenseID.Location = new Point(643, 440);
             lblLicenseID.Name = "lblLicenseID";
             lblLicenseID.Size = new Size(200, 40);
             lblLicenseID.TabIndex = 72;
@@ -416,7 +369,7 @@
             lblEmail.BackColor = Color.Transparent;
             lblEmail.Font = new Font("Arial Rounded MT Bold", 12F);
             lblEmail.ForeColor = Color.White;
-            lblEmail.Location = new Point(646, 344);
+            lblEmail.Location = new Point(643, 343);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(200, 40);
             lblEmail.TabIndex = 71;
@@ -428,7 +381,7 @@
             lblBirthday.BackColor = Color.Transparent;
             lblBirthday.Font = new Font("Arial Rounded MT Bold", 12F);
             lblBirthday.ForeColor = Color.White;
-            lblBirthday.Location = new Point(646, 384);
+            lblBirthday.Location = new Point(643, 391);
             lblBirthday.Name = "lblBirthday";
             lblBirthday.Size = new Size(200, 40);
             lblBirthday.TabIndex = 70;
@@ -440,7 +393,7 @@
             lblAddress.BackColor = Color.Transparent;
             lblAddress.Font = new Font("Arial Rounded MT Bold", 12F);
             lblAddress.ForeColor = Color.White;
-            lblAddress.Location = new Point(646, 294);
+            lblAddress.Location = new Point(643, 293);
             lblAddress.Name = "lblAddress";
             lblAddress.Size = new Size(200, 40);
             lblAddress.TabIndex = 69;
@@ -452,7 +405,7 @@
             lblFullname.BackColor = Color.Transparent;
             lblFullname.Font = new Font("Arial Rounded MT Bold", 12F);
             lblFullname.ForeColor = Color.White;
-            lblFullname.Location = new Point(646, 241);
+            lblFullname.Location = new Point(643, 241);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(200, 40);
             lblFullname.TabIndex = 68;
@@ -464,7 +417,7 @@
             lblUserRating.BackColor = Color.Transparent;
             lblUserRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUserRating.ForeColor = Color.White;
-            lblUserRating.Location = new Point(646, 538);
+            lblUserRating.Location = new Point(643, 540);
             lblUserRating.Name = "lblUserRating";
             lblUserRating.Size = new Size(200, 40);
             lblUserRating.TabIndex = 67;
@@ -476,7 +429,7 @@
             lblUsername.BackColor = Color.Transparent;
             lblUsername.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUsername.ForeColor = Color.White;
-            lblUsername.Location = new Point(646, 190);
+            lblUsername.Location = new Point(643, 190);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(200, 40);
             lblUsername.TabIndex = 66;
@@ -484,6 +437,7 @@
             // 
             // lblOC
             // 
+            lblOC.Anchor = AnchorStyles.None;
             lblOC.BackColor = Color.Transparent;
             lblOC.Font = new Font("Copperplate Gothic Bold", 20.25F);
             lblOC.ForeColor = Color.Lavender;
@@ -496,10 +450,11 @@
             // 
             // lblTotalPrice
             // 
+            lblTotalPrice.Anchor = AnchorStyles.None;
             lblTotalPrice.BackColor = Color.Transparent;
             lblTotalPrice.Font = new Font("Arial", 12F);
             lblTotalPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblTotalPrice.Location = new Point(306, 459);
+            lblTotalPrice.Location = new Point(12, 647);
             lblTotalPrice.Name = "lblTotalPrice";
             lblTotalPrice.Size = new Size(145, 40);
             lblTotalPrice.TabIndex = 94;
@@ -508,6 +463,7 @@
             // 
             // picUR1
             // 
+            picUR1.Anchor = AnchorStyles.None;
             picUR1.BackColor = Color.Transparent;
             picUR1.Image = Properties.Resources.RateNo;
             picUR1.Location = new Point(800, 626);
@@ -519,6 +475,7 @@
             // 
             // picUR2
             // 
+            picUR2.Anchor = AnchorStyles.None;
             picUR2.BackColor = Color.Transparent;
             picUR2.Image = Properties.Resources.RateNo;
             picUR2.Location = new Point(831, 626);
@@ -530,6 +487,7 @@
             // 
             // picUR3
             // 
+            picUR3.Anchor = AnchorStyles.None;
             picUR3.BackColor = Color.Transparent;
             picUR3.Image = Properties.Resources.RateNo;
             picUR3.Location = new Point(862, 626);
@@ -541,6 +499,7 @@
             // 
             // picUR4
             // 
+            picUR4.Anchor = AnchorStyles.None;
             picUR4.BackColor = Color.Transparent;
             picUR4.Image = Properties.Resources.RateNo;
             picUR4.Location = new Point(893, 626);
@@ -552,6 +511,7 @@
             // 
             // picUR5
             // 
+            picUR5.Anchor = AnchorStyles.None;
             picUR5.BackColor = Color.Transparent;
             picUR5.Image = Properties.Resources.RateNo;
             picUR5.Location = new Point(924, 626);
@@ -563,6 +523,7 @@
             // 
             // picVR5
             // 
+            picVR5.Anchor = AnchorStyles.None;
             picVR5.BackColor = Color.Transparent;
             picVR5.Image = Properties.Resources.RateNo;
             picVR5.Location = new Point(924, 662);
@@ -574,6 +535,7 @@
             // 
             // picVR4
             // 
+            picVR4.Anchor = AnchorStyles.None;
             picVR4.BackColor = Color.Transparent;
             picVR4.Image = Properties.Resources.RateNo;
             picVR4.Location = new Point(893, 662);
@@ -585,6 +547,7 @@
             // 
             // picVR3
             // 
+            picVR3.Anchor = AnchorStyles.None;
             picVR3.BackColor = Color.Transparent;
             picVR3.Image = Properties.Resources.RateNo;
             picVR3.Location = new Point(862, 662);
@@ -596,6 +559,7 @@
             // 
             // picVR2
             // 
+            picVR2.Anchor = AnchorStyles.None;
             picVR2.BackColor = Color.Transparent;
             picVR2.Image = Properties.Resources.RateNo;
             picVR2.Location = new Point(831, 662);
@@ -607,6 +571,7 @@
             // 
             // picVR1
             // 
+            picVR1.Anchor = AnchorStyles.None;
             picVR1.BackColor = Color.Transparent;
             picVR1.Image = Properties.Resources.RateNo;
             picVR1.Location = new Point(800, 662);
@@ -665,12 +630,54 @@
             btnRate.UseVisualStyleBackColor = true;
             btnRate.Click += btnRate_Click;
             // 
+            // lblModel
+            // 
+            lblModel.Anchor = AnchorStyles.None;
+            lblModel.BackColor = Color.Transparent;
+            lblModel.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblModel.ForeColor = Color.White;
+            lblModel.Location = new Point(174, 74);
+            lblModel.Name = "lblModel";
+            lblModel.Size = new Size(153, 50);
+            lblModel.TabIndex = 110;
+            lblModel.Text = "Model";
+            lblModel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblMake
+            // 
+            lblMake.Anchor = AnchorStyles.None;
+            lblMake.BackColor = Color.Transparent;
+            lblMake.Font = new Font("Copperplate Gothic Bold", 12F);
+            lblMake.ForeColor = Color.Lavender;
+            lblMake.Location = new Point(174, 39);
+            lblMake.Name = "lblMake";
+            lblMake.Size = new Size(153, 40);
+            lblMake.TabIndex = 109;
+            lblMake.Text = "Make";
+            lblMake.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblType
+            // 
+            lblType.Anchor = AnchorStyles.None;
+            lblType.BackColor = Color.Transparent;
+            lblType.Font = new Font("Copperplate Gothic Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblType.ForeColor = Color.Silver;
+            lblType.Location = new Point(177, 113);
+            lblType.Name = "lblType";
+            lblType.Size = new Size(153, 50);
+            lblType.TabIndex = 108;
+            lblType.Text = "Type";
+            lblType.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // ClientViewRental
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
             ClientSize = new Size(964, 704);
+            Controls.Add(lblModel);
+            Controls.Add(lblMake);
+            Controls.Add(lblType);
             Controls.Add(btnRate);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -696,11 +703,7 @@
             Controls.Add(lblLicensePlate);
             Controls.Add(lblDrivetrain);
             Controls.Add(lblTransmission);
-            Controls.Add(lblModel);
-            Controls.Add(lblMake);
             Controls.Add(lblFuelType);
-            Controls.Add(lblType);
-            Controls.Add(lblVehicle);
             Controls.Add(parrotGradientPanel2);
             Controls.Add(lblNumber);
             Controls.Add(lblLicenseID);
@@ -757,11 +760,7 @@
         private Label lblLicensePlate;
         private Label lblDrivetrain;
         private Label lblTransmission;
-        private Label lblModel;
-        private Label lblMake;
         private Label lblFuelType;
-        private Label lblType;
-        private Label lblVehicle;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
         private PictureBox picProfilePicture;
         private Label lblNumber;
@@ -787,5 +786,8 @@
         private Label label1;
         private Label label2;
         private ReaLTaiizor.Controls.MaterialButton btnRate;
+        private Label lblModel;
+        private Label lblMake;
+        private Label lblType;
     }
 }

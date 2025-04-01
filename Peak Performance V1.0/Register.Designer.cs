@@ -178,6 +178,7 @@
             txtPassword.HideSelection = true;
             txtPassword.Hint = "Password";
             txtPassword.LeadingIcon = Properties.Resources.Password;
+            txtPassword.LeaveOnEnterKey = true;
             txtPassword.Location = new Point(152, 230);
             txtPassword.MaxLength = 32767;
             txtPassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -209,6 +210,7 @@
             txtUsername.HideSelection = true;
             txtUsername.Hint = "Username";
             txtUsername.LeadingIcon = Properties.Resources.Username;
+            txtUsername.LeaveOnEnterKey = true;
             txtUsername.Location = new Point(152, 141);
             txtUsername.MaxLength = 32767;
             txtUsername.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -304,6 +306,7 @@
             txtConPass.HideSelection = true;
             txtConPass.Hint = "Confirm Password";
             txtConPass.LeadingIcon = Properties.Resources.ConPass;
+            txtConPass.LeaveOnEnterKey = true;
             txtConPass.Location = new Point(152, 322);
             txtConPass.MaxLength = 32767;
             txtConPass.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;

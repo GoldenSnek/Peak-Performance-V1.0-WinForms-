@@ -26,7 +26,7 @@ namespace Peak_Performance_V1._0
             LoadVehicleDetails();
             tmrFadeIn.Start();
         }
-        void LoadVehicleDetails()
+        void LoadVehicleDetails() //INITIAL EVENT
         {
             string displayQuery = $"SELECT UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture FROM UserVehicleQuery WHERE VehicleID = {SystemManager.currentFullDetailsVehicleID}";
 
@@ -136,73 +136,10 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-
-
-        private void tmrFadeIn_Tick(object sender, EventArgs e)
-        {
-            Opacity += 0.1;
-            if (Opacity >= 1)
-                tmrFadeIn.Stop();
-        }
-
-        private void picBack_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
-            this.Close();
-        }
-
-        [DllImport("user32.dll")]
-        private static extern void ReleaseCapture();
-        [DllImport("user32.dll")]
-        private static extern void SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HTCAPTION = 0x2;
-        private void pnlTop_MouseDown(object sender, MouseEventArgs e) //SUPPORTING EVENT: Draggable Panel
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
-            }
-        }
-
-        private void btnEstimate_Click(object sender, EventArgs e)
-        {
-            double estimate = 0;
-            double multiplier = 0;
-
-            if (cbxRent.Text == "Days")
-                multiplier = PriceDaily;
-            else if (cbxRent.Text == "Hours")
-                multiplier = PriceHourly;
-
-            estimate += multiplier * double.Parse(cbxDuration.Text);
-
-            if (cbxChildSeat.Text == "Infant")
-                estimate += 30;
-            if (cbxChildSeat.Text == "Toddler")
-                estimate += 50;
-            if (cbxSound.Text == "Premium")
-                estimate += 300;
-            if (cbxPowerbank.Text == "3,000 maH")
-                estimate += 100;
-            if (cbxPowerbank.Text == "5,000 maH")
-                estimate += 120;
-            if (cbxPowerbank.Text == "10,000 maH")
-                estimate += 150;
-            if (cbxWifi.Text == "Pocket WiFi")
-                estimate += 100;
-
-            lblEstimatedPrice.Text = $"Estimated price: Php {estimate.ToString()}";
-
-            Price = estimate;
-        }
-
-        private void btnFinalize_Click(object sender, EventArgs e)
+        private void btnFinalize_Click(object sender, EventArgs e) //MAIN EVENT: Rent
         {
             string rentalQuery = "INSERT INTO RentalDetails (VehicleID, ClientID, OwnerID, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price, Status, RateStatus) " +
-                   "VALUES (@VehicleID, @ClientID, @OwnerID, @RentType, @Duration, @PaymentType, @ChildSeat, @SoundSystem, @Powerbank, @WiFi, @Notes, @Price, @RateStatus)";
+                   "VALUES (@VehicleID, @ClientID, @OwnerID, @RentType, @Duration, @PaymentType, @ChildSeat, @SoundSystem, @Powerbank, @WiFi, @Notes, @Price, @Status, @RateStatus)";
 
             double estimate = 0;
             double multiplier = 0;
@@ -281,6 +218,66 @@ namespace Peak_Performance_V1._0
 
             this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
             this.Close();
+        }
+        private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade-in animation
+        {
+            Opacity += 0.1;
+            if (Opacity >= 1)
+                tmrFadeIn.Stop();
+        }
+
+        private void picBack_Click(object sender, EventArgs e) //NAVIGATION EVENT: Exit
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        [DllImport("user32.dll")]
+        private static extern void ReleaseCapture();
+        [DllImport("user32.dll")]
+        private static extern void SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+        private void pnlTop_MouseDown(object sender, MouseEventArgs e) //SUPPORTING EVENT: Draggable Panel
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        private void btnEstimate_Click(object sender, EventArgs e) //SUPPORTING EVENT: Estimate price
+        {
+            double estimate = 0;
+            double multiplier = 0;
+
+            if (cbxRent.Text == "Days")
+                multiplier = PriceDaily;
+            else if (cbxRent.Text == "Hours")
+                multiplier = PriceHourly;
+
+            estimate += multiplier * double.Parse(cbxDuration.Text);
+
+            if (cbxChildSeat.Text == "Infant")
+                estimate += 30;
+            if (cbxChildSeat.Text == "Toddler")
+                estimate += 50;
+            if (cbxSound.Text == "Premium")
+                estimate += 300;
+            if (cbxPowerbank.Text == "3,000 maH")
+                estimate += 100;
+            if (cbxPowerbank.Text == "5,000 maH")
+                estimate += 120;
+            if (cbxPowerbank.Text == "10,000 maH")
+                estimate += 150;
+            if (cbxWifi.Text == "Pocket WiFi")
+                estimate += 100;
+
+            lblEstimatedPrice.Text = $"Estimated price: Php {estimate.ToString()}";
+
+            Price = estimate;
         }
     }
 }

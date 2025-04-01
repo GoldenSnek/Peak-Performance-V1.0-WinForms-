@@ -9,6 +9,7 @@ using System.Data.OleDb; //database connections
 //NuGet UI packages
 using ReaLTaiizor;
 using ReaLTaiizor.Manager;
+using System.Diagnostics;
 
 namespace Peak_Performance_V1._0
 {
@@ -46,6 +47,22 @@ namespace Peak_Performance_V1._0
                 foreach (byte b in bytes)
                     builder.Append(b.ToString("x2"));
                 return builder.ToString();
+            }
+        }
+
+        public static void OpenURL(string url) //SUPPORTING METHOD: Open links
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open link: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

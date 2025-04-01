@@ -35,10 +35,10 @@
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             picVehicle = new PictureBox();
             pictureBox1 = new PictureBox();
-            lblRating = new Label();
             lblModel = new Label();
             lblMake = new Label();
             lblType = new Label();
+            lblRating = new Label();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -124,19 +124,6 @@
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
             // 
-            // lblRating
-            // 
-            lblRating.AutoSize = true;
-            lblRating.BackColor = Color.Transparent;
-            lblRating.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRating.ForeColor = Color.Lavender;
-            lblRating.Location = new Point(46, 161);
-            lblRating.Name = "lblRating";
-            lblRating.Size = new Size(49, 15);
-            lblRating.TabIndex = 21;
-            lblRating.Text = "Rating";
-            lblRating.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // lblModel
             // 
             lblModel.BackColor = Color.Transparent;
@@ -173,6 +160,18 @@
             lblType.Text = "Type";
             lblType.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // lblRating
+            // 
+            lblRating.BackColor = Color.Transparent;
+            lblRating.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRating.ForeColor = Color.Lavender;
+            lblRating.Location = new Point(46, 156);
+            lblRating.Name = "lblRating";
+            lblRating.Size = new Size(62, 25);
+            lblRating.TabIndex = 25;
+            lblRating.Text = "Rating";
+            lblRating.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // TopVehicleCard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -180,10 +179,10 @@
             BackColor = Color.FromArgb(45, 60, 75);
             BackgroundImage = Properties.Resources.BGS13;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(lblRating);
             Controls.Add(lblModel);
             Controls.Add(lblMake);
             Controls.Add(lblType);
-            Controls.Add(lblRating);
             Controls.Add(pictureBox1);
             Controls.Add(parrotGradientPanel1);
             Controls.Add(pnlLeft);
@@ -197,7 +196,6 @@
             ((System.ComponentModel.ISupportInitialize)picVehicle).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -208,10 +206,10 @@
         private Panel pnlLeft;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private PictureBox pictureBox1;
-        private Label lblRating;
         private PictureBox picVehicle;
         private Label lblModel;
         private Label lblMake;
         private Label lblType;
+        private Label lblRating;
     }
 }

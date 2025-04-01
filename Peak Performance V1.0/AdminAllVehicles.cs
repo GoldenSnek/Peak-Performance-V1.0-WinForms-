@@ -39,5 +39,10 @@ namespace Peak_Performance_V1._0
 
             dgvData.Columns[14].Visible = false;
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Peak_Performance_V1._0
 {
     public partial class TopVehicleCard : UserControl
     {
-        public TopVehicleCard(string generalType, string specificType, string make, string model, int vehicleYear, Image vehicleImage)
+        public TopVehicleCard(string generalType, string specificType, string make, string model, int vehicleYear, Image vehicleImage, double vehicleRating)
         {
             InitializeComponent();
 
@@ -25,6 +25,8 @@ namespace Peak_Performance_V1._0
                 picVehicle.Image = vehicleImage;
             else
                 picVehicle.Image = Properties.Resources.Car___MainLR;
+
+            lblRating.Text = vehicleRating.ToString();
         }
     }
 }

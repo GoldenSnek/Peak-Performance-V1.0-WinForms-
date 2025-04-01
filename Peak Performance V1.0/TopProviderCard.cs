@@ -12,7 +12,7 @@ namespace Peak_Performance_V1._0
 {
     public partial class TopProviderCard : UserControl
     {
-        public TopProviderCard(string username, Image userImage)
+        public TopProviderCard(string username, Image userImage, double userRating)
         {
             InitializeComponent();
 
@@ -21,6 +21,8 @@ namespace Peak_Performance_V1._0
                 picUser.Image = userImage;
             else
                 picUser.Image = Properties.Resources.Username;
+
+            lblRating.Text = userRating.ToString();
         }
     }
 }

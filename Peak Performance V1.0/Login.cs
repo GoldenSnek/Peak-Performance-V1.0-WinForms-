@@ -11,21 +11,6 @@ using System.Diagnostics.Eventing.Reader;
 using System.Data.OleDb; //added for database connection
 using System.Security.Cryptography; //added for password hashing
 
-//NuGet UI packages
-using ReaLTaiizor;          // Core namespace
-using ReaLTaiizor.Manager;
-using ReaLTaiizor.Controls; // For custom controls like buttons, labels, etc.
-using ReaLTaiizor.Forms;    // For using Taiizor-styled forms
-using ReaLTaiizor.Enum;     // For enumerations (e.g., themes, styles)
-
-
-
-//keywords for RealTaiizor
-//ReaLTaiizor.Colors.
-//ReaLTaiizor.Util.
-
-
-
 namespace Peak_Performance_V1._0
 {
     public partial class Login : Form
@@ -135,7 +120,6 @@ namespace Peak_Performance_V1._0
         //SUPPORTING EVENTS
         private void chkShowPass_CheckedChanged(object sender, EventArgs e) //SUPPORTING EVENT: Show/hide password
         {
-
             if (chkShowPass.Checked)
                 txtPassword.PasswordChar = '•';
             else

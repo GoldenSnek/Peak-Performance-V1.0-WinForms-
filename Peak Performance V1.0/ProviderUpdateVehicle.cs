@@ -28,7 +28,7 @@ namespace Peak_Performance_V1._0
         {
             flpDisplay.Controls.Clear();
 
-            string displayQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, RentedBy FROM Vehicles";
+            string displayQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, RentedBy, VehicleRating FROM Vehicles";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
             {
@@ -71,12 +71,13 @@ namespace Peak_Performance_V1._0
                         }
 
                         int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+                        double rating = Convert.ToDouble(reader["VehicleRating"]);
 
                         if (rentedBy == 0)
                         {
                             //create a VehicleCard and add it to the FlowLayoutPanel
                             VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
-                               color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, "Edit");
+                               color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Edit");
                             card.EditClicked += Card_EditClicked;
                             card.FullDetailsClicked += Card_FullDetailsClicked;
                             flpDisplay.Controls.Add(card);
@@ -87,85 +88,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-
-        //SUPPORTING EVENTS
-        private void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string transmission, string drivetrain, string licensePlate,
-                           string color, string fuelType, int? seats, double? mileage, double? priceDaily, double? priceHourly, Image vehicleImage)
-        {
-            SystemManager.currentEditVehicleID = vehicleID;
-            cbxGeneralType.Text = generalType;
-            cbxSpecificType.Text = specificType;
-            txtMake.Text = make;
-            txtModel.Text = model;
-            cbxYear.Text = vehicleYear.ToString();
-            cbxTransmission.Text = transmission;
-            cbxDrivetrain.Text = drivetrain;
-            txtLicense.Text = licensePlate;
-            cbxColor.Text = color;
-            cbxFuel.Text = fuelType;
-            cbxSeats.Text = seats.ToString();
-            txtMileage.Text = mileage.ToString();
-            txtPriceDaily.Text = priceDaily.ToString();
-            txtPriceHourly.Text = priceHourly.ToString();
-            picPreview.Image = vehicleImage;
-        }
-
-        private void Card_FullDetailsClicked(int vehicleID) {
-            SystemManager.currentFullDetailsVehicleID = vehicleID;
-            Form formBackground = new Form();
-            using (FullVehicleDetails detailsForm = new FullVehicleDetails("Owner"))
-            {
-                formBackground.StartPosition = FormStartPosition.Manual;
-                formBackground.FormBorderStyle = FormBorderStyle.None;
-                formBackground.Opacity = .70d;
-                formBackground.BackColor = Color.Black;
-                formBackground.WindowState = FormWindowState.Maximized;
-                formBackground.TopMost = true;
-                formBackground.Location = this.Location;
-                formBackground.ShowInTaskbar = false;
-                formBackground.Show();
-
-                detailsForm.StartPosition = FormStartPosition.CenterParent;
-                detailsForm.ShowDialog();
-
-                formBackground.Dispose();
-            }
-        }
-
-        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    picPreview.Image = Image.FromFile(openFileDialog.FileName);
-                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use
-                }
-            }
-        }
-        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear all textboxes
-        {
-            cbxGeneralType.Text = string.Empty;
-            cbxSpecificType.Text = string.Empty;
-            txtMake.Text = string.Empty;
-            txtModel.Text = string.Empty;
-            cbxYear.Text = string.Empty;
-            txtLicense.Text = string.Empty;
-            cbxColor.Text = string.Empty;
-            cbxFuel.Text = string.Empty;
-            cbxSeats.Text = string.Empty;
-            txtMileage.Text = string.Empty;
-            txtPriceDaily.Text = string.Empty;
-            txtPriceHourly.Text = string.Empty;
-        }
-        private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
-        {
-            picPreview.Image = null;
-            lblImagePath.Text = null;
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e) //MAIN EVENT: Update details
         {
             string generalType = cbxGeneralType.Text;
             string specificType = cbxSpecificType.Text;
@@ -227,11 +150,11 @@ namespace Peak_Performance_V1._0
                 return;
             }
 
-            if (!string.IsNullOrWhiteSpace(imagePath)) // If a new image is selected
+            if (!string.IsNullOrWhiteSpace(imagePath)) //if a new image is selected
             {
                 imageBytes = File.ReadAllBytes(imagePath);
             }
-            else if (picPreview.Image == null) // If an image exists in the PictureBox
+            else if (picPreview.Image == null) //if an image exists in the PictureBox
             {
                 MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -259,7 +182,7 @@ namespace Peak_Performance_V1._0
                     connection.Close(); // Ensure connection is closed
                 }
             }
-            
+
             string updateQuery = $"UPDATE Vehicles SET GeneralType = @generalType, SpecificType = @specificType, Make = @make, Model = @model, VehicleYear = @year, Transmission = @transmission, Drivetrain = @drivetrain, LicensePlate = @licensePlate, [Color] = @color, FuelType = @fuelType, Seats = @seats, Mileage = @mileage, PriceDaily = @priceDaily, PriceHourly = @priceHourly, VehicleImage = @imagePath WHERE VehicleID = {SystemManager.currentEditVehicleID}";
             using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
             {
@@ -298,8 +221,7 @@ namespace Peak_Performance_V1._0
                 }
             }
         }
-
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete vehicle
         {
             if (SystemManager.currentEditVehicleID == 0)
             {
@@ -328,6 +250,82 @@ namespace Peak_Performance_V1._0
                     connection.Close();
                 }
             }
+        }
+
+        //SUPPORTING EVENTS
+        private void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string transmission, string drivetrain,
+                                    string licensePlate, string color, string fuelType, int? seats, double? mileage, double? priceDaily, double? priceHourly, Image vehicleImage) { //SUPPORTING EVENT: Transfer details of card to the form 
+            SystemManager.currentEditVehicleID = vehicleID;
+            cbxGeneralType.Text = generalType;
+            cbxSpecificType.Text = specificType;
+            txtMake.Text = make;
+            txtModel.Text = model;
+            cbxYear.Text = vehicleYear.ToString();
+            cbxTransmission.Text = transmission;
+            cbxDrivetrain.Text = drivetrain;
+            txtLicense.Text = licensePlate;
+            cbxColor.Text = color;
+            cbxFuel.Text = fuelType;
+            cbxSeats.Text = seats.ToString();
+            txtMileage.Text = mileage.ToString();
+            txtPriceDaily.Text = priceDaily.ToString();
+            txtPriceHourly.Text = priceHourly.ToString();
+            picPreview.Image = vehicleImage;
+        }
+
+        private void Card_FullDetailsClicked(int vehicleID) { //SUPPORTING EVENT: Full Details
+            SystemManager.currentFullDetailsVehicleID = vehicleID;
+            Form formBackground = new Form();
+            using (FullVehicleDetails detailsForm = new FullVehicleDetails("Owner"))
+            {
+                formBackground.StartPosition = FormStartPosition.Manual;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.Opacity = .70d;
+                formBackground.BackColor = Color.Black;
+                formBackground.WindowState = FormWindowState.Maximized;
+                formBackground.TopMost = true;
+                formBackground.Location = this.Location;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
+
+                detailsForm.StartPosition = FormStartPosition.CenterParent;
+                detailsForm.ShowDialog();
+
+                formBackground.Dispose();
+            }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e) //SUPPORTING EVENT: Browse and select an image
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    picPreview.Image = Image.FromFile(openFileDialog.FileName);
+                    lblImagePath.Text = openFileDialog.FileName; //store image path for later use
+                }
+            }
+        }
+        private void btnClear_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear all textboxes
+        {
+            cbxGeneralType.Text = string.Empty;
+            cbxSpecificType.Text = string.Empty;
+            txtMake.Text = string.Empty;
+            txtModel.Text = string.Empty;
+            cbxYear.Text = string.Empty;
+            txtLicense.Text = string.Empty;
+            cbxColor.Text = string.Empty;
+            cbxFuel.Text = string.Empty;
+            cbxSeats.Text = string.Empty;
+            txtMileage.Text = string.Empty;
+            txtPriceDaily.Text = string.Empty;
+            txtPriceHourly.Text = string.Empty;
+        }
+        private void btnClearPicture_Click(object sender, EventArgs e) //SUPPORTING EVENT: Clear picture
+        {
+            picPreview.Image = null;
+            lblImagePath.Text = null;
         }
     }
 }

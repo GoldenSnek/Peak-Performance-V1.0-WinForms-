@@ -37,5 +37,10 @@ namespace Peak_Performance_V1._0
             adapter.Fill(dt);
             dgvData.DataSource = dt;
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
