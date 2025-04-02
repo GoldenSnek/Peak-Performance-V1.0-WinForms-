@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class AdminAllUsers : Form
+    public partial class AdminAllUsers : Form, IAdminAllUsers
     {
         private OleDbConnection connection;
         public AdminAllUsers()
@@ -21,15 +21,15 @@ namespace Peak_Performance_V1._0
             LoadData();
         }
 
-        private void LoadData() //INITIAL EVENT: Load database to datagridview
+        public void LoadData() //METHOD: Load database to datagridview
         {
             dgvData.EnableHeadersVisualStyles = false;
-            dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;  // Background color
-            dgvData.ColumnHeadersDefaultCellStyle.ForeColor = Color.Orange;      // Text color
-            dgvData.ColumnHeadersDefaultCellStyle.Font = new Font("Copperplate Gothic", 12, FontStyle.Bold); // Font style
-            dgvData.RowHeadersDefaultCellStyle.BackColor = Color.Black;  // Background color
-            dgvData.RowHeadersDefaultCellStyle.ForeColor = Color.Orange;      // Text color
-            dgvData.RowHeadersDefaultCellStyle.Font = new Font("Copperplate Gothic", 12, FontStyle.Bold); // Font style
+            dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;  //background color
+            dgvData.ColumnHeadersDefaultCellStyle.ForeColor = Color.Orange;      //text color
+            dgvData.ColumnHeadersDefaultCellStyle.Font = new Font("Copperplate Gothic", 12, FontStyle.Bold); //font style
+            dgvData.RowHeadersDefaultCellStyle.BackColor = Color.Black;  //background color
+            dgvData.RowHeadersDefaultCellStyle.ForeColor = Color.Orange;      //text color
+            dgvData.RowHeadersDefaultCellStyle.Font = new Font("Copperplate Gothic", 12, FontStyle.Bold); //font style
 
             string query = "SELECT * FROM Users";
             OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
@@ -38,7 +38,7 @@ namespace Peak_Performance_V1._0
             dgvData.DataSource = dt;
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        public void btnRemove_Click(object sender, EventArgs e)
         {
 
         }

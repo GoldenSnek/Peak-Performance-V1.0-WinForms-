@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ProviderViewRental : Form
+    public partial class ProviderViewRental : Form, IProviderViewRental
     {
         private OleDbConnection connection;
         public ProviderViewRental()
@@ -22,8 +22,7 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
-        //EVENTS
-        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
+        public void LoadVehicles() //INITIAL METHOD: Load the vehicle cards
         {
             flpWaitingApproval.Controls.Clear();
             string displayQuery = "SELECT Status, VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating FROM VehicleRentalQuery";
@@ -95,7 +94,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void Card_FullDetailsClickedRent(int vehicleID) {
+        public void Card_FullDetailsClickedRent(int vehicleID) { //SUPPROTING METHOD: View full details
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
             using (FullVehicleDetails detailsForm = new FullVehicleDetails("Client"))
@@ -116,7 +115,7 @@ namespace Peak_Performance_V1._0
                 formBackground.Dispose();
             }
         }
-        private void Card_ApproveClicked(int vehicleID)
+        public void Card_ApproveClicked(int vehicleID) //MAIN METHOD: Approve pending vehicle
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             string updateQuery = "UPDATE ClientVehicleQuery SET Status = @status, TotalRentals = TotalRentals + 1, UserTotalRentals = UserTotalRentals + 1, RentDate = @rentDate WHERE VehicleID = @vehicleID";
@@ -148,7 +147,7 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void Card_FinishRentalClicked(int vehicleID)
+        public void Card_FinishRentalClicked(int vehicleID) //MAIN METHOD: Finish rental process
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             string deleteQuery = $"DELETE FROM RentalDetails WHERE VehicleID = @vehicleID";

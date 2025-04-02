@@ -11,20 +11,21 @@ using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ClientViewRental : Form
+    public partial class ClientViewRental : Form, IClientViewRental
     {
         OleDbConnection connection;
 
         private PictureBox[] userStars;
         private PictureBox[] vehicleStars;
-        private int UserRating = 0;
-        private int VehicleRating = 0;
-        private bool currentRent = false;
         private Image starFilled = Properties.Resources.RateYes;
         private Image starEmpty = Properties.Resources.RateNo;
 
-        public int VehicleID;
-        public int OwnerID;
+        public int VehicleID { get; set; }
+        public int OwnerID { get; set; }
+        public int UserRating { get; set; }
+        public int VehicleRating { get; set; }
+        public bool CurrentRent { get; set; }
+
         public ClientViewRental()
         {
             connection = SystemManager.GetConnection();
@@ -51,19 +52,19 @@ namespace Peak_Performance_V1._0
                     if (rentedBy == SystemManager.currentUserID)
                     {
                         connection.Close();
-                        currentRent = true;
+                        CurrentRent = true;
                         break;
                     }
                 }
                 connection.Close();
             }
-            if (currentRent == false)
+            if (CurrentRent == false)
             {
                 //i visible false tanan labels
                 HideStarSelection();
             }
         }
-        private void LoadDetails() //MAIN EVENT: Load Details
+        public void LoadDetails() //MAIN METHOD: Load Details
         {
             string displayQuery = $"SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price FROM OwnerVehicleRentalQuery WHERE ClientID = {SystemManager.currentUserID}";
 
@@ -192,7 +193,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void btnRate_Click(object sender, EventArgs e) //MAIN EVENT: Save the ratings
+        public void btnRate_Click(object sender, EventArgs e) //MAIN EVENT: Save the ratings
         {
             string getQuery = "SELECT UserRating, UserRaters, UserTotalRatings, VehicleRating, VehicleRaters, VehicleTotalRatings, RateStatus " +
                               "FROM RatingQuery WHERE OwnerID = @ownerID AND VehicleID = @vehicleID";

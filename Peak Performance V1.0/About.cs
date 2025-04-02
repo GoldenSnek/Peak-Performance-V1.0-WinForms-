@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class About : Form
+    public partial class About : Home
     {
         public About()
         {

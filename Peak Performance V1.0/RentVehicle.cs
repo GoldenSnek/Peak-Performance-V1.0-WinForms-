@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class RentVehicle : Form
+    public partial class RentVehicle : Form, IRentVehicle
     {
         private OleDbConnection connection;
         double PriceDaily = 0;
@@ -26,7 +26,7 @@ namespace Peak_Performance_V1._0
             LoadVehicleDetails();
             tmrFadeIn.Start();
         }
-        void LoadVehicleDetails() //INITIAL EVENT
+        public void LoadVehicleDetails() //MAIN METHOD
         {
             string displayQuery = $"SELECT UserID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture FROM UserVehicleQuery WHERE VehicleID = {SystemManager.currentFullDetailsVehicleID}";
 
@@ -136,7 +136,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void btnFinalize_Click(object sender, EventArgs e) //MAIN EVENT: Rent
+        public void btnFinalize_Click(object sender, EventArgs e) //MAIN EVENT: Rent
         {
             string rentalQuery = "INSERT INTO RentalDetails (VehicleID, ClientID, OwnerID, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price, Status, RateStatus) " +
                    "VALUES (@VehicleID, @ClientID, @OwnerID, @RentType, @Duration, @PaymentType, @ChildSeat, @SoundSystem, @Powerbank, @WiFi, @Notes, @Price, @Status, @RateStatus)";

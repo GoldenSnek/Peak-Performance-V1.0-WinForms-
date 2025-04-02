@@ -1,11 +1,12 @@
 namespace Peak_Performance_V1._0
 {
-    public partial class MainLR : Form
+    public partial class MainLR: Form
     {
         public MainLR()
         {
             InitializeComponent();
         }
+
         private void MainLR_Load(object sender, EventArgs e)
         {
             SystemManager.splash++;

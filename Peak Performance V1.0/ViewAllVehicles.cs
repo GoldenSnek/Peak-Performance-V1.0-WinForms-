@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ViewAllVehicles : Form
+    public partial class ViewAllVehicles : Form, IViewAllVehicles
     {
         private OleDbConnection connection;
         public ViewAllVehicles()
@@ -24,8 +24,7 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
-        //EVENTS
-        private void LoadVehicles(string? filterQuery = null) //INITIAL EVENT: Load the vehicle cards
+        public void LoadVehicles(string? filterQuery = null) //INITIAL METHOD: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -107,7 +106,7 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        private void Card_RentClicked(int vehicleID) //MAIN EVENT: Rent
+        public void Card_RentClicked(int vehicleID) //MAIN METHOD/EVENT: Rent
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
 
@@ -153,7 +152,6 @@ namespace Peak_Performance_V1._0
             }
             LoadVehicles();
         }
-
         private void txtSearch_TextChanged(object sender, EventArgs e) //MAIN EVENT: Searching
         {
             string searchText = txtSearch.Text.Trim().ToLower();
@@ -265,7 +263,7 @@ namespace Peak_Performance_V1._0
             LoadVehicles(query);
         }
 
-        private void Card_FullDetailsClicked(int vehicleID) //SUPPORTING EVENT: Full Details
+        public void Card_FullDetailsClicked(int vehicleID) //SUPPORTING METHOD/EVENT: Full Details
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();

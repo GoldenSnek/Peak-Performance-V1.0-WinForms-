@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ManageAccount : Form
+    public partial class ManageAccount : Form, IManageAccount
     {
         private OleDbConnection connection;
         private Home homeForm; // Reference to Home form
@@ -97,7 +97,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void btnSave_Click(object sender, EventArgs e) //MAIN EVENT: Update details
+        public void btnSave_Click(object sender, EventArgs e) //MAIN EVENT: Update details
         {
             string imagePath = lblImagePath.Text;
             byte[] imageBytes = null;
@@ -168,7 +168,7 @@ namespace Peak_Performance_V1._0
                 }
             }
         }
-        private void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete Account and all vehicles owned (di pa functional all vehicles owned)
+        public void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete Account and all vehicles owned (di pa functional all vehicles owned)
         {
             //ALSO DELETE ALL VEHICLES IN THE FUTURE (kapoy pa)
 

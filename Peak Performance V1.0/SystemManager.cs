@@ -49,7 +49,6 @@ namespace Peak_Performance_V1._0
                 return builder.ToString();
             }
         }
-
         public static void OpenURL(string url) //SUPPORTING METHOD: Open links
         {
             try
@@ -65,7 +64,6 @@ namespace Peak_Performance_V1._0
                 MessageBox.Show("Failed to open link: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public static Image ResizeImage(Image img) //SUPPORTING METHOD: Dynamically resize icons
         {
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;

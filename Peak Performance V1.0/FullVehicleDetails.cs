@@ -13,9 +13,45 @@ using System.Runtime.InteropServices;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class FullVehicleDetails : Form
+    public partial class FullVehicleDetails : Form, IFullVehicleDetails
     {
         private OleDbConnection connection;
+        public string? GeneralType { get; set; }
+        public string? SpecificType { get; set; }
+        public string? Make { get; set; }
+        public string? Model { get; set; }
+        public int VehicleYear { get; set; }
+        public string? Transmission { get; set; }
+        public string? Drivetrain { get; set; }
+        public string? LicensePlate { get; set; }
+        public string? VehicleColor { get; set; }
+        public string? FuelType { get; set; }
+        public int Seats { get; set; }
+        public double Mileage { get; set; }
+        public double PriceDaily { get; set; }
+        public double PriceHourly { get; set; }
+        public Image VehicleImage { get; set; }
+
+        public string? Username { get; set; }
+        public string? FullName { get; set; }
+        public string? Address { get; set; }
+        public string? Birthday { get; set; }
+        public string? Email { get; set; }
+        public int DriversLicenseID { get; set; }
+        public int ContactNumber { get; set; }
+        public double UserRating { get; set; }
+        public Image ProfilePicture { get; set; }
+
+        public string? RentType { get; set; }
+        public int Duration { get; set; }
+        public string? PaymentType { get; set; }
+        public string? ChildSeat { get; set; }
+        public string? SoundSystem { get; set; }
+        public string? Powerbank { get; set; }
+        public string? WiFi { get; set; }
+        public string? Notes { get; set; }
+        public double TotalPrice { get; set; }
+        public double VehicleRating { get; set; }
 
         public FullVehicleDetails(string type)
         {
@@ -29,6 +65,12 @@ namespace Peak_Performance_V1._0
         {
             if (type == "Owner")
             {
+                lblDuration.Visible = false;
+                lblPayment.Visible = false;
+                lblExtras.Visible = false;
+                lblNotes.Visible = false;
+                lblTotalPrice.Visible = false;
+                lblUserRating.Visible = false;
                 string displayQuery = $"SELECT GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture FROM UserVehicleQuery WHERE VehicleID = {SystemManager.currentFullDetailsVehicleID}";
 
                 using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))
@@ -39,97 +81,92 @@ namespace Peak_Performance_V1._0
                     while (reader.Read())
                     {
                         //VEHICLE
-                        string? generalType = reader["GeneralType"].ToString();
-                        string? specificType = reader["SpecificType"].ToString();
-                        string? make = reader["Make"].ToString();
+                        GeneralType = reader["GeneralType"].ToString();
+                        SpecificType = reader["SpecificType"].ToString();
+                        Make = reader["Make"].ToString();
 
-                        string? model = reader["Model"].ToString();
-                        int vehicleYear = Convert.ToInt32(reader["VehicleYear"]);
-                        string? transmission = reader["Transmission"].ToString();
-                        string? drivetrain = reader["Drivetrain"].ToString();
+                        Model = reader["Model"].ToString();
+                        VehicleYear = Convert.ToInt32(reader["VehicleYear"]);
+                        Transmission = reader["Transmission"].ToString();
+                        Drivetrain = reader["Drivetrain"].ToString();
 
-                        string? licensePlate = reader["LicensePlate"].ToString();
-                        string? color = reader["Color"].ToString();
-                        string? fuelType = reader["FuelType"].ToString();
+                        LicensePlate = reader["LicensePlate"].ToString();
+                        VehicleColor = reader["Color"].ToString();
+                        FuelType = reader["FuelType"].ToString();
 
-                        int seats = Convert.ToInt32(reader["Seats"]);
-                        double mileage = Convert.ToDouble(reader["Mileage"]);
-                        double priceDaily = Convert.ToDouble(reader["PriceDaily"]);
-                        double priceHourly = Convert.ToDouble(reader["PriceHourly"]);
+                        Seats = Convert.ToInt32(reader["Seats"]);
+                        Mileage = Convert.ToDouble(reader["Mileage"]);
+                        PriceDaily = Convert.ToDouble(reader["PriceDaily"]);
+                        PriceHourly = Convert.ToDouble(reader["PriceHourly"]);
 
-                        lblType.Text = $"Type:{generalType} ({specificType})";
-                        lblMake.Text = $"{make}";
-                        lblModel.Text = $"{model} ({vehicleYear})";
-                        lblTransmission.Text = $"Transmission: {transmission}";
-                        lblDrivetrain.Text = $"Drivetrain: {drivetrain}";
-                        lblLicensePlate.Text = $"License Plate No: {licensePlate}";
-                        lblColor.Text = $"Color: {color}";
-                        lblFuelType.Text = $"Fuel Type: {fuelType}";
-                        lblSeats.Text = $"Seats: {seats}";
-                        lblMileage.Text = $"Mileage: {mileage} km";
-                        lblDailyPrice.Text = $"Php {priceDaily}/day";
-                        lblHourlyPrice.Text = $"Php {priceHourly}/hr";
-                        lblDuration.Visible = false;
-                        lblPayment.Visible = false;
-                        lblExtras.Visible = false;
-                        lblNotes.Visible = false;
-                        lblTotalPrice.Visible = false;
+                        lblType.Text = $"Type:{GeneralType} ({SpecificType})";
+                        lblMake.Text = $"Make: {Make}";
+                        lblModel.Text = $"Model: {Model} ({VehicleYear})";
+                        lblTransmission.Text = $"Transmission: {Transmission}";
+                        lblDrivetrain.Text = $"Drivetrain: {Drivetrain}";
+                        lblLicensePlate.Text = $"License Plate No: {LicensePlate}";
+                        lblColor.Text = $"Color: {VehicleColor}";
+                        lblFuelType.Text = $"Fuel Type: {FuelType}";
+                        lblSeats.Text = $"Seats: {Seats}";
+                        lblMileage.Text = $"Mileage: {Mileage} km";
+                        lblDailyPrice.Text = $"Php {PriceDaily}/day";
+                        lblHourlyPrice.Text = $"Php {PriceHourly}/hr";
 
                         //convert image from database to PictureBox
-                        Image? vehicleImage = null;
+                        VehicleImage = null;
                         if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
                         {
                             byte[] imageData = (byte[])reader["VehicleImage"];
                             using (MemoryStream? ms = new MemoryStream(imageData))
                             {
-                                vehicleImage = Image.FromStream(ms);
+                                VehicleImage = Image.FromStream(ms);
                             }
                         }
 
                         double vehicleRating = Convert.ToDouble(reader["VehicleRating"]);
                         lblVehicleRating.Text = $"Rating: {vehicleRating.ToString()}";
 
-                        if (vehicleImage != null)
-                            picVehicleImage.Image = vehicleImage;
+                        if (VehicleImage != null)
+                            picVehicleImage.Image = VehicleImage;
                         else
                             picVehicleImage.Image = Properties.Resources.Car___MainLR;
 
                         //OWNER
-                        string? username = reader["Username"].ToString();
+                        Username = reader["Username"].ToString();
 
-                        string? fullName = reader["Fullname"].ToString();
-                        string? address = reader["Address"].ToString();
-                        string? birthday = reader["Birthday"].ToString();
-                        string? email = reader["Email"].ToString();
+                        FullName = reader["Fullname"].ToString();
+                        Address = reader["Address"].ToString();
+                        Birthday = reader["Birthday"].ToString();
+                        Email = reader["Email"].ToString();
 
-                        int driversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
-                        int contactNumber = Convert.ToInt32(reader["ContactNumber"]);
-                        double userRating = Convert.ToDouble(reader["UserRating"]);
+                        DriversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
+                        ContactNumber = Convert.ToInt32(reader["ContactNumber"]);
+                        UserRating = Convert.ToDouble(reader["UserRating"]);
 
                         //convert image from database to PictureBox
-                        Image? profilePicture = null;
+                        ProfilePicture = null;
                         if (!Convert.IsDBNull(reader["ProfilePicture"])) //check if image is not NULL
                         {
                             byte[] imageData = (byte[])reader["ProfilePicture"];
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
-                                profilePicture = Image.FromStream(ms);
+                                ProfilePicture = Image.FromStream(ms);
                             }
                         }
 
-                        lblUsername.Text = $"Username: {username}";
-                        lblUserRating.Text = $"Rating: {userRating.ToString()}";
+                        lblUsername.Text = $"Username: {Username}";
+                        lblUserRating.Text = $"Rating: {UserRating.ToString()}";
 
-                        lblFullname.Text = $"Fullname: {fullName}";
-                        lblAddress.Text = $"Address: {address}";
-                        lblBirthday.Text = $"Birthday: {birthday}";
-                        lblLicenseID.Text = $"Drivers License ID: {driversLicenseID.ToString()}";
-                        lblEmail.Text = $"Email: {email}";
-                        lblNumber.Text = $"Contact Number: {contactNumber}";
+                        lblFullname.Text = $"Fullname: {FullName}";
+                        lblAddress.Text = $"Address: {Address}";
+                        lblBirthday.Text = $"Birthday: {Birthday}";
+                        lblLicenseID.Text = $"Drivers License ID: {DriversLicenseID.ToString()}";
+                        lblEmail.Text = $"Email: {Email}";
+                        lblNumber.Text = $"Contact Number: {ContactNumber}";
                         lblOC.Text = "Owner";
 
-                        if (profilePicture != null)
-                            picProfilePicture.Image = profilePicture;
+                        if (ProfilePicture != null)
+                            picProfilePicture.Image = ProfilePicture;
                         else
                             picProfilePicture.Image = Properties.Resources.Avatar;
                     }
@@ -144,6 +181,7 @@ namespace Peak_Performance_V1._0
                 lblExtras.Visible = true;
                 lblNotes.Visible = true;
                 lblTotalPrice.Visible = true;
+                lblUserRating.Visible = true;
 
                 string displayQuery = $"SELECT GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating, Username, Fullname, Address, Birthday, Email, DriversLicenseID, ContactNumber, UserRating, ProfilePicture, RentType, Duration, PaymentType, ChildSeat, SoundSystem, Powerbank, WiFi, Notes, Price FROM ClientVehicleQuery WHERE VehicleID = {SystemManager.currentFullDetailsVehicleID}";
 
@@ -155,116 +193,116 @@ namespace Peak_Performance_V1._0
                     while (reader.Read())
                     {
                         //VEHICLE
-                        string? generalType = reader["GeneralType"].ToString();
-                        string? specificType = reader["SpecificType"].ToString();
-                        string? make = reader["Make"].ToString();
+                        GeneralType = reader["GeneralType"].ToString();
+                        SpecificType = reader["SpecificType"].ToString();
+                        Make = reader["Make"].ToString();
 
-                        string? model = reader["Model"].ToString();
-                        int vehicleYear = Convert.ToInt32(reader["VehicleYear"]);
-                        string? transmission = reader["Transmission"].ToString();
-                        string? drivetrain = reader["Drivetrain"].ToString();
+                        Model = reader["Model"].ToString();
+                        VehicleYear = Convert.ToInt32(reader["VehicleYear"]);
+                        Transmission = reader["Transmission"].ToString();
+                        Drivetrain = reader["Drivetrain"].ToString();
 
-                        string? licensePlate = reader["LicensePlate"].ToString();
-                        string? color = reader["Color"].ToString();
-                        string? fuelType = reader["FuelType"].ToString();
+                        LicensePlate = reader["LicensePlate"].ToString();
+                        VehicleColor = reader["Color"].ToString();
+                        FuelType = reader["FuelType"].ToString();
 
-                        int seats = Convert.ToInt32(reader["Seats"]);
-                        double mileage = Convert.ToDouble(reader["Mileage"]);
-                        double priceDaily = Convert.ToDouble(reader["PriceDaily"]);
-                        double priceHourly = Convert.ToDouble(reader["PriceHourly"]);
+                        Seats = Convert.ToInt32(reader["Seats"]);
+                        Mileage = Convert.ToDouble(reader["Mileage"]);
+                        PriceDaily = Convert.ToDouble(reader["PriceDaily"]);
+                        PriceHourly = Convert.ToDouble(reader["PriceHourly"]);
 
-                        string? rentType = reader["RentType"].ToString();
-                        int duration = Convert.ToInt32(reader["Duration"]);
-                        string? paymentType = reader["PaymentType"].ToString();
-                        string? childSeat = reader["ChildSeat"].ToString();
-                        string? soundSystem = reader["SoundSystem"].ToString();
-                        string? powerbank = reader["Powerbank"].ToString();
-                        string? wifi = reader["WiFi"].ToString();
-                        string? notes = reader["Notes"].ToString();
-                        double totalPrice = Convert.ToDouble(reader["Price"]);
+                        RentType = reader["RentType"].ToString();
+                        Duration = Convert.ToInt32(reader["Duration"]);
+                        PaymentType = reader["PaymentType"].ToString();
+                        ChildSeat = reader["ChildSeat"].ToString();
+                        SoundSystem = reader["SoundSystem"].ToString();
+                        Powerbank = reader["Powerbank"].ToString();
+                        WiFi = reader["WiFi"].ToString();
+                        Notes = reader["Notes"].ToString();
+                        TotalPrice = Convert.ToDouble(reader["Price"]);
 
-                        lblType.Text = $"Type: {generalType} ({specificType})";
-                        lblMake.Text = $"Make: {make}";
-                        lblModel.Text = $"Model: {model} ({vehicleYear})";
-                        lblTransmission.Text = $"Transmission: {transmission}";
-                        lblDrivetrain.Text = $"Drivetrain: {drivetrain}";
-                        lblLicensePlate.Text = $"License Plate No: {licensePlate}";
-                        lblColor.Text = $"Color: {color}";
-                        lblFuelType.Text = $"Fuel Type: {fuelType}";
-                        lblSeats.Text = $"Seats: {seats}";
-                        lblMileage.Text = $"Mileage: {mileage} km";
-                        lblDailyPrice.Text = $"Php {priceDaily}/day";
-                        lblHourlyPrice.Text = $"Php {priceHourly}/hr";
+                        lblType.Text = $"Type:{GeneralType} ({SpecificType})";
+                        lblMake.Text = $"Make: {Make}";
+                        lblModel.Text = $"Model: {Model} ({VehicleYear})";
+                        lblTransmission.Text = $"Transmission: {Transmission}";
+                        lblDrivetrain.Text = $"Drivetrain: {Drivetrain}";
+                        lblLicensePlate.Text = $"License Plate No: {LicensePlate}";
+                        lblColor.Text = $"Color: {VehicleColor}";
+                        lblFuelType.Text = $"Fuel Type: {FuelType}";
+                        lblSeats.Text = $"Seats: {Seats}";
+                        lblMileage.Text = $"Mileage: {Mileage} km";
+                        lblDailyPrice.Text = $"Php {PriceDaily}/day";
+                        lblHourlyPrice.Text = $"Php {PriceHourly}/hr";
                         lblOC.Text = "Client";
 
-                        lblDuration.Text = $"Duration: {duration} {rentType}";
-                        lblPayment.Text = $"Payment Type: {paymentType}";
+                        lblDuration.Text = $"Duration: {Duration} {RentType}";
+                        lblPayment.Text = $"Payment Type: {PaymentType}";
                         lblExtras.Text = $"Extras: ";
-                        if (childSeat != "None")
-                            lblExtras.Text += $"{childSeat} ";
-                        if (soundSystem != "Basic")
-                            lblExtras.Text += $"{soundSystem} ";
-                        if (powerbank != "None")
-                            lblExtras.Text += $"{powerbank} ";
-                        if (wifi != "None")
-                            lblExtras.Text += $"{wifi}";
-                        lblNotes.Text = $"Additional notes: {notes}";
-                        lblTotalPrice.Text = $"Php {totalPrice}";
+                        if (ChildSeat != "None")
+                            lblExtras.Text += $"{ChildSeat} ";
+                        if (SoundSystem != "Basic")
+                            lblExtras.Text += $"{SoundSystem} ";
+                        if (Powerbank != "None")
+                            lblExtras.Text += $"{Powerbank} ";
+                        if (WiFi != "None")
+                            lblExtras.Text += $"{WiFi}";
+                        lblNotes.Text = $"Additional notes: {Notes}";
+                        lblTotalPrice.Text = $"Php {TotalPrice}";
 
                         //convert image from database to PictureBox
-                        Image? vehicleImage = null;
+                        VehicleImage = null;
                         if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
                         {
                             byte[] imageData = (byte[])reader["VehicleImage"];
                             using (MemoryStream? ms = new MemoryStream(imageData))
                             {
-                                vehicleImage = Image.FromStream(ms);
+                                VehicleImage = Image.FromStream(ms);
                             }
                         }
 
-                        double vehicleRating = Convert.ToDouble(reader["VehicleRating"]);
-                        lblVehicleRating.Text = $"Rating: {vehicleRating.ToString()}";
+                        VehicleRating = Convert.ToDouble(reader["VehicleRating"]);
+                        lblVehicleRating.Text = $"Rating: {VehicleRating.ToString()}";
 
-                        if (vehicleImage != null)
-                            picVehicleImage.Image = vehicleImage;
+                        if (VehicleImage != null)
+                            picVehicleImage.Image = VehicleImage;
                         else
                             picVehicleImage.Image = Properties.Resources.Car___MainLR;
 
                         //OWNER
-                        string? username = reader["Username"].ToString();
+                        Username = reader["Username"].ToString();
 
-                        string? fullName = reader["Fullname"].ToString();
-                        string? address = reader["Address"].ToString();
-                        string? birthday = reader["Birthday"].ToString();
-                        string? email = reader["Email"].ToString();
+                        FullName = reader["Fullname"].ToString();
+                        Address = reader["Address"].ToString();
+                        Birthday = reader["Birthday"].ToString();
+                        Email = reader["Email"].ToString();
 
-                        int driversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
-                        int contactNumber = Convert.ToInt32(reader["ContactNumber"]);
-                        double userRating = Convert.ToDouble(reader["UserRating"]);
+                        DriversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
+                        ContactNumber = Convert.ToInt32(reader["ContactNumber"]);
+                        UserRating = Convert.ToDouble(reader["UserRating"]);
 
                         //convert image from database to PictureBox
-                        Image? profilePicture = null;
+                        ProfilePicture = null;
                         if (!Convert.IsDBNull(reader["ProfilePicture"])) //check if image is not NULL
                         {
                             byte[] imageData = (byte[])reader["ProfilePicture"];
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
-                                profilePicture = Image.FromStream(ms);
+                                ProfilePicture = Image.FromStream(ms);
                             }
                         }
 
-                        lblUsername.Text = $"Username: {username}";
-                        lblUserRating.Text = $"Rating: {userRating.ToString()}";
+                        lblUsername.Text = $"Username: {Username}";
+                        lblUserRating.Text = $"Rating: {UserRating.ToString()}";
 
-                        lblFullname.Text = $"Fullname: {fullName}";
-                        lblAddress.Text = $"Address: {address}";
-                        lblBirthday.Text = $"Birthday: {birthday}";
-                        lblLicenseID.Text = $"Drivers License ID: {driversLicenseID.ToString()}";
-                        lblEmail.Text = $"Email: {email}";
-                        lblNumber.Text = $"Contact Number: {contactNumber}";
+                        lblFullname.Text = $"Fullname: {FullName}";
+                        lblAddress.Text = $"Address: {Address}";
+                        lblBirthday.Text = $"Birthday: {Birthday}";
+                        lblLicenseID.Text = $"Drivers License ID: {DriversLicenseID.ToString()}";
+                        lblEmail.Text = $"Email: {Email}";
+                        lblNumber.Text = $"Contact Number: {ContactNumber}";
 
-                        if (profilePicture != null)
-                            picProfilePicture.Image = profilePicture;
+                        if (ProfilePicture != null)
+                            picProfilePicture.Image = ProfilePicture;
                         else
                             picProfilePicture.Image = Properties.Resources.Avatar;
                     }

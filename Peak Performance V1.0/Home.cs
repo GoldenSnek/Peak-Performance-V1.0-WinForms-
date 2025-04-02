@@ -19,10 +19,10 @@ using System.Data.OleDb;
 
 namespace Peak_Performance_V1._0
 {
-    
     public partial class Home : Form, IHome
     {
         private OleDbConnection connection;
+        private Form activeForm = null;
         public Home()
         {
             connection = SystemManager.GetConnection();
@@ -30,7 +30,7 @@ namespace Peak_Performance_V1._0
             LoadUsers();
             LoadVehicles();
         }
-        private void MainMenu_Load(object sender, EventArgs e)
+        private void MainMenu_Load(object sender, EventArgs e) //INITIAL EVENT
         {
             tmrFadeIn.Start();
 
@@ -164,7 +164,22 @@ namespace Peak_Performance_V1._0
                 btnManageAccount.Visible = false;
             }
         }
-        private void LoadUsers() //INITIAL EVENT: Load the vehicle cards
+
+        //MAIN METHODS
+        public void OpenChildForm(Form childForm) //MAIN METHOD: Display child forms
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(childForm);
+            pnlForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        public void LoadUsers() //METHOD: Load the user cards
         {
             flpDisplayUsers.Controls.Clear();
 
@@ -198,7 +213,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
+        public void LoadVehicles() //METHOD: Load the vehicle cards
         {
             flpDisplayVehicles.Controls.Clear();
 
@@ -238,22 +253,6 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        //MAIN EVENT
-        private Form activeForm = null;
-        private void openChildForm(Form childForm) //MAIN EVENT: Display child forms
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            pnlForm.Controls.Add(childForm);
-            pnlForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
         //SUPPORTING METHOD
         private void ResetButtonColors() //SUPPORTING METHOD: Change colors
         {
@@ -281,7 +280,7 @@ namespace Peak_Performance_V1._0
             btnAllVehicles.BackColor = Color.FromArgb(255, 128, 0);
             btnAllVehicles.FlatAppearance.BorderSize = 2;
             btnAllVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new ViewAllVehicles());
+            OpenChildForm(new ViewAllVehicles());
         }
         private void btnRentalDetails_Click(object sender, EventArgs e)
         {
@@ -290,9 +289,9 @@ namespace Peak_Performance_V1._0
             btnRentalDetails.FlatAppearance.BorderSize = 2;
             btnRentalDetails.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
             if (SystemManager.currentRole == "Client")
-                openChildForm(new ClientViewRental());
+                OpenChildForm(new ClientViewRental());
             else if (SystemManager.currentRole == "Vehicle Provider")
-                openChildForm(new ProviderViewRental());
+                OpenChildForm(new ProviderViewRental());
         }
         private void btnAddVehicles_Click(object sender, EventArgs e)
         {
@@ -300,7 +299,7 @@ namespace Peak_Performance_V1._0
             btnAddVehicles.BackColor = Color.FromArgb(255, 128, 0);
             btnAddVehicles.FlatAppearance.BorderSize = 2;
             btnAddVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new ProviderAddVehicle());
+            OpenChildForm(new ProviderAddVehicle());
         }
         private void btnUpdateVehicles_Click(object sender, EventArgs e)
         {
@@ -308,7 +307,7 @@ namespace Peak_Performance_V1._0
             btnUpdateVehicles.BackColor = Color.FromArgb(255, 128, 0);
             btnUpdateVehicles.FlatAppearance.BorderSize = 2;
             btnUpdateVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new ProviderUpdateVehicle());
+            OpenChildForm(new ProviderUpdateVehicle());
         }
         private void btnManageAccount_Click(object sender, EventArgs e)
         {
@@ -316,7 +315,7 @@ namespace Peak_Performance_V1._0
             btnManageAccount.BackColor = Color.FromArgb(255, 128, 0);
             btnManageAccount.FlatAppearance.BorderSize = 2;
             btnManageAccount.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new ManageAccount(this));
+            OpenChildForm(new ManageAccount(this));
         }
         private void btnAdminAllVehicles_Click(object sender, EventArgs e)
         {
@@ -324,7 +323,7 @@ namespace Peak_Performance_V1._0
             btnAdminAllVehicles.BackColor = Color.FromArgb(255, 128, 0);
             btnAdminAllVehicles.FlatAppearance.BorderSize = 2;
             btnAdminAllVehicles.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new AdminAllVehicles());
+            OpenChildForm(new AdminAllVehicles());
         }
         private void btnAdminAllUsers_Click(object sender, EventArgs e)
         {
@@ -332,7 +331,7 @@ namespace Peak_Performance_V1._0
             btnAdminAllUsers.BackColor = Color.FromArgb(255, 128, 0);
             btnAdminAllUsers.FlatAppearance.BorderSize = 2;
             btnAdminAllUsers.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
-            openChildForm(new AdminAllUsers());
+            OpenChildForm(new AdminAllUsers());
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {

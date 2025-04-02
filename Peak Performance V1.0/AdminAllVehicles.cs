@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class AdminAllVehicles : Form
+    public partial class AdminAllVehicles : Form, IAdminAllVehicles
     {
         private OleDbConnection connection;
         public AdminAllVehicles()
@@ -21,7 +21,7 @@ namespace Peak_Performance_V1._0
             LoadData();
         }
 
-        private void LoadData() //INITIAL EVENT: Load database to datagridview
+        public void LoadData() //METHOD: Load database to datagridview
         {
             dgvData.EnableHeadersVisualStyles = false;
             dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;  // Background color
@@ -40,7 +40,7 @@ namespace Peak_Performance_V1._0
             dgvData.Columns[14].Visible = false;
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        public void btnRemove_Click(object sender, EventArgs e)
         {
 
         }

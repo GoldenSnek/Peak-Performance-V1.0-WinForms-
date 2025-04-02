@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ProviderAddVehicle : Form
+    public partial class ProviderAddVehicle : Form, IProviderAddVehicle
     {
 
         private OleDbConnection connection;
@@ -25,7 +25,7 @@ namespace Peak_Performance_V1._0
         }
 
         //EVENTS
-        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
+        public void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -83,7 +83,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void btnAddVehicle_Click(object sender, EventArgs e) //MAIN EVENT: Add a vehicle
+        public void btnAddVehicle_Click(object sender, EventArgs e) //MAIN EVENT: Add a vehicle
         {
             string generalType = cbxGeneralType.Text;
             string specificType = cbxSpecificType.Text;
@@ -187,7 +187,7 @@ namespace Peak_Performance_V1._0
         }
 
         //SUPPORTING EVENTS
-        private void Card_FullDetailsClicked(int vehicleID) //SUPPORTING EVENT: Full Details
+        public void Card_FullDetailsClicked(int vehicleID) //SUPPORTING EVENT: Full Details
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();

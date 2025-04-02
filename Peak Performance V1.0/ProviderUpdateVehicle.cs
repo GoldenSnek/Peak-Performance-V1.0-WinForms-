@@ -12,7 +12,7 @@ using System.Windows.Media.Animation;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ProviderUpdateVehicle : Form
+    public partial class ProviderUpdateVehicle : Form, IProviderUpdateVehicle
     {
         private OleDbConnection connection;
         public ProviderUpdateVehicle()
@@ -24,7 +24,7 @@ namespace Peak_Performance_V1._0
         }
 
         //EVENTS
-        private void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
+        public void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
 
@@ -88,7 +88,7 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
-        private void btnUpdate_Click(object sender, EventArgs e) //MAIN EVENT: Update details
+        public void btnUpdate_Click(object sender, EventArgs e) //MAIN EVENT: Update details
         {
             string generalType = cbxGeneralType.Text;
             string specificType = cbxSpecificType.Text;
@@ -221,7 +221,7 @@ namespace Peak_Performance_V1._0
                 }
             }
         }
-        private void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete vehicle
+        public void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete vehicle
         {
             if (SystemManager.currentEditVehicleID == 0)
             {
@@ -253,7 +253,7 @@ namespace Peak_Performance_V1._0
         }
 
         //SUPPORTING EVENTS
-        private void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string transmission, string drivetrain,
+        public void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string transmission, string drivetrain,
                                     string licensePlate, string color, string fuelType, int? seats, double? mileage, double? priceDaily, double? priceHourly, Image vehicleImage) { //SUPPORTING EVENT: Transfer details of card to the form 
             SystemManager.currentEditVehicleID = vehicleID;
             cbxGeneralType.Text = generalType;
@@ -273,7 +273,7 @@ namespace Peak_Performance_V1._0
             picPreview.Image = vehicleImage;
         }
 
-        private void Card_FullDetailsClicked(int vehicleID) { //SUPPORTING EVENT: Full Details
+        public void Card_FullDetailsClicked(int vehicleID) { //SUPPORTING EVENT: Full Details
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
             using (FullVehicleDetails detailsForm = new FullVehicleDetails("Owner"))
