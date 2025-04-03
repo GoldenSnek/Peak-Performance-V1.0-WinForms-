@@ -134,6 +134,7 @@
             btnReceipt.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnReceipt.UseAccentColor = false;
             btnReceipt.UseVisualStyleBackColor = true;
+            btnReceipt.Visible = false;
             // 
             // lblNotes
             // 

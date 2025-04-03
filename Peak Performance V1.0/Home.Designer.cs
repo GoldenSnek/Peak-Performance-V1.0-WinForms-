@@ -39,7 +39,6 @@
             pictureBox1 = new PictureBox();
             panel19 = new Panel();
             label3 = new Label();
-            picDay = new PictureBox();
             panel20 = new Panel();
             panel21 = new Panel();
             panel22 = new Panel();
@@ -57,13 +56,12 @@
             panel4 = new Panel();
             panel6 = new Panel();
             panel1 = new Panel();
+            label5 = new Label();
+            label2 = new Label();
             label16 = new Label();
             label15 = new Label();
-            pictureBox8 = new PictureBox();
-            label2 = new Label();
             pnlLeft = new Panel();
             pnlDown = new Panel();
-            foreverNotification1 = new ReaLTaiizor.Controls.ForeverNotification();
             pnlRight = new Panel();
             panel2 = new Panel();
             parrotClock1 = new ReaLTaiizor.Controls.ParrotClock();
@@ -105,12 +103,10 @@
             pnlForm.SuspendLayout();
             panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picDay).BeginInit();
             panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
             pnlSideMenu.SuspendLayout();
@@ -177,7 +173,6 @@
             panel18.Controls.Add(pictureBox1);
             panel18.Controls.Add(panel19);
             panel18.Controls.Add(label3);
-            panel18.Controls.Add(picDay);
             panel18.Controls.Add(panel20);
             panel18.Controls.Add(panel21);
             panel18.Controls.Add(panel22);
@@ -231,17 +226,6 @@
             label3.Size = new Size(269, 30);
             label3.TabIndex = 24;
             label3.Text = "Rent ride repeat";
-            // 
-            // picDay
-            // 
-            picDay.Anchor = AnchorStyles.None;
-            picDay.Image = Properties.Resources.Home___Car_Day;
-            picDay.Location = new Point(43, 61);
-            picDay.Name = "picDay";
-            picDay.Size = new Size(50, 50);
-            picDay.SizeMode = PictureBoxSizeMode.StretchImage;
-            picDay.TabIndex = 8;
-            picDay.TabStop = false;
             // 
             // panel20
             // 
@@ -420,13 +404,12 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(label16);
             panel1.Controls.Add(label15);
-            panel1.Controls.Add(pictureBox8);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(pnlLeft);
             panel1.Controls.Add(pnlDown);
-            panel1.Controls.Add(foreverNotification1);
             panel1.Controls.Add(pnlRight);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(parrotClock1);
@@ -436,6 +419,32 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 100);
             panel1.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Silver;
+            label5.Location = new Point(367, 61);
+            label5.Name = "label5";
+            label5.Size = new Size(152, 18);
+            label5.TabIndex = 45;
+            label5.Text = "main dashboard";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Copperplate Gothic Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Silver;
+            label2.Location = new Point(247, 21);
+            label2.Name = "label2";
+            label2.Size = new Size(409, 35);
+            label2.TabIndex = 44;
+            label2.Text = "PEAK PERFORMANCE";
             // 
             // label16
             // 
@@ -463,28 +472,6 @@
             label15.TabIndex = 42;
             label15.Text = "0";
             // 
-            // pictureBox8
-            // 
-            pictureBox8.Anchor = AnchorStyles.Left;
-            pictureBox8.Image = Properties.Resources.HomeNotif;
-            pictureBox8.Location = new Point(145, 5);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(30, 30);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 35;
-            pictureBox8.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(9, 11);
-            label2.Name = "label2";
-            label2.Size = new Size(131, 20);
-            label2.TabIndex = 21;
-            label2.Text = "Notifications";
-            // 
             // pnlLeft
             // 
             pnlLeft.BackColor = Color.FromArgb(255, 128, 0);
@@ -504,20 +491,6 @@
             pnlDown.Name = "pnlDown";
             pnlDown.Size = new Size(897, 3);
             pnlDown.TabIndex = 18;
-            // 
-            // foreverNotification1
-            // 
-            foreverNotification1.Anchor = AnchorStyles.Left;
-            foreverNotification1.BackColor = Color.FromArgb(60, 70, 73);
-            foreverNotification1.Close = false;
-            foreverNotification1.Font = new Font("Segoe UI", 10F);
-            foreverNotification1.Kind = ReaLTaiizor.Controls.ForeverNotification._Kind.Info;
-            foreverNotification1.Location = new Point(13, 42);
-            foreverNotification1.Name = "foreverNotification1";
-            foreverNotification1.Size = new Size(209, 42);
-            foreverNotification1.TabIndex = 13;
-            foreverNotification1.Text = "foreverNotification1";
-            foreverNotification1.Visible = false;
             // 
             // pnlRight
             // 
@@ -541,7 +514,7 @@
             // 
             // parrotClock1
             // 
-            parrotClock1.Anchor = AnchorStyles.None;
+            parrotClock1.Anchor = AnchorStyles.Left;
             parrotClock1.CircleThickness = 3;
             parrotClock1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotClock1.DisplayFormat = ReaLTaiizor.Controls.ParrotClock.HourFormat.TwelveHour;
@@ -551,7 +524,7 @@
             parrotClock1.Font = new Font("Impact", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             parrotClock1.HexagonColor = Color.Black;
             parrotClock1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotClock1.Location = new Point(400, 0);
+            parrotClock1.Location = new Point(71, 0);
             parrotClock1.Name = "parrotClock1";
             parrotClock1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotClock1.ShowAmPm = true;
@@ -1160,13 +1133,11 @@
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picDay).EndInit();
             panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
             pnlSideMenu.ResumeLayout(false);
@@ -1191,7 +1162,6 @@
         private Button btnAccount;
         private Button btnVehicles;
         private PictureBox picNight;
-        private ReaLTaiizor.Controls.ForeverNotification foreverNotification1;
         private System.Windows.Forms.Timer tmrFadeIn;
         private ReaLTaiizor.Controls.ParrotSlidingPanel pnlSideMenu;
         private Panel panel1;
@@ -1221,7 +1191,6 @@
         private Panel panel17;
         private ReaLTaiizor.Controls.ParrotClock parrotClock1;
         private ReaLTaiizor.Controls.ParrotGauge parrotGauge1;
-        private Label label2;
         private PictureBox pictureBox2;
         private PictureBox picPFP;
         private Label lblRole;
@@ -1230,8 +1199,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label4;
-        private PictureBox pictureBox8;
-        private PictureBox picDay;
         private Label label14;
         private Label label16;
         private Label label15;
@@ -1254,5 +1221,7 @@
         private PictureBox picMax;
         private FlowLayoutPanel flpDisplayUsers;
         private FlowLayoutPanel flpDisplayVehicles;
+        private Label label2;
+        private Label label5;
     }
 }

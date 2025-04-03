@@ -537,7 +537,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.Search;
+            pictureBox1.BackColor = Color.Black;
+            pictureBox1.BackgroundImage = Properties.Resources.ManyCarsBG1;
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";

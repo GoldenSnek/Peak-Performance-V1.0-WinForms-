@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             lblAbout = new Label();
             picBack = new PictureBox();
             picClose = new PictureBox();
@@ -56,11 +55,11 @@
             lblAbout.FlatStyle = FlatStyle.Flat;
             lblAbout.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAbout.ForeColor = Color.White;
-            lblAbout.Location = new Point(85, 204);
+            lblAbout.Location = new Point(268, 317);
             lblAbout.Name = "lblAbout";
-            lblAbout.Size = new Size(440, 238);
+            lblAbout.Size = new Size(48, 17);
             lblAbout.TabIndex = 2;
-            lblAbout.Text = resources.GetString("lblAbout.Text");
+            lblAbout.Text = "hello";
             lblAbout.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // picBack

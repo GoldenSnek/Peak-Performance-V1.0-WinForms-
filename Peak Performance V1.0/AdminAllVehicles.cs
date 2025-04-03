@@ -37,12 +37,42 @@ namespace Peak_Performance_V1._0
             adapter.Fill(dt);
             dgvData.DataSource = dt;
 
-            dgvData.Columns[14].Visible = false;
+            dgvData.Columns[17].Visible = false;
+            dgvData.Columns[20].Visible = false;
+            dgvData.Columns[21].Visible = false;
         }
 
         public void btnRemove_Click(object sender, EventArgs e)
         {
+            if (dgvData.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a vehicle to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string deleteQuery = "DELETE FROM Vehicles WHERE VehicleID = @vehicleID";
+            using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@vehicleID", Convert.ToInt32(dgvData.Rows[dgvData.SelectedCells[0].RowIndex].Cells[0].Value));
 
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Vehicle deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting" + ex.Message);
+                    return;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }

@@ -54,21 +54,6 @@ namespace Peak_Performance_V1._0
             //lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
             //lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
             //lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
-            string hours = now.ToString("HH");
-            if (int.TryParse(hours, out int hour))
-            {
-                if (hour >= 0 && hour < 18)
-                {
-                    picDay.Visible = true;
-                    picNight.Visible = false;
-                }
-                else
-                {
-                }
-
-                picDay.Visible = false;
-                picNight.Visible = true;
-            }
 
             //set form layout and colors
             btnHome.BackColor = Color.FromArgb(255, 128, 0);
@@ -377,22 +362,6 @@ namespace Peak_Performance_V1._0
             //lblTime.Left = (pnlForm.Width - lblTime.Width) / 2;
             //lblDate.Left = (pnlForm.Width - lblDate.Width) / 2;
             //lblDay.Left = (pnlForm.Width - lblDay.Width) / 2;
-
-            //setup day/night images
-            string hours = now.ToString("HH");
-            if (int.TryParse(hours, out int hour))
-            {
-                if (hour >= 0 && hour < 18)
-                {
-                    picDay.Visible = true;
-                    picNight.Visible = false;
-                }
-                else
-                {
-                    picDay.Visible = false;
-                    picNight.Visible = true;
-                }
-            }
 
             if (lblGreetings.Width <= 600)
                 lblGreetings.Text = $"Hello {SystemManager.currentUsername}!";

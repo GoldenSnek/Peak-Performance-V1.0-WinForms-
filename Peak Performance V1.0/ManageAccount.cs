@@ -15,13 +15,13 @@ namespace Peak_Performance_V1._0
     public partial class ManageAccount : Form, IManageAccount
     {
         private OleDbConnection connection;
-        private Home homeForm; // Reference to Home form
+        private Home homeForm; //reference to Home form
 
         public ManageAccount(Home home)
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
-            this.homeForm = home; // Store reference to home form
+            this.homeForm = home; //store reference to home form
         }
 
         //MAIN EVENTS

@@ -99,8 +99,7 @@ namespace Peak_Performance_V1._0
             string tempMileage = txtMileage.Text;
             string tempPriceDaily = txtPriceDaily.Text;
             string tempPriceHourly = txtPriceHourly.Text;
-            string imagePath = lblImagePath.Text; //path of the selected image
-            string availability = "Available";
+            string imagePath = lblImagePath.Text; //path of the selected image;
             int year;
             int seats;
             double mileage;
@@ -147,8 +146,8 @@ namespace Peak_Performance_V1._0
 
             byte[] imageBytes = File.ReadAllBytes(imagePath); //convert image to byte array
 
-            string addVehicleQuery = "INSERT INTO Vehicles (OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, Availability) " +
-                                     "VALUES (@ownerID, @generalType, @specificType, @make, @model, @year, @transmission, @drivetrain, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath, @availability)";
+            string addVehicleQuery = "INSERT INTO Vehicles (OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage) " +
+                                     "VALUES (@ownerID, @generalType, @specificType, @make, @model, @year, @transmission, @drivetrain, @licensePlate, @color, @fuelType, @seats, @mileage, @priceDaily, @priceHourly, @imagePath)";
 
             using (OleDbCommand cmd = new OleDbCommand(addVehicleQuery, connection))
             {
@@ -168,7 +167,6 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@priceDaily", priceDaily);
                 cmd.Parameters.AddWithValue("@priceHourly", priceHourly);
                 cmd.Parameters.AddWithValue("@imagePath", imageBytes);
-                cmd.Parameters.AddWithValue("@availability", availability);
 
                 try
                 {

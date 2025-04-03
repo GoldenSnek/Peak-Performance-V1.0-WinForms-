@@ -1,18 +1,16 @@
-﻿using ReaLTaiizor.Manager;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class About : Home
+    public partial class About : Form
     {
         public About()
         {
@@ -22,7 +20,6 @@ namespace Peak_Performance_V1._0
         {
             tmrFadeIn.Start();
         }
-
         //EVENTS: Form navigation
         private void picBack_Click(object sender, EventArgs e)
         {
@@ -42,7 +39,6 @@ namespace Peak_Performance_V1._0
             if (Opacity >= 1)
                 tmrFadeIn.Stop();
         }
-
         private void picFB_Click(object sender, EventArgs e)
         {
             SystemManager.OpenURL("https://www.facebook.com/jm.nave.1/");

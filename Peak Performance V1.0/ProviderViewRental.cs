@@ -25,6 +25,7 @@ namespace Peak_Performance_V1._0
         public void LoadVehicles() //INITIAL METHOD: Load the vehicle cards
         {
             flpWaitingApproval.Controls.Clear();
+            flpCurrentlyRented.Controls.Clear();
             string displayQuery = "SELECT Status, VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, Color, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, VehicleRating FROM VehicleRentalQuery";
 
             using (OleDbCommand cmd = new OleDbCommand(displayQuery, connection))

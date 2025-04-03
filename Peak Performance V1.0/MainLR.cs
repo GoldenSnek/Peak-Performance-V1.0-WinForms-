@@ -30,7 +30,7 @@ namespace Peak_Performance_V1._0
         {
             About about = new About();
             about.Show();
-            this.Hide();
+            this.Close();
         }
         private void picClose_Click(object sender, EventArgs e)
         {
