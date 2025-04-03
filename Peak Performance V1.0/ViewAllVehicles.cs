@@ -24,6 +24,14 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
+        public VehicleCard VehicleCard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void LoadVehicles(string? filterQuery = null) //INITIAL METHOD: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();

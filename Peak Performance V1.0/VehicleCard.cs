@@ -42,6 +42,22 @@ namespace Peak_Performance_V1._0
         public event Action<int> ApproveClicked;
         public event Action<int> FinishRentalClicked;
 
+        public FullVehicleDetails FullVehicleDetails
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public RentVehicle RentVehicle
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void btnProceed_Click(object sender, EventArgs e)
         {
             if (Prompt == "Edit")

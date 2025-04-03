@@ -24,6 +24,14 @@ namespace Peak_Performance_V1._0
             LoadVehicles();
         }
 
+        public VehicleCard VehicleCard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         //EVENTS
         public void LoadVehicles() //INITIAL EVENT: Load the vehicle cards
         {

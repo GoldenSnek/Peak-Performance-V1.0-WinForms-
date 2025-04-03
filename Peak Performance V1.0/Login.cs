@@ -22,6 +22,15 @@ namespace Peak_Performance_V1._0
             connection = SystemManager.GetConnection();
             InitializeComponent();
         }
+
+        public Home Home
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void Login_Load(object sender, EventArgs e)
         {
             tmrFadeIn.Start();

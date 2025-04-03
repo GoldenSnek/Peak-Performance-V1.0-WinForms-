@@ -429,5 +429,69 @@ namespace Peak_Performance_V1._0
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
+        public AdminAllUsers AdminAllUsers
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public AdminAllVehicles AdminAllVehicles
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public TopVehicleCard TopVehicleCard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public TopProviderCard TopProviderCard
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public ViewAllVehicles ViewAllVehicles
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public ClientViewRental ClientViewRental
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public ProviderViewRental ProviderViewRental
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public ManageAccount ManageAccount
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

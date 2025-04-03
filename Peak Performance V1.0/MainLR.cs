@@ -7,6 +7,30 @@ namespace Peak_Performance_V1._0
             InitializeComponent();
         }
 
+        public Register Register
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public About About
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Login Login
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void MainLR_Load(object sender, EventArgs e)
         {
             SystemManager.splash++;
