@@ -40,17 +40,21 @@
             pnlRight = new Panel();
             pnlLeft = new Panel();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            btnProceed = new ReaLTaiizor.Controls.MaterialButton();
             lblHourlyPrice = new Label();
-            btnFullDetails = new ReaLTaiizor.Controls.MaterialButton();
             pictureBox1 = new PictureBox();
             lblRating = new Label();
             lblDailyPrice = new Label();
             lblTransmission = new Label();
             lblMileage = new Label();
+            picDelete = new PictureBox();
+            picEdit = new PictureBox();
+            btnProceed = new Button();
+            btnFullDetails = new Button();
             ((System.ComponentModel.ISupportInitialize)picVehicle).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picDelete).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picEdit).BeginInit();
             SuspendLayout();
             // 
             // lblType
@@ -107,7 +111,7 @@
             lblSeats.ForeColor = Color.Silver;
             lblSeats.Location = new Point(24, 310);
             lblSeats.Name = "lblSeats";
-            lblSeats.Size = new Size(150, 40);
+            lblSeats.Size = new Size(189, 40);
             lblSeats.TabIndex = 7;
             lblSeats.Text = "Seats";
             // 
@@ -180,61 +184,17 @@
             parrotGradientPanel1.TopLeft = Color.FromArgb(192, 64, 0);
             parrotGradientPanel1.TopRight = Color.FromArgb(255, 192, 128);
             // 
-            // btnProceed
-            // 
-            btnProceed.AutoSize = false;
-            btnProceed.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnProceed.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnProceed.Depth = 0;
-            btnProceed.HighEmphasis = true;
-            btnProceed.Icon = null;
-            btnProceed.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnProceed.Location = new Point(24, 408);
-            btnProceed.Margin = new Padding(4, 6, 4, 6);
-            btnProceed.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnProceed.Name = "btnProceed";
-            btnProceed.NoAccentTextColor = Color.Empty;
-            btnProceed.Size = new Size(120, 30);
-            btnProceed.TabIndex = 17;
-            btnProceed.Text = "-";
-            btnProceed.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnProceed.UseAccentColor = false;
-            btnProceed.UseVisualStyleBackColor = true;
-            btnProceed.Click += btnProceed_Click;
-            // 
             // lblHourlyPrice
             // 
             lblHourlyPrice.BackColor = Color.Transparent;
             lblHourlyPrice.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHourlyPrice.ForeColor = Color.FromArgb(255, 128, 0);
-            lblHourlyPrice.Location = new Point(179, 362);
+            lblHourlyPrice.Location = new Point(167, 363);
             lblHourlyPrice.Name = "lblHourlyPrice";
             lblHourlyPrice.Size = new Size(145, 40);
             lblHourlyPrice.TabIndex = 10;
             lblHourlyPrice.Text = "Hourly Price";
             lblHourlyPrice.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // btnFullDetails
-            // 
-            btnFullDetails.AutoSize = false;
-            btnFullDetails.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnFullDetails.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnFullDetails.Depth = 0;
-            btnFullDetails.HighEmphasis = true;
-            btnFullDetails.Icon = null;
-            btnFullDetails.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnFullDetails.Location = new Point(204, 408);
-            btnFullDetails.Margin = new Padding(4, 6, 4, 6);
-            btnFullDetails.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnFullDetails.Name = "btnFullDetails";
-            btnFullDetails.NoAccentTextColor = Color.Empty;
-            btnFullDetails.Size = new Size(120, 30);
-            btnFullDetails.TabIndex = 19;
-            btnFullDetails.Text = "Full Details";
-            btnFullDetails.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnFullDetails.UseAccentColor = false;
-            btnFullDetails.UseVisualStyleBackColor = true;
-            btnFullDetails.Click += btnFullDetails_Click;
             // 
             // pictureBox1
             // 
@@ -264,7 +224,7 @@
             lblDailyPrice.BackColor = Color.Transparent;
             lblDailyPrice.Font = new Font("Arial", 12F);
             lblDailyPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblDailyPrice.Location = new Point(179, 332);
+            lblDailyPrice.Location = new Point(167, 338);
             lblDailyPrice.Name = "lblDailyPrice";
             lblDailyPrice.Size = new Size(145, 40);
             lblDailyPrice.TabIndex = 9;
@@ -289,17 +249,81 @@
             lblMileage.ForeColor = Color.Silver;
             lblMileage.Location = new Point(23, 350);
             lblMileage.Name = "lblMileage";
-            lblMileage.Size = new Size(150, 40);
+            lblMileage.Size = new Size(190, 40);
             lblMileage.TabIndex = 23;
             lblMileage.Text = "Mileage";
+            // 
+            // picDelete
+            // 
+            picDelete.BackColor = Color.Transparent;
+            picDelete.Cursor = Cursors.Hand;
+            picDelete.Image = (Image)resources.GetObject("picDelete.Image");
+            picDelete.Location = new Point(277, 401);
+            picDelete.Name = "picDelete";
+            picDelete.Size = new Size(35, 35);
+            picDelete.SizeMode = PictureBoxSizeMode.StretchImage;
+            picDelete.TabIndex = 24;
+            picDelete.TabStop = false;
+            picDelete.Click += picDelete_Click;
+            // 
+            // picEdit
+            // 
+            picEdit.BackColor = Color.Transparent;
+            picEdit.Cursor = Cursors.Hand;
+            picEdit.Image = Properties.Resources.Edit;
+            picEdit.Location = new Point(195, 401);
+            picEdit.Name = "picEdit";
+            picEdit.Size = new Size(35, 35);
+            picEdit.SizeMode = PictureBoxSizeMode.StretchImage;
+            picEdit.TabIndex = 25;
+            picEdit.TabStop = false;
+            picEdit.Click += picEdit_Click;
+            // 
+            // btnProceed
+            // 
+            btnProceed.BackColor = Color.Transparent;
+            btnProceed.FlatAppearance.BorderColor = Color.Green;
+            btnProceed.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnProceed.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnProceed.FlatStyle = FlatStyle.Flat;
+            btnProceed.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProceed.ForeColor = Color.Lavender;
+            btnProceed.Location = new Point(179, 401);
+            btnProceed.Name = "btnProceed";
+            btnProceed.Size = new Size(133, 35);
+            btnProceed.TabIndex = 28;
+            btnProceed.Text = "-";
+            btnProceed.UseVisualStyleBackColor = false;
+            btnProceed.Click += btnProceed_Click;
+            // 
+            // btnFullDetails
+            // 
+            btnFullDetails.BackColor = Color.Transparent;
+            btnFullDetails.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnFullDetails.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0);
+            btnFullDetails.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
+            btnFullDetails.FlatStyle = FlatStyle.Flat;
+            btnFullDetails.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnFullDetails.ForeColor = Color.Lavender;
+            btnFullDetails.Location = new Point(23, 401);
+            btnFullDetails.Name = "btnFullDetails";
+            btnFullDetails.Size = new Size(133, 35);
+            btnFullDetails.TabIndex = 29;
+            btnFullDetails.Text = "Full Details";
+            btnFullDetails.UseVisualStyleBackColor = false;
+            btnFullDetails.Click += btnFullDetails_Click;
             // 
             // VehicleCard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = Color.FromArgb(45, 60, 75);
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.White;
+            BackgroundImage = Properties.Resources.MultiCar;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(btnFullDetails);
+            Controls.Add(btnProceed);
+            Controls.Add(picEdit);
+            Controls.Add(picDelete);
             Controls.Add(lblMileage);
             Controls.Add(lblSeats);
             Controls.Add(lblTransmission);
@@ -310,8 +334,6 @@
             Controls.Add(pnlRight);
             Controls.Add(pnlDown);
             Controls.Add(pnlTop);
-            Controls.Add(btnFullDetails);
-            Controls.Add(btnProceed);
             Controls.Add(lblModel);
             Controls.Add(lblMake);
             Controls.Add(lblType);
@@ -324,6 +346,8 @@
             ((System.ComponentModel.ISupportInitialize)picVehicle).EndInit();
             parrotGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picDelete).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picEdit).EndInit();
             ResumeLayout(false);
         }
 
@@ -340,13 +364,15 @@
         private Panel pnlRight;
         private Panel pnlLeft;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
-        private ReaLTaiizor.Controls.MaterialButton btnProceed;
         private Label lblHourlyPrice;
-        private ReaLTaiizor.Controls.MaterialButton btnFullDetails;
         private PictureBox pictureBox1;
         private Label lblRating;
         private Label lblDailyPrice;
         private Label lblTransmission;
         private Label lblMileage;
+        private PictureBox picDelete;
+        private PictureBox picEdit;
+        private Button btnProceed;
+        private Button btnFullDetails;
     }
 }

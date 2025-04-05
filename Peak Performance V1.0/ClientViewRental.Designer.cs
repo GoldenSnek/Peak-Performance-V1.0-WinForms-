@@ -73,6 +73,7 @@
             lblModel = new Label();
             lblMake = new Label();
             lblType = new Label();
+            pictureBox1 = new PictureBox();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).BeginInit();
             parrotGradientPanel2.SuspendLayout();
@@ -87,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)picVR3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picVR2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picVR1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblRentalDetails
@@ -670,6 +672,18 @@
             lblType.Text = "Type";
             lblType.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Black;
+            pictureBox1.BackgroundImage = Properties.Resources.CarbonFiber;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(964, 704);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 111;
+            pictureBox1.TabStop = false;
+            // 
             // ClientViewRental
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -719,6 +733,7 @@
             Controls.Add(btnReceipt);
             Controls.Add(lblCurrent);
             Controls.Add(lblRentalDetails);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ClientViewRental";
             StartPosition = FormStartPosition.CenterScreen;
@@ -738,6 +753,7 @@
             ((System.ComponentModel.ISupportInitialize)picVR3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picVR2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picVR1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -790,5 +806,6 @@
         private Label lblModel;
         private Label lblMake;
         private Label lblType;
+        private PictureBox pictureBox1;
     }
 }

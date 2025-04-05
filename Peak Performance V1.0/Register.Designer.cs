@@ -192,7 +192,7 @@
             txtPassword.SelectionStart = 0;
             txtPassword.ShortcutsEnabled = true;
             txtPassword.Size = new Size(300, 48);
-            txtPassword.TabIndex = 34;
+            txtPassword.TabIndex = 2;
             txtPassword.TabStop = false;
             txtPassword.TextAlign = HorizontalAlignment.Left;
             txtPassword.TrailingIcon = null;
@@ -224,7 +224,7 @@
             txtUsername.SelectionStart = 0;
             txtUsername.ShortcutsEnabled = true;
             txtUsername.Size = new Size(300, 48);
-            txtUsername.TabIndex = 33;
+            txtUsername.TabIndex = 1;
             txtUsername.TabStop = false;
             txtUsername.TextAlign = HorizontalAlignment.Left;
             txtUsername.TrailingIcon = null;
@@ -247,7 +247,7 @@
             btnRegister.Name = "btnRegister";
             btnRegister.NoAccentTextColor = Color.Empty;
             btnRegister.Size = new Size(250, 36);
-            btnRegister.TabIndex = 32;
+            btnRegister.TabIndex = 4;
             btnRegister.Text = "Register";
             btnRegister.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnRegister.UseAccentColor = false;
@@ -320,7 +320,7 @@
             txtConPass.SelectionStart = 0;
             txtConPass.ShortcutsEnabled = true;
             txtConPass.Size = new Size(300, 48);
-            txtConPass.TabIndex = 42;
+            txtConPass.TabIndex = 3;
             txtConPass.TabStop = false;
             txtConPass.TextAlign = HorizontalAlignment.Left;
             txtConPass.TrailingIcon = null;

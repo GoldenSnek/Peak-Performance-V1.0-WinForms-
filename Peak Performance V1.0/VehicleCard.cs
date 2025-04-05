@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using ReaLTaiizor.Forms;
 
 namespace Peak_Performance_V1._0
 {
@@ -34,8 +35,10 @@ namespace Peak_Performance_V1._0
         public double? PriceHourly = 0;
         public Image? VehicleImage = null;
         public string? Prompt = null;
+        Form ParentForm;
 
         public event Action<int, string, string, string, string, int?, string, string, string, string, string, int?, double?, double?, double?, Image> EditClicked; //event for vehicle editing
+        public event Action<int> DeleteClicked;
         public event Action<int> FullDetailsClicked;
         public event Action<int> FullDetailsClickedRent;
         public event Action<int> RentClicked;
@@ -60,11 +63,7 @@ namespace Peak_Performance_V1._0
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            if (Prompt == "Edit")
-            {
-                EditClicked?.Invoke(VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, VehicleColor, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage);
-            }
-            else if (Prompt == "Rent")
+            if (Prompt == "Rent")
             {
                 RentClicked?.Invoke(VehicleID);
             }
@@ -79,20 +78,26 @@ namespace Peak_Performance_V1._0
 
         }
 
-        private void btnFullDetails_Click(object sender, EventArgs e)
-        {
-            if (Prompt == "Approve" || Prompt == "Finish Rental")
-            {
-                FullDetailsClickedRent?.Invoke(VehicleID);
-            }
-            else
-                FullDetailsClicked?.Invoke(VehicleID);
-        }
-
-        public VehicleCard(int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string transmission, string drivetrain, string licensePlate,
+        public VehicleCard(Form form, int vehicleID, string generalType, string specificType, string make, string model, int vehicleYear, string transmission, string drivetrain, string licensePlate,
                            string color, string fuelType, int seats, double mileage, double priceDaily, double priceHourly, Image vehicleImage, double rating, string prompt)
         {
             InitializeComponent();
+
+            ParentForm = form;
+
+            if (ParentForm is ProviderUpdateVehicle)
+            {
+                btnProceed.Visible = false;
+                picEdit.Visible = true;
+                picDelete.Visible = true;
+            }
+            else
+            {
+                btnProceed.Visible = true;
+                picEdit.Visible = false;
+                picDelete.Visible = false;
+            }
+
 
             VehicleID = vehicleID;
             GeneralType = generalType;
@@ -114,8 +119,10 @@ namespace Peak_Performance_V1._0
 
             Prompt = prompt;
 
-            //this.DoubleBuffered = true; // Prevent flickering
-            //this.Paint += new PaintEventHandler(RoundedUserControl_Paint); // Apply immediately
+            if (GeneralType == "Car")
+                this.BackgroundImage = Properties.Resources.MultiCar;
+            else if (GeneralType == "Motorcycle")
+                this.BackgroundImage = Properties.Resources.MultiMotor;
 
             lblType.Text = $"{generalType} ({specificType})";
             lblMake.Text = $"{make}";
@@ -139,53 +146,72 @@ namespace Peak_Performance_V1._0
 
             if (prompt != "")
             {
-                btnProceed.Visible = true;
                 btnProceed.Text = prompt;
             }
             else
                 btnProceed.Visible = false;
         }
 
-    /*
-    private void RoundedUserControl_Paint(object sender, PaintEventArgs e)
-    {
-        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-        e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-        using (GraphicsPath path = GetRoundedRectanglePath(new Rectangle(0, 0, this.Width, this.Height), _cornerRadius))
+        private void picEdit_Click(object sender, EventArgs e)
         {
-            // Apply the rounded region
-            this.Region = new Region(path);
+            EditClicked?.Invoke(VehicleID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, VehicleColor, FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage);
+        }
 
-            // Fill Background Smoothly
-            using (SolidBrush brush = new SolidBrush(this.BackColor))
+        private void picDelete_Click(object sender, EventArgs e)
+        {
+            DeleteClicked?.Invoke(VehicleID);
+        }
+
+        private void btnFullDetails_Click(object sender, EventArgs e)
+        {
+            if (Prompt == "Approve" || Prompt == "Finish Rental")
             {
-                e.Graphics.FillPath(brush, path);
+                FullDetailsClickedRent?.Invoke(VehicleID);
             }
+            else
+                FullDetailsClicked?.Invoke(VehicleID);
+        }
 
-            // Draw Border
-            using (Pen borderPen = new Pen(_borderColor, _borderThickness))
+        /*
+        private void RoundedUserControl_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+            using (GraphicsPath path = GetRoundedRectanglePath(new Rectangle(0, 0, this.Width, this.Height), _cornerRadius))
             {
-                e.Graphics.DrawPath(borderPen, path);
+                // Apply the rounded region
+                this.Region = new Region(path);
+
+                // Fill Background Smoothly
+                using (SolidBrush brush = new SolidBrush(this.BackColor))
+                {
+                    e.Graphics.FillPath(brush, path);
+                }
+
+                // Draw Border
+                using (Pen borderPen = new Pen(_borderColor, _borderThickness))
+                {
+                    e.Graphics.DrawPath(borderPen, path);
+                }
             }
         }
-    }
 
-    private GraphicsPath GetRoundedRectanglePath(Rectangle bounds, int radius)
-    {
-        int diameter = radius * 2;
-        GraphicsPath path = new GraphicsPath();
+        private GraphicsPath GetRoundedRectanglePath(Rectangle bounds, int radius)
+        {
+            int diameter = radius * 2;
+            GraphicsPath path = new GraphicsPath();
 
-        path.StartFigure();
-        path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90); // Top-Left
-        path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90); // Top-Right
-        path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90); // Bottom-Right
-        path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90); // Bottom-Left
-        path.CloseFigure();
+            path.StartFigure();
+            path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90); // Top-Left
+            path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90); // Top-Right
+            path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90); // Bottom-Right
+            path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90); // Bottom-Left
+            path.CloseFigure();
 
-        return path;
-    }
-    */
+            return path;
+        }
+        */
     }
 }

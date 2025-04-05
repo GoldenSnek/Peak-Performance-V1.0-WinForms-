@@ -74,6 +74,7 @@
             panel10 = new Panel();
             panel11 = new Panel();
             panel12 = new Panel();
+            pictureBox3 = new PictureBox();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
             pnlSideMenu = new ReaLTaiizor.Controls.ParrotSlidingPanel();
             picHide = new PictureBox();
@@ -109,6 +110,7 @@
             panel1.SuspendLayout();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picNight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             pnlSideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picHide).BeginInit();
             pnlTitle.SuspendLayout();
@@ -148,6 +150,7 @@
             lblAnalytics.Size = new Size(519, 20);
             lblAnalytics.TabIndex = 6;
             lblAnalytics.Text = "Top Rated Vehicles";
+            lblAnalytics.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlForm
             // 
@@ -159,6 +162,7 @@
             pnlForm.Controls.Add(panel3);
             pnlForm.Controls.Add(panel1);
             pnlForm.Controls.Add(panel8);
+            pnlForm.Controls.Add(pictureBox3);
             pnlForm.Dock = DockStyle.Fill;
             pnlForm.Location = new Point(220, 30);
             pnlForm.Name = "pnlForm";
@@ -169,6 +173,7 @@
             // 
             panel18.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel18.BackColor = Color.FromArgb(35, 40, 60);
+            panel18.BackgroundImage = Properties.Resources.CarbonFiber3;
             panel18.Controls.Add(label4);
             panel18.Controls.Add(pictureBox1);
             panel18.Controls.Add(panel19);
@@ -185,9 +190,10 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(29, 114);
+            label4.Location = new Point(56, 107);
             label4.Name = "label4";
             label4.Size = new Size(243, 196);
             label4.TabIndex = 25;
@@ -196,8 +202,9 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Bottom;
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.FType;
-            pictureBox1.Location = new Point(29, 329);
+            pictureBox1.Location = new Point(30, 331);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(300, 175);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -219,11 +226,11 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Copperplate Gothic Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Copperplate Gothic Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Silver;
-            label3.Location = new Point(43, 23);
+            label3.Location = new Point(12, 31);
             label3.Name = "label3";
-            label3.Size = new Size(269, 30);
+            label3.Size = new Size(320, 35);
             label3.TabIndex = 24;
             label3.Text = "Rent ride repeat";
             // 
@@ -352,6 +359,7 @@
             // 
             flpDisplayUsers.AutoScroll = true;
             flpDisplayUsers.BackColor = Color.FromArgb(45, 60, 75);
+            flpDisplayUsers.BackgroundImage = Properties.Resources.CarbonFiber2;
             flpDisplayUsers.Dock = DockStyle.Fill;
             flpDisplayUsers.Location = new Point(3, 23);
             flpDisplayUsers.Name = "flpDisplayUsers";
@@ -369,6 +377,7 @@
             label1.Size = new Size(244, 20);
             label1.TabIndex = 21;
             label1.Text = "Top rated providers";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel7
             // 
@@ -596,6 +605,7 @@
             // 
             flpDisplayVehicles.AutoScroll = true;
             flpDisplayVehicles.BackColor = Color.FromArgb(45, 60, 75);
+            flpDisplayVehicles.BackgroundImage = Properties.Resources.CarbonFiber2;
             flpDisplayVehicles.Dock = DockStyle.Fill;
             flpDisplayVehicles.FlowDirection = FlowDirection.TopDown;
             flpDisplayVehicles.Location = new Point(3, 23);
@@ -653,6 +663,16 @@
             panel12.Name = "panel12";
             panel12.Size = new Size(525, 3);
             panel12.TabIndex = 15;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = Properties.Resources.CarbonFiber;
+            pictureBox3.Dock = DockStyle.Fill;
+            pictureBox3.Location = new Point(0, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(964, 704);
+            pictureBox3.TabIndex = 22;
+            pictureBox3.TabStop = false;
             // 
             // tmrFadeIn
             // 
@@ -1140,6 +1160,7 @@
             panel1.PerformLayout();
             panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picNight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             pnlSideMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picHide).EndInit();
             pnlTitle.ResumeLayout(false);
@@ -1223,5 +1244,6 @@
         private FlowLayoutPanel flpDisplayVehicles;
         private Label label2;
         private Label label5;
+        private PictureBox pictureBox3;
     }
 }

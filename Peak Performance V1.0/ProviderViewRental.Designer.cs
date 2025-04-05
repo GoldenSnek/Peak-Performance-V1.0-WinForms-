@@ -45,6 +45,7 @@
             // 
             flpWaitingApproval.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             flpWaitingApproval.AutoScroll = true;
+            flpWaitingApproval.BackgroundImage = Properties.Resources.CarbonFiber2;
             flpWaitingApproval.Location = new Point(0, 50);
             flpWaitingApproval.Name = "flpWaitingApproval";
             flpWaitingApproval.Size = new Size(360, 654);
@@ -54,6 +55,7 @@
             // 
             flpCurrentlyRented.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpCurrentlyRented.AutoScroll = true;
+            flpCurrentlyRented.BackgroundImage = Properties.Resources.CarbonFiber3;
             flpCurrentlyRented.Location = new Point(360, 50);
             flpCurrentlyRented.Name = "flpCurrentlyRented";
             flpCurrentlyRented.Size = new Size(360, 654);

@@ -84,10 +84,11 @@ namespace Peak_Performance_V1._0
                         if (rentedBy == 0)
                         {
                             //create a VehicleCard and add it to the FlowLayoutPanel
-                            VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                            VehicleCard card = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Edit");
                             card.EditClicked += Card_EditClicked;
                             card.FullDetailsClicked += Card_FullDetailsClicked;
+                            card.DeleteClicked += Card_DeleteClicked;
                             flpDisplay.Controls.Add(card);
                         }
                     }
@@ -231,33 +232,6 @@ namespace Peak_Performance_V1._0
         }
         public void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete vehicle
         {
-            if (SystemManager.currentEditVehicleID == 0)
-            {
-                MessageBox.Show("Please choose a vehicle to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string deleteQuery = $"DELETE FROM Vehicles WHERE VehicleID = {SystemManager.currentEditVehicleID}";
-            using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
-            {
-                try
-                {
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    MessageBox.Show("BYEBYE", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LoadVehicles();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error deleting" + ex.Message);
-                    return;
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
         }
 
         //SUPPORTING EVENTS
@@ -281,6 +255,8 @@ namespace Peak_Performance_V1._0
             picPreview.Image = vehicleImage;
         }
 
+
+
         public void Card_FullDetailsClicked(int vehicleID) { //SUPPORTING EVENT: Full Details
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
@@ -300,6 +276,37 @@ namespace Peak_Performance_V1._0
                 detailsForm.ShowDialog();
 
                 formBackground.Dispose();
+            }
+        }
+
+        public void Card_DeleteClicked(int vehicleID) //SUPPORTING EVENT: Delete
+        {
+            if (vehicleID == 0)
+            {
+                MessageBox.Show("Please choose a vehicle to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string deleteQuery = $"DELETE FROM Vehicles WHERE VehicleID = {vehicleID}";
+            using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
+            {
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("BYEBYE", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadVehicles();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting" + ex.Message);
+                    return;
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 

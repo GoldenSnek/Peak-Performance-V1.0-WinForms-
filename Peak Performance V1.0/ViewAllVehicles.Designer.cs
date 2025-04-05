@@ -70,6 +70,7 @@
             // 
             flpDisplay.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpDisplay.AutoScroll = true;
+            flpDisplay.BackgroundImage = Properties.Resources.CarbonFiber2;
             flpDisplay.Location = new Point(1, 1);
             flpDisplay.Name = "flpDisplay";
             flpDisplay.Size = new Size(700, 702);

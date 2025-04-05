@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageAccount));
             picProfilePicture = new PictureBox();
             lblUsername = new Label();
             lblRole = new Label();
@@ -35,34 +36,44 @@
             lblTotalRentals = new Label();
             lblRating = new Label();
             lblImagePath = new Label();
-            btnBrowse = new ReaLTaiizor.Controls.MaterialButton();
-            btnClearPicture = new ReaLTaiizor.Controls.MaterialButton();
-            panel1 = new Panel();
-            txtFullname = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            panel6 = new Panel();
-            txtAddress = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            panel2 = new Panel();
-            txtBirthday = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            panel3 = new Panel();
-            txtLicenseID = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            panel4 = new Panel();
-            txtEmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            panel5 = new Panel();
-            txtNumber = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            btnClear = new ReaLTaiizor.Controls.MaterialButton();
-            btnSave = new ReaLTaiizor.Controls.MaterialButton();
-            btnDelete = new ReaLTaiizor.Controls.MaterialButton();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             pictureBox1 = new PictureBox();
+            panel7 = new Panel();
+            btnBrowseDevice = new Button();
+            btnClearPicture = new Button();
+            txtFullname = new ReaLTaiizor.Controls.ForeverTextBox();
+            panel8 = new Panel();
+            btnSave = new Button();
+            btnDelete = new Button();
+            btnClear = new Button();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            txtNumber = new ReaLTaiizor.Controls.ForeverTextBox();
+            txtEmail = new ReaLTaiizor.Controls.ForeverTextBox();
+            txtLicenseID = new ReaLTaiizor.Controls.ForeverTextBox();
+            label3 = new Label();
+            label2 = new Label();
+            txtBirthday = new ReaLTaiizor.Controls.ForeverTextBox();
+            txtAddress = new ReaLTaiizor.Controls.ForeverTextBox();
+            label1 = new Label();
+            panel1 = new Panel();
+            pnlLeft = new Panel();
+            pnlRight = new Panel();
+            pnlDown = new Panel();
+            pnlTop = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).BeginInit();
-            panel1.SuspendLayout();
-            panel6.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // picProfilePicture
@@ -79,62 +90,67 @@
             // lblUsername
             // 
             lblUsername.Anchor = AnchorStyles.None;
-            lblUsername.AutoSize = true;
+            lblUsername.BackColor = Color.FromArgb(35, 40, 50);
             lblUsername.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblUsername.ForeColor = Color.White;
-            lblUsername.Location = new Point(85, 336);
+            lblUsername.ForeColor = Color.Lavender;
+            lblUsername.Location = new Point(44, 395);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(90, 18);
+            lblUsername.Size = new Size(246, 24);
             lblUsername.TabIndex = 4;
             lblUsername.Text = "Username";
+            lblUsername.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblRole
             // 
             lblRole.Anchor = AnchorStyles.None;
-            lblRole.AutoSize = true;
+            lblRole.BackColor = Color.FromArgb(35, 40, 50);
             lblRole.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblRole.ForeColor = Color.White;
-            lblRole.Location = new Point(85, 381);
+            lblRole.ForeColor = Color.Lavender;
+            lblRole.Location = new Point(44, 440);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(44, 18);
+            lblRole.Size = new Size(246, 24);
             lblRole.TabIndex = 5;
             lblRole.Text = "Role";
+            lblRole.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblUserID
             // 
             lblUserID.Anchor = AnchorStyles.None;
-            lblUserID.AutoSize = true;
+            lblUserID.BackColor = Color.FromArgb(35, 40, 50);
             lblUserID.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblUserID.ForeColor = Color.White;
-            lblUserID.Location = new Point(85, 294);
+            lblUserID.ForeColor = Color.Lavender;
+            lblUserID.Location = new Point(44, 353);
             lblUserID.Name = "lblUserID";
-            lblUserID.Size = new Size(67, 18);
+            lblUserID.Size = new Size(246, 24);
             lblUserID.TabIndex = 6;
             lblUserID.Text = "User ID";
+            lblUserID.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblTotalRentals
             // 
             lblTotalRentals.Anchor = AnchorStyles.None;
-            lblTotalRentals.AutoSize = true;
+            lblTotalRentals.BackColor = Color.FromArgb(35, 40, 50);
             lblTotalRentals.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblTotalRentals.ForeColor = Color.White;
-            lblTotalRentals.Location = new Point(85, 472);
+            lblTotalRentals.ForeColor = Color.Lavender;
+            lblTotalRentals.Location = new Point(44, 531);
             lblTotalRentals.Name = "lblTotalRentals";
-            lblTotalRentals.Size = new Size(113, 18);
+            lblTotalRentals.Size = new Size(246, 24);
             lblTotalRentals.TabIndex = 14;
             lblTotalRentals.Text = "Total Rentals";
+            lblTotalRentals.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblRating
             // 
             lblRating.Anchor = AnchorStyles.None;
-            lblRating.AutoSize = true;
+            lblRating.BackColor = Color.FromArgb(35, 40, 50);
             lblRating.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblRating.ForeColor = Color.White;
-            lblRating.Location = new Point(85, 427);
+            lblRating.ForeColor = Color.Lavender;
+            lblRating.Location = new Point(44, 486);
             lblRating.Name = "lblRating";
-            lblRating.Size = new Size(60, 18);
+            lblRating.Size = new Size(246, 24);
             lblRating.TabIndex = 13;
             lblRating.Text = "Rating";
+            lblRating.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblImagePath
             // 
@@ -142,378 +158,11 @@
             lblImagePath.AutoSize = true;
             lblImagePath.Font = new Font("Arial Rounded MT Bold", 12F);
             lblImagePath.ForeColor = Color.White;
-            lblImagePath.Location = new Point(200, 200);
+            lblImagePath.Location = new Point(189, 223);
             lblImagePath.Name = "lblImagePath";
             lblImagePath.Size = new Size(0, 18);
             lblImagePath.TabIndex = 29;
             lblImagePath.Visible = false;
-            // 
-            // btnBrowse
-            // 
-            btnBrowse.Anchor = AnchorStyles.None;
-            btnBrowse.AutoSize = false;
-            btnBrowse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnBrowse.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnBrowse.Depth = 0;
-            btnBrowse.HighEmphasis = true;
-            btnBrowse.Icon = null;
-            btnBrowse.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnBrowse.Location = new Point(231, 58);
-            btnBrowse.Margin = new Padding(4, 6, 4, 6);
-            btnBrowse.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.NoAccentTextColor = Color.Empty;
-            btnBrowse.Size = new Size(119, 36);
-            btnBrowse.TabIndex = 43;
-            btnBrowse.Text = "Browse Device";
-            btnBrowse.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnBrowse.UseAccentColor = false;
-            btnBrowse.UseVisualStyleBackColor = true;
-            btnBrowse.Click += btnBrowse_Click;
-            // 
-            // btnClearPicture
-            // 
-            btnClearPicture.Anchor = AnchorStyles.None;
-            btnClearPicture.AutoSize = false;
-            btnClearPicture.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnClearPicture.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnClearPicture.Depth = 0;
-            btnClearPicture.HighEmphasis = true;
-            btnClearPicture.Icon = null;
-            btnClearPicture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClearPicture.Location = new Point(599, 58);
-            btnClearPicture.Margin = new Padding(4, 6, 4, 6);
-            btnClearPicture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnClearPicture.Name = "btnClearPicture";
-            btnClearPicture.NoAccentTextColor = Color.Empty;
-            btnClearPicture.Size = new Size(119, 36);
-            btnClearPicture.TabIndex = 44;
-            btnClearPicture.Text = "Clear Picture";
-            btnClearPicture.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnClearPicture.UseAccentColor = false;
-            btnClearPicture.UseVisualStyleBackColor = true;
-            btnClearPicture.Click += btnClearPicture_Click;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.Lavender;
-            panel1.Controls.Add(txtFullname);
-            panel1.Location = new Point(391, 264);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 48);
-            panel1.TabIndex = 45;
-            // 
-            // txtFullname
-            // 
-            txtFullname.AnimateReadOnly = false;
-            txtFullname.AutoCompleteMode = AutoCompleteMode.None;
-            txtFullname.AutoCompleteSource = AutoCompleteSource.None;
-            txtFullname.BackgroundImageLayout = ImageLayout.None;
-            txtFullname.CharacterCasing = CharacterCasing.Normal;
-            txtFullname.Depth = 0;
-            txtFullname.Dock = DockStyle.Fill;
-            txtFullname.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtFullname.HideSelection = true;
-            txtFullname.Hint = "Full Name";
-            txtFullname.LeadingIcon = null;
-            txtFullname.Location = new Point(0, 0);
-            txtFullname.MaxLength = 32767;
-            txtFullname.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtFullname.Name = "txtFullname";
-            txtFullname.PasswordChar = '\0';
-            txtFullname.PrefixSuffixText = null;
-            txtFullname.ReadOnly = false;
-            txtFullname.RightToLeft = RightToLeft.No;
-            txtFullname.SelectedText = "";
-            txtFullname.SelectionLength = 0;
-            txtFullname.SelectionStart = 0;
-            txtFullname.ShortcutsEnabled = true;
-            txtFullname.Size = new Size(200, 48);
-            txtFullname.TabIndex = 31;
-            txtFullname.TabStop = false;
-            txtFullname.TextAlign = HorizontalAlignment.Left;
-            txtFullname.TrailingIcon = null;
-            txtFullname.UseSystemPasswordChar = false;
-            // 
-            // panel6
-            // 
-            panel6.Anchor = AnchorStyles.None;
-            panel6.BackColor = Color.Lavender;
-            panel6.Controls.Add(txtAddress);
-            panel6.Location = new Point(391, 375);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(200, 48);
-            panel6.TabIndex = 46;
-            // 
-            // txtAddress
-            // 
-            txtAddress.AnimateReadOnly = false;
-            txtAddress.AutoCompleteMode = AutoCompleteMode.None;
-            txtAddress.AutoCompleteSource = AutoCompleteSource.None;
-            txtAddress.BackgroundImageLayout = ImageLayout.None;
-            txtAddress.CharacterCasing = CharacterCasing.Normal;
-            txtAddress.Depth = 0;
-            txtAddress.Dock = DockStyle.Fill;
-            txtAddress.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtAddress.HideSelection = true;
-            txtAddress.Hint = "Address";
-            txtAddress.LeadingIcon = null;
-            txtAddress.Location = new Point(0, 0);
-            txtAddress.MaxLength = 32767;
-            txtAddress.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtAddress.Name = "txtAddress";
-            txtAddress.PasswordChar = '\0';
-            txtAddress.PrefixSuffixText = null;
-            txtAddress.ReadOnly = false;
-            txtAddress.RightToLeft = RightToLeft.No;
-            txtAddress.SelectedText = "";
-            txtAddress.SelectionLength = 0;
-            txtAddress.SelectionStart = 0;
-            txtAddress.ShortcutsEnabled = true;
-            txtAddress.Size = new Size(200, 48);
-            txtAddress.TabIndex = 31;
-            txtAddress.TabStop = false;
-            txtAddress.TextAlign = HorizontalAlignment.Left;
-            txtAddress.TrailingIcon = null;
-            txtAddress.UseSystemPasswordChar = false;
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.Lavender;
-            panel2.Controls.Add(txtBirthday);
-            panel2.Location = new Point(391, 479);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 48);
-            panel2.TabIndex = 47;
-            // 
-            // txtBirthday
-            // 
-            txtBirthday.AnimateReadOnly = false;
-            txtBirthday.AutoCompleteMode = AutoCompleteMode.None;
-            txtBirthday.AutoCompleteSource = AutoCompleteSource.None;
-            txtBirthday.BackgroundImageLayout = ImageLayout.None;
-            txtBirthday.CharacterCasing = CharacterCasing.Normal;
-            txtBirthday.Depth = 0;
-            txtBirthday.Dock = DockStyle.Fill;
-            txtBirthday.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtBirthday.HideSelection = true;
-            txtBirthday.Hint = "Birthday";
-            txtBirthday.LeadingIcon = null;
-            txtBirthday.Location = new Point(0, 0);
-            txtBirthday.MaxLength = 32767;
-            txtBirthday.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtBirthday.Name = "txtBirthday";
-            txtBirthday.PasswordChar = '\0';
-            txtBirthday.PrefixSuffixText = null;
-            txtBirthday.ReadOnly = false;
-            txtBirthday.RightToLeft = RightToLeft.No;
-            txtBirthday.SelectedText = "";
-            txtBirthday.SelectionLength = 0;
-            txtBirthday.SelectionStart = 0;
-            txtBirthday.ShortcutsEnabled = true;
-            txtBirthday.Size = new Size(200, 48);
-            txtBirthday.TabIndex = 31;
-            txtBirthday.TabStop = false;
-            txtBirthday.TextAlign = HorizontalAlignment.Left;
-            txtBirthday.TrailingIcon = null;
-            txtBirthday.UseSystemPasswordChar = false;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.None;
-            panel3.BackColor = Color.Lavender;
-            panel3.Controls.Add(txtLicenseID);
-            panel3.Location = new Point(714, 264);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 48);
-            panel3.TabIndex = 48;
-            // 
-            // txtLicenseID
-            // 
-            txtLicenseID.AnimateReadOnly = false;
-            txtLicenseID.AutoCompleteMode = AutoCompleteMode.None;
-            txtLicenseID.AutoCompleteSource = AutoCompleteSource.None;
-            txtLicenseID.BackgroundImageLayout = ImageLayout.None;
-            txtLicenseID.CharacterCasing = CharacterCasing.Normal;
-            txtLicenseID.Depth = 0;
-            txtLicenseID.Dock = DockStyle.Fill;
-            txtLicenseID.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtLicenseID.HideSelection = true;
-            txtLicenseID.Hint = "Drivers License ID";
-            txtLicenseID.LeadingIcon = null;
-            txtLicenseID.Location = new Point(0, 0);
-            txtLicenseID.MaxLength = 32767;
-            txtLicenseID.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtLicenseID.Name = "txtLicenseID";
-            txtLicenseID.PasswordChar = '\0';
-            txtLicenseID.PrefixSuffixText = null;
-            txtLicenseID.ReadOnly = false;
-            txtLicenseID.RightToLeft = RightToLeft.No;
-            txtLicenseID.SelectedText = "";
-            txtLicenseID.SelectionLength = 0;
-            txtLicenseID.SelectionStart = 0;
-            txtLicenseID.ShortcutsEnabled = true;
-            txtLicenseID.Size = new Size(200, 48);
-            txtLicenseID.TabIndex = 31;
-            txtLicenseID.TabStop = false;
-            txtLicenseID.TextAlign = HorizontalAlignment.Left;
-            txtLicenseID.TrailingIcon = null;
-            txtLicenseID.UseSystemPasswordChar = false;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.None;
-            panel4.BackColor = Color.Lavender;
-            panel4.Controls.Add(txtEmail);
-            panel4.Location = new Point(714, 375);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 48);
-            panel4.TabIndex = 49;
-            // 
-            // txtEmail
-            // 
-            txtEmail.AnimateReadOnly = false;
-            txtEmail.AutoCompleteMode = AutoCompleteMode.None;
-            txtEmail.AutoCompleteSource = AutoCompleteSource.None;
-            txtEmail.BackgroundImageLayout = ImageLayout.None;
-            txtEmail.CharacterCasing = CharacterCasing.Normal;
-            txtEmail.Depth = 0;
-            txtEmail.Dock = DockStyle.Fill;
-            txtEmail.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtEmail.HideSelection = true;
-            txtEmail.Hint = "Email";
-            txtEmail.LeadingIcon = null;
-            txtEmail.Location = new Point(0, 0);
-            txtEmail.MaxLength = 32767;
-            txtEmail.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtEmail.Name = "txtEmail";
-            txtEmail.PasswordChar = '\0';
-            txtEmail.PrefixSuffixText = null;
-            txtEmail.ReadOnly = false;
-            txtEmail.RightToLeft = RightToLeft.No;
-            txtEmail.SelectedText = "";
-            txtEmail.SelectionLength = 0;
-            txtEmail.SelectionStart = 0;
-            txtEmail.ShortcutsEnabled = true;
-            txtEmail.Size = new Size(200, 48);
-            txtEmail.TabIndex = 31;
-            txtEmail.TabStop = false;
-            txtEmail.TextAlign = HorizontalAlignment.Left;
-            txtEmail.TrailingIcon = null;
-            txtEmail.UseSystemPasswordChar = false;
-            // 
-            // panel5
-            // 
-            panel5.Anchor = AnchorStyles.None;
-            panel5.BackColor = Color.Lavender;
-            panel5.Controls.Add(txtNumber);
-            panel5.Location = new Point(714, 479);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 48);
-            panel5.TabIndex = 50;
-            // 
-            // txtNumber
-            // 
-            txtNumber.AnimateReadOnly = false;
-            txtNumber.AutoCompleteMode = AutoCompleteMode.None;
-            txtNumber.AutoCompleteSource = AutoCompleteSource.None;
-            txtNumber.BackgroundImageLayout = ImageLayout.None;
-            txtNumber.CharacterCasing = CharacterCasing.Normal;
-            txtNumber.Depth = 0;
-            txtNumber.Dock = DockStyle.Fill;
-            txtNumber.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtNumber.HideSelection = true;
-            txtNumber.Hint = "Contact Number";
-            txtNumber.LeadingIcon = null;
-            txtNumber.Location = new Point(0, 0);
-            txtNumber.MaxLength = 32767;
-            txtNumber.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtNumber.Name = "txtNumber";
-            txtNumber.PasswordChar = '\0';
-            txtNumber.PrefixSuffixText = null;
-            txtNumber.ReadOnly = false;
-            txtNumber.RightToLeft = RightToLeft.No;
-            txtNumber.SelectedText = "";
-            txtNumber.SelectionLength = 0;
-            txtNumber.SelectionStart = 0;
-            txtNumber.ShortcutsEnabled = true;
-            txtNumber.Size = new Size(200, 48);
-            txtNumber.TabIndex = 31;
-            txtNumber.TabStop = false;
-            txtNumber.TextAlign = HorizontalAlignment.Left;
-            txtNumber.TrailingIcon = null;
-            txtNumber.UseSystemPasswordChar = false;
-            // 
-            // btnClear
-            // 
-            btnClear.Anchor = AnchorStyles.None;
-            btnClear.AutoSize = false;
-            btnClear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnClear.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnClear.Depth = 0;
-            btnClear.HighEmphasis = true;
-            btnClear.Icon = null;
-            btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(139, 610);
-            btnClear.Margin = new Padding(4, 6, 4, 6);
-            btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnClear.Name = "btnClear";
-            btnClear.NoAccentTextColor = Color.Empty;
-            btnClear.Size = new Size(119, 36);
-            btnClear.TabIndex = 51;
-            btnClear.Text = "Clear All";
-            btnClear.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnClear.UseAccentColor = false;
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
-            // 
-            // btnSave
-            // 
-            btnSave.Anchor = AnchorStyles.None;
-            btnSave.AutoSize = false;
-            btnSave.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnSave.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnSave.Depth = 0;
-            btnSave.HighEmphasis = true;
-            btnSave.Icon = null;
-            btnSave.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnSave.Location = new Point(421, 610);
-            btnSave.Margin = new Padding(4, 6, 4, 6);
-            btnSave.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnSave.Name = "btnSave";
-            btnSave.NoAccentTextColor = Color.Empty;
-            btnSave.Size = new Size(119, 36);
-            btnSave.TabIndex = 52;
-            btnSave.Text = "Save Changes";
-            btnSave.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnSave.UseAccentColor = false;
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.None;
-            btnDelete.AutoSize = false;
-            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnDelete.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnDelete.Depth = 0;
-            btnDelete.HighEmphasis = true;
-            btnDelete.Icon = null;
-            btnDelete.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnDelete.Location = new Point(695, 610);
-            btnDelete.Margin = new Padding(4, 6, 4, 6);
-            btnDelete.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnDelete.Name = "btnDelete";
-            btnDelete.NoAccentTextColor = Color.Empty;
-            btnDelete.Size = new Size(129, 36);
-            btnDelete.TabIndex = 53;
-            btnDelete.Text = "Delete Account";
-            btnDelete.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnDelete.UseAccentColor = false;
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
             // 
             // parrotGradientPanel1
             // 
@@ -523,7 +172,7 @@
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel1.Controls.Add(picProfilePicture);
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel1.Location = new Point(401, 31);
+            parrotGradientPanel1.Location = new Point(88, 20);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
@@ -538,7 +187,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Black;
-            pictureBox1.BackgroundImage = Properties.Resources.ManyCarsBG1;
+            pictureBox1.BackgroundImage = Properties.Resources.CarbonFiber;
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
@@ -547,6 +196,420 @@
             pictureBox1.TabIndex = 55;
             pictureBox1.TabStop = false;
             // 
+            // panel7
+            // 
+            panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Controls.Add(btnBrowseDevice);
+            panel7.Controls.Add(btnClearPicture);
+            panel7.Controls.Add(parrotGradientPanel1);
+            panel7.Controls.Add(lblTotalRentals);
+            panel7.Controls.Add(lblRating);
+            panel7.Controls.Add(lblUserID);
+            panel7.Controls.Add(lblRole);
+            panel7.Controls.Add(lblUsername);
+            panel7.Dock = DockStyle.Fill;
+            panel7.Location = new Point(0, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(326, 586);
+            panel7.TabIndex = 56;
+            // 
+            // btnBrowseDevice
+            // 
+            btnBrowseDevice.BackColor = Color.Transparent;
+            btnBrowseDevice.FlatAppearance.BorderColor = Color.Cyan;
+            btnBrowseDevice.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnBrowseDevice.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnBrowseDevice.FlatStyle = FlatStyle.Flat;
+            btnBrowseDevice.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnBrowseDevice.ForeColor = Color.Black;
+            btnBrowseDevice.Location = new Point(99, 239);
+            btnBrowseDevice.Name = "btnBrowseDevice";
+            btnBrowseDevice.Size = new Size(133, 25);
+            btnBrowseDevice.TabIndex = 56;
+            btnBrowseDevice.Text = "Browse Device";
+            btnBrowseDevice.UseVisualStyleBackColor = false;
+            btnBrowseDevice.Click += btnBrowse_Click;
+            // 
+            // btnClearPicture
+            // 
+            btnClearPicture.BackColor = Color.Transparent;
+            btnClearPicture.FlatAppearance.BorderColor = Color.Cyan;
+            btnClearPicture.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnClearPicture.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnClearPicture.FlatStyle = FlatStyle.Flat;
+            btnClearPicture.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnClearPicture.ForeColor = Color.Black;
+            btnClearPicture.Location = new Point(99, 267);
+            btnClearPicture.Name = "btnClearPicture";
+            btnClearPicture.Size = new Size(133, 25);
+            btnClearPicture.TabIndex = 55;
+            btnClearPicture.Text = "Clear Picture";
+            btnClearPicture.UseVisualStyleBackColor = false;
+            btnClearPicture.Click += btnClearPicture_Click;
+            // 
+            // txtFullname
+            // 
+            txtFullname.BackColor = Color.Transparent;
+            txtFullname.BaseColor = Color.FromArgb(35, 40, 50);
+            txtFullname.BorderColor = Color.FromArgb(255, 128, 0);
+            txtFullname.FocusOnHover = false;
+            txtFullname.Font = new Font("Cascadia Code", 9.75F);
+            txtFullname.ForeColor = Color.FromArgb(192, 192, 192);
+            txtFullname.Location = new Point(62, 45);
+            txtFullname.MaxLength = 32767;
+            txtFullname.Multiline = false;
+            txtFullname.Name = "txtFullname";
+            txtFullname.ReadOnly = false;
+            txtFullname.Size = new Size(200, 27);
+            txtFullname.TabIndex = 57;
+            txtFullname.TextAlign = HorizontalAlignment.Left;
+            txtFullname.UseSystemPasswordChar = false;
+            // 
+            // panel8
+            // 
+            panel8.BackgroundImage = Properties.Resources.Account2;
+            panel8.BackgroundImageLayout = ImageLayout.Stretch;
+            panel8.Controls.Add(btnSave);
+            panel8.Controls.Add(btnDelete);
+            panel8.Controls.Add(btnClear);
+            panel8.Controls.Add(label6);
+            panel8.Controls.Add(label5);
+            panel8.Controls.Add(label4);
+            panel8.Controls.Add(txtNumber);
+            panel8.Controls.Add(txtEmail);
+            panel8.Controls.Add(txtLicenseID);
+            panel8.Controls.Add(label3);
+            panel8.Controls.Add(label2);
+            panel8.Controls.Add(txtBirthday);
+            panel8.Controls.Add(txtAddress);
+            panel8.Controls.Add(label1);
+            panel8.Controls.Add(txtFullname);
+            panel8.Dock = DockStyle.Fill;
+            panel8.Location = new Point(0, 3);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(326, 583);
+            panel8.TabIndex = 58;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.Transparent;
+            btnSave.FlatAppearance.BorderColor = Color.Green;
+            btnSave.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnSave.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnSave.ForeColor = Color.Lavender;
+            btnSave.Location = new Point(173, 514);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(133, 45);
+            btnSave.TabIndex = 72;
+            btnSave.Text = "Save Changes";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Transparent;
+            btnDelete.FlatAppearance.BorderColor = Color.Maroon;
+            btnDelete.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            btnDelete.FlatAppearance.MouseOverBackColor = Color.Maroon;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnDelete.ForeColor = Color.Lavender;
+            btnDelete.Location = new Point(25, 514);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(133, 45);
+            btnDelete.TabIndex = 71;
+            btnDelete.Text = "Deactivate Account";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Transparent;
+            btnClear.FlatAppearance.BorderColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnClear.ForeColor = Color.Lavender;
+            btnClear.Location = new Point(101, 415);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(133, 25);
+            btnClear.TabIndex = 70;
+            btnClear.Text = "Clear All";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Copperplate Gothic Light", 12F);
+            label6.ForeColor = Color.Lavender;
+            label6.Location = new Point(62, 327);
+            label6.Name = "label6";
+            label6.Size = new Size(153, 17);
+            label6.TabIndex = 69;
+            label6.Text = "Contact Number";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Copperplate Gothic Light", 12F);
+            label5.ForeColor = Color.Lavender;
+            label5.Location = new Point(62, 267);
+            label5.Name = "label5";
+            label5.Size = new Size(133, 17);
+            label5.TabIndex = 68;
+            label5.Text = "Email Address";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Copperplate Gothic Light", 12F);
+            label4.ForeColor = Color.Lavender;
+            label4.Location = new Point(62, 206);
+            label4.Name = "label4";
+            label4.Size = new Size(172, 17);
+            label4.TabIndex = 67;
+            label4.Text = "Driver's License ID";
+            // 
+            // txtNumber
+            // 
+            txtNumber.BackColor = Color.Transparent;
+            txtNumber.BaseColor = Color.FromArgb(35, 40, 50);
+            txtNumber.BorderColor = Color.FromArgb(255, 128, 0);
+            txtNumber.FocusOnHover = false;
+            txtNumber.Font = new Font("Cascadia Code", 9.75F);
+            txtNumber.ForeColor = Color.FromArgb(192, 192, 192);
+            txtNumber.Location = new Point(62, 347);
+            txtNumber.MaxLength = 32767;
+            txtNumber.Multiline = false;
+            txtNumber.Name = "txtNumber";
+            txtNumber.ReadOnly = false;
+            txtNumber.Size = new Size(200, 27);
+            txtNumber.TabIndex = 66;
+            txtNumber.TextAlign = HorizontalAlignment.Left;
+            txtNumber.UseSystemPasswordChar = false;
+            // 
+            // txtEmail
+            // 
+            txtEmail.BackColor = Color.Transparent;
+            txtEmail.BaseColor = Color.FromArgb(35, 40, 50);
+            txtEmail.BorderColor = Color.FromArgb(255, 128, 0);
+            txtEmail.FocusOnHover = false;
+            txtEmail.Font = new Font("Cascadia Code", 9.75F);
+            txtEmail.ForeColor = Color.FromArgb(192, 192, 192);
+            txtEmail.Location = new Point(62, 287);
+            txtEmail.MaxLength = 32767;
+            txtEmail.Multiline = false;
+            txtEmail.Name = "txtEmail";
+            txtEmail.ReadOnly = false;
+            txtEmail.Size = new Size(200, 27);
+            txtEmail.TabIndex = 65;
+            txtEmail.TextAlign = HorizontalAlignment.Left;
+            txtEmail.UseSystemPasswordChar = false;
+            // 
+            // txtLicenseID
+            // 
+            txtLicenseID.BackColor = Color.Transparent;
+            txtLicenseID.BaseColor = Color.FromArgb(35, 40, 50);
+            txtLicenseID.BorderColor = Color.FromArgb(255, 128, 0);
+            txtLicenseID.FocusOnHover = false;
+            txtLicenseID.Font = new Font("Cascadia Code", 9.75F);
+            txtLicenseID.ForeColor = Color.FromArgb(192, 192, 192);
+            txtLicenseID.Location = new Point(62, 226);
+            txtLicenseID.MaxLength = 32767;
+            txtLicenseID.Multiline = false;
+            txtLicenseID.Name = "txtLicenseID";
+            txtLicenseID.ReadOnly = false;
+            txtLicenseID.Size = new Size(200, 27);
+            txtLicenseID.TabIndex = 64;
+            txtLicenseID.TextAlign = HorizontalAlignment.Left;
+            txtLicenseID.UseSystemPasswordChar = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Copperplate Gothic Light", 12F);
+            label3.ForeColor = Color.Lavender;
+            label3.Location = new Point(62, 144);
+            label3.Name = "label3";
+            label3.Size = new Size(84, 17);
+            label3.TabIndex = 63;
+            label3.Text = "Birthday";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Copperplate Gothic Light", 12F);
+            label2.ForeColor = Color.Lavender;
+            label2.Location = new Point(62, 82);
+            label2.Name = "label2";
+            label2.Size = new Size(82, 17);
+            label2.TabIndex = 62;
+            label2.Text = "Address";
+            // 
+            // txtBirthday
+            // 
+            txtBirthday.BackColor = Color.Transparent;
+            txtBirthday.BaseColor = Color.FromArgb(35, 40, 50);
+            txtBirthday.BorderColor = Color.FromArgb(255, 128, 0);
+            txtBirthday.FocusOnHover = false;
+            txtBirthday.Font = new Font("Cascadia Code", 9.75F);
+            txtBirthday.ForeColor = Color.FromArgb(192, 192, 192);
+            txtBirthday.Location = new Point(62, 164);
+            txtBirthday.MaxLength = 32767;
+            txtBirthday.Multiline = false;
+            txtBirthday.Name = "txtBirthday";
+            txtBirthday.ReadOnly = false;
+            txtBirthday.Size = new Size(200, 27);
+            txtBirthday.TabIndex = 61;
+            txtBirthday.TextAlign = HorizontalAlignment.Left;
+            txtBirthday.UseSystemPasswordChar = false;
+            // 
+            // txtAddress
+            // 
+            txtAddress.BackColor = Color.Transparent;
+            txtAddress.BaseColor = Color.FromArgb(35, 40, 50);
+            txtAddress.BorderColor = Color.FromArgb(255, 128, 0);
+            txtAddress.FocusOnHover = false;
+            txtAddress.Font = new Font("Cascadia Code", 9.75F);
+            txtAddress.ForeColor = Color.FromArgb(192, 192, 192);
+            txtAddress.Location = new Point(62, 102);
+            txtAddress.MaxLength = 32767;
+            txtAddress.Multiline = false;
+            txtAddress.Name = "txtAddress";
+            txtAddress.ReadOnly = false;
+            txtAddress.Size = new Size(200, 27);
+            txtAddress.TabIndex = 60;
+            txtAddress.TextAlign = HorizontalAlignment.Left;
+            txtAddress.UseSystemPasswordChar = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Copperplate Gothic Light", 12F);
+            label1.ForeColor = Color.Lavender;
+            label1.Location = new Point(62, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 17);
+            label1.TabIndex = 59;
+            label1.Text = "Full Name";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.Controls.Add(pnlLeft);
+            panel1.Controls.Add(pnlRight);
+            panel1.Controls.Add(pnlDown);
+            panel1.Controls.Add(pnlTop);
+            panel1.Controls.Add(panel7);
+            panel1.Location = new Point(107, 52);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(326, 586);
+            panel1.TabIndex = 59;
+            // 
+            // pnlLeft
+            // 
+            pnlLeft.BackColor = Color.FromArgb(255, 128, 0);
+            pnlLeft.Dock = DockStyle.Left;
+            pnlLeft.ForeColor = Color.Coral;
+            pnlLeft.Location = new Point(0, 3);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(3, 580);
+            pnlLeft.TabIndex = 16;
+            // 
+            // pnlRight
+            // 
+            pnlRight.BackColor = Color.FromArgb(255, 128, 0);
+            pnlRight.Dock = DockStyle.Right;
+            pnlRight.ForeColor = Color.Coral;
+            pnlRight.Location = new Point(323, 3);
+            pnlRight.Name = "pnlRight";
+            pnlRight.Size = new Size(3, 580);
+            pnlRight.TabIndex = 17;
+            // 
+            // pnlDown
+            // 
+            pnlDown.BackColor = Color.FromArgb(255, 128, 0);
+            pnlDown.Dock = DockStyle.Bottom;
+            pnlDown.ForeColor = Color.Coral;
+            pnlDown.Location = new Point(0, 583);
+            pnlDown.Name = "pnlDown";
+            pnlDown.Size = new Size(326, 3);
+            pnlDown.TabIndex = 18;
+            // 
+            // pnlTop
+            // 
+            pnlTop.BackColor = Color.FromArgb(255, 128, 0);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.ForeColor = Color.Coral;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new Size(326, 3);
+            pnlTop.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(panel8);
+            panel2.Controls.Add(panel6);
+            panel2.Location = new Point(523, 55);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(326, 586);
+            panel2.TabIndex = 60;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(255, 128, 0);
+            panel3.Dock = DockStyle.Left;
+            panel3.ForeColor = Color.Coral;
+            panel3.Location = new Point(0, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(3, 580);
+            panel3.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(255, 128, 0);
+            panel4.Dock = DockStyle.Right;
+            panel4.ForeColor = Color.Coral;
+            panel4.Location = new Point(323, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(3, 580);
+            panel4.TabIndex = 17;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(255, 128, 0);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.ForeColor = Color.Coral;
+            panel5.Location = new Point(0, 583);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(326, 3);
+            panel5.TabIndex = 18;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(255, 128, 0);
+            panel6.Dock = DockStyle.Top;
+            panel6.ForeColor = Color.Coral;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(326, 3);
+            panel6.TabIndex = 15;
+            // 
             // ManageAccount
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -554,24 +617,9 @@
             BackColor = Color.FromArgb(35, 40, 50);
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(964, 704);
-            Controls.Add(parrotGradientPanel1);
-            Controls.Add(btnDelete);
-            Controls.Add(btnSave);
-            Controls.Add(btnClear);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
             Controls.Add(panel2);
-            Controls.Add(panel6);
             Controls.Add(panel1);
-            Controls.Add(btnClearPicture);
-            Controls.Add(btnBrowse);
             Controls.Add(lblImagePath);
-            Controls.Add(lblTotalRentals);
-            Controls.Add(lblRating);
-            Controls.Add(lblUserID);
-            Controls.Add(lblRole);
-            Controls.Add(lblUsername);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManageAccount";
@@ -579,14 +627,13 @@
             Text = "Manage Account";
             Load += ManageAccount_Load;
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).EndInit();
-            panel1.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             parrotGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel7.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -600,24 +647,36 @@
         private Label lblTotalRentals;
         private Label lblRating;
         private Label lblImagePath;
-        private ReaLTaiizor.Controls.MaterialButton btnBrowse;
-        private ReaLTaiizor.Controls.MaterialButton btnClearPicture;
-        private Panel panel1;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtFullname;
-        private Panel panel6;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtAddress;
-        private Panel panel2;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtBirthday;
-        private Panel panel3;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtLicenseID;
-        private Panel panel4;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEmail;
-        private Panel panel5;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNumber;
-        private ReaLTaiizor.Controls.MaterialButton btnClear;
-        private ReaLTaiizor.Controls.MaterialButton btnSave;
-        private ReaLTaiizor.Controls.MaterialButton btnDelete;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private PictureBox pictureBox1;
+        private Panel panel7;
+        private ReaLTaiizor.Controls.ForeverTextBox txtFullname;
+        private Panel panel8;
+        private Label label1;
+        private ReaLTaiizor.Controls.ForeverTextBox txtNumber;
+        private ReaLTaiizor.Controls.ForeverTextBox txtEmail;
+        private ReaLTaiizor.Controls.ForeverTextBox txtLicenseID;
+        private Label label3;
+        private Label label2;
+        private ReaLTaiizor.Controls.ForeverTextBox txtBirthday;
+        private ReaLTaiizor.Controls.ForeverTextBox txtAddress;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Panel panel1;
+        private Panel pnlLeft;
+        private Panel pnlRight;
+        private Panel pnlDown;
+        private Panel pnlTop;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Button btnBrowseDevice;
+        private Button btnClearPicture;
+        private Button btnClear;
+        private Button btnSave;
+        private Button btnDelete;
     }
 }

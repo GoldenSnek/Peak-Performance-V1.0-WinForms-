@@ -33,17 +33,17 @@
             lblGoToR = new Label();
             lblGoToL = new Label();
             picClose = new PictureBox();
-            Gauge = new ReaLTaiizor.Controls.ParrotGauge();
             pictureBox1 = new PictureBox();
             tmrGauge = new System.Windows.Forms.Timer(components);
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
+            btnAbout = new ReaLTaiizor.Controls.CyberButton();
+            lblMainTitle = new Label();
+            Gauge = new ReaLTaiizor.Controls.ParrotGauge();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            tmrFadeIn = new System.Windows.Forms.Timer(components);
-            btnAbout = new ReaLTaiizor.Controls.CyberButton();
-            lblMainTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -58,7 +58,7 @@
             lblGoToR.Location = new Point(115, 523);
             lblGoToR.Name = "lblGoToR";
             lblGoToR.Size = new Size(96, 28);
-            lblGoToR.TabIndex = 5;
+            lblGoToR.TabIndex = 2;
             lblGoToR.Text = "REGISTER";
             lblGoToR.TextAlign = ContentAlignment.MiddleCenter;
             lblGoToR.Click += lblGoToR_Click;
@@ -73,7 +73,7 @@
             lblGoToL.Location = new Point(405, 523);
             lblGoToL.Name = "lblGoToL";
             lblGoToL.Size = new Size(65, 28);
-            lblGoToL.TabIndex = 31;
+            lblGoToL.TabIndex = 1;
             lblGoToL.Text = "LOGIN";
             lblGoToL.TextAlign = ContentAlignment.MiddleCenter;
             lblGoToL.Click += lblGoToL_Click;
@@ -91,25 +91,6 @@
             picClose.TabStop = false;
             picClose.Click += picClose_Click;
             // 
-            // Gauge
-            // 
-            Gauge.BackColor = Color.Transparent;
-            Gauge.BarColor = (List<Color>)resources.GetObject("Gauge.BarColor");
-            Gauge.ConsumptionColor = Color.Black;
-            Gauge.DialColor = Color.Black;
-            Gauge.DialThickness = 5;
-            Gauge.FilledColor = Color.White;
-            Gauge.GaugeStyle = ReaLTaiizor.Controls.ParrotGauge.Style.Standard;
-            Gauge.Location = new Point(135, 114);
-            Gauge.Name = "Gauge";
-            Gauge.Percentage = 10;
-            Gauge.Size = new Size(133, 60);
-            Gauge.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            Gauge.TabIndex = 34;
-            Gauge.Text = "parrotGauge1";
-            Gauge.Thickness = 8;
-            Gauge.UnfilledColor = Color.Gray;
-            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
@@ -126,6 +107,86 @@
             tmrGauge.Enabled = true;
             tmrGauge.Interval = 1000;
             tmrGauge.Tick += tmrGauge_Tick;
+            // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
+            // 
+            // btnAbout
+            // 
+            btnAbout.Alpha = 20;
+            btnAbout.BackColor = Color.Transparent;
+            btnAbout.Background = true;
+            btnAbout.Background_WidthPen = 1F;
+            btnAbout.BackgroundPen = true;
+            btnAbout.ColorBackground = Color.Transparent;
+            btnAbout.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnAbout.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnAbout.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
+            btnAbout.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnAbout.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnAbout.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnAbout.Cursor = Cursors.Hand;
+            btnAbout.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnAbout.Effect_1 = true;
+            btnAbout.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnAbout.Effect_1_Transparency = 25;
+            btnAbout.Effect_2 = true;
+            btnAbout.Effect_2_ColorBackground = Color.White;
+            btnAbout.Effect_2_Transparency = 20;
+            btnAbout.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAbout.ForeColor = Color.Silver;
+            btnAbout.Lighting = false;
+            btnAbout.LinearGradient_Background = false;
+            btnAbout.LinearGradientPen = false;
+            btnAbout.Location = new Point(189, 301);
+            btnAbout.Name = "btnAbout";
+            btnAbout.PenWidth = 15;
+            btnAbout.RGB = true;
+            btnAbout.Rounding = true;
+            btnAbout.RoundingInt = 70;
+            btnAbout.Size = new Size(218, 33);
+            btnAbout.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnAbout.TabIndex = 33;
+            btnAbout.Tag = "Cyber";
+            btnAbout.TextButton = "--- Rent Ride Repeat ---";
+            btnAbout.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnAbout.Timer_Effect_1 = 5;
+            btnAbout.Timer_RGB = 100;
+            btnAbout.Click += btnAbout_Click;
+            // 
+            // lblMainTitle
+            // 
+            lblMainTitle.AutoSize = true;
+            lblMainTitle.BackColor = Color.Transparent;
+            lblMainTitle.Font = new Font("Copperplate Gothic Bold", 36F);
+            lblMainTitle.ForeColor = Color.Silver;
+            lblMainTitle.Location = new Point(34, 177);
+            lblMainTitle.Name = "lblMainTitle";
+            lblMainTitle.Size = new Size(538, 106);
+            lblMainTitle.TabIndex = 1;
+            lblMainTitle.Text = "Peak Performance\r\nVehicle Rentals";
+            lblMainTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Gauge
+            // 
+            Gauge.BackColor = Color.Transparent;
+            Gauge.BarColor = (List<Color>)resources.GetObject("Gauge.BarColor");
+            Gauge.ConsumptionColor = Color.Black;
+            Gauge.DialColor = Color.White;
+            Gauge.DialThickness = 5;
+            Gauge.FilledColor = Color.White;
+            Gauge.GaugeStyle = ReaLTaiizor.Controls.ParrotGauge.Style.Standard;
+            Gauge.Location = new Point(135, 114);
+            Gauge.Name = "Gauge";
+            Gauge.Percentage = 10;
+            Gauge.Size = new Size(133, 60);
+            Gauge.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            Gauge.TabIndex = 34;
+            Gauge.Text = "parrotGauge1";
+            Gauge.Thickness = 8;
+            Gauge.UnfilledColor = Color.Gray;
             // 
             // label1
             // 
@@ -187,67 +248,6 @@
             label5.TabIndex = 44;
             label5.Text = "300";
             // 
-            // tmrFadeIn
-            // 
-            tmrFadeIn.Interval = 10;
-            tmrFadeIn.Tick += tmrFadeIn_Tick;
-            // 
-            // btnAbout
-            // 
-            btnAbout.Alpha = 20;
-            btnAbout.BackColor = Color.Transparent;
-            btnAbout.Background = true;
-            btnAbout.Background_WidthPen = 1F;
-            btnAbout.BackgroundPen = true;
-            btnAbout.ColorBackground = Color.Transparent;
-            btnAbout.ColorBackground_1 = Color.FromArgb(37, 52, 68);
-            btnAbout.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnAbout.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            btnAbout.ColorLighting = Color.FromArgb(29, 200, 238);
-            btnAbout.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnAbout.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnAbout.Cursor = Cursors.Hand;
-            btnAbout.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnAbout.Effect_1 = true;
-            btnAbout.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnAbout.Effect_1_Transparency = 25;
-            btnAbout.Effect_2 = true;
-            btnAbout.Effect_2_ColorBackground = Color.White;
-            btnAbout.Effect_2_Transparency = 20;
-            btnAbout.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAbout.ForeColor = Color.Silver;
-            btnAbout.Lighting = false;
-            btnAbout.LinearGradient_Background = false;
-            btnAbout.LinearGradientPen = false;
-            btnAbout.Location = new Point(189, 301);
-            btnAbout.Name = "btnAbout";
-            btnAbout.PenWidth = 15;
-            btnAbout.RGB = true;
-            btnAbout.Rounding = true;
-            btnAbout.RoundingInt = 70;
-            btnAbout.Size = new Size(218, 33);
-            btnAbout.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnAbout.TabIndex = 33;
-            btnAbout.Tag = "Cyber";
-            btnAbout.TextButton = "--- Rent Ride Repeat ---";
-            btnAbout.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnAbout.Timer_Effect_1 = 5;
-            btnAbout.Timer_RGB = 100;
-            btnAbout.Click += btnAbout_Click;
-            // 
-            // lblMainTitle
-            // 
-            lblMainTitle.AutoSize = true;
-            lblMainTitle.BackColor = Color.Transparent;
-            lblMainTitle.Font = new Font("Copperplate Gothic Bold", 36F);
-            lblMainTitle.ForeColor = Color.Silver;
-            lblMainTitle.Location = new Point(34, 177);
-            lblMainTitle.Name = "lblMainTitle";
-            lblMainTitle.Size = new Size(538, 106);
-            lblMainTitle.TabIndex = 1;
-            lblMainTitle.Text = "Peak Performance\r\nVehicle Rentals";
-            lblMainTitle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // MainLR
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -284,16 +284,16 @@
         private Label lblGoToR;
         private Label lblGoToL;
         private PictureBox picClose;
-        private ReaLTaiizor.Controls.ParrotGauge Gauge;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer tmrGauge;
+        private System.Windows.Forms.Timer tmrFadeIn;
+        private ReaLTaiizor.Controls.CyberButton btnAbout;
+        private Label lblMainTitle;
+        private ReaLTaiizor.Controls.ParrotGauge Gauge;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
-        private System.Windows.Forms.Timer tmrFadeIn;
-        private ReaLTaiizor.Controls.CyberButton btnAbout;
-        private Label lblMainTitle;
     }
 }

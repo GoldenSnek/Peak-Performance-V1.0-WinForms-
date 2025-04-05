@@ -91,7 +91,7 @@
             btnLogin.Name = "btnLogin";
             btnLogin.NoAccentTextColor = Color.Empty;
             btnLogin.Size = new Size(250, 36);
-            btnLogin.TabIndex = 18;
+            btnLogin.TabIndex = 21;
             btnLogin.Text = "Login";
             btnLogin.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnLogin.UseAccentColor = false;

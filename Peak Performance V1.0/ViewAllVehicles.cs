@@ -94,14 +94,14 @@ namespace Peak_Performance_V1._0
                         // Create VehicleCard and add it to FlowLayoutPanel
                         if (SystemManager.currentRole == "Vehicle Provider")
                         {
-                            VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                            VehicleCard card = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "");
                             card.FullDetailsClicked += Card_FullDetailsClicked;
                             flpDisplay.Controls.Add(card);
                         }
                         else if (SystemManager.currentRole == "Client")
                         {
-                            VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                            VehicleCard card = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                        color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Rent");
                             card.FullDetailsClicked += Card_FullDetailsClicked;
                             card.RentClicked += Card_RentClicked;

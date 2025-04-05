@@ -81,7 +81,7 @@ namespace Peak_Performance_V1._0
                         double rating = Convert.ToDouble(reader["VehicleRating"]);
 
                         //create a VehicleCard and add it to the FlowLayoutPanel
-                        VehicleCard card = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                        VehicleCard card = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "");
                         card.FullDetailsClicked += Card_FullDetailsClicked;
                         flpDisplay.Controls.Add(card);

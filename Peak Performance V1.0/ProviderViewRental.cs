@@ -72,7 +72,7 @@ namespace Peak_Performance_V1._0
 
                     if (ownerID == SystemManager.currentUserID && status == "Unpaid")
                     {
-                        VehicleCard card1 = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                        VehicleCard card1 = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                                             color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Approve");
 
                         card1.FullDetailsClickedRent += Card_FullDetailsClickedRent;
@@ -82,7 +82,7 @@ namespace Peak_Performance_V1._0
                     }
                     else if (ownerID == SystemManager.currentUserID && status == "Ongoing")
                     {
-                        VehicleCard card2 = new VehicleCard(vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
+                        VehicleCard card2 = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                                             color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Finish Rental");
 
                         card2.FullDetailsClickedRent += Card_FullDetailsClickedRent;

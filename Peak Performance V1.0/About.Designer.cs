@@ -55,7 +55,7 @@
             lblAbout.FlatStyle = FlatStyle.Flat;
             lblAbout.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAbout.ForeColor = Color.White;
-            lblAbout.Location = new Point(268, 317);
+            lblAbout.Location = new Point(278, 320);
             lblAbout.Name = "lblAbout";
             lblAbout.Size = new Size(48, 17);
             lblAbout.TabIndex = 2;
@@ -106,7 +106,7 @@
             picFB.BackgroundImage = Properties.Resources.Facebook;
             picFB.BackgroundImageLayout = ImageLayout.Stretch;
             picFB.Cursor = Cursors.Hand;
-            picFB.Location = new Point(167, 489);
+            picFB.Location = new Point(178, 493);
             picFB.Name = "picFB";
             picFB.Size = new Size(50, 50);
             picFB.TabIndex = 45;
@@ -119,7 +119,7 @@
             picDiscord.BackgroundImage = Properties.Resources.Discord;
             picDiscord.BackgroundImageLayout = ImageLayout.Stretch;
             picDiscord.Cursor = Cursors.Hand;
-            picDiscord.Location = new Point(361, 489);
+            picDiscord.Location = new Point(372, 493);
             picDiscord.Name = "picDiscord";
             picDiscord.Size = new Size(50, 50);
             picDiscord.TabIndex = 46;
@@ -132,7 +132,7 @@
             picGithub.BackgroundImage = Properties.Resources.Github1;
             picGithub.BackgroundImageLayout = ImageLayout.Stretch;
             picGithub.Cursor = Cursors.Hand;
-            picGithub.Location = new Point(266, 489);
+            picGithub.Location = new Point(277, 493);
             picGithub.Name = "picGithub";
             picGithub.Size = new Size(50, 50);
             picGithub.TabIndex = 47;
