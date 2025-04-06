@@ -22,8 +22,8 @@ namespace Peak_Performance_V1._0
     {
         int VehicleID { get; set; }
         int OwnerID { get; set; }
-        int UserRating { get; set; }
-        int VehicleRating { get; set; }
+        double UserRating { get; set; }
+        double VehicleRating { get; set; }
         bool CurrentRent { get; set; }
         void LoadDetails(); //load rental details for the client
         void btnRate_Click(object sender, EventArgs e); //handle rating submission
@@ -78,8 +78,8 @@ namespace Peak_Performance_V1._0
         string? Address { get; set; }
         string? Birthday { get; set; }
         string? Email { get; set; }
-        int DriversLicenseID { get; set; }
-        int ContactNumber { get; set; }
+        string? DriversLicenseID { get; set; }
+        string? ContactNumber { get; set; }
         double UserRating { get; set; }
         Image ProfilePicture { get; set; }
 

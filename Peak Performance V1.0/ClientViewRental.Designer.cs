@@ -73,7 +73,8 @@
             lblModel = new Label();
             lblMake = new Label();
             lblType = new Label();
-            pictureBox1 = new PictureBox();
+            picNoRent = new PictureBox();
+            lblNoRent = new Label();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).BeginInit();
             parrotGradientPanel2.SuspendLayout();
@@ -88,13 +89,14 @@
             ((System.ComponentModel.ISupportInitialize)picVR3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picVR2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picVR1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picNoRent).BeginInit();
             SuspendLayout();
             // 
             // lblRentalDetails
             // 
             lblRentalDetails.Anchor = AnchorStyles.None;
             lblRentalDetails.AutoSize = true;
+            lblRentalDetails.BackColor = Color.Transparent;
             lblRentalDetails.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRentalDetails.ForeColor = SystemColors.Control;
             lblRentalDetails.Location = new Point(324, 190);
@@ -106,6 +108,7 @@
             // lblCurrent
             // 
             lblCurrent.Anchor = AnchorStyles.None;
+            lblCurrent.BackColor = Color.Transparent;
             lblCurrent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCurrent.ForeColor = Color.White;
             lblCurrent.Location = new Point(306, 9);
@@ -125,18 +128,18 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(288, 647);
+            btnReceipt.Location = new Point(107, 649);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
             btnReceipt.NoAccentTextColor = Color.Empty;
-            btnReceipt.Size = new Size(119, 36);
+            btnReceipt.Size = new Size(159, 36);
             btnReceipt.TabIndex = 10;
-            btnReceipt.Text = "View Receipt";
+            btnReceipt.Text = "Download Receipt";
             btnReceipt.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnReceipt.UseAccentColor = false;
             btnReceipt.UseVisualStyleBackColor = true;
-            btnReceipt.Visible = false;
+            btnReceipt.Click += btnReceipt_Click;
             // 
             // lblNotes
             // 
@@ -588,6 +591,7 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Arial Rounded MT Bold", 12F);
             label1.ForeColor = Color.White;
             label1.Location = new Point(668, 621);
@@ -672,24 +676,39 @@
             lblType.Text = "Type";
             lblType.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // pictureBox1
+            // picNoRent
             // 
-            pictureBox1.BackColor = Color.Black;
-            pictureBox1.BackgroundImage = Properties.Resources.CarbonFiber;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(964, 704);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 111;
-            pictureBox1.TabStop = false;
+            picNoRent.Anchor = AnchorStyles.None;
+            picNoRent.BackgroundImageLayout = ImageLayout.Stretch;
+            picNoRent.Image = Properties.Resources.Sunset;
+            picNoRent.Location = new Point(53, 96);
+            picNoRent.Name = "picNoRent";
+            picNoRent.Size = new Size(834, 518);
+            picNoRent.SizeMode = PictureBoxSizeMode.StretchImage;
+            picNoRent.TabIndex = 111;
+            picNoRent.TabStop = false;
+            // 
+            // lblNoRent
+            // 
+            lblNoRent.Anchor = AnchorStyles.None;
+            lblNoRent.BackColor = Color.Transparent;
+            lblNoRent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNoRent.ForeColor = Color.White;
+            lblNoRent.Location = new Point(201, 49);
+            lblNoRent.Name = "lblNoRent";
+            lblNoRent.Size = new Size(519, 30);
+            lblNoRent.TabIndex = 112;
+            lblNoRent.Text = "You are currently not renting any vehicle";
+            lblNoRent.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ClientViewRental
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
+            BackgroundImage = Properties.Resources.CarbonFiber;
             ClientSize = new Size(964, 704);
+            Controls.Add(lblNoRent);
             Controls.Add(lblModel);
             Controls.Add(lblMake);
             Controls.Add(lblType);
@@ -733,7 +752,7 @@
             Controls.Add(btnReceipt);
             Controls.Add(lblCurrent);
             Controls.Add(lblRentalDetails);
-            Controls.Add(pictureBox1);
+            Controls.Add(picNoRent);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ClientViewRental";
             StartPosition = FormStartPosition.CenterScreen;
@@ -753,7 +772,7 @@
             ((System.ComponentModel.ISupportInitialize)picVR3).EndInit();
             ((System.ComponentModel.ISupportInitialize)picVR2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picVR1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picNoRent).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -806,6 +825,7 @@
         private Label lblModel;
         private Label lblMake;
         private Label lblType;
-        private PictureBox pictureBox1;
+        private PictureBox picNoRent;
+        private Label lblNoRent;
     }
 }

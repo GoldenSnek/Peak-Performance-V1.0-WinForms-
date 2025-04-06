@@ -25,6 +25,7 @@ namespace Peak_Performance_V1._0
         public static int currentFullDetailsVehicleID = 0; //store VehicleID for full details
         //public static int current
         public static int splash = 1; //change splashscreen
+        public static bool refresh = false; //refresh vehicles/user
 
         public static OleDbConnection GetConnection() //METHOD: Database Connection
         {

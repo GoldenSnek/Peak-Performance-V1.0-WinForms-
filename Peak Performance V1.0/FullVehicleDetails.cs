@@ -37,8 +37,8 @@ namespace Peak_Performance_V1._0
         public string? Address { get; set; }
         public string? Birthday { get; set; }
         public string? Email { get; set; }
-        public int DriversLicenseID { get; set; }
-        public int ContactNumber { get; set; }
+        public string? DriversLicenseID { get; set; }
+        public string? ContactNumber { get; set; }
         public double UserRating { get; set; }
         public Image ProfilePicture { get; set; }
 
@@ -139,8 +139,8 @@ namespace Peak_Performance_V1._0
                         Birthday = reader["Birthday"].ToString();
                         Email = reader["Email"].ToString();
 
-                        DriversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
-                        ContactNumber = Convert.ToInt32(reader["ContactNumber"]);
+                        DriversLicenseID = reader["DriversLicenseID"].ToString();
+                        ContactNumber = reader["ContactNumber"].ToString();
                         UserRating = Convert.ToDouble(reader["UserRating"]);
 
                         //convert image from database to PictureBox
@@ -276,8 +276,8 @@ namespace Peak_Performance_V1._0
                         Birthday = reader["Birthday"].ToString();
                         Email = reader["Email"].ToString();
 
-                        DriversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
-                        ContactNumber = Convert.ToInt32(reader["ContactNumber"]);
+                        DriversLicenseID = reader["DriversLicenseID"].ToString();
+                        ContactNumber = reader["ContactNumber"].ToString();
                         UserRating = Convert.ToDouble(reader["UserRating"]);
 
                         //convert image from database to PictureBox

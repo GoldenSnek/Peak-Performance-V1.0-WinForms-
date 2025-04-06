@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Media;
 
 namespace Peak_Performance_V1._0
 {
@@ -58,8 +57,8 @@ namespace Peak_Performance_V1._0
                         string? birthday = reader["Birthday"].ToString();
                         string? email = reader["Email"].ToString();
 
-                        int driversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
-                        int contactNumber = Convert.ToInt32(reader["ContactNumber"]);
+                        string? driversLicenseID = reader["DriversLicenseID"].ToString();
+                        string? contactNumber = reader["ContactNumber"].ToString();
                         double rating = Convert.ToDouble(reader["UserRating"]);
                         int totalRentals = Convert.ToInt32(reader["UserTotalRentals"]);
 
@@ -89,9 +88,9 @@ namespace Peak_Performance_V1._0
                         txtFullname.Text = fullName;
                         txtAddress.Text = address;
                         txtBirthday.Text = birthday;
-                        txtLicenseID.Text = driversLicenseID.ToString();
+                        txtLicenseID.Text = driversLicenseID;
                         txtEmail.Text = email;
-                        txtNumber.Text = contactNumber.ToString();
+                        txtNumber.Text = contactNumber;
                     }
                 }
                 connection.Close();

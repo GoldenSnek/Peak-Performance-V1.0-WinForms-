@@ -5,9 +5,22 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iText.IO.Font;
+using iText.Kernel.Colors;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.StyledXmlParser.Jsoup.Nodes;
+using OxyPlot;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Peak_Performance_V1._0
 {
@@ -17,14 +30,43 @@ namespace Peak_Performance_V1._0
 
         private PictureBox[] userStars;
         private PictureBox[] vehicleStars;
-        private Image starFilled = Properties.Resources.RateYes;
-        private Image starEmpty = Properties.Resources.RateNo;
+        private System.Drawing.Image starFilled = Properties.Resources.RateYes;
+        private System.Drawing.Image starEmpty = Properties.Resources.RateNo;
 
         public int VehicleID { get; set; }
         public int OwnerID { get; set; }
-        public int UserRating { get; set; }
-        public int VehicleRating { get; set; }
+        public double UserRating { get; set; }
+        public double VehicleRating { get; set; }
         public bool CurrentRent { get; set; }
+
+        string? GeneralType;
+        string? SpecificType;
+        string? Make;
+        string? Model;
+        int VehicleYear;
+        string? Transmission;
+        string? Drivetrain;
+        string? LicensePlate;
+        string? VehicleColor;
+        string? FuelType;
+        int Seats;
+        double Mileage;
+        string? RentType;
+        int Duration;
+        string? PaymentType;
+        string? ChildSeat;
+        string? SoundSystem;
+        string? Powerbank;
+        string? Wifi;
+        string? Notes;
+        double TotalPrice;
+        string? Username;
+        string? FullName;
+        string? Address;
+        string? Birthday;
+        string? Email;
+        string? DriversLicenseID;
+        string? ContactNumber;
 
         public ClientViewRental()
         {
@@ -60,8 +102,28 @@ namespace Peak_Performance_V1._0
             }
             if (CurrentRent == false)
             {
-                //i visible false tanan labels
-                HideStarSelection();
+                SetAllControlsInvisible(this);
+                picNoRent.Visible = true;
+                lblNoRent.Visible = true;
+            }
+            else
+            {
+                picNoRent.Visible = false;
+                lblNoRent.Visible = false;
+            }
+        }
+        private void SetAllControlsInvisible(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                 control.Visible = false;
+
+                // If the control contains children, recurse into them
+                if (control.HasChildren)
+                {
+                    SetAllControlsInvisible(control);
+                }
+
             }
         }
         public void LoadDetails() //MAIN METHOD: Load Details
@@ -80,66 +142,66 @@ namespace Peak_Performance_V1._0
                     OwnerID = Convert.ToInt32(reader["OwnerID"]);
 
                     //VEHICLE
-                    string? generalType = reader["GeneralType"].ToString();
-                    string? specificType = reader["SpecificType"].ToString();
-                    string? make = reader["Make"].ToString();
+                    GeneralType = reader["GeneralType"].ToString();
+                    SpecificType = reader["SpecificType"].ToString();
+                    Make = reader["Make"].ToString();
 
-                    string? model = reader["Model"].ToString();
-                    int vehicleYear = Convert.ToInt32(reader["VehicleYear"]);
-                    string? transmission = reader["Transmission"].ToString();
-                    string? drivetrain = reader["Drivetrain"].ToString();
+                    Model = reader["Model"].ToString();
+                    VehicleYear = Convert.ToInt32(reader["VehicleYear"]);
+                    Transmission = reader["Transmission"].ToString();
+                    Drivetrain = reader["Drivetrain"].ToString();
 
-                    string? licensePlate = reader["LicensePlate"].ToString();
-                    string? color = reader["Color"].ToString();
-                    string? fuelType = reader["FuelType"].ToString();
+                    LicensePlate = reader["LicensePlate"].ToString();
+                    VehicleColor = reader["Color"].ToString();
+                    FuelType = reader["FuelType"].ToString();
 
-                    int seats = Convert.ToInt32(reader["Seats"]);
-                    double mileage = Convert.ToDouble(reader["Mileage"]);
+                    Seats = Convert.ToInt32(reader["Seats"]);
+                    Mileage = Convert.ToDouble(reader["Mileage"]);
 
-                    string? rentType = reader["RentType"].ToString();
-                    int duration = Convert.ToInt32(reader["Duration"]);
-                    string? paymentType = reader["PaymentType"].ToString();
-                    string? childSeat = reader["ChildSeat"].ToString();
-                    string? soundSystem = reader["SoundSystem"].ToString();
-                    string? powerbank = reader["Powerbank"].ToString();
-                    string? wifi = reader["WiFi"].ToString();
-                    string? notes = reader["Notes"].ToString();
-                    double totalPrice = Convert.ToDouble(reader["Price"]);
+                    RentType = reader["RentType"].ToString();
+                    Duration = Convert.ToInt32(reader["Duration"]);
+                    PaymentType = reader["PaymentType"].ToString();
+                    ChildSeat = reader["ChildSeat"].ToString();
+                    SoundSystem = reader["SoundSystem"].ToString();
+                    Powerbank = reader["Powerbank"].ToString();
+                    Wifi = reader["WiFi"].ToString();
+                    Notes = reader["Notes"].ToString();
+                    TotalPrice = Convert.ToDouble(reader["Price"]);
 
-                    lblType.Text = $"Type: {generalType} ({specificType})";
-                    lblMake.Text = $"Make: {make}";
-                    lblModel.Text = $"Model: {model} ({vehicleYear})";
-                    lblTransmission.Text = $"Transmission: {transmission}";
-                    lblDrivetrain.Text = $"Drivetrain: {drivetrain}";
-                    lblLicensePlate.Text = $"License Plate No: {licensePlate}";
-                    lblColor.Text = $"Color: {color}";
-                    lblFuelType.Text = $"Fuel Type: {fuelType}";
-                    lblSeats.Text = $"Seats: {seats}";
-                    lblMileage.Text = $"Mileage: {mileage} km";
+                    lblType.Text = $"Type: {GeneralType} ({SpecificType})";
+                    lblMake.Text = $"Make: {Make}";
+                    lblModel.Text = $"Model: {Model} ({VehicleYear})";
+                    lblTransmission.Text = $"Transmission: {Transmission}";
+                    lblDrivetrain.Text = $"Drivetrain: {Drivetrain}";
+                    lblLicensePlate.Text = $"License Plate No: {LicensePlate}";
+                    lblColor.Text = $"Color: {VehicleColor}";
+                    lblFuelType.Text = $"Fuel Type: {FuelType}";
+                    lblSeats.Text = $"Seats: {Seats}";
+                    lblMileage.Text = $"Mileage: {Mileage} km";
                     lblOC.Text = "Client";
 
-                    lblDuration.Text = $"Duration: {duration} {rentType}";
-                    lblPayment.Text = $"Payment Type: {paymentType}";
+                    lblDuration.Text = $"Duration: {Duration} {RentType}";
+                    lblPayment.Text = $"Payment Type: {PaymentType}";
                     lblExtras.Text = $"Extras: ";
-                    if (childSeat != "None")
-                        lblExtras.Text += $"{childSeat} ";
-                    if (soundSystem != "Basic")
-                        lblExtras.Text += $"{soundSystem} ";
-                    if (powerbank != "None")
-                        lblExtras.Text += $"{powerbank} ";
-                    if (wifi != "None")
-                        lblExtras.Text += $"{wifi}";
-                    lblNotes.Text = $"Additional notes: {notes}";
-                    lblTotalPrice.Text = $"Php {totalPrice}";
+                    if (ChildSeat != "None")
+                        lblExtras.Text += $"{ChildSeat} ";
+                    if (SoundSystem != "Basic")
+                        lblExtras.Text += $"{SoundSystem} ";
+                    if (Powerbank != "None")
+                        lblExtras.Text += $"{Powerbank} ";
+                    if (Wifi != "None")
+                        lblExtras.Text += $"{Wifi}";
+                    lblNotes.Text = $"Additional notes: {Notes}";
+                    lblTotalPrice.Text = $"Php {TotalPrice}";
 
                     //convert image from database to PictureBox
-                    Image? vehicleImage = null;
+                    System.Drawing.Image? vehicleImage = null;
                     if (!Convert.IsDBNull(reader["VehicleImage"])) //check if image is not NULL
                     {
                         byte[] imageData = (byte[])reader["VehicleImage"];
                         using (MemoryStream? ms = new MemoryStream(imageData))
                         {
-                            vehicleImage = Image.FromStream(ms);
+                            vehicleImage = System.Drawing.Image.FromStream(ms);
                         }
                     }
 
@@ -152,37 +214,37 @@ namespace Peak_Performance_V1._0
                         picVehicleImage.Image = Properties.Resources.Car___MainLR;
 
                     //OWNER
-                    string? username = reader["Username"].ToString();
+                    Username = reader["Username"].ToString();
 
-                    string? fullName = reader["Fullname"].ToString();
-                    string? address = reader["Address"].ToString();
-                    string? birthday = reader["Birthday"].ToString();
-                    string? email = reader["Email"].ToString();
+                    FullName = reader["Fullname"].ToString();
+                    Address = reader["Address"].ToString();
+                    Birthday = reader["Birthday"].ToString();
+                    Email = reader["Email"].ToString();
 
-                    int driversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
-                    int contactNumber = Convert.ToInt32(reader["ContactNumber"]);
-                    double userRating = Convert.ToDouble(reader["UserRating"]);
+                    DriversLicenseID = reader["DriversLicenseID"].ToString();
+                    ContactNumber = reader["ContactNumber"].ToString();
+                    UserRating = Convert.ToDouble(reader["UserRating"]);
 
                     //convert image from database to PictureBox
-                    Image? profilePicture = null;
+                    System.Drawing.Image? profilePicture = null;
                     if (!Convert.IsDBNull(reader["ProfilePicture"])) //check if image is not NULL
                     {
                         byte[] imageData = (byte[])reader["ProfilePicture"];
                         using (MemoryStream ms = new MemoryStream(imageData))
                         {
-                            profilePicture = Image.FromStream(ms);
+                            profilePicture = System.Drawing.Image.FromStream(ms);
                         }
                     }
 
-                    lblUsername.Text = $"Username: {username}";
-                    lblUserRating.Text = $"Rating: {userRating.ToString()}";
+                    lblUsername.Text = $"Username: {Username}";
+                    lblUserRating.Text = $"Rating: {UserRating.ToString()}";
 
-                    lblFullname.Text = $"Fullname: {fullName}";
-                    lblAddress.Text = $"Address: {address}";
-                    lblBirthday.Text = $"Birthday: {birthday}";
-                    lblLicenseID.Text = $"Drivers License ID: {driversLicenseID.ToString()}";
-                    lblEmail.Text = $"Email: {email}";
-                    lblNumber.Text = $"Contact Number: {contactNumber}";
+                    lblFullname.Text = $"Fullname: {FullName}";
+                    lblAddress.Text = $"Address: {Address}";
+                    lblBirthday.Text = $"Birthday: {Birthday}";
+                    lblLicenseID.Text = $"Drivers License ID: {DriversLicenseID}";
+                    lblEmail.Text = $"Email: {Email}";
+                    lblNumber.Text = $"Contact Number: {ContactNumber}";
 
                     if (profilePicture != null)
                         picProfilePicture.Image = profilePicture;
@@ -232,15 +294,15 @@ namespace Peak_Performance_V1._0
                     connection.Close();
                     return;
                 }
-                int userGivenRating = UserRating;
-                int vehicleGivenRating = VehicleRating;
+                double userGivenRating = UserRating;
+                double vehicleGivenRating = VehicleRating;
 
                 userRaters += 1;
-                userTotalRatings += userGivenRating;
+                userTotalRatings += (int)userGivenRating;
                 userRating = (double)userTotalRatings / userRaters;
 
                 vehicleRaters += 1;
-                vehicleTotalRatings += vehicleGivenRating;
+                vehicleTotalRatings += (int)vehicleGivenRating;
                 vehicleRating = (double)vehicleTotalRatings / vehicleRaters;
 
                 string updateQuery = "UPDATE RatingQuery SET UserRating = @userRating, UserRaters = @userRaters, UserTotalRatings = @userTotalRatings, " +
@@ -340,7 +402,7 @@ namespace Peak_Performance_V1._0
             HighlightStars(vehicleStars, VehicleRating);
         }
 
-        private void HighlightStars(PictureBox[] stars, int count) //SUPPORTING EVENT: Color the stars
+        private void HighlightStars(PictureBox[] stars, double count) //SUPPORTING EVENT: Color the stars
         {
             for (int i = 0; i < stars.Length; i++)
             {
@@ -374,6 +436,91 @@ namespace Peak_Performance_V1._0
             picVR3.Visible = false;
             picVR4.Visible = false;
             picVR5.Visible = false;
+        }
+
+        private void btnReceipt_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.FileName = $"Receipt_{DateTime.Today:yyyy-MM-dd}.pdf";
+                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                saveFileDialog.DefaultExt = "pdf";
+                saveFileDialog.AddExtension = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    try
+                    {
+                        using (PdfWriter writer = new PdfWriter(filePath))
+                        using (PdfDocument pdf = new PdfDocument(writer))
+                        {
+                            var doc = new iText.Layout.Document(pdf);
+
+                            // Load fonts from file paths
+                            PdfFont regularFont = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arial.ttf", PdfEncodings.WINANSI);
+                            PdfFont boldFont = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arialbd.ttf", PdfEncodings.WINANSI);
+
+                            // Header
+                            doc.Add(new Paragraph("PEAK PERFORMANCE | VEHICLE RENTAL")
+                                .SetFont(boldFont)
+                                .SetFontSize(20)
+                                .SetTextAlignment(TextAlignment.CENTER)
+                                .SetMarginBottom(20));
+
+                            doc.Add(new Paragraph("Receipt")
+                                .SetFont(boldFont)
+                                .SetFontSize(16)
+                                .SetTextAlignment(TextAlignment.CENTER)
+                                .SetMarginBottom(16));
+
+                            doc.Add(new Paragraph($"Date: {DateTime.Now:MMMM dd, yyyy}")
+                                .SetFont(regularFont)
+                                .SetTextAlignment(TextAlignment.RIGHT)
+                                .SetMarginBottom(10));
+
+                            // Vehicle Details
+                            doc.Add(new Paragraph("Vehicle Details")
+                                .SetFont(boldFont)
+                                .SetUnderline());
+
+                            doc.Add(new Paragraph($"Make: {Make}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Model: {Model} ({VehicleYear})").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Color: {VehicleColor}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Transmission: {Transmission}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Fuel Type: {FuelType}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Seats: {Seats}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Duration: {Duration} {RentType}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Payment Type: {PaymentType}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Extras: {ChildSeat}, {SoundSystem}, {Powerbank}, {Wifi}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Notes: {Notes}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Total Price: Php {TotalPrice:N2}")
+                                .SetFont(boldFont)
+                                .SetFontSize(12)
+                                .SetMarginTop(10));
+
+                            // Owner Details
+                            doc.Add(new Paragraph("\nOwner Details")
+                                .SetFont(boldFont)
+                                .SetUnderline());
+
+                            doc.Add(new Paragraph($"Full Name: {FullName}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Email: {Email}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Contact: {ContactNumber}").SetFont(regularFont));
+                            doc.Add(new Paragraph($"Username: {Username}").SetFont(regularFont));
+
+                            doc.Close();
+                        }
+
+                        MessageBox.Show("Receipt has been saved as a PDF!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while generating the PDF:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

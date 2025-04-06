@@ -158,7 +158,8 @@ namespace Peak_Performance_V1._0
 
                 formBackground.Dispose();
             }
-            LoadVehicles();
+            if (SystemManager.refresh)
+                LoadVehicles();
         }
         private void txtSearch_TextChanged(object sender, EventArgs e) //MAIN EVENT: Searching
         {

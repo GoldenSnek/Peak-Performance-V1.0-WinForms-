@@ -102,8 +102,8 @@ namespace Peak_Performance_V1._0
                     string? birthday = reader["Birthday"].ToString();
                     string? email = reader["Email"].ToString();
 
-                    int driversLicenseID = Convert.ToInt32(reader["DriversLicenseID"]);
-                    int contactNumber = Convert.ToInt32(reader["ContactNumber"]);
+                    string? driversLicenseID = reader["DriversLicenseID"].ToString();
+                    string? contactNumber = reader["ContactNumber"].ToString();
                     double userRating = Convert.ToDouble(reader["UserRating"]);
 
                     //convert image from database to PictureBox
@@ -190,6 +190,7 @@ namespace Peak_Performance_V1._0
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
+                    SystemManager.refresh = true;
                     MessageBox.Show("Rental finalized successfully! Please proceed to payment.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -228,6 +229,7 @@ namespace Peak_Performance_V1._0
 
         private void picBack_Click(object sender, EventArgs e) //NAVIGATION EVENT: Exit
         {
+            SystemManager.refresh = false;
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
