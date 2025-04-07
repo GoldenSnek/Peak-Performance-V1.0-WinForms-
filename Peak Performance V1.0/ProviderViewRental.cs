@@ -77,6 +77,7 @@ namespace Peak_Performance_V1._0
 
                         card1.FullDetailsClickedRent += Card_FullDetailsClickedRent;
                         card1.ApproveClicked += Card_ApproveClicked;
+                        card1.RejectClicked += Card_RejectClicked;
                         flpWaitingApproval.Controls.Add(card1);
 
                     }
@@ -95,6 +96,58 @@ namespace Peak_Performance_V1._0
                 connection.Close();
             }
         }
+
+        private void Card_RejectClicked(int vehicleID)
+        {
+            SystemManager.currentFullDetailsVehicleID = vehicleID;
+            string deleteQuery = $"DELETE FROM RentalDetails WHERE VehicleID = @vehicleID";
+            using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@vehicleID", SystemManager.currentFullDetailsVehicleID);
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Rejected rental request", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting" + ex.Message);
+                    return;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            string updateQuery = "UPDATE Vehicles SET RentedBy = @rentedBy WHERE VehicleID = @vehicleID";
+            using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@rentedBy", 0);
+                cmd.Parameters.AddWithValue("@vehicleID", SystemManager.currentFullDetailsVehicleID);
+
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return;
+                }
+                finally
+                {
+                    connection.Close();
+                    LoadVehicles();
+                    //MessageBox.Show("test");
+                }
+            }
+        }
+
         public void Card_FullDetailsClickedRent(int vehicleID) { //SUPPROTING METHOD: View full details
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();

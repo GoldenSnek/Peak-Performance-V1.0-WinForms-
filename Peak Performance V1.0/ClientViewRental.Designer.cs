@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientViewRental));
             lblRentalDetails = new Label();
             lblCurrent = new Label();
             btnReceipt = new ReaLTaiizor.Controls.MaterialButton();
@@ -67,14 +68,26 @@
             picVR3 = new PictureBox();
             picVR2 = new PictureBox();
             picVR1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            btnRate = new ReaLTaiizor.Controls.MaterialButton();
             lblModel = new Label();
             lblMake = new Label();
             lblType = new Label();
             picNoRent = new PictureBox();
             lblNoRent = new Label();
+            panel1 = new Panel();
+            pnlLeft = new Panel();
+            pnlRight = new Panel();
+            pnlDown = new Panel();
+            pnlTop = new Panel();
+            panel7 = new Panel();
+            foreverTextBox1 = new ReaLTaiizor.Controls.ForeverTextBox();
+            lblUserID = new ReaLTaiizor.Controls.ForeverTextBox();
+            btnRate = new Button();
+            pnlNoRent = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel8 = new Panel();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).BeginInit();
             parrotGradientPanel2.SuspendLayout();
@@ -90,6 +103,10 @@
             ((System.ComponentModel.ISupportInitialize)picVR2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picVR1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picNoRent).BeginInit();
+            panel1.SuspendLayout();
+            panel7.SuspendLayout();
+            pnlNoRent.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // lblRentalDetails
@@ -128,7 +145,7 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(107, 649);
+            btnReceipt.Location = new Point(334, 611);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
@@ -423,7 +440,7 @@
             lblUserRating.BackColor = Color.Transparent;
             lblUserRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUserRating.ForeColor = Color.White;
-            lblUserRating.Location = new Point(643, 540);
+            lblUserRating.Location = new Point(821, 122);
             lblUserRating.Name = "lblUserRating";
             lblUserRating.Size = new Size(200, 40);
             lblUserRating.TabIndex = 67;
@@ -460,7 +477,7 @@
             lblTotalPrice.BackColor = Color.Transparent;
             lblTotalPrice.Font = new Font("Arial", 12F);
             lblTotalPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblTotalPrice.Location = new Point(12, 647);
+            lblTotalPrice.Location = new Point(12, 602);
             lblTotalPrice.Name = "lblTotalPrice";
             lblTotalPrice.Size = new Size(145, 40);
             lblTotalPrice.TabIndex = 94;
@@ -472,7 +489,7 @@
             picUR1.Anchor = AnchorStyles.None;
             picUR1.BackColor = Color.Transparent;
             picUR1.Image = Properties.Resources.RateNo;
-            picUR1.Location = new Point(800, 626);
+            picUR1.Location = new Point(157, 25);
             picUR1.Name = "picUR1";
             picUR1.Size = new Size(25, 25);
             picUR1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -484,7 +501,7 @@
             picUR2.Anchor = AnchorStyles.None;
             picUR2.BackColor = Color.Transparent;
             picUR2.Image = Properties.Resources.RateNo;
-            picUR2.Location = new Point(831, 626);
+            picUR2.Location = new Point(188, 25);
             picUR2.Name = "picUR2";
             picUR2.Size = new Size(25, 25);
             picUR2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -496,7 +513,7 @@
             picUR3.Anchor = AnchorStyles.None;
             picUR3.BackColor = Color.Transparent;
             picUR3.Image = Properties.Resources.RateNo;
-            picUR3.Location = new Point(862, 626);
+            picUR3.Location = new Point(219, 25);
             picUR3.Name = "picUR3";
             picUR3.Size = new Size(25, 25);
             picUR3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -508,7 +525,7 @@
             picUR4.Anchor = AnchorStyles.None;
             picUR4.BackColor = Color.Transparent;
             picUR4.Image = Properties.Resources.RateNo;
-            picUR4.Location = new Point(893, 626);
+            picUR4.Location = new Point(250, 25);
             picUR4.Name = "picUR4";
             picUR4.Size = new Size(25, 25);
             picUR4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -520,7 +537,7 @@
             picUR5.Anchor = AnchorStyles.None;
             picUR5.BackColor = Color.Transparent;
             picUR5.Image = Properties.Resources.RateNo;
-            picUR5.Location = new Point(924, 626);
+            picUR5.Location = new Point(281, 25);
             picUR5.Name = "picUR5";
             picUR5.Size = new Size(25, 25);
             picUR5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -532,7 +549,7 @@
             picVR5.Anchor = AnchorStyles.None;
             picVR5.BackColor = Color.Transparent;
             picVR5.Image = Properties.Resources.RateNo;
-            picVR5.Location = new Point(924, 662);
+            picVR5.Location = new Point(281, 61);
             picVR5.Name = "picVR5";
             picVR5.Size = new Size(25, 25);
             picVR5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -544,7 +561,7 @@
             picVR4.Anchor = AnchorStyles.None;
             picVR4.BackColor = Color.Transparent;
             picVR4.Image = Properties.Resources.RateNo;
-            picVR4.Location = new Point(893, 662);
+            picVR4.Location = new Point(250, 61);
             picVR4.Name = "picVR4";
             picVR4.Size = new Size(25, 25);
             picVR4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -556,7 +573,7 @@
             picVR3.Anchor = AnchorStyles.None;
             picVR3.BackColor = Color.Transparent;
             picVR3.Image = Properties.Resources.RateNo;
-            picVR3.Location = new Point(862, 662);
+            picVR3.Location = new Point(219, 61);
             picVR3.Name = "picVR3";
             picVR3.Size = new Size(25, 25);
             picVR3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -568,7 +585,7 @@
             picVR2.Anchor = AnchorStyles.None;
             picVR2.BackColor = Color.Transparent;
             picVR2.Image = Properties.Resources.RateNo;
-            picVR2.Location = new Point(831, 662);
+            picVR2.Location = new Point(188, 61);
             picVR2.Name = "picVR2";
             picVR2.Size = new Size(25, 25);
             picVR2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -580,62 +597,12 @@
             picVR1.Anchor = AnchorStyles.None;
             picVR1.BackColor = Color.Transparent;
             picVR1.Image = Properties.Resources.RateNo;
-            picVR1.Location = new Point(800, 662);
+            picVR1.Location = new Point(157, 61);
             picVR1.Name = "picVR1";
             picVR1.Size = new Size(25, 25);
             picVR1.SizeMode = PictureBoxSizeMode.StretchImage;
             picVR1.TabIndex = 100;
             picVR1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.BackColor = Color.Transparent;
-            label1.FlatStyle = FlatStyle.Flat;
-            label1.Font = new Font("Arial Rounded MT Bold", 12F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(668, 621);
-            label1.Name = "label1";
-            label1.Size = new Size(126, 33);
-            label1.TabIndex = 105;
-            label1.Text = "Owner Rating:";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Rounded MT Bold", 12F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(660, 658);
-            label2.Name = "label2";
-            label2.Size = new Size(134, 33);
-            label2.TabIndex = 106;
-            label2.Text = "Vehicle Rating:";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnRate
-            // 
-            btnRate.Anchor = AnchorStyles.None;
-            btnRate.AutoSize = false;
-            btnRate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnRate.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnRate.Depth = 0;
-            btnRate.HighEmphasis = true;
-            btnRate.Icon = null;
-            btnRate.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnRate.Location = new Point(818, 578);
-            btnRate.Margin = new Padding(4, 6, 4, 6);
-            btnRate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnRate.Name = "btnRate";
-            btnRate.NoAccentTextColor = Color.Empty;
-            btnRate.Size = new Size(119, 36);
-            btnRate.TabIndex = 107;
-            btnRate.Text = "Submit rating";
-            btnRate.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnRate.UseAccentColor = false;
-            btnRate.UseVisualStyleBackColor = true;
-            btnRate.Click += btnRate_Click;
             // 
             // lblModel
             // 
@@ -678,12 +645,12 @@
             // 
             // picNoRent
             // 
-            picNoRent.Anchor = AnchorStyles.None;
             picNoRent.BackgroundImageLayout = ImageLayout.Stretch;
+            picNoRent.Dock = DockStyle.Fill;
             picNoRent.Image = Properties.Resources.Sunset;
-            picNoRent.Location = new Point(53, 96);
+            picNoRent.Location = new Point(0, 0);
             picNoRent.Name = "picNoRent";
-            picNoRent.Size = new Size(834, 518);
+            picNoRent.Size = new Size(872, 516);
             picNoRent.SizeMode = PictureBoxSizeMode.StretchImage;
             picNoRent.TabIndex = 111;
             picNoRent.TabStop = false;
@@ -694,12 +661,208 @@
             lblNoRent.BackColor = Color.Transparent;
             lblNoRent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNoRent.ForeColor = Color.White;
-            lblNoRent.Location = new Point(201, 49);
+            lblNoRent.Location = new Point(55, 49);
             lblNoRent.Name = "lblNoRent";
-            lblNoRent.Size = new Size(519, 30);
+            lblNoRent.Size = new Size(844, 30);
             lblNoRent.TabIndex = 112;
             lblNoRent.Text = "You are currently not renting any vehicle";
             lblNoRent.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.Controls.Add(pnlLeft);
+            panel1.Controls.Add(pnlRight);
+            panel1.Controls.Add(pnlDown);
+            panel1.Controls.Add(pnlTop);
+            panel1.Controls.Add(panel7);
+            panel1.Location = new Point(614, 541);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(326, 145);
+            panel1.TabIndex = 113;
+            // 
+            // pnlLeft
+            // 
+            pnlLeft.BackColor = Color.FromArgb(255, 128, 0);
+            pnlLeft.Dock = DockStyle.Left;
+            pnlLeft.ForeColor = Color.Coral;
+            pnlLeft.Location = new Point(0, 3);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(3, 139);
+            pnlLeft.TabIndex = 16;
+            // 
+            // pnlRight
+            // 
+            pnlRight.BackColor = Color.FromArgb(255, 128, 0);
+            pnlRight.Dock = DockStyle.Right;
+            pnlRight.ForeColor = Color.Coral;
+            pnlRight.Location = new Point(323, 3);
+            pnlRight.Name = "pnlRight";
+            pnlRight.Size = new Size(3, 139);
+            pnlRight.TabIndex = 17;
+            // 
+            // pnlDown
+            // 
+            pnlDown.BackColor = Color.FromArgb(255, 128, 0);
+            pnlDown.Dock = DockStyle.Bottom;
+            pnlDown.ForeColor = Color.Coral;
+            pnlDown.Location = new Point(0, 142);
+            pnlDown.Name = "pnlDown";
+            pnlDown.Size = new Size(326, 3);
+            pnlDown.TabIndex = 18;
+            // 
+            // pnlTop
+            // 
+            pnlTop.BackColor = Color.FromArgb(255, 128, 0);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.ForeColor = Color.Coral;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new Size(326, 3);
+            pnlTop.TabIndex = 15;
+            // 
+            // panel7
+            // 
+            panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Controls.Add(foreverTextBox1);
+            panel7.Controls.Add(lblUserID);
+            panel7.Controls.Add(btnRate);
+            panel7.Controls.Add(picUR1);
+            panel7.Controls.Add(picUR2);
+            panel7.Controls.Add(picUR3);
+            panel7.Controls.Add(picUR4);
+            panel7.Controls.Add(picUR5);
+            panel7.Controls.Add(picVR1);
+            panel7.Controls.Add(picVR5);
+            panel7.Controls.Add(picVR2);
+            panel7.Controls.Add(picVR4);
+            panel7.Controls.Add(picVR3);
+            panel7.Dock = DockStyle.Fill;
+            panel7.Location = new Point(0, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(326, 145);
+            panel7.TabIndex = 56;
+            // 
+            // foreverTextBox1
+            // 
+            foreverTextBox1.BackColor = Color.Transparent;
+            foreverTextBox1.BaseColor = Color.FromArgb(35, 40, 50);
+            foreverTextBox1.BorderColor = Color.FromArgb(255, 128, 0);
+            foreverTextBox1.Enabled = false;
+            foreverTextBox1.FocusOnHover = false;
+            foreverTextBox1.Font = new Font("Arial Rounded MT Bold", 12F);
+            foreverTextBox1.ForeColor = Color.Lavender;
+            foreverTextBox1.Location = new Point(25, 20);
+            foreverTextBox1.MaxLength = 32767;
+            foreverTextBox1.Multiline = false;
+            foreverTextBox1.Name = "foreverTextBox1";
+            foreverTextBox1.ReadOnly = false;
+            foreverTextBox1.Size = new Size(126, 30);
+            foreverTextBox1.TabIndex = 108;
+            foreverTextBox1.Text = "Owner Rating";
+            foreverTextBox1.TextAlign = HorizontalAlignment.Left;
+            foreverTextBox1.UseSystemPasswordChar = false;
+            // 
+            // lblUserID
+            // 
+            lblUserID.BackColor = Color.Transparent;
+            lblUserID.BaseColor = Color.FromArgb(35, 40, 50);
+            lblUserID.BorderColor = Color.FromArgb(255, 128, 0);
+            lblUserID.Enabled = false;
+            lblUserID.FocusOnHover = false;
+            lblUserID.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblUserID.ForeColor = Color.Lavender;
+            lblUserID.Location = new Point(25, 61);
+            lblUserID.MaxLength = 32767;
+            lblUserID.Multiline = false;
+            lblUserID.Name = "lblUserID";
+            lblUserID.ReadOnly = false;
+            lblUserID.Size = new Size(126, 30);
+            lblUserID.TabIndex = 107;
+            lblUserID.Text = "Vehicle Rating";
+            lblUserID.TextAlign = HorizontalAlignment.Left;
+            lblUserID.UseSystemPasswordChar = false;
+            // 
+            // btnRate
+            // 
+            btnRate.BackColor = Color.Transparent;
+            btnRate.FlatAppearance.BorderColor = Color.Cyan;
+            btnRate.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnRate.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnRate.FlatStyle = FlatStyle.Flat;
+            btnRate.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnRate.ForeColor = Color.Black;
+            btnRate.Location = new Point(25, 96);
+            btnRate.Name = "btnRate";
+            btnRate.Size = new Size(126, 30);
+            btnRate.TabIndex = 56;
+            btnRate.Text = "Submit Rating";
+            btnRate.UseVisualStyleBackColor = false;
+            btnRate.Click += btnRate_Click;
+            // 
+            // pnlNoRent
+            // 
+            pnlNoRent.Anchor = AnchorStyles.None;
+            pnlNoRent.Controls.Add(panel3);
+            pnlNoRent.Controls.Add(panel4);
+            pnlNoRent.Controls.Add(panel5);
+            pnlNoRent.Controls.Add(panel6);
+            pnlNoRent.Controls.Add(panel8);
+            pnlNoRent.Location = new Point(44, 98);
+            pnlNoRent.Name = "pnlNoRent";
+            pnlNoRent.Size = new Size(872, 516);
+            pnlNoRent.TabIndex = 114;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(255, 128, 0);
+            panel3.Dock = DockStyle.Left;
+            panel3.ForeColor = Color.Coral;
+            panel3.Location = new Point(0, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(3, 510);
+            panel3.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(255, 128, 0);
+            panel4.Dock = DockStyle.Right;
+            panel4.ForeColor = Color.Coral;
+            panel4.Location = new Point(869, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(3, 510);
+            panel4.TabIndex = 17;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(255, 128, 0);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.ForeColor = Color.Coral;
+            panel5.Location = new Point(0, 513);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(872, 3);
+            panel5.TabIndex = 18;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(255, 128, 0);
+            panel6.Dock = DockStyle.Top;
+            panel6.ForeColor = Color.Coral;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(872, 3);
+            panel6.TabIndex = 15;
+            // 
+            // panel8
+            // 
+            panel8.BackgroundImageLayout = ImageLayout.Stretch;
+            panel8.Controls.Add(picNoRent);
+            panel8.Dock = DockStyle.Fill;
+            panel8.Location = new Point(0, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(872, 516);
+            panel8.TabIndex = 56;
             // 
             // ClientViewRental
             // 
@@ -708,23 +871,11 @@
             BackColor = Color.FromArgb(35, 40, 50);
             BackgroundImage = Properties.Resources.CarbonFiber;
             ClientSize = new Size(964, 704);
+            Controls.Add(panel1);
             Controls.Add(lblNoRent);
             Controls.Add(lblModel);
             Controls.Add(lblMake);
             Controls.Add(lblType);
-            Controls.Add(btnRate);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(picVR5);
-            Controls.Add(picVR4);
-            Controls.Add(picVR3);
-            Controls.Add(picVR2);
-            Controls.Add(picVR1);
-            Controls.Add(picUR5);
-            Controls.Add(picUR4);
-            Controls.Add(picUR3);
-            Controls.Add(picUR2);
-            Controls.Add(picUR1);
             Controls.Add(lblNotes);
             Controls.Add(lblExtras);
             Controls.Add(lblPayment);
@@ -752,7 +903,7 @@
             Controls.Add(btnReceipt);
             Controls.Add(lblCurrent);
             Controls.Add(lblRentalDetails);
-            Controls.Add(picNoRent);
+            Controls.Add(pnlNoRent);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ClientViewRental";
             StartPosition = FormStartPosition.CenterScreen;
@@ -773,6 +924,10 @@
             ((System.ComponentModel.ISupportInitialize)picVR2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picVR1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picNoRent).EndInit();
+            panel1.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            pnlNoRent.ResumeLayout(false);
+            panel8.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -819,13 +974,25 @@
         private PictureBox picVR3;
         private PictureBox picVR2;
         private PictureBox picVR1;
-        private Label label1;
-        private Label label2;
-        private ReaLTaiizor.Controls.MaterialButton btnRate;
         private Label lblModel;
         private Label lblMake;
         private Label lblType;
         private PictureBox picNoRent;
         private Label lblNoRent;
+        private Panel panel1;
+        private Panel pnlLeft;
+        private Panel pnlRight;
+        private Panel pnlDown;
+        private Panel pnlTop;
+        private Panel panel7;
+        private Button btnRate;
+        private ReaLTaiizor.Controls.ForeverTextBox lblUserID;
+        private ReaLTaiizor.Controls.ForeverTextBox foreverTextBox1;
+        private Panel pnlNoRent;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel8;
     }
 }

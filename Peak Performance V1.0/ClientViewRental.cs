@@ -13,6 +13,7 @@ using iText.IO.Font;
 using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Tagutils;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
@@ -79,7 +80,7 @@ namespace Peak_Performance_V1._0
         //EVENTS
         private void ClientViewRental_Load(object sender, EventArgs e) //INITIAL EVENT
         {
-            string rentQuery = "SELECT RentedBy FROM Vehicles";
+            string rentQuery = "SELECT RentedBy, Status FROM ClientVehicleQuery";
 
             using (OleDbCommand cmd = new OleDbCommand(rentQuery, connection))
             {
@@ -88,14 +89,24 @@ namespace Peak_Performance_V1._0
 
                 while (reader.Read())
                 {
-
                     int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+                    string? status = reader["Status"].ToString();
 
                     if (rentedBy == SystemManager.currentUserID)
                     {
-                        connection.Close();
-                        CurrentRent = true;
-                        break;
+                        if (status == "Unpaid")
+                        {
+                            lblNoRent.Text = "Your vehicle rental process is currently pending.";
+                            connection.Close();
+                            CurrentRent = false;
+                            break;
+                        }
+                        else
+                        {
+                            connection.Close();
+                            CurrentRent = true;
+                            break;
+                        }
                     }
                 }
                 connection.Close();
@@ -103,12 +114,17 @@ namespace Peak_Performance_V1._0
             if (CurrentRent == false)
             {
                 SetAllControlsInvisible(this);
+                panel6.Visible = true;
+                panel4.Visible = true;
+                panel3.Visible = true;
+                panel5.Visible = true;
                 picNoRent.Visible = true;
+                pnlNoRent.Visible = true;
                 lblNoRent.Visible = true;
             }
             else
             {
-                picNoRent.Visible = false;
+                pnlNoRent.Visible = false;
                 lblNoRent.Visible = false;
             }
         }
@@ -116,14 +132,13 @@ namespace Peak_Performance_V1._0
         {
             foreach (Control control in parent.Controls)
             {
-                 control.Visible = false;
+                if (control == pnlNoRent || control == picNoRent)
+                    continue;
 
-                // If the control contains children, recurse into them
+                control.Visible = false;
+
                 if (control.HasChildren)
-                {
                     SetAllControlsInvisible(control);
-                }
-
             }
         }
         public void LoadDetails() //MAIN METHOD: Load Details
@@ -299,11 +314,11 @@ namespace Peak_Performance_V1._0
 
                 userRaters += 1;
                 userTotalRatings += (int)userGivenRating;
-                userRating = (double)userTotalRatings / userRaters;
+                userRating = Math.Round((double)userTotalRatings / userRaters, 2);
 
                 vehicleRaters += 1;
                 vehicleTotalRatings += (int)vehicleGivenRating;
-                vehicleRating = (double)vehicleTotalRatings / vehicleRaters;
+                vehicleRating = Math.Round((double)vehicleTotalRatings / vehicleRaters, 2);
 
                 string updateQuery = "UPDATE RatingQuery SET UserRating = @userRating, UserRaters = @userRaters, UserTotalRatings = @userTotalRatings, " +
                                      "VehicleRating = @vehicleRating, VehicleRaters = @vehicleRaters, VehicleTotalRatings = @vehicleTotalRatings, RateStatus = 'Yes' " +

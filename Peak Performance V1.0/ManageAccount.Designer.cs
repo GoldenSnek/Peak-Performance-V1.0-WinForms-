@@ -34,6 +34,11 @@
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             pictureBox1 = new PictureBox();
             panel7 = new Panel();
+            lblTotalRentals = new ReaLTaiizor.Controls.ForeverTextBox();
+            lblRating = new ReaLTaiizor.Controls.ForeverTextBox();
+            lblRole = new ReaLTaiizor.Controls.ForeverTextBox();
+            lblUsername = new ReaLTaiizor.Controls.ForeverTextBox();
+            lblUserID = new ReaLTaiizor.Controls.ForeverTextBox();
             btnBrowseDevice = new Button();
             btnClearPicture = new Button();
             txtFullname = new ReaLTaiizor.Controls.ForeverTextBox();
@@ -62,11 +67,6 @@
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
-            lblUserID = new ReaLTaiizor.Controls.ForeverTextBox();
-            lblUsername = new ReaLTaiizor.Controls.ForeverTextBox();
-            lblRole = new ReaLTaiizor.Controls.ForeverTextBox();
-            lblRating = new ReaLTaiizor.Controls.ForeverTextBox();
-            lblTotalRentals = new ReaLTaiizor.Controls.ForeverTextBox();
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -148,6 +148,101 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(326, 586);
             panel7.TabIndex = 56;
+            // 
+            // lblTotalRentals
+            // 
+            lblTotalRentals.BackColor = Color.Transparent;
+            lblTotalRentals.BaseColor = Color.FromArgb(35, 40, 50);
+            lblTotalRentals.BorderColor = Color.FromArgb(255, 128, 0);
+            lblTotalRentals.Enabled = false;
+            lblTotalRentals.FocusOnHover = false;
+            lblTotalRentals.Font = new Font("Cascadia Code", 9.75F);
+            lblTotalRentals.ForeColor = Color.FromArgb(192, 192, 192);
+            lblTotalRentals.Location = new Point(44, 538);
+            lblTotalRentals.MaxLength = 32767;
+            lblTotalRentals.Multiline = false;
+            lblTotalRentals.Name = "lblTotalRentals";
+            lblTotalRentals.ReadOnly = false;
+            lblTotalRentals.Size = new Size(246, 27);
+            lblTotalRentals.TabIndex = 62;
+            lblTotalRentals.TextAlign = HorizontalAlignment.Left;
+            lblTotalRentals.UseSystemPasswordChar = false;
+            // 
+            // lblRating
+            // 
+            lblRating.BackColor = Color.Transparent;
+            lblRating.BaseColor = Color.FromArgb(35, 40, 50);
+            lblRating.BorderColor = Color.FromArgb(255, 128, 0);
+            lblRating.Enabled = false;
+            lblRating.FocusOnHover = false;
+            lblRating.Font = new Font("Cascadia Code", 9.75F);
+            lblRating.ForeColor = Color.FromArgb(192, 192, 192);
+            lblRating.Location = new Point(44, 492);
+            lblRating.MaxLength = 32767;
+            lblRating.Multiline = false;
+            lblRating.Name = "lblRating";
+            lblRating.ReadOnly = false;
+            lblRating.Size = new Size(246, 27);
+            lblRating.TabIndex = 61;
+            lblRating.TextAlign = HorizontalAlignment.Left;
+            lblRating.UseSystemPasswordChar = false;
+            // 
+            // lblRole
+            // 
+            lblRole.BackColor = Color.Transparent;
+            lblRole.BaseColor = Color.FromArgb(35, 40, 50);
+            lblRole.BorderColor = Color.FromArgb(255, 128, 0);
+            lblRole.Enabled = false;
+            lblRole.FocusOnHover = false;
+            lblRole.Font = new Font("Cascadia Code", 9.75F);
+            lblRole.ForeColor = Color.FromArgb(192, 192, 192);
+            lblRole.Location = new Point(44, 447);
+            lblRole.MaxLength = 32767;
+            lblRole.Multiline = false;
+            lblRole.Name = "lblRole";
+            lblRole.ReadOnly = false;
+            lblRole.Size = new Size(246, 27);
+            lblRole.TabIndex = 60;
+            lblRole.TextAlign = HorizontalAlignment.Left;
+            lblRole.UseSystemPasswordChar = false;
+            // 
+            // lblUsername
+            // 
+            lblUsername.BackColor = Color.Transparent;
+            lblUsername.BaseColor = Color.FromArgb(35, 40, 50);
+            lblUsername.BorderColor = Color.FromArgb(255, 128, 0);
+            lblUsername.Enabled = false;
+            lblUsername.FocusOnHover = false;
+            lblUsername.Font = new Font("Cascadia Code", 9.75F);
+            lblUsername.ForeColor = Color.FromArgb(192, 192, 192);
+            lblUsername.Location = new Point(44, 401);
+            lblUsername.MaxLength = 32767;
+            lblUsername.Multiline = false;
+            lblUsername.Name = "lblUsername";
+            lblUsername.ReadOnly = false;
+            lblUsername.Size = new Size(246, 27);
+            lblUsername.TabIndex = 59;
+            lblUsername.TextAlign = HorizontalAlignment.Left;
+            lblUsername.UseSystemPasswordChar = false;
+            // 
+            // lblUserID
+            // 
+            lblUserID.BackColor = Color.Transparent;
+            lblUserID.BaseColor = Color.FromArgb(35, 40, 50);
+            lblUserID.BorderColor = Color.FromArgb(255, 128, 0);
+            lblUserID.Enabled = false;
+            lblUserID.FocusOnHover = false;
+            lblUserID.Font = new Font("Cascadia Code", 9.75F);
+            lblUserID.ForeColor = Color.FromArgb(192, 192, 192);
+            lblUserID.Location = new Point(44, 356);
+            lblUserID.MaxLength = 32767;
+            lblUserID.Multiline = false;
+            lblUserID.Name = "lblUserID";
+            lblUserID.ReadOnly = false;
+            lblUserID.Size = new Size(246, 27);
+            lblUserID.TabIndex = 58;
+            lblUserID.TextAlign = HorizontalAlignment.Left;
+            lblUserID.UseSystemPasswordChar = false;
             // 
             // btnBrowseDevice
             // 
@@ -544,96 +639,6 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(326, 3);
             panel6.TabIndex = 15;
-            // 
-            // lblUserID
-            // 
-            lblUserID.BackColor = Color.Transparent;
-            lblUserID.BaseColor = Color.FromArgb(35, 40, 50);
-            lblUserID.BorderColor = Color.FromArgb(255, 128, 0);
-            lblUserID.FocusOnHover = false;
-            lblUserID.Font = new Font("Cascadia Code", 9.75F);
-            lblUserID.ForeColor = Color.FromArgb(192, 192, 192);
-            lblUserID.Location = new Point(44, 356);
-            lblUserID.MaxLength = 32767;
-            lblUserID.Multiline = false;
-            lblUserID.Name = "lblUserID";
-            lblUserID.ReadOnly = false;
-            lblUserID.Size = new Size(246, 27);
-            lblUserID.TabIndex = 58;
-            lblUserID.TextAlign = HorizontalAlignment.Left;
-            lblUserID.UseSystemPasswordChar = false;
-            // 
-            // lblUsername
-            // 
-            lblUsername.BackColor = Color.Transparent;
-            lblUsername.BaseColor = Color.FromArgb(35, 40, 50);
-            lblUsername.BorderColor = Color.FromArgb(255, 128, 0);
-            lblUsername.FocusOnHover = false;
-            lblUsername.Font = new Font("Cascadia Code", 9.75F);
-            lblUsername.ForeColor = Color.FromArgb(192, 192, 192);
-            lblUsername.Location = new Point(44, 401);
-            lblUsername.MaxLength = 32767;
-            lblUsername.Multiline = false;
-            lblUsername.Name = "lblUsername";
-            lblUsername.ReadOnly = false;
-            lblUsername.Size = new Size(246, 27);
-            lblUsername.TabIndex = 59;
-            lblUsername.TextAlign = HorizontalAlignment.Left;
-            lblUsername.UseSystemPasswordChar = false;
-            // 
-            // lblRole
-            // 
-            lblRole.BackColor = Color.Transparent;
-            lblRole.BaseColor = Color.FromArgb(35, 40, 50);
-            lblRole.BorderColor = Color.FromArgb(255, 128, 0);
-            lblRole.FocusOnHover = false;
-            lblRole.Font = new Font("Cascadia Code", 9.75F);
-            lblRole.ForeColor = Color.FromArgb(192, 192, 192);
-            lblRole.Location = new Point(44, 447);
-            lblRole.MaxLength = 32767;
-            lblRole.Multiline = false;
-            lblRole.Name = "lblRole";
-            lblRole.ReadOnly = false;
-            lblRole.Size = new Size(246, 27);
-            lblRole.TabIndex = 60;
-            lblRole.TextAlign = HorizontalAlignment.Left;
-            lblRole.UseSystemPasswordChar = false;
-            // 
-            // lblRating
-            // 
-            lblRating.BackColor = Color.Transparent;
-            lblRating.BaseColor = Color.FromArgb(35, 40, 50);
-            lblRating.BorderColor = Color.FromArgb(255, 128, 0);
-            lblRating.FocusOnHover = false;
-            lblRating.Font = new Font("Cascadia Code", 9.75F);
-            lblRating.ForeColor = Color.FromArgb(192, 192, 192);
-            lblRating.Location = new Point(44, 492);
-            lblRating.MaxLength = 32767;
-            lblRating.Multiline = false;
-            lblRating.Name = "lblRating";
-            lblRating.ReadOnly = false;
-            lblRating.Size = new Size(246, 27);
-            lblRating.TabIndex = 61;
-            lblRating.TextAlign = HorizontalAlignment.Left;
-            lblRating.UseSystemPasswordChar = false;
-            // 
-            // lblTotalRentals
-            // 
-            lblTotalRentals.BackColor = Color.Transparent;
-            lblTotalRentals.BaseColor = Color.FromArgb(35, 40, 50);
-            lblTotalRentals.BorderColor = Color.FromArgb(255, 128, 0);
-            lblTotalRentals.FocusOnHover = false;
-            lblTotalRentals.Font = new Font("Cascadia Code", 9.75F);
-            lblTotalRentals.ForeColor = Color.FromArgb(192, 192, 192);
-            lblTotalRentals.Location = new Point(44, 538);
-            lblTotalRentals.MaxLength = 32767;
-            lblTotalRentals.Multiline = false;
-            lblTotalRentals.Name = "lblTotalRentals";
-            lblTotalRentals.ReadOnly = false;
-            lblTotalRentals.Size = new Size(246, 27);
-            lblTotalRentals.TabIndex = 62;
-            lblTotalRentals.TextAlign = HorizontalAlignment.Left;
-            lblTotalRentals.UseSystemPasswordChar = false;
             // 
             // ManageAccount
             // 

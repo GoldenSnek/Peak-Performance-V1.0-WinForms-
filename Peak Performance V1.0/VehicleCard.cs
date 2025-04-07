@@ -43,6 +43,7 @@ namespace Peak_Performance_V1._0
         public event Action<int> FullDetailsClickedRent;
         public event Action<int> RentClicked;
         public event Action<int> ApproveClicked;
+        public event Action<int> RejectClicked;
         public event Action<int> FinishRentalClicked;
 
         public FullVehicleDetails FullVehicleDetails
@@ -67,10 +68,6 @@ namespace Peak_Performance_V1._0
             {
                 RentClicked?.Invoke(VehicleID);
             }
-            else if (Prompt == "Approve")
-            {
-                ApproveClicked?.Invoke(VehicleID);
-            }
             else if (Prompt == "Finish Rental")
             {
                 FinishRentalClicked?.Invoke(VehicleID);
@@ -88,12 +85,32 @@ namespace Peak_Performance_V1._0
             if (ParentForm is ProviderUpdateVehicle)
             {
                 btnProceed.Visible = false;
+                btnAccept.Visible = false;
+                btnReject.Visible = false;
                 picEdit.Visible = true;
                 picDelete.Visible = true;
+            }
+            else if (ParentForm is ProviderViewRental && prompt == "Finish Rental")
+            {
+                btnProceed.Visible = true;
+                btnAccept.Visible = false;
+                btnReject.Visible = false;
+                picEdit.Visible = false;
+                picDelete.Visible = false;
+            }
+            else if (ParentForm is ProviderViewRental)
+            {
+                btnProceed.Visible = false;
+                btnAccept.Visible = true;
+                btnReject.Visible = true;
+                picEdit.Visible = false;
+                picDelete.Visible = false;
             }
             else
             {
                 btnProceed.Visible = true;
+                btnAccept.Visible = false;
+                btnReject.Visible = false;
                 picEdit.Visible = false;
                 picDelete.Visible = false;
             }
@@ -170,6 +187,15 @@ namespace Peak_Performance_V1._0
             }
             else
                 FullDetailsClicked?.Invoke(VehicleID);
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            ApproveClicked?.Invoke(VehicleID);
+        }
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+            RejectClicked?.Invoke(VehicleID);
         }
 
         /*

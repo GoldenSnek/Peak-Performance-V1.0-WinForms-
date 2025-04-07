@@ -682,6 +682,7 @@
             // pnlSideMenu
             // 
             pnlSideMenu.AutoScroll = true;
+            pnlSideMenu.BackgroundImageLayout = ImageLayout.Stretch;
             pnlSideMenu.BottomLeft = Color.FromArgb(45, 60, 75);
             pnlSideMenu.BottomRight = Color.FromArgb(45, 60, 75);
             pnlSideMenu.CollapseControl = picHide;

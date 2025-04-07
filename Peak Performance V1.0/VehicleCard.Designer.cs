@@ -50,6 +50,8 @@
             picEdit = new PictureBox();
             btnProceed = new Button();
             btnFullDetails = new Button();
+            btnReject = new Button();
+            btnAccept = new Button();
             ((System.ComponentModel.ISupportInitialize)picVehicle).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -313,6 +315,42 @@
             btnFullDetails.UseVisualStyleBackColor = false;
             btnFullDetails.Click += btnFullDetails_Click;
             // 
+            // btnReject
+            // 
+            btnReject.BackColor = Color.Transparent;
+            btnReject.BackgroundImage = Properties.Resources.Decline;
+            btnReject.BackgroundImageLayout = ImageLayout.Zoom;
+            btnReject.FlatAppearance.BorderColor = Color.Maroon;
+            btnReject.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            btnReject.FlatAppearance.MouseOverBackColor = Color.Maroon;
+            btnReject.FlatStyle = FlatStyle.Flat;
+            btnReject.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReject.ForeColor = Color.Lavender;
+            btnReject.Location = new Point(179, 401);
+            btnReject.Name = "btnReject";
+            btnReject.Size = new Size(62, 35);
+            btnReject.TabIndex = 30;
+            btnReject.UseVisualStyleBackColor = false;
+            btnReject.Click += btnReject_Click;
+            // 
+            // btnAccept
+            // 
+            btnAccept.BackColor = Color.Transparent;
+            btnAccept.BackgroundImage = Properties.Resources.Approve;
+            btnAccept.BackgroundImageLayout = ImageLayout.Zoom;
+            btnAccept.FlatAppearance.BorderColor = Color.Green;
+            btnAccept.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnAccept.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnAccept.FlatStyle = FlatStyle.Flat;
+            btnAccept.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAccept.ForeColor = Color.Lavender;
+            btnAccept.Location = new Point(250, 401);
+            btnAccept.Name = "btnAccept";
+            btnAccept.Size = new Size(62, 35);
+            btnAccept.TabIndex = 31;
+            btnAccept.UseVisualStyleBackColor = false;
+            btnAccept.Click += btnAccept_Click;
+            // 
             // VehicleCard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -320,6 +358,8 @@
             BackColor = Color.White;
             BackgroundImage = Properties.Resources.MultiCar;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(btnAccept);
+            Controls.Add(btnReject);
             Controls.Add(btnFullDetails);
             Controls.Add(btnProceed);
             Controls.Add(picEdit);
@@ -374,5 +414,7 @@
         private PictureBox picEdit;
         private Button btnProceed;
         private Button btnFullDetails;
+        private Button btnReject;
+        private Button btnAccept;
     }
 }
