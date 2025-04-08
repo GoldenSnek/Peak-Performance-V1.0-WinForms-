@@ -121,6 +121,7 @@ namespace Peak_Performance_V1._0
                 picNoRent.Visible = true;
                 pnlNoRent.Visible = true;
                 lblNoRent.Visible = true;
+                pnlNoRent.Location = new Point(44, 98);
             }
             else
             {

@@ -145,7 +145,7 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(334, 611);
+            btnReceipt.Location = new Point(347, 602);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
@@ -809,7 +809,7 @@
             pnlNoRent.Controls.Add(panel5);
             pnlNoRent.Controls.Add(panel6);
             pnlNoRent.Controls.Add(panel8);
-            pnlNoRent.Location = new Point(44, 98);
+            pnlNoRent.Location = new Point(48, 692);
             pnlNoRent.Name = "pnlNoRent";
             pnlNoRent.Size = new Size(872, 516);
             pnlNoRent.TabIndex = 114;

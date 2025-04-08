@@ -31,7 +31,8 @@
             flpDisplay = new FlowLayoutPanel();
             pnlExtra = new Panel();
             grpFilter = new ReaLTaiizor.Controls.ParrotGroupBox();
-            btnApply = new ReaLTaiizor.Controls.MaterialButton();
+            btnApply = new Button();
+            btnClear = new Button();
             btnY4 = new ReaLTaiizor.Controls.CyberButton();
             btnY3 = new ReaLTaiizor.Controls.CyberButton();
             btnY2 = new ReaLTaiizor.Controls.CyberButton();
@@ -58,7 +59,6 @@
             label1 = new Label();
             btnMotorcycle = new ReaLTaiizor.Controls.CyberButton();
             btnCar = new ReaLTaiizor.Controls.CyberButton();
-            btnClear = new ReaLTaiizor.Controls.MaterialButton();
             picSearch = new PictureBox();
             txtSearch = new ReaLTaiizor.Controls.ForeverTextBox();
             pnlExtra.SuspendLayout();
@@ -94,6 +94,7 @@
             grpFilter.BorderColor = Color.FromArgb(255, 128, 0);
             grpFilter.BorderWidth = 1;
             grpFilter.Controls.Add(btnApply);
+            grpFilter.Controls.Add(btnClear);
             grpFilter.Controls.Add(btnY4);
             grpFilter.Controls.Add(btnY3);
             grpFilter.Controls.Add(btnY2);
@@ -120,7 +121,6 @@
             grpFilter.Controls.Add(label1);
             grpFilter.Controls.Add(btnMotorcycle);
             grpFilter.Controls.Add(btnCar);
-            grpFilter.Controls.Add(btnClear);
             grpFilter.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpFilter.Location = new Point(18, 76);
             grpFilter.Name = "grpFilter";
@@ -133,25 +133,37 @@
             // 
             // btnApply
             // 
-            btnApply.AutoSize = false;
-            btnApply.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnApply.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnApply.Depth = 0;
-            btnApply.HighEmphasis = true;
-            btnApply.Icon = null;
-            btnApply.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnApply.Location = new Point(128, 571);
-            btnApply.Margin = new Padding(4, 6, 4, 6);
-            btnApply.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnApply.BackColor = Color.Transparent;
+            btnApply.FlatAppearance.BorderColor = Color.Green;
+            btnApply.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnApply.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnApply.FlatStyle = FlatStyle.Flat;
+            btnApply.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnApply.ForeColor = Color.Lavender;
+            btnApply.Location = new Point(128, 555);
             btnApply.Name = "btnApply";
-            btnApply.NoAccentTextColor = Color.Empty;
-            btnApply.Size = new Size(75, 36);
-            btnApply.TabIndex = 46;
+            btnApply.Size = new Size(75, 45);
+            btnApply.TabIndex = 74;
             btnApply.Text = "Apply";
-            btnApply.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnApply.UseAccentColor = false;
-            btnApply.UseVisualStyleBackColor = true;
+            btnApply.UseVisualStyleBackColor = false;
             btnApply.Click += btnApply_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Transparent;
+            btnClear.FlatAppearance.BorderColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnClear.ForeColor = Color.Lavender;
+            btnClear.Location = new Point(11, 555);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 45);
+            btnClear.TabIndex = 73;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnY4
             // 
@@ -928,28 +940,6 @@
             btnCar.Timer_RGB = 10;
             btnCar.Click += GlowButton_Click;
             // 
-            // btnClear
-            // 
-            btnClear.AutoSize = false;
-            btnClear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnClear.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnClear.Depth = 0;
-            btnClear.HighEmphasis = true;
-            btnClear.Icon = null;
-            btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(11, 571);
-            btnClear.Margin = new Padding(4, 6, 4, 6);
-            btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnClear.Name = "btnClear";
-            btnClear.NoAccentTextColor = Color.Empty;
-            btnClear.Size = new Size(75, 36);
-            btnClear.TabIndex = 2;
-            btnClear.Text = "Clear";
-            btnClear.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnClear.UseAccentColor = false;
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
-            // 
             // picSearch
             // 
             picSearch.BackColor = Color.FromArgb(30, 35, 45);
@@ -1002,7 +992,7 @@
         #endregion
 
         private FlowLayoutPanel flpDisplay;
-        private Button button1;
+        private Button btnApply;
         private Button button2;
         private RadioButton rbtnDescending;
         private RadioButton rbtnAscending;
@@ -1025,7 +1015,6 @@
         private ReaLTaiizor.Controls.CyberButton btnMotorcycle;
         private ReaLTaiizor.Controls.CyberButton btnCar;
         private ReaLTaiizor.Controls.HopeSwitch toggleSort;
-        private ReaLTaiizor.Controls.MaterialButton btnClear;
         private ReaLTaiizor.Controls.CyberButton btnS4;
         private ReaLTaiizor.Controls.CyberButton btnS3;
         private ReaLTaiizor.Controls.CyberButton btnS2;
@@ -1037,6 +1026,6 @@
         private ReaLTaiizor.Controls.CyberButton btnY3;
         private ReaLTaiizor.Controls.CyberButton btnY2;
         private ReaLTaiizor.Controls.CyberButton btnY1;
-        private ReaLTaiizor.Controls.MaterialButton btnApply;
+        private Button btnClear;
     }
 }

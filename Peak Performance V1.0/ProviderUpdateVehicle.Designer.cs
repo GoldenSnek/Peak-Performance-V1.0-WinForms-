@@ -30,6 +30,11 @@
         {
             flpDisplay = new FlowLayoutPanel();
             panel1 = new Panel();
+            btnDelete = new Button();
+            btnClear = new Button();
+            btnClearPicture = new Button();
+            btnUpdate = new Button();
+            brnBrowse = new Button();
             panel15 = new Panel();
             cbxDrivetrain = new ReaLTaiizor.Controls.MaterialComboBox();
             panel16 = new Panel();
@@ -60,12 +65,7 @@
             txtModel = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             picPreview = new PictureBox();
-            btnClearPicture = new ReaLTaiizor.Controls.MaterialButton();
-            btnDelete = new ReaLTaiizor.Controls.MaterialButton();
-            btnUpdate = new ReaLTaiizor.Controls.MaterialButton();
             lblImagePath = new Label();
-            btnClear = new ReaLTaiizor.Controls.MaterialButton();
-            btnBrowse = new ReaLTaiizor.Controls.MaterialButton();
             panel14 = new Panel();
             lblOwned = new Label();
             panel1.SuspendLayout();
@@ -101,6 +101,11 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(btnClear);
+            panel1.Controls.Add(btnClearPicture);
+            panel1.Controls.Add(btnUpdate);
+            panel1.Controls.Add(brnBrowse);
             panel1.Controls.Add(panel15);
             panel1.Controls.Add(panel16);
             panel1.Controls.Add(panel6);
@@ -116,17 +121,97 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(parrotGradientPanel1);
-            panel1.Controls.Add(btnClearPicture);
-            panel1.Controls.Add(btnDelete);
-            panel1.Controls.Add(btnUpdate);
             panel1.Controls.Add(lblImagePath);
-            panel1.Controls.Add(btnClear);
-            panel1.Controls.Add(btnBrowse);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 50);
             panel1.Name = "panel1";
             panel1.Size = new Size(598, 654);
             panel1.TabIndex = 59;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Transparent;
+            btnDelete.FlatAppearance.BorderColor = Color.Maroon;
+            btnDelete.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            btnDelete.FlatAppearance.MouseOverBackColor = Color.Maroon;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnDelete.ForeColor = Color.Lavender;
+            btnDelete.Location = new Point(389, 100);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(130, 35);
+            btnDelete.TabIndex = 79;
+            btnDelete.Text = "Delete Vehicle";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Transparent;
+            btnClear.FlatAppearance.BorderColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnClear.ForeColor = Color.Lavender;
+            btnClear.Location = new Point(207, 130);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(130, 35);
+            btnClear.TabIndex = 78;
+            btnClear.Text = "Clear All";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnClearPicture
+            // 
+            btnClearPicture.BackColor = Color.Transparent;
+            btnClearPicture.FlatAppearance.BorderColor = Color.Cyan;
+            btnClearPicture.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnClearPicture.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnClearPicture.FlatStyle = FlatStyle.Flat;
+            btnClearPicture.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnClearPicture.ForeColor = Color.Lavender;
+            btnClearPicture.Location = new Point(207, 72);
+            btnClearPicture.Name = "btnClearPicture";
+            btnClearPicture.Size = new Size(130, 35);
+            btnClearPicture.TabIndex = 77;
+            btnClearPicture.Text = "Clear Picture";
+            btnClearPicture.UseVisualStyleBackColor = false;
+            btnClearPicture.Click += btnClearPicture_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.Transparent;
+            btnUpdate.FlatAppearance.BorderColor = Color.Green;
+            btnUpdate.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnUpdate.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnUpdate.ForeColor = Color.Lavender;
+            btnUpdate.Location = new Point(389, 45);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(130, 35);
+            btnUpdate.TabIndex = 76;
+            btnUpdate.Text = "Update Details";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // brnBrowse
+            // 
+            brnBrowse.BackColor = Color.Transparent;
+            brnBrowse.FlatAppearance.BorderColor = Color.Cyan;
+            brnBrowse.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            brnBrowse.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            brnBrowse.FlatStyle = FlatStyle.Flat;
+            brnBrowse.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            brnBrowse.ForeColor = Color.Lavender;
+            brnBrowse.Location = new Point(207, 11);
+            brnBrowse.Name = "brnBrowse";
+            brnBrowse.Size = new Size(130, 35);
+            brnBrowse.TabIndex = 75;
+            brnBrowse.Text = "Browse Device";
+            brnBrowse.UseVisualStyleBackColor = false;
+            brnBrowse.Click += btnBrowse_Click;
             // 
             // panel15
             // 
@@ -698,75 +783,6 @@
             picPreview.TabIndex = 21;
             picPreview.TabStop = false;
             // 
-            // btnClearPicture
-            // 
-            btnClearPicture.Anchor = AnchorStyles.Top;
-            btnClearPicture.AutoSize = false;
-            btnClearPicture.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnClearPicture.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnClearPicture.Depth = 0;
-            btnClearPicture.HighEmphasis = true;
-            btnClearPicture.Icon = null;
-            btnClearPicture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClearPicture.Location = new Point(210, 72);
-            btnClearPicture.Margin = new Padding(4, 6, 4, 6);
-            btnClearPicture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnClearPicture.Name = "btnClearPicture";
-            btnClearPicture.NoAccentTextColor = Color.Empty;
-            btnClearPicture.Size = new Size(119, 36);
-            btnClearPicture.TabIndex = 48;
-            btnClearPicture.Text = "Clear Picture";
-            btnClearPicture.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnClearPicture.UseAccentColor = false;
-            btnClearPicture.UseVisualStyleBackColor = true;
-            btnClearPicture.Click += btnClearPicture_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.Top;
-            btnDelete.AutoSize = false;
-            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnDelete.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnDelete.Depth = 0;
-            btnDelete.HighEmphasis = true;
-            btnDelete.Icon = null;
-            btnDelete.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnDelete.Location = new Point(399, 135);
-            btnDelete.Margin = new Padding(4, 6, 4, 6);
-            btnDelete.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnDelete.Name = "btnDelete";
-            btnDelete.NoAccentTextColor = Color.Empty;
-            btnDelete.Size = new Size(119, 36);
-            btnDelete.TabIndex = 47;
-            btnDelete.Text = "Delete Vehicle";
-            btnDelete.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnDelete.UseAccentColor = false;
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.Anchor = AnchorStyles.Top;
-            btnUpdate.AutoSize = false;
-            btnUpdate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnUpdate.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnUpdate.Depth = 0;
-            btnUpdate.HighEmphasis = true;
-            btnUpdate.Icon = null;
-            btnUpdate.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnUpdate.Location = new Point(399, 72);
-            btnUpdate.Margin = new Padding(4, 6, 4, 6);
-            btnUpdate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.NoAccentTextColor = Color.Empty;
-            btnUpdate.Size = new Size(119, 36);
-            btnUpdate.TabIndex = 46;
-            btnUpdate.Text = "Update Details";
-            btnUpdate.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnUpdate.UseAccentColor = false;
-            btnUpdate.UseVisualStyleBackColor = true;
-            btnUpdate.Click += btnUpdate_Click;
-            // 
             // lblImagePath
             // 
             lblImagePath.Anchor = AnchorStyles.Top;
@@ -776,52 +792,6 @@
             lblImagePath.Size = new Size(0, 19);
             lblImagePath.TabIndex = 28;
             lblImagePath.Visible = false;
-            // 
-            // btnClear
-            // 
-            btnClear.Anchor = AnchorStyles.Top;
-            btnClear.AutoSize = false;
-            btnClear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnClear.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnClear.Depth = 0;
-            btnClear.HighEmphasis = true;
-            btnClear.Icon = null;
-            btnClear.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnClear.Location = new Point(399, 10);
-            btnClear.Margin = new Padding(4, 6, 4, 6);
-            btnClear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnClear.Name = "btnClear";
-            btnClear.NoAccentTextColor = Color.Empty;
-            btnClear.Size = new Size(119, 36);
-            btnClear.TabIndex = 42;
-            btnClear.Text = "Clear All";
-            btnClear.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnClear.UseAccentColor = false;
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
-            // 
-            // btnBrowse
-            // 
-            btnBrowse.Anchor = AnchorStyles.Top;
-            btnBrowse.AutoSize = false;
-            btnBrowse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnBrowse.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnBrowse.Depth = 0;
-            btnBrowse.HighEmphasis = true;
-            btnBrowse.Icon = null;
-            btnBrowse.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnBrowse.Location = new Point(210, 10);
-            btnBrowse.Margin = new Padding(4, 6, 4, 6);
-            btnBrowse.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.NoAccentTextColor = Color.Empty;
-            btnBrowse.Size = new Size(119, 36);
-            btnBrowse.TabIndex = 0;
-            btnBrowse.Text = "Browse Device";
-            btnBrowse.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnBrowse.UseAccentColor = false;
-            btnBrowse.UseVisualStyleBackColor = true;
-            btnBrowse.Click += btnBrowse_Click;
             // 
             // panel14
             // 
@@ -886,11 +856,6 @@
         private Panel panel1;
         private Label lblImagePath;
         private PictureBox picPreview;
-        private ReaLTaiizor.Controls.MaterialButton btnClear;
-        private ReaLTaiizor.Controls.MaterialButton btnBrowse;
-        private ReaLTaiizor.Controls.MaterialButton btnDelete;
-        private ReaLTaiizor.Controls.MaterialButton btnUpdate;
-        private ReaLTaiizor.Controls.MaterialButton btnClearPicture;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private Panel panel14;
         private Label lblOwned;
@@ -922,5 +887,10 @@
         private ReaLTaiizor.Controls.MaterialComboBox cbxGeneralType;
         private Panel panel2;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtModel;
+        private Button btnDelete;
+        private Button btnClear;
+        private Button btnClearPicture;
+        private Button btnUpdate;
+        private Button brnBrowse;
     }
 }
