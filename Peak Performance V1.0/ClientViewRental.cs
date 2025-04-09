@@ -22,6 +22,9 @@ using OxyPlot;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System.Net;
+using System.Net.Mail;
+using System.IO;
 
 namespace Peak_Performance_V1._0
 {
@@ -39,6 +42,8 @@ namespace Peak_Performance_V1._0
         public double UserRating { get; set; }
         public double VehicleRating { get; set; }
         public bool CurrentRent { get; set; }
+
+        string? ClientEmail;
 
         string? GeneralType;
         string? SpecificType;
@@ -80,7 +85,7 @@ namespace Peak_Performance_V1._0
         //EVENTS
         private void ClientViewRental_Load(object sender, EventArgs e) //INITIAL EVENT
         {
-            string rentQuery = "SELECT RentedBy, Status FROM ClientVehicleQuery";
+            string rentQuery = "SELECT RentedBy, Email, Status FROM ClientVehicleQuery";
 
             using (OleDbCommand cmd = new OleDbCommand(rentQuery, connection))
             {
@@ -90,6 +95,7 @@ namespace Peak_Performance_V1._0
                 while (reader.Read())
                 {
                     int rentedBy = Convert.ToInt32(reader["RentedBy"]);
+                    ClientEmail = reader["Email"].ToString();
                     string? status = reader["Status"].ToString();
 
                     if (rentedBy == SystemManager.currentUserID)
@@ -194,7 +200,6 @@ namespace Peak_Performance_V1._0
                     lblFuelType.Text = $"Fuel Type: {FuelType}";
                     lblSeats.Text = $"Seats: {Seats}";
                     lblMileage.Text = $"Mileage: {Mileage} km";
-                    lblOC.Text = "Client";
 
                     lblDuration.Text = $"Duration: {Duration} {RentType}";
                     lblPayment.Text = $"Payment Type: {PaymentType}";
@@ -456,86 +461,169 @@ namespace Peak_Performance_V1._0
 
         private void btnReceipt_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            try
             {
-                saveFileDialog.FileName = $"Receipt_{DateTime.Today:yyyy-MM-dd}.pdf";
-                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
-                saveFileDialog.DefaultExt = "pdf";
-                saveFileDialog.AddExtension = true;
-
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                //check for internet connectivity first
+                if (!CheckForInternetConnection())
                 {
-                    string filePath = saveFileDialog.FileName;
+                    MessageBox.Show("No internet connection detected. Please connect to the internet and try again.",
+                        "No Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                    try
+                //validate email address
+                string recipientEmail = ClientEmail;
+                if (!IsValidEmail(recipientEmail))
+                {
+                    MessageBox.Show("The recipient email address appears to be invalid. Please check and try again.",
+                        "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                //create the PDF and store it in a byte array
+                byte[] pdfBytes;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    using (PdfWriter writer = new PdfWriter(memoryStream))
+                    using (PdfDocument pdf = new PdfDocument(writer))
+                    using (iText.Layout.Document doc = new iText.Layout.Document(pdf))
                     {
-                        using (PdfWriter writer = new PdfWriter(filePath))
-                        using (PdfDocument pdf = new PdfDocument(writer))
-                        {
-                            var doc = new iText.Layout.Document(pdf);
+                        PdfFont font = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arial.ttf", PdfEncodings.WINANSI);
+                        PdfFont boldFont = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arialbd.ttf", PdfEncodings.WINANSI);
 
-                            // Load fonts from file paths
-                            PdfFont regularFont = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arial.ttf", PdfEncodings.WINANSI);
-                            PdfFont boldFont = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arialbd.ttf", PdfEncodings.WINANSI);
+                        doc.Add(new Paragraph("PEAK PERFORMANCE | VEHICLE RENTAL")
+                            .SetFont(boldFont)
+                            .SetFontSize(20)
+                            .SetTextAlignment(TextAlignment.CENTER));
 
-                            // Header
-                            doc.Add(new Paragraph("PEAK PERFORMANCE | VEHICLE RENTAL")
-                                .SetFont(boldFont)
-                                .SetFontSize(20)
-                                .SetTextAlignment(TextAlignment.CENTER)
-                                .SetMarginBottom(20));
+                        doc.Add(new Paragraph("Receipt")
+                            .SetFont(boldFont)
+                            .SetFontSize(16)
+                            .SetTextAlignment(TextAlignment.CENTER));
 
-                            doc.Add(new Paragraph("Receipt")
-                                .SetFont(boldFont)
-                                .SetFontSize(16)
-                                .SetTextAlignment(TextAlignment.CENTER)
-                                .SetMarginBottom(16));
+                        doc.Add(new Paragraph($"Date: {DateTime.Now:MMMM dd, yyyy}").SetFont(font));
 
-                            doc.Add(new Paragraph($"Date: {DateTime.Now:MMMM dd, yyyy}")
-                                .SetFont(regularFont)
-                                .SetTextAlignment(TextAlignment.RIGHT)
-                                .SetMarginBottom(10));
+                        doc.Add(new Paragraph("Vehicle Details").SetFont(boldFont).SetUnderline());
+                        doc.Add(new Paragraph($"Make: {Make}").SetFont(font));
+                        doc.Add(new Paragraph($"Model: {Model} ({VehicleYear})").SetFont(font));
+                        doc.Add(new Paragraph($"Color: {VehicleColor}").SetFont(font));
+                        doc.Add(new Paragraph($"Transmission: {Transmission}").SetFont(font));
+                        doc.Add(new Paragraph($"Fuel Type: {FuelType}").SetFont(font));
+                        doc.Add(new Paragraph($"Seats: {Seats}").SetFont(font));
+                        doc.Add(new Paragraph($"Duration: {Duration} {RentType}").SetFont(font));
+                        doc.Add(new Paragraph($"Payment Type: {PaymentType}").SetFont(font));
+                        doc.Add(new Paragraph($"Extras: {ChildSeat}, {SoundSystem}, {Powerbank}, {Wifi}").SetFont(font));
+                        doc.Add(new Paragraph($"Notes: {Notes}").SetFont(font));
+                        doc.Add(new Paragraph($"Total Price: Php {TotalPrice:N2}").SetFont(boldFont));
 
-                            // Vehicle Details
-                            doc.Add(new Paragraph("Vehicle Details")
-                                .SetFont(boldFont)
-                                .SetUnderline());
+                        doc.Add(new Paragraph("Owner Details").SetFont(boldFont).SetUnderline());
+                        doc.Add(new Paragraph($"Full Name: {FullName}").SetFont(font));
+                        doc.Add(new Paragraph($"Email: {Email}").SetFont(font));
+                        doc.Add(new Paragraph($"Contact: {ContactNumber}").SetFont(font));
+                        doc.Add(new Paragraph($"Username: {Username}").SetFont(font));
 
-                            doc.Add(new Paragraph($"Make: {Make}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Model: {Model} ({VehicleYear})").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Color: {VehicleColor}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Transmission: {Transmission}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Fuel Type: {FuelType}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Seats: {Seats}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Duration: {Duration} {RentType}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Payment Type: {PaymentType}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Extras: {ChildSeat}, {SoundSystem}, {Powerbank}, {Wifi}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Notes: {Notes}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Total Price: Php {TotalPrice:N2}")
-                                .SetFont(boldFont)
-                                .SetFontSize(12)
-                                .SetMarginTop(10));
-
-                            // Owner Details
-                            doc.Add(new Paragraph("\nOwner Details")
-                                .SetFont(boldFont)
-                                .SetUnderline());
-
-                            doc.Add(new Paragraph($"Full Name: {FullName}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Email: {Email}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Contact: {ContactNumber}").SetFont(regularFont));
-                            doc.Add(new Paragraph($"Username: {Username}").SetFont(regularFont));
-
-                            doc.Close();
-                        }
-
-                        MessageBox.Show("Receipt has been saved as a PDF!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        doc.Close();
                     }
-                    catch (Exception ex)
+
+                    pdfBytes = memoryStream.ToArray();
+                }
+
+                this.Cursor = Cursors.WaitCursor;
+                btnReceipt.Enabled = false;
+
+                using (MailMessage message = new MailMessage())
+                {
+                    message.From = new MailAddress("PeakPerformanceNave@gmail.com");
+                    message.To.Add(recipientEmail);
+                    message.Subject = "Your Vehicle Rental Receipt";
+                    message.Body = "Hello! Please find your receipt attached.\n\nThank you for renting with Peak Performance.";
+
+                    using (MemoryStream attachmentStream = new MemoryStream(pdfBytes))
                     {
-                        MessageBox.Show($"An error occurred while generating the PDF:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Net.Mime.ContentType contentType = new System.Net.Mime.ContentType("application/pdf");
+                        contentType.Name = $"Receipt_{DateTime.Today:yyyy-MM-dd}.pdf";
+                        Attachment attachment = new Attachment(attachmentStream, contentType);
+                        message.Attachments.Add(attachment);
+
+                        //send the email with timeout
+                        using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                        {
+                            smtp.EnableSsl = true;
+                            smtp.Credentials = new NetworkCredential("PeakPerformanceNave@gmail.com", "reyy zptm tebv tghw");
+
+                            //set timeout (10 seconds)
+                            smtp.Timeout = 10000;
+
+                            smtp.Send(message);
+                        }
                     }
                 }
+
+                MessageBox.Show("Receipt sent successfully!",
+                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SmtpException ex)
+            {
+                //handle specific SMTP exceptions
+                if (ex.StatusCode == SmtpStatusCode.MailboxBusy ||
+                    ex.StatusCode == SmtpStatusCode.MailboxUnavailable)
+                {
+                    MessageBox.Show("The recipient's mailbox is unavailable or busy. Please try again later.",
+                        "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (ex.Message.Contains("Timeout"))
+                {
+                    MessageBox.Show("The email server took too long to respond. Please check your internet connection and try again.",
+                        "Timeout Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show($"Email sending failed: {ex.Message}",
+                        "SMTP Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to send receipt: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+                btnReceipt.Enabled = true;
+            }
+        }
+
+        private bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://www.google.com"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

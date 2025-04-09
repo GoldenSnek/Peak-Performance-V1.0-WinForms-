@@ -8,48 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using OxyPlot;
-using OxyPlot.Series;
 
 namespace Peak_Performance_V1._0
 {
-    public partial class ProviderViewRental : Form, IProviderViewRental
+    public partial class AdminViewRental : Form
     {
         private OleDbConnection connection;
-        public ProviderViewRental()
+        public AdminViewRental()
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
             LoadVehicles();
-
-            LoadGraphs();
-        }
-        public void LoadGraphs()
-        {
-            var pm1 = new PlotModel
-            {
-                Title = "Total Revenue",
-                Subtitle = "Test",
-                PlotType = PlotType.Cartesian,
-                Background = OxyColors.White
-            };
-            pm1.Series.Add(new FunctionSeries(Math.Sin, -10, 10, 0.1, "sin(x)"));
-            pm1.Series.Add(new FunctionSeries(Math.Cos, -10, 10, 0.1, "cos(x)"));
-            pm1.Series.Add(new FunctionSeries(t => 5 * Math.Cos(t), t => 5 * Math.Sin(t), 0, 2 * Math.PI, 0.1, "cos(t),sin(t)"));
-            plotView1.Model = pm1;
-
-            var pm2 = new PlotModel
-            {
-                Title = "Total Sales",
-                Subtitle = "Test",
-                PlotType = PlotType.Cartesian,
-                Background = OxyColors.White
-            };
-            pm2.Series.Add(new FunctionSeries(Math.Sin, -10, 10, 0.1, "sin(x)"));
-            pm2.Series.Add(new FunctionSeries(Math.Cos, -10, 10, 0.1, "cos(x)"));
-            pm2.Series.Add(new FunctionSeries(t => 5 * Math.Cos(t), t => 5 * Math.Sin(t), 0, 2 * Math.PI, 0.1, "cos(t),sin(t)"));
-            plotView2.Model = pm2;
         }
 
         public void LoadVehicles() //INITIAL METHOD: Load the vehicle cards
@@ -100,7 +69,7 @@ namespace Peak_Performance_V1._0
 
                     double rating = Convert.ToDouble(reader["VehicleRating"]);
 
-                    if (ownerID == SystemManager.currentUserID && status == "Unpaid")
+                    if (status == "Unpaid")
                     {
                         VehicleCard card1 = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                                             color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Approve");
@@ -111,7 +80,7 @@ namespace Peak_Performance_V1._0
                         flpWaitingApproval.Controls.Add(card1);
 
                     }
-                    else if (ownerID == SystemManager.currentUserID && status == "Ongoing")
+                    else if (status == "Ongoing")
                     {
                         VehicleCard card2 = new VehicleCard(this, vehicleID, generalType, specificType, make, model, vehicleYear, transmission, drivetrain, licensePlate,
                                                             color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "Finish Rental");
@@ -178,7 +147,8 @@ namespace Peak_Performance_V1._0
             }
         }
 
-        public void Card_FullDetailsClickedRent(int vehicleID) { //SUPPROTING METHOD: View full details
+        public void Card_FullDetailsClickedRent(int vehicleID)
+        { //SUPPROTING METHOD: View full details
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
             using (FullVehicleDetails detailsForm = new FullVehicleDetails("Client"))

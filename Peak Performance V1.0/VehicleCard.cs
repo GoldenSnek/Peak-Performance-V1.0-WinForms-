@@ -90,7 +90,7 @@ namespace Peak_Performance_V1._0
                 picEdit.Visible = true;
                 picDelete.Visible = true;
             }
-            else if (ParentForm is ProviderViewRental && prompt == "Finish Rental")
+            else if ((ParentForm is ProviderViewRental || ParentForm is AdminViewRental) && prompt == "Finish Rental")
             {
                 btnProceed.Visible = true;
                 btnAccept.Visible = false;
@@ -98,7 +98,7 @@ namespace Peak_Performance_V1._0
                 picEdit.Visible = false;
                 picDelete.Visible = false;
             }
-            else if (ParentForm is ProviderViewRental)
+            else if (ParentForm is ProviderViewRental || ParentForm is AdminViewRental)
             {
                 btnProceed.Visible = false;
                 btnAccept.Visible = true;

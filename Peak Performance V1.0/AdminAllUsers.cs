@@ -38,7 +38,7 @@ namespace Peak_Performance_V1._0
             dgvData.DataSource = dt;
 
             dgvData.Columns[2].Visible = false;
-            dgvData.Columns[10].Visible = false;
+            dgvData.Columns[12].Visible = false;
             dgvData.Columns[13].Visible = false;
             dgvData.Columns[14].Visible = false;
         }

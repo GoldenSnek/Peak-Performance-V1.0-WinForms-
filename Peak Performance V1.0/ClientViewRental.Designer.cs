@@ -145,14 +145,14 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(347, 602);
+            btnReceipt.Location = new Point(306, 604);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
             btnReceipt.NoAccentTextColor = Color.Empty;
-            btnReceipt.Size = new Size(159, 36);
+            btnReceipt.Size = new Size(240, 36);
             btnReceipt.TabIndex = 10;
-            btnReceipt.Text = "Download Receipt";
+            btnReceipt.Text = "Send receipt to email address";
             btnReceipt.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnReceipt.UseAccentColor = false;
             btnReceipt.UseVisualStyleBackColor = true;

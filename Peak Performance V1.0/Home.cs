@@ -139,7 +139,7 @@ namespace Peak_Performance_V1._0
 
                 btnRentals.Visible = false;
                 btnAllVehicles.Visible = false;
-                btnRentalDetails.Visible = false;
+                btnRentalDetails.Visible = true;
 
                 btnVehicles.Visible = false;
                 btnAddVehicles.Visible = false;
@@ -277,6 +277,8 @@ namespace Peak_Performance_V1._0
                 OpenChildForm(new ClientViewRental());
             else if (SystemManager.currentRole == "Vehicle Provider")
                 OpenChildForm(new ProviderViewRental());
+            else if (SystemManager.currentRole == "Admin")
+                OpenChildForm(new AdminViewRental());
         }
         private void btnAddVehicles_Click(object sender, EventArgs e)
         {
