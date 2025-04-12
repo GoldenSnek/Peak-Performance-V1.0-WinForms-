@@ -99,6 +99,33 @@ namespace Peak_Performance_V1._0
                 }
             }
 
+            //set analytics
+            int vehicleCount = 0;
+
+            using (connection)
+            {
+                string countQuery = "SELECT COUNT(*) FROM RentalDetails";
+
+                using (OleDbCommand cmd = new OleDbCommand(countQuery, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        vehicleCount = (int)cmd.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
+            lblCurrentRent.Text = vehicleCount.ToString();
+
             //set side menu buttons visibility
             if (SystemManager.currentRole == "Vehicle Provider")
             {

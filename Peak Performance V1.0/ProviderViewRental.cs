@@ -202,7 +202,7 @@ namespace Peak_Performance_V1._0
         public void Card_ApproveClicked(int vehicleID) //MAIN METHOD: Approve pending vehicle
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
-            string updateQuery = "UPDATE ClientVehicleQuery SET Status = @status, TotalRentals = TotalRentals + 1, UserTotalRentals = UserTotalRentals + 1, RentDate = @rentDate WHERE VehicleID = @vehicleID";
+            string updateQuery = "UPDATE ClientVehicleQuery SET Status = @status, TotalRentals = TotalRentals + 1, UserTotalRentals = UserTotalRentals + 1, TotalRevenue = TotalRevenue + Price, RentDate = @rentDate WHERE VehicleID = @vehicleID";
             string selectQuery = "SELECT TotalRentals, UserTotalRentals FROM ClientVehicleQuery WHERE VehicleID = @vehicleID";
 
             using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))

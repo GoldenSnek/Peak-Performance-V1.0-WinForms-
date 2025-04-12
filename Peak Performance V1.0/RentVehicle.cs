@@ -181,7 +181,7 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@Powerbank", cbxPowerbank.Text);
                 cmd.Parameters.AddWithValue("@WiFi", cbxWifi.Text);
                 cmd.Parameters.AddWithValue("@Notes", txtNotes.Text);
-                cmd.Parameters.AddWithValue("@Price", Price);
+                cmd.Parameters.AddWithValue("@Price", Math.Round(Price, 2));
                 cmd.Parameters.AddWithValue("@Status", "Unpaid");
                 cmd.Parameters.AddWithValue("@RateStatus", "No");
 
@@ -277,7 +277,7 @@ namespace Peak_Performance_V1._0
             if (cbxWifi.Text == "Pocket WiFi")
                 estimate += 100;
 
-            lblEstimatedPrice.Text = $"Estimated price: Php {estimate.ToString()}";
+            lblEstimatedPrice.Text = $"Estimated price: Php {Math.Round(estimate, 2).ToString()}";
 
             Price = estimate;
         }

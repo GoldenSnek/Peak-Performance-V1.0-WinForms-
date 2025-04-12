@@ -31,6 +31,7 @@
             flpDisplay = new FlowLayoutPanel();
             pnlExtra = new Panel();
             grpFilter = new ReaLTaiizor.Controls.ParrotGroupBox();
+            lblTotal = new Label();
             btnApply = new Button();
             btnClear = new Button();
             btnY4 = new ReaLTaiizor.Controls.CyberButton();
@@ -93,6 +94,7 @@
             // 
             grpFilter.BorderColor = Color.FromArgb(255, 128, 0);
             grpFilter.BorderWidth = 1;
+            grpFilter.Controls.Add(lblTotal);
             grpFilter.Controls.Add(btnApply);
             grpFilter.Controls.Add(btnClear);
             grpFilter.Controls.Add(btnY4);
@@ -130,6 +132,18 @@
             grpFilter.TabStop = false;
             grpFilter.Text = "Sort and Filter";
             grpFilter.TextColor = Color.Lavender;
+            // 
+            // lblTotal
+            // 
+            lblTotal.BackColor = Color.Transparent;
+            lblTotal.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotal.ForeColor = Color.FromArgb(0, 192, 0);
+            lblTotal.Location = new Point(11, 525);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(196, 16);
+            lblTotal.TabIndex = 28;
+            lblTotal.Text = "Showing";
+            lblTotal.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnApply
             // 
@@ -346,7 +360,7 @@
             // 
             label14.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Lavender;
-            label14.Location = new Point(128, 492);
+            label14.Location = new Point(128, 489);
             label14.Name = "label14";
             label14.Size = new Size(79, 23);
             label14.TabIndex = 41;
@@ -1027,5 +1041,6 @@
         private ReaLTaiizor.Controls.CyberButton btnY2;
         private ReaLTaiizor.Controls.CyberButton btnY1;
         private Button btnClear;
+        private Label lblTotal;
     }
 }

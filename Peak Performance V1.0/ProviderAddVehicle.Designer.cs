@@ -33,6 +33,10 @@
             flpDisplay = new FlowLayoutPanel();
             txtModel = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel1 = new Panel();
+            btnClear = new Button();
+            btnClearPicture = new Button();
+            btnAddVehicle = new Button();
+            brnBrowse = new Button();
             panel15 = new Panel();
             cbxDrivetrain = new ReaLTaiizor.Controls.MaterialComboBox();
             panel16 = new Panel();
@@ -63,10 +67,6 @@
             panel2 = new Panel();
             panel14 = new Panel();
             lblOwned = new Label();
-            btnClear = new Button();
-            btnClearPicture = new Button();
-            btnAddVehicle = new Button();
-            brnBrowse = new Button();
             ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
             panel1.SuspendLayout();
             panel15.SuspendLayout();
@@ -180,6 +180,74 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(598, 654);
             panel1.TabIndex = 32;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Transparent;
+            btnClear.FlatAppearance.BorderColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnClear.ForeColor = Color.Lavender;
+            btnClear.Location = new Point(205, 128);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(130, 35);
+            btnClear.TabIndex = 83;
+            btnClear.Text = "Clear All";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnClearPicture
+            // 
+            btnClearPicture.BackColor = Color.Transparent;
+            btnClearPicture.FlatAppearance.BorderColor = Color.Cyan;
+            btnClearPicture.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnClearPicture.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnClearPicture.FlatStyle = FlatStyle.Flat;
+            btnClearPicture.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnClearPicture.ForeColor = Color.Lavender;
+            btnClearPicture.Location = new Point(205, 70);
+            btnClearPicture.Name = "btnClearPicture";
+            btnClearPicture.Size = new Size(130, 35);
+            btnClearPicture.TabIndex = 82;
+            btnClearPicture.Text = "Clear Picture";
+            btnClearPicture.UseVisualStyleBackColor = false;
+            btnClearPicture.Click += btnClearPicture_Click;
+            // 
+            // btnAddVehicle
+            // 
+            btnAddVehicle.BackColor = Color.Transparent;
+            btnAddVehicle.FlatAppearance.BorderColor = Color.Green;
+            btnAddVehicle.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnAddVehicle.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnAddVehicle.FlatStyle = FlatStyle.Flat;
+            btnAddVehicle.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnAddVehicle.ForeColor = Color.Lavender;
+            btnAddVehicle.Location = new Point(393, 70);
+            btnAddVehicle.Name = "btnAddVehicle";
+            btnAddVehicle.Size = new Size(130, 35);
+            btnAddVehicle.TabIndex = 81;
+            btnAddVehicle.Text = "Add Vehicle";
+            btnAddVehicle.UseVisualStyleBackColor = false;
+            btnAddVehicle.Click += btnAddVehicle_Click;
+            // 
+            // brnBrowse
+            // 
+            brnBrowse.BackColor = Color.Transparent;
+            brnBrowse.FlatAppearance.BorderColor = Color.Cyan;
+            brnBrowse.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            brnBrowse.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            brnBrowse.FlatStyle = FlatStyle.Flat;
+            brnBrowse.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            brnBrowse.ForeColor = Color.Lavender;
+            brnBrowse.Location = new Point(205, 9);
+            brnBrowse.Name = "brnBrowse";
+            brnBrowse.Size = new Size(130, 35);
+            brnBrowse.TabIndex = 80;
+            brnBrowse.Text = "Browse Device";
+            brnBrowse.UseVisualStyleBackColor = false;
+            brnBrowse.Click += btnBrowse_Click;
             // 
             // panel15
             // 
@@ -727,74 +795,6 @@
             lblOwned.TabIndex = 5;
             lblOwned.Text = "Owned Vehicles";
             lblOwned.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnClear
-            // 
-            btnClear.BackColor = Color.Transparent;
-            btnClear.FlatAppearance.BorderColor = Color.Cyan;
-            btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
-            btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
-            btnClear.ForeColor = Color.Lavender;
-            btnClear.Location = new Point(205, 128);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(130, 35);
-            btnClear.TabIndex = 83;
-            btnClear.Text = "Clear All";
-            btnClear.UseVisualStyleBackColor = false;
-            btnClear.Click += btnClear_Click;
-            // 
-            // btnClearPicture
-            // 
-            btnClearPicture.BackColor = Color.Transparent;
-            btnClearPicture.FlatAppearance.BorderColor = Color.Cyan;
-            btnClearPicture.FlatAppearance.MouseDownBackColor = Color.Cyan;
-            btnClearPicture.FlatAppearance.MouseOverBackColor = Color.Cyan;
-            btnClearPicture.FlatStyle = FlatStyle.Flat;
-            btnClearPicture.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
-            btnClearPicture.ForeColor = Color.Lavender;
-            btnClearPicture.Location = new Point(205, 70);
-            btnClearPicture.Name = "btnClearPicture";
-            btnClearPicture.Size = new Size(130, 35);
-            btnClearPicture.TabIndex = 82;
-            btnClearPicture.Text = "Clear Picture";
-            btnClearPicture.UseVisualStyleBackColor = false;
-            btnClearPicture.Click += btnClearPicture_Click;
-            // 
-            // btnAddVehicle
-            // 
-            btnAddVehicle.BackColor = Color.Transparent;
-            btnAddVehicle.FlatAppearance.BorderColor = Color.Green;
-            btnAddVehicle.FlatAppearance.MouseDownBackColor = Color.Green;
-            btnAddVehicle.FlatAppearance.MouseOverBackColor = Color.Green;
-            btnAddVehicle.FlatStyle = FlatStyle.Flat;
-            btnAddVehicle.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
-            btnAddVehicle.ForeColor = Color.Lavender;
-            btnAddVehicle.Location = new Point(393, 70);
-            btnAddVehicle.Name = "btnAddVehicle";
-            btnAddVehicle.Size = new Size(130, 35);
-            btnAddVehicle.TabIndex = 81;
-            btnAddVehicle.Text = "Add Vehicle";
-            btnAddVehicle.UseVisualStyleBackColor = false;
-            btnAddVehicle.Click += btnAddVehicle_Click;
-            // 
-            // brnBrowse
-            // 
-            brnBrowse.BackColor = Color.Transparent;
-            brnBrowse.FlatAppearance.BorderColor = Color.Cyan;
-            brnBrowse.FlatAppearance.MouseDownBackColor = Color.Cyan;
-            brnBrowse.FlatAppearance.MouseOverBackColor = Color.Cyan;
-            brnBrowse.FlatStyle = FlatStyle.Flat;
-            brnBrowse.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
-            brnBrowse.ForeColor = Color.Lavender;
-            brnBrowse.Location = new Point(205, 9);
-            brnBrowse.Name = "brnBrowse";
-            brnBrowse.Size = new Size(130, 35);
-            brnBrowse.TabIndex = 80;
-            brnBrowse.Text = "Browse Device";
-            brnBrowse.UseVisualStyleBackColor = false;
-            brnBrowse.Click += btnBrowse_Click;
             // 
             // ProviderAddVehicle
             // 

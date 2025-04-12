@@ -35,6 +35,7 @@ namespace Peak_Performance_V1._0
         public void LoadVehicles(string? filterQuery = null) //INITIAL METHOD: Load the vehicle cards
         {
             flpDisplay.Controls.Clear();
+            int vehicleCount = 0;
 
             //default query (loads all vehicles)
             string baseQuery = "SELECT VehicleID, OwnerID, GeneralType, SpecificType, Make, Model, VehicleYear, Transmission, Drivetrain, LicensePlate, [Color], FuelType, Seats, Mileage, PriceDaily, PriceHourly, VehicleImage, RentedBy, VehicleRating FROM Vehicles";
@@ -98,6 +99,7 @@ namespace Peak_Performance_V1._0
                                                                color, fuelType, seats, mileage, priceDaily, priceHourly, vehicleImage, rating, "");
                             card.FullDetailsClicked += Card_FullDetailsClicked;
                             flpDisplay.Controls.Add(card);
+                            vehicleCount++;
                         }
                         else if (SystemManager.currentRole == "Client")
                         {
@@ -106,8 +108,25 @@ namespace Peak_Performance_V1._0
                             card.FullDetailsClicked += Card_FullDetailsClicked;
                             card.RentClicked += Card_RentClicked;
                             flpDisplay.Controls.Add(card);
+                            vehicleCount++;
                         }
                     }
+                }
+
+                if (vehicleCount == 0)
+                {
+                    lblTotal.ForeColor = Color.Red;
+                    lblTotal.Text = $"No vehicles available";
+                }
+                else if (vehicleCount == 1)
+                {
+                    lblTotal.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblTotal.Text = $"Showing {vehicleCount} vehicle";
+                }
+                else
+                {
+                    lblTotal.ForeColor = Color.FromArgb(0, 192, 0);
+                    lblTotal.Text = $"Showing {vehicleCount} vehicles";
                 }
 
                 connection.Close();

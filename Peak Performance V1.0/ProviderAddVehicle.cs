@@ -172,8 +172,8 @@ namespace Peak_Performance_V1._0
                 cmd.Parameters.AddWithValue("@fuelType", fuelType);
                 cmd.Parameters.AddWithValue("@seats", seats);
                 cmd.Parameters.AddWithValue("@mileage", mileage);
-                cmd.Parameters.AddWithValue("@priceDaily", priceDaily);
-                cmd.Parameters.AddWithValue("@priceHourly", priceHourly);
+                cmd.Parameters.AddWithValue("@priceDaily", Math.Round(priceDaily, 2));
+                cmd.Parameters.AddWithValue("@priceHourly", Math.Round(priceHourly, 2));
                 cmd.Parameters.AddWithValue("@imagePath", imageBytes);
 
                 try

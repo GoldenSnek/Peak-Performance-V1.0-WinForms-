@@ -76,7 +76,7 @@
             picBack.BackgroundImage = Properties.Resources.Back3;
             picBack.BackgroundImageLayout = ImageLayout.Stretch;
             picBack.Cursor = Cursors.Hand;
-            picBack.Location = new Point(12, 26);
+            picBack.Location = new Point(12, 37);
             picBack.Name = "picBack";
             picBack.Size = new Size(30, 30);
             picBack.TabIndex = 30;
@@ -90,7 +90,7 @@
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel1.Controls.Add(picProfilePicture);
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel1.Location = new Point(334, 26);
+            parrotGradientPanel1.Location = new Point(228, 37);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
@@ -119,7 +119,7 @@
             panel.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             panel.Controls.Add(picVehicleImage);
             panel.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            panel.Location = new Point(117, 26);
+            panel.Location = new Point(48, 37);
             panel.Name = "panel";
             panel.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             panel.PrimerColor = Color.White;
@@ -146,24 +146,24 @@
             lblDailyPrice.BackColor = Color.Transparent;
             lblDailyPrice.Font = new Font("Arial", 12F);
             lblDailyPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblDailyPrice.Location = new Point(12, 59);
+            lblDailyPrice.Location = new Point(228, 92);
             lblDailyPrice.Name = "lblDailyPrice";
-            lblDailyPrice.Size = new Size(85, 50);
+            lblDailyPrice.Size = new Size(145, 50);
             lblDailyPrice.TabIndex = 56;
             lblDailyPrice.Text = "Daily Price";
-            lblDailyPrice.TextAlign = ContentAlignment.MiddleLeft;
+            lblDailyPrice.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblHourlyPrice
             // 
             lblHourlyPrice.BackColor = Color.Transparent;
             lblHourlyPrice.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHourlyPrice.ForeColor = Color.FromArgb(255, 128, 0);
-            lblHourlyPrice.Location = new Point(12, 129);
+            lblHourlyPrice.Location = new Point(228, 143);
             lblHourlyPrice.Name = "lblHourlyPrice";
-            lblHourlyPrice.Size = new Size(85, 50);
+            lblHourlyPrice.Size = new Size(145, 50);
             lblHourlyPrice.TabIndex = 57;
             lblHourlyPrice.Text = "Hourly Price";
-            lblHourlyPrice.TextAlign = ContentAlignment.MiddleLeft;
+            lblHourlyPrice.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlTop
             // 
@@ -360,9 +360,9 @@
             lblEstimatedPrice.ForeColor = Color.FromArgb(192, 64, 0);
             lblEstimatedPrice.Location = new Point(23, 560);
             lblEstimatedPrice.Name = "lblEstimatedPrice";
-            lblEstimatedPrice.Size = new Size(127, 50);
+            lblEstimatedPrice.Size = new Size(203, 50);
             lblEstimatedPrice.TabIndex = 64;
-            lblEstimatedPrice.Text = "Estimated Price";
+            lblEstimatedPrice.Text = "Estimated Price -";
             lblEstimatedPrice.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // cbxChildSeat

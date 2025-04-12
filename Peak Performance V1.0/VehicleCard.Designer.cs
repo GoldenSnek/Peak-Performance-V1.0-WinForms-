@@ -66,7 +66,7 @@
             lblType.BackColor = Color.Transparent;
             lblType.Font = new Font("Copperplate Gothic Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblType.ForeColor = Color.Silver;
-            lblType.Location = new Point(179, 102);
+            lblType.Location = new Point(179, 91);
             lblType.Name = "lblType";
             lblType.Size = new Size(153, 50);
             lblType.TabIndex = 0;
@@ -78,7 +78,7 @@
             lblMake.BackColor = Color.Transparent;
             lblMake.Font = new Font("Copperplate Gothic Bold", 12F);
             lblMake.ForeColor = Color.Lavender;
-            lblMake.Location = new Point(179, 28);
+            lblMake.Location = new Point(179, 17);
             lblMake.Name = "lblMake";
             lblMake.Size = new Size(153, 40);
             lblMake.TabIndex = 1;
@@ -90,7 +90,7 @@
             lblModel.BackColor = Color.Transparent;
             lblModel.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblModel.ForeColor = Color.White;
-            lblModel.Location = new Point(179, 63);
+            lblModel.Location = new Point(179, 52);
             lblModel.Name = "lblModel";
             lblModel.Size = new Size(153, 50);
             lblModel.TabIndex = 2;
@@ -102,9 +102,9 @@
             lblFuelType.BackColor = Color.Transparent;
             lblFuelType.Font = new Font("Arial Rounded MT Bold", 12F);
             lblFuelType.ForeColor = Color.Silver;
-            lblFuelType.Location = new Point(24, 230);
+            lblFuelType.Location = new Point(23, 180);
             lblFuelType.Name = "lblFuelType";
-            lblFuelType.Size = new Size(300, 40);
+            lblFuelType.Size = new Size(248, 40);
             lblFuelType.TabIndex = 6;
             lblFuelType.Text = "Fuel Type";
             // 
@@ -113,9 +113,9 @@
             lblSeats.BackColor = Color.Transparent;
             lblSeats.Font = new Font("Arial Rounded MT Bold", 12F);
             lblSeats.ForeColor = Color.Silver;
-            lblSeats.Location = new Point(24, 310);
+            lblSeats.Location = new Point(23, 260);
             lblSeats.Name = "lblSeats";
-            lblSeats.Size = new Size(189, 40);
+            lblSeats.Size = new Size(248, 40);
             lblSeats.TabIndex = 7;
             lblSeats.Text = "Seats";
             // 
@@ -193,9 +193,9 @@
             lblHourlyPrice.BackColor = Color.Transparent;
             lblHourlyPrice.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHourlyPrice.ForeColor = Color.FromArgb(255, 128, 0);
-            lblHourlyPrice.Location = new Point(167, 363);
+            lblHourlyPrice.Location = new Point(179, 358);
             lblHourlyPrice.Name = "lblHourlyPrice";
-            lblHourlyPrice.Size = new Size(145, 40);
+            lblHourlyPrice.Size = new Size(133, 40);
             lblHourlyPrice.TabIndex = 10;
             lblHourlyPrice.Text = "Hourly Price";
             lblHourlyPrice.TextAlign = ContentAlignment.MiddleRight;
@@ -204,7 +204,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.Star1;
-            pictureBox1.Location = new Point(24, 176);
+            pictureBox1.Location = new Point(216, 145);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(25, 25);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -216,9 +216,9 @@
             lblRating.BackColor = Color.Transparent;
             lblRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblRating.ForeColor = Color.Lavender;
-            lblRating.Location = new Point(55, 176);
+            lblRating.Location = new Point(250, 145);
             lblRating.Name = "lblRating";
-            lblRating.Size = new Size(277, 25);
+            lblRating.Size = new Size(67, 25);
             lblRating.TabIndex = 21;
             lblRating.Text = "Rating";
             lblRating.TextAlign = ContentAlignment.MiddleLeft;
@@ -228,21 +228,21 @@
             lblDailyPrice.BackColor = Color.Transparent;
             lblDailyPrice.Font = new Font("Arial", 12F);
             lblDailyPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblDailyPrice.Location = new Point(167, 338);
+            lblDailyPrice.Location = new Point(22, 358);
             lblDailyPrice.Name = "lblDailyPrice";
-            lblDailyPrice.Size = new Size(145, 40);
+            lblDailyPrice.Size = new Size(129, 40);
             lblDailyPrice.TabIndex = 9;
             lblDailyPrice.Text = "Daily Price";
-            lblDailyPrice.TextAlign = ContentAlignment.MiddleRight;
+            lblDailyPrice.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblTransmission
             // 
             lblTransmission.BackColor = Color.Transparent;
             lblTransmission.Font = new Font("Arial Rounded MT Bold", 12F);
             lblTransmission.ForeColor = Color.Silver;
-            lblTransmission.Location = new Point(24, 270);
+            lblTransmission.Location = new Point(23, 220);
             lblTransmission.Name = "lblTransmission";
-            lblTransmission.Size = new Size(300, 40);
+            lblTransmission.Size = new Size(248, 40);
             lblTransmission.TabIndex = 22;
             lblTransmission.Text = "Transmission";
             // 
@@ -251,9 +251,9 @@
             lblMileage.BackColor = Color.Transparent;
             lblMileage.Font = new Font("Arial Rounded MT Bold", 12F);
             lblMileage.ForeColor = Color.Silver;
-            lblMileage.Location = new Point(23, 350);
+            lblMileage.Location = new Point(22, 300);
             lblMileage.Name = "lblMileage";
-            lblMileage.Size = new Size(190, 40);
+            lblMileage.Size = new Size(249, 40);
             lblMileage.TabIndex = 23;
             lblMileage.Text = "Mileage";
             // 
@@ -358,7 +358,7 @@
             picLocation.BackColor = Color.Transparent;
             picLocation.Cursor = Cursors.Hand;
             picLocation.Image = Properties.Resources.Location;
-            picLocation.Location = new Point(277, 310);
+            picLocation.Location = new Point(277, 320);
             picLocation.Name = "picLocation";
             picLocation.Size = new Size(35, 35);
             picLocation.SizeMode = PictureBoxSizeMode.StretchImage;

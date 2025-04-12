@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tmrClock = new System.Windows.Forms.Timer(components);
             lblGreetings = new Label();
             lblTopVehicles = new Label();
@@ -56,17 +55,15 @@
             panel4 = new Panel();
             panel6 = new Panel();
             panel1 = new Panel();
+            lblCurrentRent = new Label();
             label5 = new Label();
             label2 = new Label();
-            label16 = new Label();
-            label15 = new Label();
             pnlLeft = new Panel();
             pnlDown = new Panel();
             pnlRight = new Panel();
             panel2 = new Panel();
             parrotClock1 = new ReaLTaiizor.Controls.ParrotClock();
             label14 = new Label();
-            parrotGauge1 = new ReaLTaiizor.Controls.ParrotGauge();
             panel8 = new Panel();
             flpDisplayVehicles = new FlowLayoutPanel();
             picNight = new PictureBox();
@@ -419,21 +416,32 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.Controls.Add(lblCurrentRent);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label16);
-            panel1.Controls.Add(label15);
             panel1.Controls.Add(pnlLeft);
             panel1.Controls.Add(pnlDown);
             panel1.Controls.Add(pnlRight);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(parrotClock1);
             panel1.Controls.Add(label14);
-            panel1.Controls.Add(parrotGauge1);
             panel1.Location = new Point(30, 26);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 100);
             panel1.TabIndex = 14;
+            // 
+            // lblCurrentRent
+            // 
+            lblCurrentRent.Anchor = AnchorStyles.Right;
+            lblCurrentRent.BackColor = Color.Transparent;
+            lblCurrentRent.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCurrentRent.ForeColor = Color.FromArgb(255, 128, 0);
+            lblCurrentRent.Location = new Point(855, 70);
+            lblCurrentRent.Name = "lblCurrentRent";
+            lblCurrentRent.Size = new Size(34, 27);
+            lblCurrentRent.TabIndex = 46;
+            lblCurrentRent.Text = "0";
+            lblCurrentRent.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -460,32 +468,6 @@
             label2.Size = new Size(409, 35);
             label2.TabIndex = 44;
             label2.Text = "PEAK PERFORMANCE";
-            // 
-            // label16
-            // 
-            label16.Anchor = AnchorStyles.Right;
-            label16.AutoSize = true;
-            label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.Silver;
-            label16.Location = new Point(854, 61);
-            label16.Name = "label16";
-            label16.Size = new Size(28, 14);
-            label16.TabIndex = 43;
-            label16.Text = "100";
-            // 
-            // label15
-            // 
-            label15.Anchor = AnchorStyles.Right;
-            label15.AutoSize = true;
-            label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.Silver;
-            label15.Location = new Point(689, 61);
-            label15.Name = "label15";
-            label15.Size = new Size(14, 14);
-            label15.TabIndex = 42;
-            label15.Text = "0";
             // 
             // pnlLeft
             // 
@@ -564,32 +546,12 @@
             label14.BackColor = Color.Transparent;
             label14.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(682, 70);
+            label14.Location = new Point(663, 70);
             label14.Name = "label14";
             label14.Size = new Size(198, 27);
             label14.TabIndex = 36;
-            label14.Text = "Vehicles currently being rented";
+            label14.Text = "Vehicles currently being rented:";
             label14.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // parrotGauge1
-            // 
-            parrotGauge1.Anchor = AnchorStyles.Right;
-            parrotGauge1.BackColor = Color.Transparent;
-            parrotGauge1.BarColor = (List<Color>)resources.GetObject("parrotGauge1.BarColor");
-            parrotGauge1.ConsumptionColor = Color.Black;
-            parrotGauge1.DialColor = Color.Gray;
-            parrotGauge1.DialThickness = 5;
-            parrotGauge1.FilledColor = Color.FromArgb(0, 162, 250);
-            parrotGauge1.GaugeStyle = ReaLTaiizor.Controls.ParrotGauge.Style.Standard;
-            parrotGauge1.Location = new Point(709, 9);
-            parrotGauge1.Name = "parrotGauge1";
-            parrotGauge1.Percentage = 75;
-            parrotGauge1.Size = new Size(140, 70);
-            parrotGauge1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotGauge1.TabIndex = 19;
-            parrotGauge1.Text = "parrotGauge1";
-            parrotGauge1.Thickness = 8;
-            parrotGauge1.UnfilledColor = Color.Gray;
             // 
             // panel8
             // 
@@ -1218,7 +1180,6 @@
         private Panel panel16;
         private Panel panel17;
         private ReaLTaiizor.Controls.ParrotClock parrotClock1;
-        private ReaLTaiizor.Controls.ParrotGauge parrotGauge1;
         private PictureBox pictureBox2;
         private PictureBox picPFP;
         private Label lblRole;
@@ -1228,8 +1189,6 @@
         private Label lblTopProviders;
         private Label label4;
         private Label label14;
-        private Label label16;
-        private Label label15;
         private Button btnHome;
         private Button btnManageAccount;
         private Button btnUpdateVehicles;
@@ -1252,5 +1211,6 @@
         private Label label2;
         private Label label5;
         private PictureBox pictureBox3;
+        private Label lblCurrentRent;
     }
 }
