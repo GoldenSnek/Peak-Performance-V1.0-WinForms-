@@ -45,6 +45,8 @@ namespace Peak_Performance_V1._0
             btnExit.Image = SystemManager.ResizeImage(Properties.Resources.ExitHome);
             btnAdminAllVehicles.Image = SystemManager.ResizeImage(Properties.Resources.Car___MainLR);
             btnAdminAllUsers.Image = SystemManager.ResizeImage(Properties.Resources.Username);
+            btnAnalytics.Image = SystemManager.ResizeImage(Properties.Resources.Analytics);
+
 
             //set time and date
             DateTime now = DateTime.Now;
@@ -129,6 +131,7 @@ namespace Peak_Performance_V1._0
             //set side menu buttons visibility
             if (SystemManager.currentRole == "Vehicle Provider")
             {
+                btnManage.Visible = false;
                 btnAdminAllVehicles.Visible = false;
                 btnAdminAllUsers.Visible = false;
 
@@ -142,9 +145,13 @@ namespace Peak_Performance_V1._0
 
                 btnAccount.Visible = true;
                 btnManageAccount.Visible = true;
+
+                btnDetails.Visible = false;
+                btnAnalytics.Visible = false;
             }
             else if (SystemManager.currentRole == "Client")
             {
+                btnManage.Visible = false;
                 btnAdminAllVehicles.Visible = false;
                 btnAdminAllUsers.Visible = false;
 
@@ -158,9 +165,13 @@ namespace Peak_Performance_V1._0
 
                 btnAccount.Visible = true;
                 btnManageAccount.Visible = true;
+
+                btnDetails.Visible = false;
+                btnAnalytics.Visible = false;
             }
             else //admin
             {
+                btnManage.Visible = true;
                 btnAdminAllVehicles.Visible = true;
                 btnAdminAllUsers.Visible = true;
 
@@ -174,6 +185,9 @@ namespace Peak_Performance_V1._0
 
                 btnAccount.Visible = false;
                 btnManageAccount.Visible = false;
+
+                btnDetails.Visible = true;
+                btnAnalytics.Visible = true;
             }
         }
 
@@ -275,7 +289,7 @@ namespace Peak_Performance_V1._0
         //SUPPORTING METHOD
         private void ResetButtonColors() //SUPPORTING METHOD: Change colors
         {
-            foreach (System.Windows.Forms.Button btn in new System.Windows.Forms.Button[] { btnHome, btnAllVehicles, btnRentalDetails, btnAddVehicles, btnUpdateVehicles, btnManageAccount, btnLogout, btnExit, btnAdminAllVehicles, btnAdminAllUsers })
+            foreach (System.Windows.Forms.Button btn in new System.Windows.Forms.Button[] { btnHome, btnAllVehicles, btnRentalDetails, btnAddVehicles, btnUpdateVehicles, btnManageAccount, btnLogout, btnExit, btnAdminAllVehicles, btnAdminAllUsers, btnAnalytics })
             {
                 btn.BackColor = Color.FromArgb(45, 60, 75);
                 btn.FlatAppearance.BorderSize = 0;
@@ -354,6 +368,14 @@ namespace Peak_Performance_V1._0
             btnAdminAllUsers.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
             OpenChildForm(new AdminAllUsers());
         }
+        private void btnAnalytics_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btnAnalytics.BackColor = Color.FromArgb(255, 128, 0);
+            btnAnalytics.FlatAppearance.BorderSize = 2;
+            btnAnalytics.FlatAppearance.BorderColor = Color.FromArgb(192, 64, 0);
+            OpenChildForm(new Analytics());
+        }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             if (btnLogout.BackColor == Color.Red)
@@ -424,6 +446,12 @@ namespace Peak_Performance_V1._0
             else
                 this.WindowState = FormWindowState.Normal;
         }
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            bool isVisible = !btnAdminAllVehicles.Visible;
+            btnAdminAllVehicles.Visible = isVisible;
+            btnAdminAllUsers.Visible = isVisible;
+        }
         private void btnRentals_Click(object sender, EventArgs e) //SUPPORTING EVENT: Sidemenu
         {
             bool isVisible = !btnAllVehicles.Visible;
@@ -432,12 +460,9 @@ namespace Peak_Performance_V1._0
         }
         private void btnVehicles_Click(object sender, EventArgs e) //SUPPORTING EVENT: Sidemenu
         {
-            if (SystemManager.currentRole == "Client")
-            {
-                bool isVisible = !btnAddVehicles.Visible;
-                btnAddVehicles.Visible = isVisible;
-                btnUpdateVehicles.Visible = isVisible;
-            }
+            bool isVisible = !btnAddVehicles.Visible;
+            btnAddVehicles.Visible = isVisible;
+            btnUpdateVehicles.Visible = isVisible;
         }
         private void btnAccount_Click(object sender, EventArgs e) //SUPPORTING EVENT: Sidemenu
         {
@@ -447,6 +472,12 @@ namespace Peak_Performance_V1._0
                 btnManageAccount.Visible = isVisible;
                 btnLogout.Visible = isVisible;
             }
+        }
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            bool isVisible = !btnRentalDetails.Visible;
+            btnRentalDetails.Visible = isVisible;
+            btnAnalytics.Visible = isVisible;
         }
         private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade in animation
         {

@@ -35,8 +35,8 @@
             lblApproval = new Label();
             lblCurrent = new Label();
             panel2 = new Panel();
-            plotView1 = new OxyPlot.WindowsForms.PlotView();
             plotView2 = new OxyPlot.WindowsForms.PlotView();
+            plotView1 = new OxyPlot.WindowsForms.PlotView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -119,21 +119,9 @@
             panel2.Size = new Size(244, 654);
             panel2.TabIndex = 5;
             // 
-            // plotView1
-            // 
-            plotView1.Location = new Point(6, 103);
-            plotView1.Name = "plotView1";
-            plotView1.PanCursor = Cursors.Hand;
-            plotView1.Size = new Size(228, 250);
-            plotView1.TabIndex = 6;
-            plotView1.Text = "plotView1";
-            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
-            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
-            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
-            // 
             // plotView2
             // 
-            plotView2.Location = new Point(6, 392);
+            plotView2.Location = new Point(7, 392);
             plotView2.Name = "plotView2";
             plotView2.PanCursor = Cursors.Hand;
             plotView2.Size = new Size(228, 250);
@@ -142,6 +130,18 @@
             plotView2.ZoomHorizontalCursor = Cursors.SizeWE;
             plotView2.ZoomRectangleCursor = Cursors.SizeNWSE;
             plotView2.ZoomVerticalCursor = Cursors.SizeNS;
+            // 
+            // plotView1
+            // 
+            plotView1.Location = new Point(7, 103);
+            plotView1.Name = "plotView1";
+            plotView1.PanCursor = Cursors.Hand;
+            plotView1.Size = new Size(228, 250);
+            plotView1.TabIndex = 6;
+            plotView1.Text = "plotView1";
+            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
+            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
+            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // ProviderViewRental
             // 
