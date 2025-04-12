@@ -52,11 +52,13 @@
             btnFullDetails = new Button();
             btnReject = new Button();
             btnAccept = new Button();
+            picLocation = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picVehicle).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picDelete).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picLocation).BeginInit();
             SuspendLayout();
             // 
             // lblType
@@ -351,6 +353,20 @@
             btnAccept.UseVisualStyleBackColor = false;
             btnAccept.Click += btnAccept_Click;
             // 
+            // picLocation
+            // 
+            picLocation.BackColor = Color.Transparent;
+            picLocation.Cursor = Cursors.Hand;
+            picLocation.Image = Properties.Resources.Location;
+            picLocation.Location = new Point(277, 310);
+            picLocation.Name = "picLocation";
+            picLocation.Size = new Size(35, 35);
+            picLocation.SizeMode = PictureBoxSizeMode.StretchImage;
+            picLocation.TabIndex = 33;
+            picLocation.TabStop = false;
+            picLocation.Visible = false;
+            picLocation.Click += picLocation_Click;
+            // 
             // VehicleCard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -358,6 +374,7 @@
             BackColor = Color.White;
             BackgroundImage = Properties.Resources.MultiCar;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(picLocation);
             Controls.Add(btnAccept);
             Controls.Add(btnReject);
             Controls.Add(btnFullDetails);
@@ -388,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picDelete).EndInit();
             ((System.ComponentModel.ISupportInitialize)picEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picLocation).EndInit();
             ResumeLayout(false);
         }
 
@@ -416,5 +434,7 @@
         private Button btnFullDetails;
         private Button btnReject;
         private Button btnAccept;
+        private Button button1;
+        private PictureBox picLocation;
     }
 }

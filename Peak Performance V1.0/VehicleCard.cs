@@ -97,6 +97,7 @@ namespace Peak_Performance_V1._0
                 btnReject.Visible = false;
                 picEdit.Visible = false;
                 picDelete.Visible = false;
+                picLocation.Visible = true;
             }
             else if (ParentForm is ProviderViewRental || ParentForm is AdminViewRental)
             {
@@ -196,6 +197,28 @@ namespace Peak_Performance_V1._0
         private void btnReject_Click(object sender, EventArgs e)
         {
             RejectClicked?.Invoke(VehicleID);
+        }
+
+        private void picLocation_Click(object sender, EventArgs e)
+        {
+            Form formBackground = new Form();
+            using (LocationTracker locationForm = new LocationTracker())
+            {
+                formBackground.StartPosition = FormStartPosition.Manual;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.Opacity = .70d;
+                formBackground.BackColor = Color.Black;
+                formBackground.WindowState = FormWindowState.Maximized;
+                formBackground.TopMost = true;
+                formBackground.Location = this.Location;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
+
+                locationForm.StartPosition = FormStartPosition.CenterParent;
+                locationForm.ShowDialog();
+
+                formBackground.Dispose();
+            }
         }
 
         /*

@@ -32,6 +32,7 @@ namespace Peak_Performance_V1._0
         //MAIN EVENT
         private void btnRegister_Click(object sender, EventArgs e) //MAIN EVENT: Register
         {
+            lblSuccess.Visible = false;
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string role = rbtnClient.Checked ? "Client" : "Vehicle Provider";
@@ -104,7 +105,7 @@ namespace Peak_Performance_V1._0
                 {
                     connection.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblSuccess.Visible = true;
                 }
                 catch (Exception ex)
                 {

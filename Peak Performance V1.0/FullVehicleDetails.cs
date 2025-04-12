@@ -314,7 +314,7 @@ namespace Peak_Performance_V1._0
 
         private void picBack_Click(object sender, EventArgs e) //NAVIGATION EVENT: Exit
         {
-            this.DialogResult = DialogResult.Cancel; // Optional: Handle closing action
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 

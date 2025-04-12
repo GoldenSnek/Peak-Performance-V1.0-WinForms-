@@ -47,6 +47,7 @@
             rbtnProvider = new ReaLTaiizor.Controls.CyberRadioButton();
             label2 = new Label();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
+            lblSuccess = new Label();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             SuspendLayout();
@@ -430,6 +431,19 @@
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
+            // lblSuccess
+            // 
+            lblSuccess.BackColor = Color.Transparent;
+            lblSuccess.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSuccess.ForeColor = Color.FromArgb(0, 192, 0);
+            lblSuccess.Location = new Point(175, 440);
+            lblSuccess.Name = "lblSuccess";
+            lblSuccess.Size = new Size(250, 16);
+            lblSuccess.TabIndex = 47;
+            lblSuccess.Text = "Registration successful!";
+            lblSuccess.TextAlign = ContentAlignment.MiddleCenter;
+            lblSuccess.Visible = false;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -438,6 +452,7 @@
             BackgroundImage = Properties.Resources.LRNew2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
+            Controls.Add(lblSuccess);
             Controls.Add(label2);
             Controls.Add(rbtnProvider);
             Controls.Add(rbtnClient);
@@ -487,5 +502,6 @@
         private ReaLTaiizor.Controls.CyberRadioButton rbtnProvider;
         private Label label2;
         private System.Windows.Forms.Timer tmrFadeIn;
+        private Label lblSuccess;
     }
 }

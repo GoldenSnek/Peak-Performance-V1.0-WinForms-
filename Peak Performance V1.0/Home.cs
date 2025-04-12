@@ -191,9 +191,13 @@ namespace Peak_Performance_V1._0
                     }
 
                     double userRating = Convert.ToDouble(reader["UserRating"]);
-                    //create a TopProviderCard and add it to the FlowLayoutPanel
-                    TopProviderCard card = new TopProviderCard(username, userImage, userRating);
-                    flpDisplayUsers.Controls.Add(card);
+
+                    if (userRating > 0)
+                    {
+                        //create a TopProviderCard and add it to the FlowLayoutPanel
+                        TopProviderCard card = new TopProviderCard(username, userImage, userRating);
+                        flpDisplayUsers.Controls.Add(card);
+                    }
                 }
                 connection.Close();
             }
@@ -231,8 +235,11 @@ namespace Peak_Performance_V1._0
 
                     double vehicleRating = Convert.ToDouble(reader["VehicleRating"]);
 
-                    TopVehicleCard card = new TopVehicleCard(generalType, specificType, make, model, vehicleYear, vehicleImage, vehicleRating);
-                    flpDisplayVehicles.Controls.Add(card);
+                    if (vehicleRating > 0)
+                    {
+                        TopVehicleCard card = new TopVehicleCard(generalType, specificType, make, model, vehicleYear, vehicleImage, vehicleRating);
+                        flpDisplayVehicles.Controls.Add(card);
+                    }
                 }
                 connection.Close();
             }
@@ -398,15 +405,21 @@ namespace Peak_Performance_V1._0
         }
         private void btnVehicles_Click(object sender, EventArgs e) //SUPPORTING EVENT: Sidemenu
         {
-            bool isVisible = !btnAddVehicles.Visible;
-            btnAddVehicles.Visible = isVisible;
-            btnUpdateVehicles.Visible = isVisible;
+            if (SystemManager.currentRole == "Client")
+            {
+                bool isVisible = !btnAddVehicles.Visible;
+                btnAddVehicles.Visible = isVisible;
+                btnUpdateVehicles.Visible = isVisible;
+            }
         }
         private void btnAccount_Click(object sender, EventArgs e) //SUPPORTING EVENT: Sidemenu
         {
-            bool isVisible = !btnManageAccount.Visible;
-            btnManageAccount.Visible = isVisible;
-            btnLogout.Visible = isVisible;
+            if (SystemManager.currentRole != "Admin")
+            {
+                bool isVisible = !btnManageAccount.Visible;
+                btnManageAccount.Visible = isVisible;
+                btnLogout.Visible = isVisible;
+            }
         }
         private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade in animation
         {

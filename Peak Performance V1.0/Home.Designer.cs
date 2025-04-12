@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tmrClock = new System.Windows.Forms.Timer(components);
             lblGreetings = new Label();
-            lblAnalytics = new Label();
+            lblTopVehicles = new Label();
             pnlForm = new Panel();
             panel18 = new Panel();
             label4 = new Label();
@@ -51,7 +51,7 @@
             panel3 = new Panel();
             panel5 = new Panel();
             flpDisplayUsers = new FlowLayoutPanel();
-            label1 = new Label();
+            lblTopProviders = new Label();
             panel7 = new Panel();
             panel4 = new Panel();
             panel6 = new Panel();
@@ -129,8 +129,9 @@
             // lblGreetings
             // 
             lblGreetings.BackColor = Color.Black;
+            lblGreetings.Cursor = Cursors.Hand;
             lblGreetings.Dock = DockStyle.Top;
-            lblGreetings.Font = new Font("Copperplate Gothic Bold", 14.25F);
+            lblGreetings.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGreetings.ForeColor = Color.Transparent;
             lblGreetings.Location = new Point(3, 3);
             lblGreetings.Name = "lblGreetings";
@@ -138,19 +139,22 @@
             lblGreetings.TabIndex = 5;
             lblGreetings.Text = "Hello {user}!";
             lblGreetings.TextAlign = ContentAlignment.MiddleCenter;
+            lblGreetings.Click += btnManageAccount_Click;
             // 
-            // lblAnalytics
+            // lblTopVehicles
             // 
-            lblAnalytics.BackColor = Color.Black;
-            lblAnalytics.Dock = DockStyle.Top;
-            lblAnalytics.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAnalytics.ForeColor = Color.White;
-            lblAnalytics.Location = new Point(3, 3);
-            lblAnalytics.Name = "lblAnalytics";
-            lblAnalytics.Size = new Size(519, 20);
-            lblAnalytics.TabIndex = 6;
-            lblAnalytics.Text = "Top Rated Vehicles";
-            lblAnalytics.TextAlign = ContentAlignment.MiddleCenter;
+            lblTopVehicles.BackColor = Color.Black;
+            lblTopVehicles.Cursor = Cursors.Hand;
+            lblTopVehicles.Dock = DockStyle.Top;
+            lblTopVehicles.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTopVehicles.ForeColor = Color.White;
+            lblTopVehicles.Location = new Point(3, 3);
+            lblTopVehicles.Name = "lblTopVehicles";
+            lblTopVehicles.Size = new Size(519, 20);
+            lblTopVehicles.TabIndex = 6;
+            lblTopVehicles.Text = "Top Rated Vehicles";
+            lblTopVehicles.TextAlign = ContentAlignment.MiddleCenter;
+            lblTopVehicles.Click += btnAllVehicles_Click;
             // 
             // pnlForm
             // 
@@ -336,7 +340,7 @@
             panel3.BackColor = Color.FromArgb(35, 40, 60);
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(flpDisplayUsers);
-            panel3.Controls.Add(label1);
+            panel3.Controls.Add(lblTopProviders);
             panel3.Controls.Add(panel7);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(panel6);
@@ -366,18 +370,20 @@
             flpDisplayUsers.Size = new Size(244, 227);
             flpDisplayUsers.TabIndex = 22;
             // 
-            // label1
+            // lblTopProviders
             // 
-            label1.BackColor = Color.Black;
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(244, 20);
-            label1.TabIndex = 21;
-            label1.Text = "Top rated providers";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            lblTopProviders.BackColor = Color.Black;
+            lblTopProviders.Cursor = Cursors.Hand;
+            lblTopProviders.Dock = DockStyle.Top;
+            lblTopProviders.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTopProviders.ForeColor = Color.White;
+            lblTopProviders.Location = new Point(3, 3);
+            lblTopProviders.Name = "lblTopProviders";
+            lblTopProviders.Size = new Size(244, 20);
+            lblTopProviders.TabIndex = 21;
+            lblTopProviders.Text = "Top rated providers";
+            lblTopProviders.TextAlign = ContentAlignment.MiddleCenter;
+            lblTopProviders.Click += btnAllVehicles_Click;
             // 
             // panel7
             // 
@@ -590,7 +596,7 @@
             panel8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel8.BackColor = Color.FromArgb(35, 40, 60);
             panel8.Controls.Add(flpDisplayVehicles);
-            panel8.Controls.Add(lblAnalytics);
+            panel8.Controls.Add(lblTopVehicles);
             panel8.Controls.Add(picNight);
             panel8.Controls.Add(panel9);
             panel8.Controls.Add(panel10);
@@ -1178,7 +1184,7 @@
         private System.Windows.Forms.Timer tmrClock;
         private Panel pnlTitle;
         private Label lblGreetings;
-        private Label lblAnalytics;
+        private Label lblTopVehicles;
         private Panel pnlForm;
         private Button btnRentals;
         private Button btnAccount;
@@ -1219,7 +1225,7 @@
         private Label lblUsername;
         private Label label3;
         private PictureBox pictureBox1;
-        private Label label1;
+        private Label lblTopProviders;
         private Label label4;
         private Label label14;
         private Label label16;
