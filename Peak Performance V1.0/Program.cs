@@ -21,7 +21,7 @@ namespace Peak_Performance_V1._0
         //Date Started: 2/20/2025
         //Increment 1: 3/18/2025 (3/22/2025 video)
         //Increment 2+3: 4/10/2025
-        //Presentation" 4/15/2025
+        //Presentation 4/15/2025
 
         //To Do List:
         //(done) 1. Add picture sa creation of vehicle

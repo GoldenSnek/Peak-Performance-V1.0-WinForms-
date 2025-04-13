@@ -191,7 +191,7 @@
             btnY4.ColorBackground = Color.FromArgb(30, 35, 45);
             btnY4.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnY4.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnY4.ColorBackground_Pen = Color.Transparent;
+            btnY4.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnY4.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY4.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY4.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -233,7 +233,7 @@
             btnY3.ColorBackground = Color.FromArgb(30, 35, 45);
             btnY3.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnY3.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnY3.ColorBackground_Pen = Color.Transparent;
+            btnY3.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnY3.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY3.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY3.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -275,7 +275,7 @@
             btnY2.ColorBackground = Color.FromArgb(30, 35, 45);
             btnY2.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnY2.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnY2.ColorBackground_Pen = Color.Transparent;
+            btnY2.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnY2.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY2.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY2.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -317,7 +317,7 @@
             btnY1.ColorBackground = Color.FromArgb(30, 35, 45);
             btnY1.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnY1.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnY1.ColorBackground_Pen = Color.Transparent;
+            btnY1.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnY1.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY1.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY1.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -384,7 +384,7 @@
             btnS4.ColorBackground = Color.FromArgb(30, 35, 45);
             btnS4.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnS4.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnS4.ColorBackground_Pen = Color.Transparent;
+            btnS4.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnS4.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS4.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS4.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -426,7 +426,7 @@
             btnS3.ColorBackground = Color.FromArgb(30, 35, 45);
             btnS3.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnS3.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnS3.ColorBackground_Pen = Color.Transparent;
+            btnS3.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnS3.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS3.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS3.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -468,7 +468,7 @@
             btnS2.ColorBackground = Color.FromArgb(30, 35, 45);
             btnS2.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnS2.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnS2.ColorBackground_Pen = Color.Transparent;
+            btnS2.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnS2.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS2.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS2.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -510,7 +510,7 @@
             btnS1.ColorBackground = Color.FromArgb(30, 35, 45);
             btnS1.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnS1.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnS1.ColorBackground_Pen = Color.Transparent;
+            btnS1.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnS1.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS1.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS1.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -604,7 +604,7 @@
             btnAWD.ColorBackground = Color.FromArgb(30, 35, 45);
             btnAWD.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnAWD.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnAWD.ColorBackground_Pen = Color.Transparent;
+            btnAWD.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnAWD.ColorLighting = Color.FromArgb(29, 200, 238);
             btnAWD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnAWD.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -646,7 +646,7 @@
             btn4WD.ColorBackground = Color.FromArgb(30, 35, 45);
             btn4WD.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btn4WD.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btn4WD.ColorBackground_Pen = Color.Transparent;
+            btn4WD.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btn4WD.ColorLighting = Color.FromArgb(29, 200, 238);
             btn4WD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btn4WD.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -688,7 +688,7 @@
             btnRWD.ColorBackground = Color.FromArgb(30, 35, 45);
             btnRWD.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnRWD.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnRWD.ColorBackground_Pen = Color.Transparent;
+            btnRWD.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnRWD.ColorLighting = Color.FromArgb(29, 200, 238);
             btnRWD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnRWD.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -741,7 +741,7 @@
             btnFWD.ColorBackground = Color.FromArgb(30, 35, 45);
             btnFWD.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnFWD.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnFWD.ColorBackground_Pen = Color.Transparent;
+            btnFWD.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnFWD.ColorLighting = Color.FromArgb(29, 200, 238);
             btnFWD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnFWD.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -794,7 +794,7 @@
             btnAutomatic.ColorBackground = Color.FromArgb(30, 35, 45);
             btnAutomatic.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnAutomatic.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnAutomatic.ColorBackground_Pen = Color.Transparent;
+            btnAutomatic.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnAutomatic.ColorLighting = Color.FromArgb(29, 200, 238);
             btnAutomatic.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnAutomatic.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -836,7 +836,7 @@
             btnManual.ColorBackground = Color.FromArgb(30, 35, 45);
             btnManual.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnManual.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnManual.ColorBackground_Pen = Color.Transparent;
+            btnManual.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnManual.ColorLighting = Color.FromArgb(29, 200, 238);
             btnManual.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnManual.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -900,7 +900,7 @@
             btnMotorcycle.ColorBackground = Color.FromArgb(30, 35, 45);
             btnMotorcycle.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnMotorcycle.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnMotorcycle.ColorBackground_Pen = Color.Transparent;
+            btnMotorcycle.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnMotorcycle.ColorLighting = Color.FromArgb(29, 200, 238);
             btnMotorcycle.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnMotorcycle.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -942,7 +942,7 @@
             btnCar.ColorBackground = Color.FromArgb(30, 35, 45);
             btnCar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnCar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnCar.ColorBackground_Pen = Color.Transparent;
+            btnCar.ColorBackground_Pen = Color.FromArgb(255, 128, 0);
             btnCar.ColorLighting = Color.FromArgb(29, 200, 238);
             btnCar.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnCar.ColorPen_2 = Color.FromArgb(41, 63, 86);

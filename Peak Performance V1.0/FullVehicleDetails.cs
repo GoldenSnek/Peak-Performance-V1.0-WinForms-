@@ -99,7 +99,7 @@ namespace Peak_Performance_V1._0
                         PriceDaily = Convert.ToDouble(reader["PriceDaily"]);
                         PriceHourly = Convert.ToDouble(reader["PriceHourly"]);
 
-                        lblType.Text = $"Type:{GeneralType} ({SpecificType})";
+                        lblType.Text = $"Type: {GeneralType} ({SpecificType})";
                         lblMake.Text = $"Make: {Make}";
                         lblModel.Text = $"Model: {Model} ({VehicleYear})";
                         lblTransmission.Text = $"Transmission: {Transmission}";
@@ -221,7 +221,7 @@ namespace Peak_Performance_V1._0
                         Notes = reader["Notes"].ToString();
                         TotalPrice = Convert.ToDouble(reader["Price"]);
 
-                        lblType.Text = $"Type:{GeneralType} ({SpecificType})";
+                        lblType.Text = $"Type: {GeneralType} ({SpecificType})";
                         lblMake.Text = $"Make: {Make}";
                         lblModel.Text = $"Model: {Model} ({VehicleYear})";
                         lblTransmission.Text = $"Transmission: {Transmission}";

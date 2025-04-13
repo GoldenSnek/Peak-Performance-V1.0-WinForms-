@@ -1151,7 +1151,7 @@
             picMin.BackgroundImage = Properties.Resources.Minimize;
             picMin.BackgroundImageLayout = ImageLayout.Stretch;
             picMin.Cursor = Cursors.Hand;
-            picMin.Location = new Point(874, 2);
+            picMin.Location = new Point(854, 2);
             picMin.Name = "picMin";
             picMin.Size = new Size(25, 25);
             picMin.TabIndex = 40;
@@ -1193,7 +1193,7 @@
             picMax.BackgroundImage = Properties.Resources.Maximize;
             picMax.BackgroundImageLayout = ImageLayout.Stretch;
             picMax.Cursor = Cursors.Hand;
-            picMax.Location = new Point(905, 2);
+            picMax.Location = new Point(897, 2);
             picMax.Name = "picMax";
             picMax.Size = new Size(25, 25);
             picMax.TabIndex = 39;

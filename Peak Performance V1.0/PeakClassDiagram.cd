@@ -6,26 +6,21 @@
   <Class Name="Peak_Performance_V1._0.MainLR" Collapsed="true">
     <Position X="2.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAiAEAgEAAACAAQBCAAABABAAAEAQAABsgAA=</HashCode>
+      <HashCode>AAAAAAAAACAEAAAAAACAAABCAAAAABAAAAAAAABMgAA=</HashCode>
       <FileName>MainLR.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Register" />
-      <Property Name="About" />
-      <Property Name="Login" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Peak_Performance_V1._0.About" Collapsed="true">
     <Position X="2.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAiCEAgAAAEDAAABCAAAAAAAQbQAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAABACCEAAAAAEDAAABCAAAAAAAAQAAAAAAAgAA=</HashCode>
       <FileName>About.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Peak_Performance_V1._0.AdminAllUsers" Collapsed="true">
     <Position X="6.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAQAAAQAACBAAACAAAAAAAAACAAAABEAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAQAACAAAACAAAAAAAAACAAAABAAAA=</HashCode>
       <FileName>AdminAllUsers.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -33,7 +28,7 @@
   <Class Name="Peak_Performance_V1._0.AdminAllVehicles" Collapsed="true">
     <Position X="8.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAQAAAQAACBAAACAAAAAAAAACAAAABEAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAQAACAAAACAAAAAAAAACAAAABAAAA=</HashCode>
       <FileName>AdminAllVehicles.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -41,15 +36,14 @@
   <Class Name="Peak_Performance_V1._0.ClientViewRental" Collapsed="true">
     <Position X="8.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>0G+xQFILBuAGrIIAYwe9oZoCIUAr0BhGkQjEJYJhuRA=</HashCode>
-      <FileName>ClientViewRental.cs</FileName>
+      <HashCode>gEyQABIJBmAGgIIAYAKgoJoCAEAjABBAgQgAIYBhORA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Peak_Performance_V1._0.FullVehicleDetails" Collapsed="true">
     <Position X="13.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>0E9hwVALJvAGgrYAYySxIIRCAEAKQBhGlAimJYIRsBI=</HashCode>
+      <HashCode>gEgAAQAJJnAEgJYAYACgIIRCAEACABBEgAgCIYIBMBI=</HashCode>
       <FileName>FullVehicleDetails.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -65,25 +59,19 @@
   <Class Name="Peak_Performance_V1._0.Login" Collapsed="true">
     <Position X="4" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAgCAAAAAiAUAhAAAACJAABGAIQACAAABFAAAABAAAA=</HashCode>
-      <FileName>Login.cs</FileName>
+      <HashCode>IAgCAAAAACAUABAAAACAAABGAAAAAAAAABAAAABAAAA=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Home" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Peak_Performance_V1._0.Register" Collapsed="true">
     <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAgDAAAAAiAcAhEAAACJAABCAACAAMAARBAAAUBsAEA=</HashCode>
-      <FileName>Register.cs</FileName>
+      <HashCode>IAgCAAAAACAcABEAAACAAABCAAAAAIAAQBAAAEBMAEA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Peak_Performance_V1._0.ManageAccount" Collapsed="true">
     <Position X="8.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABgAgACAACACABQIYACBAAgCCEAAJJAwACABAQJgCcQ=</HashCode>
-      <FileName>ManageAccount.cs</FileName>
+      <HashCode>AAgAgACAACACABQIYACAAAgCCEAABIAwAAABAQJgCEQ=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -100,12 +88,8 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>ohCAIQCAACgAAIQKABTBAEICAAoBIAAgDoABAQp/iIA=</HashCode>
-      <FileName>ProviderAddVehicle.cs</FileName>
+      <HashCode>ogCAAACAACgAAIQAABTAAEICAAoBAAAgDIABAQB/iIA=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="VehicleCard" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Peak_Performance_V1._0.ProviderUpdateVehicle" Collapsed="true">
@@ -114,12 +98,8 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>ghCAIQCABCgAAIQaABTBAEACQAoBIAAgDoABAQp/qYQ=</HashCode>
-      <FileName>ProviderUpdateVehicle.cs</FileName>
+      <HashCode>ggCAAACAACgAAIQQABTAAEACAAoBAAAgDIABAQB/iIQ=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="VehicleCard" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Peak_Performance_V1._0.SystemManager" Collapsed="true">
@@ -168,23 +148,20 @@
   <Class Name="Peak_Performance_V1._0.SplashLoading" Collapsed="true">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAEAAAACAAECAAAACAAAACAAAAAAAAAAAAEAEAAIA=</HashCode>
-      <FileName>SplashLoading.cs</FileName>
+      <HashCode>AQAAEAAAACAAECAAAACAAAACAAAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Peak_Performance_V1._0.RentVehicle" Collapsed="true">
     <Position X="11.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AghQAgUAIzAEAjQAICSBQQRCAABABAgEBIAiAYIQgAI=</HashCode>
-      <FileName>RentVehicle.cs</FileName>
+      <HashCode>AggQAgQAIjAEABQAIASAQARCAAAABAAEAIACAYIAgAI=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Peak_Performance_V1._0.ProviderViewRental" Collapsed="true">
     <Position X="8.75" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIBCAIAACAAAAACAACBAAICAAAJAAAEAAAAAQAAAAA=</HashCode>
-      <FileName>ProviderViewRental.cs</FileName>
+      <HashCode>AAIAAAIAACAAAAAAAACAAAICAAABAAAAAAAAAQAAAAA=</HashCode>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -199,36 +176,33 @@
   <Class Name="Peak_Performance_V1._0.AdminViewRental" Collapsed="true">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIBCAIAACAAAAACAACBAAICAAAJAAAEAAAAAQAAAAA=</HashCode>
+      <HashCode>AAIAAAIAACAAAAAAAACAAAICAAABAAAAAAAAAQAAAAA=</HashCode>
       <FileName>AdminViewRental.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Peak_Performance_V1._0.Analytics" Collapsed="true">
     <Position X="4.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAECcAgAAQAACBAAKCAAAAABAAAAAAAwBRAAA=</HashCode>
+      <HashCode>AAAAAAAAECAAAAAAAACAAAACAAAAAAAAAAAAAQBRAAA=</HashCode>
       <FileName>Analytics.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Peak_Performance_V1._0.ClientFeedback" Collapsed="true">
     <Position X="2.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAhAAAAAICAAAAAAACSBAAQCAAAAAAIEBAgiAAARAAI=</HashCode>
-      <FileName>ClientFeedback.cs</FileName>
+      <HashCode>AAgAAAAAICAAAAAAAACAAAQCAAAAAAAEAAACAAABAAI=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Peak_Performance_V1._0.ErrorMessage" Collapsed="true">
     <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAhQAAAAICAQAg4AACSAACRCAAAAAAAEBAAiAAAQgAI=</HashCode>
-      <FileName>ErrorMessage.cs</FileName>
+      <HashCode>AAgQAAAAICAQAAoAAACAAARCAAAAAAAEAAACAAAAgAI=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Peak_Performance_V1._0.LocationTracker" Collapsed="true">
     <Position X="10.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAhAAAAAICAQCgAAACSQAARCAAAAAAAEBAAiAAARAAI=</HashCode>
-      <FileName>LocationTracker.cs</FileName>
+      <HashCode>AAgAAAAAICAQAAAAAACAAARCAAAAAAAEAAACAAABAAI=</HashCode>
     </TypeIdentifier>
   </Class>
   <Interface Name="Peak_Performance_V1._0.IAdminAllUsers" Collapsed="true">

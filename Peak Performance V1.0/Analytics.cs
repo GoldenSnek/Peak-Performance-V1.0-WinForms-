@@ -202,49 +202,50 @@ namespace Peak_Performance_V1._0
             plotView2.Model = model;
         }
 
-        public (int[], double[]) GetTotalRevenuePerUser()
+public (int[], double[]) GetTotalRevenuePerUser()
+{
+    int[] userIds = new int[100];
+    double[] totalRevenue = new double[100];
+    int index = 0;
+
+    string query = "SELECT UserID, TotalRevenue FROM Users WHERE UserID <> 0 AND TotalRevenue > 0";
+
+    using (OleDbCommand cmd = new OleDbCommand(query, connection))
+    {
+        try
         {
-            int[] userIds = new int[100];
-            double[] totalRevenue = new double[100];
-            int index = 0;
-
-            string query = "SELECT UserID, TotalRevenue FROM Users WHERE UserID <> 0";
-
-            using (OleDbCommand cmd = new OleDbCommand(query, connection))
+            connection.Open();
+            using (OleDbDataReader reader = cmd.ExecuteReader())
             {
-                try
+                while (reader.Read())
                 {
-                    connection.Open();
-                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    if (index >= userIds.Length)
                     {
-                        while (reader.Read())
-                        {
-                            if (index >= userIds.Length)
-                            {
-                                Array.Resize(ref userIds, userIds.Length * 2);
-                                Array.Resize(ref totalRevenue, totalRevenue.Length * 2);
-                            }
+                        Array.Resize(ref userIds, userIds.Length * 2);
+                        Array.Resize(ref totalRevenue, totalRevenue.Length * 2);
+                    }
 
-                            userIds[index] = Convert.ToInt32(reader["UserID"]);
-                            totalRevenue[index] = Convert.ToDouble(reader["TotalRevenue"]);
-                            index++;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
-                    {
-                        errorForm.ShowDialog();
-                    }
-                }
-                finally
-                {
-                    connection.Close();
+                    userIds[index] = Convert.ToInt32(reader["UserID"]);
+                    totalRevenue[index] = Convert.ToDouble(reader["TotalRevenue"]);
+                    index++;
                 }
             }
-            return (userIds.Take(index).ToArray(), totalRevenue.Take(index).ToArray());
         }
+        catch (Exception ex)
+        {
+            using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+            {
+                errorForm.ShowDialog();
+            }
+        }
+        finally
+        {
+            connection.Close();
+        }
+    }
+
+    return (userIds.Take(index).ToArray(), totalRevenue.Take(index).ToArray());
+}
 
         public void ShowRevenueChart()
         {
