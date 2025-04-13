@@ -125,7 +125,7 @@
             // 
             lblUsername.Anchor = AnchorStyles.None;
             lblUsername.BackColor = Color.Transparent;
-            lblUsername.Font = new Font("Arial Rounded MT Bold", 12F);
+            lblUsername.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = Color.White;
             lblUsername.Location = new Point(521, 231);
             lblUsername.Name = "lblUsername";

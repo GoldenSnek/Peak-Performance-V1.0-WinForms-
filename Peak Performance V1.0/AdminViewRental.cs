@@ -89,7 +89,6 @@ namespace Peak_Performance_V1._0
                         card2.FinishRentalClicked += Card_FinishRentalClicked;
                         flpCurrentlyRented.Controls.Add(card2);
                     }
-
                 }
 
                 connection.Close();
@@ -172,32 +171,52 @@ namespace Peak_Performance_V1._0
         public void Card_ApproveClicked(int vehicleID) //MAIN METHOD: Approve pending vehicle
         {
             SystemManager.currentFullDetailsVehicleID = vehicleID;
-            string updateQuery = "UPDATE ClientVehicleQuery SET Status = @status, TotalRentals = TotalRentals + 1, UserTotalRentals = UserTotalRentals + 1, TotalRevenue = TotalRevenue + Price, RentDate = @rentDate WHERE VehicleID = @vehicleID";
-            string selectQuery = "SELECT TotalRentals, UserTotalRentals FROM ClientVehicleQuery WHERE VehicleID = @vehicleID";
 
-            using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
+            string updateClientQuery = "UPDATE ClientVehicleQuery SET Status = @status, TotalRentals = TotalRentals + 1, UserTotalRentals = UserTotalRentals + 1, RentDate = @rentDate WHERE VehicleID = @vehicleID";
+            string getPriceQuery = "SELECT Price FROM ClientVehicleQuery WHERE VehicleID = @vehicleID";
+            string updateRevenueQuery = "UPDATE UserVehicleQuery SET TotalRevenue = TotalRevenue + @price WHERE VehicleID = @vehicleID";
+
+            try
             {
-                cmd.Parameters.AddWithValue("@status", "Ongoing");
-                cmd.Parameters.AddWithValue("@rentDate", DateTime.Now.ToString());
-                cmd.Parameters.AddWithValue("@vehicleID", SystemManager.currentFullDetailsVehicleID);
+                connection.Open();
 
-                try
+                // 1. Update ClientVehicleQuery
+                using (OleDbCommand cmd = new OleDbCommand(updateClientQuery, connection))
                 {
-                    connection.Open();
+                    cmd.Parameters.AddWithValue("@status", "Ongoing");
+                    cmd.Parameters.AddWithValue("@rentDate", DateTime.Now.ToString());
+                    cmd.Parameters.AddWithValue("@vehicleID", SystemManager.currentFullDetailsVehicleID);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Rental request accepted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    connection.Close();
-                    LoadVehicles();
                 }
-                catch (Exception ex)
+
+                // 2. Get Price from ClientVehicleQuery
+                decimal price = 0;
+                using (OleDbCommand cmd = new OleDbCommand(getPriceQuery, connection))
                 {
-                    MessageBox.Show("Error: " + ex.Message);
-                    return;
+                    cmd.Parameters.AddWithValue("@vehicleID", SystemManager.currentFullDetailsVehicleID);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                        price = Convert.ToDecimal(result);
                 }
-                finally
+
+                // 3. Update TotalRevenue in UserVehicleQuery
+                using (OleDbCommand cmd = new OleDbCommand(updateRevenueQuery, connection))
                 {
-                    connection.Close();
+                    cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@vehicleID", SystemManager.currentFullDetailsVehicleID);
+                    cmd.ExecuteNonQuery();
                 }
+
+                MessageBox.Show("Rental request accepted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+                LoadVehicles();
             }
         }
 

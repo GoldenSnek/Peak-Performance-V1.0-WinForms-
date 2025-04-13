@@ -101,6 +101,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.BackgroundImage = Properties.Resources.AddUpdate;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnClear);
             panel1.Controls.Add(btnClearPicture);
@@ -306,6 +308,7 @@
             txtMake.HideSelection = true;
             txtMake.Hint = "Make";
             txtMake.LeadingIcon = null;
+            txtMake.LeaveOnEnterKey = true;
             txtMake.Location = new Point(0, 0);
             txtMake.MaxLength = 32767;
             txtMake.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -382,8 +385,9 @@
             txtPriceHourly.Dock = DockStyle.Fill;
             txtPriceHourly.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPriceHourly.HideSelection = true;
-            txtPriceHourly.Hint = "Price (Hourly)";
+            txtPriceHourly.Hint = "Hourly Price (₱)";
             txtPriceHourly.LeadingIcon = null;
+            txtPriceHourly.LeaveOnEnterKey = true;
             txtPriceHourly.Location = new Point(0, 0);
             txtPriceHourly.MaxLength = 32767;
             txtPriceHourly.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -425,8 +429,9 @@
             txtMileage.Dock = DockStyle.Fill;
             txtMileage.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtMileage.HideSelection = true;
-            txtMileage.Hint = "Mileage";
+            txtMileage.Hint = "Mileage (km)";
             txtMileage.LeadingIcon = null;
+            txtMileage.LeaveOnEnterKey = true;
             txtMileage.Location = new Point(0, 0);
             txtMileage.MaxLength = 32767;
             txtMileage.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -468,8 +473,9 @@
             txtPriceDaily.Dock = DockStyle.Fill;
             txtPriceDaily.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPriceDaily.HideSelection = true;
-            txtPriceDaily.Hint = "Price (Daily)";
+            txtPriceDaily.Hint = "Daily Price (₱)";
             txtPriceDaily.LeadingIcon = null;
+            txtPriceDaily.LeaveOnEnterKey = true;
             txtPriceDaily.Location = new Point(0, 0);
             txtPriceDaily.MaxLength = 32767;
             txtPriceDaily.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -586,7 +592,6 @@
             cbxSpecificType.Hint = "Vehicle Type";
             cbxSpecificType.IntegralHeight = false;
             cbxSpecificType.ItemHeight = 43;
-            cbxSpecificType.Items.AddRange(new object[] { "Sedan", "Suv", "Coupe", "Convertible", "Hatchback", "Minivan", "Pickup Truck", "Limousine", "Sports Car", "Luxury Car", "Underbone", "Scooter", "Naked", "Motocross", "Cafe Racer", "Chopper", "Tourer", "Sports Bike" });
             cbxSpecificType.Location = new Point(0, 0);
             cbxSpecificType.MaxDropDownItems = 4;
             cbxSpecificType.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -621,7 +626,7 @@
             cbxYear.Hint = "Year";
             cbxYear.IntegralHeight = false;
             cbxYear.ItemHeight = 43;
-            cbxYear.Items.AddRange(new object[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" });
+            cbxYear.Items.AddRange(new object[] { "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", "1919", "1918", "1917", "1916", "1915", "1914", "1913", "1912", "1911", "1910", "1909", "1908", "1907", "1906", "1905", "1904", "1903", "1902", "1901", "1900" });
             cbxYear.Location = new Point(0, 0);
             cbxYear.MaxDropDownItems = 4;
             cbxYear.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -653,6 +658,7 @@
             txtLicense.HideSelection = true;
             txtLicense.Hint = "License Plate Number";
             txtLicense.LeadingIcon = null;
+            txtLicense.LeaveOnEnterKey = true;
             txtLicense.Location = new Point(0, 0);
             txtLicense.MaxLength = 32767;
             txtLicense.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -699,7 +705,7 @@
             cbxGeneralType.Hint = "Vehicle Type";
             cbxGeneralType.IntegralHeight = false;
             cbxGeneralType.ItemHeight = 43;
-            cbxGeneralType.Items.AddRange(new object[] { "Motorcycle", "Car" });
+            cbxGeneralType.Items.AddRange(new object[] { "Car", "Motorcycle" });
             cbxGeneralType.Location = new Point(0, 0);
             cbxGeneralType.MaxDropDownItems = 4;
             cbxGeneralType.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -707,6 +713,7 @@
             cbxGeneralType.Size = new Size(200, 49);
             cbxGeneralType.StartIndex = 0;
             cbxGeneralType.TabIndex = 35;
+            cbxGeneralType.SelectedIndexChanged += cbxGeneralType_SelectedIndexChanged;
             // 
             // panel2
             // 
@@ -731,6 +738,7 @@
             txtModel.HideSelection = true;
             txtModel.Hint = "Model";
             txtModel.LeadingIcon = null;
+            txtModel.LeaveOnEnterKey = true;
             txtModel.Location = new Point(0, 0);
             txtModel.MaxLength = 32767;
             txtModel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;

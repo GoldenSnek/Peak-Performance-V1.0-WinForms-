@@ -88,6 +88,8 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel8 = new Panel();
+            btnFeedback = new Button();
+            txtFeedback = new ReaLTaiizor.Controls.ForeverTextBox();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).BeginInit();
             parrotGradientPanel2.SuspendLayout();
@@ -145,7 +147,7 @@
             btnReceipt.HighEmphasis = true;
             btnReceipt.Icon = null;
             btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(306, 604);
+            btnReceipt.Location = new Point(15, 647);
             btnReceipt.Margin = new Padding(4, 6, 4, 6);
             btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnReceipt.Name = "btnReceipt";
@@ -477,7 +479,7 @@
             lblTotalPrice.BackColor = Color.Transparent;
             lblTotalPrice.Font = new Font("Arial", 12F);
             lblTotalPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblTotalPrice.Location = new Point(12, 602);
+            lblTotalPrice.Location = new Point(12, 580);
             lblTotalPrice.Name = "lblTotalPrice";
             lblTotalPrice.Size = new Size(145, 40);
             lblTotalPrice.TabIndex = 94;
@@ -676,9 +678,9 @@
             panel1.Controls.Add(pnlDown);
             panel1.Controls.Add(pnlTop);
             panel1.Controls.Add(panel7);
-            panel1.Location = new Point(614, 541);
+            panel1.Location = new Point(278, 541);
             panel1.Name = "panel1";
-            panel1.Size = new Size(326, 145);
+            panel1.Size = new Size(662, 145);
             panel1.TabIndex = 113;
             // 
             // pnlLeft
@@ -696,7 +698,7 @@
             pnlRight.BackColor = Color.FromArgb(255, 128, 0);
             pnlRight.Dock = DockStyle.Right;
             pnlRight.ForeColor = Color.Coral;
-            pnlRight.Location = new Point(323, 3);
+            pnlRight.Location = new Point(659, 3);
             pnlRight.Name = "pnlRight";
             pnlRight.Size = new Size(3, 139);
             pnlRight.TabIndex = 17;
@@ -708,7 +710,7 @@
             pnlDown.ForeColor = Color.Coral;
             pnlDown.Location = new Point(0, 142);
             pnlDown.Name = "pnlDown";
-            pnlDown.Size = new Size(326, 3);
+            pnlDown.Size = new Size(662, 3);
             pnlDown.TabIndex = 18;
             // 
             // pnlTop
@@ -718,13 +720,14 @@
             pnlTop.ForeColor = Color.Coral;
             pnlTop.Location = new Point(0, 0);
             pnlTop.Name = "pnlTop";
-            pnlTop.Size = new Size(326, 3);
+            pnlTop.Size = new Size(662, 3);
             pnlTop.TabIndex = 15;
             // 
             // panel7
             // 
             panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
             panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Controls.Add(btnFeedback);
             panel7.Controls.Add(foreverTextBox1);
             panel7.Controls.Add(lblUserID);
             panel7.Controls.Add(btnRate);
@@ -738,10 +741,11 @@
             panel7.Controls.Add(picVR2);
             panel7.Controls.Add(picVR4);
             panel7.Controls.Add(picVR3);
+            panel7.Controls.Add(txtFeedback);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(326, 145);
+            panel7.Size = new Size(662, 145);
             panel7.TabIndex = 56;
             // 
             // foreverTextBox1
@@ -793,7 +797,7 @@
             btnRate.FlatStyle = FlatStyle.Flat;
             btnRate.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
             btnRate.ForeColor = Color.Black;
-            btnRate.Location = new Point(25, 96);
+            btnRate.Location = new Point(25, 97);
             btnRate.Name = "btnRate";
             btnRate.Size = new Size(126, 30);
             btnRate.TabIndex = 56;
@@ -863,6 +867,41 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(872, 516);
             panel8.TabIndex = 56;
+            // 
+            // btnFeedback
+            // 
+            btnFeedback.BackColor = Color.Transparent;
+            btnFeedback.FlatAppearance.BorderColor = Color.Cyan;
+            btnFeedback.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnFeedback.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnFeedback.FlatStyle = FlatStyle.Flat;
+            btnFeedback.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnFeedback.ForeColor = Color.Black;
+            btnFeedback.Location = new Point(167, 97);
+            btnFeedback.Name = "btnFeedback";
+            btnFeedback.Size = new Size(139, 30);
+            btnFeedback.TabIndex = 109;
+            btnFeedback.Text = "Submit Feedback";
+            btnFeedback.UseVisualStyleBackColor = false;
+            btnFeedback.Click += btnFeedback_Click;
+            // 
+            // txtFeedback
+            // 
+            txtFeedback.BackColor = Color.Transparent;
+            txtFeedback.BaseColor = Color.FromArgb(35, 40, 50);
+            txtFeedback.BorderColor = Color.FromArgb(255, 128, 0);
+            txtFeedback.FocusOnHover = false;
+            txtFeedback.Font = new Font("Cascadia Code", 9.75F);
+            txtFeedback.ForeColor = Color.Lavender;
+            txtFeedback.Location = new Point(321, 20);
+            txtFeedback.MaxLength = 32767;
+            txtFeedback.Multiline = true;
+            txtFeedback.Name = "txtFeedback";
+            txtFeedback.ReadOnly = false;
+            txtFeedback.Size = new Size(321, 107);
+            txtFeedback.TabIndex = 110;
+            txtFeedback.TextAlign = HorizontalAlignment.Left;
+            txtFeedback.UseSystemPasswordChar = false;
             // 
             // ClientViewRental
             // 
@@ -994,5 +1033,7 @@
         private Panel panel5;
         private Panel panel6;
         private Panel panel8;
+        private Button btnFeedback;
+        private ReaLTaiizor.Controls.ForeverTextBox txtFeedback;
     }
 }

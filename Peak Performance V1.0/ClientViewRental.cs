@@ -25,6 +25,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using System.Net;
 using System.Net.Mail;
 using System.IO;
+using System.Collections;
+using System.Xml.Linq;
 
 namespace Peak_Performance_V1._0
 {
@@ -624,6 +626,91 @@ namespace Peak_Performance_V1._0
             catch
             {
                 return false;
+            }
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFeedback.Text))
+            {
+                MessageBox.Show("Please write a feedback before submitting");
+                return;
+            }
+
+            bool replace = false;
+            string validateQuery = "SELECT VehicleID FROM VehicleFeedback WHERE Username = @username";
+
+            using (OleDbCommand cmd = new OleDbCommand(validateQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@username", SystemManager.currentUsername);
+                connection.Open();
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int vehicleID = Convert.ToInt32(reader["VehicleID"]);
+                        if (vehicleID == VehicleID)
+                        {
+                            replace = true;
+                            break;
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+
+            if (!replace)
+            {
+                string query = "INSERT INTO VehicleFeedback (VehicleID, Username, Comments) VALUES (@vehicleID, @username, @comments)";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@vehicleID", VehicleID);
+                    cmd.Parameters.AddWithValue("@username", SystemManager.currentUsername);
+                    cmd.Parameters.AddWithValue("@comments", txtFeedback.Text);
+
+                    try
+                    {
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        MessageBox.Show("Feedback added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error adding feedback: " + ex.Message);
+                        return;
+                    }
+                }
+            }
+            else if (replace)
+            {
+                string updateQuery = $"UPDATE VehicleFeedback SET Comments = @comments Where VehicleID = @vehicleID AND Username = @username";
+                using (OleDbCommand cmd = new OleDbCommand(updateQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@comments", txtFeedback.Text);
+                    cmd.Parameters.AddWithValue("@vehicleID", VehicleID);
+                    cmd.Parameters.AddWithValue("@username", SystemManager.currentUsername);
+
+                    try
+                    {
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        MessageBox.Show("Feedback updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error updating feedback: " + ex.Message);
+                        return;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
             }
         }
     }

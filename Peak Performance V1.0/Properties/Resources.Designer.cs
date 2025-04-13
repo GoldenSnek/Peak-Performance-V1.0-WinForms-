@@ -73,6 +73,16 @@ namespace Peak_Performance_V1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddUpdate {
+            get {
+                object obj = ResourceManager.GetObject("AddUpdate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddVehicle {
             get {
                 object obj = ResourceManager.GetObject("AddVehicle", resourceCulture);
@@ -326,6 +336,16 @@ namespace Peak_Performance_V1._0.Properties {
         internal static System.Drawing.Bitmap Facebook {
             get {
                 object obj = ResourceManager.GetObject("Facebook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feedback {
+            get {
+                object obj = ResourceManager.GetObject("Feedback", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

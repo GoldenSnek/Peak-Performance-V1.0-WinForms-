@@ -22,6 +22,8 @@ namespace Peak_Performance_V1._0
             connection = SystemManager.GetConnection();
             InitializeComponent();
             LoadVehicles();
+
+            cbxSpecificType.Items.AddRange(carTypes);
         }
 
         public VehicleCard VehicleCard
@@ -115,7 +117,7 @@ namespace Peak_Performance_V1._0
             double priceHourly;
 
             if (string.IsNullOrWhiteSpace(generalType) || string.IsNullOrWhiteSpace(specificType) || string.IsNullOrWhiteSpace(make) || string.IsNullOrWhiteSpace(model) ||
-                string.IsNullOrWhiteSpace(tempYear) || string.IsNullOrWhiteSpace(transmission) || string.IsNullOrWhiteSpace(drivetrain) || string.IsNullOrWhiteSpace(licensePlate) ||string.IsNullOrWhiteSpace(color) ||
+                string.IsNullOrWhiteSpace(tempYear) || string.IsNullOrWhiteSpace(transmission) || string.IsNullOrWhiteSpace(drivetrain) || string.IsNullOrWhiteSpace(licensePlate) || string.IsNullOrWhiteSpace(color) ||
                 string.IsNullOrWhiteSpace(fuelType) || string.IsNullOrWhiteSpace(tempSeats) || string.IsNullOrWhiteSpace(tempMileage) || string.IsNullOrWhiteSpace(tempPriceDaily) || string.IsNullOrWhiteSpace(tempPriceDaily)) //step 1: check if fields are empty
             {
                 MessageBox.Show("Please fill in all the details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -250,6 +252,28 @@ namespace Peak_Performance_V1._0
         {
             picPreview.Image = null;
             lblImagePath.Text = null;
+        }
+
+        string[] carTypes = {
+            "Sedan", "Suv", "Coupe", "Convertible",
+            "Hatchback", "Minivan", "Pickup Truck",
+            "Limousine", "Sports Car", "Luxury Car"
+        };
+
+        string[] motorcycleTypes = {
+            "Underbone", "Scooter", "Naked", "Motocross",
+            "Cafe Racer", "Chopper", "Tourer", "Sports Bike"
+        };
+        private void cbxGeneralType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxSpecificType.Items.Clear();
+
+            if (cbxGeneralType.SelectedItem.ToString() == "Car")
+                cbxSpecificType.Items.AddRange(carTypes);
+            else if (cbxGeneralType.SelectedItem.ToString() == "Motorcycle")
+                cbxSpecificType.Items.AddRange(motorcycleTypes);
+
+            cbxSpecificType.SelectedIndex = -1;
         }
     }
 }

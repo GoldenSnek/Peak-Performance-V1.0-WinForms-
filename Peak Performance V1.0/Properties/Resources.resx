@@ -157,11 +157,17 @@
   <data name="LoginRegister2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginRegister2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Analytics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Analytics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LoginRegister" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginRegister.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Username" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Username.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Location.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Back3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -177,6 +183,9 @@
   </data>
   <data name="ViewRental" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewRental.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddUpdate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NightRide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NightRide.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,8 +244,8 @@
   <data name="F1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\F1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SteeringWheel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SteeringWheel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Decline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Decline.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AddVehicle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddVehicle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,9 +283,6 @@
   <data name="Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Decline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Decline.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Home - Car Night" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home - Car Night.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -291,6 +297,9 @@
   </data>
   <data name="RateNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RateNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SteeringWheel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SteeringWheel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dawn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,10 +331,7 @@
   <data name="ManyCarsBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManyCarsBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Location.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Analytics" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Analytics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Feedback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Feedback.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

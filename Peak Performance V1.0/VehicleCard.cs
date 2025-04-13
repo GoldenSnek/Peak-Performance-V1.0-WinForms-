@@ -90,6 +90,15 @@ namespace Peak_Performance_V1._0
                 picEdit.Visible = true;
                 picDelete.Visible = true;
             }
+            else if (ParentForm is ViewAllVehicles)
+            {
+                btnProceed.Visible = true;
+                btnAccept.Visible = false;
+                btnReject.Visible = false;
+                picEdit.Visible = false;
+                picDelete.Visible = false;
+                picFeedback.Visible = true;
+            }
             else if ((ParentForm is ProviderViewRental || ParentForm is AdminViewRental) && prompt == "Finish Rental")
             {
                 btnProceed.Visible = true;
@@ -216,6 +225,29 @@ namespace Peak_Performance_V1._0
 
                 locationForm.StartPosition = FormStartPosition.CenterParent;
                 locationForm.ShowDialog();
+
+                formBackground.Dispose();
+            }
+        }
+
+        private void picComments_Click(object sender, EventArgs e)
+        {
+            SystemManager.currentCommentsVehicleID = VehicleID;
+            Form formBackground = new Form();
+            using (ClientFeedback commentsForm = new ClientFeedback())
+            {
+                formBackground.StartPosition = FormStartPosition.Manual;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.Opacity = .70d;
+                formBackground.BackColor = Color.Black;
+                formBackground.WindowState = FormWindowState.Maximized;
+                formBackground.TopMost = true;
+                formBackground.Location = this.Location;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
+
+                commentsForm.StartPosition = FormStartPosition.CenterParent;
+                commentsForm.ShowDialog();
 
                 formBackground.Dispose();
             }

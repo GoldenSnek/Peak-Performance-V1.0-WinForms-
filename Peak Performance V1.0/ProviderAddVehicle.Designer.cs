@@ -132,6 +132,7 @@
             txtModel.HideSelection = true;
             txtModel.Hint = "Model";
             txtModel.LeadingIcon = null;
+            txtModel.LeaveOnEnterKey = true;
             txtModel.Location = new Point(0, 0);
             txtModel.MaxLength = 32767;
             txtModel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -145,7 +146,7 @@
             txtModel.SelectionStart = 0;
             txtModel.ShortcutsEnabled = true;
             txtModel.Size = new Size(200, 36);
-            txtModel.TabIndex = 31;
+            txtModel.TabIndex = 6;
             txtModel.TabStop = false;
             txtModel.TextAlign = HorizontalAlignment.Left;
             txtModel.TrailingIcon = null;
@@ -155,6 +156,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(35, 40, 60);
+            panel1.BackgroundImage = Properties.Resources.AddUpdate;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(btnClear);
             panel1.Controls.Add(btnClearPicture);
             panel1.Controls.Add(btnAddVehicle);
@@ -227,7 +230,7 @@
             btnAddVehicle.Location = new Point(393, 70);
             btnAddVehicle.Name = "btnAddVehicle";
             btnAddVehicle.Size = new Size(130, 35);
-            btnAddVehicle.TabIndex = 81;
+            btnAddVehicle.TabIndex = 15;
             btnAddVehicle.Text = "Add Vehicle";
             btnAddVehicle.UseVisualStyleBackColor = false;
             btnAddVehicle.Click += btnAddVehicle_Click;
@@ -282,7 +285,7 @@
             cbxDrivetrain.Name = "cbxDrivetrain";
             cbxDrivetrain.Size = new Size(200, 49);
             cbxDrivetrain.StartIndex = 0;
-            cbxDrivetrain.TabIndex = 35;
+            cbxDrivetrain.TabIndex = 11;
             // 
             // panel16
             // 
@@ -317,7 +320,7 @@
             cbxTransmission.Name = "cbxTransmission";
             cbxTransmission.Size = new Size(200, 49);
             cbxTransmission.StartIndex = 0;
-            cbxTransmission.TabIndex = 35;
+            cbxTransmission.TabIndex = 4;
             // 
             // parrotGradientPanel1
             // 
@@ -362,6 +365,7 @@
             txtMake.HideSelection = true;
             txtMake.Hint = "Make";
             txtMake.LeadingIcon = null;
+            txtMake.LeaveOnEnterKey = true;
             txtMake.Location = new Point(0, 0);
             txtMake.MaxLength = 32767;
             txtMake.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -375,7 +379,7 @@
             txtMake.SelectionStart = 0;
             txtMake.ShortcutsEnabled = true;
             txtMake.Size = new Size(200, 36);
-            txtMake.TabIndex = 31;
+            txtMake.TabIndex = 5;
             txtMake.TabStop = false;
             txtMake.TextAlign = HorizontalAlignment.Left;
             txtMake.TrailingIcon = null;
@@ -415,7 +419,7 @@
             cbxSeats.Name = "cbxSeats";
             cbxSeats.Size = new Size(200, 49);
             cbxSeats.StartIndex = 0;
-            cbxSeats.TabIndex = 35;
+            cbxSeats.TabIndex = 10;
             // 
             // panel12
             // 
@@ -438,8 +442,9 @@
             txtPriceHourly.Dock = DockStyle.Fill;
             txtPriceHourly.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPriceHourly.HideSelection = true;
-            txtPriceHourly.Hint = "Price (Hourly)";
+            txtPriceHourly.Hint = "Hourly Price (₱)";
             txtPriceHourly.LeadingIcon = null;
+            txtPriceHourly.LeaveOnEnterKey = true;
             txtPriceHourly.Location = new Point(0, 0);
             txtPriceHourly.MaxLength = 32767;
             txtPriceHourly.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -453,7 +458,7 @@
             txtPriceHourly.SelectionStart = 0;
             txtPriceHourly.ShortcutsEnabled = true;
             txtPriceHourly.Size = new Size(200, 36);
-            txtPriceHourly.TabIndex = 31;
+            txtPriceHourly.TabIndex = 14;
             txtPriceHourly.TabStop = false;
             txtPriceHourly.TextAlign = HorizontalAlignment.Left;
             txtPriceHourly.TrailingIcon = null;
@@ -481,8 +486,9 @@
             txtMileage.Dock = DockStyle.Fill;
             txtMileage.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtMileage.HideSelection = true;
-            txtMileage.Hint = "Mileage";
+            txtMileage.Hint = "Mileage (km)";
             txtMileage.LeadingIcon = null;
+            txtMileage.LeaveOnEnterKey = true;
             txtMileage.Location = new Point(0, 0);
             txtMileage.MaxLength = 32767;
             txtMileage.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -496,7 +502,7 @@
             txtMileage.SelectionStart = 0;
             txtMileage.ShortcutsEnabled = true;
             txtMileage.Size = new Size(200, 36);
-            txtMileage.TabIndex = 31;
+            txtMileage.TabIndex = 12;
             txtMileage.TabStop = false;
             txtMileage.TextAlign = HorizontalAlignment.Left;
             txtMileage.TrailingIcon = null;
@@ -524,8 +530,9 @@
             txtPriceDaily.Dock = DockStyle.Fill;
             txtPriceDaily.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPriceDaily.HideSelection = true;
-            txtPriceDaily.Hint = "Price (Daily)";
+            txtPriceDaily.Hint = "Daily Price (₱)";
             txtPriceDaily.LeadingIcon = null;
+            txtPriceDaily.LeaveOnEnterKey = true;
             txtPriceDaily.Location = new Point(0, 0);
             txtPriceDaily.MaxLength = 32767;
             txtPriceDaily.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -539,7 +546,7 @@
             txtPriceDaily.SelectionStart = 0;
             txtPriceDaily.ShortcutsEnabled = true;
             txtPriceDaily.Size = new Size(200, 36);
-            txtPriceDaily.TabIndex = 31;
+            txtPriceDaily.TabIndex = 13;
             txtPriceDaily.TabStop = false;
             txtPriceDaily.TextAlign = HorizontalAlignment.Left;
             txtPriceDaily.TrailingIcon = null;
@@ -579,7 +586,7 @@
             cbxFuel.Name = "cbxFuel";
             cbxFuel.Size = new Size(200, 49);
             cbxFuel.StartIndex = 0;
-            cbxFuel.TabIndex = 35;
+            cbxFuel.TabIndex = 9;
             // 
             // panel8
             // 
@@ -614,7 +621,7 @@
             cbxColor.Name = "cbxColor";
             cbxColor.Size = new Size(200, 49);
             cbxColor.StartIndex = 0;
-            cbxColor.TabIndex = 35;
+            cbxColor.TabIndex = 8;
             // 
             // panel5
             // 
@@ -642,14 +649,13 @@
             cbxSpecificType.Hint = "Vehicle Type";
             cbxSpecificType.IntegralHeight = false;
             cbxSpecificType.ItemHeight = 43;
-            cbxSpecificType.Items.AddRange(new object[] { "Sedan", "Suv", "Coupe", "Convertible", "Hatchback", "Minivan", "Pickup Truck", "Limousine", "Sports Car", "Luxury Car", "Underbone", "Scooter", "Naked", "Motocross", "Cafe Racer", "Chopper", "Tourer", "Sports Bike" });
             cbxSpecificType.Location = new Point(0, 0);
             cbxSpecificType.MaxDropDownItems = 4;
             cbxSpecificType.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cbxSpecificType.Name = "cbxSpecificType";
             cbxSpecificType.Size = new Size(200, 49);
             cbxSpecificType.StartIndex = 0;
-            cbxSpecificType.TabIndex = 35;
+            cbxSpecificType.TabIndex = 2;
             // 
             // panel9
             // 
@@ -684,7 +690,7 @@
             cbxYear.Name = "cbxYear";
             cbxYear.Size = new Size(200, 49);
             cbxYear.StartIndex = 0;
-            cbxYear.TabIndex = 35;
+            cbxYear.TabIndex = 3;
             // 
             // panel4
             // 
@@ -709,6 +715,7 @@
             txtLicense.HideSelection = true;
             txtLicense.Hint = "License Plate Number";
             txtLicense.LeadingIcon = null;
+            txtLicense.LeaveOnEnterKey = true;
             txtLicense.Location = new Point(0, 0);
             txtLicense.MaxLength = 32767;
             txtLicense.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -722,7 +729,7 @@
             txtLicense.SelectionStart = 0;
             txtLicense.ShortcutsEnabled = true;
             txtLicense.Size = new Size(200, 36);
-            txtLicense.TabIndex = 31;
+            txtLicense.TabIndex = 7;
             txtLicense.TabStop = false;
             txtLicense.TextAlign = HorizontalAlignment.Left;
             txtLicense.TrailingIcon = null;
@@ -762,7 +769,8 @@
             cbxGeneralType.Name = "cbxGeneralType";
             cbxGeneralType.Size = new Size(200, 49);
             cbxGeneralType.StartIndex = 0;
-            cbxGeneralType.TabIndex = 35;
+            cbxGeneralType.TabIndex = 1;
+            cbxGeneralType.SelectedIndexChanged += cbxGeneralType_SelectedIndexChanged;
             // 
             // panel2
             // 

@@ -20,6 +20,8 @@ namespace Peak_Performance_V1._0
             connection = SystemManager.GetConnection();
             InitializeComponent();
             LoadVehicles();
+
+            cbxSpecificType.Items.AddRange(carTypes);
         }
 
         public VehicleCard VehicleCard
@@ -235,7 +237,8 @@ namespace Peak_Performance_V1._0
 
         //SUPPORTING EVENTS
         public void Card_EditClicked(int vehicleID, string generalType, string specificType, string make, string model, int? vehicleYear, string transmission, string drivetrain,
-                                    string licensePlate, string color, string fuelType, int? seats, double? mileage, double? priceDaily, double? priceHourly, Image vehicleImage) { //SUPPORTING EVENT: Transfer details of card to the form 
+                                    string licensePlate, string color, string fuelType, int? seats, double? mileage, double? priceDaily, double? priceHourly, Image vehicleImage)
+        { //SUPPORTING EVENT: Transfer details of card to the form 
             SystemManager.currentEditVehicleID = vehicleID;
             cbxGeneralType.Text = generalType;
             cbxSpecificType.Text = specificType;
@@ -256,7 +259,8 @@ namespace Peak_Performance_V1._0
 
 
 
-        public void Card_FullDetailsClicked(int vehicleID) { //SUPPORTING EVENT: Full Details
+        public void Card_FullDetailsClicked(int vehicleID)
+        { //SUPPORTING EVENT: Full Details
             SystemManager.currentFullDetailsVehicleID = vehicleID;
             Form formBackground = new Form();
             using (FullVehicleDetails detailsForm = new FullVehicleDetails("Owner"))
@@ -340,6 +344,28 @@ namespace Peak_Performance_V1._0
         {
             picPreview.Image = null;
             lblImagePath.Text = null;
+        }
+
+        string[] carTypes = {
+            "Sedan", "Suv", "Coupe", "Convertible",
+            "Hatchback", "Minivan", "Pickup Truck",
+            "Limousine", "Sports Car", "Luxury Car"
+        };
+
+        string[] motorcycleTypes = {
+            "Underbone", "Scooter", "Naked", "Motocross",
+            "Cafe Racer", "Chopper", "Tourer", "Sports Bike"
+        };
+        private void cbxGeneralType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxSpecificType.Items.Clear();
+
+            if (cbxGeneralType.SelectedItem.ToString() == "Car")
+                cbxSpecificType.Items.AddRange(carTypes);
+            else if (cbxGeneralType.SelectedItem.ToString() == "Motorcycle")
+                cbxSpecificType.Items.AddRange(motorcycleTypes);
+
+            cbxSpecificType.SelectedIndex = -1;
         }
     }
 }

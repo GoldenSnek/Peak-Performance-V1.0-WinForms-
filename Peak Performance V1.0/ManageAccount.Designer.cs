@@ -345,7 +345,7 @@
             btnDelete.FlatAppearance.MouseDownBackColor = Color.Maroon;
             btnDelete.FlatAppearance.MouseOverBackColor = Color.Maroon;
             btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnDelete.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDelete.ForeColor = Color.Lavender;
             btnDelete.Location = new Point(25, 514);
             btnDelete.Name = "btnDelete";
