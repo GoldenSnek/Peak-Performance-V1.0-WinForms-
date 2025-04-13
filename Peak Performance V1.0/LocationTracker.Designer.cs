@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlTop = new Panel();
+            lblTitle = new Label();
             btnRefresh = new Button();
             picBack = new PictureBox();
             lblDay = new Label();
@@ -37,6 +39,7 @@
             lblDate = new Label();
             picMax = new PictureBox();
             webViewMap = new Microsoft.Web.WebView2.WinForms.WebView2();
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
@@ -47,6 +50,7 @@
             // pnlTop
             // 
             pnlTop.BackColor = Color.FromArgb(255, 128, 0);
+            pnlTop.Controls.Add(lblTitle);
             pnlTop.Controls.Add(btnRefresh);
             pnlTop.Controls.Add(picBack);
             pnlTop.Controls.Add(lblDay);
@@ -61,6 +65,19 @@
             pnlTop.Size = new Size(1000, 40);
             pnlTop.TabIndex = 60;
             pnlTop.MouseDown += pnlTop_MouseDown;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.Black;
+            lblTitle.Location = new Point(415, 4);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(171, 32);
+            lblTitle.TabIndex = 74;
+            lblTitle.Text = "Location Tracker";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnRefresh
             // 
@@ -172,6 +189,11 @@
             webViewMap.TabIndex = 61;
             webViewMap.ZoomFactor = 1D;
             // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
+            // 
             // LocationTracker
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -204,5 +226,7 @@
         private PictureBox picBack;
         private Microsoft.Web.WebView2.WinForms.WebView2 webViewMap;
         private Button btnRefresh;
+        private Label lblTitle;
+        private System.Windows.Forms.Timer tmrFadeIn;
     }
 }

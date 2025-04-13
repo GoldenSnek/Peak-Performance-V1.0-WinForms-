@@ -96,6 +96,7 @@
             lblUsername = new Label();
             picPFP = new PictureBox();
             pnlTop = new Panel();
+            picClose = new PictureBox();
             lblDay = new Label();
             picMin = new PictureBox();
             lblTime = new Label();
@@ -116,6 +117,7 @@
             pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPFP).BeginInit();
             pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMax).BeginInit();
             SuspendLayout();
@@ -547,11 +549,11 @@
             // 
             label14.Anchor = AnchorStyles.Right;
             label14.BackColor = Color.Transparent;
-            label14.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(663, 70);
+            label14.Font = new Font("Arial", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Silver;
+            label14.Location = new Point(646, 70);
             label14.Name = "label14";
-            label14.Size = new Size(198, 27);
+            label14.Size = new Size(215, 27);
             label14.TabIndex = 36;
             label14.Text = "Vehicles currently being rented:";
             label14.TextAlign = ContentAlignment.MiddleCenter;
@@ -709,6 +711,7 @@
             // btnExit
             // 
             btnExit.BackColor = Color.FromArgb(45, 60, 75);
+            btnExit.Cursor = Cursors.Hand;
             btnExit.Dock = DockStyle.Top;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
@@ -729,6 +732,7 @@
             // btnLogout
             // 
             btnLogout.BackColor = Color.FromArgb(45, 60, 75);
+            btnLogout.Cursor = Cursors.Hand;
             btnLogout.Dock = DockStyle.Top;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
@@ -749,6 +753,7 @@
             // btnManageAccount
             // 
             btnManageAccount.BackColor = Color.FromArgb(45, 60, 75);
+            btnManageAccount.Cursor = Cursors.Hand;
             btnManageAccount.Dock = DockStyle.Top;
             btnManageAccount.FlatAppearance.BorderSize = 0;
             btnManageAccount.FlatStyle = FlatStyle.Flat;
@@ -792,6 +797,7 @@
             // btnUpdateVehicles
             // 
             btnUpdateVehicles.BackColor = Color.FromArgb(45, 60, 75);
+            btnUpdateVehicles.Cursor = Cursors.Hand;
             btnUpdateVehicles.Dock = DockStyle.Top;
             btnUpdateVehicles.FlatAppearance.BorderSize = 0;
             btnUpdateVehicles.FlatStyle = FlatStyle.Flat;
@@ -812,6 +818,7 @@
             // btnAddVehicles
             // 
             btnAddVehicles.BackColor = Color.FromArgb(45, 60, 75);
+            btnAddVehicles.Cursor = Cursors.Hand;
             btnAddVehicles.Dock = DockStyle.Top;
             btnAddVehicles.FlatAppearance.BorderSize = 0;
             btnAddVehicles.FlatStyle = FlatStyle.Flat;
@@ -855,6 +862,7 @@
             // btnAnalytics
             // 
             btnAnalytics.BackColor = Color.FromArgb(45, 60, 75);
+            btnAnalytics.Cursor = Cursors.Hand;
             btnAnalytics.Dock = DockStyle.Top;
             btnAnalytics.FlatAppearance.BorderSize = 0;
             btnAnalytics.FlatStyle = FlatStyle.Flat;
@@ -875,6 +883,7 @@
             // btnRentalDetails
             // 
             btnRentalDetails.BackColor = Color.FromArgb(45, 60, 75);
+            btnRentalDetails.Cursor = Cursors.Hand;
             btnRentalDetails.Dock = DockStyle.Top;
             btnRentalDetails.FlatAppearance.BorderSize = 0;
             btnRentalDetails.FlatStyle = FlatStyle.Flat;
@@ -918,6 +927,7 @@
             // btnAllVehicles
             // 
             btnAllVehicles.BackColor = Color.FromArgb(45, 60, 75);
+            btnAllVehicles.Cursor = Cursors.Hand;
             btnAllVehicles.Dock = DockStyle.Top;
             btnAllVehicles.FlatAppearance.BorderSize = 0;
             btnAllVehicles.FlatStyle = FlatStyle.Flat;
@@ -961,6 +971,7 @@
             // btnAdminAllUsers
             // 
             btnAdminAllUsers.BackColor = Color.FromArgb(45, 60, 75);
+            btnAdminAllUsers.Cursor = Cursors.Hand;
             btnAdminAllUsers.Dock = DockStyle.Top;
             btnAdminAllUsers.FlatAppearance.BorderSize = 0;
             btnAdminAllUsers.FlatStyle = FlatStyle.Flat;
@@ -981,6 +992,7 @@
             // btnAdminAllVehicles
             // 
             btnAdminAllVehicles.BackColor = Color.FromArgb(45, 60, 75);
+            btnAdminAllVehicles.Cursor = Cursors.Hand;
             btnAdminAllVehicles.Dock = DockStyle.Top;
             btnAdminAllVehicles.FlatAppearance.BorderSize = 0;
             btnAdminAllVehicles.FlatStyle = FlatStyle.Flat;
@@ -1024,6 +1036,7 @@
             // btnHome
             // 
             btnHome.BackColor = Color.FromArgb(45, 60, 75);
+            btnHome.Cursor = Cursors.Hand;
             btnHome.Dock = DockStyle.Top;
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatStyle = FlatStyle.Flat;
@@ -1088,6 +1101,7 @@
             // pnlTop
             // 
             pnlTop.BackColor = Color.FromArgb(255, 128, 0);
+            pnlTop.Controls.Add(picClose);
             pnlTop.Controls.Add(lblDay);
             pnlTop.Controls.Add(picHide);
             pnlTop.Controls.Add(picMin);
@@ -1102,6 +1116,20 @@
             pnlTop.TabIndex = 22;
             pnlTop.MouseDown += pnlTop_MouseDown;
             // 
+            // picClose
+            // 
+            picClose.Anchor = AnchorStyles.Right;
+            picClose.BackColor = Color.Transparent;
+            picClose.BackgroundImage = Properties.Resources.Close2;
+            picClose.BackgroundImageLayout = ImageLayout.Stretch;
+            picClose.Cursor = Cursors.Hand;
+            picClose.Location = new Point(937, 3);
+            picClose.Name = "picClose";
+            picClose.Size = new Size(22, 22);
+            picClose.TabIndex = 42;
+            picClose.TabStop = false;
+            picClose.Click += picClose_Click;
+            // 
             // lblDay
             // 
             lblDay.Anchor = AnchorStyles.Left;
@@ -1109,7 +1137,7 @@
             lblDay.BackColor = Color.Transparent;
             lblDay.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             lblDay.ForeColor = Color.Black;
-            lblDay.Location = new Point(246, 4);
+            lblDay.Location = new Point(238, 4);
             lblDay.Name = "lblDay";
             lblDay.Size = new Size(87, 23);
             lblDay.TabIndex = 38;
@@ -1123,7 +1151,7 @@
             picMin.BackgroundImage = Properties.Resources.Minimize;
             picMin.BackgroundImageLayout = ImageLayout.Stretch;
             picMin.Cursor = Cursors.Hand;
-            picMin.Location = new Point(890, 3);
+            picMin.Location = new Point(874, 2);
             picMin.Name = "picMin";
             picMin.Size = new Size(25, 25);
             picMin.TabIndex = 40;
@@ -1165,7 +1193,7 @@
             picMax.BackgroundImage = Properties.Resources.Maximize;
             picMax.BackgroundImageLayout = ImageLayout.Stretch;
             picMax.Cursor = Cursors.Hand;
-            picMax.Location = new Point(930, 3);
+            picMax.Location = new Point(905, 2);
             picMax.Name = "picMax";
             picMax.Size = new Size(25, 25);
             picMax.TabIndex = 39;
@@ -1209,6 +1237,7 @@
             ((System.ComponentModel.ISupportInitialize)picPFP).EndInit();
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMax).EndInit();
             ResumeLayout(false);
@@ -1287,5 +1316,6 @@
         private Button btnAnalytics;
         private Button btnManage;
         private Button btnDetails;
+        private PictureBox picClose;
     }
 }

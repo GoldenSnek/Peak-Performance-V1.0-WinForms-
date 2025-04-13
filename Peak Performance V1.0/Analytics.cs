@@ -24,11 +24,14 @@ namespace Peak_Performance_V1._0
         int TotalProviders = 0;
         int TotalClients = 0;
         int TotalVehicles = 0;
+
         public Analytics()
         {
             connection = SystemManager.GetConnection();
             InitializeComponent();
-
+        }
+        private void Analytics_Load(object sender, EventArgs e)
+        {
             GetTotalUserCount();
             GetTotalVehicleCount();
 
@@ -39,15 +42,12 @@ namespace Peak_Performance_V1._0
 
         public void GetTotalUserCount()
         {
-
             string query = "SELECT Role, COUNT(*) AS RoleCount FROM Users GROUP BY Role";
-
             using (OleDbCommand cmd = new OleDbCommand(query, connection))
             {
                 try
                 {
                     connection.Open();
-
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -66,7 +66,10 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 finally
                 {
@@ -76,8 +79,6 @@ namespace Peak_Performance_V1._0
         }
         public (int[], int[]) GetTotalVehicleCount()
         {
-            // Initializing arrays with a large enough size, 
-            // you can dynamically adjust this based on actual data if needed
             int[] ownerIds = new int[100];
             int[] vehicleCounts = new int[100];
             int index = 0;
@@ -92,7 +93,7 @@ namespace Peak_Performance_V1._0
                     {
                         while (reader.Read())
                         {
-                            if (index >= ownerIds.Length) // Expand array if needed (optional)
+                            if (index >= ownerIds.Length)
                             {
                                 Array.Resize(ref ownerIds, ownerIds.Length * 2);
                                 Array.Resize(ref vehicleCounts, vehicleCounts.Length * 2);
@@ -106,23 +107,22 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 finally
                 {
                     connection.Close();
                 }
             }
-
-            // Return only the populated portion of the arrays
             return (ownerIds.Take(index).ToArray(), vehicleCounts.Take(index).ToArray());
         }
 
         public void ShowUserChart()
         {
             var model = new PlotModel { Title = "User Roles", TitleFontSize = 14 };
-
-            // Y-Axis (Categories: All Users, Vehicle Providers, Clients)
             var categoryAxis = new CategoryAxis
             {
                 Position = AxisPosition.Left,
@@ -130,8 +130,6 @@ namespace Peak_Performance_V1._0
                 ItemsSource = new[] { "All Users", "Vehicle Providers", "Clients" }
             };
             model.Axes.Add(categoryAxis);
-
-            // X-Axis (Count)
             var valueAxis = new LinearAxis
             {
                 Position = AxisPosition.Bottom,
@@ -139,22 +137,17 @@ namespace Peak_Performance_V1._0
                 Title = "Count"
             };
             model.Axes.Add(valueAxis);
-
-            // BarSeries with custom bar colors
             var barSeries = new BarSeries
             {
                 LabelPlacement = LabelPlacement.Inside,
                 LabelFormatString = "{0}"
             };
 
-            // Add bars with individual colors
-            barSeries.Items.Add(new BarItem { Value = TotalUsers, Color = OxyColors.SteelBlue });         // All Users
-            barSeries.Items.Add(new BarItem { Value = TotalProviders, Color = OxyColors.Teal });          // Providers
-            barSeries.Items.Add(new BarItem { Value = TotalClients, Color = OxyColors.MediumPurple });    // Clients
+            barSeries.Items.Add(new BarItem { Value = TotalUsers, Color = OxyColors.SteelBlue });
+            barSeries.Items.Add(new BarItem { Value = TotalProviders, Color = OxyColors.Teal });
+            barSeries.Items.Add(new BarItem { Value = TotalClients, Color = OxyColors.MediumPurple });
 
             model.Series.Add(barSeries);
-
-            // Assign model to PlotView
             plotView1.Model = model;
         }
 
@@ -164,7 +157,6 @@ namespace Peak_Performance_V1._0
 
             var model = new PlotModel { Title = "Vehicles Owned per User", TitleFontSize = 14 };
 
-            // Y-Axis (Owner IDs)
             var categoryAxis = new CategoryAxis
             {
                 Position = AxisPosition.Left,
@@ -173,8 +165,6 @@ namespace Peak_Performance_V1._0
                 Title = "Users"
             };
             model.Axes.Add(categoryAxis);
-
-            // X-Axis (Vehicle Count)
             var valueAxis = new LinearAxis
             {
                 Position = AxisPosition.Bottom,
@@ -182,8 +172,6 @@ namespace Peak_Performance_V1._0
                 Title = "Vehicles Owned"
             };
             model.Axes.Add(valueAxis);
-
-            // BarSeries
             var barSeries = new BarSeries
             {
                 LabelPlacement = LabelPlacement.Inside,
@@ -205,27 +193,21 @@ namespace Peak_Performance_V1._0
                 else if (counter == 4)
                     barItem.Color = OxyColors.Purple;
 
-                // Add the BarItem to the BarSeries
                 barSeries.Items.Add(barItem);
 
-                // Increment the counter and wrap it back to 0 after 5
                 counter = (counter + 1) % 5;
             }
 
             model.Series.Add(barSeries);
-
-            // Assign to PlotView2
             plotView2.Model = model;
         }
 
         public (int[], double[]) GetTotalRevenuePerUser()
         {
-            // Arrays to store UserID and corresponding total revenue
             int[] userIds = new int[100];
             double[] totalRevenue = new double[100];
             int index = 0;
 
-            // Query to get the total revenue for each user from the Users table
             string query = "SELECT UserID, TotalRevenue FROM Users WHERE UserID <> 0";
 
             using (OleDbCommand cmd = new OleDbCommand(query, connection))
@@ -237,7 +219,7 @@ namespace Peak_Performance_V1._0
                     {
                         while (reader.Read())
                         {
-                            if (index >= userIds.Length) // Expand array if needed (optional)
+                            if (index >= userIds.Length)
                             {
                                 Array.Resize(ref userIds, userIds.Length * 2);
                                 Array.Resize(ref totalRevenue, totalRevenue.Length * 2);
@@ -251,15 +233,16 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 finally
                 {
                     connection.Close();
                 }
             }
-
-            // Return only the populated portion of the arrays
             return (userIds.Take(index).ToArray(), totalRevenue.Take(index).ToArray());
         }
 
@@ -269,7 +252,6 @@ namespace Peak_Performance_V1._0
 
             var model = new PlotModel { Title = "Total Revenue per User", TitleFontSize = 14 };
 
-            // X-Axis (Revenue)
             var valueAxis = new LinearAxis
             {
                 Position = AxisPosition.Bottom,
@@ -277,8 +259,6 @@ namespace Peak_Performance_V1._0
                 Title = "Total Revenue"
             };
             model.Axes.Add(valueAxis);
-
-            // Y-Axis (User IDs - Category Axis)
             var categoryAxis = new CategoryAxis
             {
                 Position = AxisPosition.Left,
@@ -287,37 +267,26 @@ namespace Peak_Performance_V1._0
                 Title = "Users"
             };
             model.Axes.Add(categoryAxis);
-
-            // BarSeries (Vertical)
             var barSeries = new BarSeries
             {
                 LabelPlacement = LabelPlacement.Inside,
-                LabelFormatString = "₱{0:N2}",  // Format as PHP (Philippine Peso)
+                LabelFormatString = "₱{0:N2}",
             };
-
-            // Define an array of colors to cycle through
             var colors = new[] { OxyColors.Red, OxyColors.Green, OxyColors.Blue, OxyColors.Yellow, OxyColors.Purple };
-            int counter = 0;  // Counter to cycle through the colors
+            int counter = 0;
 
-            // Add bar items based on total revenue for each user
             for (int i = 0; i < totalRevenue.Length; i++)
             {
-                // Create a BarItem and set the color based on the counter
                 var barItem = new BarItem { Value = totalRevenue[i] };
 
-                // Assign color based on counter value
                 barItem.Color = colors[counter];
 
-                // Increment counter and cycle back after 5 colors
                 counter = (counter + 1) % colors.Length;
 
-                // Add the barItem to the BarSeries
                 barSeries.Items.Add(barItem);
             }
 
             model.Series.Add(barSeries);
-
-            // Assign to PlotView3
             plotView3.Model = model;
         }
     }

@@ -51,7 +51,10 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading comments: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error loading comments: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 finally
                 {
@@ -72,14 +75,14 @@ namespace Peak_Performance_V1._0
             // Username Label
             Label lblUser = new Label();
             lblUser.Text = username + " • " + date.ToShortDateString();
-            lblUser.Font = new Font("Arial Rounded MT", 10, FontStyle.Bold);
+            lblUser.Font = new Font("Arial Rounded MT", 11, FontStyle.Bold);
             lblUser.AutoSize = true;
             lblUser.Location = new Point(10, 10);
 
             // Comment Label
             Label lblComment = new Label();
             lblComment.Text = comment;
-            lblComment.Font = new Font("Cascadia Code", 9);
+            lblComment.Font = new Font("Cascadia Code", 10);
             lblComment.MaximumSize = new Size(panel.Width - 20, 0);
             lblComment.AutoSize = true;
             lblComment.Location = new Point(10, 30);

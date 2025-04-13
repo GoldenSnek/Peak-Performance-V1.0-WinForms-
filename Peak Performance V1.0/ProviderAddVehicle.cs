@@ -120,37 +120,58 @@ namespace Peak_Performance_V1._0
                 string.IsNullOrWhiteSpace(tempYear) || string.IsNullOrWhiteSpace(transmission) || string.IsNullOrWhiteSpace(drivetrain) || string.IsNullOrWhiteSpace(licensePlate) || string.IsNullOrWhiteSpace(color) ||
                 string.IsNullOrWhiteSpace(fuelType) || string.IsNullOrWhiteSpace(tempSeats) || string.IsNullOrWhiteSpace(tempMileage) || string.IsNullOrWhiteSpace(tempPriceDaily) || string.IsNullOrWhiteSpace(tempPriceDaily)) //step 1: check if fields are empty
             {
-                MessageBox.Show("Please fill in all the details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using (ErrorMessage errorForm = new ErrorMessage($"Please fill in all the details."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             else if (string.IsNullOrWhiteSpace(imagePath)) //step 2: check if image is uploaded
             {
-                MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Please upload an image."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             else if (!int.TryParse(tempYear, out year) || year < 1900 || year > 2025) //step 3: validate year
             {
-                MessageBox.Show("Invalid year.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Invalid year."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             else if (!int.TryParse(tempSeats, out seats) || seats < 1 || seats > 50) //step 4: validate seats
             {
-                MessageBox.Show("Invalid number of seats.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Invalid number of seats."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
-            else if (!double.TryParse(tempMileage, out mileage) || mileage < 0 || mileage > 9999999999) //step 5: validate mileage
+            else if (!double.TryParse(tempMileage, out mileage) || mileage < 0 || mileage > 999999999) //step 5: validate mileage
             {
-                MessageBox.Show("Invalid mileage.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Invalid mileage."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             else if (!double.TryParse(tempPriceDaily, out priceDaily) || priceDaily < 100 || priceDaily > 100000) //step 6: validate daily price
             {
-                MessageBox.Show("Daily price must be between 100 Php and 100,000 Php.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Daily price must be between ₱100 and ₱100,000."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             else if (!double.TryParse(tempPriceHourly, out priceHourly) || priceHourly < 10 || priceHourly > 10000) //step 7: validate hourly price
             {
-                MessageBox.Show("Hourly price must be between 10 Php and 10,000 Php.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Hourly price must be between ₱10 and ₱10,000."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
 

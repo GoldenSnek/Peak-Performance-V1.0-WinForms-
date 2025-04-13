@@ -35,14 +35,18 @@
             panel3 = new Panel();
             plotView3 = new OxyPlot.WindowsForms.PlotView();
             pictureBox1 = new PictureBox();
+            lblTitle = new Label();
+            panel14 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel14.SuspendLayout();
             SuspendLayout();
             // 
             // plotView1
             // 
+            plotView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             plotView1.BackColor = Color.Lavender;
             plotView1.ForeColor = Color.Lavender;
             plotView1.Location = new Point(5, 5);
@@ -57,28 +61,29 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.None;
+            panel1.Anchor = AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(255, 128, 0);
             panel1.Controls.Add(plotView1);
             panel1.ForeColor = Color.Black;
-            panel1.Location = new Point(53, 94);
+            panel1.Location = new Point(61, 94);
             panel1.Name = "panel1";
             panel1.Size = new Size(360, 260);
             panel1.TabIndex = 12;
             // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.None;
+            panel2.Anchor = AnchorStyles.Left;
             panel2.BackColor = Color.FromArgb(255, 128, 0);
             panel2.Controls.Add(plotView2);
             panel2.ForeColor = Color.Black;
-            panel2.Location = new Point(53, 401);
+            panel2.Location = new Point(61, 401);
             panel2.Name = "panel2";
             panel2.Size = new Size(360, 260);
             panel2.TabIndex = 13;
             // 
             // plotView2
             // 
+            plotView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             plotView2.BackColor = Color.Lavender;
             plotView2.ForeColor = Color.Lavender;
             plotView2.Location = new Point(5, 5);
@@ -93,17 +98,18 @@
             // 
             // panel3
             // 
-            panel3.Anchor = AnchorStyles.None;
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.FromArgb(255, 128, 0);
             panel3.Controls.Add(plotView3);
             panel3.ForeColor = Color.Black;
-            panel3.Location = new Point(521, 94);
+            panel3.Location = new Point(529, 94);
             panel3.Name = "panel3";
             panel3.Size = new Size(360, 567);
             panel3.TabIndex = 13;
             // 
             // plotView3
             // 
+            plotView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             plotView3.BackColor = Color.Lavender;
             plotView3.ForeColor = Color.Lavender;
             plotView3.Location = new Point(5, 5);
@@ -128,12 +134,36 @@
             pictureBox1.TabIndex = 56;
             pictureBox1.TabStop = false;
             // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Copperplate Gothic Bold", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.FromArgb(255, 128, 0);
+            lblTitle.Location = new Point(3, 4);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(958, 41);
+            lblTitle.TabIndex = 57;
+            lblTitle.Text = "Analytics";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.FromArgb(35, 40, 60);
+            panel14.Controls.Add(lblTitle);
+            panel14.Dock = DockStyle.Top;
+            panel14.Location = new Point(0, 0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(964, 50);
+            panel14.TabIndex = 58;
+            // 
             // Analytics
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(35, 40, 50);
             ClientSize = new Size(964, 704);
+            Controls.Add(panel14);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -142,10 +172,12 @@
             Name = "Analytics";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProviderViewRental";
+            Load += Analytics_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel14.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -157,5 +189,7 @@
         private Panel panel3;
         private OxyPlot.WindowsForms.PlotView plotView3;
         private PictureBox pictureBox1;
+        private Label lblTitle;
+        private Panel panel14;
     }
 }

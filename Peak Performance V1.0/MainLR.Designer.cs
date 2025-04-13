@@ -29,23 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainLR));
             lblGoToR = new Label();
             lblGoToL = new Label();
             picClose = new PictureBox();
             pictureBox1 = new PictureBox();
-            tmrGauge = new System.Windows.Forms.Timer(components);
             tmrFadeIn = new System.Windows.Forms.Timer(components);
             btnAbout = new ReaLTaiizor.Controls.CyberButton();
             lblMainTitle = new Label();
-            Gauge = new ReaLTaiizor.Controls.ParrotGauge();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            picCar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
             SuspendLayout();
             // 
             // lblGoToR
@@ -96,17 +90,11 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.SteeringWheel2;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(320, 190);
+            pictureBox1.Location = new Point(319, 177);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(34, 31);
             pictureBox1.TabIndex = 35;
             pictureBox1.TabStop = false;
-            // 
-            // tmrGauge
-            // 
-            tmrGauge.Enabled = true;
-            tmrGauge.Interval = 1000;
-            tmrGauge.Tick += tmrGauge_Tick;
             // 
             // tmrFadeIn
             // 
@@ -140,7 +128,7 @@
             btnAbout.Lighting = false;
             btnAbout.LinearGradient_Background = false;
             btnAbout.LinearGradientPen = false;
-            btnAbout.Location = new Point(189, 301);
+            btnAbout.Location = new Point(188, 288);
             btnAbout.Name = "btnAbout";
             btnAbout.PenWidth = 15;
             btnAbout.RGB = true;
@@ -162,91 +150,24 @@
             lblMainTitle.BackColor = Color.Transparent;
             lblMainTitle.Font = new Font("Copperplate Gothic Bold", 36F);
             lblMainTitle.ForeColor = Color.Silver;
-            lblMainTitle.Location = new Point(34, 177);
+            lblMainTitle.Location = new Point(33, 164);
             lblMainTitle.Name = "lblMainTitle";
             lblMainTitle.Size = new Size(538, 106);
             lblMainTitle.TabIndex = 1;
             lblMainTitle.Text = "Peak Performance\r\nVehicle Rentals";
             lblMainTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Gauge
+            // picCar
             // 
-            Gauge.BackColor = Color.Transparent;
-            Gauge.BarColor = (List<Color>)resources.GetObject("Gauge.BarColor");
-            Gauge.ConsumptionColor = Color.Black;
-            Gauge.DialColor = Color.White;
-            Gauge.DialThickness = 5;
-            Gauge.FilledColor = Color.White;
-            Gauge.GaugeStyle = ReaLTaiizor.Controls.ParrotGauge.Style.Standard;
-            Gauge.Location = new Point(135, 114);
-            Gauge.Name = "Gauge";
-            Gauge.Percentage = 10;
-            Gauge.Size = new Size(133, 60);
-            Gauge.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            Gauge.TabIndex = 34;
-            Gauge.Text = "parrotGauge1";
-            Gauge.Thickness = 8;
-            Gauge.UnfilledColor = Color.Gray;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Silver;
-            label1.Location = new Point(274, 163);
-            label1.Name = "label1";
-            label1.Size = new Size(28, 14);
-            label1.TabIndex = 40;
-            label1.Text = "400";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Silver;
-            label2.Location = new Point(124, 163);
-            label2.Name = "label2";
-            label2.Size = new Size(14, 14);
-            label2.TabIndex = 41;
-            label2.Text = "0";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Silver;
-            label3.Location = new Point(132, 122);
-            label3.Name = "label3";
-            label3.Size = new Size(28, 14);
-            label3.TabIndex = 42;
-            label3.Text = "100";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Silver;
-            label4.Location = new Point(186, 90);
-            label4.Name = "label4";
-            label4.Size = new Size(28, 14);
-            label4.TabIndex = 43;
-            label4.Text = "200";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Unispace", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Silver;
-            label5.Location = new Point(250, 122);
-            label5.Name = "label5";
-            label5.Size = new Size(28, 14);
-            label5.TabIndex = 44;
-            label5.Text = "300";
+            picCar.Anchor = AnchorStyles.None;
+            picCar.BackColor = Color.Transparent;
+            picCar.Image = Properties.Resources.OrangeMustang;
+            picCar.Location = new Point(169, 24);
+            picCar.Name = "picCar";
+            picCar.Size = new Size(250, 175);
+            picCar.SizeMode = PictureBoxSizeMode.StretchImage;
+            picCar.TabIndex = 50;
+            picCar.TabStop = false;
             // 
             // MainLR
             // 
@@ -255,18 +176,13 @@
             BackgroundImage = Properties.Resources.LRNew2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(600, 600);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(btnAbout);
             Controls.Add(picClose);
             Controls.Add(lblGoToL);
             Controls.Add(lblGoToR);
             Controls.Add(lblMainTitle);
-            Controls.Add(Gauge);
+            Controls.Add(picCar);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainLR";
@@ -276,6 +192,7 @@
             Load += MainLR_Load;
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,15 +202,9 @@
         private Label lblGoToL;
         private PictureBox picClose;
         private PictureBox pictureBox1;
-        private System.Windows.Forms.Timer tmrGauge;
         private System.Windows.Forms.Timer tmrFadeIn;
         private ReaLTaiizor.Controls.CyberButton btnAbout;
         private Label lblMainTitle;
-        private ReaLTaiizor.Controls.ParrotGauge Gauge;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private PictureBox picCar;
     }
 }

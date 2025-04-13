@@ -34,7 +34,6 @@
             lblLoading = new Label();
             picSplash2 = new PictureBox();
             ProgressBar = new ReaLTaiizor.Controls.AloneProgressBar();
-            cyberProgressBar = new ReaLTaiizor.Controls.CyberProgressBar();
             ((System.ComponentModel.ISupportInitialize)picSplash1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSplash2).BeginInit();
             SuspendLayout();
@@ -70,9 +69,9 @@
             // 
             picSplash2.BackgroundImageLayout = ImageLayout.Stretch;
             picSplash2.Image = Properties.Resources.Dawn;
-            picSplash2.Location = new Point(40, 93);
+            picSplash2.Location = new Point(40, 129);
             picSplash2.Name = "picSplash2";
-            picSplash2.Size = new Size(521, 302);
+            picSplash2.Size = new Size(521, 240);
             picSplash2.SizeMode = PictureBoxSizeMode.StretchImage;
             picSplash2.TabIndex = 53;
             picSplash2.TabStop = false;
@@ -93,50 +92,6 @@
             ProgressBar.Text = "aloneProgressBar1";
             ProgressBar.Value = 0;
             // 
-            // cyberProgressBar
-            // 
-            cyberProgressBar.Alpha = 50;
-            cyberProgressBar.BackColor = Color.Transparent;
-            cyberProgressBar.Background = true;
-            cyberProgressBar.Background_WidthPen = 3F;
-            cyberProgressBar.BackgroundPen = true;
-            cyberProgressBar.ColorBackground = Color.Black;
-            cyberProgressBar.ColorBackground_1 = Color.Black;
-            cyberProgressBar.ColorBackground_2 = Color.Black;
-            cyberProgressBar.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            cyberProgressBar.ColorBackground_Value_1 = Color.FromArgb(28, 200, 238);
-            cyberProgressBar.ColorBackground_Value_2 = Color.Black;
-            cyberProgressBar.ColorLighting = Color.FromArgb(29, 200, 238);
-            cyberProgressBar.ColorPen_1 = Color.Black;
-            cyberProgressBar.ColorPen_2 = Color.Black;
-            cyberProgressBar.ColorProgressBar = Color.FromArgb(29, 200, 238);
-            cyberProgressBar.ColorValue_Transparency = 200;
-            cyberProgressBar.CyberProgressBarStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberProgressBar.Font = new Font("Arial", 11F);
-            cyberProgressBar.ForeColor = Color.FromArgb(245, 245, 245);
-            cyberProgressBar.Lighting = false;
-            cyberProgressBar.LinearGradient_Background = false;
-            cyberProgressBar.LinearGradient_Value = false;
-            cyberProgressBar.LinearGradientPen = false;
-            cyberProgressBar.Location = new Point(29, 82);
-            cyberProgressBar.Maximum = 100;
-            cyberProgressBar.Minimum = 0;
-            cyberProgressBar.Name = "cyberProgressBar";
-            cyberProgressBar.PenWidth = 10;
-            cyberProgressBar.ProgressText = true;
-            cyberProgressBar.RGB = true;
-            cyberProgressBar.Rounding = true;
-            cyberProgressBar.RoundingInt = 0;
-            cyberProgressBar.Size = new Size(541, 322);
-            cyberProgressBar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberProgressBar.StartDrawingValue = 0;
-            cyberProgressBar.TabIndex = 52;
-            cyberProgressBar.Tag = "Cyber";
-            cyberProgressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberProgressBar.Timer_RGB = 10;
-            cyberProgressBar.Value = 0;
-            cyberProgressBar.Visible = false;
-            // 
             // SplashLoading
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -147,7 +102,6 @@
             Controls.Add(lblLoading);
             Controls.Add(picSplash2);
             Controls.Add(picSplash1);
-            Controls.Add(cyberProgressBar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SplashLoading";
             StartPosition = FormStartPosition.CenterScreen;
@@ -165,6 +119,5 @@
         private Label lblLoading;
         private PictureBox picSplash2;
         private ReaLTaiizor.Controls.AloneProgressBar ProgressBar;
-        private ReaLTaiizor.Controls.CyberProgressBar cyberProgressBar;
     }
 }

@@ -19,20 +19,24 @@ namespace Peak_Performance_V1._0
         public LocationTracker()
         {
             InitializeComponent();
+            tmrFadeIn.Start();
         }
 
         private async void LocationTracker_Load(object sender, EventArgs e)
         {
-            //webViewMap = new WebView2
-            //{
-            //    Dock = DockStyle.Fill
-            //};
-            //this.Controls.Add(webViewMap);
-
             await webViewMap.EnsureCoreWebView2Async();
 
-            // 🔁 Replace this with your own live location Google Maps link
-            webViewMap.Source = new Uri("https://maps.app.goo.gl/jNpyhjBnbCkXFWkLA");
+            try
+            {
+                webViewMap.Source = new Uri("https://maps.app.goo.gl/jNpyhjBnbCkXFWkLA");
+            }
+            catch (Exception ex)
+            {
+                using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                {
+                    errorForm.ShowDialog();
+                }
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -60,6 +64,13 @@ namespace Peak_Performance_V1._0
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        {
+            Opacity += 0.1;
+            if (Opacity >= 1)
+                tmrFadeIn.Stop();
         }
     }
 }

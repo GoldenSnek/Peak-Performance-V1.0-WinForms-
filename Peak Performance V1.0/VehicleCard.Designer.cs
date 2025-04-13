@@ -288,6 +288,7 @@
             // btnProceed
             // 
             btnProceed.BackColor = Color.Transparent;
+            btnProceed.Cursor = Cursors.Hand;
             btnProceed.FlatAppearance.BorderColor = Color.Green;
             btnProceed.FlatAppearance.MouseDownBackColor = Color.Green;
             btnProceed.FlatAppearance.MouseOverBackColor = Color.Green;
@@ -305,6 +306,7 @@
             // btnFullDetails
             // 
             btnFullDetails.BackColor = Color.Transparent;
+            btnFullDetails.Cursor = Cursors.Hand;
             btnFullDetails.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
             btnFullDetails.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0);
             btnFullDetails.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
@@ -324,6 +326,7 @@
             btnReject.BackColor = Color.Transparent;
             btnReject.BackgroundImage = Properties.Resources.Decline;
             btnReject.BackgroundImageLayout = ImageLayout.Zoom;
+            btnReject.Cursor = Cursors.Hand;
             btnReject.FlatAppearance.BorderColor = Color.Maroon;
             btnReject.FlatAppearance.MouseDownBackColor = Color.Maroon;
             btnReject.FlatAppearance.MouseOverBackColor = Color.Maroon;
@@ -342,6 +345,7 @@
             btnAccept.BackColor = Color.Transparent;
             btnAccept.BackgroundImage = Properties.Resources.Approve;
             btnAccept.BackgroundImageLayout = ImageLayout.Zoom;
+            btnAccept.Cursor = Cursors.Hand;
             btnAccept.FlatAppearance.BorderColor = Color.Green;
             btnAccept.FlatAppearance.MouseDownBackColor = Color.Green;
             btnAccept.FlatAppearance.MouseOverBackColor = Color.Green;

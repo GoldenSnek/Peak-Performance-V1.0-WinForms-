@@ -28,17 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlTop = new Panel();
             btnRefresh = new Button();
             picBack = new PictureBox();
+            picCar = new PictureBox();
             lblDay = new Label();
             picMin = new PictureBox();
             lblTime = new Label();
             lblDate = new Label();
             picMax = new PictureBox();
             lblPrompt = new Label();
+            lostSeparator1 = new ReaLTaiizor.Controls.LostSeparator();
+            lostSeparator2 = new ReaLTaiizor.Controls.LostSeparator();
+            btnOkay = new Button();
+            tmrFadeIn = new System.Windows.Forms.Timer(components);
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMax).BeginInit();
             SuspendLayout();
@@ -48,6 +55,7 @@
             pnlTop.BackColor = Color.FromArgb(255, 128, 0);
             pnlTop.Controls.Add(btnRefresh);
             pnlTop.Controls.Add(picBack);
+            pnlTop.Controls.Add(picCar);
             pnlTop.Controls.Add(lblDay);
             pnlTop.Controls.Add(picMin);
             pnlTop.Controls.Add(lblTime);
@@ -89,6 +97,18 @@
             picBack.TabIndex = 41;
             picBack.TabStop = false;
             picBack.Click += picBack_Click;
+            // 
+            // picCar
+            // 
+            picCar.Anchor = AnchorStyles.None;
+            picCar.BackColor = Color.Transparent;
+            picCar.Image = Properties.Resources.OrangeMustang;
+            picCar.Location = new Point(3, -15);
+            picCar.Name = "picCar";
+            picCar.Size = new Size(74, 59);
+            picCar.SizeMode = PictureBoxSizeMode.StretchImage;
+            picCar.TabIndex = 63;
+            picCar.TabStop = false;
             // 
             // lblDay
             // 
@@ -164,26 +184,78 @@
             lblPrompt.FlatStyle = FlatStyle.Flat;
             lblPrompt.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPrompt.ForeColor = Color.Black;
-            lblPrompt.Location = new Point(12, 44);
+            lblPrompt.Location = new Point(12, 60);
             lblPrompt.Name = "lblPrompt";
-            lblPrompt.Size = new Size(326, 116);
+            lblPrompt.Size = new Size(326, 84);
             lblPrompt.TabIndex = 62;
             lblPrompt.Text = "hello";
             lblPrompt.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lostSeparator1
+            // 
+            lostSeparator1.BackColor = SystemColors.Control;
+            lostSeparator1.ForeColor = Color.FromArgb(255, 128, 0);
+            lostSeparator1.Horizontal = true;
+            lostSeparator1.Location = new Point(12, 173);
+            lostSeparator1.Name = "lostSeparator1";
+            lostSeparator1.Size = new Size(326, 23);
+            lostSeparator1.TabIndex = 63;
+            lostSeparator1.Text = "lostSeparator1";
+            // 
+            // lostSeparator2
+            // 
+            lostSeparator2.BackColor = SystemColors.Control;
+            lostSeparator2.ForeColor = Color.FromArgb(255, 128, 0);
+            lostSeparator2.Horizontal = true;
+            lostSeparator2.Location = new Point(12, 34);
+            lostSeparator2.Name = "lostSeparator2";
+            lostSeparator2.Size = new Size(326, 23);
+            lostSeparator2.TabIndex = 64;
+            lostSeparator2.Text = "lostSeparator2";
+            // 
+            // btnOkay
+            // 
+            btnOkay.Anchor = AnchorStyles.Bottom;
+            btnOkay.BackColor = Color.Transparent;
+            btnOkay.Cursor = Cursors.Hand;
+            btnOkay.FlatAppearance.BorderColor = Color.Green;
+            btnOkay.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnOkay.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnOkay.FlatStyle = FlatStyle.Flat;
+            btnOkay.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnOkay.ForeColor = Color.Black;
+            btnOkay.Location = new Point(129, 147);
+            btnOkay.Name = "btnOkay";
+            btnOkay.Size = new Size(89, 33);
+            btnOkay.TabIndex = 74;
+            btnOkay.Text = "Okay";
+            btnOkay.UseVisualStyleBackColor = false;
+            btnOkay.Click += picBack_Click;
+            // 
+            // tmrFadeIn
+            // 
+            tmrFadeIn.Interval = 10;
+            tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
             // ErrorMessage
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(350, 200);
+            Controls.Add(btnOkay);
+            Controls.Add(lostSeparator2);
+            Controls.Add(lostSeparator1);
             Controls.Add(lblPrompt);
             Controls.Add(pnlTop);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ErrorMessage";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "ErrorMessage";
+            Load += ErrorMessage_Load;
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picBack).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMax).EndInit();
             ResumeLayout(false);
@@ -200,5 +272,10 @@
         private Label lblDate;
         private PictureBox picMax;
         private Label lblPrompt;
+        private PictureBox picCar;
+        private ReaLTaiizor.Controls.LostSeparator lostSeparator1;
+        private ReaLTaiizor.Controls.LostSeparator lostSeparator2;
+        private Button btnOkay;
+        private System.Windows.Forms.Timer tmrFadeIn;
     }
 }

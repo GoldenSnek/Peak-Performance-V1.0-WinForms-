@@ -13,9 +13,12 @@ namespace Peak_Performance_V1._0
 {
     public partial class ErrorMessage : Form
     {
-        public ErrorMessage()
+        string Prompt = null;
+        public ErrorMessage(string prompt)
         {
             InitializeComponent();
+            Prompt = prompt;
+            tmrFadeIn.Start();
         }
 
         private void picBack_Click(object sender, EventArgs e)
@@ -38,6 +41,18 @@ namespace Peak_Performance_V1._0
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+        private void ErrorMessage_Load(object sender, EventArgs e)
+        {
+            lblPrompt.Text = Prompt;
+        }
+
+        private void tmrFadeIn_Tick(object sender, EventArgs e)
+        {
+            Opacity += 0.1;
+            if (Opacity >= 1)
+                tmrFadeIn.Stop();
         }
     }
 }

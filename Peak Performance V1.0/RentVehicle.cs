@@ -191,11 +191,17 @@ namespace Peak_Performance_V1._0
                     cmd.ExecuteNonQuery();
                     connection.Close();
                     SystemManager.refresh = true;
-                    MessageBox.Show("Rental finalized successfully! Please proceed to payment.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Rental finalized successfully! Please proceed to payment."))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex}");
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
             }
 
@@ -213,7 +219,10 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex}");
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
             }
 

@@ -148,6 +148,7 @@
             // btnApply
             // 
             btnApply.BackColor = Color.Transparent;
+            btnApply.Cursor = Cursors.Hand;
             btnApply.FlatAppearance.BorderColor = Color.Green;
             btnApply.FlatAppearance.MouseDownBackColor = Color.Green;
             btnApply.FlatAppearance.MouseOverBackColor = Color.Green;
@@ -165,6 +166,7 @@
             // btnClear
             // 
             btnClear.BackColor = Color.Transparent;
+            btnClear.Cursor = Cursors.Hand;
             btnClear.FlatAppearance.BorderColor = Color.Cyan;
             btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
             btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;
@@ -193,6 +195,7 @@
             btnY4.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY4.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY4.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnY4.Cursor = Cursors.Hand;
             btnY4.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnY4.Effect_1 = true;
             btnY4.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -234,6 +237,7 @@
             btnY3.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY3.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY3.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnY3.Cursor = Cursors.Hand;
             btnY3.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnY3.Effect_1 = true;
             btnY3.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -275,6 +279,7 @@
             btnY2.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY2.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY2.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnY2.Cursor = Cursors.Hand;
             btnY2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnY2.Effect_1 = true;
             btnY2.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -316,6 +321,7 @@
             btnY1.ColorLighting = Color.FromArgb(29, 200, 238);
             btnY1.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnY1.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnY1.Cursor = Cursors.Hand;
             btnY1.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnY1.Effect_1 = true;
             btnY1.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -349,6 +355,7 @@
             toggleSort.BaseColor = Color.FromArgb(255, 128, 0);
             toggleSort.BaseOffColor = Color.FromArgb(30, 35, 45);
             toggleSort.BaseOnColor = Color.FromArgb(30, 35, 45);
+            toggleSort.Cursor = Cursors.Hand;
             toggleSort.Location = new Point(84, 492);
             toggleSort.Name = "toggleSort";
             toggleSort.Size = new Size(40, 20);
@@ -381,6 +388,7 @@
             btnS4.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS4.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS4.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnS4.Cursor = Cursors.Hand;
             btnS4.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnS4.Effect_1 = true;
             btnS4.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -422,6 +430,7 @@
             btnS3.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS3.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS3.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnS3.Cursor = Cursors.Hand;
             btnS3.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnS3.Effect_1 = true;
             btnS3.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -463,6 +472,7 @@
             btnS2.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS2.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS2.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnS2.Cursor = Cursors.Hand;
             btnS2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnS2.Effect_1 = true;
             btnS2.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -504,6 +514,7 @@
             btnS1.ColorLighting = Color.FromArgb(29, 200, 238);
             btnS1.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnS1.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnS1.Cursor = Cursors.Hand;
             btnS1.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnS1.Effect_1 = true;
             btnS1.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -546,6 +557,7 @@
             // 
             cbxSort.BaseColor = Color.FromArgb(255, 128, 0);
             cbxSort.BGColor = Color.FromArgb(30, 35, 45);
+            cbxSort.Cursor = Cursors.Hand;
             cbxSort.DrawMode = DrawMode.OwnerDrawFixed;
             cbxSort.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxSort.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -596,6 +608,7 @@
             btnAWD.ColorLighting = Color.FromArgb(29, 200, 238);
             btnAWD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnAWD.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnAWD.Cursor = Cursors.Hand;
             btnAWD.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnAWD.Effect_1 = true;
             btnAWD.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -637,6 +650,7 @@
             btn4WD.ColorLighting = Color.FromArgb(29, 200, 238);
             btn4WD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btn4WD.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btn4WD.Cursor = Cursors.Hand;
             btn4WD.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btn4WD.Effect_1 = true;
             btn4WD.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -678,6 +692,7 @@
             btnRWD.ColorLighting = Color.FromArgb(29, 200, 238);
             btnRWD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnRWD.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnRWD.Cursor = Cursors.Hand;
             btnRWD.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnRWD.Effect_1 = true;
             btnRWD.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -730,6 +745,7 @@
             btnFWD.ColorLighting = Color.FromArgb(29, 200, 238);
             btnFWD.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnFWD.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnFWD.Cursor = Cursors.Hand;
             btnFWD.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnFWD.Effect_1 = true;
             btnFWD.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -782,6 +798,7 @@
             btnAutomatic.ColorLighting = Color.FromArgb(29, 200, 238);
             btnAutomatic.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnAutomatic.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnAutomatic.Cursor = Cursors.Hand;
             btnAutomatic.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnAutomatic.Effect_1 = true;
             btnAutomatic.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -823,6 +840,7 @@
             btnManual.ColorLighting = Color.FromArgb(29, 200, 238);
             btnManual.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnManual.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnManual.Cursor = Cursors.Hand;
             btnManual.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnManual.Effect_1 = true;
             btnManual.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -886,6 +904,7 @@
             btnMotorcycle.ColorLighting = Color.FromArgb(29, 200, 238);
             btnMotorcycle.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnMotorcycle.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnMotorcycle.Cursor = Cursors.Hand;
             btnMotorcycle.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnMotorcycle.Effect_1 = true;
             btnMotorcycle.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -927,6 +946,7 @@
             btnCar.ColorLighting = Color.FromArgb(29, 200, 238);
             btnCar.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnCar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnCar.Cursor = Cursors.Hand;
             btnCar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             btnCar.Effect_1 = true;
             btnCar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
@@ -970,6 +990,7 @@
             txtSearch.BackColor = Color.Transparent;
             txtSearch.BaseColor = Color.FromArgb(30, 35, 45);
             txtSearch.BorderColor = Color.FromArgb(255, 128, 0);
+            txtSearch.Cursor = Cursors.Hand;
             txtSearch.FocusOnHover = false;
             txtSearch.Font = new Font("Arial Rounded MT Bold", 12F);
             txtSearch.ForeColor = Color.Lavender;

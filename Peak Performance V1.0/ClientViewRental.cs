@@ -260,7 +260,7 @@ namespace Peak_Performance_V1._0
                     }
 
                     lblUsername.Text = $"Username: {Username}";
-                    lblUserRating.Text = $"Rating: {UserRating.ToString()}";
+                    lblUserRating.Text = UserRating.ToString();
 
                     lblFullname.Text = $"Fullname: {FullName}";
                     lblAddress.Text = $"Address: {Address}";
@@ -313,7 +313,10 @@ namespace Peak_Performance_V1._0
 
                 if (rateStatus == "Yes")
                 {
-                    MessageBox.Show("You have already rated this vehicle.", "Rating Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Rating Not Allowed! You have already rated this vehicle."))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     connection.Close();
                     return;
                 }
@@ -375,7 +378,7 @@ namespace Peak_Performance_V1._0
             //attach event handlers for user rating stars
             for (int i = 0; i < userStars.Length; i++)
             {
-                userStars[i].Tag = i + 1; // Set tag for rating value
+                userStars[i].Tag = i + 1; //set tag for rating value
                 userStars[i].MouseEnter += UserStar_MouseEnter;
                 userStars[i].MouseLeave += UserStar_MouseLeave;
                 userStars[i].Click += UserStar_Click;
@@ -468,8 +471,10 @@ namespace Peak_Performance_V1._0
                 //check for internet connectivity first
                 if (!CheckForInternetConnection())
                 {
-                    MessageBox.Show("No internet connection detected. Please connect to the internet and try again.",
-                        "No Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    using (ErrorMessage errorForm = new ErrorMessage($"No internet connection detected. Please connect to the internet and try again."))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
 
@@ -477,8 +482,10 @@ namespace Peak_Performance_V1._0
                 string recipientEmail = ClientEmail;
                 if (!IsValidEmail(recipientEmail))
                 {
-                    MessageBox.Show("The recipient email address appears to be invalid. Please check and try again.",
-                        "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    using (ErrorMessage errorForm = new ErrorMessage($"The recipient email address appears to be invalid. Please check and try again."))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
 
@@ -562,8 +569,10 @@ namespace Peak_Performance_V1._0
                     }
                 }
 
-                MessageBox.Show("Receipt sent successfully!",
-                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (ErrorMessage errorForm = new ErrorMessage($"Receipt sent successfully!"))
+                {
+                    errorForm.ShowDialog();
+                }
             }
             catch (SmtpException ex)
             {
@@ -571,24 +580,32 @@ namespace Peak_Performance_V1._0
                 if (ex.StatusCode == SmtpStatusCode.MailboxBusy ||
                     ex.StatusCode == SmtpStatusCode.MailboxUnavailable)
                 {
-                    MessageBox.Show("The recipient's mailbox is unavailable or busy. Please try again later.",
-                        "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    using (ErrorMessage errorForm = new ErrorMessage($"The recipient's mailbox is unavailable or busy. Please try again later."))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 else if (ex.Message.Contains("Timeout"))
                 {
-                    MessageBox.Show("The email server took too long to respond. Please check your internet connection and try again.",
-                        "Timeout Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    using (ErrorMessage errorForm = new ErrorMessage($"The email server took too long to respond. Please check your internet connection and try again."))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"Email sending failed: {ex.Message}",
-                        "SMTP Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Email sending failed: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to send receipt: {ex.Message}",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using (ErrorMessage errorForm = new ErrorMessage($"Failed to send receipt: {ex.Message}"))
+                {
+                    errorForm.ShowDialog();
+                }
             }
             finally
             {
@@ -633,7 +650,10 @@ namespace Peak_Performance_V1._0
         {
             if (string.IsNullOrEmpty(txtFeedback.Text))
             {
-                MessageBox.Show("Please write a feedback before submitting");
+                using (ErrorMessage errorForm = new ErrorMessage($"Please write a feedback first!"))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
 
@@ -676,11 +696,17 @@ namespace Peak_Performance_V1._0
                         connection.Open();
                         cmd.ExecuteNonQuery();
                         connection.Close();
-                        MessageBox.Show("Feedback added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        using (ErrorMessage errorForm = new ErrorMessage($"Feedback added successfully!"))
+                        {
+                            errorForm.ShowDialog();
+                        }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error adding feedback: " + ex.Message);
+                        using (ErrorMessage errorForm = new ErrorMessage($"Error adding feedback: {ex.Message}"))
+                        {
+                            errorForm.ShowDialog();
+                        }
                         return;
                     }
                 }
@@ -699,11 +725,17 @@ namespace Peak_Performance_V1._0
                         connection.Open();
                         cmd.ExecuteNonQuery();
                         connection.Close();
-                        MessageBox.Show("Feedback updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        using (ErrorMessage errorForm = new ErrorMessage($"Feedback updated successfully!"))
+                        {
+                            errorForm.ShowDialog();
+                        }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error updating feedback: " + ex.Message);
+                        using (ErrorMessage errorForm = new ErrorMessage($"Error updating feedback: {ex.Message}"))
+                        {
+                            errorForm.ShowDialog();
+                        }
                         return;
                     }
                     finally

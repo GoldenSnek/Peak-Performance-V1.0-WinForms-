@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             lblAbout = new Label();
             picBack = new PictureBox();
             picClose = new PictureBox();
@@ -37,29 +38,26 @@
             picDiscord = new PictureBox();
             picGithub = new PictureBox();
             tmrFadeIn = new System.Windows.Forms.Timer(components);
-            picDrawCar = new PictureBox();
             picCar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picFB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picDiscord).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picGithub).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picDrawCar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCar).BeginInit();
             SuspendLayout();
             // 
             // lblAbout
             // 
-            lblAbout.AutoSize = true;
             lblAbout.BackColor = Color.Transparent;
             lblAbout.FlatStyle = FlatStyle.Flat;
             lblAbout.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAbout.ForeColor = Color.White;
-            lblAbout.Location = new Point(278, 320);
+            lblAbout.Location = new Point(101, 200);
             lblAbout.Name = "lblAbout";
-            lblAbout.Size = new Size(48, 17);
+            lblAbout.Size = new Size(408, 242);
             lblAbout.TabIndex = 2;
-            lblAbout.Text = "hello";
+            lblAbout.Text = resources.GetString("lblAbout.Text");
             lblAbout.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // picBack
@@ -144,18 +142,6 @@
             tmrFadeIn.Interval = 10;
             tmrFadeIn.Tick += tmrFadeIn_Tick;
             // 
-            // picDrawCar
-            // 
-            picDrawCar.Anchor = AnchorStyles.None;
-            picDrawCar.BackColor = Color.Transparent;
-            picDrawCar.Image = Properties.Resources.SportsCar;
-            picDrawCar.Location = new Point(492, 115);
-            picDrawCar.Name = "picDrawCar";
-            picDrawCar.Size = new Size(179, 195);
-            picDrawCar.SizeMode = PictureBoxSizeMode.StretchImage;
-            picDrawCar.TabIndex = 48;
-            picDrawCar.TabStop = false;
-            // 
             // picCar
             // 
             picCar.Anchor = AnchorStyles.None;
@@ -182,7 +168,6 @@
             Controls.Add(picBack);
             Controls.Add(picClose);
             Controls.Add(lblAbout);
-            Controls.Add(picDrawCar);
             Controls.Add(picCar);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
@@ -196,7 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)picFB).EndInit();
             ((System.ComponentModel.ISupportInitialize)picDiscord).EndInit();
             ((System.ComponentModel.ISupportInitialize)picGithub).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picDrawCar).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCar).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -212,7 +196,6 @@
         private PictureBox picDiscord;
         private PictureBox picGithub;
         private System.Windows.Forms.Timer tmrFadeIn;
-        private PictureBox picDrawCar;
         private PictureBox picCar;
     }
 }

@@ -31,8 +31,10 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvData = new DataGridView();
-            btnRemove = new ReaLTaiizor.Controls.MaterialButton();
+            pictureBox1 = new PictureBox();
+            btnRemove = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvData
@@ -55,6 +57,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvData.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(35, 40, 50);
             dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -73,27 +76,35 @@
             dgvData.Size = new Size(964, 600);
             dgvData.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Black;
+            pictureBox1.BackgroundImage = Properties.Resources.CarbonFiber;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(964, 704);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 56;
+            pictureBox1.TabStop = false;
+            // 
             // btnRemove
             // 
-            btnRemove.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnRemove.AutoSize = false;
-            btnRemove.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnRemove.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnRemove.Depth = 0;
-            btnRemove.HighEmphasis = true;
-            btnRemove.Icon = null;
-            btnRemove.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnRemove.Location = new Point(334, 635);
-            btnRemove.Margin = new Padding(4, 6, 4, 6);
-            btnRemove.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnRemove.Anchor = AnchorStyles.Bottom;
+            btnRemove.BackColor = Color.Transparent;
+            btnRemove.Cursor = Cursors.Hand;
+            btnRemove.FlatAppearance.BorderColor = Color.Green;
+            btnRemove.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnRemove.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnRemove.ForeColor = Color.Lavender;
+            btnRemove.Location = new Point(312, 629);
             btnRemove.Name = "btnRemove";
-            btnRemove.NoAccentTextColor = Color.Empty;
-            btnRemove.Size = new Size(297, 36);
-            btnRemove.TabIndex = 47;
+            btnRemove.Size = new Size(342, 45);
+            btnRemove.TabIndex = 73;
             btnRemove.Text = "Remove user and all their vehicles";
-            btnRemove.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnRemove.UseAccentColor = false;
-            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.UseVisualStyleBackColor = false;
             btnRemove.Click += btnRemove_Click;
             // 
             // AdminAllUsers
@@ -104,17 +115,20 @@
             ClientSize = new Size(964, 704);
             Controls.Add(btnRemove);
             Controls.Add(dgvData);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminAllUsers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminAllUsers";
             ((System.ComponentModel.ISupportInitialize)dgvData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dgvData;
-        private ReaLTaiizor.Controls.MaterialButton btnRemove;
+        private PictureBox pictureBox1;
+        private Button btnRemove;
     }
 }

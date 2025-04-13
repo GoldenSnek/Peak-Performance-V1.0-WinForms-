@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientViewRental));
             lblRentalDetails = new Label();
             lblCurrent = new Label();
-            btnReceipt = new ReaLTaiizor.Controls.MaterialButton();
             lblNotes = new Label();
             lblExtras = new Label();
             lblPayment = new Label();
@@ -79,17 +78,22 @@
             pnlDown = new Panel();
             pnlTop = new Panel();
             panel7 = new Panel();
+            btnFeedback = new Button();
             foreverTextBox1 = new ReaLTaiizor.Controls.ForeverTextBox();
             lblUserID = new ReaLTaiizor.Controls.ForeverTextBox();
             btnRate = new Button();
+            txtFeedback = new ReaLTaiizor.Controls.ForeverTextBox();
             pnlNoRent = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
             panel8 = new Panel();
-            btnFeedback = new Button();
-            txtFeedback = new ReaLTaiizor.Controls.ForeverTextBox();
+            lostSeparator1 = new ReaLTaiizor.Controls.LostSeparator();
+            lostSeparator2 = new ReaLTaiizor.Controls.LostSeparator();
+            lostSeparator3 = new ReaLTaiizor.Controls.LostSeparator();
+            btnReceipt = new Button();
+            pictureBox1 = new PictureBox();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picVehicleImage).BeginInit();
             parrotGradientPanel2.SuspendLayout();
@@ -109,6 +113,7 @@
             panel7.SuspendLayout();
             pnlNoRent.SuspendLayout();
             panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblRentalDetails
@@ -116,11 +121,11 @@
             lblRentalDetails.Anchor = AnchorStyles.None;
             lblRentalDetails.AutoSize = true;
             lblRentalDetails.BackColor = Color.Transparent;
-            lblRentalDetails.Font = new Font("Arial Rounded MT Bold", 12F);
-            lblRentalDetails.ForeColor = SystemColors.Control;
+            lblRentalDetails.Font = new Font("Copperplate Gothic Bold", 14.25F);
+            lblRentalDetails.ForeColor = Color.FromArgb(255, 128, 0);
             lblRentalDetails.Location = new Point(324, 190);
             lblRentalDetails.Name = "lblRentalDetails";
-            lblRentalDetails.Size = new Size(182, 18);
+            lblRentalDetails.Size = new Size(260, 21);
             lblRentalDetails.TabIndex = 7;
             lblRentalDetails.Text = "Vehicle Rental Details";
             // 
@@ -128,37 +133,14 @@
             // 
             lblCurrent.Anchor = AnchorStyles.None;
             lblCurrent.BackColor = Color.Transparent;
-            lblCurrent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCurrent.ForeColor = Color.White;
-            lblCurrent.Location = new Point(306, 9);
+            lblCurrent.Font = new Font("Copperplate Gothic Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCurrent.ForeColor = Color.FromArgb(255, 128, 0);
+            lblCurrent.Location = new Point(258, 9);
             lblCurrent.Name = "lblCurrent";
-            lblCurrent.Size = new Size(314, 30);
+            lblCurrent.Size = new Size(438, 30);
             lblCurrent.TabIndex = 8;
             lblCurrent.Text = "Currently renting";
             lblCurrent.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnReceipt
-            // 
-            btnReceipt.Anchor = AnchorStyles.None;
-            btnReceipt.AutoSize = false;
-            btnReceipt.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnReceipt.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnReceipt.Depth = 0;
-            btnReceipt.HighEmphasis = true;
-            btnReceipt.Icon = null;
-            btnReceipt.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnReceipt.Location = new Point(15, 647);
-            btnReceipt.Margin = new Padding(4, 6, 4, 6);
-            btnReceipt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnReceipt.Name = "btnReceipt";
-            btnReceipt.NoAccentTextColor = Color.Empty;
-            btnReceipt.Size = new Size(240, 36);
-            btnReceipt.TabIndex = 10;
-            btnReceipt.Text = "Send receipt to email address";
-            btnReceipt.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnReceipt.UseAccentColor = false;
-            btnReceipt.UseVisualStyleBackColor = true;
-            btnReceipt.Click += btnReceipt_Click;
             // 
             // lblNotes
             // 
@@ -214,7 +196,7 @@
             lblVehicleRating.BackColor = Color.Transparent;
             lblVehicleRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblVehicleRating.ForeColor = Color.White;
-            lblVehicleRating.Location = new Point(12, 540);
+            lblVehicleRating.Location = new Point(21, 540);
             lblVehicleRating.Name = "lblVehicleRating";
             lblVehicleRating.Size = new Size(200, 40);
             lblVehicleRating.TabIndex = 89;
@@ -256,7 +238,7 @@
             lblMileage.BackColor = Color.Transparent;
             lblMileage.Font = new Font("Arial Rounded MT Bold", 12F);
             lblMileage.ForeColor = Color.White;
-            lblMileage.Location = new Point(12, 490);
+            lblMileage.Location = new Point(21, 490);
             lblMileage.Name = "lblMileage";
             lblMileage.Size = new Size(200, 40);
             lblMileage.TabIndex = 85;
@@ -268,7 +250,7 @@
             lblSeats.BackColor = Color.Transparent;
             lblSeats.Font = new Font("Arial Rounded MT Bold", 12F);
             lblSeats.ForeColor = Color.White;
-            lblSeats.Location = new Point(12, 440);
+            lblSeats.Location = new Point(21, 440);
             lblSeats.Name = "lblSeats";
             lblSeats.Size = new Size(200, 40);
             lblSeats.TabIndex = 84;
@@ -280,7 +262,7 @@
             lblColor.BackColor = Color.Transparent;
             lblColor.Font = new Font("Arial Rounded MT Bold", 12F);
             lblColor.ForeColor = Color.White;
-            lblColor.Location = new Point(12, 343);
+            lblColor.Location = new Point(21, 343);
             lblColor.Name = "lblColor";
             lblColor.Size = new Size(200, 40);
             lblColor.TabIndex = 83;
@@ -292,7 +274,7 @@
             lblLicensePlate.BackColor = Color.Transparent;
             lblLicensePlate.Font = new Font("Arial Rounded MT Bold", 12F);
             lblLicensePlate.ForeColor = Color.White;
-            lblLicensePlate.Location = new Point(12, 293);
+            lblLicensePlate.Location = new Point(21, 293);
             lblLicensePlate.Name = "lblLicensePlate";
             lblLicensePlate.Size = new Size(200, 40);
             lblLicensePlate.TabIndex = 82;
@@ -304,7 +286,7 @@
             lblDrivetrain.BackColor = Color.Transparent;
             lblDrivetrain.Font = new Font("Arial Rounded MT Bold", 12F);
             lblDrivetrain.ForeColor = Color.White;
-            lblDrivetrain.Location = new Point(12, 241);
+            lblDrivetrain.Location = new Point(21, 241);
             lblDrivetrain.Name = "lblDrivetrain";
             lblDrivetrain.Size = new Size(200, 40);
             lblDrivetrain.TabIndex = 81;
@@ -316,7 +298,7 @@
             lblTransmission.BackColor = Color.Transparent;
             lblTransmission.Font = new Font("Arial Rounded MT Bold", 12F);
             lblTransmission.ForeColor = Color.White;
-            lblTransmission.Location = new Point(12, 190);
+            lblTransmission.Location = new Point(21, 190);
             lblTransmission.Name = "lblTransmission";
             lblTransmission.Size = new Size(200, 40);
             lblTransmission.TabIndex = 80;
@@ -328,7 +310,7 @@
             lblFuelType.BackColor = Color.Transparent;
             lblFuelType.Font = new Font("Arial Rounded MT Bold", 12F);
             lblFuelType.ForeColor = Color.White;
-            lblFuelType.Location = new Point(12, 391);
+            lblFuelType.Location = new Point(21, 391);
             lblFuelType.Name = "lblFuelType";
             lblFuelType.Size = new Size(200, 40);
             lblFuelType.TabIndex = 77;
@@ -442,11 +424,12 @@
             lblUserRating.BackColor = Color.Transparent;
             lblUserRating.Font = new Font("Arial Rounded MT Bold", 12F);
             lblUserRating.ForeColor = Color.White;
-            lblUserRating.Location = new Point(821, 122);
+            lblUserRating.Location = new Point(859, 122);
             lblUserRating.Name = "lblUserRating";
-            lblUserRating.Size = new Size(200, 40);
+            lblUserRating.Size = new Size(92, 25);
             lblUserRating.TabIndex = 67;
             lblUserRating.Text = "Rating";
+            lblUserRating.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblUsername
             // 
@@ -479,7 +462,7 @@
             lblTotalPrice.BackColor = Color.Transparent;
             lblTotalPrice.Font = new Font("Arial", 12F);
             lblTotalPrice.ForeColor = Color.FromArgb(192, 64, 0);
-            lblTotalPrice.Location = new Point(12, 580);
+            lblTotalPrice.Location = new Point(21, 580);
             lblTotalPrice.Name = "lblTotalPrice";
             lblTotalPrice.Size = new Size(145, 40);
             lblTotalPrice.TabIndex = 94;
@@ -490,6 +473,7 @@
             // 
             picUR1.Anchor = AnchorStyles.None;
             picUR1.BackColor = Color.Transparent;
+            picUR1.Cursor = Cursors.Hand;
             picUR1.Image = Properties.Resources.RateNo;
             picUR1.Location = new Point(157, 25);
             picUR1.Name = "picUR1";
@@ -502,6 +486,7 @@
             // 
             picUR2.Anchor = AnchorStyles.None;
             picUR2.BackColor = Color.Transparent;
+            picUR2.Cursor = Cursors.Hand;
             picUR2.Image = Properties.Resources.RateNo;
             picUR2.Location = new Point(188, 25);
             picUR2.Name = "picUR2";
@@ -514,6 +499,7 @@
             // 
             picUR3.Anchor = AnchorStyles.None;
             picUR3.BackColor = Color.Transparent;
+            picUR3.Cursor = Cursors.Hand;
             picUR3.Image = Properties.Resources.RateNo;
             picUR3.Location = new Point(219, 25);
             picUR3.Name = "picUR3";
@@ -526,6 +512,7 @@
             // 
             picUR4.Anchor = AnchorStyles.None;
             picUR4.BackColor = Color.Transparent;
+            picUR4.Cursor = Cursors.Hand;
             picUR4.Image = Properties.Resources.RateNo;
             picUR4.Location = new Point(250, 25);
             picUR4.Name = "picUR4";
@@ -538,6 +525,7 @@
             // 
             picUR5.Anchor = AnchorStyles.None;
             picUR5.BackColor = Color.Transparent;
+            picUR5.Cursor = Cursors.Hand;
             picUR5.Image = Properties.Resources.RateNo;
             picUR5.Location = new Point(281, 25);
             picUR5.Name = "picUR5";
@@ -550,6 +538,7 @@
             // 
             picVR5.Anchor = AnchorStyles.None;
             picVR5.BackColor = Color.Transparent;
+            picVR5.Cursor = Cursors.Hand;
             picVR5.Image = Properties.Resources.RateNo;
             picVR5.Location = new Point(281, 61);
             picVR5.Name = "picVR5";
@@ -562,6 +551,7 @@
             // 
             picVR4.Anchor = AnchorStyles.None;
             picVR4.BackColor = Color.Transparent;
+            picVR4.Cursor = Cursors.Hand;
             picVR4.Image = Properties.Resources.RateNo;
             picVR4.Location = new Point(250, 61);
             picVR4.Name = "picVR4";
@@ -574,6 +564,7 @@
             // 
             picVR3.Anchor = AnchorStyles.None;
             picVR3.BackColor = Color.Transparent;
+            picVR3.Cursor = Cursors.Hand;
             picVR3.Image = Properties.Resources.RateNo;
             picVR3.Location = new Point(219, 61);
             picVR3.Name = "picVR3";
@@ -586,6 +577,7 @@
             // 
             picVR2.Anchor = AnchorStyles.None;
             picVR2.BackColor = Color.Transparent;
+            picVR2.Cursor = Cursors.Hand;
             picVR2.Image = Properties.Resources.RateNo;
             picVR2.Location = new Point(188, 61);
             picVR2.Name = "picVR2";
@@ -598,6 +590,7 @@
             // 
             picVR1.Anchor = AnchorStyles.None;
             picVR1.BackColor = Color.Transparent;
+            picVR1.Cursor = Cursors.Hand;
             picVR1.Image = Properties.Resources.RateNo;
             picVR1.Location = new Point(157, 61);
             picVR1.Name = "picVR1";
@@ -614,7 +607,7 @@
             lblModel.ForeColor = Color.White;
             lblModel.Location = new Point(174, 74);
             lblModel.Name = "lblModel";
-            lblModel.Size = new Size(153, 50);
+            lblModel.Size = new Size(332, 50);
             lblModel.TabIndex = 110;
             lblModel.Text = "Model";
             lblModel.TextAlign = ContentAlignment.MiddleLeft;
@@ -627,7 +620,7 @@
             lblMake.ForeColor = Color.Lavender;
             lblMake.Location = new Point(174, 39);
             lblMake.Name = "lblMake";
-            lblMake.Size = new Size(153, 40);
+            lblMake.Size = new Size(332, 40);
             lblMake.TabIndex = 109;
             lblMake.Text = "Make";
             lblMake.TextAlign = ContentAlignment.MiddleLeft;
@@ -640,7 +633,7 @@
             lblType.ForeColor = Color.Silver;
             lblType.Location = new Point(177, 113);
             lblType.Name = "lblType";
-            lblType.Size = new Size(153, 50);
+            lblType.Size = new Size(329, 50);
             lblType.TabIndex = 108;
             lblType.Text = "Type";
             lblType.TextAlign = ContentAlignment.MiddleLeft;
@@ -661,8 +654,8 @@
             // 
             lblNoRent.Anchor = AnchorStyles.None;
             lblNoRent.BackColor = Color.Transparent;
-            lblNoRent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNoRent.ForeColor = Color.White;
+            lblNoRent.Font = new Font("Copperplate Gothic Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNoRent.ForeColor = Color.FromArgb(255, 128, 0);
             lblNoRent.Location = new Point(55, 49);
             lblNoRent.Name = "lblNoRent";
             lblNoRent.Size = new Size(844, 30);
@@ -748,6 +741,24 @@
             panel7.Size = new Size(662, 145);
             panel7.TabIndex = 56;
             // 
+            // btnFeedback
+            // 
+            btnFeedback.BackColor = Color.Transparent;
+            btnFeedback.Cursor = Cursors.Hand;
+            btnFeedback.FlatAppearance.BorderColor = Color.Cyan;
+            btnFeedback.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnFeedback.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnFeedback.FlatStyle = FlatStyle.Flat;
+            btnFeedback.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnFeedback.ForeColor = Color.Black;
+            btnFeedback.Location = new Point(167, 97);
+            btnFeedback.Name = "btnFeedback";
+            btnFeedback.Size = new Size(139, 30);
+            btnFeedback.TabIndex = 109;
+            btnFeedback.Text = "Submit Feedback";
+            btnFeedback.UseVisualStyleBackColor = false;
+            btnFeedback.Click += btnFeedback_Click;
+            // 
             // foreverTextBox1
             // 
             foreverTextBox1.BackColor = Color.Transparent;
@@ -791,6 +802,7 @@
             // btnRate
             // 
             btnRate.BackColor = Color.Transparent;
+            btnRate.Cursor = Cursors.Hand;
             btnRate.FlatAppearance.BorderColor = Color.Cyan;
             btnRate.FlatAppearance.MouseDownBackColor = Color.Cyan;
             btnRate.FlatAppearance.MouseOverBackColor = Color.Cyan;
@@ -804,6 +816,24 @@
             btnRate.Text = "Submit Rating";
             btnRate.UseVisualStyleBackColor = false;
             btnRate.Click += btnRate_Click;
+            // 
+            // txtFeedback
+            // 
+            txtFeedback.BackColor = Color.Transparent;
+            txtFeedback.BaseColor = Color.FromArgb(35, 40, 50);
+            txtFeedback.BorderColor = Color.FromArgb(255, 128, 0);
+            txtFeedback.FocusOnHover = false;
+            txtFeedback.Font = new Font("Cascadia Code", 9.75F);
+            txtFeedback.ForeColor = Color.Lavender;
+            txtFeedback.Location = new Point(321, 20);
+            txtFeedback.MaxLength = 32767;
+            txtFeedback.Multiline = true;
+            txtFeedback.Name = "txtFeedback";
+            txtFeedback.ReadOnly = false;
+            txtFeedback.Size = new Size(321, 107);
+            txtFeedback.TabIndex = 110;
+            txtFeedback.TextAlign = HorizontalAlignment.Left;
+            txtFeedback.UseSystemPasswordChar = false;
             // 
             // pnlNoRent
             // 
@@ -868,40 +898,68 @@
             panel8.Size = new Size(872, 516);
             panel8.TabIndex = 56;
             // 
-            // btnFeedback
+            // lostSeparator1
             // 
-            btnFeedback.BackColor = Color.Transparent;
-            btnFeedback.FlatAppearance.BorderColor = Color.Cyan;
-            btnFeedback.FlatAppearance.MouseDownBackColor = Color.Cyan;
-            btnFeedback.FlatAppearance.MouseOverBackColor = Color.Cyan;
-            btnFeedback.FlatStyle = FlatStyle.Flat;
-            btnFeedback.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
-            btnFeedback.ForeColor = Color.Black;
-            btnFeedback.Location = new Point(167, 97);
-            btnFeedback.Name = "btnFeedback";
-            btnFeedback.Size = new Size(139, 30);
-            btnFeedback.TabIndex = 109;
-            btnFeedback.Text = "Submit Feedback";
-            btnFeedback.UseVisualStyleBackColor = false;
-            btnFeedback.Click += btnFeedback_Click;
+            lostSeparator1.BackColor = Color.Black;
+            lostSeparator1.ForeColor = Color.FromArgb(255, 128, 0);
+            lostSeparator1.Horizontal = false;
+            lostSeparator1.Location = new Point(12, 190);
+            lostSeparator1.Name = "lostSeparator1";
+            lostSeparator1.Size = new Size(10, 430);
+            lostSeparator1.TabIndex = 115;
+            lostSeparator1.Text = "lostSeparator1";
             // 
-            // txtFeedback
+            // lostSeparator2
             // 
-            txtFeedback.BackColor = Color.Transparent;
-            txtFeedback.BaseColor = Color.FromArgb(35, 40, 50);
-            txtFeedback.BorderColor = Color.FromArgb(255, 128, 0);
-            txtFeedback.FocusOnHover = false;
-            txtFeedback.Font = new Font("Cascadia Code", 9.75F);
-            txtFeedback.ForeColor = Color.Lavender;
-            txtFeedback.Location = new Point(321, 20);
-            txtFeedback.MaxLength = 32767;
-            txtFeedback.Multiline = true;
-            txtFeedback.Name = "txtFeedback";
-            txtFeedback.ReadOnly = false;
-            txtFeedback.Size = new Size(321, 107);
-            txtFeedback.TabIndex = 110;
-            txtFeedback.TextAlign = HorizontalAlignment.Left;
-            txtFeedback.UseSystemPasswordChar = false;
+            lostSeparator2.BackColor = Color.Black;
+            lostSeparator2.ForeColor = Color.FromArgb(0, 192, 0);
+            lostSeparator2.Horizontal = false;
+            lostSeparator2.Location = new Point(309, 190);
+            lostSeparator2.Name = "lostSeparator2";
+            lostSeparator2.Size = new Size(10, 241);
+            lostSeparator2.TabIndex = 116;
+            lostSeparator2.Text = "lostSeparator2";
+            // 
+            // lostSeparator3
+            // 
+            lostSeparator3.BackColor = Color.Black;
+            lostSeparator3.ForeColor = Color.Blue;
+            lostSeparator3.Horizontal = false;
+            lostSeparator3.Location = new Point(627, 190);
+            lostSeparator3.Name = "lostSeparator3";
+            lostSeparator3.Size = new Size(10, 340);
+            lostSeparator3.TabIndex = 117;
+            lostSeparator3.Text = "lostSeparator3";
+            // 
+            // btnReceipt
+            // 
+            btnReceipt.Anchor = AnchorStyles.Bottom;
+            btnReceipt.BackColor = Color.Transparent;
+            btnReceipt.Cursor = Cursors.Hand;
+            btnReceipt.FlatAppearance.BorderColor = Color.Green;
+            btnReceipt.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnReceipt.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnReceipt.FlatStyle = FlatStyle.Flat;
+            btnReceipt.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnReceipt.ForeColor = Color.Lavender;
+            btnReceipt.Location = new Point(12, 638);
+            btnReceipt.Name = "btnReceipt";
+            btnReceipt.Size = new Size(260, 45);
+            btnReceipt.TabIndex = 118;
+            btnReceipt.Text = "Send receipt to email address";
+            btnReceipt.UseVisualStyleBackColor = false;
+            btnReceipt.Click += btnReceipt_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.Star1;
+            pictureBox1.Location = new Point(828, 122);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 119;
+            pictureBox1.TabStop = false;
             // 
             // ClientViewRental
             // 
@@ -910,8 +968,13 @@
             BackColor = Color.FromArgb(35, 40, 50);
             BackgroundImage = Properties.Resources.CarbonFiber;
             ClientSize = new Size(964, 704);
-            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
+            Controls.Add(btnReceipt);
             Controls.Add(lblNoRent);
+            Controls.Add(lostSeparator3);
+            Controls.Add(lostSeparator2);
+            Controls.Add(lostSeparator1);
+            Controls.Add(panel1);
             Controls.Add(lblModel);
             Controls.Add(lblMake);
             Controls.Add(lblType);
@@ -939,7 +1002,6 @@
             Controls.Add(lblUsername);
             Controls.Add(lblOC);
             Controls.Add(lblTotalPrice);
-            Controls.Add(btnReceipt);
             Controls.Add(lblCurrent);
             Controls.Add(lblRentalDetails);
             Controls.Add(pnlNoRent);
@@ -967,6 +1029,7 @@
             panel7.ResumeLayout(false);
             pnlNoRent.ResumeLayout(false);
             panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -976,7 +1039,6 @@
         private FlowLayoutPanel flpCurrentlyRenting;
         private Label lblRentalDetails;
         private Label lblCurrent;
-        private ReaLTaiizor.Controls.MaterialButton btnReceipt;
         private Label lblNotes;
         private Label lblExtras;
         private Label lblPayment;
@@ -1035,5 +1097,10 @@
         private Panel panel8;
         private Button btnFeedback;
         private ReaLTaiizor.Controls.ForeverTextBox txtFeedback;
+        private ReaLTaiizor.Controls.LostSeparator lostSeparator1;
+        private ReaLTaiizor.Controls.LostSeparator lostSeparator2;
+        private ReaLTaiizor.Controls.LostSeparator lostSeparator3;
+        private Button btnReceipt;
+        private PictureBox pictureBox1;
     }
 }

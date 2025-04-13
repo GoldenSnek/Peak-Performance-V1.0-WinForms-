@@ -103,7 +103,10 @@ namespace Peak_Performance_V1._0
             if (string.IsNullOrWhiteSpace(txtFullname.Text) || string.IsNullOrWhiteSpace(txtAddress.Text) || string.IsNullOrWhiteSpace(txtBirthday.Text)
                 || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtLicenseID.Text) || string.IsNullOrWhiteSpace(txtNumber.Text)) //step 1: check if fields are empty
             {
-                MessageBox.Show("Please fill in all the details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using (ErrorMessage errorForm = new ErrorMessage($"Please fill in all the details."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
 
@@ -111,7 +114,10 @@ namespace Peak_Performance_V1._0
                 imageBytes = File.ReadAllBytes(imagePath);
             else if (picProfilePicture.Image == null) //if an image exists in the PictureBox
             {
-                MessageBox.Show("Please upload an image.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Please upload an image."))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             else
@@ -129,12 +135,15 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error retrieving image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error retrieving image: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally
                 {
-                    connection.Close(); // Ensure connection is closed
+                    connection.Close(); //ensure connection is closed
                 }
             }
 
@@ -154,11 +163,17 @@ namespace Peak_Performance_V1._0
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("Details updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Details updated successfully!"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error updating: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error updating: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally
@@ -179,7 +194,10 @@ namespace Peak_Performance_V1._0
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("BYEBYE", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Thank you for using Peak Performance! Drive safe, stay awesome, and we’ll see you again soon! BYEBYE! -JM"))
+                    {
+                        errorForm.ShowDialog();
+                    }
 
                     //close the Home form
                     if (homeForm != null)
@@ -193,7 +211,10 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error deleting" + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error deleting: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally

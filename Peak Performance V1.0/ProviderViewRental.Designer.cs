@@ -38,9 +38,9 @@
             // 
             // flpWaitingApproval
             // 
+            flpWaitingApproval.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             flpWaitingApproval.AutoScroll = true;
             flpWaitingApproval.BackgroundImage = Properties.Resources.CarbonFiber2;
-            flpWaitingApproval.Dock = DockStyle.Left;
             flpWaitingApproval.Location = new Point(0, 50);
             flpWaitingApproval.Name = "flpWaitingApproval";
             flpWaitingApproval.Size = new Size(482, 654);
@@ -48,9 +48,9 @@
             // 
             // flpCurrentlyRented
             // 
+            flpCurrentlyRented.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flpCurrentlyRented.AutoScroll = true;
             flpCurrentlyRented.BackgroundImage = Properties.Resources.CarbonFiber3;
-            flpCurrentlyRented.Dock = DockStyle.Right;
             flpCurrentlyRented.Location = new Point(482, 50);
             flpCurrentlyRented.Name = "flpCurrentlyRented";
             flpCurrentlyRented.Size = new Size(482, 654);
@@ -70,7 +70,7 @@
             // lblApproval
             // 
             lblApproval.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApproval.ForeColor = Color.White;
+            lblApproval.ForeColor = Color.FromArgb(255, 128, 0);
             lblApproval.Location = new Point(91, 9);
             lblApproval.Name = "lblApproval";
             lblApproval.Size = new Size(314, 30);
@@ -82,7 +82,7 @@
             // 
             lblCurrent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblCurrent.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCurrent.ForeColor = Color.White;
+            lblCurrent.ForeColor = Color.FromArgb(255, 128, 0);
             lblCurrent.Location = new Point(578, 9);
             lblCurrent.Name = "lblCurrent";
             lblCurrent.Size = new Size(314, 30);

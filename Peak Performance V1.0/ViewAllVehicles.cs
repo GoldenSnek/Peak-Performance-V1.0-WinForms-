@@ -152,7 +152,10 @@ namespace Peak_Performance_V1._0
                     if (rentedBy == SystemManager.currentUserID)
                     {
                         connection.Close();
-                        MessageBox.Show("cannot rent more than 1 vehicle.");
+                        using (ErrorMessage errorForm = new ErrorMessage($"Sorry, you can only rent 1 vehicle at a time."))
+                        {
+                            errorForm.ShowDialog();
+                        }
                         return;
                     }
                 }

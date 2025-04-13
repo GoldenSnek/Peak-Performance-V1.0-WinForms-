@@ -51,7 +51,10 @@ namespace Peak_Performance_V1._0
 
             if (Convert.ToInt32(dgvData.Rows[dgvData.SelectedCells[0].RowIndex].Cells[0].Value) == 1)
             {
-                MessageBox.Show("You cannot delete the admin account!", "NO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (ErrorMessage errorForm = new ErrorMessage($"You cannot delete the admin account!"))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             using (OleDbCommand cmd = new OleDbCommand(deleteVehiclesQuery, connection))
@@ -69,13 +72,19 @@ namespace Peak_Performance_V1._0
 
                     connection.Close();
 
-                    MessageBox.Show("User and associated vehicles removed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (ErrorMessage errorForm = new ErrorMessage($"User and associated vehicles are removed successfully!"))
+                    {
+                        errorForm.ShowDialog();
+                    }
 
                     LoadData();  // Reload the data after deletion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error removing: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error removing: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 finally
                 {

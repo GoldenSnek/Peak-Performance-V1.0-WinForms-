@@ -53,8 +53,8 @@
             label1 = new Label();
             cbxPowerbank = new ReaLTaiizor.Controls.MaterialComboBox();
             cbxWifi = new ReaLTaiizor.Controls.MaterialComboBox();
-            btnEstimate = new ReaLTaiizor.Controls.MaterialButton();
-            btnFinalize = new ReaLTaiizor.Controls.MaterialButton();
+            btnFinalize = new Button();
+            btnEstimate = new Button();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picProfilePicture).BeginInit();
@@ -256,6 +256,7 @@
             txtNotes.AutoCompleteSource = AutoCompleteSource.None;
             txtNotes.BackgroundImageLayout = ImageLayout.None;
             txtNotes.CharacterCasing = CharacterCasing.Normal;
+            txtNotes.Cursor = Cursors.Hand;
             txtNotes.Depth = 0;
             txtNotes.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtNotes.HideSelection = true;
@@ -285,6 +286,7 @@
             // 
             cbxRent.AutoResize = false;
             cbxRent.BackColor = Color.FromArgb(255, 255, 255);
+            cbxRent.Cursor = Cursors.Hand;
             cbxRent.Depth = 0;
             cbxRent.DrawMode = DrawMode.OwnerDrawVariable;
             cbxRent.DropDownHeight = 174;
@@ -309,6 +311,7 @@
             // 
             cbxDuration.AutoResize = false;
             cbxDuration.BackColor = Color.FromArgb(255, 255, 255);
+            cbxDuration.Cursor = Cursors.Hand;
             cbxDuration.Depth = 0;
             cbxDuration.DrawMode = DrawMode.OwnerDrawVariable;
             cbxDuration.DropDownHeight = 174;
@@ -333,6 +336,7 @@
             // 
             cbxPaymentType.AutoResize = false;
             cbxPaymentType.BackColor = Color.FromArgb(255, 255, 255);
+            cbxPaymentType.Cursor = Cursors.Hand;
             cbxPaymentType.Depth = 0;
             cbxPaymentType.DrawMode = DrawMode.OwnerDrawVariable;
             cbxPaymentType.DropDownHeight = 174;
@@ -369,6 +373,7 @@
             // 
             cbxChildSeat.AutoResize = false;
             cbxChildSeat.BackColor = Color.FromArgb(255, 255, 255);
+            cbxChildSeat.Cursor = Cursors.Hand;
             cbxChildSeat.Depth = 0;
             cbxChildSeat.DrawMode = DrawMode.OwnerDrawVariable;
             cbxChildSeat.DropDownHeight = 174;
@@ -393,6 +398,7 @@
             // 
             cbxSound.AutoResize = false;
             cbxSound.BackColor = Color.FromArgb(255, 255, 255);
+            cbxSound.Cursor = Cursors.Hand;
             cbxSound.Depth = 0;
             cbxSound.DrawMode = DrawMode.OwnerDrawVariable;
             cbxSound.DropDownHeight = 174;
@@ -422,13 +428,14 @@
             label1.Name = "label1";
             label1.Size = new Size(200, 20);
             label1.TabIndex = 67;
-            label1.Text = "Add-ons";
+            label1.Text = "Add-ons:";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // cbxPowerbank
             // 
             cbxPowerbank.AutoResize = false;
             cbxPowerbank.BackColor = Color.FromArgb(255, 255, 255);
+            cbxPowerbank.Cursor = Cursors.Hand;
             cbxPowerbank.Depth = 0;
             cbxPowerbank.DrawMode = DrawMode.OwnerDrawVariable;
             cbxPowerbank.DropDownHeight = 174;
@@ -453,6 +460,7 @@
             // 
             cbxWifi.AutoResize = false;
             cbxWifi.BackColor = Color.FromArgb(255, 255, 255);
+            cbxWifi.Cursor = Cursors.Hand;
             cbxWifi.Depth = 0;
             cbxWifi.DrawMode = DrawMode.OwnerDrawVariable;
             cbxWifi.DropDownHeight = 174;
@@ -473,49 +481,41 @@
             cbxWifi.StartIndex = 0;
             cbxWifi.TabIndex = 69;
             // 
-            // btnEstimate
-            // 
-            btnEstimate.AutoSize = false;
-            btnEstimate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnEstimate.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnEstimate.Depth = 0;
-            btnEstimate.HighEmphasis = true;
-            btnEstimate.Icon = null;
-            btnEstimate.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnEstimate.Location = new Point(233, 567);
-            btnEstimate.Margin = new Padding(4, 6, 4, 6);
-            btnEstimate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnEstimate.Name = "btnEstimate";
-            btnEstimate.NoAccentTextColor = Color.Empty;
-            btnEstimate.Size = new Size(140, 36);
-            btnEstimate.TabIndex = 70;
-            btnEstimate.Text = "Estimate Price";
-            btnEstimate.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnEstimate.UseAccentColor = false;
-            btnEstimate.UseVisualStyleBackColor = true;
-            btnEstimate.Click += btnEstimate_Click;
-            // 
             // btnFinalize
             // 
-            btnFinalize.AutoSize = false;
-            btnFinalize.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnFinalize.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnFinalize.Depth = 0;
-            btnFinalize.HighEmphasis = true;
-            btnFinalize.Icon = null;
-            btnFinalize.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnFinalize.Location = new Point(117, 635);
-            btnFinalize.Margin = new Padding(4, 6, 4, 6);
-            btnFinalize.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnFinalize.BackColor = Color.Transparent;
+            btnFinalize.Cursor = Cursors.Hand;
+            btnFinalize.FlatAppearance.BorderColor = Color.Green;
+            btnFinalize.FlatAppearance.MouseDownBackColor = Color.Green;
+            btnFinalize.FlatAppearance.MouseOverBackColor = Color.Green;
+            btnFinalize.FlatStyle = FlatStyle.Flat;
+            btnFinalize.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnFinalize.ForeColor = Color.Lavender;
+            btnFinalize.Location = new Point(115, 629);
             btnFinalize.Name = "btnFinalize";
-            btnFinalize.NoAccentTextColor = Color.Empty;
-            btnFinalize.Size = new Size(167, 36);
-            btnFinalize.TabIndex = 71;
+            btnFinalize.Size = new Size(167, 45);
+            btnFinalize.TabIndex = 73;
             btnFinalize.Text = "Finalize";
-            btnFinalize.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnFinalize.UseAccentColor = false;
-            btnFinalize.UseVisualStyleBackColor = true;
+            btnFinalize.UseVisualStyleBackColor = false;
             btnFinalize.Click += btnFinalize_Click;
+            // 
+            // btnEstimate
+            // 
+            btnEstimate.BackColor = Color.Transparent;
+            btnEstimate.Cursor = Cursors.Hand;
+            btnEstimate.FlatAppearance.BorderColor = Color.Cyan;
+            btnEstimate.FlatAppearance.MouseDownBackColor = Color.Cyan;
+            btnEstimate.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            btnEstimate.FlatStyle = FlatStyle.Flat;
+            btnEstimate.Font = new Font("Cascadia Code", 9.75F, FontStyle.Bold);
+            btnEstimate.ForeColor = Color.Lavender;
+            btnEstimate.Location = new Point(240, 563);
+            btnEstimate.Name = "btnEstimate";
+            btnEstimate.Size = new Size(133, 45);
+            btnEstimate.TabIndex = 74;
+            btnEstimate.Text = "Estimate Price";
+            btnEstimate.UseVisualStyleBackColor = false;
+            btnEstimate.Click += btnEstimate_Click;
             // 
             // RentVehicle
             // 
@@ -525,8 +525,8 @@
             BackgroundImage = Properties.Resources.RentVehicle;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(400, 700);
-            Controls.Add(btnFinalize);
             Controls.Add(btnEstimate);
+            Controls.Add(btnFinalize);
             Controls.Add(cbxWifi);
             Controls.Add(cbxPowerbank);
             Controls.Add(label1);
@@ -589,7 +589,7 @@
         private Label label1;
         private ReaLTaiizor.Controls.MaterialComboBox cbxPowerbank;
         private ReaLTaiizor.Controls.MaterialComboBox cbxWifi;
-        private ReaLTaiizor.Controls.MaterialButton btnEstimate;
-        private ReaLTaiizor.Controls.MaterialButton btnFinalize;
+        private Button btnFinalize;
+        private Button btnEstimate;
     }
 }

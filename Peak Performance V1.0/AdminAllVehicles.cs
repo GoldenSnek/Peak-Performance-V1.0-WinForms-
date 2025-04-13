@@ -46,7 +46,10 @@ namespace Peak_Performance_V1._0
         {
             if (dgvData.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a vehicle to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (ErrorMessage errorForm = new ErrorMessage($"Please select a vehicle to delete"))
+                {
+                    errorForm.ShowDialog();
+                }
                 return;
             }
             string deleteQuery = "DELETE FROM Vehicles WHERE VehicleID = @vehicleID";
@@ -59,13 +62,19 @@ namespace Peak_Performance_V1._0
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("Vehicle deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Vehicle removed successfully!"))
+                    {
+                        errorForm.ShowDialog();
+                    }
 
                     LoadData();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error deleting" + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error deleting: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally

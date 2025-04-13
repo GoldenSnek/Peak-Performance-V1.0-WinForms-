@@ -111,11 +111,17 @@ namespace Peak_Performance_V1._0
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("Rejected rental request", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Rejected rental request!"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error deleting" + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally
@@ -138,7 +144,10 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally
@@ -210,11 +219,17 @@ namespace Peak_Performance_V1._0
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Rental request accepted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using (ErrorMessage errorForm = new ErrorMessage($"Rental request accepted!"))
+                {
+                    errorForm.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                {
+                    errorForm.ShowDialog();
+                }
             }
             finally
             {
@@ -235,11 +250,17 @@ namespace Peak_Performance_V1._0
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("Finished rental!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Rental process has been finished."))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error deleting" + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally
@@ -262,14 +283,16 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                     return;
                 }
                 finally
                 {
                     connection.Close();
                     LoadVehicles();
-                    //MessageBox.Show("test");
                 }
             }
         }

@@ -90,7 +90,10 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error retrieving profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error retrieving profile picture: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 finally
                 {
@@ -117,7 +120,10 @@ namespace Peak_Performance_V1._0
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex.Message);
+                        using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                        {
+                            errorForm.ShowDialog();
+                        }
                     }
                     finally
                     {
@@ -501,6 +507,11 @@ namespace Peak_Performance_V1._0
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         public AdminAllUsers AdminAllUsers

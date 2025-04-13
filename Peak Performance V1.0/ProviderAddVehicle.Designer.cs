@@ -126,6 +126,7 @@
             txtModel.AutoCompleteSource = AutoCompleteSource.None;
             txtModel.BackgroundImageLayout = ImageLayout.None;
             txtModel.CharacterCasing = CharacterCasing.Normal;
+            txtModel.Cursor = Cursors.Hand;
             txtModel.Depth = 0;
             txtModel.Dock = DockStyle.Fill;
             txtModel.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -187,6 +188,7 @@
             // btnClear
             // 
             btnClear.BackColor = Color.Transparent;
+            btnClear.Cursor = Cursors.Hand;
             btnClear.FlatAppearance.BorderColor = Color.Cyan;
             btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
             btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;
@@ -204,6 +206,7 @@
             // btnClearPicture
             // 
             btnClearPicture.BackColor = Color.Transparent;
+            btnClearPicture.Cursor = Cursors.Hand;
             btnClearPicture.FlatAppearance.BorderColor = Color.Cyan;
             btnClearPicture.FlatAppearance.MouseDownBackColor = Color.Cyan;
             btnClearPicture.FlatAppearance.MouseOverBackColor = Color.Cyan;
@@ -221,6 +224,7 @@
             // btnAddVehicle
             // 
             btnAddVehicle.BackColor = Color.Transparent;
+            btnAddVehicle.Cursor = Cursors.Hand;
             btnAddVehicle.FlatAppearance.BorderColor = Color.Green;
             btnAddVehicle.FlatAppearance.MouseDownBackColor = Color.Green;
             btnAddVehicle.FlatAppearance.MouseOverBackColor = Color.Green;
@@ -238,6 +242,7 @@
             // brnBrowse
             // 
             brnBrowse.BackColor = Color.Transparent;
+            brnBrowse.Cursor = Cursors.Hand;
             brnBrowse.FlatAppearance.BorderColor = Color.Cyan;
             brnBrowse.FlatAppearance.MouseDownBackColor = Color.Cyan;
             brnBrowse.FlatAppearance.MouseOverBackColor = Color.Cyan;
@@ -266,6 +271,7 @@
             // 
             cbxDrivetrain.AutoResize = false;
             cbxDrivetrain.BackColor = Color.FromArgb(255, 255, 255);
+            cbxDrivetrain.Cursor = Cursors.Hand;
             cbxDrivetrain.Depth = 0;
             cbxDrivetrain.Dock = DockStyle.Fill;
             cbxDrivetrain.DrawMode = DrawMode.OwnerDrawVariable;
@@ -301,6 +307,7 @@
             // 
             cbxTransmission.AutoResize = false;
             cbxTransmission.BackColor = Color.FromArgb(255, 255, 255);
+            cbxTransmission.Cursor = Cursors.Hand;
             cbxTransmission.Depth = 0;
             cbxTransmission.Dock = DockStyle.Fill;
             cbxTransmission.DrawMode = DrawMode.OwnerDrawVariable;
@@ -359,6 +366,7 @@
             txtMake.AutoCompleteSource = AutoCompleteSource.None;
             txtMake.BackgroundImageLayout = ImageLayout.None;
             txtMake.CharacterCasing = CharacterCasing.Normal;
+            txtMake.Cursor = Cursors.Hand;
             txtMake.Depth = 0;
             txtMake.Dock = DockStyle.Fill;
             txtMake.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -400,6 +408,7 @@
             // 
             cbxSeats.AutoResize = false;
             cbxSeats.BackColor = Color.FromArgb(255, 255, 255);
+            cbxSeats.Cursor = Cursors.Hand;
             cbxSeats.Depth = 0;
             cbxSeats.Dock = DockStyle.Fill;
             cbxSeats.DrawMode = DrawMode.OwnerDrawVariable;
@@ -438,6 +447,7 @@
             txtPriceHourly.AutoCompleteSource = AutoCompleteSource.None;
             txtPriceHourly.BackgroundImageLayout = ImageLayout.None;
             txtPriceHourly.CharacterCasing = CharacterCasing.Normal;
+            txtPriceHourly.Cursor = Cursors.Hand;
             txtPriceHourly.Depth = 0;
             txtPriceHourly.Dock = DockStyle.Fill;
             txtPriceHourly.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -482,6 +492,7 @@
             txtMileage.AutoCompleteSource = AutoCompleteSource.None;
             txtMileage.BackgroundImageLayout = ImageLayout.None;
             txtMileage.CharacterCasing = CharacterCasing.Normal;
+            txtMileage.Cursor = Cursors.Hand;
             txtMileage.Depth = 0;
             txtMileage.Dock = DockStyle.Fill;
             txtMileage.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -526,6 +537,7 @@
             txtPriceDaily.AutoCompleteSource = AutoCompleteSource.None;
             txtPriceDaily.BackgroundImageLayout = ImageLayout.None;
             txtPriceDaily.CharacterCasing = CharacterCasing.Normal;
+            txtPriceDaily.Cursor = Cursors.Hand;
             txtPriceDaily.Depth = 0;
             txtPriceDaily.Dock = DockStyle.Fill;
             txtPriceDaily.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -567,6 +579,7 @@
             // 
             cbxFuel.AutoResize = false;
             cbxFuel.BackColor = Color.FromArgb(255, 255, 255);
+            cbxFuel.Cursor = Cursors.Hand;
             cbxFuel.Depth = 0;
             cbxFuel.Dock = DockStyle.Fill;
             cbxFuel.DrawMode = DrawMode.OwnerDrawVariable;
@@ -602,6 +615,7 @@
             // 
             cbxColor.AutoResize = false;
             cbxColor.BackColor = Color.FromArgb(255, 255, 255);
+            cbxColor.Cursor = Cursors.Hand;
             cbxColor.Depth = 0;
             cbxColor.Dock = DockStyle.Fill;
             cbxColor.DrawMode = DrawMode.OwnerDrawVariable;
@@ -637,6 +651,7 @@
             // 
             cbxSpecificType.AutoResize = false;
             cbxSpecificType.BackColor = Color.FromArgb(255, 255, 255);
+            cbxSpecificType.Cursor = Cursors.Hand;
             cbxSpecificType.Depth = 0;
             cbxSpecificType.Dock = DockStyle.Fill;
             cbxSpecificType.DrawMode = DrawMode.OwnerDrawVariable;
@@ -671,6 +686,7 @@
             // 
             cbxYear.AutoResize = false;
             cbxYear.BackColor = Color.FromArgb(255, 255, 255);
+            cbxYear.Cursor = Cursors.Hand;
             cbxYear.Depth = 0;
             cbxYear.Dock = DockStyle.Fill;
             cbxYear.DrawMode = DrawMode.OwnerDrawVariable;
@@ -709,6 +725,7 @@
             txtLicense.AutoCompleteSource = AutoCompleteSource.None;
             txtLicense.BackgroundImageLayout = ImageLayout.None;
             txtLicense.CharacterCasing = CharacterCasing.Normal;
+            txtLicense.Cursor = Cursors.Hand;
             txtLicense.Depth = 0;
             txtLicense.Dock = DockStyle.Fill;
             txtLicense.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -750,6 +767,7 @@
             // 
             cbxGeneralType.AutoResize = false;
             cbxGeneralType.BackColor = Color.FromArgb(255, 255, 255);
+            cbxGeneralType.Cursor = Cursors.Hand;
             cbxGeneralType.Depth = 0;
             cbxGeneralType.Dock = DockStyle.Fill;
             cbxGeneralType.DrawMode = DrawMode.OwnerDrawVariable;
@@ -796,7 +814,7 @@
             // 
             lblOwned.Anchor = AnchorStyles.Top;
             lblOwned.Font = new Font("Copperplate Gothic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOwned.ForeColor = Color.White;
+            lblOwned.ForeColor = Color.FromArgb(255, 128, 0);
             lblOwned.Location = new Point(604, 9);
             lblOwned.Name = "lblOwned";
             lblOwned.Size = new Size(361, 30);

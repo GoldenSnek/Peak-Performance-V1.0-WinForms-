@@ -247,6 +247,7 @@
             // btnBrowseDevice
             // 
             btnBrowseDevice.BackColor = Color.Transparent;
+            btnBrowseDevice.Cursor = Cursors.Hand;
             btnBrowseDevice.FlatAppearance.BorderColor = Color.Cyan;
             btnBrowseDevice.FlatAppearance.MouseDownBackColor = Color.Cyan;
             btnBrowseDevice.FlatAppearance.MouseOverBackColor = Color.Cyan;
@@ -264,6 +265,7 @@
             // btnClearPicture
             // 
             btnClearPicture.BackColor = Color.Transparent;
+            btnClearPicture.Cursor = Cursors.Hand;
             btnClearPicture.FlatAppearance.BorderColor = Color.Cyan;
             btnClearPicture.FlatAppearance.MouseDownBackColor = Color.Cyan;
             btnClearPicture.FlatAppearance.MouseOverBackColor = Color.Cyan;
@@ -324,6 +326,7 @@
             // btnSave
             // 
             btnSave.BackColor = Color.Transparent;
+            btnSave.Cursor = Cursors.Hand;
             btnSave.FlatAppearance.BorderColor = Color.Green;
             btnSave.FlatAppearance.MouseDownBackColor = Color.Green;
             btnSave.FlatAppearance.MouseOverBackColor = Color.Green;
@@ -341,6 +344,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.Transparent;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatAppearance.BorderColor = Color.Maroon;
             btnDelete.FlatAppearance.MouseDownBackColor = Color.Maroon;
             btnDelete.FlatAppearance.MouseOverBackColor = Color.Maroon;
@@ -358,6 +362,7 @@
             // btnClear
             // 
             btnClear.BackColor = Color.Transparent;
+            btnClear.Cursor = Cursors.Hand;
             btnClear.FlatAppearance.BorderColor = Color.Cyan;
             btnClear.FlatAppearance.MouseDownBackColor = Color.Cyan;
             btnClear.FlatAppearance.MouseOverBackColor = Color.Cyan;

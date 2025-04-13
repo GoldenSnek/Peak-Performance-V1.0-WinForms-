@@ -36,6 +36,7 @@
             lblTime = new Label();
             lblDate = new Label();
             picMax = new PictureBox();
+            lblTitle = new Label();
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMin).BeginInit();
@@ -55,6 +56,7 @@
             // pnlTop
             // 
             pnlTop.BackColor = Color.FromArgb(255, 128, 0);
+            pnlTop.Controls.Add(lblTitle);
             pnlTop.Controls.Add(lblDay);
             pnlTop.Controls.Add(picBack);
             pnlTop.Controls.Add(picMin);
@@ -150,6 +152,19 @@
             picMax.TabIndex = 39;
             picMax.TabStop = false;
             // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Copperplate Gothic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.Black;
+            lblTitle.Location = new Point(115, 5);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(171, 32);
+            lblTitle.TabIndex = 61;
+            lblTitle.Text = "Client Feedback";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ClientFeedback
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -180,5 +195,6 @@
         private Label lblTime;
         private Label lblDate;
         private PictureBox picMax;
+        private Label lblTitle;
     }
 }

@@ -62,7 +62,10 @@ namespace Peak_Performance_V1._0
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to open link: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using (ErrorMessage errorForm = new ErrorMessage($"Failed to open link: {ex.Message}"))
+                {
+                    errorForm.ShowDialog();
+                }
             }
         }
         public static Image ResizeImage(Image img) //SUPPORTING METHOD: Dynamically resize icons

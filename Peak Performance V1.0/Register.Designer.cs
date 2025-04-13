@@ -343,6 +343,7 @@
             rbtnClient.ColorChecked = Color.FromArgb(255, 128, 0);
             rbtnClient.ColorPen_1 = Color.FromArgb(37, 52, 68);
             rbtnClient.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            rbtnClient.Cursor = Cursors.Hand;
             rbtnClient.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             rbtnClient.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
             rbtnClient.Effect_1_Transparency = 25;
@@ -386,6 +387,7 @@
             rbtnProvider.ColorChecked = Color.FromArgb(255, 128, 0);
             rbtnProvider.ColorPen_1 = Color.FromArgb(37, 52, 68);
             rbtnProvider.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            rbtnProvider.Cursor = Cursors.Hand;
             rbtnProvider.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
             rbtnProvider.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
             rbtnProvider.Effect_1_Transparency = 25;

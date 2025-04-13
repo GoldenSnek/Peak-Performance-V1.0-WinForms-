@@ -99,7 +99,10 @@ namespace Peak_Performance_V1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    using (ErrorMessage errorForm = new ErrorMessage($"Error: {ex.Message}"))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
                 finally
                 {
