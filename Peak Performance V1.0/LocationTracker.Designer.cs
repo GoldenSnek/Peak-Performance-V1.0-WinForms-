@@ -203,6 +203,7 @@
             Controls.Add(pnlTop);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LocationTracker";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LocationTracker";
             TopMost = true;

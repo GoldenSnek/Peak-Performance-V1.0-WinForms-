@@ -239,8 +239,8 @@
             // 
             // ErrorMessage
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(350, 200);
             Controls.Add(btnOkay);
             Controls.Add(lostSeparator2);
@@ -249,8 +249,10 @@
             Controls.Add(pnlTop);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ErrorMessage";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterParent;
             Text = "ErrorMessage";
+            TopMost = true;
             Load += ErrorMessage_Load;
             pnlTop.ResumeLayout(false);
             pnlTop.PerformLayout();

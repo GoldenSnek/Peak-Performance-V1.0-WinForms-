@@ -45,13 +45,44 @@ namespace Peak_Performance_V1._0
 
         public void btnRemove_Click(object sender, EventArgs e)
         {
+            if (dgvData.SelectedRows.Count == 0)
+            {
+                using (ErrorMessage errorForm = new ErrorMessage($"Please select an account to remove"))
+                {
+                    errorForm.ShowDialog();
+                }
+                return;
+            }
+
+            string verifyQuery = "SELECT ClientID, OwnerID FROM RentalDetails";
+            using (OleDbCommand cmd = new OleDbCommand(verifyQuery, connection))
+            {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int clientID = Convert.ToInt32(reader["ClientID"]);
+                    int ownerID = Convert.ToInt32(reader["OwnerID"]);
+                    if (Convert.ToInt32(dgvData.Rows[dgvData.SelectedCells[0].RowIndex].Cells[0].Value) == clientID || Convert.ToInt32(dgvData.Rows[dgvData.SelectedCells[0].RowIndex].Cells[0].Value) == ownerID)
+                    {
+                        using (ErrorMessage errorForm = new ErrorMessage($"You cannot deactivate this account as they currently have a rental process in progress."))
+                        {
+                            errorForm.ShowDialog();
+                        }
+                        connection.Close();
+                        return;
+                    }
+                }
+                connection.Close();
+            }
+
             string deleteVehiclesQuery = "DELETE FROM Vehicles WHERE OwnerID = @userID";
             string deleteUserQuery = "DELETE FROM Users WHERE UserID = @userID";
 
-
             if (Convert.ToInt32(dgvData.Rows[dgvData.SelectedCells[0].RowIndex].Cells[0].Value) == 1)
             {
-                using (ErrorMessage errorForm = new ErrorMessage($"You cannot delete the admin account!"))
+                using (ErrorMessage errorForm = new ErrorMessage($"You cannot deactivate the admin account!"))
                 {
                     errorForm.ShowDialog();
                 }
@@ -77,7 +108,7 @@ namespace Peak_Performance_V1._0
                         errorForm.ShowDialog();
                     }
 
-                    LoadData();  // Reload the data after deletion
+                    LoadData();
                 }
                 catch (Exception ex)
                 {

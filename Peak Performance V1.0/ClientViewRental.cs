@@ -75,6 +75,7 @@ namespace Peak_Performance_V1._0
         string? Email;
         string? DriversLicenseID;
         string? ContactNumber;
+        double UserRate;
 
         public ClientViewRental()
         {
@@ -246,7 +247,7 @@ namespace Peak_Performance_V1._0
 
                     DriversLicenseID = reader["DriversLicenseID"].ToString();
                     ContactNumber = reader["ContactNumber"].ToString();
-                    UserRating = Convert.ToDouble(reader["UserRating"]);
+                    UserRate = Convert.ToDouble(reader["UserRating"]);
 
                     //convert image from database to PictureBox
                     System.Drawing.Image? profilePicture = null;
@@ -260,7 +261,7 @@ namespace Peak_Performance_V1._0
                     }
 
                     lblUsername.Text = $"Username: {Username}";
-                    lblUserRating.Text = UserRating.ToString();
+                    lblUserRating.Text = UserRate.ToString();
 
                     lblFullname.Text = $"Fullname: {FullName}";
                     lblAddress.Text = $"Address: {Address}";
@@ -322,6 +323,16 @@ namespace Peak_Performance_V1._0
                 }
                 double userGivenRating = UserRating;
                 double vehicleGivenRating = VehicleRating;
+
+                if (userGivenRating <= 0 || vehicleGivenRating <= 0)
+                {
+                    using (ErrorMessage errorForm = new ErrorMessage($"Please give a rating before submitting."))
+                    {
+                        errorForm.ShowDialog();
+                    }
+                    connection.Close();
+                    return;
+                }
 
                 userRaters += 1;
                 userTotalRatings += (int)userGivenRating;
@@ -489,7 +500,6 @@ namespace Peak_Performance_V1._0
                     return;
                 }
 
-                //create the PDF and store it in a byte array
                 byte[] pdfBytes;
 
                 using (MemoryStream memoryStream = new MemoryStream())
@@ -501,42 +511,101 @@ namespace Peak_Performance_V1._0
                         PdfFont font = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arial.ttf", PdfEncodings.WINANSI);
                         PdfFont boldFont = PdfFontFactory.CreateFont(@"C:\Windows\Fonts\arialbd.ttf", PdfEncodings.WINANSI);
 
+                        // Title Section
                         doc.Add(new Paragraph("PEAK PERFORMANCE | VEHICLE RENTAL")
                             .SetFont(boldFont)
                             .SetFontSize(20)
-                            .SetTextAlignment(TextAlignment.CENTER));
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .SetMarginBottom(10));
 
-                        doc.Add(new Paragraph("Receipt")
+                        doc.Add(new Paragraph("Rental Receipt")
                             .SetFont(boldFont)
                             .SetFontSize(16)
-                            .SetTextAlignment(TextAlignment.CENTER));
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .SetMarginBottom(20));
 
-                        doc.Add(new Paragraph($"Date: {DateTime.Now:MMMM dd, yyyy}").SetFont(font));
+                        doc.Add(new Paragraph($"Date Issued: {DateTime.Now:MMMM dd, yyyy}")
+                            .SetFont(font)
+                            .SetTextAlignment(TextAlignment.RIGHT)
+                            .SetFontSize(10)
+                            .SetMarginBottom(20));
 
-                        doc.Add(new Paragraph("Vehicle Details").SetFont(boldFont).SetUnderline());
-                        doc.Add(new Paragraph($"Make: {Make}").SetFont(font));
-                        doc.Add(new Paragraph($"Model: {Model} ({VehicleYear})").SetFont(font));
-                        doc.Add(new Paragraph($"Color: {VehicleColor}").SetFont(font));
-                        doc.Add(new Paragraph($"Transmission: {Transmission}").SetFont(font));
-                        doc.Add(new Paragraph($"Fuel Type: {FuelType}").SetFont(font));
-                        doc.Add(new Paragraph($"Seats: {Seats}").SetFont(font));
-                        doc.Add(new Paragraph($"Duration: {Duration} {RentType}").SetFont(font));
-                        doc.Add(new Paragraph($"Payment Type: {PaymentType}").SetFont(font));
-                        doc.Add(new Paragraph($"Extras: {ChildSeat}, {SoundSystem}, {Powerbank}, {Wifi}").SetFont(font));
-                        doc.Add(new Paragraph($"Notes: {Notes}").SetFont(font));
-                        doc.Add(new Paragraph($"Total Price: Php {TotalPrice:N2}").SetFont(boldFont));
+                        // Vehicle Info
+                        doc.Add(new Paragraph("Vehicle Information")
+                            .SetFont(boldFont)
+                            .SetFontSize(14)
+                            .SetUnderline()
+                            .SetMarginBottom(10));
 
-                        doc.Add(new Paragraph("Owner Details").SetFont(boldFont).SetUnderline());
-                        doc.Add(new Paragraph($"Full Name: {FullName}").SetFont(font));
-                        doc.Add(new Paragraph($"Email: {Email}").SetFont(font));
-                        doc.Add(new Paragraph($"Contact: {ContactNumber}").SetFont(font));
-                        doc.Add(new Paragraph($"Username: {Username}").SetFont(font));
+                        Table vehicleTable = new Table(2).UseAllAvailableWidth();
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Make").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph(Make).SetFont(font)));
 
-                        doc.Close();
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Model & Year").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph($"{Model} ({VehicleYear})").SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Color").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph(VehicleColor).SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Transmission").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph(Transmission).SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Fuel Type").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph(FuelType).SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Seats").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph(Seats.ToString()).SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Duration").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph($"{Duration} {RentType}").SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Payment Type").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph(PaymentType).SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Extras").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph($"{ChildSeat}, {SoundSystem}, {Powerbank}, {Wifi}").SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Notes").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph(Notes).SetFont(font)));
+
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph("Total Price").SetFont(boldFont)));
+                        vehicleTable.AddCell(new Cell().Add(new Paragraph($"₱{TotalPrice:N2}").SetFont(boldFont)));
+
+                        doc.Add(vehicleTable.SetMarginBottom(20));
+
+                        // Owner Info
+                        doc.Add(new Paragraph("Owner Information")
+                            .SetFont(boldFont)
+                            .SetFontSize(14)
+                            .SetUnderline()
+                            .SetMarginBottom(10));
+
+                        Table ownerTable = new Table(2).UseAllAvailableWidth();
+                        ownerTable.AddCell(new Cell().Add(new Paragraph("Full Name").SetFont(boldFont)));
+                        ownerTable.AddCell(new Cell().Add(new Paragraph(FullName).SetFont(font)));
+
+                        ownerTable.AddCell(new Cell().Add(new Paragraph("Email").SetFont(boldFont)));
+                        ownerTable.AddCell(new Cell().Add(new Paragraph(Email).SetFont(font)));
+
+                        ownerTable.AddCell(new Cell().Add(new Paragraph("Contact Number").SetFont(boldFont)));
+                        ownerTable.AddCell(new Cell().Add(new Paragraph(ContactNumber).SetFont(font)));
+
+                        ownerTable.AddCell(new Cell().Add(new Paragraph("Username").SetFont(boldFont)));
+                        ownerTable.AddCell(new Cell().Add(new Paragraph(Username).SetFont(font)));
+
+                        doc.Add(ownerTable);
+
+                        // Thank You Message
+                        doc.Add(new Paragraph("\nThank you for choosing Peak Performance!")
+                            .SetFont(font)
+                            .SetFontSize(11)
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .SetMarginTop(30));
                     }
 
                     pdfBytes = memoryStream.ToArray();
                 }
+
 
                 this.Cursor = Cursors.WaitCursor;
                 btnReceipt.Enabled = false;
@@ -695,7 +764,6 @@ namespace Peak_Performance_V1._0
                     {
                         connection.Open();
                         cmd.ExecuteNonQuery();
-                        connection.Close();
                         using (ErrorMessage errorForm = new ErrorMessage($"Feedback added successfully!"))
                         {
                             errorForm.ShowDialog();
@@ -708,6 +776,10 @@ namespace Peak_Performance_V1._0
                             errorForm.ShowDialog();
                         }
                         return;
+                    }
+                    finally
+                    {
+                        connection.Close();
                     }
                 }
             }

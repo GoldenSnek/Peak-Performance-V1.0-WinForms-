@@ -182,32 +182,61 @@ namespace Peak_Performance_V1._0
                 }
             }
         }
-        public void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete Account and all vehicles owned (di pa functional all vehicles owned)
+        public void btnDelete_Click(object sender, EventArgs e) //MAIN EVENT: Delete Account and all vehicles owned
         {
-            //ALSO DELETE ALL VEHICLES IN THE FUTURE (kapoy pa)
-
-            string deleteQuery = $"DELETE FROM Users WHERE UserID = {SystemManager.currentUserID}";
-            using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
+            string verifyQuery = "SELECT ClientID, OwnerID FROM RentalDetails";
+            using (OleDbCommand cmd = new OleDbCommand(verifyQuery, connection))
             {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int clientID = Convert.ToInt32(reader["ClientID"]);
+                    int ownerID = Convert.ToInt32(reader["OwnerID"]);
+                    if (SystemManager.currentUserID == clientID || SystemManager.currentUserID == ownerID)
+                    {
+                        using (ErrorMessage errorForm = new ErrorMessage($"You cannot deactivate your account as you currently have a rental process in progress."))
+                        {
+                            errorForm.ShowDialog();
+                        }
+                        connection.Close();
+                        return;
+                    }
+                }
+                connection.Close();
+            }
+
+            string deleteVehiclesQuery = "DELETE FROM Vehicles WHERE OwnerID = @userID";
+            string deleteUserQuery = "DELETE FROM Users WHERE UserID = @userID";
+
+            using (OleDbCommand cmd = new OleDbCommand(deleteVehiclesQuery, connection))
+            {
+                cmd.Parameters.AddWithValue("@userID", SystemManager.currentUserID);
+
                 try
                 {
                     connection.Open();
+
                     cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = deleteUserQuery;
+                    cmd.ExecuteNonQuery();
+
                     connection.Close();
+
                     using (ErrorMessage errorForm = new ErrorMessage($"Thank you for using Peak Performance! Drive safe, stay awesome, and we’ll see you again soon! BYEBYE! -JM"))
                     {
                         errorForm.ShowDialog();
                     }
 
-                    //close the Home form
                     if (homeForm != null)
                         homeForm.Close();
 
-                    //ppen login form
                     MainLR mainLR = new MainLR();
                     mainLR.Show();
 
-                    this.Close(); //close ManageAccount form
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -215,7 +244,6 @@ namespace Peak_Performance_V1._0
                     {
                         errorForm.ShowDialog();
                     }
-                    return;
                 }
                 finally
                 {

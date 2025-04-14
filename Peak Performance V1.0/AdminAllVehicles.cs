@@ -52,6 +52,29 @@ namespace Peak_Performance_V1._0
                 }
                 return;
             }
+
+            string verifyQuery = "SELECT VehicleID FROM RentalDetails";
+            using (OleDbCommand cmd = new OleDbCommand(verifyQuery, connection))
+            {
+                connection.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int vehicleID = Convert.ToInt32(reader["VehicleID"]);
+                    if (Convert.ToInt32(dgvData.Rows[dgvData.SelectedCells[0].RowIndex].Cells[0].Value) == vehicleID)
+                    {
+                        using (ErrorMessage errorForm = new ErrorMessage($"You cannot remove this vehicle as it is currently being rented."))
+                        {
+                            errorForm.ShowDialog();
+                        }
+                        connection.Close();
+                        return;
+                    }
+                }
+                connection.Close();
+            }
+
             string deleteQuery = "DELETE FROM Vehicles WHERE VehicleID = @vehicleID";
             using (OleDbCommand cmd = new OleDbCommand(deleteQuery, connection))
             {

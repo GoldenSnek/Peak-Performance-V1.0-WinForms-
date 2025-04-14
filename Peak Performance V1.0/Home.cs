@@ -514,6 +514,56 @@ namespace Peak_Performance_V1._0
             Application.Exit();
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCHITTEST = 0x84;
+            const int HTLEFT = 10;
+            const int HTRIGHT = 11;
+            const int HTTOP = 12;
+            const int HTTOPLEFT = 13;
+            const int HTTOPRIGHT = 14;
+            const int HTBOTTOM = 15;
+            const int HTBOTTOMLEFT = 16;
+            const int HTBOTTOMRIGHT = 17;
+
+            if (m.Msg == WM_NCHITTEST)
+            {
+                base.WndProc(ref m);
+                Point cursor = PointToClient(Cursor.Position);
+
+                int gripSize = 10; // Customize as needed
+                if (cursor.X <= gripSize)
+                {
+                    if (cursor.Y <= gripSize)
+                        m.Result = (IntPtr)HTTOPLEFT;
+                    else if (cursor.Y >= ClientSize.Height - gripSize)
+                        m.Result = (IntPtr)HTBOTTOMLEFT;
+                    else
+                        m.Result = (IntPtr)HTLEFT;
+                }
+                else if (cursor.X >= ClientSize.Width - gripSize)
+                {
+                    if (cursor.Y <= gripSize)
+                        m.Result = (IntPtr)HTTOPRIGHT;
+                    else if (cursor.Y >= ClientSize.Height - gripSize)
+                        m.Result = (IntPtr)HTBOTTOMRIGHT;
+                    else
+                        m.Result = (IntPtr)HTRIGHT;
+                }
+                else if (cursor.Y <= gripSize)
+                {
+                    m.Result = (IntPtr)HTTOP;
+                }
+                else if (cursor.Y >= ClientSize.Height - gripSize)
+                {
+                    m.Result = (IntPtr)HTBOTTOM;
+                }
+                return;
+            }
+
+            base.WndProc(ref m);
+        }
+
         public AdminAllUsers AdminAllUsers
         {
             get => default;

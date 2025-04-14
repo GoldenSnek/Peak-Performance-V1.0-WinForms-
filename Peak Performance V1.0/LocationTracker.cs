@@ -24,11 +24,10 @@ namespace Peak_Performance_V1._0
 
         private async void LocationTracker_Load(object sender, EventArgs e)
         {
-            await webViewMap.EnsureCoreWebView2Async();
-
             try
             {
-                webViewMap.Source = new Uri("https://maps.app.goo.gl/jNpyhjBnbCkXFWkLA");
+                await webViewMap.EnsureCoreWebView2Async();
+                webViewMap.Source = new Uri("https://maps.app.goo.gl/uXQYpWeZBc7cL6Ks9");
             }
             catch (Exception ex)
             {

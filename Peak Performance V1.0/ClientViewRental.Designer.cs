@@ -654,7 +654,7 @@
             // 
             lblNoRent.Anchor = AnchorStyles.None;
             lblNoRent.BackColor = Color.Transparent;
-            lblNoRent.Font = new Font("Copperplate Gothic Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNoRent.Font = new Font("Copperplate Gothic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNoRent.ForeColor = Color.FromArgb(255, 128, 0);
             lblNoRent.Location = new Point(55, 49);
             lblNoRent.Name = "lblNoRent";
