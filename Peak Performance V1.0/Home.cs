@@ -488,9 +488,9 @@ namespace Peak_Performance_V1._0
         private void tmrFadeIn_Tick(object sender, EventArgs e) //SUPPORTING EVENT: Fade in animation
         {
             Opacity += 0.02;
-            if (Opacity >= 1) // Fully visible
+            if (Opacity >= 1)
             {
-                tmrFadeIn.Stop(); // Stop the timer
+                tmrFadeIn.Stop();
             }
         }
         [DllImport("user32.dll")]
